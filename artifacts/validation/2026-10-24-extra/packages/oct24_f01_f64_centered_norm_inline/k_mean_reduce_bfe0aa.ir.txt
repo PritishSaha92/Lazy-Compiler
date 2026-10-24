@@ -1,0 +1,41 @@
+    Tile[a0, a1_co] (N=1408)
+        for a1 in a1_co..71:128
+            in4 = load x[a0, a1]
+            f32 acc0 <- add(acc0, in4)
+            f32 acc1 <- add(acc1, in4)
+            f32 acc2 <- add(acc2, in4)
+        WarpShuffle(acc0, acc1, acc2, length=32)
+        Smem float acc0_smem[4]
+        Smem float acc1_smem[4]
+        Smem float acc2_smem[4]
+        if ((lane == 0)):
+            acc0_smem[warp] = acc0
+            acc1_smem[warp] = acc1
+            acc2_smem[warp] = acc2
+        Sync
+        TreeHalve(acc0, acc1, acc2, length=4, tid=warp)
+        in2 = load mean_2_count[0]
+        f32 v1 = reciprocal(in2)
+        f32 v3 = multiply(acc1, v1)
+        in1 = load mean_1_count[0]
+        f32 v0 = reciprocal(in1)
+        f32 v4 = multiply(acc0, v0)
+        for a1 in 0..71
+            in5 = load x[a0, a1]
+            f64 v5 = subtract(in5, v3)
+            f64 v6 = subtract(in5, v4)
+            f64 v7 = multiply(v5, v6)
+            f32 acc3 <- add(acc3, v7)
+        f64 v8 = copy(acc3)
+        in0 = load add_c1[0]
+        f64 v9 = add(in0, v8)
+        f64 v11 = sqrt(v9)
+        f32 v12 = reciprocal(v11)
+        in3 = load mean_count[0]
+        f32 v2 = reciprocal(in3)
+        f32 v10 = multiply(acc2, v2)
+        for a3 in a1_co..71:128
+            in6 = load x[a0, a3]
+            f64 v13 = subtract(in6, v10)
+            f32 v14 = multiply(v12, v13)
+            div[a0, a3] = v14

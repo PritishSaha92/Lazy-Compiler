@@ -1,0 +1,69 @@
+{
+ "id": "phase3_m01_batched_odd_matmul",
+ "code": "a=torch.randn(3,17,33); b=torch.randn(3,33,21); a@b",
+ "rtol": 0.001,
+ "atol": 0.001,
+ "graph_inputs": [
+  "a",
+  "b"
+ ],
+ "graph_outputs": [
+  "matmul"
+ ],
+ "kernels": [
+  {
+   "node": "matmul",
+   "entry": "k_matmul_44c580",
+   "arg_order": [
+    "b",
+    "a",
+    "matmul"
+   ],
+   "grid": [
+    1071,
+    1,
+    1
+   ],
+   "block": [
+    128,
+    1,
+    1
+   ],
+   "smem_bytes": 0,
+   "zero_outputs": [],
+   "args": [
+    {
+     "name": "b",
+     "dtype": "f32",
+     "shape": [
+      3,
+      33,
+      21
+     ],
+     "seed": 1
+    },
+    {
+     "name": "a",
+     "dtype": "f32",
+     "shape": [
+      3,
+      17,
+      33
+     ],
+     "seed": 0
+    },
+    {
+     "name": "matmul",
+     "dtype": "f32",
+     "shape": [
+      3,
+      17,
+      21
+     ],
+     "output": true
+    }
+   ],
+   "final": true
+  }
+ ]
+}

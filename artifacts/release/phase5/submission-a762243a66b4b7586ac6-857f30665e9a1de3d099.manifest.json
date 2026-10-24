@@ -1,0 +1,192 @@
+{
+  "evidence": [
+    {
+      "matched_sources_sha256": {
+        "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+        "ptx_backend.py": "eb12a9bb28553caa5e75605506268109edd0739edfdfbdb6178096f7407fde73",
+        "ptx_bulk.py": "ab63f516681e78e06f4b7403b24018c60c8119b8c92c34f00236d74806406c65",
+        "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+        "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+      },
+      "original_path": "artifacts/validation/phase5/clean-install/summary.json",
+      "production_identity_fields": {
+        "source_sha256": {
+          "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+          "ptx_backend.py": "eb12a9bb28553caa5e75605506268109edd0739edfdfbdb6178096f7407fde73",
+          "ptx_bulk.py": "ab63f516681e78e06f4b7403b24018c60c8119b8c92c34f00236d74806406c65",
+          "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+          "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+        }
+      },
+      "retained_path": "evidence/73f47fb7990a5609b94a79c73857e58ae647b60beb812949c9924afc24d9293b.json",
+      "sha256": "73f47fb7990a5609b94a79c73857e58ae647b60beb812949c9924afc24d9293b",
+      "status_flags": {
+        "ok": true
+      }
+    },
+    {
+      "matched_sources_sha256": {
+        "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+        "ptx_backend.py": "eb12a9bb28553caa5e75605506268109edd0739edfdfbdb6178096f7407fde73",
+        "ptx_bulk.py": "ab63f516681e78e06f4b7403b24018c60c8119b8c92c34f00236d74806406c65",
+        "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+        "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+      },
+      "original_path": "artifacts/validation/phase5/cpu-regressions.json",
+      "production_identity_fields": {
+        "sources_after_sha256": {
+          "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+          "ptx_backend.py": "eb12a9bb28553caa5e75605506268109edd0739edfdfbdb6178096f7407fde73",
+          "ptx_bulk.py": "ab63f516681e78e06f4b7403b24018c60c8119b8c92c34f00236d74806406c65",
+          "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+          "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+        },
+        "sources_before_sha256": {
+          "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+          "ptx_backend.py": "eb12a9bb28553caa5e75605506268109edd0739edfdfbdb6178096f7407fde73",
+          "ptx_bulk.py": "ab63f516681e78e06f4b7403b24018c60c8119b8c92c34f00236d74806406c65",
+          "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+          "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+        }
+      },
+      "retained_path": "evidence/bf0f2c7dbecd3391d33474ed0e588e4b2df8a6d69c9188750971c8df952f8431.json",
+      "sha256": "bf0f2c7dbecd3391d33474ed0e588e4b2df8a6d69c9188750971c8df952f8431",
+      "status_flags": {
+        "pass": true
+      }
+    },
+    {
+      "matched_sources_sha256": {
+        "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+        "ptx_backend.py": "eb12a9bb28553caa5e75605506268109edd0739edfdfbdb6178096f7407fde73",
+        "ptx_bulk.py": "ab63f516681e78e06f4b7403b24018c60c8119b8c92c34f00236d74806406c65",
+        "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+        "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+      },
+      "original_path": "artifacts/validation/phase5/feature-runner/summary.json",
+      "production_identity_fields": {
+        "compiler_sha256": {
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_backend.py": "eb12a9bb28553caa5e75605506268109edd0739edfdfbdb6178096f7407fde73",
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_bulk.py": "ab63f516681e78e06f4b7403b24018c60c8119b8c92c34f00236d74806406c65",
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+        }
+      },
+      "retained_path": "evidence/5a1ce0c1090fe802feec7a49aafb1fa9292ff4d1b15721f868586e977a41b254.json",
+      "sha256": "5a1ce0c1090fe802feec7a49aafb1fa9292ff4d1b15721f868586e977a41b254",
+      "status_flags": {
+        "pass": true
+      }
+    },
+    {
+      "matched_sources_sha256": {
+        "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+        "ptx_backend.py": "eb12a9bb28553caa5e75605506268109edd0739edfdfbdb6178096f7407fde73",
+        "ptx_bulk.py": "ab63f516681e78e06f4b7403b24018c60c8119b8c92c34f00236d74806406c65",
+        "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+        "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+      },
+      "original_path": "artifacts/validation/phase5/ptx-compatibility.json",
+      "production_identity_fields": {
+        "compiler_sources_after_sha256": {
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_backend.py": "eb12a9bb28553caa5e75605506268109edd0739edfdfbdb6178096f7407fde73",
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_bulk.py": "ab63f516681e78e06f4b7403b24018c60c8119b8c92c34f00236d74806406c65",
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+        },
+        "compiler_sources_before_sha256": {
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_backend.py": "eb12a9bb28553caa5e75605506268109edd0739edfdfbdb6178096f7407fde73",
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_bulk.py": "ab63f516681e78e06f4b7403b24018c60c8119b8c92c34f00236d74806406c65",
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+        }
+      },
+      "retained_path": "evidence/6db7227f7827640ebc9c75521702090490121f501f89e658a85fd2a5907b73bb.json",
+      "sha256": "6db7227f7827640ebc9c75521702090490121f501f89e658a85fd2a5907b73bb",
+      "status_flags": {
+        "pass": true
+      }
+    },
+    {
+      "matched_sources_sha256": {
+        "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+        "ptx_backend.py": "eb12a9bb28553caa5e75605506268109edd0739edfdfbdb6178096f7407fde73",
+        "ptx_bulk.py": "ab63f516681e78e06f4b7403b24018c60c8119b8c92c34f00236d74806406c65",
+        "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+        "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+      },
+      "original_path": "artifacts/validation/phase5/release-summary.json",
+      "production_identity_fields": {
+        "source_sha256": {
+          "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+          "ptx_backend.py": "eb12a9bb28553caa5e75605506268109edd0739edfdfbdb6178096f7407fde73",
+          "ptx_bulk.py": "ab63f516681e78e06f4b7403b24018c60c8119b8c92c34f00236d74806406c65",
+          "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+          "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+        }
+      },
+      "retained_path": "evidence/082ce3962a56140b329c42ecc4245edcea25e37bd03020366d259c42a851111b.json",
+      "sha256": "082ce3962a56140b329c42ecc4245edcea25e37bd03020366d259c42a851111b",
+      "status_flags": {
+        "pass": true
+      }
+    }
+  ],
+  "extracted_cli_verification": {
+    "argv": [
+      "python",
+      "-B",
+      "compile.py",
+      "<temporary-case>/k_add_pointwise.ir.json"
+    ],
+    "audit": {
+      "blocked_events": [],
+      "guard_enabled": true
+    },
+    "entry": "k_add_pointwise",
+    "extracted_source_sha256": {
+      "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+      "ptx_backend.py": "eb12a9bb28553caa5e75605506268109edd0739edfdfbdb6178096f7407fde73",
+      "ptx_bulk.py": "ab63f516681e78e06f4b7403b24018c60c8119b8c92c34f00236d74806406c65",
+      "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+      "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+    },
+    "input_path": "problems/p00_scalar_add/k_add_pointwise.ir.json",
+    "ir_sha256": "9b0357857f0b6504ae700e117e3c59f7cb66d9357f394aa81490fc2aea811df8",
+    "metadata_sha256": "e9ede16317b2f085eb6721d37ff9fefcb1ce86c2d8d837aff49a5f936b1affa1",
+    "pass": true,
+    "ptx_bytes": 1524,
+    "ptx_sha256": "c0d81f88369a245e4144ff5e364ed1139349e24a40f8b3ca26f6257b41729a41",
+    "scope": "Real extracted CLI on installed dependencies; no installation, assembly or GPU execution. Python audit guards are regression checks, not an OS sandbox."
+  },
+  "packager_sha256": "eb35e0389e490a3549e9a0fcf708d1604b6f111b342eec3dbae1b1cb4df05be1",
+  "pass": true,
+  "python_version": "3.12.7",
+  "schema": "emmy-submission-package-v1",
+  "source_identity_sha256": "a762243a66b4b7586ac61b077a39b9bbeda3870646afd32254ea337d16a6cad9",
+  "source_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "eb12a9bb28553caa5e75605506268109edd0739edfdfbdb6178096f7407fde73",
+    "ptx_bulk.py": "ab63f516681e78e06f4b7403b24018c60c8119b8c92c34f00236d74806406c65",
+    "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "zip": {
+    "bytes": 111830,
+    "compression": "stored",
+    "member_mode": "100644",
+    "member_timestamp": "1980-01-01T00:00:00",
+    "members": [
+      "compile.py",
+      "ptx_backend.py",
+      "ptx_bulk.py",
+      "ptx_tensor.py",
+      "requirements.txt"
+    ],
+    "path": "submission-a762243a66b4b7586ac6.zip",
+    "sha256": "598fe981e4471f46a3417cf2760412ee3fa6e39e66289c4beef425a30ac1c116"
+  }
+}

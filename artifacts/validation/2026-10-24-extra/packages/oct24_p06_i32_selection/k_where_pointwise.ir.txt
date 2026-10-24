@@ -1,0 +1,8 @@
+    Tile[a0] (N=1043)
+        in0 = load x[(a0 // 149), (a0 % 149)]
+        in1 = load y[(a0 // 149), (a0 % 149)]
+        i32 v0 = add(in0, in1)
+        bool v1 = less(in0, in1)
+        i32 v2 = subtract(in0, in1)
+        i32 v3 = where(v1, v2, v0)
+        where[(a0 // 149), (a0 % 149)] = v3

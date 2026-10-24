@@ -1,0 +1,71 @@
+{
+  "scope": "Independent exact host references materialized before compiler or GPU evaluation.",
+  "source_sha256": "d84e4ac22cbee1538ad29cee3cc5c2477e18f35c2a383c5d2e966b26604d8306",
+  "cases": [
+    {
+      "id": "async_two_groups_4_bytes",
+      "ir": "async_two_groups_4_bytes\\k_regression_async_two_groups_4_bytes.ir.json"
+    },
+    {
+      "id": "async_two_groups_8_bytes",
+      "ir": "async_two_groups_8_bytes\\k_regression_async_two_groups_8_bytes.ir.json"
+    },
+    {
+      "id": "async_two_groups_16_bytes",
+      "ir": "async_two_groups_16_bytes\\k_regression_async_two_groups_16_bytes.ir.json"
+    },
+    {
+      "id": "shared_write_swizzle_B32",
+      "ir": "shared_write_swizzle_B32\\k_regression_shared_write_swizzle_B32.ir.json"
+    },
+    {
+      "id": "shared_write_swizzle_B64",
+      "ir": "shared_write_swizzle_B64\\k_regression_shared_write_swizzle_B64.ir.json"
+    },
+    {
+      "id": "shared_write_swizzle_B128",
+      "ir": "shared_write_swizzle_B128\\k_regression_shared_write_swizzle_B128.ir.json"
+    },
+    {
+      "id": "shared_write_swizzle_B128_shift_7",
+      "ir": "shared_write_swizzle_B128_shift_7\\k_regression_shared_write_swizzle_B128_shift_7.ir.json"
+    },
+    {
+      "id": "dynamic_pool_distinct_alignment",
+      "ir": "dynamic_pool_distinct_alignment\\k_regression_dynamic_pool_distinct_alignment.ir.json"
+    },
+    {
+      "id": "unaligned_grouped_load_rows",
+      "ir": "unaligned_grouped_load_rows\\k_regression_unaligned_grouped_load_rows.ir.json"
+    }
+  ],
+  "files": {
+    "async_two_groups_16_bytes/expected.npz": "ff7940c2b1683ce51a8026bb57a0a31e937476098ca83e7ba42d5d02ade99a2c",
+    "async_two_groups_16_bytes/k_regression_async_two_groups_16_bytes.ir.json": "2aad993569c81ee26fb0f2ef488ac00c9c37b08bc00efde82ff96d51d3886985",
+    "async_two_groups_16_bytes/meta.json": "d32317e13c352601cded39d24709f754096cae6918494899031d0d107fc32d90",
+    "async_two_groups_4_bytes/expected.npz": "1b6dd232730235980eee5ef965faff1e2e73048d5b23df288bf5d2db0b1b2870",
+    "async_two_groups_4_bytes/k_regression_async_two_groups_4_bytes.ir.json": "59ac69bc5d50444e3d4c3025e9c6ccdb3c46b3d91399b10a20e660fcb5aea332",
+    "async_two_groups_4_bytes/meta.json": "10b9fed30bd6af723deea28f5be258097c7d7e8d969dcb6ba534d74ddb61e747",
+    "async_two_groups_8_bytes/expected.npz": "5361e6061c94443e3e2324c5e5e95724c3df192056674e004eeb0b568f66cf83",
+    "async_two_groups_8_bytes/k_regression_async_two_groups_8_bytes.ir.json": "ee4e2fdec70511f9aa4fca490573425fb1851034879b34e56498bf272c1ec107",
+    "async_two_groups_8_bytes/meta.json": "0ceb7fd28aefabdc3f2b80ebaf7914aee39dac53569c3bdbd5b4170cfe64b055",
+    "dynamic_pool_distinct_alignment/expected.npz": "b13eefd1a3f2af47d711ad335fac60f3ed59b26e813460b7ddd3c366e1393597",
+    "dynamic_pool_distinct_alignment/k_regression_dynamic_pool_distinct_alignment.ir.json": "b3e3c3b3848d8280f900ebbb1fe17380c537af09197e1cfdb39f6a913d8b9d27",
+    "dynamic_pool_distinct_alignment/meta.json": "3089ae0f46b27db9353226d2af9cec9eba14ad5c70d24b49d731cb3c144e1340",
+    "shared_write_swizzle_B128/expected.npz": "01efd28cb0e652432b92c46464e55279cd3734257b6ff169aae1cdff0f98fdfb",
+    "shared_write_swizzle_B128/k_regression_shared_write_swizzle_B128.ir.json": "50bae6385a36d53ad99d2b7254ec443778cf29ab79bd08cd672983d42a2123f8",
+    "shared_write_swizzle_B128/meta.json": "51aadb1c526ce17c2c87a197ca845c94ea2c3db8bee48480d5ba70caf36172ac",
+    "shared_write_swizzle_B128_shift_7/expected.npz": "8c722f5bdf3ebc01c83c41be09db95297c3e687f7c76940d82f99f27277ec2c3",
+    "shared_write_swizzle_B128_shift_7/k_regression_shared_write_swizzle_B128_shift_7.ir.json": "991bbd21da25582f15434e62677c45ec6d020c90aa8d32964b4e17be8ad01c53",
+    "shared_write_swizzle_B128_shift_7/meta.json": "bd78dd581eb914a30c1aee988087bb26da69b9c33c8fe74b90d47c6478cc7ee3",
+    "shared_write_swizzle_B32/expected.npz": "c01705290bf95883f76f3698292531f0ce03e8ee3618f7bb9f79918f3daddd85",
+    "shared_write_swizzle_B32/k_regression_shared_write_swizzle_B32.ir.json": "bbc246b504dbceac28cd1348b75596da4758f85f46f773ffc7f9c43f66250c9a",
+    "shared_write_swizzle_B32/meta.json": "7d7302e1f8e3a4c7f7b314313c0a457cf313029446beebddaf61c6d67325cf56",
+    "shared_write_swizzle_B64/expected.npz": "e4aeb219370311eff97bb72ca5dd9ec4ae465b4a3aac7149cb38a6fa60b0f22b",
+    "shared_write_swizzle_B64/k_regression_shared_write_swizzle_B64.ir.json": "f8584314a677a99669137d7fe64cff28b6b08286672e4139a029168672f768b4",
+    "shared_write_swizzle_B64/meta.json": "01ed58fd4f8c69aecec7dfdd3043afe2e25101ba6d81d675f8a8f04564db55cf",
+    "unaligned_grouped_load_rows/expected.npz": "02a6143bbe066d06bf42eabeff5e50fb0408f8e013244ede850623a22d3ae1cd",
+    "unaligned_grouped_load_rows/k_regression_unaligned_grouped_load_rows.ir.json": "5984c451ccbbf843b863ff14fb8b2e121ef7eae5bfc94e12e5050e6122dd3eb6",
+    "unaligned_grouped_load_rows/meta.json": "6a5dd61f4042af173e8acd261562f655770024eb45e597efca0879d5ee904b8a"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "scope": "Exact typed IR/input/reference packages only; no GPU execution",
+  "packages": [
+    {
+      "id": "ring_tensor_k80_f16",
+      "files_sha256": {
+        "expected.npz": "37c726271a70877f1a85d6ee072ba45db3a05a726e7deca128ca006aad12f7f8",
+        "k_regression_ring_tensor_k80_f16.ir.json": "9e9f6412b9d96184c4cd802069e5b1ac808c45a7a4c5c207b7af1224beada6a2",
+        "meta.json": "2304f261a9ff4241710c56ebc7bf83bf8933928fb684d529cdb165514674338a"
+      }
+    },
+    {
+      "id": "ring_tensor_k112_bf16",
+      "files_sha256": {
+        "expected.npz": "51f04132677bb7305108759a1d603b8f21be53233b79efad54773c3af7661215",
+        "k_regression_ring_tensor_k112_bf16.ir.json": "d9e63cff2853dda108e2f94c7d15b48430766ccbb4c5ee6873036f8e3cac8ab2",
+        "meta.json": "f925aa6bccfecd3d8ee2b74b200944dd2a288732c020d53cc69f056640b65c62"
+      }
+    },
+    {
+      "id": "ring_tensor_k112_f16_two_cta",
+      "files_sha256": {
+        "expected.npz": "4a6baa5d697c25d7e56bbd131b513e406effa97d3a079fff8e0231c243f9b5d4",
+        "k_regression_ring_tensor_k112_f16_two_cta.ir.json": "32efae37ccd1659b61d407ea723bda73f3ee5dfaed47d0c6e490ddc03b19c06e",
+        "meta.json": "a3ffde333e78eeb391d89f80fb342ba0fa3183357b64df8de4b4420a8f958295"
+      }
+    }
+  ],
+  "test_source_sha256": "1c6edc3873bde14e84659388b69fc7a2948d1519abe7de9b6d91c79e99f0b623"
+}

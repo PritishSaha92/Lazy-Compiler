@@ -1,0 +1,174 @@
+{
+  "created_utc": "2026-10-22T20:32:02.420464+00:00",
+  "scope": "Runner transport adaptation only. No compiler semantic change, changed IR, expected output, tolerance, input byte, or GPU execution.",
+  "reason": "Official runner accepts signed i32/i64 inputs but rejects unsigned u32/u64 descriptors.",
+  "packages": [
+    {
+      "id": "overflow_alignment_u32_grouped",
+      "original_package": "artifacts\\validation\\phase3\\release-remote\\typed-inputs\\overflow_alignment_u32_grouped",
+      "adapted_package": "artifacts\\validation\\phase3\\unsigned-transport\\overflow_alignment_u32_grouped",
+      "original_metadata_sha256": "892edfe55862e516b23a6988fe66413d5aba5be6055beee01bc075e77a478d40",
+      "adapted_metadata_sha256": "9c7511c7fc311a7e4790b5f6e6f6886a6f73a68d1b9ee3319c1cbc78f6390fee",
+      "ir_sha256": "49cb14218c3a6fc4b09ed97a7ecab783726149b46375f070d3fa0318bf99314b",
+      "expected_npz_sha256": "24283f51377cb5d842ea302bbf343b3cc02608eca17254f4d11286158f2aac25",
+      "original_ptx_sha256": "6b6eb1f57c0242d8df7740c4b17655a3981d757b7b3bc893ab41874efd8fbe35",
+      "adapted_ptx_sha256": "6b6eb1f57c0242d8df7740c4b17655a3981d757b7b3bc893ab41874efd8fbe35",
+      "ptx_bytes": 1203,
+      "ptx_byte_identical": true,
+      "inputs": [
+        {
+          "name": "indices",
+          "original_dtype": "u32",
+          "transport_dtype": "i32",
+          "shape": [
+            4
+          ],
+          "original_bytes_sha256": "c00544bcb8f3d6c2f8b5937480466651ee8fca9a6c8d2a130f00f3728bb35e9a",
+          "transport_bytes_sha256": "c00544bcb8f3d6c2f8b5937480466651ee8fca9a6c8d2a130f00f3728bb35e9a",
+          "byte_count": 16
+        },
+        {
+          "name": "x",
+          "original_dtype": "f32",
+          "transport_dtype": "f32",
+          "shape": [
+            6
+          ],
+          "original_bytes_sha256": "cb12e3c2f358439196bfc4a49585bb986d03faee1a4d104d39d81589470b93bf",
+          "transport_bytes_sha256": "cb12e3c2f358439196bfc4a49585bb986d03faee1a4d104d39d81589470b93bf",
+          "byte_count": 24
+        }
+      ]
+    },
+    {
+      "id": "overflow_alignment_u32_scalar",
+      "original_package": "artifacts\\validation\\phase3\\release-remote\\typed-inputs\\overflow_alignment_u32_scalar",
+      "adapted_package": "artifacts\\validation\\phase3\\unsigned-transport\\overflow_alignment_u32_scalar",
+      "original_metadata_sha256": "0110db1417e09dd9acf557653a431c7bc831b8dc264230284f473c696180899e",
+      "adapted_metadata_sha256": "ad5a43c0e0ab943d96d7d68204b316051a96be297704b91a80fd259f877a6c90",
+      "ir_sha256": "a63f8883bdf70b39c2233bd497ecd9901cb62d156a60c0b3a454b3b7212bf64f",
+      "expected_npz_sha256": "24283f51377cb5d842ea302bbf343b3cc02608eca17254f4d11286158f2aac25",
+      "original_ptx_sha256": "f80cbb2edce882e28f7b684fa0c277fef1a6fba014a9661dc607817996897dd7",
+      "adapted_ptx_sha256": "f80cbb2edce882e28f7b684fa0c277fef1a6fba014a9661dc607817996897dd7",
+      "ptx_bytes": 1297,
+      "ptx_byte_identical": true,
+      "inputs": [
+        {
+          "name": "indices",
+          "original_dtype": "u32",
+          "transport_dtype": "i32",
+          "shape": [
+            4
+          ],
+          "original_bytes_sha256": "c00544bcb8f3d6c2f8b5937480466651ee8fca9a6c8d2a130f00f3728bb35e9a",
+          "transport_bytes_sha256": "c00544bcb8f3d6c2f8b5937480466651ee8fca9a6c8d2a130f00f3728bb35e9a",
+          "byte_count": 16
+        },
+        {
+          "name": "x",
+          "original_dtype": "f32",
+          "transport_dtype": "f32",
+          "shape": [
+            6
+          ],
+          "original_bytes_sha256": "cb12e3c2f358439196bfc4a49585bb986d03faee1a4d104d39d81589470b93bf",
+          "transport_bytes_sha256": "cb12e3c2f358439196bfc4a49585bb986d03faee1a4d104d39d81589470b93bf",
+          "byte_count": 24
+        }
+      ]
+    },
+    {
+      "id": "overflow_alignment_u64_grouped",
+      "original_package": "artifacts\\validation\\phase3\\release-remote\\typed-inputs\\overflow_alignment_u64_grouped",
+      "adapted_package": "artifacts\\validation\\phase3\\unsigned-transport\\overflow_alignment_u64_grouped",
+      "original_metadata_sha256": "60ba4e3cf0817f790d1a312c42a754900c3701cdcd5b29a79b80b1a08a8e9a29",
+      "adapted_metadata_sha256": "defba24565f099244ed84f387fb0d5a1853d00372628efbbcf2cde86ad7447ea",
+      "ir_sha256": "23d14d9e7d5595d446874d55b1d1cc0eb997fedd4a033b95ea330f93f51e8840",
+      "expected_npz_sha256": "24283f51377cb5d842ea302bbf343b3cc02608eca17254f4d11286158f2aac25",
+      "original_ptx_sha256": "e39de96cce3ce9e80152330b7ce751cb710c001e719da6c8059b9a3859408198",
+      "adapted_ptx_sha256": "e39de96cce3ce9e80152330b7ce751cb710c001e719da6c8059b9a3859408198",
+      "ptx_bytes": 1238,
+      "ptx_byte_identical": true,
+      "inputs": [
+        {
+          "name": "indices",
+          "original_dtype": "u64",
+          "transport_dtype": "i64",
+          "shape": [
+            4
+          ],
+          "original_bytes_sha256": "38e924c84c4d82522d9cc2b92a82fcb329a755613e5c99d58d3ee376c955eb30",
+          "transport_bytes_sha256": "38e924c84c4d82522d9cc2b92a82fcb329a755613e5c99d58d3ee376c955eb30",
+          "byte_count": 32
+        },
+        {
+          "name": "x",
+          "original_dtype": "f32",
+          "transport_dtype": "f32",
+          "shape": [
+            6
+          ],
+          "original_bytes_sha256": "cb12e3c2f358439196bfc4a49585bb986d03faee1a4d104d39d81589470b93bf",
+          "transport_bytes_sha256": "cb12e3c2f358439196bfc4a49585bb986d03faee1a4d104d39d81589470b93bf",
+          "byte_count": 24
+        }
+      ]
+    },
+    {
+      "id": "overflow_alignment_u64_scalar",
+      "original_package": "artifacts\\validation\\phase3\\release-remote\\typed-inputs\\overflow_alignment_u64_scalar",
+      "adapted_package": "artifacts\\validation\\phase3\\unsigned-transport\\overflow_alignment_u64_scalar",
+      "original_metadata_sha256": "6fa1e3a6ebe16630894a74dbd57f61d01446b202c5753a5aee9af91693cf481d",
+      "adapted_metadata_sha256": "ddee50002d8086eadd5751924b8624886c3b32c4933f5ee98e6151d7dba8c12a",
+      "ir_sha256": "42d26c580e1ea61631a7095f2f098ccfabb624635b30b5ae03d60cabfe700f59",
+      "expected_npz_sha256": "24283f51377cb5d842ea302bbf343b3cc02608eca17254f4d11286158f2aac25",
+      "original_ptx_sha256": "973921773a5f7a7609f9b8c272ff884959fdaf981bfdf5fcc237891ecbfdb629",
+      "adapted_ptx_sha256": "973921773a5f7a7609f9b8c272ff884959fdaf981bfdf5fcc237891ecbfdb629",
+      "ptx_bytes": 1364,
+      "ptx_byte_identical": true,
+      "inputs": [
+        {
+          "name": "indices",
+          "original_dtype": "u64",
+          "transport_dtype": "i64",
+          "shape": [
+            4
+          ],
+          "original_bytes_sha256": "38e924c84c4d82522d9cc2b92a82fcb329a755613e5c99d58d3ee376c955eb30",
+          "transport_bytes_sha256": "38e924c84c4d82522d9cc2b92a82fcb329a755613e5c99d58d3ee376c955eb30",
+          "byte_count": 32
+        },
+        {
+          "name": "x",
+          "original_dtype": "f32",
+          "transport_dtype": "f32",
+          "shape": [
+            6
+          ],
+          "original_bytes_sha256": "cb12e3c2f358439196bfc4a49585bb986d03faee1a4d104d39d81589470b93bf",
+          "transport_bytes_sha256": "cb12e3c2f358439196bfc4a49585bb986d03faee1a4d104d39d81589470b93bf",
+          "byte_count": 24
+        }
+      ]
+    }
+  ],
+  "sources_before_sha256": {
+    "artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002",
+    "tools\\check_compiler.py": "8748e3acfa88795671a565273e556242bed0b800183b81ac17f1e7085fdcf7a3",
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "sources_after_sha256": {
+    "artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002",
+    "tools\\check_compiler.py": "8748e3acfa88795671a565273e556242bed0b800183b81ac17f1e7085fdcf7a3",
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "sources_unchanged": true,
+  "script_sha256": "7280f8da13e203610478131222151e9dd08493ecae82405b616e2dfcbbc055a4",
+  "gpu_executions": 0
+}

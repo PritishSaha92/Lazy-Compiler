@@ -1,0 +1,16 @@
+{
+  "frozen_utc": "2026-10-22T18:57:32.963473+00:00",
+  "holdout_manifest_sha256": "0b22012f98e13c8549924d4ad5886ba212fe007d1aa8576bd78b679841a2304f",
+  "files_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "0373bbc64340ae37274a67a92deb7320915ff4aa5cef97a231b3ac1ec7a2cc59",
+    "compile_strict.py": "53eb5a042d1b637c68aa2914d7a970b9f1ee0586c41bee56c7ac2a59ed91a5d0"
+  },
+  "policies": {
+    "default": "Unmodified compile.py from the frozen candidate",
+    "strict": "Same candidate backend; compensated_dots=False, accurate_dots=False, fuse_accumulations=False; other defaults unchanged"
+  },
+  "historical_baseline_available": false,
+  "comparison_scope": "Optional strict run is a numerical-policy ablation, not the unavailable historical 3e68 source revision.",
+  "compiler_evaluated_during_prepare": false
+}

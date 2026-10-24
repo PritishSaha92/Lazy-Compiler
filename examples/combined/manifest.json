@@ -1,0 +1,21 @@
+{
+  "scope": "Joint feature input/reference packages only; export performs no GPU execution",
+  "packages": [
+    {
+      "id": "bulk_tensor_k48_f16",
+      "files_sha256": {
+        "expected.npz": "3a2f6c59df7b5f8bfbb7cdb883499f889bf15bc913cdb2e9a1b8a9638abda28b",
+        "k_regression_bulk_tensor_k48_f16.ir.json": "e8263b38051eaf373ef708e32aaa53a34de3e05f074481a5eae41bab2385b267",
+        "meta.json": "83df34202786f13a756a6b7c35cb1f997f33b6b83d106500e57c051b5ae89149"
+      }
+    },
+    {
+      "id": "bulk_tensor_k48_bias_relu_transposed",
+      "files_sha256": {
+        "expected.npz": "b41055a81421ff7989c685d3ecfe01186d58aab8bc2439d99c8bad0ab7f2e1c7",
+        "k_regression_bulk_tensor_k48_bias_relu_transposed.ir.json": "523582997e10b3e2073ecc8e6f72e0d78bf91b2916824d02cafbe22c7deb711a",
+        "meta.json": "5fcb5cdaddd7ec63379abf7874a0da5ff1da21607dca72225d68375f5cc0de91"
+      }
+    }
+  ]
+}

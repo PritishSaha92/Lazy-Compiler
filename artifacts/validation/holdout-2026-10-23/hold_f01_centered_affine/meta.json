@@ -1,0 +1,130 @@
+{
+ "id": "hold_f01_centered_affine",
+ "code": "x=torch.randn(11,197); w=torch.randn(197); b=torch.randn(197); (x-x.mean(-1,keepdim=True))/torch.sqrt(((x-x.mean(-1,keepdim=True))*(x-x.mean(-1,keepdim=True))).mean(-1,keepdim=True)+0.002)*w+b",
+ "rtol": 0.001,
+ "atol": 0.0001,
+ "graph_inputs": [
+  "x",
+  "w",
+  "b"
+ ],
+ "graph_outputs": [
+  "add_1"
+ ],
+ "kernels": [
+  {
+   "node": "add_1",
+   "entry": "k_mean_reduce_e2dbd4",
+   "arg_order": [
+    "mean_2_count",
+    "mean_1_count",
+    "mean_3_count",
+    "mean_count",
+    "add_c1",
+    "x",
+    "w",
+    "b",
+    "add_1"
+   ],
+   "grid": [
+    11,
+    1,
+    1
+   ],
+   "block": [
+    128,
+    1,
+    1
+   ],
+   "smem_bytes": 0,
+   "zero_outputs": [],
+   "args": [
+    {
+     "name": "mean_2_count",
+     "dtype": "f32",
+     "shape": [
+      1
+     ],
+     "data": [
+      197.0
+     ]
+    },
+    {
+     "name": "mean_1_count",
+     "dtype": "f32",
+     "shape": [
+      1
+     ],
+     "data": [
+      197.0
+     ]
+    },
+    {
+     "name": "mean_3_count",
+     "dtype": "f32",
+     "shape": [
+      1
+     ],
+     "data": [
+      197.0
+     ]
+    },
+    {
+     "name": "mean_count",
+     "dtype": "f32",
+     "shape": [
+      1
+     ],
+     "data": [
+      197.0
+     ]
+    },
+    {
+     "name": "add_c1",
+     "dtype": "f32",
+     "shape": [
+      1
+     ],
+     "data": [
+      0.002
+     ]
+    },
+    {
+     "name": "x",
+     "dtype": "f32",
+     "shape": [
+      11,
+      197
+     ],
+     "seed": 0
+    },
+    {
+     "name": "w",
+     "dtype": "f32",
+     "shape": [
+      197
+     ],
+     "seed": 1
+    },
+    {
+     "name": "b",
+     "dtype": "f32",
+     "shape": [
+      197
+     ],
+     "seed": 2
+    },
+    {
+     "name": "add_1",
+     "dtype": "f32",
+     "shape": [
+      11,
+      197
+     ],
+     "output": true
+    }
+   ],
+   "final": true
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+    Tile[a0] (N=1031)
+        in1 = load x[a0]
+        f16 v0 = abs(in1)
+        in0 = load add_c1[0]
+        f16 v1 = add(in0, v0)
+        f16 v2 = sqrt(v1)
+        sqrt[a0] = v2

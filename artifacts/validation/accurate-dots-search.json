@@ -1,0 +1,496 @@
+{
+  "configurations": {
+    "accurate_loops": {
+      "unroll_budget": 0,
+      "accurate_dots": true
+    },
+    "accurate_unroll": {
+      "unroll_budget": 1024,
+      "accurate_dots": true
+    }
+  },
+  "rounds": 3,
+  "compiler_sha256": "1e2c37259863637c51a619192a58acb28a3d80243df1bce5e70d885a871e3453",
+  "results": [
+    {
+      "problem": "m01_matmul_512",
+      "configuration": "accurate_loops",
+      "compile_seconds": 0.046259599999757484,
+      "ptx_bytes": 14145,
+      "ptx_sha256": "b5746c6e0197f1fdecd1e1601ba31a84bd7b115c380361ed9afbb9cc190c2c6d",
+      "registers": {
+        "k_matmul_2967be": 38
+      },
+      "assembly": true,
+      "correctness": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "outputs": [
+            {
+              "name": "matmul",
+              "pass": true,
+              "elements": 262144,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ],
+          "pass": true
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "outputs": [
+            {
+              "name": "matmul",
+              "pass": true,
+              "elements": 262144,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ],
+          "pass": true
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "outputs": [
+            {
+              "name": "matmul",
+              "pass": true,
+              "elements": 262144,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "timings_us": [
+        410.224,
+        410.272,
+        410.24
+      ]
+    },
+    {
+      "problem": "m01_matmul_512",
+      "configuration": "accurate_unroll",
+      "compile_seconds": 0.1977449000114575,
+      "ptx_bytes": 175988,
+      "ptx_sha256": "a8f03e8f19d084e07c5dae72f1f5b95a716f04c9b41d356a552d8205e1a975b8",
+      "registers": {
+        "k_matmul_2967be": 38
+      },
+      "assembly": true,
+      "correctness": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "outputs": [
+            {
+              "name": "matmul",
+              "pass": true,
+              "elements": 262144,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ],
+          "pass": true
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "outputs": [
+            {
+              "name": "matmul",
+              "pass": true,
+              "elements": 262144,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ],
+          "pass": true
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "outputs": [
+            {
+              "name": "matmul",
+              "pass": true,
+              "elements": 262144,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "timings_us": [
+        402.048,
+        403.856,
+        404.032
+      ]
+    },
+    {
+      "problem": "m02_matmul_rect",
+      "configuration": "accurate_loops",
+      "compile_seconds": 0.010869399993680418,
+      "ptx_bytes": 5298,
+      "ptx_sha256": "c274222cc83e0fc1027be36edd6d4915b55b6ad2e8ed5f70f7af6b278134d62d",
+      "registers": {
+        "k_matmul": 38
+      },
+      "assembly": true,
+      "correctness": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "outputs": [
+            {
+              "name": "matmul",
+              "pass": true,
+              "elements": 8192,
+              "mismatches": 0,
+              "max_abs_error": 1.1444091796875e-05
+            }
+          ],
+          "pass": true
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "outputs": [
+            {
+              "name": "matmul",
+              "pass": true,
+              "elements": 8192,
+              "mismatches": 0,
+              "max_abs_error": 1.52587890625e-05
+            }
+          ],
+          "pass": true
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "outputs": [
+            {
+              "name": "matmul",
+              "pass": true,
+              "elements": 8192,
+              "mismatches": 0,
+              "max_abs_error": 0.000732421875
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "timings_us": [
+        13.072,
+        13.168,
+        13.136
+      ]
+    },
+    {
+      "problem": "m02_matmul_rect",
+      "configuration": "accurate_unroll",
+      "compile_seconds": 0.013963200006401166,
+      "ptx_bytes": 13582,
+      "ptx_sha256": "cbdc0771f069f72bedfc57336ae62a38400cf71a3dabfb51702463935e6e645f",
+      "registers": {
+        "k_matmul": 38
+      },
+      "assembly": true,
+      "correctness": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "outputs": [
+            {
+              "name": "matmul",
+              "pass": true,
+              "elements": 8192,
+              "mismatches": 0,
+              "max_abs_error": 1.1444091796875e-05
+            }
+          ],
+          "pass": true
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "outputs": [
+            {
+              "name": "matmul",
+              "pass": true,
+              "elements": 8192,
+              "mismatches": 0,
+              "max_abs_error": 1.1444091796875e-05
+            }
+          ],
+          "pass": true
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "outputs": [
+            {
+              "name": "matmul",
+              "pass": true,
+              "elements": 8192,
+              "mismatches": 0,
+              "max_abs_error": 0.000732421875
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "timings_us": [
+        13.216,
+        13.168,
+        13.12
+      ]
+    },
+    {
+      "problem": "a01_attention",
+      "configuration": "accurate_loops",
+      "compile_seconds": 0.0319170999864582,
+      "ptx_bytes": 14154,
+      "ptx_sha256": "9e89f912895e6cec64a08f860a2f787a60eb1d6dc8ab98dbe1cc05cae7bb5c55",
+      "registers": {
+        "k_matmul_softmax_reduce_b55365": 168
+      },
+      "assembly": true,
+      "correctness": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "outputs": [
+            {
+              "name": "matmul_1",
+              "pass": true,
+              "elements": 4096,
+              "mismatches": 0,
+              "max_abs_error": 2.980232238769531e-07
+            }
+          ],
+          "pass": true
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "outputs": [
+            {
+              "name": "matmul_1",
+              "pass": true,
+              "elements": 4096,
+              "mismatches": 0,
+              "max_abs_error": 2.980232238769531e-07
+            }
+          ],
+          "pass": true
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "outputs": [
+            {
+              "name": "matmul_1",
+              "pass": true,
+              "elements": 4096,
+              "mismatches": 0,
+              "max_abs_error": 1.33514404296875e-05
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "timings_us": [
+        984.448,
+        984.448,
+        984.432
+      ]
+    },
+    {
+      "problem": "a01_attention",
+      "configuration": "accurate_unroll",
+      "compile_seconds": 0.02667799999471754,
+      "ptx_bytes": 14154,
+      "ptx_sha256": "9e89f912895e6cec64a08f860a2f787a60eb1d6dc8ab98dbe1cc05cae7bb5c55",
+      "registers": {
+        "k_matmul_softmax_reduce_b55365": 168
+      },
+      "assembly": true,
+      "correctness": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "outputs": [
+            {
+              "name": "matmul_1",
+              "pass": true,
+              "elements": 4096,
+              "mismatches": 0,
+              "max_abs_error": 2.980232238769531e-07
+            }
+          ],
+          "pass": true
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "outputs": [
+            {
+              "name": "matmul_1",
+              "pass": true,
+              "elements": 4096,
+              "mismatches": 0,
+              "max_abs_error": 2.980232238769531e-07
+            }
+          ],
+          "pass": true
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "outputs": [
+            {
+              "name": "matmul_1",
+              "pass": true,
+              "elements": 4096,
+              "mismatches": 0,
+              "max_abs_error": 1.33514404296875e-05
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "timings_us": [
+        984.784,
+        985.52,
+        984.32
+      ]
+    },
+    {
+      "problem": "a02_attention_128",
+      "configuration": "accurate_loops",
+      "compile_seconds": 0.007913000008556992,
+      "ptx_bytes": 3457,
+      "ptx_sha256": "ec3501c90e35617993909d3398e0b6c6fe5e3c5738ab83757bd1b83e24d123de",
+      "registers": {
+        "k_matmul_softmax_reduce_6f0029": 96
+      },
+      "assembly": true,
+      "correctness": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "outputs": [
+            {
+              "name": "matmul_1",
+              "pass": true,
+              "elements": 4096,
+              "mismatches": 0,
+              "max_abs_error": 3.8743019104003906e-07
+            }
+          ],
+          "pass": true
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "outputs": [
+            {
+              "name": "matmul_1",
+              "pass": true,
+              "elements": 4096,
+              "mismatches": 0,
+              "max_abs_error": 2.682209014892578e-07
+            }
+          ],
+          "pass": true
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "outputs": [
+            {
+              "name": "matmul_1",
+              "pass": true,
+              "elements": 4096,
+              "mismatches": 0,
+              "max_abs_error": 3.4332275390625e-05
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "timings_us": [
+        207.36,
+        207.456,
+        207.44
+      ]
+    },
+    {
+      "problem": "a02_attention_128",
+      "configuration": "accurate_unroll",
+      "compile_seconds": 0.005658700014464557,
+      "ptx_bytes": 3457,
+      "ptx_sha256": "ec3501c90e35617993909d3398e0b6c6fe5e3c5738ab83757bd1b83e24d123de",
+      "registers": {
+        "k_matmul_softmax_reduce_6f0029": 96
+      },
+      "assembly": true,
+      "correctness": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "outputs": [
+            {
+              "name": "matmul_1",
+              "pass": true,
+              "elements": 4096,
+              "mismatches": 0,
+              "max_abs_error": 3.8743019104003906e-07
+            }
+          ],
+          "pass": true
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "outputs": [
+            {
+              "name": "matmul_1",
+              "pass": true,
+              "elements": 4096,
+              "mismatches": 0,
+              "max_abs_error": 2.682209014892578e-07
+            }
+          ],
+          "pass": true
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "outputs": [
+            {
+              "name": "matmul_1",
+              "pass": true,
+              "elements": 4096,
+              "mismatches": 0,
+              "max_abs_error": 3.4332275390625e-05
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "timings_us": [
+        207.44,
+        207.456,
+        207.456
+      ]
+    }
+  ]
+}

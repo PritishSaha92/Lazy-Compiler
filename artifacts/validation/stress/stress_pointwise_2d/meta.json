@@ -1,0 +1,55 @@
+{
+ "id": "stress_pointwise_2d",
+ "code": "x=torch.randn(17,65); torch.tanh(x) + torch.sigmoid(x)",
+ "rtol": 0.0001,
+ "atol": 1e-05,
+ "graph_inputs": [
+  "x"
+ ],
+ "graph_outputs": [
+  "add"
+ ],
+ "kernels": [
+  {
+   "node": "add",
+   "entry": "k_add_pointwise",
+   "arg_order": [
+    "x",
+    "add"
+   ],
+   "grid": [
+    5,
+    1,
+    1
+   ],
+   "block": [
+    256,
+    1,
+    1
+   ],
+   "smem_bytes": 0,
+   "zero_outputs": [],
+   "args": [
+    {
+     "name": "x",
+     "dtype": "f32",
+     "shape": [
+      17,
+      65
+     ],
+     "seed": 0
+    },
+    {
+     "name": "add",
+     "dtype": "f32",
+     "shape": [
+      17,
+      65
+     ],
+     "output": true
+    }
+   ],
+   "final": true
+  }
+ ]
+}

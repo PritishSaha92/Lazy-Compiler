@@ -1,0 +1,88 @@
+{
+  "frozen_utc": "2026-10-22T19:54:00.804016+00:00",
+  "scope": "CPU checked and packaged before PTX evaluation; not organizer hidden tests.",
+  "compiler_evaluated_before_freeze": false,
+  "planned_workloads": 6,
+  "workloads": [
+    {
+      "id": "phase3_p01_three_axis_broadcast",
+      "category": "pointwise",
+      "family": "three-dimensional independent axis broadcasts",
+      "kernels": 1,
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "id": "phase3_f01_column_softmax",
+      "category": "fused",
+      "family": "non-innermost online normalizer with ragged column count",
+      "kernels": 1,
+      "rtol": 0.001,
+      "atol": 1e-05
+    },
+    {
+      "id": "phase3_f02_centered_column_l2",
+      "category": "fused",
+      "family": "noncontiguous centered normalization with reduction reuse",
+      "kernels": 1,
+      "rtol": 0.001,
+      "atol": 0.0001
+    },
+    {
+      "id": "phase3_m01_batched_odd_matmul",
+      "category": "matmul",
+      "family": "three-dimensional batched contraction with ragged dimensions",
+      "kernels": 1,
+      "rtol": 0.001,
+      "atol": 0.001
+    },
+    {
+      "id": "phase3_a01_irregular_attention",
+      "category": "attention",
+      "family": "online attention with all four matrix dimensions irregular",
+      "kernels": 1,
+      "rtol": 0.001,
+      "atol": 0.0001
+    }
+  ],
+  "missing_frontend_packages": [
+    "phase3_r01_product_sigmoid"
+  ],
+  "cpu_reference_checks": 18,
+  "sources_sha256": {
+    "tests/expressions_phase3.py": "ef49b645ff75dd28e9e746324c04e4c3b6b0a99bdaff082cbefb51b1159d7a43",
+    "tests/check_holdout_references.py": "003f037f8f4ddb9473e3d38b0d5ae1776c527c7a5394bc278d63d86140474576",
+    "tests/generate_stress.py": "b90f9b7f377385f3a7c56da615fc1c408e0e381927d0fdc81cb42ab4536b57e3",
+    "tools/generate.py": "841be781022059907a18acb0673c1bc1b206826d22043fe6521ec14ee9840b1b",
+    "tools/check_phase3_references.py": "5654d75abfd3024017b8a4a6530ed6c33298b35cdb11c66961aa65a4b0ac2ddd"
+  },
+  "files_sha256": {
+    "schedules/phase3_p01_three_axis_broadcast/expected.npz": "9cffed9e5b47821e7fc205a6b8f828287f7c5da22f64c3eac57d87c77a51fbb9",
+    "schedules/phase3_p01_three_axis_broadcast/k_relu_pointwise.ir.json": "907815dd172109165a536ca32a804a7193c2a96b85ed6e6498101df056611adf",
+    "schedules/phase3_p01_three_axis_broadcast/k_relu_pointwise.ir.txt": "ee7b3cb58af05c791bb6c67f178689f8719cdc66c9b500d25a86f8ed55ffbd0f",
+    "schedules/phase3_p01_three_axis_broadcast/k_relu_pointwise.ref.cu": "bc8f26a62d3e40c3e05ff0c6b050a55f365eb8e12bcbe8440af5f6e7af6ad6c4",
+    "schedules/phase3_p01_three_axis_broadcast/meta.json": "a8a2f30bf334d5f074756de550db33c9c32db16779f9a4c690bc6fadbc3b21d9",
+    "schedules/phase3_f01_column_softmax/expected.npz": "8d3ce4e438884584a1edf2dfeb9b06317301525c956c10cac91b5d7d04b3406d",
+    "schedules/phase3_f01_column_softmax/k_softmax_5b5f5a.ir.json": "aa5670fb6beda2de1b3af8e20fed6fc0aa98469face4e0578700b6e37790d740",
+    "schedules/phase3_f01_column_softmax/k_softmax_5b5f5a.ir.txt": "0b502513d8dd02954632b696c9d944389fc0df684eff7d5b66ed85683dee9e9c",
+    "schedules/phase3_f01_column_softmax/k_softmax_5b5f5a.ref.cu": "89e963d30a9150ef4e14c0f69464db2da9db41f2664182fb23d751757ecd3889",
+    "schedules/phase3_f01_column_softmax/meta.json": "ece062d9835e54f197077041977fd6a7bf51b1c6639988b414dd5800ec3c24aa",
+    "schedules/phase3_f02_centered_column_l2/expected.npz": "a0cfbef2dc9a75cd1cacf1a66102791604f615ad89cbcde7dcc19ac0aefc65ab",
+    "schedules/phase3_f02_centered_column_l2/k_mean_reduce_18dd53.ir.json": "3f3020549914e4fd90f6a48a71ecddf26c4c0b99555850c11ac6c1ef4b224b22",
+    "schedules/phase3_f02_centered_column_l2/k_mean_reduce_18dd53.ir.txt": "b5095c86ad7eb82a3a44f0b4b99884e20754db3275b5fdacfa3bef7faf413189",
+    "schedules/phase3_f02_centered_column_l2/k_mean_reduce_18dd53.ref.cu": "6c0754a614cf159a679aad8caf8556bda3fce65213c8f702ecc07f0a1f6b4dcf",
+    "schedules/phase3_f02_centered_column_l2/meta.json": "858c34c7e9ed9adeb384611f0d6bb60ceeab5a7221367096b64ee382384c44a0",
+    "schedules/phase3_m01_batched_odd_matmul/expected.npz": "d38c575ac77926979251f81505c1cc8ece7d211e3b03d63564bba70291a83993",
+    "schedules/phase3_m01_batched_odd_matmul/k_matmul_44c580.ir.json": "280e60ba304016a4c8d210fc47e13e6282993c1cd6969e29b5b589308d71633d",
+    "schedules/phase3_m01_batched_odd_matmul/k_matmul_44c580.ir.txt": "691a8d4084bdc0a3be656859806f3416f410224b5d81b92a9fcdb2d0a913295a",
+    "schedules/phase3_m01_batched_odd_matmul/k_matmul_44c580.ref.cu": "af60cf804d3582f3763434fd018509ff14de22a56eb91c96b42da5399e602cc5",
+    "schedules/phase3_m01_batched_odd_matmul/meta.json": "14d9f77a59fd932888bcc9f155b06b2dd200c91568c13d2ff1f4db356dc695a8",
+    "schedules/phase3_a01_irregular_attention/expected.npz": "d3f6c1d956b96c26c43041984baa4b81abe326728b5c497e1851714f75561479",
+    "schedules/phase3_a01_irregular_attention/k_matmul_softmax_reduce_887429.ir.json": "5c8d50fd1088134e09a1852b25607c574de2a07e8154419808f6269af63a35d2",
+    "schedules/phase3_a01_irregular_attention/k_matmul_softmax_reduce_887429.ir.txt": "c55b8955e6a4b8d992f6bf8832dd53ff4d9d68333bfad48dcfb87830a4054759",
+    "schedules/phase3_a01_irregular_attention/k_matmul_softmax_reduce_887429.ref.cu": "754269700298c19c87a6bdcfd4bfe667a5d4fd2f694065e2d7aa8d9d67e774e9",
+    "schedules/phase3_a01_irregular_attention/meta.json": "30d07eb8df129d51646080850f26c992142ad0a6114e9450c285595ad06770e3",
+    "reference-sanity.json": "cc1bea42426b4b7d1aa5f1af0f2456d116a8016b85b422055c5431950ac905b9",
+    "generation-product-recheck.log": "2b82e490ece29f5ec1800a0652a94dc656b4489fe33b59b7eca0a6c9692aaa39"
+  }
+}

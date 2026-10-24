@@ -1,0 +1,55 @@
+{
+  "inputs": [
+    "x"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            2,
+            3,
+            4,
+            8
+          ],
+          "dtype": "f32"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='cell', extent=Dim(32), window=None),), body=(Smem(name='scratch', extents=(2, 1, 2, 2, 4), dtype='float', align=16), Smem(name='bar', extents=(1,), dtype='unsigned long long', align=8), TmaDescriptor(name='desc', src_buf='x', src_shape=(3, 2, 3, 4, 8), box_extents=(2, 1, 2, 2, 4), swizzle='NONE', dtype='float'), Cond(cond=BinaryExpr(op='==', left=Var(name='_tid'), right=Literal(value=0, dtype='int')), body=(MbarrierInit(mbar='bar', count=1, slot=None),), else_body=()), Sync(barrier_id=0, count=None, warp=False), Cond(cond=BinaryExpr(op='==', left=Var(name='_tid'), right=Literal(value=0, dtype='int')), body=(MbarrierArriveExpectTx(mbar='bar', bytes_=128, slot=None), TmaLoad(smem='scratch', smem_index=(Literal(value=0, dtype='int'),), desc='desc', coords=(Literal(value=1, dtype='int'), Literal(value=1, dtype='int'), Literal(value=1, dtype='int'), Literal(value=1, dtype='int'), Literal(value=4, dtype='int')), mbar='bar', mbar_slot=None)), else_body=()), MbarrierWait(mbar='bar', phase=Literal(value=0, dtype='int'), slot=None), Load(names=('value',), input='scratch', index=(Var(name='cell'),), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='out', index=(Var(name='cell'),), values=('value',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE')), block_threads=32, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_bulk_rank5_crop",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            2,
+            1,
+            2,
+            2,
+            4
+          ],
+          "dtype": "f32"
+        }
+      ]
+    }
+  }
+}

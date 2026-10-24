@@ -1,0 +1,115 @@
+{
+  "created_utc": "2026-10-22T20:36:55.713785+00:00",
+  "scope": "Input transport only; no GPU calls or compiler semantic changes.",
+  "sources_before_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84",
+    "tools\\check_compiler.py": "e706045368a83ccb4f10577f7952cdb0f8bb2363184efca7a68083459dbe4263",
+    "artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+  },
+  "sources_after_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84",
+    "tools\\check_compiler.py": "e706045368a83ccb4f10577f7952cdb0f8bb2363184efca7a68083459dbe4263",
+    "artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+  },
+  "sources_unchanged": true,
+  "script_sha256": "f2bbec1d316907acad87b1e4d27a5ea35ca548968ced94328fc48e5541bbd5cd",
+  "gpu_executions": 0,
+  "probes": [
+    {
+      "id": "safe_u64_wire_roundtrip",
+      "original": "artifacts\\validation\\phase3\\word-transport-diagnostic\\unsigned-reference",
+      "adapted": "artifacts\\validation\\phase3\\word-transport-diagnostic\\old-i64-wire",
+      "inputs": [
+        {
+          "name": "indices",
+          "original_dtype": "u64",
+          "transport_dtype": "i64",
+          "original_shape": [
+            4
+          ],
+          "transport_shape": [
+            4
+          ],
+          "bytes": 32,
+          "original_bytes_sha256": "38e924c84c4d82522d9cc2b92a82fcb329a755613e5c99d58d3ee376c955eb30",
+          "transport_bytes_sha256": "38e924c84c4d82522d9cc2b92a82fcb329a755613e5c99d58d3ee376c955eb30"
+        }
+      ],
+      "original_metadata_sha256": "9be25d079fce945fdc8e463333723f12ec86198477f2651fb39a7358360f8f47",
+      "adapted_metadata_sha256": "72c476930fa5abe377ae418ce017aa50ae20e491086cb30564850c14ee4dc902",
+      "ir_sha256": "005d0f64da940a4258ad1282a45f1375b52e66b4579f673e8877e24c2f4814cb",
+      "expected_npz_sha256": "013a8c05cc08bedec9946e6b8fe2df775b48a9f1999923227e5d451f8c5983a0",
+      "original_ptx_sha256": "4fe49fc5030c2bd184b6a614e0774ed93e15535b2ae71c1a13a60890c96d7d58",
+      "adapted_ptx_sha256": "4fe49fc5030c2bd184b6a614e0774ed93e15535b2ae71c1a13a60890c96d7d58",
+      "ptx_byte_identical": true
+    },
+    {
+      "id": "safe_u64_wire_roundtrip",
+      "original": "artifacts\\validation\\phase3\\word-transport-diagnostic\\unsigned-reference",
+      "adapted": "artifacts\\validation\\phase3\\word-transport-diagnostic\\new-i32-words",
+      "inputs": [
+        {
+          "name": "indices",
+          "original_dtype": "u64",
+          "transport_dtype": "i32",
+          "original_shape": [
+            4
+          ],
+          "transport_shape": [
+            8
+          ],
+          "bytes": 32,
+          "original_bytes_sha256": "38e924c84c4d82522d9cc2b92a82fcb329a755613e5c99d58d3ee376c955eb30",
+          "transport_bytes_sha256": "38e924c84c4d82522d9cc2b92a82fcb329a755613e5c99d58d3ee376c955eb30"
+        }
+      ],
+      "original_metadata_sha256": "9be25d079fce945fdc8e463333723f12ec86198477f2651fb39a7358360f8f47",
+      "adapted_metadata_sha256": "efae5bcf594d07f050737cd110b73959545a81e347c85283830862653686a93a",
+      "ir_sha256": "005d0f64da940a4258ad1282a45f1375b52e66b4579f673e8877e24c2f4814cb",
+      "expected_npz_sha256": "013a8c05cc08bedec9946e6b8fe2df775b48a9f1999923227e5d451f8c5983a0",
+      "original_ptx_sha256": "4fe49fc5030c2bd184b6a614e0774ed93e15535b2ae71c1a13a60890c96d7d58",
+      "adapted_ptx_sha256": "4fe49fc5030c2bd184b6a614e0774ed93e15535b2ae71c1a13a60890c96d7d58",
+      "ptx_byte_identical": true
+    }
+  ],
+  "original_u64_values": [
+    0,
+    1,
+    6148914691236517206,
+    6148914691236517207
+  ],
+  "original_input_bytes_hex": "0000000000000000010000000000000056555555555555555755555555555555",
+  "expected_u16_words_as_f32": [
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      21846.0,
+      21845.0,
+      21845.0,
+      21845.0
+    ],
+    [
+      21847.0,
+      21845.0,
+      21845.0,
+      21845.0
+    ]
+  ],
+  "address_proof": "Only guarded i in0..3 indexes input[i] and output[i,0..3]. Loaded input bits are used only as values; they never participate in memory addresses."
+}

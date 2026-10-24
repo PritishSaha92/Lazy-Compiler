@@ -1,0 +1,3 @@
+  FAIL  phase3_r01_product_sigmoid trace: ValueError: cannot map fallback aten.prod as elementwise for output shape (37,)
+
+0 ok, 1 failed: ['phase3_r01_product_sigmoid']

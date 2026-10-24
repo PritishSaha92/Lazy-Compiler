@@ -1,0 +1,5 @@
+{
+  "spoken_words": 609,
+  "counting_method": "Whitespace-separated words between the spoken-script markers",
+  "script": "docs/VIDEO_SCRIPT.md"
+}

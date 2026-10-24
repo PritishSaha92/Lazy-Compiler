@@ -1,0 +1,87 @@
+{
+  "pass": true,
+  "checked_utc": "2026-10-24T00:55:34.203027+00:00",
+  "summary_sha256": "24e63ce7c85c6e8296c43a0cc0567ef228ab2b35d948ed8a2793f1dada00694f",
+  "manifest_sha256": "c16199a79e040924efaecfe0eafbe3ccfcce1a2ddda504f26c1b66f5c8dccf49",
+  "exact_unique_checks": 9,
+  "packages": 3,
+  "provenance": "Explicit test-only FP64-state IR variants; original generated failures remain archived",
+  "events": 15,
+  "http_attempts": 15,
+  "source_and_artifact_hashes_unchanged": true,
+  "raw_outputs_revalidated": true,
+  "request_arguments_match_intended_inputs": true,
+  "raw_output_shapes_and_dtypes_match_metadata_and_references": true,
+  "ptx_request_hashes_match_cli_records": true,
+  "no_f32_ptx_instructions": true,
+  "parent_preservation_checks": [
+    {
+      "id": "typed_oct24_f64_state_sum",
+      "parent": "artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r03_f64_column_sum",
+      "reference_npz_byte_identical": true,
+      "control_flow_addresses_launch_preserved": true,
+      "no_f32_typed_states": true
+    },
+    {
+      "id": "typed_oct24_f64_state_matmul",
+      "parent": "artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m01_f64_ragged",
+      "reference_npz_byte_identical": true,
+      "control_flow_addresses_launch_preserved": true,
+      "no_f32_typed_states": true
+    },
+    {
+      "id": "typed_oct24_f64_state_centered_norm",
+      "parent": "artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f01_f64_centered_norm_inline",
+      "reference_npz_byte_identical": true,
+      "control_flow_addresses_launch_preserved": true,
+      "no_f32_typed_states": true
+    }
+  ],
+  "checks": [
+    [
+      "typed_oct24_f64_state_sum",
+      0,
+      "normal"
+    ],
+    [
+      "typed_oct24_f64_state_sum",
+      17,
+      "normal"
+    ],
+    [
+      "typed_oct24_f64_state_sum",
+      101,
+      "wide"
+    ],
+    [
+      "typed_oct24_f64_state_matmul",
+      0,
+      "normal"
+    ],
+    [
+      "typed_oct24_f64_state_matmul",
+      17,
+      "normal"
+    ],
+    [
+      "typed_oct24_f64_state_matmul",
+      101,
+      "wide"
+    ],
+    [
+      "typed_oct24_f64_state_centered_norm",
+      0,
+      "normal"
+    ],
+    [
+      "typed_oct24_f64_state_centered_norm",
+      17,
+      "normal"
+    ],
+    [
+      "typed_oct24_f64_state_centered_norm",
+      101,
+      "wide"
+    ]
+  ]
+}

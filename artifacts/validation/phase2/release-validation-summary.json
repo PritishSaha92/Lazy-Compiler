@@ -1,0 +1,104 @@
+{
+  "updated_utc": "2026-10-22T19:10:17.586201+00:00",
+  "candidate_source": {
+    "frozen_utc": "2026-10-22T18:57:32.963473+00:00",
+    "holdout_manifest_sha256": "0b22012f98e13c8549924d4ad5886ba212fe007d1aa8576bd78b679841a2304f",
+    "files_sha256": {
+      "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+      "ptx_backend.py": "0373bbc64340ae37274a67a92deb7320915ff4aa5cef97a231b3ac1ec7a2cc59",
+      "compile_strict.py": "53eb5a042d1b637c68aa2914d7a970b9f1ee0586c41bee56c7ac2a59ed91a5d0"
+    },
+    "policies": {
+      "default": "Unmodified compile.py from the frozen candidate",
+      "strict": "Same candidate backend; compensated_dots=False, accurate_dots=False, fuse_accumulations=False; other defaults unchanged"
+    },
+    "historical_baseline_available": false,
+    "comparison_scope": "Optional strict run is a numerical-policy ablation, not the unavailable historical 3e68 source revision.",
+    "compiler_evaluated_during_prepare": false
+  },
+  "primary_gates": [
+    {
+      "name": "public normal",
+      "report": "release-public-normal.json",
+      "report_sha256": "3c12d84d32638e8a6370257d2903fe240481913bfb1e294477f41f301d06b004",
+      "workloads": 15,
+      "numerical_cases": 30,
+      "passed_cases": 30
+    },
+    {
+      "name": "public value stress",
+      "report": "release-public-stress.json",
+      "report_sha256": "a374ee9e2048ba771832fe2e53dfa8022a650cb5f3991fa03568afbb3910571a",
+      "workloads": 15,
+      "numerical_cases": 45,
+      "passed_cases": 45
+    },
+    {
+      "name": "prior fresh workloads",
+      "report": "release-fresh.json",
+      "report_sha256": "f6e512d266a9c036acfb4aabcf91d9559a4270ca391c1ffc7b41bd9c39c5e196",
+      "workloads": 10,
+      "numerical_cases": 20,
+      "passed_cases": 20
+    },
+    {
+      "name": "native layouts",
+      "report": "release-layouts.json",
+      "report_sha256": "114890ebbb5ed8b0dae22f3980bee33cb89c0a20f68b7147f806815018469a90",
+      "workloads": 8,
+      "numerical_cases": 8,
+      "passed_cases": 8
+    },
+    {
+      "name": "held-out normal",
+      "report": "release-holdout-default/default-normal.json",
+      "report_sha256": "f09c1d6e1c0081bd67b20f4083c9b488d90061757eac15207d23594cc8caadea",
+      "workloads": 18,
+      "numerical_cases": 36,
+      "passed_cases": 36
+    },
+    {
+      "name": "held-out scaled inputs",
+      "report": "release-holdout-default/default-wide.json",
+      "report_sha256": "712cdc20da027478c6043fcc305757b8ac86c2682a1c0716308b8497f316bcd5",
+      "workloads": 18,
+      "numerical_cases": 18,
+      "passed_cases": 18
+    }
+  ],
+  "primary_numerical_cases": 157,
+  "primary_passed_cases": 157,
+  "unique_workload_packages": 51,
+  "primary_pass": true,
+  "heldout_untouched_before_candidate_freeze": true,
+  "heldout_manifest_sha256": "0b22012f98e13c8549924d4ad5886ba212fe007d1aa8576bd78b679841a2304f",
+  "manual_reruns": 0,
+  "infrastructure_failures_recorded": 0,
+  "internal_request_retry_counts_available": false,
+  "strict_ablation": {
+    "status": "complete",
+    "scope": "Same current source with numerical compensation disabled; not a historical-source comparison.",
+    "numerical_cases": 54,
+    "passed_cases": 54,
+    "pass": true,
+    "reports": [
+      {
+        "report": "release-holdout-strict/strict-normal.json",
+        "sha256": "26249c0c01a1e9c30aaca5b562c795f93de23b8409773b795512e85e1e758aab",
+        "numerical_cases": 36,
+        "passed_cases": 36
+      },
+      {
+        "report": "release-holdout-strict/strict-wide.json",
+        "sha256": "de13b69867e7b6b7a514e11627365fd943da65f3dd2e09110a1a33662a8264b9",
+        "numerical_cases": 18,
+        "passed_cases": 18
+      }
+    ],
+    "interpretation": "Both policies pass all held-out tolerances. This split does not independently establish a compensation pass-rate gain; the retained earlier wide public matmul counterexample remains relevant.",
+    "reference_error_comparison": "release-holdout-policy-comparison.json"
+  },
+  "timing_scope": "Incidental three-iteration correctness-gate timings; not an interleaved performance study.",
+  "all_evaluated_numerical_cases": 211,
+  "all_evaluated_passed_cases": 211
+}

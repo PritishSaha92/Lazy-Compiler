@@ -1,0 +1,358 @@
+{
+  "frozen_utc": "2026-10-24T00:36:38.514813+00:00",
+  "scope": "Final admitted roster; original failed generation/admission remains archived",
+  "planned_original_packages": 18,
+  "packages": [
+    {
+      "id": "oct24_p01_f16_broadcast",
+      "category": "pointwise",
+      "family": "FP16 buffer loads/stores, broadcast and explicit stage rounding",
+      "kernels": 1,
+      "input_dtypes": [
+        "f16",
+        "f16"
+      ],
+      "rtol": 0,
+      "atol": 0,
+      "inline_repair": false
+    },
+    {
+      "id": "oct24_p02_f16_sqrt",
+      "category": "pointwise",
+      "family": "FP16 odd tail, absolute value and square root",
+      "kernels": 1,
+      "input_dtypes": [
+        "f16"
+      ],
+      "rtol": 0.001,
+      "atol": 0.001,
+      "inline_repair": false
+    },
+    {
+      "id": "oct24_p04_f64_rational",
+      "category": "pointwise",
+      "family": "FP64 precision-sensitive multiply/divide over an odd tail",
+      "kernels": 1,
+      "input_dtypes": [
+        "f64"
+      ],
+      "rtol": 2e-14,
+      "atol": 2e-14,
+      "inline_repair": false
+    },
+    {
+      "id": "oct24_p05_i32_bitwise",
+      "category": "pointwise",
+      "family": "I32 signed bitwise xor/and with odd two-dimensional layout",
+      "kernels": 1,
+      "input_dtypes": [
+        "i32",
+        "i32"
+      ],
+      "rtol": 0,
+      "atol": 0,
+      "inline_repair": false
+    },
+    {
+      "id": "oct24_p06_i32_selection",
+      "category": "pointwise",
+      "family": "I32 signed comparison and where selection",
+      "kernels": 1,
+      "input_dtypes": [
+        "i32",
+        "i32"
+      ],
+      "rtol": 0,
+      "atol": 0,
+      "inline_repair": false
+    },
+    {
+      "id": "oct24_p07_sin_cos",
+      "category": "pointwise",
+      "family": "composed trigonometric operations absent from the public pointwise set",
+      "kernels": 1,
+      "input_dtypes": [
+        "f32"
+      ],
+      "rtol": 3e-06,
+      "atol": 3e-06,
+      "inline_repair": false
+    },
+    {
+      "id": "oct24_p08_erf",
+      "category": "pointwise",
+      "family": "error function over ragged rows",
+      "kernels": 1,
+      "input_dtypes": [
+        "f32"
+      ],
+      "rtol": 3e-06,
+      "atol": 5e-07,
+      "inline_repair": false
+    },
+    {
+      "id": "oct24_r01_f16_max",
+      "category": "reduction",
+      "family": "FP16 buffers and ragged cooperative maximum",
+      "kernels": 1,
+      "input_dtypes": [
+        "f16"
+      ],
+      "rtol": 0,
+      "atol": 0,
+      "inline_repair": false
+    },
+    {
+      "id": "oct24_r02_f16_to_f32_sum",
+      "category": "reduction",
+      "family": "FP16 storage expanded before FP32 cooperative accumulation",
+      "kernels": 1,
+      "input_dtypes": [
+        "f16"
+      ],
+      "rtol": 0.0001,
+      "atol": 0.0001,
+      "inline_repair": false
+    },
+    {
+      "id": "oct24_r03_f64_column_sum",
+      "category": "reduction",
+      "family": "FP64 strided loads and 64-bit cross-lane state over a ragged axis",
+      "kernels": 1,
+      "input_dtypes": [
+        "f64"
+      ],
+      "rtol": 2e-13,
+      "atol": 2e-13,
+      "inline_repair": false
+    },
+    {
+      "id": "oct24_r04_i32_column_sum",
+      "category": "reduction",
+      "family": "I32 inputs with I64 sum state on a non-contiguous axis",
+      "kernels": 1,
+      "input_dtypes": [
+        "i32"
+      ],
+      "rtol": 0,
+      "atol": 0,
+      "inline_repair": false
+    },
+    {
+      "id": "oct24_m01_f64_ragged",
+      "category": "matmul",
+      "family": "FP64 typed contraction with three non-divisible dimensions",
+      "kernels": 1,
+      "input_dtypes": [
+        "f64",
+        "f64"
+      ],
+      "rtol": 1e-12,
+      "atol": 1e-12,
+      "inline_repair": false
+    },
+    {
+      "id": "oct24_f02_softmax_tail",
+      "category": "fused",
+      "family": "coupled normalization beyond a 512-element row boundary",
+      "kernels": 1,
+      "input_dtypes": [
+        "f32"
+      ],
+      "rtol": 0.001,
+      "atol": 1e-05,
+      "inline_repair": false
+    },
+    {
+      "id": "oct24_a01_attention_tail",
+      "category": "attention",
+      "family": "nested online normalization with all four dimensions odd",
+      "kernels": 1,
+      "input_dtypes": [
+        "f32",
+        "f32",
+        "f32"
+      ],
+      "rtol": 0.001,
+      "atol": 0.0001,
+      "inline_repair": false
+    },
+    {
+      "id": "oct24_f01_f64_centered_norm_inline",
+      "category": "fused",
+      "family": "FP64 reduction reuse, centering and square root; inline trace repair",
+      "kernels": 1,
+      "input_dtypes": [
+        "f64"
+      ],
+      "rtol": 2e-12,
+      "atol": 2e-12,
+      "inline_repair": true
+    },
+    {
+      "id": "oct24_m02_f16_ragged_scalar",
+      "category": "matmul",
+      "family": "FP16 typed contraction with short odd K and ragged outputs; scalar schedule",
+      "kernels": 1,
+      "input_dtypes": [
+        "f16",
+        "f16"
+      ],
+      "rtol": 0.01,
+      "atol": 0.01,
+      "scalar_schedule_repair": true
+    }
+  ],
+  "rejected_packages": [
+    {
+      "id": "oct24_p03_f64_rounding",
+      "reason": "ValueError: No package produced; see original generator failure log",
+      "stage": "frontend generation/admission, not backend execution"
+    },
+    {
+      "id": "oct24_p09_remainder",
+      "reason": "ValueError: No package produced; see original generator failure log",
+      "stage": "frontend generation/admission, not backend execution"
+    },
+    {
+      "id": "oct24_f01_f64_centered_norm",
+      "reason": "AssertionError: Input-name drift: ['z'] instead of ['x']",
+      "stage": "frontend generation/admission, not backend execution"
+    },
+    {
+      "id": "oct24_m02_f16_ragged",
+      "reason": "MmaSyncPtx is outside required task scope; see preserved failed typed scope audit",
+      "stage": "typed IR scope admission, not backend execution"
+    }
+  ],
+  "missing_frontend_packages": [
+    "oct24_p03_f64_rounding",
+    "oct24_p09_remainder",
+    "oct24_f01_f64_centered_norm",
+    "oct24_m02_f16_ragged"
+  ],
+  "cpu_reference_checks": 60,
+  "all_cpu_references_pass": true,
+  "files_sha256": {
+    "packages/oct24_a01_attention_tail/expected.npz": "9dc30e6de3d7bbe89c72c01cb8c858ff4c3dc4479b6715f6d7131ed7b6f84a58",
+    "packages/oct24_a01_attention_tail/k_matmul_softmax_reduce_cd8d6f.ir.json": "4de4f314eb8290a19c4b7b3ee54b1eb6e82b0fe3773a4d929392a964e37be318",
+    "packages/oct24_a01_attention_tail/k_matmul_softmax_reduce_cd8d6f.ir.txt": "5073f9b25a9f0ad552469b1265a7e0eb0dcc2ad22dec120019ea49c7412e3217",
+    "packages/oct24_a01_attention_tail/k_matmul_softmax_reduce_cd8d6f.ref.cu": "3703511f0b3a8b0b7659123496a0fda6c5673b9094d9426c5a3d5ba5c2aac795",
+    "packages/oct24_a01_attention_tail/meta.json": "b4345231fafcf3febbeacca32c35c70a7d21a78dc480468f585e0ee81fe52eb5",
+    "packages/oct24_f01_f64_centered_norm/expected.npz": "b5c61a9b9af59b442a6c3de4e88ad8d49554986d20fd0b93bacdae87d50d7054",
+    "packages/oct24_f01_f64_centered_norm/k_div_reduce.ir.json": "69502de4f8ac7d34a12979d920adf977a2c1e301a6a067476ad569b5fbf63182",
+    "packages/oct24_f01_f64_centered_norm/k_div_reduce.ir.txt": "59e30708effe26c64888ece61db0e03891c1637e75f0bae13102674aab61f32c",
+    "packages/oct24_f01_f64_centered_norm/k_div_reduce.ref.cu": "284db2f4b55a2559d68466806ed61fc5b2b34f3246fbb98050387919cf35debe",
+    "packages/oct24_f01_f64_centered_norm/meta.json": "9a94e155299f7b3995169f0169877106004434cc8c2a1da47c20fb44c62b669e",
+    "packages/oct24_f01_f64_centered_norm_inline/expected.npz": "b5c61a9b9af59b442a6c3de4e88ad8d49554986d20fd0b93bacdae87d50d7054",
+    "packages/oct24_f01_f64_centered_norm_inline/k_mean_reduce_bfe0aa.ir.json": "648edad30a8c38bef7534fdc3256f8b0f63e3735c9dc717d89b582362a831310",
+    "packages/oct24_f01_f64_centered_norm_inline/k_mean_reduce_bfe0aa.ir.txt": "38f591fb553ed12010e5c57d62344a197a3c930e2d831a3cfa98e7d7b5725ff4",
+    "packages/oct24_f01_f64_centered_norm_inline/k_mean_reduce_bfe0aa.ref.cu": "6f0a99e2d1d6685d60277168e0e08b4431b770d2b886abda49ee44d6cfe27a5f",
+    "packages/oct24_f01_f64_centered_norm_inline/meta.json": "12d234fed1077a96b8e59ee1942e882fc87ecf11f8099c6366323139c49dd5d8",
+    "packages/oct24_f02_softmax_tail/expected.npz": "3a50b9ebebb835bb3d09fcea894aa554d2ad0cfe884bde10cfdcc28fd3ebad69",
+    "packages/oct24_f02_softmax_tail/k_softmax_c04fa5.ir.json": "abe0c73a37aceae024c69dfe0101f00a9d72c8887c845b03c117c788218f0900",
+    "packages/oct24_f02_softmax_tail/k_softmax_c04fa5.ir.txt": "79d7be85a94885ed9dc7c25f5b7cf798415e2c84f9465ea40b92db3e6f4398fe",
+    "packages/oct24_f02_softmax_tail/k_softmax_c04fa5.ref.cu": "908012f349407a295fbdd6ab6c61fcb7bc962621f22825ce8fb0302b05367621",
+    "packages/oct24_f02_softmax_tail/meta.json": "36ff8d173a1c3631890c9ae6fd559938e6d5a04a9745506b0551471aafdb97ed",
+    "packages/oct24_m01_f64_ragged/expected.npz": "2cd72cdb7c9aed743e07e87e7925d437789d6bae3b94d07c04ed473325a8f869",
+    "packages/oct24_m01_f64_ragged/k_matmul_f2c5ef.ir.json": "deaee946cb1cef5cbc990f978ddeb7e3fd6a6d6a1765375d1cf06b1c8d323825",
+    "packages/oct24_m01_f64_ragged/k_matmul_f2c5ef.ir.txt": "388f0028d178b6166f2988755ccc03d8b00c76f5432f1b690aa7d8e266b36866",
+    "packages/oct24_m01_f64_ragged/k_matmul_f2c5ef.ref.cu": "1852f21d695b74a470f94b9f2d4e2b79dd571ec327d8683c3fade0885c195b53",
+    "packages/oct24_m01_f64_ragged/meta.json": "6c885c7e71166c7b5f3fb865ed77b4dd0bb5a072585a3ac9bf73976a7aba262c",
+    "packages/oct24_m02_f16_ragged/expected.npz": "d988b0e930e87d68914d329d4750e1f06f047b8a64af8202c557d2239eaa63a5",
+    "packages/oct24_m02_f16_ragged/k_matmul_79479f.ir.json": "d7ac2f46708459544ebe8cfbaccf6bc12cc5ad58e02dc95147423370f16a5661",
+    "packages/oct24_m02_f16_ragged/k_matmul_79479f.ir.txt": "9afa75cd6d6f154c90eb3e21c68e75eb79cbc29abeb91aa01c3b789f07b0c284",
+    "packages/oct24_m02_f16_ragged/k_matmul_79479f.ref.cu": "3f033b7bd77d87cf46bdb2fa5423c2767d8d7adf1ca1e14f7dd554a2d5b0edc7",
+    "packages/oct24_m02_f16_ragged/meta.json": "022e198c3e7bad70749990dbe6ef65c3ac09dca9a1ce847509f0fad6696d93a5",
+    "packages/oct24_p01_f16_broadcast/expected.npz": "2ef78bfc3621a5c450e85f7e1211c28ad8bcf421638cef7ef80ea2772a146706",
+    "packages/oct24_p01_f16_broadcast/k_relu_pointwise.ir.json": "e13032b70e2a1b5ff8ac2626cad11542aed9b8d0895db9b670c5f1ac72549342",
+    "packages/oct24_p01_f16_broadcast/k_relu_pointwise.ir.txt": "c16ccce120de24f65e62f0c6aacfb7771eaf2fa3463cc0ae15bb7e251e5f8f07",
+    "packages/oct24_p01_f16_broadcast/k_relu_pointwise.ref.cu": "8c219da25256ff2639e26c7c68a6cfa2117ad9526b8b2c41b7a2210b49d0cff5",
+    "packages/oct24_p01_f16_broadcast/meta.json": "6624ff2cf2e875f0c05de6a3e2f709548acb1908a40c8dab173772a9f7254b6c",
+    "packages/oct24_p02_f16_sqrt/expected.npz": "0846dd95e9b137beda0ddf308bcaf105e2ad49957926a5811ea402e8cd65079a",
+    "packages/oct24_p02_f16_sqrt/k_sqrt_pointwise.ir.json": "6637e03b7dee07e9e18e16759779b817176d5b3c3c4beb5f8b81f17ad98815e9",
+    "packages/oct24_p02_f16_sqrt/k_sqrt_pointwise.ir.txt": "73bc93ad2a7a6c73ce94837c9709dc2af38314a69ea9ad6e02d814e72ee1c1c5",
+    "packages/oct24_p02_f16_sqrt/k_sqrt_pointwise.ref.cu": "173cbd10bcac94ef0798b679b8c59e7201b9f1450659c82a2e426cbf2a5ac435",
+    "packages/oct24_p02_f16_sqrt/meta.json": "5f3a09260cd31c6bf3365c304cb8f3b39fa436ba84c83663ddb492fe8f98f5d4",
+    "packages/oct24_p04_f64_rational/expected.npz": "82cc69fe9cb9626219a9eb9a7f40fc382dcb08a0a8bee8363fc6c3e729705df1",
+    "packages/oct24_p04_f64_rational/k_div_pointwise.ir.json": "3452415e979e0d0bccc1da2b3d73b490af4cae46778fba71ffcad86259689af7",
+    "packages/oct24_p04_f64_rational/k_div_pointwise.ir.txt": "1db98c3ca9c9aa4f9a9ed4a9186ee4e56f133dde0d42f86d8cee6b8b671d77c8",
+    "packages/oct24_p04_f64_rational/k_div_pointwise.ref.cu": "aec9f00f37985c5b449b29ad86c3ff3c32e7dfc403daa0e852737416ee4159af",
+    "packages/oct24_p04_f64_rational/meta.json": "997f6a86772f79bac4afa94cdddb5d65dc468cafbec0a77ba9c187d504cb37ea",
+    "packages/oct24_p05_i32_bitwise/expected.npz": "8aff1c9586f53b34a1b7ff3e56ea0f0eb6fa8a0fd65d170c3b0048225dbd06f3",
+    "packages/oct24_p05_i32_bitwise/k_add_pointwise.ir.json": "92498e8cf19a96a12a8ad56eaaa87a8e094addbc77d9cbcc420d134cf4d48f6c",
+    "packages/oct24_p05_i32_bitwise/k_add_pointwise.ir.txt": "508fb6cd62eac344c784c6da7b5a0cd613b2044d33b6b2888fcfe79669f3604c",
+    "packages/oct24_p05_i32_bitwise/k_add_pointwise.ref.cu": "409bb203c6ea52b85191111fba6fc80e19922ae4d380a55e61d4e4c9e46083f0",
+    "packages/oct24_p05_i32_bitwise/meta.json": "c7ce0bb11881049646654bb8d87f3e57dc542c397a0095b2a15686a482b0d3f9",
+    "packages/oct24_p06_i32_selection/expected.npz": "ee16e8151c0273e841ec5b964514e8412b7d765e474821588bb10cb241e75540",
+    "packages/oct24_p06_i32_selection/k_where_pointwise.ir.json": "e563747835db3c0335cb4013ea0091dc712ce63ac5609d09dfc1ed725d0fa3a8",
+    "packages/oct24_p06_i32_selection/k_where_pointwise.ir.txt": "533775c31c3ff403899c45b474fcd761abee507a437f7bc2147d159dc928a395",
+    "packages/oct24_p06_i32_selection/k_where_pointwise.ref.cu": "eec5907c91325eeb5ffe4df672d0d255052f653ad39300edf2b1a91d482a8ff0",
+    "packages/oct24_p06_i32_selection/meta.json": "efc7c590e68310e75ffa867b6ac4ba953700194fb54eb0b361f39e25326b3ee6",
+    "packages/oct24_p07_sin_cos/expected.npz": "342c265e67ad3903395ba4c996cc49e74128add1680bddd14bc8532543f97111",
+    "packages/oct24_p07_sin_cos/k_add_pointwise.ir.json": "327b8b596578a94c231d1167f275580c48b60cab02ebd06801fe509f9043f1d6",
+    "packages/oct24_p07_sin_cos/k_add_pointwise.ir.txt": "0a1698153ba59ae79b58f44c23f6662b185a8088ac13ae95b532a0f08c9fde4f",
+    "packages/oct24_p07_sin_cos/k_add_pointwise.ref.cu": "2d7f4d225d17f06416e05a72da69cf58379a1c909ab0b2cc79043bfff440b7b1",
+    "packages/oct24_p07_sin_cos/meta.json": "60da3b5c415195726670f465bfccf26e499f18b1893099dc36df2bed12afa6c6",
+    "packages/oct24_p08_erf/expected.npz": "e860375dfb4f3ab4d18050e39aadef7732496bf290a9c4309ea3f68f9f8fd629",
+    "packages/oct24_p08_erf/k_erf_pointwise.ir.json": "4ece83a8c5d6ecbd72670eac178b5aefbad98eb5c58017e837462ee31bea7fa5",
+    "packages/oct24_p08_erf/k_erf_pointwise.ir.txt": "88755a5e45e581634c6205e2f9ac9c6edd0aa5b50ae03f6a6426bd72f6ca79db",
+    "packages/oct24_p08_erf/k_erf_pointwise.ref.cu": "86f931ec3e9180970a9c7bbe54b30b31f1cd9723889e76b4cc1d4cd71147a950",
+    "packages/oct24_p08_erf/meta.json": "4369ae763d9880a07c11cec1571cce56642388d7048d2abc41f980c19671542c",
+    "packages/oct24_r01_f16_max/expected.npz": "1d21741b2a904580c7c6a105118e0ba0f671bf23044ead9ec09d967447879449",
+    "packages/oct24_r01_f16_max/k_amax_reduce.ir.json": "871ccc7fd98d5df2ff2cc10ea9d6c3e8591afa1b9f971389bab2e2040feb0ee8",
+    "packages/oct24_r01_f16_max/k_amax_reduce.ir.txt": "947db15b833565d41caab6f91010b723069065f589d4fcb820f205024f520523",
+    "packages/oct24_r01_f16_max/k_amax_reduce.ref.cu": "8fe72ff076629289b6ee81e8ce4b54e53b2980e2bbd604d04b18c54e0b54ca26",
+    "packages/oct24_r01_f16_max/meta.json": "47b9b8974f92fd0bd73418db546efafaec2c515569c38598c14a386b783889f5",
+    "packages/oct24_r02_f16_to_f32_sum/expected.npz": "c5b0df96ec843e37cc0451661a61af6c547aa1301a478844a4510b2c5058f7f4",
+    "packages/oct24_r02_f16_to_f32_sum/k_sum_1_reduce.ir.json": "fd818222b63d35c563b35617d02d7879135411ea61ef261dfc99984794ddecae",
+    "packages/oct24_r02_f16_to_f32_sum/k_sum_1_reduce.ir.txt": "77be9e84415fcb47ce60bf9759684584a2c1963226b740e13b90ef0ddf46d5c2",
+    "packages/oct24_r02_f16_to_f32_sum/k_sum_1_reduce.ref.cu": "d683f116040d6656897baec38f92ca939053d40cee5cfdbadc3dc3b2591d506d",
+    "packages/oct24_r02_f16_to_f32_sum/meta.json": "95401b3123130c6db28a26b9fcb8eb7da30cba4a07c0f4b9aa612142732ac172",
+    "packages/oct24_r03_f64_column_sum/expected.npz": "4b526ae3e28854954a3861459a319d8a7de7f2c49a73c8e12bc1fcb27e0479f6",
+    "packages/oct24_r03_f64_column_sum/k_sum_1_reduce.ir.json": "81a5f61868b34a95fb7bf9328b6b8ab3ee1c6f2f828b62a02c1b638d3adee933",
+    "packages/oct24_r03_f64_column_sum/k_sum_1_reduce.ir.txt": "21c8608b545cc2055791053c2f6bdd519d0b9efc72daa1ff266691b615e50427",
+    "packages/oct24_r03_f64_column_sum/k_sum_1_reduce.ref.cu": "f6d16ce2156700eb77b4c933852a50dcbf06eacacfe06f2b93fa1376368522b2",
+    "packages/oct24_r03_f64_column_sum/meta.json": "71bbc2a39f2c5123f94ebbada2520c4a8d8fa4e0436c6e1933364b9c7c64ab37",
+    "packages/oct24_r04_i32_column_sum/expected.npz": "0252c97cfa9e7b2560952f926b658e2899b306a6ddb8c77c6a7d752d92d04407",
+    "packages/oct24_r04_i32_column_sum/k_sum_1_reduce.ir.json": "adbcff01fd5e0bedeeca36c2cef4e4b50c793a07243a112fbbb82cad68b36167",
+    "packages/oct24_r04_i32_column_sum/k_sum_1_reduce.ir.txt": "c56c2b99c23ead4cf009847518389a5a3f6955993370131504e652ba4e074f38",
+    "packages/oct24_r04_i32_column_sum/k_sum_1_reduce.ref.cu": "080ef3f203d27d296ebe61010ceb666ed744426ba28157ca34570ed9cb0ba8ee",
+    "packages/oct24_r04_i32_column_sum/meta.json": "1ac6e45894708b7ac2c6f54ef42639f4833f2cd0f2af83d2a450fbb2b5e08727",
+    "protocol.json": "522de8bc12bc874a223f5f9b59f39b1219784eabbfa4cb306d316a39bfc5ace2",
+    "reference-sanity.json": "d31bbe8ecf7c46791bc340e6700620713b9cc3b03f6fe899ef58e82bdd99bb69",
+    "generation.json": "98007f74d5a0c8a4d9e3e94e674a497acfa03433c2a885f90c5635f4fb6f736b",
+    "generation.stdout.log": "d79e0d348ded5f0a527bb8786259ba9565411c2b2a385476112f0debd26c83ab",
+    "generation.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inline-repair.json": "865a7c9441cee41e54db8544ecb25dfd4d3d07769021cc63c27a7136dfb9470d",
+    "inline-generation.stdout.log": "6b7ae1fa7e3edf6d78a58cf4b389f4918d00e3f2fb1576b93c8032e0384db22f",
+    "inline-generation.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "packages/oct24_m02_f16_ragged_scalar/expected.npz": "d988b0e930e87d68914d329d4750e1f06f047b8a64af8202c557d2239eaa63a5",
+    "packages/oct24_m02_f16_ragged_scalar/k_matmul_79479f.ir.json": "d6fbd9abfca354f6e4b9620cc1e7aeb83d6580b89f513395fa1fe76d91a571c2",
+    "packages/oct24_m02_f16_ragged_scalar/k_matmul_79479f.ir.txt": "5f6e359e6f54aeef6c7083bb8dbb8dd01fe640679b4422997db5944fddebb3fa",
+    "packages/oct24_m02_f16_ragged_scalar/k_matmul_79479f.ref.cu": "593b6ced99553d53d893539ed171f57319825bbc69a13dc222b8c83ab5d021a1",
+    "packages/oct24_m02_f16_ragged_scalar/meta.json": "f100a8fe52274bc2f7d2450daf94e46bc8989193bcc9153f0da4820aaf8a484e",
+    "scalar-repair.json": "e6c019e80e8cfca6de526375c723ddf91b71ac36c0bf5eae4c303bf1ee675d6d",
+    "scalar-generation.stdout.log": "c56d5c615103c5605ce892699ed966712069380872378a3bb85b1c8fa49a4ba6",
+    "scalar-generation.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "input-audit.json": "4c8a052cc5d5c5bfde5e3b2d3f08177d77963ebe27c43d648cdb5556ac204226",
+    "original-preparation-status.json": "a286f7b6349f9a2077f149a084d968ca008ebb36e31f291e0a418f14a6bda69a",
+    "input-audit-final.json": "fa2da514766afc0eb145bf91d8203ef9d0eb32bb1e9bcf56a88b4df7120accc0"
+  },
+  "source_sha256": {
+    "tests/expressions_oct24.py": "a7ff15ed50c382ec80c7dbe59d0add05e4c2a247190680dc5f4f64452c160083",
+    "artifacts/validation/2026-10-24-extra/expressions_inline.py": "3c277c40b2534fef80b8de08eeb61094e4d80a4d512816dbec6fa89223e9936d",
+    "artifacts/validation/2026-10-24-extra/prepare.py": "d9efacc2809cd211fde45afd06fe03bd40cb12c9fedafe99436bd97808005793",
+    "artifacts/validation/2026-10-24-extra/finalize.py": "4f0069b2a2870d8e643dabb3a703045b39be005d0c9f24cbef98ea903f8117ff",
+    "tools/generate.py": "841be781022059907a18acb0673c1bc1b206826d22043fe6521ec14ee9840b1b",
+    "tests/generate_stress.py": "b90f9b7f377385f3a7c56da615fc1c408e0e381927d0fdc81cb42ab4536b57e3",
+    "artifacts/validation/2026-10-24-extra/expressions_scalar.py": "5c201eef87b5047ef33faddbb27f353465ebc8a39460aa6a175a43df4946dc9d",
+    "artifacts/validation/2026-10-24-extra/repair_scalar.py": "dac9ad3db21b7397b5c8ef26d710b78d3970316ad97710c5b9b3837202914d27"
+  },
+  "early_evaluation": {
+    "path": "artifacts/validation/2026-10-24-root-audit/early-remote/summary.json",
+    "sha256": "b9e6fb27495354efd1a68dc54c9808d366d079224b43a3ffd6f6b1c713061f51",
+    "note": "Four completed cases were assembled and GPU-checked after original expression/tolerance protocol freeze, while other cases were generating. Preparation worker invoked no compiler or GPU."
+  },
+  "preliminary_admission_sha256": "d90d9974799801ae7a69d3a8c917fe4c27f2377934fd0dfca2f97d39935f5db7"
+}

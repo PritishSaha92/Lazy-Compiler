@@ -1,0 +1,2983 @@
+{
+  "started_utc": "2026-10-24T00:38:42.303292+00:00",
+  "scope": "New typed-storage and tail development cases; correctness only, no local GPU",
+  "planned_generated_packages": 12,
+  "excluded_generated_packages": [
+    "oct24_p01_f16_broadcast",
+    "oct24_p02_f16_sqrt",
+    "oct24_p04_f64_rational",
+    "oct24_p05_i32_bitwise"
+  ],
+  "additional_input_variants": 1,
+  "planned_checks": 37,
+  "tracked_sha256": {
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tests\\expressions_oct24.py": "a7ff15ed50c382ec80c7dbe59d0add05e4c2a247190680dc5f4f64452c160083",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tools\\check_compiler.py": "e706045368a83ccb4f10577f7952cdb0f8bb2363184efca7a68083459dbe4263",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tools\\selector_study.py": "b495a2f0389463f8010a9a68be69f129cd8d8d786dce711c82bb73cf90626ba4",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\run_extra.py": "5e49be3f824f22916df7810e16fab59b903731dbcec78ba3b7739eb06fb4a598",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\final-admission.json": "a29c6f22f87d598c98792084791a2c965f81bae5ed22e288d590ae944dd2474a",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\expressions_inline.py": "3c277c40b2534fef80b8de08eeb61094e4d80a4d512816dbec6fa89223e9936d",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\prepare.py": "d9efacc2809cd211fde45afd06fe03bd40cb12c9fedafe99436bd97808005793",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\finalize.py": "4f0069b2a2870d8e643dabb3a703045b39be005d0c9f24cbef98ea903f8117ff",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tools\\generate.py": "841be781022059907a18acb0673c1bc1b206826d22043fe6521ec14ee9840b1b",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tests\\generate_stress.py": "b90f9b7f377385f3a7c56da615fc1c408e0e381927d0fdc81cb42ab4536b57e3",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\expressions_scalar.py": "5c201eef87b5047ef33faddbb27f353465ebc8a39460aa6a175a43df4946dc9d",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\repair_scalar.py": "dac9ad3db21b7397b5c8ef26d710b78d3970316ad97710c5b9b3837202914d27",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_a01_attention_tail\\expected.npz": "9dc30e6de3d7bbe89c72c01cb8c858ff4c3dc4479b6715f6d7131ed7b6f84a58",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_a01_attention_tail\\k_matmul_softmax_reduce_cd8d6f.ir.json": "4de4f314eb8290a19c4b7b3ee54b1eb6e82b0fe3773a4d929392a964e37be318",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_a01_attention_tail\\k_matmul_softmax_reduce_cd8d6f.ir.txt": "5073f9b25a9f0ad552469b1265a7e0eb0dcc2ad22dec120019ea49c7412e3217",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_a01_attention_tail\\k_matmul_softmax_reduce_cd8d6f.ref.cu": "3703511f0b3a8b0b7659123496a0fda6c5673b9094d9426c5a3d5ba5c2aac795",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_a01_attention_tail\\meta.json": "b4345231fafcf3febbeacca32c35c70a7d21a78dc480468f585e0ee81fe52eb5",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f01_f64_centered_norm\\expected.npz": "b5c61a9b9af59b442a6c3de4e88ad8d49554986d20fd0b93bacdae87d50d7054",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f01_f64_centered_norm\\k_div_reduce.ir.json": "69502de4f8ac7d34a12979d920adf977a2c1e301a6a067476ad569b5fbf63182",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f01_f64_centered_norm\\k_div_reduce.ir.txt": "59e30708effe26c64888ece61db0e03891c1637e75f0bae13102674aab61f32c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f01_f64_centered_norm\\k_div_reduce.ref.cu": "284db2f4b55a2559d68466806ed61fc5b2b34f3246fbb98050387919cf35debe",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f01_f64_centered_norm\\meta.json": "9a94e155299f7b3995169f0169877106004434cc8c2a1da47c20fb44c62b669e",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f01_f64_centered_norm_inline\\expected.npz": "b5c61a9b9af59b442a6c3de4e88ad8d49554986d20fd0b93bacdae87d50d7054",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f01_f64_centered_norm_inline\\k_mean_reduce_bfe0aa.ir.json": "648edad30a8c38bef7534fdc3256f8b0f63e3735c9dc717d89b582362a831310",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f01_f64_centered_norm_inline\\k_mean_reduce_bfe0aa.ir.txt": "38f591fb553ed12010e5c57d62344a197a3c930e2d831a3cfa98e7d7b5725ff4",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f01_f64_centered_norm_inline\\k_mean_reduce_bfe0aa.ref.cu": "6f0a99e2d1d6685d60277168e0e08b4431b770d2b886abda49ee44d6cfe27a5f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f01_f64_centered_norm_inline\\meta.json": "12d234fed1077a96b8e59ee1942e882fc87ecf11f8099c6366323139c49dd5d8",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f02_softmax_tail\\expected.npz": "3a50b9ebebb835bb3d09fcea894aa554d2ad0cfe884bde10cfdcc28fd3ebad69",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f02_softmax_tail\\k_softmax_c04fa5.ir.json": "abe0c73a37aceae024c69dfe0101f00a9d72c8887c845b03c117c788218f0900",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f02_softmax_tail\\k_softmax_c04fa5.ir.txt": "79d7be85a94885ed9dc7c25f5b7cf798415e2c84f9465ea40b92db3e6f4398fe",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f02_softmax_tail\\k_softmax_c04fa5.ref.cu": "908012f349407a295fbdd6ab6c61fcb7bc962621f22825ce8fb0302b05367621",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f02_softmax_tail\\meta.json": "36ff8d173a1c3631890c9ae6fd559938e6d5a04a9745506b0551471aafdb97ed",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m01_f64_ragged\\expected.npz": "2cd72cdb7c9aed743e07e87e7925d437789d6bae3b94d07c04ed473325a8f869",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m01_f64_ragged\\k_matmul_f2c5ef.ir.json": "deaee946cb1cef5cbc990f978ddeb7e3fd6a6d6a1765375d1cf06b1c8d323825",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m01_f64_ragged\\k_matmul_f2c5ef.ir.txt": "388f0028d178b6166f2988755ccc03d8b00c76f5432f1b690aa7d8e266b36866",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m01_f64_ragged\\k_matmul_f2c5ef.ref.cu": "1852f21d695b74a470f94b9f2d4e2b79dd571ec327d8683c3fade0885c195b53",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m01_f64_ragged\\meta.json": "6c885c7e71166c7b5f3fb865ed77b4dd0bb5a072585a3ac9bf73976a7aba262c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m02_f16_ragged\\expected.npz": "d988b0e930e87d68914d329d4750e1f06f047b8a64af8202c557d2239eaa63a5",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m02_f16_ragged\\k_matmul_79479f.ir.json": "d7ac2f46708459544ebe8cfbaccf6bc12cc5ad58e02dc95147423370f16a5661",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m02_f16_ragged\\k_matmul_79479f.ir.txt": "9afa75cd6d6f154c90eb3e21c68e75eb79cbc29abeb91aa01c3b789f07b0c284",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m02_f16_ragged\\k_matmul_79479f.ref.cu": "3f033b7bd77d87cf46bdb2fa5423c2767d8d7adf1ca1e14f7dd554a2d5b0edc7",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m02_f16_ragged\\meta.json": "022e198c3e7bad70749990dbe6ef65c3ac09dca9a1ce847509f0fad6696d93a5",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p01_f16_broadcast\\expected.npz": "2ef78bfc3621a5c450e85f7e1211c28ad8bcf421638cef7ef80ea2772a146706",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p01_f16_broadcast\\k_relu_pointwise.ir.json": "e13032b70e2a1b5ff8ac2626cad11542aed9b8d0895db9b670c5f1ac72549342",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p01_f16_broadcast\\k_relu_pointwise.ir.txt": "c16ccce120de24f65e62f0c6aacfb7771eaf2fa3463cc0ae15bb7e251e5f8f07",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p01_f16_broadcast\\k_relu_pointwise.ref.cu": "8c219da25256ff2639e26c7c68a6cfa2117ad9526b8b2c41b7a2210b49d0cff5",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p01_f16_broadcast\\meta.json": "6624ff2cf2e875f0c05de6a3e2f709548acb1908a40c8dab173772a9f7254b6c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p02_f16_sqrt\\expected.npz": "0846dd95e9b137beda0ddf308bcaf105e2ad49957926a5811ea402e8cd65079a",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p02_f16_sqrt\\k_sqrt_pointwise.ir.json": "6637e03b7dee07e9e18e16759779b817176d5b3c3c4beb5f8b81f17ad98815e9",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p02_f16_sqrt\\k_sqrt_pointwise.ir.txt": "73bc93ad2a7a6c73ce94837c9709dc2af38314a69ea9ad6e02d814e72ee1c1c5",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p02_f16_sqrt\\k_sqrt_pointwise.ref.cu": "173cbd10bcac94ef0798b679b8c59e7201b9f1450659c82a2e426cbf2a5ac435",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p02_f16_sqrt\\meta.json": "5f3a09260cd31c6bf3365c304cb8f3b39fa436ba84c83663ddb492fe8f98f5d4",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p04_f64_rational\\expected.npz": "82cc69fe9cb9626219a9eb9a7f40fc382dcb08a0a8bee8363fc6c3e729705df1",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p04_f64_rational\\k_div_pointwise.ir.json": "3452415e979e0d0bccc1da2b3d73b490af4cae46778fba71ffcad86259689af7",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p04_f64_rational\\k_div_pointwise.ir.txt": "1db98c3ca9c9aa4f9a9ed4a9186ee4e56f133dde0d42f86d8cee6b8b671d77c8",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p04_f64_rational\\k_div_pointwise.ref.cu": "aec9f00f37985c5b449b29ad86c3ff3c32e7dfc403daa0e852737416ee4159af",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p04_f64_rational\\meta.json": "997f6a86772f79bac4afa94cdddb5d65dc468cafbec0a77ba9c187d504cb37ea",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p05_i32_bitwise\\expected.npz": "8aff1c9586f53b34a1b7ff3e56ea0f0eb6fa8a0fd65d170c3b0048225dbd06f3",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p05_i32_bitwise\\k_add_pointwise.ir.json": "92498e8cf19a96a12a8ad56eaaa87a8e094addbc77d9cbcc420d134cf4d48f6c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p05_i32_bitwise\\k_add_pointwise.ir.txt": "508fb6cd62eac344c784c6da7b5a0cd613b2044d33b6b2888fcfe79669f3604c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p05_i32_bitwise\\k_add_pointwise.ref.cu": "409bb203c6ea52b85191111fba6fc80e19922ae4d380a55e61d4e4c9e46083f0",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p05_i32_bitwise\\meta.json": "c7ce0bb11881049646654bb8d87f3e57dc542c397a0095b2a15686a482b0d3f9",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p06_i32_selection\\expected.npz": "ee16e8151c0273e841ec5b964514e8412b7d765e474821588bb10cb241e75540",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p06_i32_selection\\k_where_pointwise.ir.json": "e563747835db3c0335cb4013ea0091dc712ce63ac5609d09dfc1ed725d0fa3a8",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p06_i32_selection\\k_where_pointwise.ir.txt": "533775c31c3ff403899c45b474fcd761abee507a437f7bc2147d159dc928a395",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p06_i32_selection\\k_where_pointwise.ref.cu": "eec5907c91325eeb5ffe4df672d0d255052f653ad39300edf2b1a91d482a8ff0",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p06_i32_selection\\meta.json": "efc7c590e68310e75ffa867b6ac4ba953700194fb54eb0b361f39e25326b3ee6",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p07_sin_cos\\expected.npz": "342c265e67ad3903395ba4c996cc49e74128add1680bddd14bc8532543f97111",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p07_sin_cos\\k_add_pointwise.ir.json": "327b8b596578a94c231d1167f275580c48b60cab02ebd06801fe509f9043f1d6",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p07_sin_cos\\k_add_pointwise.ir.txt": "0a1698153ba59ae79b58f44c23f6662b185a8088ac13ae95b532a0f08c9fde4f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p07_sin_cos\\k_add_pointwise.ref.cu": "2d7f4d225d17f06416e05a72da69cf58379a1c909ab0b2cc79043bfff440b7b1",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p07_sin_cos\\meta.json": "60da3b5c415195726670f465bfccf26e499f18b1893099dc36df2bed12afa6c6",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p08_erf\\expected.npz": "e860375dfb4f3ab4d18050e39aadef7732496bf290a9c4309ea3f68f9f8fd629",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p08_erf\\k_erf_pointwise.ir.json": "4ece83a8c5d6ecbd72670eac178b5aefbad98eb5c58017e837462ee31bea7fa5",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p08_erf\\k_erf_pointwise.ir.txt": "88755a5e45e581634c6205e2f9ac9c6edd0aa5b50ae03f6a6426bd72f6ca79db",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p08_erf\\k_erf_pointwise.ref.cu": "86f931ec3e9180970a9c7bbe54b30b31f1cd9723889e76b4cc1d4cd71147a950",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p08_erf\\meta.json": "4369ae763d9880a07c11cec1571cce56642388d7048d2abc41f980c19671542c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r01_f16_max\\expected.npz": "1d21741b2a904580c7c6a105118e0ba0f671bf23044ead9ec09d967447879449",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r01_f16_max\\k_amax_reduce.ir.json": "871ccc7fd98d5df2ff2cc10ea9d6c3e8591afa1b9f971389bab2e2040feb0ee8",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r01_f16_max\\k_amax_reduce.ir.txt": "947db15b833565d41caab6f91010b723069065f589d4fcb820f205024f520523",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r01_f16_max\\k_amax_reduce.ref.cu": "8fe72ff076629289b6ee81e8ce4b54e53b2980e2bbd604d04b18c54e0b54ca26",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r01_f16_max\\meta.json": "47b9b8974f92fd0bd73418db546efafaec2c515569c38598c14a386b783889f5",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r02_f16_to_f32_sum\\expected.npz": "c5b0df96ec843e37cc0451661a61af6c547aa1301a478844a4510b2c5058f7f4",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r02_f16_to_f32_sum\\k_sum_1_reduce.ir.json": "fd818222b63d35c563b35617d02d7879135411ea61ef261dfc99984794ddecae",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r02_f16_to_f32_sum\\k_sum_1_reduce.ir.txt": "77be9e84415fcb47ce60bf9759684584a2c1963226b740e13b90ef0ddf46d5c2",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r02_f16_to_f32_sum\\k_sum_1_reduce.ref.cu": "d683f116040d6656897baec38f92ca939053d40cee5cfdbadc3dc3b2591d506d",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r02_f16_to_f32_sum\\meta.json": "95401b3123130c6db28a26b9fcb8eb7da30cba4a07c0f4b9aa612142732ac172",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r03_f64_column_sum\\expected.npz": "4b526ae3e28854954a3861459a319d8a7de7f2c49a73c8e12bc1fcb27e0479f6",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r03_f64_column_sum\\k_sum_1_reduce.ir.json": "81a5f61868b34a95fb7bf9328b6b8ab3ee1c6f2f828b62a02c1b638d3adee933",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r03_f64_column_sum\\k_sum_1_reduce.ir.txt": "21c8608b545cc2055791053c2f6bdd519d0b9efc72daa1ff266691b615e50427",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r03_f64_column_sum\\k_sum_1_reduce.ref.cu": "f6d16ce2156700eb77b4c933852a50dcbf06eacacfe06f2b93fa1376368522b2",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r03_f64_column_sum\\meta.json": "71bbc2a39f2c5123f94ebbada2520c4a8d8fa4e0436c6e1933364b9c7c64ab37",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r04_i32_column_sum\\expected.npz": "0252c97cfa9e7b2560952f926b658e2899b306a6ddb8c77c6a7d752d92d04407",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r04_i32_column_sum\\k_sum_1_reduce.ir.json": "adbcff01fd5e0bedeeca36c2cef4e4b50c793a07243a112fbbb82cad68b36167",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r04_i32_column_sum\\k_sum_1_reduce.ir.txt": "c56c2b99c23ead4cf009847518389a5a3f6955993370131504e652ba4e074f38",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r04_i32_column_sum\\k_sum_1_reduce.ref.cu": "080ef3f203d27d296ebe61010ceb666ed744426ba28157ca34570ed9cb0ba8ee",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r04_i32_column_sum\\meta.json": "1ac6e45894708b7ac2c6f54ef42639f4833f2cd0f2af83d2a450fbb2b5e08727",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\protocol.json": "522de8bc12bc874a223f5f9b59f39b1219784eabbfa4cb306d316a39bfc5ace2",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\reference-sanity.json": "d31bbe8ecf7c46791bc340e6700620713b9cc3b03f6fe899ef58e82bdd99bb69",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\generation.json": "98007f74d5a0c8a4d9e3e94e674a497acfa03433c2a885f90c5635f4fb6f736b",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\generation.stdout.log": "d79e0d348ded5f0a527bb8786259ba9565411c2b2a385476112f0debd26c83ab",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\generation.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\inline-repair.json": "865a7c9441cee41e54db8544ecb25dfd4d3d07769021cc63c27a7136dfb9470d",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\inline-generation.stdout.log": "6b7ae1fa7e3edf6d78a58cf4b389f4918d00e3f2fb1576b93c8032e0384db22f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\inline-generation.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m02_f16_ragged_scalar\\expected.npz": "d988b0e930e87d68914d329d4750e1f06f047b8a64af8202c557d2239eaa63a5",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m02_f16_ragged_scalar\\k_matmul_79479f.ir.json": "d6fbd9abfca354f6e4b9620cc1e7aeb83d6580b89f513395fa1fe76d91a571c2",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m02_f16_ragged_scalar\\k_matmul_79479f.ir.txt": "5f6e359e6f54aeef6c7083bb8dbb8dd01fe640679b4422997db5944fddebb3fa",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m02_f16_ragged_scalar\\k_matmul_79479f.ref.cu": "593b6ced99553d53d893539ed171f57319825bbc69a13dc222b8c83ab5d021a1",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m02_f16_ragged_scalar\\meta.json": "f100a8fe52274bc2f7d2450daf94e46bc8989193bcc9153f0da4820aaf8a484e",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\scalar-repair.json": "e6c019e80e8cfca6de526375c723ddf91b71ac36c0bf5eae4c303bf1ee675d6d",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\scalar-generation.stdout.log": "c56d5c615103c5605ce892699ed966712069380872378a3bb85b1c8fa49a4ba6",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\scalar-generation.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\input-audit.json": "4c8a052cc5d5c5bfde5e3b2d3f08177d77963ebe27c43d648cdb5556ac204226",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\original-preparation-status.json": "a286f7b6349f9a2077f149a084d968ca008ebb36e31f291e0a418f14a6bda69a",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\input-audit-final.json": "fa2da514766afc0eb145bf91d8203ef9d0eb32bb1e9bcf56a88b4df7120accc0",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\explicit-large-i32\\expected.npz": "046b3de606a6b886559424ebb898eb35543f88225606f09629e6d3f81098e7a3",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\explicit-large-i32\\k_where_pointwise.ir.json": "e563747835db3c0335cb4013ea0091dc712ce63ac5609d09dfc1ed725d0fa3a8",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\explicit-large-i32\\manifest.json": "08b15cdc06cc56b19000b4c6f12afd8056d9543c3d0cfa689de142be6ef29515",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\explicit-large-i32\\meta.json": "7bad1bf4ee55ba6fb8dde5e8d96167b7c08fa53fd1104e42b8e44245db43b150"
+  },
+  "compiler_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+  },
+  "events": [
+    {
+      "index": 0,
+      "endpoint": "/compile",
+      "job": 0,
+      "request_sha256": "bbd01d37c182eb251df80e06009790339ed8d4a99f39d3e836322d0a48325558",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0000.http-00.json",
+          "sha256": "c1fd243b2c9feb2e93a4a8dde4016f86089cdf97c001e407618bcff10c3c0b39"
+        }
+      ],
+      "response_sha256": "ae1d65c04cfc3aa42bd83f29a0d8bc765881aae5bb751bebfe1061a545dc4f0d"
+    },
+    {
+      "index": 1,
+      "endpoint": "/run",
+      "job": 0,
+      "request_sha256": "1bc074b7dc257bc3cf1741f3062cb00cb85567ae3660be053e5c887953fd9647",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0001.http-00.json",
+          "sha256": "f62e9ac7629ace94e623b7fc1fc5dd0923702030b01a820af4433e5c9c40fa42"
+        }
+      ],
+      "response_sha256": "9597a2df7f343bdd1381d46e68f3ef4296f1acd9fbbbe03ceddc59558b80d8b9"
+    },
+    {
+      "index": 2,
+      "endpoint": "/run",
+      "job": 0,
+      "request_sha256": "9abfb085260f6ac6d0c25a1ea9c72dc8339bd6adf29c6b43c5c0b679cb0f3e54",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0002.http-00.json",
+          "sha256": "32151702b6d0392fa5b06a6ca8ce17075300aedf97bd12b95ae5588c5c3bea61"
+        }
+      ],
+      "response_sha256": "d4641960eec2febd7cfb7fce2c21b48ec1dbb6a1aab829c8e2dbe668b8c29ce5"
+    },
+    {
+      "index": 3,
+      "endpoint": "/compile",
+      "job": 1,
+      "request_sha256": "ab004ed1e34b0c7b6c80805946be243ce42e4e981ff0205df1faef55f7af65cf",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0003.http-00.json",
+          "sha256": "425ea14b06763a333f901ec17c02d4fdc2bc88f7798035c3efcc8f00c6f26c85"
+        }
+      ],
+      "response_sha256": "42531f1ca431301344262d13b5807e17910cc37da298845bffb280b73ad06321"
+    },
+    {
+      "index": 4,
+      "endpoint": "/run",
+      "job": 1,
+      "request_sha256": "80fd2afa9e2bbb9916b913b30db28edaac13fbea3bd011fef897f61765bbcd35",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0004.http-00.json",
+          "sha256": "228decaea8f48d16e50a9a0ea33bda6fbe54e3f3f7f726f2ca49a95954bc315a"
+        }
+      ],
+      "response_sha256": "98b857e091b9c4a4523d66a950839570f4d320ab58fef9a0dfa8aeb14ec01ba3"
+    },
+    {
+      "index": 5,
+      "endpoint": "/run",
+      "job": 1,
+      "request_sha256": "5306b31669d1e97cd4246fd7aa55a72b0498dd128771791884a6ffa9b9cac620",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0005.http-00.json",
+          "sha256": "61b7083e73a56e40945438d584d244e0a55838f6afedbff506cbdba1aa0903c5"
+        }
+      ],
+      "response_sha256": "bf32d6f3d51a966ba80bdc1bbf66e35ad6a9fbda21be492f540688c2188c3f70"
+    },
+    {
+      "index": 6,
+      "endpoint": "/compile",
+      "job": 2,
+      "request_sha256": "2d203d66b08f6633174aea521a38c73aa2efb88d6623d9050dbeed49608c5e8f",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0006.http-00.json",
+          "sha256": "e6744dcfff401ec02e5c38a7bf4cc5183ff8ddafc35525216b4483aa0851ec00"
+        }
+      ],
+      "response_sha256": "5c1d2d7a25157bfb5e54a68464dd874975941dd4577226e0ce94ca7a638f1e59"
+    },
+    {
+      "index": 7,
+      "endpoint": "/run",
+      "job": 2,
+      "request_sha256": "3b925284174ddf7ebe9cad9ecd25df76a8c44c2acb39b5834b89ccd562a8e872",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0007.http-00.json",
+          "sha256": "7d34ace6795566ae65a3254eb14307783d9a35adbedd1be60a7b992db43fcd2c"
+        }
+      ],
+      "response_sha256": "8506cc9a7a80ed0faf0f50230dc19872c69540fb6ad637286a0b940117f2df83"
+    },
+    {
+      "index": 8,
+      "endpoint": "/run",
+      "job": 2,
+      "request_sha256": "cb4735bee89336a17609757fb00b164cab25a0f80e096a1c5ad2eec499077497",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0008.http-00.json",
+          "sha256": "8591866e3931f90b552e6ae7d3d9b60c16b59c96d45db4864f9ed457f11b4bc2"
+        }
+      ],
+      "response_sha256": "2802b0be187d04a9d78258432fbba3c5605f90f3b1465ca5ff01142123707d2b"
+    },
+    {
+      "index": 9,
+      "endpoint": "/compile",
+      "job": 3,
+      "request_sha256": "6f87a8c618c7d0549e1830c4747c7aa37bd77a2df36e5b4ce22ea3845971da45",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0009.http-00.json",
+          "sha256": "877d5561624a2f711620dc2defecdb5ca509154ddc526579d4a7f96353d59bc1"
+        }
+      ],
+      "response_sha256": "f876611c24fd41d3403539d85c1dedcc16ac0a3b9722acd09d3638a56d42fd8e"
+    },
+    {
+      "index": 10,
+      "endpoint": "/run",
+      "job": 3,
+      "request_sha256": "fcecddf1aa4ed3fb334c2fcdeb3218f35b7e47592c3e36d841ca440f20fa7d24",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0010.http-00.json",
+          "sha256": "9004c3cf86e390baf0e6daa9140f7e5b1ad8aa506bf44e82eb4a1cafd6e7eaa4"
+        }
+      ],
+      "response_sha256": "6e47ea0d76d45b6f13120c4f9363cc33807ba9991c899c9cb41142e802359a83"
+    },
+    {
+      "index": 11,
+      "endpoint": "/run",
+      "job": 3,
+      "request_sha256": "e4e845b93f79cae7ddae055d232a0a40d74322c354be70c756d4e3a14746b06d",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0011.http-00.json",
+          "sha256": "fa0ce4af1894787b49e3efcd7e0d53ba6b38009239cc155a8ca2a67f0e091739"
+        }
+      ],
+      "response_sha256": "f9803bcdda86b1257f966aa4a0460209cac0c79742cf833cce5887ae9d47723f"
+    },
+    {
+      "index": 12,
+      "endpoint": "/compile",
+      "job": 4,
+      "request_sha256": "7368e73f23222ae0b6e5ffa9d8e05480b1f3c3cc37613c0699b6afc8b2941c87",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0012.http-00.json",
+          "sha256": "5bf90f20ed7b228828efa9fc57fd992bd81146c2b8ef68c7659ac388090cb320"
+        }
+      ],
+      "response_sha256": "729785ab85ba3cd5604fdec47447cf1cac29d202fde93551637d19d6cb5d5b04"
+    },
+    {
+      "index": 13,
+      "endpoint": "/run",
+      "job": 4,
+      "request_sha256": "fb7de9b9fcb0dea077786a8cfbaa2bc077cdae704bfd9a868c15b0d8207fa844",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0013.http-00.json",
+          "sha256": "bc45cbdbd5f9366060dfeaf4346965e41de980413a958afdf76cc56f6d3f1030"
+        }
+      ],
+      "response_sha256": "76da04853a753394f74e62feadae4e27d056a461ea90a772a4acca803002adcb"
+    },
+    {
+      "index": 14,
+      "endpoint": "/run",
+      "job": 4,
+      "request_sha256": "cae2220ae0253ef89e2cbd125e1bca4b3dd5743342dd4d5dc385cf56d0e2c406",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0014.http-00.json",
+          "sha256": "c06162170325f601346cc93eda701299d60374798571499a6d1442d66e770821"
+        }
+      ],
+      "response_sha256": "21537b466f1f35d1c4ed9a85714449fe35e9b2cac2139a7b4755c736ef4c6323"
+    },
+    {
+      "index": 15,
+      "endpoint": "/compile",
+      "job": 5,
+      "request_sha256": "d697108aa132f964ff22a475616dd3b42bd2ec82511db486cd334dce47001bb3",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0015.http-00.json",
+          "sha256": "73fef3c72e32626c8537c3f13772cdfe754d00297ccf140419503a05ab55559d"
+        }
+      ],
+      "response_sha256": "4a7ad0f2b4ec385c33d2ceec80559ad0be4a3a811b6b055b1388d11c0d6a1ac9"
+    },
+    {
+      "index": 16,
+      "endpoint": "/run",
+      "job": 5,
+      "request_sha256": "65edda90642b8960c5eb21cf8faa1ced5e893753ee167df5b1ca81dbe56b8c0e",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0016.http-00.json",
+          "sha256": "5af5897e49bf60a48d3f397aa2f2230ab07b6299bec61a6671741ccdd63f5186"
+        }
+      ],
+      "response_sha256": "58afd75e370d0c6d0c92cd5a5937389805cddf6e529eb393d3926229a1d3c653"
+    },
+    {
+      "index": 17,
+      "endpoint": "/run",
+      "job": 5,
+      "request_sha256": "f335ff11363cb1583b599f6ad19deba705f05fa661232db8352b576123cb19c8",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0017.http-00.json",
+          "sha256": "797944ba0352466644491d3c7d66e6269216db9ec0d6849401b4669d43eb6b93"
+        }
+      ],
+      "response_sha256": "d9684d617bbc6b63ac98187c6cf7e932545355e845febd7db18aca7e54802fc8"
+    },
+    {
+      "index": 18,
+      "endpoint": "/compile",
+      "job": 6,
+      "request_sha256": "513add38b24cd1f6a2b014449721b8218544d72bba57d3bc0c742a1bd2fe9816",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0018.http-00.json",
+          "sha256": "e7f1c57790058a212cca8d2363a4a7013087535333340104ccd614141f63be98"
+        }
+      ],
+      "response_sha256": "219e73f25afbd84ef4051d398bdeba7eea77421569a5fb2b92d454738c6784d3"
+    },
+    {
+      "index": 19,
+      "endpoint": "/run",
+      "job": 6,
+      "request_sha256": "541fa12d6eed47b04734e62f8b899cfe4e3dbb5c64fc4f6e2979faa91ba3673f",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0019.http-00.json",
+          "sha256": "b44fd2d381916380f0cc2e64b5cc7d504d722ccb94adce6ed128872c955bf392"
+        }
+      ],
+      "response_sha256": "ff6a3bb9a6ecaae8ff3506222ac71b972189c01c57c473d5fa0ba63bc4a60e60"
+    },
+    {
+      "index": 20,
+      "endpoint": "/run",
+      "job": 6,
+      "request_sha256": "309f544d5a202d2347edc9f14974b45d763fc132b03f1fd527c7bb2c506c2532",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0020.http-00.json",
+          "sha256": "eca6a2e858f7e790a2ac553d9eb85ea7195c9e0ab36bb7c1f12d1fdf0bdfaaea"
+        }
+      ],
+      "response_sha256": "f7d7a2f4c190d82af2bf07b22c4150cfcec0ef675f5551eae7b1a9a9553b55d0"
+    },
+    {
+      "index": 21,
+      "endpoint": "/compile",
+      "job": 7,
+      "request_sha256": "57b4d2e59ddd966b4a35c8b57ed04d81b69075590c995784b81c3e6ae617f530",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0021.http-00.json",
+          "sha256": "be6bfad6cfaff23bdc22e6eabc05fc0cc55040091283c8747b45c4d05f00e9a7"
+        }
+      ],
+      "response_sha256": "1b036408094a975c42e9bafe33abe2aeafd91b0556475a5dbde5f67bfe74dc85"
+    },
+    {
+      "index": 22,
+      "endpoint": "/run",
+      "job": 7,
+      "request_sha256": "c397e9de8d55d58d3514c8b2db193075baa5fe850966f8892ee9e7f238eab762",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0022.http-00.json",
+          "sha256": "e43ea636ed8ac70acecb06d5ba27d623674253804d087e356f9f4e7038a045fd"
+        }
+      ],
+      "response_sha256": "cbfbaea3b4655a2844da9f47e98e22a25842da24ebddfca596bc3053723298bf"
+    },
+    {
+      "index": 23,
+      "endpoint": "/run",
+      "job": 7,
+      "request_sha256": "1b17c52d8aae0b190ccde5dafa28fce6b7a00708982a294d7caae35bdd37c4c0",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0023.http-00.json",
+          "sha256": "ef96e5729d3c1d2cd132c3bd9fed1e835c7ab78909b5373b5147cf75c8611a41"
+        }
+      ],
+      "response_sha256": "8a967da35063ab432135189ca286f07da6b63fb633e77e86cdeff26738b85833"
+    },
+    {
+      "index": 24,
+      "endpoint": "/compile",
+      "job": 8,
+      "request_sha256": "bf480aabcbe929a03f16adedf6531a483a04d3853ff78ae0861630422928c54a",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0024.http-00.json",
+          "sha256": "6450daaa60ae0cad43b3e327bf8c66ac9fe96f64be1a219debc64dc4b636b365"
+        }
+      ],
+      "response_sha256": "8501ee098c1348f982ab6ab3a827a017b56f7fef236593ea82970b6abdca9363"
+    },
+    {
+      "index": 25,
+      "endpoint": "/run",
+      "job": 8,
+      "request_sha256": "abb826180950044b0454c048968e8f7590af6419cda292fa14664e6a2886da68",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0025.http-00.json",
+          "sha256": "8303f4d9d37d8e9f377b4bd296abb3a8286cb7a4cedee655560a255d492cd346"
+        }
+      ],
+      "response_sha256": "ee2cd7493ee65ada328121b4513b35b4aca90ec66b47d99f1b771119452110ed"
+    },
+    {
+      "index": 26,
+      "endpoint": "/run",
+      "job": 8,
+      "request_sha256": "f56595aa40e16f483374d38a0f8012a90f8032edf86e78d63039e97440be5a37",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0026.http-00.json",
+          "sha256": "c481b3973bc71e043b4b499fb042103ccd7c8c435e4a3c36d33542a739b0cb44"
+        }
+      ],
+      "response_sha256": "88eaa51a34f034b563a75666c519a7b4cfa9080e5c3db909c8d894282111a25e"
+    },
+    {
+      "index": 27,
+      "endpoint": "/compile",
+      "job": 9,
+      "request_sha256": "edce19df46dabdf8a4b993ae1681774c94f5d77ff682c22d2f1b0c6479a59953",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0027.http-00.json",
+          "sha256": "34dfe68f199b1a0a825a1c1e450c23874edfbfd872e243f2e447ec1c76105f65"
+        }
+      ],
+      "response_sha256": "0ee609226685c82feadc07564b4d038772e35dd5866e08ec9fb699e3febbb39a"
+    },
+    {
+      "index": 28,
+      "endpoint": "/run",
+      "job": 9,
+      "request_sha256": "f51e1c521257e6a06eeff62eb59759d5ec72a72a177e3aa1941654b5281b6c49",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0028.http-00.json",
+          "sha256": "7f73da31d443ad6593e4df30bcb3b2745dfb11953e6b16e7abb295c5017c10d2"
+        }
+      ],
+      "response_sha256": "1b30c763cfbaac67e2e46ee0be1ceb721731408bb5c861a93a40beb412301a6e"
+    },
+    {
+      "index": 29,
+      "endpoint": "/run",
+      "job": 9,
+      "request_sha256": "51d921b2ace5ad20210bd293aaeb2ed3fff1631bb5fa4c0a86fbbdc17bf871d6",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0029.http-00.json",
+          "sha256": "7c61e5c19ac6370081a820375245c0a9bce6ffad4d6c2e1725ee90979f038d06"
+        }
+      ],
+      "response_sha256": "0c7a977cc4789d5d00a346398d1fe192752037a52c2b5bead8459e5008560f28"
+    },
+    {
+      "index": 30,
+      "endpoint": "/compile",
+      "job": 10,
+      "request_sha256": "ed93b7b64931353b10ca0aa4fa4adb6329d522fdc752978b6505bb919c5df968",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0030.http-00.json",
+          "sha256": "9f5f38e470852da38c2537ddb654403c888f4349de144b3d308bf4b735f0a651"
+        }
+      ],
+      "response_sha256": "356a92cc1d810016da895c66e8ef8b027d33e0d934259ff36bb9eb9db85daad6"
+    },
+    {
+      "index": 31,
+      "endpoint": "/run",
+      "job": 10,
+      "request_sha256": "8482d6a5074fc163d75e938973232609011f09f61a8c52dff9bc46473812d120",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0031.http-00.json",
+          "sha256": "33d254fd3539e1771710136540eede7f9ea4d9520ca3dffc9700725a921cca4a"
+        }
+      ],
+      "response_sha256": "9ff3e4f940a241e5a6e0dfe85f1ee6aebd491583c8b44c375d681e91d97cc6a0"
+    },
+    {
+      "index": 32,
+      "endpoint": "/run",
+      "job": 10,
+      "request_sha256": "49441c67ab89b58a7399cea3b9236859bfb873fc06e0a8a322529a12994e3a7e",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0032.http-00.json",
+          "sha256": "831dff7a44602d04530cb5cd5b706807fde60b99dd1af818206e2e2cfd116d81"
+        }
+      ],
+      "response_sha256": "9cbd777ebd8e3d873bdb055debb4f7df52689e21d0999e3e7135d15b3cf989dc"
+    },
+    {
+      "index": 33,
+      "endpoint": "/compile",
+      "job": 11,
+      "request_sha256": "504e6012eacf5a08b78b6840dd6660e659f5e2cc6acb4ae1eff0e50cd9d298be",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0033.http-00.json",
+          "sha256": "a06d8b425586c5b7d82db870041dc28bf08c663f227827d1a98cbb72bbcfe4c0"
+        }
+      ],
+      "response_sha256": "b98b6d289fc17dea591a9d31e1bf796fa14153493206daf3bfb08f795db741b3"
+    },
+    {
+      "index": 34,
+      "endpoint": "/run",
+      "job": 11,
+      "request_sha256": "23098ec55b29e98c2328c88302438d26177935d1fbf21fe59ecb5f2745782e9f",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0034.http-00.json",
+          "sha256": "cf61eb6c7fc6f6d06ebf863e4117c4e0fe4c31ec7fa6ab9d276678ef5996d6eb"
+        }
+      ],
+      "response_sha256": "4133323fe9c3c9b7a39d4a45d600913dc7e6a373f8a12e45189529c2990ef429"
+    },
+    {
+      "index": 35,
+      "endpoint": "/run",
+      "job": 11,
+      "request_sha256": "636cf48b846c6c82c2f09e8186a40d6ea1190c9b9fc6fdb1a4569b0bd12cf271",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0035.http-00.json",
+          "sha256": "7e5197b2d36bc0410975a8d1eb6a925b2eacc3a5af326dfaa7ae729656be324e"
+        }
+      ],
+      "response_sha256": "c1edaa21e4e61cbf3b813e03d639474352e61f2845ee9901b598b258d24dcef0"
+    },
+    {
+      "index": 36,
+      "endpoint": "/compile",
+      "job": 12,
+      "request_sha256": "bbd01d37c182eb251df80e06009790339ed8d4a99f39d3e836322d0a48325558",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0036.http-00.json",
+          "sha256": "b34f6c2f36474816cebb01cd08bc216221d781faeacd4273f969825e7acf8937"
+        }
+      ],
+      "response_sha256": "ae1d65c04cfc3aa42bd83f29a0d8bc765881aae5bb751bebfe1061a545dc4f0d"
+    },
+    {
+      "index": 37,
+      "endpoint": "/run",
+      "job": 12,
+      "request_sha256": "8f93af4ac5dc535417683bb0122cbd42f8d2a9cd29c994c5f2d07583a240e9b6",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0037.http-00.json",
+          "sha256": "0280345e5e04d3caea3539db7ca357e9460062450eb7acce09ee7937b3882fc4"
+        }
+      ],
+      "response_sha256": "03a18af8311301fbb722c99bb2bf7d1c84a7ad8bfef10f75c6df06f936215285"
+    },
+    {
+      "index": 38,
+      "endpoint": "/compile",
+      "job": 13,
+      "request_sha256": "ab004ed1e34b0c7b6c80805946be243ce42e4e981ff0205df1faef55f7af65cf",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0038.http-00.json",
+          "sha256": "cc13732937e2923d593024e9ac51bde33a42ae5f51262adda7683b76015ffbd0"
+        }
+      ],
+      "response_sha256": "42531f1ca431301344262d13b5807e17910cc37da298845bffb280b73ad06321"
+    },
+    {
+      "index": 39,
+      "endpoint": "/run",
+      "job": 13,
+      "request_sha256": "a2cdbd987ac9d8ef2f30c44552ecbfa35ca570f61b9317fa73771d1fb761d035",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0039.http-00.json",
+          "sha256": "4f864fc1f45d9273466e57192af9f95a545ea98b9ee52ef585a64f43130101af"
+        }
+      ],
+      "response_sha256": "8df2b496dcbd1a69398b3c9d518ee59c9e801fd02e772600521cb68b2f59e29e"
+    },
+    {
+      "index": 40,
+      "endpoint": "/compile",
+      "job": 14,
+      "request_sha256": "2d203d66b08f6633174aea521a38c73aa2efb88d6623d9050dbeed49608c5e8f",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0040.http-00.json",
+          "sha256": "7c0add416e17546335707b239a604a139373691690c74194747ce47ffe27b576"
+        }
+      ],
+      "response_sha256": "5c1d2d7a25157bfb5e54a68464dd874975941dd4577226e0ce94ca7a638f1e59"
+    },
+    {
+      "index": 41,
+      "endpoint": "/run",
+      "job": 14,
+      "request_sha256": "c8e146ca7688f3216458e94e8836bf25bf3c8feb4d16706c3252bf533c18c077",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0041.http-00.json",
+          "sha256": "94067c9363d11c46f36074acb3b2355f9c0d85259129d0a660561279f79efba3"
+        }
+      ],
+      "response_sha256": "5a14cd33571dda0203a5aad08ab529a306ed95bfcdb805ed32ff4c7276fbdff0"
+    },
+    {
+      "index": 42,
+      "endpoint": "/compile",
+      "job": 15,
+      "request_sha256": "6f87a8c618c7d0549e1830c4747c7aa37bd77a2df36e5b4ce22ea3845971da45",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0042.http-00.json",
+          "sha256": "0158a7d10e716ebc4d3cce02e52124f75340143aee285882a0c31a48b14ec72c"
+        }
+      ],
+      "response_sha256": "f876611c24fd41d3403539d85c1dedcc16ac0a3b9722acd09d3638a56d42fd8e"
+    },
+    {
+      "index": 43,
+      "endpoint": "/run",
+      "job": 15,
+      "request_sha256": "5cc657895e4a472936adad3d6f9aaca6f8d3569a321152d31848343f15af2a81",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0043.http-00.json",
+          "sha256": "f3c2bce17f4e493a2d1147649d9b7adfa5294b274b3ccc23531ad39c9901afda"
+        }
+      ],
+      "response_sha256": "3f8b9edc9a44af926c32dc1e816694c3ae96a2be635d2b7a5f25cd0e3e88bbe3"
+    },
+    {
+      "index": 44,
+      "endpoint": "/compile",
+      "job": 16,
+      "request_sha256": "7368e73f23222ae0b6e5ffa9d8e05480b1f3c3cc37613c0699b6afc8b2941c87",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0044.http-00.json",
+          "sha256": "39b614bfdf64c35608202e901182c76216398a2beb7fd4f92b261cbd8a26c235"
+        }
+      ],
+      "response_sha256": "729785ab85ba3cd5604fdec47447cf1cac29d202fde93551637d19d6cb5d5b04"
+    },
+    {
+      "index": 45,
+      "endpoint": "/run",
+      "job": 16,
+      "request_sha256": "62932ebb25353dd82382cdbfa3493e4a13b82121d84a2d82ac8016171b4b447b",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0045.http-00.json",
+          "sha256": "22c89e5e5c1de6eb865a59227db1701e92133f9b87c4399c4e1195c3a9e01e64"
+        }
+      ],
+      "response_sha256": "db832cc73108edaf9db6dab82d5207a82dd54dd188bc9e4c53d14716bd21fb8c"
+    },
+    {
+      "index": 46,
+      "endpoint": "/compile",
+      "job": 17,
+      "request_sha256": "d697108aa132f964ff22a475616dd3b42bd2ec82511db486cd334dce47001bb3",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0046.http-00.json",
+          "sha256": "1c776636a7367e28197fc170321a9e089b7d01bd12636b4c82c2340c915c051b"
+        }
+      ],
+      "response_sha256": "4a7ad0f2b4ec385c33d2ceec80559ad0be4a3a811b6b055b1388d11c0d6a1ac9"
+    },
+    {
+      "index": 47,
+      "endpoint": "/run",
+      "job": 17,
+      "request_sha256": "304e90f7da9925f32f44d1aeab70a849da471bcf7fb11841ba5709bb54f1dc24",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0047.http-00.json",
+          "sha256": "d6375d97d22f3567bac88b36d48799dd80648ab1c218c9e11959b1c000bd88c9"
+        }
+      ],
+      "response_sha256": "4a258342c63c53fa76946c580b6c92ee2f7930707b2966a18313f2881b0446a4"
+    },
+    {
+      "index": 48,
+      "endpoint": "/compile",
+      "job": 18,
+      "request_sha256": "513add38b24cd1f6a2b014449721b8218544d72bba57d3bc0c742a1bd2fe9816",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0048.http-00.json",
+          "sha256": "61f1e0a145dd18c15b16cf12faed5795dd5ae1a86c3f1ed1320bb26aae94b933"
+        }
+      ],
+      "response_sha256": "219e73f25afbd84ef4051d398bdeba7eea77421569a5fb2b92d454738c6784d3"
+    },
+    {
+      "index": 49,
+      "endpoint": "/run",
+      "job": 18,
+      "request_sha256": "be06a27d2519ade4b90156f0a231cc5aef7691c1705a733bc1d331f778eebb27",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0049.http-00.json",
+          "sha256": "82ef37775736599260921d07c219dbb7a1070d197d131cc13c00121b06dca51a"
+        }
+      ],
+      "response_sha256": "3795c6547196a430a4b49a8a7c0f43f611a9190904435c84f527c5d3f02ce956"
+    },
+    {
+      "index": 50,
+      "endpoint": "/compile",
+      "job": 19,
+      "request_sha256": "57b4d2e59ddd966b4a35c8b57ed04d81b69075590c995784b81c3e6ae617f530",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0050.http-00.json",
+          "sha256": "26fe1ad0c343fae33c109890c914d760a29aa0f6a82370ae0a360346c85e8901"
+        }
+      ],
+      "response_sha256": "1b036408094a975c42e9bafe33abe2aeafd91b0556475a5dbde5f67bfe74dc85"
+    },
+    {
+      "index": 51,
+      "endpoint": "/run",
+      "job": 19,
+      "request_sha256": "5192ac0c530c97179ba5b366e67c280369b891ba0f2a41347c4fffb1c95e9c6a",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0051.http-00.json",
+          "sha256": "acb9569570cd8af10b0bd2cb46abeeb68fb7773759a5289f6b0acd4d20d87fcf"
+        }
+      ],
+      "response_sha256": "ef05cd116afe27ea027c88004d8d9917a7bad9ee51b5a7c323536b9f1cd81f89"
+    },
+    {
+      "index": 52,
+      "endpoint": "/compile",
+      "job": 20,
+      "request_sha256": "bf480aabcbe929a03f16adedf6531a483a04d3853ff78ae0861630422928c54a",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0052.http-00.json",
+          "sha256": "694f78a2a00e55d0b50315dee1bae83fce7b4facf4d1ccc6a1282d7f432a684f"
+        }
+      ],
+      "response_sha256": "8501ee098c1348f982ab6ab3a827a017b56f7fef236593ea82970b6abdca9363"
+    },
+    {
+      "index": 53,
+      "endpoint": "/run",
+      "job": 20,
+      "request_sha256": "056bd8b80bd37919ad2d7f95d31737144d98e72aff3a22690b6804c6b199b9cf",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0053.http-00.json",
+          "sha256": "ac3013a423b502318c678d02b96f8408d75967045e232959c1f3f4baa0310ec8"
+        }
+      ],
+      "response_sha256": "76358a2e1f3f5d95fd566ee3270c2e201304ae76fee884df048556ee10b105a4"
+    },
+    {
+      "index": 54,
+      "endpoint": "/compile",
+      "job": 21,
+      "request_sha256": "edce19df46dabdf8a4b993ae1681774c94f5d77ff682c22d2f1b0c6479a59953",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0054.http-00.json",
+          "sha256": "22bca491e650e3c744f6d53f100445760f36a821d50f8969b540183bc6995391"
+        }
+      ],
+      "response_sha256": "0ee609226685c82feadc07564b4d038772e35dd5866e08ec9fb699e3febbb39a"
+    },
+    {
+      "index": 55,
+      "endpoint": "/run",
+      "job": 21,
+      "request_sha256": "9097c50b2bbc03175186ad8d7ec408b08a543d7644aba5f1ce930bd92e73f159",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0055.http-00.json",
+          "sha256": "b9356dadcd1808fc949aff7c1ae2940ac03de08ad17706798712c0f53913aeb2"
+        }
+      ],
+      "response_sha256": "35c275815a153e34704692cbde7e8a22b60d239bae5d37332c9c99114e9c907c"
+    },
+    {
+      "index": 56,
+      "endpoint": "/compile",
+      "job": 22,
+      "request_sha256": "ed93b7b64931353b10ca0aa4fa4adb6329d522fdc752978b6505bb919c5df968",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0056.http-00.json",
+          "sha256": "8eee3b35d23709f8faf041eca331d7e6f2c292ca50393c9655b6b2f49bb2e671"
+        }
+      ],
+      "response_sha256": "356a92cc1d810016da895c66e8ef8b027d33e0d934259ff36bb9eb9db85daad6"
+    },
+    {
+      "index": 57,
+      "endpoint": "/run",
+      "job": 22,
+      "request_sha256": "89e6f1b4588b2675aba8256b3e64b5bcb34325d12877b71e039e64fdc67ec26e",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0057.http-00.json",
+          "sha256": "01ab6ac169603496951b5e9854f9d989a63b7b147f75a34d1ca0e22d00262d6e"
+        }
+      ],
+      "response_sha256": "1ccb197677bbb70f411d093321a25cf20041bc6e830893020b17d2499aea73c0"
+    },
+    {
+      "index": 58,
+      "endpoint": "/compile",
+      "job": 23,
+      "request_sha256": "504e6012eacf5a08b78b6840dd6660e659f5e2cc6acb4ae1eff0e50cd9d298be",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0058.http-00.json",
+          "sha256": "6b456697ceb50f3c5a948ad8c62afb8c1d601e84729f2d26e4aa848bbe185c77"
+        }
+      ],
+      "response_sha256": "b98b6d289fc17dea591a9d31e1bf796fa14153493206daf3bfb08f795db741b3"
+    },
+    {
+      "index": 59,
+      "endpoint": "/run",
+      "job": 23,
+      "request_sha256": "200ddf8e222860b8a1bd885fe62d9f42c51c50401d88504b221a6dbd21daeabc",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0059.http-00.json",
+          "sha256": "63864e0467b2c2c32793ce9a394f37836761c8c8d2adac3824aa629b55df14c1"
+        }
+      ],
+      "response_sha256": "174325d81b0195751f66e9765be86f5861ea5d57d32c560385c99aaa027546d6"
+    },
+    {
+      "index": 60,
+      "endpoint": "/compile",
+      "job": 24,
+      "request_sha256": "bbd01d37c182eb251df80e06009790339ed8d4a99f39d3e836322d0a48325558",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0060.http-00.json",
+          "sha256": "0251c6b9ac0713d75c0937d9844834bdc0885503d8ee3da4d2c0fa2ea07183a0"
+        }
+      ],
+      "response_sha256": "ae1d65c04cfc3aa42bd83f29a0d8bc765881aae5bb751bebfe1061a545dc4f0d"
+    },
+    {
+      "index": 61,
+      "endpoint": "/run",
+      "job": 24,
+      "request_sha256": "5c6335e95120b96b4739e74ca4c8c26bd6c6c6230f16dc9e29b101e3bba5cc24",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0061.http-00.json",
+          "sha256": "f124ce3bf3aec87eb5389e88078051d3802340b90cbef179f85d882ed1bb1e95"
+        }
+      ],
+      "response_sha256": "ad79016e370d8f68e81f794efc30cf5b9c72903c4046b6a87c23f0b53433f9b3"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "oct24_p06_i32_selection",
+      "seeds": "0,17",
+      "pattern": "normal",
+      "pass": true,
+      "result": {
+        "problem": "oct24_p06_i32_selection",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_where_pointwise",
+            "compile_seconds": 5.2467123000024,
+            "ptx_bytes": 1528,
+            "ptx_sha256": "ecefbed73a2e1ed36659854f0190ea2cd0b96d0f3c1d03577fd3f1b7220993fe",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 14,
+            "cubin_id": "43af08fd4fbbab13cefc5edec3b67bbcafa6997caa826d060fd7b49a40608a9e"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_where_pointwise",
+                "grid": [
+                  5,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 15.488,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "where",
+                "pass": true,
+                "elements": 1043,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          },
+          {
+            "seed_offset": 17,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_where_pointwise",
+                "grid": [
+                  5,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 16.928,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "where",
+                "pass": true,
+                "elements": 1043,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_p07_sin_cos",
+      "seeds": "0,17",
+      "pattern": "normal",
+      "pass": true,
+      "result": {
+        "problem": "oct24_p07_sin_cos",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_add_pointwise",
+            "compile_seconds": 5.231926499996916,
+            "ptx_bytes": 1032,
+            "ptx_sha256": "3527b529c2eff518d69430021d6831dfc126af19fe786b8b3ccc0628fffcda6c",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 12,
+            "cubin_id": "62c7b2c08a70e72f8af475132a858213f36f43dc86ea55b757a06ee7bff980c1"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_add_pointwise",
+                "grid": [
+                  9,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 15.104,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "add",
+                "pass": true,
+                "elements": 2057,
+                "mismatches": 0,
+                "max_abs_error": 4.76837158203125e-07
+              }
+            ],
+            "pass": true
+          },
+          {
+            "seed_offset": 17,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_add_pointwise",
+                "grid": [
+                  9,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 16.768,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "add",
+                "pass": true,
+                "elements": 2057,
+                "mismatches": 0,
+                "max_abs_error": 4.76837158203125e-07
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_p08_erf",
+      "seeds": "0,17",
+      "pattern": "normal",
+      "pass": true,
+      "result": {
+        "problem": "oct24_p08_erf",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_erf_pointwise",
+            "compile_seconds": 4.096682499999588,
+            "ptx_bytes": 1782,
+            "ptx_sha256": "db5e3a9bded37ea29fcb6bb3fc8799f1ab0b2335c6c340d8381795e8519274e3",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 15,
+            "cubin_id": "572856ca37e81754d9955c80d8e68afdf83f6fb1d7a2676f115d6e665e911493"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_erf_pointwise",
+                "grid": [
+                  5,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 15.584,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "erf",
+                "pass": true,
+                "elements": 1073,
+                "mismatches": 0,
+                "max_abs_error": 4.023313522338867e-07
+              }
+            ],
+            "pass": true
+          },
+          {
+            "seed_offset": 17,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_erf_pointwise",
+                "grid": [
+                  5,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 16.64,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "erf",
+                "pass": true,
+                "elements": 1073,
+                "mismatches": 0,
+                "max_abs_error": 5.178153514862061e-07
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_r01_f16_max",
+      "seeds": "0,17",
+      "pattern": "normal",
+      "pass": true,
+      "result": {
+        "problem": "oct24_r01_f16_max",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_amax_reduce",
+            "compile_seconds": 2.8066641999976127,
+            "ptx_bytes": 3950,
+            "ptx_sha256": "993fdb2c6f9c7c6cd511ff018cd4b5f4291c22d5c15fdda53e824ca06ef4205f",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 20,
+            "cubin_id": "fc6e1ef01d364a3ff6a1a86fd7864e3bd1c4d17154efef89165755756be51be9"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_amax_reduce",
+                "grid": [
+                  19,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 20.896,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "amax",
+                "pass": true,
+                "elements": 19,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          },
+          {
+            "seed_offset": 17,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_amax_reduce",
+                "grid": [
+                  19,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 23.84,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "amax",
+                "pass": true,
+                "elements": 19,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_r02_f16_to_f32_sum",
+      "seeds": "0,17",
+      "pattern": "normal",
+      "pass": true,
+      "result": {
+        "problem": "oct24_r02_f16_to_f32_sum",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_sum_1_reduce",
+            "compile_seconds": 4.5445776999986265,
+            "ptx_bytes": 3361,
+            "ptx_sha256": "6069b01a8a48a1f5c9c98b591f796925a6f51297dab458100838c6bd83927a96",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 22,
+            "cubin_id": "9178fed87ebaeabd415443ee4ff6aa330937c2fe6be1b492e5e633d8d1e0dfdd"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_sum_1_reduce",
+                "grid": [
+                  13,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 21.376,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "sum_1",
+                "pass": true,
+                "elements": 13,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          },
+          {
+            "seed_offset": 17,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_sum_1_reduce",
+                "grid": [
+                  13,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 23.84,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "sum_1",
+                "pass": true,
+                "elements": 13,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_r03_f64_column_sum",
+      "seeds": "0,17",
+      "pattern": "normal",
+      "pass": false,
+      "result": {
+        "problem": "oct24_r03_f64_column_sum",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_sum_1_reduce",
+            "compile_seconds": 5.174871300005179,
+            "ptx_bytes": 3390,
+            "ptx_sha256": "e3fa17f53bc615d7b5bc2bc44775ed94ab5a02bbb443b0d9e0115bac85ec8d92",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 24,
+            "cubin_id": "2f5dc1670fc6ffe3023b502b464dacff99a76c31e87ae3cc0c2b0e7668a8ce7d"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_sum_1_reduce",
+                "grid": [
+                  17,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 21.216,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "sum_1",
+                "pass": false,
+                "elements": 17,
+                "mismatches": 17,
+                "max_abs_error": 1.7298699184209454e-06,
+                "first_failure": {
+                  "index": [
+                    0
+                  ],
+                  "actual": 3.040198802947998,
+                  "expected": 3.0401992497484844
+                }
+              }
+            ],
+            "pass": false
+          },
+          {
+            "seed_offset": 17,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_sum_1_reduce",
+                "grid": [
+                  17,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 23.776,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "sum_1",
+                "pass": false,
+                "elements": 17,
+                "mismatches": 17,
+                "max_abs_error": 2.1271547705481453e-06,
+                "first_failure": {
+                  "index": [
+                    0
+                  ],
+                  "actual": 3.898686408996582,
+                  "expected": 3.8986861110250146
+                }
+              }
+            ],
+            "pass": false
+          }
+        ],
+        "pass": false
+      }
+    },
+    {
+      "id": "oct24_r04_i32_column_sum",
+      "seeds": "0,17",
+      "pattern": "normal",
+      "pass": true,
+      "result": {
+        "problem": "oct24_r04_i32_column_sum",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_sum_1_reduce",
+            "compile_seconds": 4.097491400003491,
+            "ptx_bytes": 3377,
+            "ptx_sha256": "5ab374f17bcf39f81a0da1b28f58a4bc0881bf0a5bdb9c993d16d348e1e4964b",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 22,
+            "cubin_id": "703f3f88c98076254aa873a84d0321ed95c9a299ba962cfeadbd9a9543d91227"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_sum_1_reduce",
+                "grid": [
+                  23,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 21.216,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "sum_1",
+                "pass": true,
+                "elements": 23,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          },
+          {
+            "seed_offset": 17,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_sum_1_reduce",
+                "grid": [
+                  23,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 24.224,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "sum_1",
+                "pass": true,
+                "elements": 23,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_m01_f64_ragged",
+      "seeds": "0,17",
+      "pattern": "normal",
+      "pass": false,
+      "result": {
+        "problem": "oct24_m01_f64_ragged",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_matmul_f2c5ef",
+            "compile_seconds": 3.818483600000036,
+            "ptx_bytes": 4595,
+            "ptx_sha256": "43aea51bccdb1f1afc9369b44a00649bf36c847071c8d469b1e20b7aa69e8ff0",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 27,
+            "cubin_id": "cc66ae6ffa8f6da05eb1e626337604ca7a7a2e6cf83dce6bff279b6624a15ab6"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_matmul_f2c5ef",
+                "grid": [
+                  221,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 21.312,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "matmul",
+                "pass": false,
+                "elements": 221,
+                "mismatches": 221,
+                "max_abs_error": 1.1769157968188892e-06,
+                "first_failure": {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "actual": 6.400023937225342,
+                  "expected": 6.400023762833701
+                }
+              }
+            ],
+            "pass": false
+          },
+          {
+            "seed_offset": 17,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_matmul_f2c5ef",
+                "grid": [
+                  221,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 24.032,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "matmul",
+                "pass": false,
+                "elements": 221,
+                "mismatches": 221,
+                "max_abs_error": 1.9030002746944774e-06,
+                "first_failure": {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "actual": 3.358106851577759,
+                  "expected": 3.358107459844165
+                }
+              }
+            ],
+            "pass": false
+          }
+        ],
+        "pass": false
+      }
+    },
+    {
+      "id": "oct24_f02_softmax_tail",
+      "seeds": "0,17",
+      "pattern": "normal",
+      "pass": true,
+      "result": {
+        "problem": "oct24_f02_softmax_tail",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_softmax_c04fa5",
+            "compile_seconds": 3.582328399999824,
+            "ptx_bytes": 7929,
+            "ptx_sha256": "ecd4378d64b9b4768dbdfdb610db4e950a6aa80e317fba3b58dcafe0502c2824",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 23,
+            "cubin_id": "3deb1509b00a50ba6c149f8914e506217e59f69998edaf852001b33ea0c16f44"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_softmax_c04fa5",
+                "grid": [
+                  5,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 15.296,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "softmax",
+                "pass": true,
+                "elements": 2605,
+                "mismatches": 0,
+                "max_abs_error": 6.984919309616089e-10
+              }
+            ],
+            "pass": true
+          },
+          {
+            "seed_offset": 17,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_softmax_c04fa5",
+                "grid": [
+                  5,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 16.896,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "softmax",
+                "pass": true,
+                "elements": 2605,
+                "mismatches": 0,
+                "max_abs_error": 6.984919309616089e-10
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_a01_attention_tail",
+      "seeds": "0,17",
+      "pattern": "normal",
+      "pass": true,
+      "result": {
+        "problem": "oct24_a01_attention_tail",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_matmul_softmax_reduce_cd8d6f",
+            "compile_seconds": 5.493072099998244,
+            "ptx_bytes": 9678,
+            "ptx_sha256": "e4c9f265b0b0ec8b4576a89a43ef2877db218adb34590b620c616dd49687851f",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 64,
+            "cubin_id": "feffcd0548f0f69dea3b36470926a4771b6394ab12ad3c3c26086e98aca92da5"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_matmul_softmax_reduce_cd8d6f",
+                "grid": [
+                  9,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 28.64,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "matmul_1",
+                "pass": true,
+                "elements": 135,
+                "mismatches": 0,
+                "max_abs_error": 5.960464477539063e-08
+              }
+            ],
+            "pass": true
+          },
+          {
+            "seed_offset": 17,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_matmul_softmax_reduce_cd8d6f",
+                "grid": [
+                  9,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 31.072,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "matmul_1",
+                "pass": true,
+                "elements": 135,
+                "mismatches": 0,
+                "max_abs_error": 5.960464477539063e-08
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_f01_f64_centered_norm_inline",
+      "seeds": "0,17",
+      "pattern": "normal",
+      "pass": false,
+      "result": {
+        "problem": "oct24_f01_f64_centered_norm_inline",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_mean_reduce_bfe0aa",
+            "compile_seconds": 4.2095206000012695,
+            "ptx_bytes": 8943,
+            "ptx_sha256": "1ba212eb2cdf1d21b6ddeab9f5d00308f64c3c938fc73d36c8acf85106f373e2",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 42,
+            "cubin_id": "28d573eee81ee41effee93ce8bb1b8d852b02abef92dc9d8d883f5d7c91e9f97"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_mean_reduce_bfe0aa",
+                "grid": [
+                  11,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 21.792,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "div",
+                "pass": false,
+                "elements": 781,
+                "mismatches": 781,
+                "max_abs_error": 4.413531262681403e-08,
+                "first_failure": {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "actual": 0.005682265851646662,
+                  "expected": 0.0056822661227819106
+                }
+              }
+            ],
+            "pass": false
+          },
+          {
+            "seed_offset": 17,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_mean_reduce_bfe0aa",
+                "grid": [
+                  11,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 23.936,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "div",
+                "pass": false,
+                "elements": 781,
+                "mismatches": 781,
+                "max_abs_error": 3.714835364321267e-08,
+                "first_failure": {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "actual": 0.15592622756958008,
+                  "expected": 0.15592623228492958
+                }
+              }
+            ],
+            "pass": false
+          }
+        ],
+        "pass": false
+      }
+    },
+    {
+      "id": "oct24_m02_f16_ragged_scalar",
+      "seeds": "0,17",
+      "pattern": "normal",
+      "pass": true,
+      "result": {
+        "problem": "oct24_m02_f16_ragged_scalar",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_matmul_79479f",
+            "compile_seconds": 2.982436400001461,
+            "ptx_bytes": 4858,
+            "ptx_sha256": "c94c6f7553a6167963cd12afe10b7a6335350cdfa8f0fb4793d61c840f547856",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 34,
+            "cubin_id": "07039a3119fe1a06ae32ca0ab0b70a0efecc0dafaad994d966bdf3372de0788f"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_matmul_79479f",
+                "grid": [
+                  11,
+                  1,
+                  1
+                ],
+                "block": [
+                  32,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 20.352,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "matmul",
+                "pass": true,
+                "elements": 209,
+                "mismatches": 0,
+                "max_abs_error": 0.00390625
+              }
+            ],
+            "pass": true
+          },
+          {
+            "seed_offset": 17,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_matmul_79479f",
+                "grid": [
+                  11,
+                  1,
+                  1
+                ],
+                "block": [
+                  32,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 23.648,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "matmul",
+                "pass": true,
+                "elements": 209,
+                "mismatches": 0,
+                "max_abs_error": 0.00390625
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_p06_i32_selection",
+      "seeds": "101",
+      "pattern": "wide",
+      "pass": true,
+      "result": {
+        "problem": "oct24_p06_i32_selection",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_where_pointwise",
+            "compile_seconds": 3.036971800000174,
+            "ptx_bytes": 1528,
+            "ptx_sha256": "ecefbed73a2e1ed36659854f0190ea2cd0b96d0f3c1d03577fd3f1b7220993fe",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 14,
+            "cubin_id": "43af08fd4fbbab13cefc5edec3b67bbcafa6997caa826d060fd7b49a40608a9e"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 101,
+            "pattern": "wide",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_where_pointwise",
+                "grid": [
+                  5,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 16.448,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "where",
+                "pass": true,
+                "elements": 1043,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_p07_sin_cos",
+      "seeds": "101",
+      "pattern": "wide",
+      "pass": true,
+      "result": {
+        "problem": "oct24_p07_sin_cos",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_add_pointwise",
+            "compile_seconds": 5.126863500001491,
+            "ptx_bytes": 1032,
+            "ptx_sha256": "3527b529c2eff518d69430021d6831dfc126af19fe786b8b3ccc0628fffcda6c",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 12,
+            "cubin_id": "62c7b2c08a70e72f8af475132a858213f36f43dc86ea55b757a06ee7bff980c1"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 101,
+            "pattern": "wide",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_add_pointwise",
+                "grid": [
+                  9,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 17.952,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "add",
+                "pass": true,
+                "elements": 2057,
+                "mismatches": 0,
+                "max_abs_error": 3.2186508178710938e-06
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_p08_erf",
+      "seeds": "101",
+      "pattern": "wide",
+      "pass": true,
+      "result": {
+        "problem": "oct24_p08_erf",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_erf_pointwise",
+            "compile_seconds": 13.45224810000218,
+            "ptx_bytes": 1782,
+            "ptx_sha256": "db5e3a9bded37ea29fcb6bb3fc8799f1ab0b2335c6c340d8381795e8519274e3",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 15,
+            "cubin_id": "572856ca37e81754d9955c80d8e68afdf83f6fb1d7a2676f115d6e665e911493"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 101,
+            "pattern": "wide",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_erf_pointwise",
+                "grid": [
+                  5,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 14.944,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "erf",
+                "pass": true,
+                "elements": 1073,
+                "mismatches": 0,
+                "max_abs_error": 2.980232238769531e-07
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_r01_f16_max",
+      "seeds": "101",
+      "pattern": "wide",
+      "pass": true,
+      "result": {
+        "problem": "oct24_r01_f16_max",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_amax_reduce",
+            "compile_seconds": 15.167611800003215,
+            "ptx_bytes": 3950,
+            "ptx_sha256": "993fdb2c6f9c7c6cd511ff018cd4b5f4291c22d5c15fdda53e824ca06ef4205f",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 20,
+            "cubin_id": "fc6e1ef01d364a3ff6a1a86fd7864e3bd1c4d17154efef89165755756be51be9"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 101,
+            "pattern": "wide",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_amax_reduce",
+                "grid": [
+                  19,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 25.344,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "amax",
+                "pass": true,
+                "elements": 19,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_r02_f16_to_f32_sum",
+      "seeds": "101",
+      "pattern": "wide",
+      "pass": true,
+      "result": {
+        "problem": "oct24_r02_f16_to_f32_sum",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_sum_1_reduce",
+            "compile_seconds": 9.757880099998147,
+            "ptx_bytes": 3361,
+            "ptx_sha256": "6069b01a8a48a1f5c9c98b591f796925a6f51297dab458100838c6bd83927a96",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 22,
+            "cubin_id": "9178fed87ebaeabd415443ee4ff6aa330937c2fe6be1b492e5e633d8d1e0dfdd"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 101,
+            "pattern": "wide",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_sum_1_reduce",
+                "grid": [
+                  13,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 23.648,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "sum_1",
+                "pass": true,
+                "elements": 13,
+                "mismatches": 0,
+                "max_abs_error": 7.62939453125e-06
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_r03_f64_column_sum",
+      "seeds": "101",
+      "pattern": "wide",
+      "pass": false,
+      "result": {
+        "problem": "oct24_r03_f64_column_sum",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_sum_1_reduce",
+            "compile_seconds": 14.194289000006393,
+            "ptx_bytes": 3390,
+            "ptx_sha256": "e3fa17f53bc615d7b5bc2bc44775ed94ab5a02bbb443b0d9e0115bac85ec8d92",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 24,
+            "cubin_id": "2f5dc1670fc6ffe3023b502b464dacff99a76c31e87ae3cc0c2b0e7668a8ce7d"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 101,
+            "pattern": "wide",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_sum_1_reduce",
+                "grid": [
+                  17,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 24.736,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "sum_1",
+                "pass": false,
+                "elements": 17,
+                "mismatches": 17,
+                "max_abs_error": 2.3642741155072144e-05,
+                "first_failure": {
+                  "index": [
+                    0
+                  ],
+                  "actual": -78.28888702392578,
+                  "expected": -78.28888114148563
+                }
+              }
+            ],
+            "pass": false
+          }
+        ],
+        "pass": false
+      }
+    },
+    {
+      "id": "oct24_r04_i32_column_sum",
+      "seeds": "101",
+      "pattern": "wide",
+      "pass": true,
+      "result": {
+        "problem": "oct24_r04_i32_column_sum",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_sum_1_reduce",
+            "compile_seconds": 14.306719300002442,
+            "ptx_bytes": 3377,
+            "ptx_sha256": "5ab374f17bcf39f81a0da1b28f58a4bc0881bf0a5bdb9c993d16d348e1e4964b",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 22,
+            "cubin_id": "703f3f88c98076254aa873a84d0321ed95c9a299ba962cfeadbd9a9543d91227"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 101,
+            "pattern": "wide",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_sum_1_reduce",
+                "grid": [
+                  23,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 25.44,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "sum_1",
+                "pass": true,
+                "elements": 23,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_m01_f64_ragged",
+      "seeds": "101",
+      "pattern": "wide",
+      "pass": false,
+      "result": {
+        "problem": "oct24_m01_f64_ragged",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_matmul_f2c5ef",
+            "compile_seconds": 12.083426899996994,
+            "ptx_bytes": 4595,
+            "ptx_sha256": "43aea51bccdb1f1afc9369b44a00649bf36c847071c8d469b1e20b7aa69e8ff0",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 27,
+            "cubin_id": "cc66ae6ffa8f6da05eb1e626337604ca7a7a2e6cf83dce6bff279b6624a15ab6"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 101,
+            "pattern": "wide",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_matmul_f2c5ef",
+                "grid": [
+                  221,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 24.16,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "matmul",
+                "pass": false,
+                "elements": 221,
+                "mismatches": 221,
+                "max_abs_error": 0.00012873736557139637,
+                "first_failure": {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "actual": -223.77133178710938,
+                  "expected": -223.77133884860072
+                }
+              }
+            ],
+            "pass": false
+          }
+        ],
+        "pass": false
+      }
+    },
+    {
+      "id": "oct24_f02_softmax_tail",
+      "seeds": "101",
+      "pattern": "wide",
+      "pass": true,
+      "result": {
+        "problem": "oct24_f02_softmax_tail",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_softmax_c04fa5",
+            "compile_seconds": 10.59403910000401,
+            "ptx_bytes": 7929,
+            "ptx_sha256": "ecd4378d64b9b4768dbdfdb610db4e950a6aa80e317fba3b58dcafe0502c2824",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 23,
+            "cubin_id": "3deb1509b00a50ba6c149f8914e506217e59f69998edaf852001b33ea0c16f44"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 101,
+            "pattern": "wide",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_softmax_c04fa5",
+                "grid": [
+                  5,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 16.608,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "softmax",
+                "pass": true,
+                "elements": 2605,
+                "mismatches": 0,
+                "max_abs_error": 1.4901161193847656e-08
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_a01_attention_tail",
+      "seeds": "101",
+      "pattern": "wide",
+      "pass": true,
+      "result": {
+        "problem": "oct24_a01_attention_tail",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_matmul_softmax_reduce_cd8d6f",
+            "compile_seconds": 11.109425700000429,
+            "ptx_bytes": 9678,
+            "ptx_sha256": "e4c9f265b0b0ec8b4576a89a43ef2877db218adb34590b620c616dd49687851f",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 64,
+            "cubin_id": "feffcd0548f0f69dea3b36470926a4771b6394ab12ad3c3c26086e98aca92da5"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 101,
+            "pattern": "wide",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_matmul_softmax_reduce_cd8d6f",
+                "grid": [
+                  9,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 34.688,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "matmul_1",
+                "pass": true,
+                "elements": 135,
+                "mismatches": 0,
+                "max_abs_error": 1.9073486328125e-06
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_f01_f64_centered_norm_inline",
+      "seeds": "101",
+      "pattern": "wide",
+      "pass": false,
+      "result": {
+        "problem": "oct24_f01_f64_centered_norm_inline",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_mean_reduce_bfe0aa",
+            "compile_seconds": 13.888366399994993,
+            "ptx_bytes": 8943,
+            "ptx_sha256": "1ba212eb2cdf1d21b6ddeab9f5d00308f64c3c938fc73d36c8acf85106f373e2",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 42,
+            "cubin_id": "28d573eee81ee41effee93ce8bb1b8d852b02abef92dc9d8d883f5d7c91e9f97"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 101,
+            "pattern": "wide",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_mean_reduce_bfe0aa",
+                "grid": [
+                  11,
+                  1,
+                  1
+                ],
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 22.752,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "div",
+                "pass": false,
+                "elements": 781,
+                "mismatches": 781,
+                "max_abs_error": 3.202955742298563e-08,
+                "first_failure": {
+                  "index": [
+                    0,
+                    0
+                  ],
+                  "actual": -0.0992363691329956,
+                  "expected": -0.09923636513139511
+                }
+              }
+            ],
+            "pass": false
+          }
+        ],
+        "pass": false
+      }
+    },
+    {
+      "id": "oct24_m02_f16_ragged_scalar",
+      "seeds": "101",
+      "pattern": "wide",
+      "pass": true,
+      "result": {
+        "problem": "oct24_m02_f16_ragged_scalar",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_matmul_79479f",
+            "compile_seconds": 10.814613000002282,
+            "ptx_bytes": 4858,
+            "ptx_sha256": "c94c6f7553a6167963cd12afe10b7a6335350cdfa8f0fb4793d61c840f547856",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 34,
+            "cubin_id": "07039a3119fe1a06ae32ca0ab0b70a0efecc0dafaad994d966bdf3372de0788f"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 101,
+            "pattern": "wide",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_matmul_79479f",
+                "grid": [
+                  11,
+                  1,
+                  1
+                ],
+                "block": [
+                  32,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 24.192,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "matmul",
+                "pass": true,
+                "elements": 209,
+                "mismatches": 0,
+                "max_abs_error": 0.25
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "explicit-large-i32",
+      "seeds": "0",
+      "pattern": "normal",
+      "pass": true,
+      "result": {
+        "problem": "oct24_p06_i32_selection_large_data",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_where_pointwise",
+            "compile_seconds": 5.240295499999775,
+            "ptx_bytes": 1528,
+            "ptx_sha256": "ecefbed73a2e1ed36659854f0190ea2cd0b96d0f3c1d03577fd3f1b7220993fe",
+            "compiler_sources_sha256": {
+              "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 14,
+            "cubin_id": "43af08fd4fbbab13cefc5edec3b67bbcafa6997caa826d060fd7b49a40608a9e"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_where_pointwise",
+                "grid": [
+                  5,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 17.056,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "where",
+                "pass": true,
+                "elements": 1043,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    }
+  ],
+  "pass": false,
+  "checks": 37,
+  "passed_checks": 28,
+  "tracked_unchanged": true,
+  "finished_utc": "2026-10-24T00:42:58.121015+00:00"
+}

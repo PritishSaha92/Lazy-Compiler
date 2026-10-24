@@ -1,0 +1,8 @@
+    Tile[a0, a1, a2] (N=819)
+        in1 = load x[a0, 0, a2]
+        in0 = load y[0, a1, 0]
+        f32 v0 = add(in0, in1)
+        in2 = load z[a0, a1, a2]
+        f32 v1 = subtract(v0, in2)
+        f32 v2 = relu(v1)
+        relu[a0, a1, a2] = v2

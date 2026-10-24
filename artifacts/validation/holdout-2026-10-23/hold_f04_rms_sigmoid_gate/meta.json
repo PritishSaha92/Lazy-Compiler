@@ -1,0 +1,77 @@
+{
+ "id": "hold_f04_rms_sigmoid_gate",
+ "code": "x=torch.randn(7,311); torch.sigmoid(x)*x/torch.sqrt((x*x).mean(-1,keepdim=True)+0.002)",
+ "rtol": 0.001,
+ "atol": 0.0001,
+ "graph_inputs": [
+  "x"
+ ],
+ "graph_outputs": [
+  "div"
+ ],
+ "kernels": [
+  {
+   "node": "div",
+   "entry": "k_mean_2b1a0c",
+   "arg_order": [
+    "mean_count",
+    "add_c1",
+    "x",
+    "div"
+   ],
+   "grid": [
+    7,
+    1,
+    1
+   ],
+   "block": [
+    128,
+    1,
+    1
+   ],
+   "smem_bytes": 0,
+   "zero_outputs": [],
+   "args": [
+    {
+     "name": "mean_count",
+     "dtype": "f32",
+     "shape": [
+      1
+     ],
+     "data": [
+      311.0
+     ]
+    },
+    {
+     "name": "add_c1",
+     "dtype": "f32",
+     "shape": [
+      1
+     ],
+     "data": [
+      0.002
+     ]
+    },
+    {
+     "name": "x",
+     "dtype": "f32",
+     "shape": [
+      7,
+      311
+     ],
+     "seed": 0
+    },
+    {
+     "name": "div",
+     "dtype": "f32",
+     "shape": [
+      7,
+      311
+     ],
+     "output": true
+    }
+   ],
+   "final": true
+  }
+ ]
+}

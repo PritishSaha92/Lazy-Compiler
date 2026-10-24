@@ -1,0 +1,102 @@
+.version 8.0
+.target sm_90
+.address_size 64
+
+
+.visible .entry k_regression_bulk_ring_slots(
+    .param .u64 param_0,
+    .param .u64 param_1
+)
+{
+    .reg .b64 %rd<9>;
+    .reg .b32 %r<39>;
+    .reg .pred %p<7>;
+    .reg .f32 %f<2>;
+    .shared .align 16 .b8 smem_0[512];
+    .shared .align 8 .b8 smem_1[16];
+    ld.param.u64 %rd1, [param_0];
+    cvta.to.global.u64 %rd2, %rd1;
+    ld.param.u64 %rd3, [param_1];
+    cvta.to.global.u64 %rd4, %rd3;
+    mov.u32 %r1, %tid.x;
+    mov.u32 %r2, %ctaid.x;
+    mov.u32 %r3, %ntid.x;
+    rem.s32 %r4, %r1, 32;
+    div.s32 %r5, %r1, 32;
+    mov.u32 %r6, smem_0;
+    mov.u32 %r7, smem_1;
+    mul.lo.s32 %r8, %r2, %r3;
+    add.s32 %r9, %r8, %r1;
+    setp.ge.s32 %p1, %r9, 64;
+    @%p1 bra endtile_1;
+    setp.eq.s32 %p2, %r1, 0;
+    @!%p2 bra else_2;
+    mbarrier.init.shared::cta.b64 [%r7], 2;
+    fence.proxy.async.shared::cta;
+    add.u32 %r10, %r7, 8;
+    mbarrier.init.shared::cta.b64 [%r10], 2;
+    fence.proxy.async.shared::cta;
+    bra endif_3;
+else_2:
+endif_3:
+    bar.sync 0;
+    mov.s32 %r11, 0;
+loop_4:
+    setp.ge.s32 %p3, %r11, 4;
+    @%p3 bra endloop_5;
+    setp.eq.s32 %p4, %r1, 0;
+    @!%p4 bra else_6;
+    rem.s32 %r12, %r11, 2;
+    mul.lo.u32 %r13, %r12, 8;
+    add.u32 %r14, %r7, %r13;
+    mbarrier.arrive.expect_tx.release.cta.shared::cta.b64 _, [%r14], 256;
+    rem.s32 %r15, %r11, 2;
+    mul.lo.u32 %r16, %r15, 8;
+    add.u32 %r17, %r7, %r16;
+    mul.lo.s32 %r18, %r11, 64;
+    rem.s32 %r19, %r11, 2;
+    mul.lo.s32 %r20, %r19, 64;
+    mul.wide.s32 %rd5, %r18, 4;
+    add.u64 %rd6, %rd2, %rd5;
+    mul.lo.u32 %r21, %r20, 4;
+    add.u32 %r22, %r6, %r21;
+    cp.async.bulk.shared::cluster.global.mbarrier::complete_tx::bytes [%r22], [%rd6], 256, [%r17];
+    bra endif_7;
+else_6:
+endif_7:
+    setp.eq.s32 %p5, %r1, 1;
+    @!%p5 bra else_8;
+    rem.s32 %r23, %r11, 2;
+    mul.lo.u32 %r24, %r23, 8;
+    add.u32 %r25, %r7, %r24;
+    mbarrier.arrive.release.cta.shared::cta.b64 _, [%r25];
+    bra endif_9;
+else_8:
+endif_9:
+    rem.s32 %r26, %r11, 2;
+    mul.lo.u32 %r27, %r26, 8;
+    add.u32 %r28, %r7, %r27;
+    div.s32 %r29, %r11, 2;
+    rem.s32 %r30, %r29, 2;
+bulk_wait_10:
+    mbarrier.try_wait.parity.acquire.cta.shared::cta.b64 %p6, [%r28], %r30;
+    @!%p6 bra bulk_wait_10;
+    rem.s32 %r31, %r11, 2;
+    mul.lo.s32 %r32, %r31, 64;
+    add.s32 %r33, %r32, %r9;
+    mul.lo.u32 %r34, %r33, 4;
+    add.u32 %r35, %r6, %r34;
+    ld.shared.f32 %f1, [%r35+0];
+    mul.lo.s32 %r36, %r11, 64;
+    add.s32 %r37, %r36, %r9;
+    mul.wide.s32 %rd7, %r37, 4;
+    add.u64 %rd8, %rd4, %rd7;
+    st.global.f32 [%rd8+0], %f1;
+    bar.sync 0;
+    add.s32 %r38, %r11, 1;
+    mov.s32 %r11, %r38;
+    bra loop_4;
+endloop_5:
+endtile_1:
+    ret;
+}

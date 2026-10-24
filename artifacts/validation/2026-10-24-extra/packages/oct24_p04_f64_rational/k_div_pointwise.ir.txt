@@ -1,0 +1,10 @@
+    Tile[a0] (N=1033)
+        in2 = load x[a0]
+        f64 v0 = abs(in2)
+        in0 = load add_1_c1[0]
+        f64 v1 = add(in0, v0)
+        f64 v2 = multiply(in2, in2)
+        in1 = load add_c1[0]
+        f64 v3 = add(in1, v2)
+        f64 v4 = divide(v3, v1)
+        div[a0] = v4

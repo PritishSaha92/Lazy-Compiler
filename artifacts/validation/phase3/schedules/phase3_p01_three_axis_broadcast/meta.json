@@ -1,0 +1,81 @@
+{
+ "id": "phase3_p01_three_axis_broadcast",
+ "code": "x=torch.randn(7,1,13); y=torch.randn(1,9,1); z=torch.randn(7,9,13); torch.relu(x+y-z)",
+ "rtol": 0,
+ "atol": 0,
+ "graph_inputs": [
+  "x",
+  "y",
+  "z"
+ ],
+ "graph_outputs": [
+  "relu"
+ ],
+ "kernels": [
+  {
+   "node": "relu",
+   "entry": "k_relu_pointwise",
+   "arg_order": [
+    "y",
+    "x",
+    "z",
+    "relu"
+   ],
+   "grid": [
+    4,
+    1,
+    1
+   ],
+   "block": [
+    256,
+    1,
+    1
+   ],
+   "smem_bytes": 0,
+   "zero_outputs": [],
+   "args": [
+    {
+     "name": "y",
+     "dtype": "f32",
+     "shape": [
+      1,
+      9,
+      1
+     ],
+     "seed": 1
+    },
+    {
+     "name": "x",
+     "dtype": "f32",
+     "shape": [
+      7,
+      1,
+      13
+     ],
+     "seed": 0
+    },
+    {
+     "name": "z",
+     "dtype": "f32",
+     "shape": [
+      7,
+      9,
+      13
+     ],
+     "seed": 2
+    },
+    {
+     "name": "relu",
+     "dtype": "f32",
+     "shape": [
+      7,
+      9,
+      13
+     ],
+     "output": true
+    }
+   ],
+   "final": true
+  }
+ ]
+}

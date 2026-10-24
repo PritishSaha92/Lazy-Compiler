@@ -1,0 +1,13 @@
+{
+  "checked_utc": "2026-10-22T18:58:52.080813+00:00",
+  "requested_backend_sha256": "3e68e17421a6f620eb95f29395989eda26f695683d353c4f2b3c28194a46c36b",
+  "exact_executable_source_found": false,
+  "scope": [
+    "Workspace file search including hidden/ignored backend filenames and backup extensions; compiler class definitions in project/docs",
+    "Repository all-ref log: only ec8cde1 starter commit",
+    "All Python members of artifacts/validation/phase2/rejected-loop-fusion.zip"
+  ],
+  "archive_backend_sha256": "fc4f474c25012e77436937ea9f4a8741f4581d97bd7ee2916356b282709710f6",
+  "limitation": "This records inspected workspace and repository sources, not an exhaustive search of operating-system backups outside the workspace.",
+  "comparison_decision": "Use frozen candidate default versus explicit strict arithmetic from the same backend as a labeled policy ablation; do not claim an executable historical baseline."
+}

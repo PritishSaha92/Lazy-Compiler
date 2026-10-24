@@ -1,0 +1,48 @@
+{
+  "build_ptx_path": "build\\open-ptx-phase4-cli\\p00_scalar_add\\k_add_pointwise.ptx",
+  "cli_verification": {
+    "argv": [
+      "python",
+      "-B",
+      "compile.py",
+      "<temporary-case>/k_add_pointwise.ir.json"
+    ],
+    "audit": {
+      "blocked_events": [],
+      "guard_enabled": true
+    },
+    "entry": "k_add_pointwise",
+    "extracted_source_sha256": {
+      "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+      "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc",
+      "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+    },
+    "input_path": "problems/p00_scalar_add/k_add_pointwise.ir.json",
+    "ir_sha256": "9b0357857f0b6504ae700e117e3c59f7cb66d9357f394aa81490fc2aea811df8",
+    "metadata_sha256": "e9ede16317b2f085eb6721d37ff9fefcb1ce86c2d8d837aff49a5f936b1affa1",
+    "pass": true,
+    "ptx_bytes": 1524,
+    "ptx_sha256": "c0d81f88369a245e4144ff5e364ed1139349e24a40f8b3ca26f6257b41729a41",
+    "scope": "Real extracted CLI on installed dependencies; no installation, assembly or GPU execution. Python audit guards are regression checks, not an OS sandbox."
+  },
+  "direct_cli_bytes_equal_build_ptx": true,
+  "exact_extracted_members": [
+    "compile.py",
+    "ptx_backend.py",
+    "requirements.txt"
+  ],
+  "gate_ptx_hash_and_size_match": true,
+  "gate_report_path": "artifacts\\validation\\phase4\\release-remote\\public-normal.json",
+  "gate_report_sha256": "874745572a4c32602401ee3edbf5a2dc191d3c0e79215c9bed1dfba994fc636e",
+  "manifest_sha256": "b88459958203b4fdede27e69a685283b4b67bfe26c20f9e7432c40a0479f486a",
+  "pass": true,
+  "ptx_bytes": 1524,
+  "ptx_sha256": "c0d81f88369a245e4144ff5e364ed1139349e24a40f8b3ca26f6257b41729a41",
+  "retained_gate_reports": 5,
+  "source_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "zip_sha256": "b9af6a761233e39b8faa330e1fd01c49e8a457498cb5d3b7e2465ef5403251e8"
+}

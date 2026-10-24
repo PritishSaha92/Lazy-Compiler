@@ -1,0 +1,7 @@
+    Tile[a0, a1] (N=737)
+        in0 = load x[a0, a1]
+        in1 = load y[a1]
+        f16 v0 = subtract(in0, in1)
+        f16 v1 = multiply(in1, v0)
+        f16 v2 = relu(v1)
+        relu[a0, a1] = v2

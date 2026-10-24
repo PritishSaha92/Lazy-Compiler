@@ -1,0 +1,19 @@
+{
+  "started": "2026-10-24T15:27:36.705259+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "cubin_id": "6a01af45e57fd0c42c4a611294bd3ce3c6043459d8c09d29e6c48f6d464095f1",
+    "bytes": 8128,
+    "arch": "sm_120",
+    "flags": [],
+    "entry_points": [
+      "k_regression_tensor_transposed_output"
+    ],
+    "registers": {
+      "k_regression_tensor_transposed_output": 36
+    }
+  },
+  "finished": "2026-10-24T15:27:37.455686+00:00",
+  "seconds": 0.7502199999980803
+}

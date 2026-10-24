@@ -1,0 +1,2207 @@
+{
+  "started_utc": "2026-10-22T19:56:06.594787+00:00",
+  "server": "http://runner.riftstack.ai:48701",
+  "rounds": 6,
+  "iters": 20,
+  "warmup": 3,
+  "source_sha256_before": {
+    "baseline": {
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\baseline\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\baseline\\ptx_backend.py": "b8fc8c1bf61c845430daf8be1bb98113825edb54d0509a0ff8972b7a293fae1e"
+    },
+    "candidate": {
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\candidate\\ptx_backend.py": "db8d541d1da840f97710e5b23f1169f0e5dacfb554e16c262104764eeed945e6"
+    }
+  },
+  "reference_sha256": {
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tools\\expressions_open.py": "d0f8d5143b7f9e1f7a8b89cbb1e93e3401aaf32d22e6b0e4115f96688c7cb48c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\expressions_bandwidth.py": "032f61ff0f79cb492a89651c3b2e8bebf2f37ac6268c12767c80519478462ac6"
+  },
+  "harness_sha256": {
+    "tools\\compare_compilers.py": "30ba905db307e65ae0b49a535c5f0a7e438246fead2af1241c8839f0b3f59558",
+    "tools\\check_compiler.py": "f9bdd50393b9c7628bfbc801bb4b76ba6bdabc9bd607b718cc66e288dd22d5fc"
+  },
+  "results": [
+    {
+      "problem": "p00_scalar_add",
+      "variants": {
+        "baseline": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 128,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 6.24
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 128,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.728
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 128,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.44
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 128,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 2.976,
+              "round": 0,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 128,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.008,
+              "round": 1,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 128,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 2.96,
+              "round": 2,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 128,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.008,
+              "round": 3,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 128,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.008,
+              "round": 4,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 128,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 2.976,
+              "round": 5,
+              "position": 1
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 1.2798409000097308,
+          "ptx_bytes": 1524,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\p00_scalar_add-baseline.ptx",
+          "ptx_sha256": "05d00ca9321cd423ee7c2a5ec78aa7d99d739cd16216f8a1338f64fd17d5f2dd",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "0c245ae0527981e7cf7f7569ea4c94c5ae0d099540cf9397ff502781949fec23",
+            "bytes": 5624,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_add_pointwise"
+            ],
+            "registers": {
+              "k_add_pointwise": 16
+            }
+          },
+          "median_us": 2.992,
+          "min_us": 2.96,
+          "max_us": 3.008
+        },
+        "candidate": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 128,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.632
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 128,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.376
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 128,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.44
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 128,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.008,
+              "round": 0,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 128,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.008,
+              "round": 1,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 128,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.008,
+              "round": 2,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 128,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.04,
+              "round": 3,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 128,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.008,
+              "round": 4,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 128,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 2.976,
+              "round": 5,
+              "position": 0
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 1.2851455000054557,
+          "ptx_bytes": 1220,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\p00_scalar_add-candidate.ptx",
+          "ptx_sha256": "5e78806757712d45e1a0edd0a9cb9b2d09bb15d7a1644fa22eb4d8a7fe604362",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "5fd232f5c9eca3a126deb0d7c579e4f528f0dd50cd62ff6c2197ebe4a4004d13",
+            "bytes": 5496,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_add_pointwise"
+            ],
+            "registers": {
+              "k_add_pointwise": 12
+            }
+          },
+          "median_us": 3.008,
+          "min_us": 2.976,
+          "max_us": 3.04
+        }
+      },
+      "pass": true,
+      "inputs_sha256": {
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p00_scalar_add\\k_add_pointwise.ir.json": "9b0357857f0b6504ae700e117e3c59f7cb66d9357f394aa81490fc2aea811df8",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p00_scalar_add\\meta.json": "e9ede16317b2f085eb6721d37ff9fefcb1ce86c2d8d837aff49a5f936b1affa1",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p00_scalar_add\\expected.npz": "69e4a749183c5402f03c28a957cb1f523186d16f9b9974c75cd0ebbbfd925478"
+      },
+      "identical_ptx": false,
+      "speedup": 0.9946808510638298
+    },
+    {
+      "problem": "p01_vector_add",
+      "variants": {
+        "baseline": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 1024,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.6
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 1024,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.44
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 1024,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.536
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 1024,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.04,
+              "round": 0,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 1024,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.024,
+              "round": 1,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 1024,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 2.96,
+              "round": 2,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 1024,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 2.992,
+              "round": 3,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 1024,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.072,
+              "round": 4,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 1024,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.008,
+              "round": 5,
+              "position": 1
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 1.4936856999993324,
+          "ptx_bytes": 1525,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\p01_vector_add-baseline.ptx",
+          "ptx_sha256": "118624328f68d631c0c68aa66f9330e99dc17b461448d3496ab356c081eb7225",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "57eaf41d55fa52cc166b44e4740e0cd69e9bc9fc759d897f27c7c446e2729134",
+            "bytes": 5624,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_add_pointwise"
+            ],
+            "registers": {
+              "k_add_pointwise": 16
+            }
+          },
+          "median_us": 3.016,
+          "min_us": 2.96,
+          "max_us": 3.072
+        },
+        "candidate": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 1024,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.312
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 1024,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.472
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 1024,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.472
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 1024,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.664,
+              "round": 0,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 1024,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 2.976,
+              "round": 1,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 1024,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 2.976,
+              "round": 2,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 1024,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.072,
+              "round": 3,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 1024,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.008,
+              "round": 4,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 1024,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.008,
+              "round": 5,
+              "position": 0
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 1.3674747000040952,
+          "ptx_bytes": 1221,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\p01_vector_add-candidate.ptx",
+          "ptx_sha256": "3a3741e069c0e8edf8c72928de2a2ef844f373db209b5148e5afe06ffad3cb9d",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "7f183ca2b4aa4599bb833382804dfd11ffcf3648952bec6a8bcf14bfdedb4a53",
+            "bytes": 5496,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_add_pointwise"
+            ],
+            "registers": {
+              "k_add_pointwise": 12
+            }
+          },
+          "median_us": 3.008,
+          "min_us": 2.976,
+          "max_us": 3.664
+        }
+      },
+      "pass": true,
+      "inputs_sha256": {
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p01_vector_add\\k_add_pointwise.ir.json": "0061553f361d6ba3ec24b2e03dec7f3508e168b1244563869ae528eb5a0d61bb",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p01_vector_add\\meta.json": "7817b03dfdbe5782b400ab01a11309320e640f0905aac1f3207f482013774e0f",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p01_vector_add\\expected.npz": "1a72f87aa3afd4e84746d2c0bfcfde9d024f573ce863322f72d2c6b3bb133086"
+      },
+      "identical_ptx": false,
+      "speedup": 1.002659574468085
+    },
+    {
+      "problem": "p02_scale_shift",
+      "variants": {
+        "baseline": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 4096,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.44
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 4096,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.344
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 4096,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.44
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 4096,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.136,
+              "round": 0,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 4096,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.12,
+              "round": 1,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 4096,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.264,
+              "round": 2,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 4096,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.12,
+              "round": 3,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 4096,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.104,
+              "round": 4,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 4096,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.136,
+              "round": 5,
+              "position": 1
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 1.2634371000167448,
+          "ptx_bytes": 2666,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\p02_scale_shift-baseline.ptx",
+          "ptx_sha256": "78705f45c0a67971237b79486f6d6235a6f951a31b9f701b83e5741f23e7a8d1",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "c052703a9c7115f4ded6cb76c61af305dad5eb52d23da4edd1ac9a5841b47b72",
+            "bytes": 5936,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_add_pointwise"
+            ],
+            "registers": {
+              "k_add_pointwise": 23
+            }
+          },
+          "median_us": 3.128,
+          "min_us": 3.104,
+          "max_us": 3.264
+        },
+        "candidate": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 4096,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.152
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 4096,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.472
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 4096,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.088
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 4096,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.664,
+              "round": 0,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 4096,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.056,
+              "round": 1,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 4096,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.072,
+              "round": 2,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 4096,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.136,
+              "round": 3,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 4096,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.072,
+              "round": 4,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 4096,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.024,
+              "round": 5,
+              "position": 0
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 1.5518611000152305,
+          "ptx_bytes": 2204,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\p02_scale_shift-candidate.ptx",
+          "ptx_sha256": "1509455e25702470bb2bd68ceab123358f62ec416476154c9b61c67fbd49aa42",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "f8f480d8672b8da70db0280333848613d2302ca5d6c790ff879d0f082021c78c",
+            "bytes": 5800,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_add_pointwise"
+            ],
+            "registers": {
+              "k_add_pointwise": 21
+            }
+          },
+          "median_us": 3.072,
+          "min_us": 3.024,
+          "max_us": 3.664
+        }
+      },
+      "pass": true,
+      "inputs_sha256": {
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p02_scale_shift\\k_add_pointwise.ir.json": "a39aa5f9e6c1909a336376d4249ecf3a640212c7bb36fba17d54b58e45a9bf9f",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p02_scale_shift\\meta.json": "e0e609e5b425a4743f3a55ed11f178e63124caa5787bf9a6491d200f745e68be",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p02_scale_shift\\expected.npz": "515539ace84b0cb38ab3e5e6ed20894b774ab428a86be180529d54fd8ad63dd6"
+      },
+      "identical_ptx": false,
+      "speedup": 1.0182291666666667
+    },
+    {
+      "problem": "p03_relu_mul",
+      "variants": {
+        "baseline": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 2048,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.376
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 2048,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.472
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 2048,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.312
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 2048,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 2.944,
+              "round": 0,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 2048,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 2.96,
+              "round": 1,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 2048,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.008,
+              "round": 2,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 2048,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 2.976,
+              "round": 3,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 2048,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.04,
+              "round": 4,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 2048,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.008,
+              "round": 5,
+              "position": 1
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 1.4706398000125773,
+          "ptx_bytes": 2392,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\p03_relu_mul-baseline.ptx",
+          "ptx_sha256": "46f1a13c929232bf3b4169c61ac3953670e083ad1c51724de8cf62189d6b2662",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "32ac026a91e6c3bb5c5673ec65d6509400b4c007df7da591503801bfd3f6d995",
+            "bytes": 5888,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_mul_pointwise"
+            ],
+            "registers": {
+              "k_mul_pointwise": 26
+            }
+          },
+          "median_us": 2.992,
+          "min_us": 2.944,
+          "max_us": 3.04
+        },
+        "candidate": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 2048,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 6.176
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 2048,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.152
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 2048,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.12
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 2048,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 2.96,
+              "round": 0,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 2048,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 2.976,
+              "round": 1,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 2048,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.008,
+              "round": 2,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 2048,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.024,
+              "round": 3,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 2048,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.056,
+              "round": 4,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 2048,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.024,
+              "round": 5,
+              "position": 0
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 2.018454599980032,
+          "ptx_bytes": 1468,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\p03_relu_mul-candidate.ptx",
+          "ptx_sha256": "f5075da34786066c564b1c09d7c63e654eea39dbcb825699b20907e97d2ea05c",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "f260b4c85868ea26a2c4843fe0c54fb3fd90bdd9fc5eed0237b4e54d232d159f",
+            "bytes": 5624,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_mul_pointwise"
+            ],
+            "registers": {
+              "k_mul_pointwise": 22
+            }
+          },
+          "median_us": 3.016,
+          "min_us": 2.96,
+          "max_us": 3.056
+        }
+      },
+      "pass": true,
+      "inputs_sha256": {
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p03_relu_mul\\k_mul_pointwise.ir.json": "57fc50895f5e9232b03a016e770816d45f55aa465e9c48d8fa74ae2543b84109",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p03_relu_mul\\meta.json": "725dffee431bc62f94749bd143d3e14891f4a802689ade7a640759bfbf7a082f",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p03_relu_mul\\expected.npz": "a0fc97901b28331b29bb5f01cf104944c3376c633dd4cce65d551ad61035e52f"
+      },
+      "identical_ptx": false,
+      "speedup": 0.9920424403183024
+    },
+    {
+      "problem": "bandwidth_add_262144",
+      "variants": {
+        "baseline": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 262144,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 6.752
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 262144,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.28
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 262144,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 6.88
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 262144,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.104,
+              "round": 0,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 262144,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.04,
+              "round": 1,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 262144,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.04,
+              "round": 2,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 262144,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.072,
+              "round": 3,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 262144,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.04,
+              "round": 4,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 262144,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.04,
+              "round": 5,
+              "position": 1
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 1.2203890999953728,
+          "ptx_bytes": 2246,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\bandwidth_add_262144-baseline.ptx",
+          "ptx_sha256": "a6e6785def46fd73caf9b7facc32fa17c7a5bbd403554aacfae36aa8db36769f",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "6788cb665d31cefe1972fe8ed474470db3073d6c8d6898da961ee4c12912f2f1",
+            "bytes": 5760,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_add_pointwise"
+            ],
+            "registers": {
+              "k_add_pointwise": 26
+            }
+          },
+          "median_us": 3.04,
+          "min_us": 3.04,
+          "max_us": 3.104
+        },
+        "candidate": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 262144,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 6.208
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 262144,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.312
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 262144,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.312
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 262144,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.04,
+              "round": 0,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 262144,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.056,
+              "round": 1,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 262144,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.056,
+              "round": 2,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 262144,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.056,
+              "round": 3,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 262144,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.136,
+              "round": 4,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "add",
+                  "pass": true,
+                  "elements": 262144,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 3.04,
+              "round": 5,
+              "position": 0
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 1.1506333999859635,
+          "ptx_bytes": 1322,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\bandwidth_add_262144-candidate.ptx",
+          "ptx_sha256": "b1823bcfa40955766a448ca0e4a4099cb7f2117ebd148ec3670f352e478eacff",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "5b10af56ff22c896cb062c65721127b286b7b30b68941a2c2b0d8c329b65bf73",
+            "bytes": 5496,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_add_pointwise"
+            ],
+            "registers": {
+              "k_add_pointwise": 22
+            }
+          },
+          "median_us": 3.056,
+          "min_us": 3.04,
+          "max_us": 3.136
+        }
+      },
+      "pass": true,
+      "inputs_sha256": {
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\bandwidth\\bandwidth_add_262144\\k_add_pointwise.ir.json": "a8f1f3bcd4381e07fbff9450cbcc2cfeda3eda8f86bfacbc82af5fd268c51076",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\bandwidth\\bandwidth_add_262144\\meta.json": "394bdcbf1f81f0798396e4bb1ef73b436f13192f82d8a2d180a1353153a1e4a9",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\bandwidth\\bandwidth_add_262144\\expected.npz": "4d61c40a8d3c470a28574119cf63bbaa292d2b1ba8a8a3089e8135e46b6461b0"
+      },
+      "identical_ptx": false,
+      "speedup": 0.9947643979057592
+    },
+    {
+      "problem": "bandwidth_relu_mul_1048576",
+      "variants": {
+        "baseline": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 1048576,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 7.712
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 1048576,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 7.808
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 1048576,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 6.528
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 1048576,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 4.768,
+              "round": 0,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 1048576,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 4.912,
+              "round": 1,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 1048576,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 4.8,
+              "round": 2,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 1048576,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 4.8,
+              "round": 3,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 1048576,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 4.768,
+              "round": 4,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 1048576,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 4.816,
+              "round": 5,
+              "position": 1
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 1.4538977000047453,
+          "ptx_bytes": 2395,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\bandwidth_relu_mul_1048576-baseline.ptx",
+          "ptx_sha256": "c285cafcc9109548a76a288a4e3c1ef8fc21fba9acdaab4d1c4cb7c8c49c85f7",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "1d955bf5784b8de4ab0eb91d6f3cc1b5d7717c1eba65ee951dc2a706e310e9a0",
+            "bytes": 5888,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_mul_pointwise"
+            ],
+            "registers": {
+              "k_mul_pointwise": 26
+            }
+          },
+          "median_us": 4.8,
+          "min_us": 4.768,
+          "max_us": 4.912
+        },
+        "candidate": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 1048576,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 6.784
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 1048576,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 7.808
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 1048576,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 7.584
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 1048576,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 4.832,
+              "round": 0,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 1048576,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 4.768,
+              "round": 1,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 1048576,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 4.832,
+              "round": 2,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 1048576,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 5.184,
+              "round": 3,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 1048576,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 4.848,
+              "round": 4,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul",
+                  "pass": true,
+                  "elements": 1048576,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0
+                }
+              ],
+              "median_us": 4.768,
+              "round": 5,
+              "position": 0
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 1.2519661000114866,
+          "ptx_bytes": 1471,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\bandwidth_relu_mul_1048576-candidate.ptx",
+          "ptx_sha256": "97c3813096c6dafecd864bb61763c965d21d49af965b6846ad15349dad2898ef",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "182b8ea645ae0a88da5e6d5879bf8b2763a1aff9f4189fe6fa3da8be67bf9801",
+            "bytes": 5624,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_mul_pointwise"
+            ],
+            "registers": {
+              "k_mul_pointwise": 22
+            }
+          },
+          "median_us": 4.832,
+          "min_us": 4.768,
+          "max_us": 5.184
+        }
+      },
+      "pass": true,
+      "inputs_sha256": {
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\bandwidth\\bandwidth_relu_mul_1048576\\k_mul_pointwise.ir.json": "acf9be385ea1a30bda3aed451f855ef5bbb14719a0db24bf482d2b292ec19b2d",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\bandwidth\\bandwidth_relu_mul_1048576\\meta.json": "64d84ea7926d0479bba3b778f8d5d6c64dabef1fbf6a3f745905101b2bfe9a60",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\bandwidth\\bandwidth_relu_mul_1048576\\expected.npz": "a2cc41ea14eae996039e89f216c38cd5a6a031b9a7b65ee7dd0877c4a58b7fe0"
+      },
+      "identical_ptx": false,
+      "speedup": 0.9933774834437086
+    }
+  ],
+  "pass": true,
+  "limits": "Unlocked runner clocks; timings are indicative. All timing outputs are checked. No hidden-test claim.",
+  "source_sha256_after": {
+    "baseline": {
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\baseline\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\baseline\\ptx_backend.py": "b8fc8c1bf61c845430daf8be1bb98113825edb54d0509a0ff8972b7a293fae1e"
+    },
+    "candidate": {
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\candidate\\ptx_backend.py": "db8d541d1da840f97710e5b23f1169f0e5dacfb554e16c262104764eeed945e6"
+    }
+  },
+  "sources_unchanged": true,
+  "finished_utc": "2026-10-22T20:02:23.364017+00:00"
+}

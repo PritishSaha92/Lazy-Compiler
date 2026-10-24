@@ -1,0 +1,7 @@
+    Tile[a0] (N=527)
+        in0 = load x[(a0 // 31), (a0 % 31)]
+        in1 = load y[(a0 // 31), (a0 % 31)]
+        i32 v0 = bitwise_and(in0, in1)
+        i32 v1 = bitwise_xor(in0, in1)
+        i32 v2 = add(v0, v1)
+        add[(a0 // 31), (a0 % 31)] = v2

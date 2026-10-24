@@ -1,0 +1,240 @@
+{
+  "pass": true,
+  "frozen_utc": "2026-10-24T00:52:58.984406+00:00",
+  "provenance": "Explicit test-only type-promoted IR variants, not unchanged generator outputs",
+  "packages": [
+    {
+      "id": "typed_oct24_f64_state_sum",
+      "parent_id": "oct24_r03_f64_column_sum",
+      "pass": true,
+      "changes": {
+        "datatype_f32_to_f64": 4,
+        "smem_float_to_double": 1
+      },
+      "output_dtype": "f64",
+      "no_f32_instructions": true,
+      "layout_preserved": true,
+      "expected_npz_byte_identical_to_parent": true,
+      "rtol": 2e-13,
+      "atol": 2e-13,
+      "compile_seconds": 3.7234830999950645,
+      "ptx_sha256": "e44ac658d9be66927f484b840cdd9e9bfabf5adc1cb2cb70ff79c504dd1e9840",
+      "assembly": {
+        "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+        "arch": "sm_89",
+        "resource_usage": ""
+      }
+    },
+    {
+      "id": "typed_oct24_f64_state_matmul",
+      "parent_id": "oct24_m01_f64_ragged",
+      "pass": true,
+      "changes": {
+        "datatype_f32_to_f64": 8,
+        "select_to_f64_ternary_let": 1,
+        "smem_float_to_double": 1
+      },
+      "output_dtype": "f64",
+      "no_f32_instructions": true,
+      "layout_preserved": true,
+      "expected_npz_byte_identical_to_parent": true,
+      "rtol": 1e-12,
+      "atol": 1e-12,
+      "compile_seconds": 3.7837512000041897,
+      "ptx_sha256": "57d8e84bf4c364060f40a24278f1e07f917d445e5ece97b7c3061186b8530b73",
+      "assembly": {
+        "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+        "arch": "sm_89",
+        "resource_usage": ""
+      }
+    },
+    {
+      "id": "typed_oct24_f64_state_centered_norm",
+      "parent_id": "oct24_f01_f64_centered_norm_inline",
+      "pass": true,
+      "changes": {
+        "datatype_f32_to_f64": 18,
+        "smem_float_to_double": 3
+      },
+      "output_dtype": "f64",
+      "no_f32_instructions": true,
+      "layout_preserved": true,
+      "expected_npz_byte_identical_to_parent": true,
+      "rtol": 2e-12,
+      "atol": 2e-12,
+      "compile_seconds": 4.02080240000214,
+      "ptx_sha256": "79d33f6461aebdebc70eedaa51617d9bb39169c1ecf88f4d86f24dfb9d8a17ec",
+      "assembly": {
+        "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+        "arch": "sm_89",
+        "resource_usage": ""
+      }
+    }
+  ],
+  "planned_checks": 9,
+  "seeds_patterns": [
+    [
+      0,
+      "normal"
+    ],
+    [
+      17,
+      "normal"
+    ],
+    [
+      101,
+      "wide"
+    ]
+  ],
+  "cpu_references": [
+    {
+      "id": "typed_oct24_f64_state_sum",
+      "seed": 0,
+      "pattern": "normal",
+      "pass": true,
+      "dtype": "f64",
+      "shape": [
+        17
+      ],
+      "max_abs_error": 7.105427357601002e-15
+    },
+    {
+      "id": "typed_oct24_f64_state_sum",
+      "seed": 17,
+      "pattern": "normal",
+      "pass": true,
+      "dtype": "f64",
+      "shape": [
+        17
+      ],
+      "max_abs_error": 1.4210854715202004e-14
+    },
+    {
+      "id": "typed_oct24_f64_state_sum",
+      "seed": 101,
+      "pattern": "wide",
+      "pass": true,
+      "dtype": "f64",
+      "shape": [
+        17
+      ],
+      "max_abs_error": 7.105427357601002e-14
+    },
+    {
+      "id": "typed_oct24_f64_state_matmul",
+      "seed": 0,
+      "pattern": "normal",
+      "pass": true,
+      "dtype": "f64",
+      "shape": [
+        13,
+        17
+      ],
+      "max_abs_error": 2.6645352591003757e-15
+    },
+    {
+      "id": "typed_oct24_f64_state_matmul",
+      "seed": 17,
+      "pattern": "normal",
+      "pass": true,
+      "dtype": "f64",
+      "shape": [
+        13,
+        17
+      ],
+      "max_abs_error": 1.7763568394002505e-15
+    },
+    {
+      "id": "typed_oct24_f64_state_matmul",
+      "seed": 101,
+      "pattern": "wide",
+      "pass": true,
+      "dtype": "f64",
+      "shape": [
+        13,
+        17
+      ],
+      "max_abs_error": 1.4210854715202004e-13
+    },
+    {
+      "id": "typed_oct24_f64_state_centered_norm",
+      "seed": 0,
+      "pattern": "normal",
+      "pass": true,
+      "dtype": "f64",
+      "shape": [
+        11,
+        71
+      ],
+      "max_abs_error": 5.551115123125783e-17
+    },
+    {
+      "id": "typed_oct24_f64_state_centered_norm",
+      "seed": 17,
+      "pattern": "normal",
+      "pass": true,
+      "dtype": "f64",
+      "shape": [
+        11,
+        71
+      ],
+      "max_abs_error": 5.551115123125783e-17
+    },
+    {
+      "id": "typed_oct24_f64_state_centered_norm",
+      "seed": 101,
+      "pattern": "wide",
+      "pass": true,
+      "dtype": "f64",
+      "shape": [
+        11,
+        71
+      ],
+      "max_abs_error": 1.1102230246251565e-16
+    }
+  ],
+  "cpu_reference_checks": 9,
+  "local_gpu_used": false,
+  "sources_sha256": {
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tests\\test_oct24_fp64_states.py": "b6b33490e2b83dec3c2e49505ecbd1ad1f41c47997d33e771dde13d2241a23ee",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tools\\check_compiler.py": "e706045368a83ccb4f10577f7952cdb0f8bb2363184efca7a68083459dbe4263",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tests\\expressions_oct24.py": "a7ff15ed50c382ec80c7dbe59d0add05e4c2a247190680dc5f4f64452c160083",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\expressions_inline.py": "3c277c40b2534fef80b8de08eeb61094e4d80a4d512816dbec6fa89223e9936d",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r03_f64_column_sum\\expected.npz": "4b526ae3e28854954a3861459a319d8a7de7f2c49a73c8e12bc1fcb27e0479f6",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r03_f64_column_sum\\k_sum_1_reduce.ir.json": "81a5f61868b34a95fb7bf9328b6b8ab3ee1c6f2f828b62a02c1b638d3adee933",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r03_f64_column_sum\\k_sum_1_reduce.ir.txt": "21c8608b545cc2055791053c2f6bdd519d0b9efc72daa1ff266691b615e50427",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r03_f64_column_sum\\k_sum_1_reduce.ref.cu": "f6d16ce2156700eb77b4c933852a50dcbf06eacacfe06f2b93fa1376368522b2",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_r03_f64_column_sum\\meta.json": "71bbc2a39f2c5123f94ebbada2520c4a8d8fa4e0436c6e1933364b9c7c64ab37",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m01_f64_ragged\\expected.npz": "2cd72cdb7c9aed743e07e87e7925d437789d6bae3b94d07c04ed473325a8f869",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m01_f64_ragged\\k_matmul_f2c5ef.ir.json": "deaee946cb1cef5cbc990f978ddeb7e3fd6a6d6a1765375d1cf06b1c8d323825",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m01_f64_ragged\\k_matmul_f2c5ef.ir.txt": "388f0028d178b6166f2988755ccc03d8b00c76f5432f1b690aa7d8e266b36866",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m01_f64_ragged\\k_matmul_f2c5ef.ref.cu": "1852f21d695b74a470f94b9f2d4e2b79dd571ec327d8683c3fade0885c195b53",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_m01_f64_ragged\\meta.json": "6c885c7e71166c7b5f3fb865ed77b4dd0bb5a072585a3ac9bf73976a7aba262c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f01_f64_centered_norm_inline\\expected.npz": "b5c61a9b9af59b442a6c3de4e88ad8d49554986d20fd0b93bacdae87d50d7054",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f01_f64_centered_norm_inline\\k_mean_reduce_bfe0aa.ir.json": "648edad30a8c38bef7534fdc3256f8b0f63e3735c9dc717d89b582362a831310",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f01_f64_centered_norm_inline\\k_mean_reduce_bfe0aa.ir.txt": "38f591fb553ed12010e5c57d62344a197a3c930e2d831a3cfa98e7d7b5725ff4",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f01_f64_centered_norm_inline\\k_mean_reduce_bfe0aa.ref.cu": "6f0a99e2d1d6685d60277168e0e08b4431b770d2b886abda49ee44d6cfe27a5f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_f01_f64_centered_norm_inline\\meta.json": "12d234fed1077a96b8e59ee1942e882fc87ecf11f8099c6366323139c49dd5d8"
+  },
+  "files_sha256": {
+    "packages/typed_oct24_f64_state_centered_norm/expected.npz": "b5c61a9b9af59b442a6c3de4e88ad8d49554986d20fd0b93bacdae87d50d7054",
+    "packages/typed_oct24_f64_state_centered_norm/k_mean_reduce_bfe0aa.ir.json": "b263de20f3b1f10e5aab2d5b96435f2a6a2dc524642472db56ca1f3eb7bb959d",
+    "packages/typed_oct24_f64_state_centered_norm/k_mean_reduce_bfe0aa.ir.ptx": "79d33f6461aebdebc70eedaa51617d9bb39169c1ecf88f4d86f24dfb9d8a17ec",
+    "packages/typed_oct24_f64_state_centered_norm/meta.json": "c4f2fca8e70141d13d994ef7b4d4e4ca4c55de139ea62ac8fd1b57f2f3f47a50",
+    "packages/typed_oct24_f64_state_matmul/expected.npz": "2cd72cdb7c9aed743e07e87e7925d437789d6bae3b94d07c04ed473325a8f869",
+    "packages/typed_oct24_f64_state_matmul/k_matmul_f2c5ef.ir.json": "805c61129a2da71ae5fa6f00017569abba410af98158a8a0f1f3c65fae2b64bc",
+    "packages/typed_oct24_f64_state_matmul/k_matmul_f2c5ef.ir.ptx": "57d8e84bf4c364060f40a24278f1e07f917d445e5ece97b7c3061186b8530b73",
+    "packages/typed_oct24_f64_state_matmul/meta.json": "5db5486797a7181214cec63d3d936d20999249a53587c5734f2f72d8cea3ee48",
+    "packages/typed_oct24_f64_state_sum/expected.npz": "4b526ae3e28854954a3861459a319d8a7de7f2c49a73c8e12bc1fcb27e0479f6",
+    "packages/typed_oct24_f64_state_sum/k_sum_1_reduce.ir.json": "0fe85b61b769444fde9c60899ac4d1466e816ebd00bd0c196d22a3975d8ce1d9",
+    "packages/typed_oct24_f64_state_sum/k_sum_1_reduce.ir.ptx": "e44ac658d9be66927f484b840cdd9e9bfabf5adc1cb2cb70ff79c504dd1e9840",
+    "packages/typed_oct24_f64_state_sum/meta.json": "ff0edbc45f2327fae51841ed432ea4e3047a91062b7b29016be25530c7938e13"
+  },
+  "compiler_sha256": {
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+  },
+  "tracked_unchanged": true
+}

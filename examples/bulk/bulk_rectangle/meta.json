@@ -1,0 +1,58 @@
+{
+  "id": "bulk_rectangle",
+  "graph_inputs": [
+    "x"
+  ],
+  "graph_outputs": [
+    "out"
+  ],
+  "rtol": 0,
+  "atol": 0,
+  "kernels": [
+    {
+      "entry": "k_regression_bulk_rectangle",
+      "grid": [
+        1,
+        1,
+        1
+      ],
+      "block": [
+        64,
+        1,
+        1
+      ],
+      "smem_bytes": 0,
+      "zero_outputs": [],
+      "arg_order": [
+        "out",
+        "x"
+      ],
+      "args": [
+        {
+          "name": "out",
+          "dtype": "f32",
+          "shape": [
+            4,
+            12
+          ],
+          "output": true
+        },
+        {
+          "name": "x",
+          "dtype": "f32",
+          "shape": [
+            8,
+            20
+          ],
+          "seed": 0
+        }
+      ],
+      "final": true
+    }
+  ],
+  "fixture_provenance": {
+    "construction": "Hand-built typed IR with independent NumPy slicing reference",
+    "feature": "SM90 descriptor-free rectangular cp.async.bulk and mbarrier",
+    "local_gpu_used": false
+  }
+}

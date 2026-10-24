@@ -1,0 +1,50 @@
+{
+  "inputs": [
+    "x"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            32,
+            136
+          ],
+          "dtype": "f32"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='warp_row', extent=Dim(2), window=None), Axis(name='cell', extent=Dim(32), window=None)), body=(Smem(name='scratch', extents=(2, 32), dtype='float', align=16), StridedLoop(axis=Axis(name='k', extent=Dim(136), window=None), start=Literal(value=0, dtype='int'), step=Literal(value=1, dtype='int'), body=(Load(names=('term',), input='x', index=(Var(name='warp_row'), Var(name='cell'), Var(name='k')), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Accum(name='sum', value='term', op=ElementwiseImpl('add'), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), axes=(), base=None)), unroll=False, end=BinaryExpr(op='*', left=BinaryExpr(op='+', left=BinaryExpr(op='%', left=Var(name='cell'), right=Literal(value=8, dtype='int')), right=Literal(value=1, dtype='int')), right=Literal(value=17, dtype='int')), seed=True), Write(output='scratch', index=(Var(name='warp_row'), Var(name='cell')), values=('sum',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE'), Sync(barrier_id=0, count=None, warp=True), Load(names=('neighbor',), input='scratch', index=(Var(name='warp_row'), BinaryExpr(op='%', left=BinaryExpr(op='+', left=Var(name='cell'), right=Literal(value=1, dtype='int')), right=Literal(value=32, dtype='int'))), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='out', index=(Var(name='warp_row'), Var(name='cell')), values=('neighbor',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE')), block_threads=64, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_warp_sync_uneven_work",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            2,
+            32
+          ],
+          "dtype": "f32"
+        }
+      ]
+    }
+  }
+}

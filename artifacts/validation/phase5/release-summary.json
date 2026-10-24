@@ -1,0 +1,82 @@
+{
+  "schema": "emmy-phase5-release-v1",
+  "pass": true,
+  "created_utc": "2026-10-24T15:35:15.191717+00:00",
+  "source_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "eb12a9bb28553caa5e75605506268109edd0739edfdfbdb6178096f7407fde73",
+    "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+    "ptx_bulk.py": "ab63f516681e78e06f4b7403b24018c60c8119b8c92c34f00236d74806406c65",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "scope": "Current compiler source release gates; counts exclude historical GPU executions and offline PTX identity checks.",
+  "organizer_gpu": {
+    "public_checks": 15,
+    "public_passes": 15,
+    "feature_checks": 26,
+    "feature_passes": 26,
+    "total_checks": 41,
+    "total_passes": 41,
+    "local_gpu_used": false
+  },
+  "feature_roster": {
+    "typed_tensor_examples": 17,
+    "typed_bulk_examples": 6,
+    "typed_combined_examples": 2,
+    "unchanged_emmy_generated_ragged_matmul": 1
+  },
+  "cpu": {
+    "methods": 107,
+    "passed": 89,
+    "explicit_local_gpu_skips": 18
+  },
+  "clean_install": {
+    "packages": 11,
+    "successful_compilations": 33,
+    "expected_diagnostics": 3
+  },
+  "baseline_ptx_identity": {
+    "inputs": 120,
+    "identical": 120,
+    "additional_gpu_executions": 0
+  },
+  "raw_feature_audit": {
+    "events": 52,
+    "http_attempts": 52,
+    "files_verified": 267,
+    "complete_replay": true
+  },
+  "evidence": {
+    "public": {
+      "path": "artifacts/validation/phase5/public-submit/summary.json",
+      "sha256": "a85b1a432127ce4e63a4de52c2859474bbb927574b0b5cb3ceb0dff53ec4b3e1"
+    },
+    "features": {
+      "path": "artifacts/validation/phase5/feature-runner/summary.json",
+      "sha256": "5a1ce0c1090fe802feec7a49aafb1fa9292ff4d1b15721f868586e977a41b254"
+    },
+    "wire_audit": {
+      "path": "artifacts/validation/phase5/feature-runner/integrity-audit.json",
+      "sha256": "c9376000927e2b4a016b7f9cd5f31a613fc3a7a5ebcb2b15d246e4c2dcd13b19"
+    },
+    "cpu": {
+      "path": "artifacts/validation/phase5/cpu-regressions.json",
+      "sha256": "bf0f2c7dbecd3391d33474ed0e588e4b2df8a6d69c9188750971c8df952f8431"
+    },
+    "clean_install": {
+      "path": "artifacts/validation/phase5/clean-install/summary.json",
+      "sha256": "73f47fb7990a5609b94a79c73857e58ae647b60beb812949c9924afc24d9293b"
+    },
+    "compatibility": {
+      "path": "artifacts/validation/phase5/ptx-compatibility.json",
+      "sha256": "6db7227f7827640ebc9c75521702090490121f501f89e658a85fd2a5907b73bb"
+    }
+  },
+  "limitations": [
+    "No hidden-set access or competitive speed ranking.",
+    "Tensor support is m16n8k16 FP16/BF16 to FP32, not general tensorization or all tensor instructions.",
+    "Bulk support is aligned provably in-bounds descriptor-free row copying, not full host-encoded TMA tensor maps.",
+    "Valid uniform warp collectives and correct barrier protocols remain input IR preconditions.",
+    "The prior nine FP64-reference/FP32-state mathematical failures remain recorded in the 2026-10-24 scalar review; these new results do not relabel them."
+  ]
+}

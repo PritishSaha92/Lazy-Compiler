@@ -1,0 +1,516 @@
+{
+  "schema": "emmy.final-review.2026-10-24.v1",
+  "pass": true,
+  "checked_utc": "2026-10-24T00:56:50.659986+00:00",
+  "compiler_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "scope": "Release review complete: passing compatible-reference checks plus exact attribution of nine retained incompatible generated FP64-reference failures; historical 332 checks are not added here",
+  "release_criterion": "All public checks and compatible-reference extra cases pass; all nine retained failures match the scheduled IR exactly and have independently demonstrated FP32/FP64 precision incompatibility",
+  "counts": {
+    "public_rerun": 15,
+    "original_generated_graph_checks": 48,
+    "explicit_input_variant_checks": 1,
+    "original_generated_and_variant_passed": 40,
+    "original_generated_and_variant_failed": 9,
+    "hand_built_operation_checks": 6,
+    "genuine_fp64_state_variant_checks": 9,
+    "extra_checks_executed": 64,
+    "extra_mathematical_reference_passed": 55,
+    "extra_mathematical_reference_failed": 9,
+    "total_checks_executed": 79,
+    "mathematical_reference_passed": 70,
+    "mathematical_reference_failed": 9,
+    "original_generated_graphs": 16,
+    "hand_built_operation_graphs": 2,
+    "genuine_fp64_state_variants": 3,
+    "additional_input_variants": 1,
+    "offline_ir_attribution_checks_not_new_gpu_runs": 9
+  },
+  "original_extra_math_gate_pass": false,
+  "exact_unique_extra_roster": [
+    [
+      "explicit-large-i32",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_a01_attention_tail",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_a01_attention_tail",
+      17,
+      "normal"
+    ],
+    [
+      "oct24_a01_attention_tail",
+      101,
+      "wide"
+    ],
+    [
+      "oct24_f01_f64_centered_norm_inline",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_f01_f64_centered_norm_inline",
+      17,
+      "normal"
+    ],
+    [
+      "oct24_f01_f64_centered_norm_inline",
+      101,
+      "wide"
+    ],
+    [
+      "oct24_f02_softmax_tail",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_f02_softmax_tail",
+      17,
+      "normal"
+    ],
+    [
+      "oct24_f02_softmax_tail",
+      101,
+      "wide"
+    ],
+    [
+      "oct24_m01_f64_ragged",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_m01_f64_ragged",
+      17,
+      "normal"
+    ],
+    [
+      "oct24_m01_f64_ragged",
+      101,
+      "wide"
+    ],
+    [
+      "oct24_m02_f16_ragged_scalar",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_m02_f16_ragged_scalar",
+      17,
+      "normal"
+    ],
+    [
+      "oct24_m02_f16_ragged_scalar",
+      101,
+      "wide"
+    ],
+    [
+      "oct24_p01_f16_broadcast",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_p01_f16_broadcast",
+      17,
+      "normal"
+    ],
+    [
+      "oct24_p01_f16_broadcast",
+      101,
+      "wide"
+    ],
+    [
+      "oct24_p02_f16_sqrt",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_p02_f16_sqrt",
+      17,
+      "normal"
+    ],
+    [
+      "oct24_p02_f16_sqrt",
+      101,
+      "wide"
+    ],
+    [
+      "oct24_p04_f64_rational",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_p04_f64_rational",
+      17,
+      "normal"
+    ],
+    [
+      "oct24_p04_f64_rational",
+      101,
+      "wide"
+    ],
+    [
+      "oct24_p05_i32_bitwise",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_p05_i32_bitwise",
+      17,
+      "normal"
+    ],
+    [
+      "oct24_p05_i32_bitwise",
+      101,
+      "wide"
+    ],
+    [
+      "oct24_p06_i32_selection",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_p06_i32_selection",
+      17,
+      "normal"
+    ],
+    [
+      "oct24_p06_i32_selection",
+      101,
+      "wide"
+    ],
+    [
+      "oct24_p07_sin_cos",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_p07_sin_cos",
+      17,
+      "normal"
+    ],
+    [
+      "oct24_p07_sin_cos",
+      101,
+      "wide"
+    ],
+    [
+      "oct24_p08_erf",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_p08_erf",
+      17,
+      "normal"
+    ],
+    [
+      "oct24_p08_erf",
+      101,
+      "wide"
+    ],
+    [
+      "oct24_r01_f16_max",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_r01_f16_max",
+      17,
+      "normal"
+    ],
+    [
+      "oct24_r01_f16_max",
+      101,
+      "wide"
+    ],
+    [
+      "oct24_r02_f16_to_f32_sum",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_r02_f16_to_f32_sum",
+      17,
+      "normal"
+    ],
+    [
+      "oct24_r02_f16_to_f32_sum",
+      101,
+      "wide"
+    ],
+    [
+      "oct24_r03_f64_column_sum",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_r03_f64_column_sum",
+      17,
+      "normal"
+    ],
+    [
+      "oct24_r03_f64_column_sum",
+      101,
+      "wide"
+    ],
+    [
+      "oct24_r04_i32_column_sum",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_r04_i32_column_sum",
+      17,
+      "normal"
+    ],
+    [
+      "oct24_r04_i32_column_sum",
+      101,
+      "wide"
+    ],
+    [
+      "typed_oct24_f32_remainder",
+      0,
+      "normal"
+    ],
+    [
+      "typed_oct24_f32_remainder",
+      17,
+      "normal"
+    ],
+    [
+      "typed_oct24_f32_remainder",
+      101,
+      "wide"
+    ],
+    [
+      "typed_oct24_f64_rounding",
+      0,
+      "normal"
+    ],
+    [
+      "typed_oct24_f64_rounding",
+      17,
+      "normal"
+    ],
+    [
+      "typed_oct24_f64_rounding",
+      101,
+      "wide"
+    ],
+    [
+      "typed_oct24_f64_state_centered_norm",
+      0,
+      "normal"
+    ],
+    [
+      "typed_oct24_f64_state_centered_norm",
+      17,
+      "normal"
+    ],
+    [
+      "typed_oct24_f64_state_centered_norm",
+      101,
+      "wide"
+    ],
+    [
+      "typed_oct24_f64_state_matmul",
+      0,
+      "normal"
+    ],
+    [
+      "typed_oct24_f64_state_matmul",
+      17,
+      "normal"
+    ],
+    [
+      "typed_oct24_f64_state_matmul",
+      101,
+      "wide"
+    ],
+    [
+      "typed_oct24_f64_state_sum",
+      0,
+      "normal"
+    ],
+    [
+      "typed_oct24_f64_state_sum",
+      17,
+      "normal"
+    ],
+    [
+      "typed_oct24_f64_state_sum",
+      101,
+      "wide"
+    ]
+  ],
+  "retained_mathematical_failure_roster": [
+    [
+      "oct24_f01_f64_centered_norm_inline",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_f01_f64_centered_norm_inline",
+      17,
+      "normal"
+    ],
+    [
+      "oct24_f01_f64_centered_norm_inline",
+      101,
+      "wide"
+    ],
+    [
+      "oct24_m01_f64_ragged",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_m01_f64_ragged",
+      17,
+      "normal"
+    ],
+    [
+      "oct24_m01_f64_ragged",
+      101,
+      "wide"
+    ],
+    [
+      "oct24_r03_f64_column_sum",
+      0,
+      "normal"
+    ],
+    [
+      "oct24_r03_f64_column_sum",
+      17,
+      "normal"
+    ],
+    [
+      "oct24_r03_f64_column_sum",
+      101,
+      "wide"
+    ]
+  ],
+  "generated_category_counts": {
+    "pointwise": 7,
+    "reduction": 4,
+    "matmul": 2,
+    "fused": 2,
+    "attention": 1
+  },
+  "evidence": {
+    "public_client": {
+      "path": "artifacts/validation/2026-10-24-public-submit-runner/summary.json",
+      "sha256": "6d521b3f1bb45bd238a4a4ee6fa940fa40f374b9d8bea0be4f443b5559c872b2"
+    },
+    "early_generated": {
+      "summary": {
+        "path": "artifacts/validation/2026-10-24-root-audit/early-remote/summary.json",
+        "sha256": "b9e6fb27495354efd1a68dc54c9808d366d079224b43a3ffd6f6b1c713061f51"
+      },
+      "raw_audit": {
+        "path": "artifacts/validation/2026-10-24-root-audit/early-remote/integrity-audit.json",
+        "sha256": "bf188838c17baec803a8f7ffe0f6fdeb051dac2f8fcf39449bd930fba4982213"
+      }
+    },
+    "remaining_generated": {
+      "summary": {
+        "path": "artifacts/validation/2026-10-24-extra/remote/summary.json",
+        "sha256": "837bd8379d51a4f84b8e713c903eb409b2289c9571eca1ad32fc715f0e02ef89"
+      },
+      "raw_audit": {
+        "path": "artifacts/validation/2026-10-24-extra/remote/integrity-audit.json",
+        "sha256": "948e93ee0a9d5b65f883ce6454ee055b97d8f4b61147c19ac653b84b873453bd"
+      }
+    },
+    "hand_built_ir": {
+      "summary": {
+        "path": "artifacts/validation/2026-10-24-root-audit/typed-extra/remote/summary.json",
+        "sha256": "b432d14bf52cbffb6ac0abdae6245adc5f7d94168095805d043cb2a2b6b38181"
+      },
+      "raw_audit": {
+        "path": "artifacts/validation/2026-10-24-root-audit/typed-extra/remote/integrity-audit.json",
+        "sha256": "3d382428afaec158a87d69ec1ffd9c2ba075dc7015916a9c2e10a83e3d289202"
+      }
+    },
+    "genuine_fp64_states": {
+      "summary": {
+        "path": "artifacts/validation/2026-10-24-root-audit/fp64-state-variants/remote/summary.json",
+        "sha256": "24e63ce7c85c6e8296c43a0cc0567ef228ab2b35d948ed8a2793f1dada00694f"
+      },
+      "raw_audit": {
+        "path": "artifacts/validation/2026-10-24-root-audit/fp64-state-variants/remote/integrity-audit.json",
+        "sha256": "e6a536f06a36553d887f6e48b6d44143b07130f3c516e10877f8dafc448cc4bf"
+      }
+    },
+    "precision_attribution": {
+      "path": "artifacts/validation/2026-10-24-extra/precision-attribution/summary.json",
+      "sha256": "93bfaacc2239ea0894516eae81426708feef73a6705ecfa2851905019c945ac2"
+    },
+    "fp64_variant_manifest": {
+      "path": "artifacts/validation/2026-10-24-root-audit/fp64-state-variants/manifest.json",
+      "sha256": "c16199a79e040924efaecfe0eafbe3ccfcce1a2ddda504f26c1b66f5c8dccf49"
+    },
+    "admission": {
+      "path": "artifacts/validation/2026-10-24-extra/final-admission.json",
+      "sha256": "a29c6f22f87d598c98792084791a2c965f81bae5ed22e288d590ae944dd2474a"
+    },
+    "input_abi_audit": {
+      "path": "artifacts/validation/2026-10-24-extra/input-audit-final.json",
+      "sha256": "fa2da514766afc0eb145bf91d8203ef9d0eb32bb1e9bcf56a88b4df7120accc0"
+    },
+    "large_integer_input": {
+      "path": "artifacts/validation/2026-10-24-extra/explicit-large-i32/manifest.json",
+      "sha256": "08b15cdc06cc56b19000b4c6f12afd8056d9543c3d0cfa689de142be6ef29515"
+    },
+    "typed_fixture_manifest": {
+      "path": "artifacts/validation/2026-10-24-root-audit/typed-extra/manifest.json",
+      "sha256": "91daf903b3d0e80c108f4cf1357a61d19bce92b65841f7f871b915c4d063a46c"
+    }
+  },
+  "excluded_original_packages": [
+    {
+      "id": "oct24_p03_f64_rounding",
+      "reason": "ValueError: No package produced; see original generator failure log",
+      "stage": "frontend generation/admission, not backend execution"
+    },
+    {
+      "id": "oct24_p09_remainder",
+      "reason": "ValueError: No package produced; see original generator failure log",
+      "stage": "frontend generation/admission, not backend execution"
+    },
+    {
+      "id": "oct24_f01_f64_centered_norm",
+      "reason": "AssertionError: Input-name drift: ['z'] instead of ['x']",
+      "stage": "frontend generation/admission, not backend execution"
+    },
+    {
+      "id": "oct24_m02_f16_ragged",
+      "reason": "MmaSyncPtx is outside required task scope; see preserved failed typed scope audit",
+      "stage": "typed IR scope admission, not backend execution"
+    }
+  ],
+  "initial_network_failure": {
+    "path": "artifacts/validation/2026-10-24-public-submit/classification.json",
+    "sha256": "eafd90551ee41ce60d4afb7f9d08a551238747c269de07cca76b843f73a40d22"
+  },
+  "compiler_changes": "None: production files match the previously validated release",
+  "archive": {
+    "path": "artifacts/release/phase4/submission-bcbc4a8381497f1d34be.zip",
+    "sha256": "b9af6a761233e39b8faa330e1fd01c49e8a457498cb5d3b7e2465ef5403251e8"
+  },
+  "archive_matches_current_compiler": true,
+  "audit_source": {
+    "path": "artifacts/validation/2026-10-24-root-audit/final_audit.py",
+    "sha256": "245df8876b910314c5052a338e1f32f19855842b456e53a2d9be2c4c3175df50"
+  },
+  "limits": "Correctness on these development inputs only; no hidden-set or comparative runtime result"
+}

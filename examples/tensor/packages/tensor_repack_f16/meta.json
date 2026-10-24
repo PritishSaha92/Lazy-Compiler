@@ -1,0 +1,75 @@
+{
+  "id": "tensor_repack_f16",
+  "graph_inputs": [
+    "x",
+    "y",
+    "z"
+  ],
+  "graph_outputs": [
+    "out"
+  ],
+  "rtol": 0.002,
+  "atol": 0.002,
+  "kernels": [
+    {
+      "entry": "k_regression_tensor_repack_f16",
+      "grid": [
+        1,
+        1,
+        1
+      ],
+      "block": [
+        32,
+        1,
+        1
+      ],
+      "smem_bytes": 0,
+      "zero_outputs": [],
+      "arg_order": [
+        "x",
+        "y",
+        "z",
+        "out"
+      ],
+      "args": [
+        {
+          "name": "x",
+          "dtype": "f32",
+          "shape": [
+            16,
+            16
+          ],
+          "seed": 0
+        },
+        {
+          "name": "y",
+          "dtype": "f32",
+          "shape": [
+            16,
+            16
+          ],
+          "seed": 1
+        },
+        {
+          "name": "z",
+          "dtype": "f32",
+          "shape": [
+            16,
+            8
+          ],
+          "seed": 2
+        },
+        {
+          "name": "out",
+          "dtype": "f32",
+          "shape": [
+            16,
+            8
+          ],
+          "output": true
+        }
+      ],
+      "final": true
+    }
+  ]
+}

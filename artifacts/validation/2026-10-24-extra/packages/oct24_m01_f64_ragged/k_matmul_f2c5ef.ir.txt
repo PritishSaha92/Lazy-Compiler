@@ -1,0 +1,22 @@
+    Tile[a0, a1, a2_co] (N=28288)
+        for a2 in a2_co..29:256
+            in0 = load a[a0, a2]
+            in1 = load b[a2, a1]
+            f64 v0 = multiply(in0, in1)
+            f32 acc0 <- add(acc0, v0)
+            in0__r1 = load a[a0, ((a2 + 128) % 29)]
+            in1__r1 = load b[((a2 + 128) % 29), a1]
+            f64 v0__r1 = multiply(in0__r1, in1__r1)
+            Init(f32 v0__r1__id = 0.0)
+            v0__r1__m = v0__r1 when (((a2 + 128) < 29))
+                        v0__r1__id when (1)
+            f32 acc0__r1 <- add(acc0__r1, v0__r1__m)
+        f32 acc0 <- add(acc0, acc0__r1)
+        WarpShuffle(acc0, length=32)
+        Smem float acc0_smem[4]
+        if ((lane == 0)):
+            acc0_smem[warp] = acc0
+        Sync
+        TreeHalve(acc0, length=4, tid=warp)
+        if ((a2_co == 0)):
+            matmul[a0, a1] = acc0

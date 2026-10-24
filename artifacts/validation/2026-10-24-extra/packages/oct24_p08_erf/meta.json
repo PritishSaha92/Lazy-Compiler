@@ -1,0 +1,55 @@
+{
+ "id": "oct24_p08_erf",
+ "code": "x=torch.randn(29,37); torch.erf(x)",
+ "rtol": 3e-06,
+ "atol": 5e-07,
+ "graph_inputs": [
+  "x"
+ ],
+ "graph_outputs": [
+  "erf"
+ ],
+ "kernels": [
+  {
+   "node": "erf",
+   "entry": "k_erf_pointwise",
+   "arg_order": [
+    "x",
+    "erf"
+   ],
+   "grid": [
+    5,
+    1,
+    1
+   ],
+   "block": [
+    256,
+    1,
+    1
+   ],
+   "smem_bytes": 0,
+   "zero_outputs": [],
+   "args": [
+    {
+     "name": "x",
+     "dtype": "f32",
+     "shape": [
+      29,
+      37
+     ],
+     "seed": 0
+    },
+    {
+     "name": "erf",
+     "dtype": "f32",
+     "shape": [
+      29,
+      37
+     ],
+     "output": true
+    }
+   ],
+   "final": true
+  }
+ ]
+}

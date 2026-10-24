@@ -1,0 +1,110 @@
+{
+ "id": "hold_a03_attention_residual",
+ "code": "q=torch.randn(12,20); kt=torch.randn(20,80); v=torch.randn(80,28); r=torch.randn(12,28); (torch.softmax(q@kt*0.25,dim=-1)@v)+r*0.125",
+ "rtol": 0.001,
+ "atol": 0.0001,
+ "graph_inputs": [
+  "q",
+  "kt",
+  "v",
+  "r"
+ ],
+ "graph_outputs": [
+  "add"
+ ],
+ "kernels": [
+  {
+   "node": "add",
+   "entry": "k_matmul_softmax_reduce_396951",
+   "arg_order": [
+    "mul_c1",
+    "mul_1_c1",
+    "q",
+    "kt",
+    "r",
+    "v",
+    "add"
+   ],
+   "grid": [
+    1,
+    1,
+    1
+   ],
+   "block": [
+    256,
+    1,
+    1
+   ],
+   "smem_bytes": 0,
+   "zero_outputs": [],
+   "args": [
+    {
+     "name": "mul_c1",
+     "dtype": "f32",
+     "shape": [
+      1
+     ],
+     "data": [
+      0.25
+     ]
+    },
+    {
+     "name": "mul_1_c1",
+     "dtype": "f32",
+     "shape": [
+      1
+     ],
+     "data": [
+      0.125
+     ]
+    },
+    {
+     "name": "q",
+     "dtype": "f32",
+     "shape": [
+      12,
+      20
+     ],
+     "seed": 0
+    },
+    {
+     "name": "kt",
+     "dtype": "f32",
+     "shape": [
+      20,
+      80
+     ],
+     "seed": 1
+    },
+    {
+     "name": "r",
+     "dtype": "f32",
+     "shape": [
+      12,
+      28
+     ],
+     "seed": 3
+    },
+    {
+     "name": "v",
+     "dtype": "f32",
+     "shape": [
+      80,
+      28
+     ],
+     "seed": 2
+    },
+    {
+     "name": "add",
+     "dtype": "f32",
+     "shape": [
+      12,
+      28
+     ],
+     "output": true
+    }
+   ],
+   "final": true
+  }
+ ]
+}

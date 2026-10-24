@@ -1,0 +1,19 @@
+{
+  "started": "2026-10-24T18:03:49.647629+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "cubin_id": "c79e774637ce3ac1df259956cf0f325e5c47b93ff16a88807db2c3e1d04053b2",
+    "bytes": 8224,
+    "arch": "sm_120",
+    "flags": [],
+    "entry_points": [
+      "k_regression_tensor_repack_f16"
+    ],
+    "registers": {
+      "k_regression_tensor_repack_f16": 40
+    }
+  },
+  "finished": "2026-10-24T18:03:50.425138+00:00",
+  "seconds": 0.7772461000022304
+}

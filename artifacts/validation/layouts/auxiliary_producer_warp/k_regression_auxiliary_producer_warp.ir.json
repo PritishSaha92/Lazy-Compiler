@@ -1,0 +1,49 @@
+{
+  "inputs": [
+    "x"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            32
+          ],
+          "dtype": "f32"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='batch', extent=Dim(3), window=None), Axis(name='cell', extent=Dim(32), window=None)), body=(Smem(name='scratch', extents=(32,), dtype='float', align=16), Cond(cond=BinaryExpr(op='>=', left=Var(name='warp'), right=Literal(value=1, dtype='int')), body=(Load(names=('loaded',), input='x', index=(Var(name='batch'), Var(name='lane')), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='scratch', index=(Var(name='lane'),), values=('loaded',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE')), else_body=()), Sync(barrier_id=0, count=None, warp=False), Cond(cond=BinaryExpr(op='==', left=Var(name='warp'), right=Literal(value=0, dtype='int')), body=(Load(names=('readback',), input='scratch', index=(BinaryExpr(op='-', left=Literal(value=31, dtype='int'), right=Var(name='cell')),), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='out', index=(Var(name='batch'), Var(name='cell')), values=('readback',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE')), else_body=())), block_threads=32, aux_threads=32, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_auxiliary_producer_warp",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            3,
+            32
+          ],
+          "dtype": "f32"
+        }
+      ]
+    }
+  }
+}

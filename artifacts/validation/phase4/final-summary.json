@@ -1,0 +1,68 @@
+{
+  "schema": "emmy.phase4.final-evidence.v1",
+  "checked_utc": "2026-10-23T01:11:07.725604+00:00",
+  "pass": true,
+  "source_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "release_archive": {
+    "path": "artifacts/release/phase4/submission-bcbc4a8381497f1d34be.zip",
+    "sha256": "b9af6a761233e39b8faa330e1fd01c49e8a457498cb5d3b7e2465ef5403251e8"
+  },
+  "frozen_release_evidence": {
+    "path": "artifacts/validation/phase4/release-summary.json",
+    "sha256": "0a2eaa8b92e9b3b74156ce9bd556272e75fd4335c3e17d68c3598f70f72c1f25"
+  },
+  "supplemental_correctness": {
+    "path": "artifacts/validation/phase4/selector-correctness-retry01/summary.json",
+    "sha256": "a4c4c83b5f4f069481d28a41c4c6d586207c8675f3efd8e04d4b0b532f8c7ea0"
+  },
+  "supplemental_integrity_audit": {
+    "path": "artifacts/validation/phase4/selector-correctness-retry01/integrity-audit.json",
+    "sha256": "c2a03dbbd32ba876b2b059ebd69250e3e7351ad2925faba9b74dbbbae9469b0e"
+  },
+  "selector_feasibility": {
+    "path": "artifacts/validation/phase4/selector/feasibility.json",
+    "sha256": "7d40a1cb8c2ba9c0b134fa953ce7003473635e82bd6bab3906a9e280c91dc4d4"
+  },
+  "totals": {
+    "release_checks": 242,
+    "supplemental_checks": 90,
+    "checks": 332,
+    "passed_checks": 332,
+    "default_policy_checks": 326,
+    "variant_checks": 6,
+    "logical_packages": 150,
+    "definition": "Workload/input/configuration checks; timed internal launches and repeated/incomplete attempts are not additional cases."
+  },
+  "selector": {
+    "decision": "keep_fixed1024",
+    "distinct_choice_workloads": {
+      "train": 1,
+      "validation": 0,
+      "final": 1
+    },
+    "workloads_per_split": 10,
+    "unique_modules": 32,
+    "production_ptx_identity_checks": 90,
+    "policies_fitted": 0,
+    "comparative_timing_performed": false
+  },
+  "excluded_attempts": [
+    {
+      "integrity_audit": {
+        "path": "artifacts/validation/phase4/selector-correctness/integrity-audit.json",
+        "sha256": "edd09d5bc24d08ad07cf6da2524daa83e972f690b5a6b15ac245b6948a32fb7a"
+      },
+      "returned_checks": 22,
+      "passed_checks": 22,
+      "included_in_totals": false,
+      "reason": "Incomplete attempt after Windows summary-file replacement error; external cause unestablished.",
+      "additional_validated_raw_responses": 1,
+      "all_excluded_successful_checks": 23
+    }
+  ],
+  "scope": "Development evidence on the organizer GPU. No hidden-test or guaranteed-ranking claim. Immutable ZIP and its five original gate snapshots remain unchanged."
+}

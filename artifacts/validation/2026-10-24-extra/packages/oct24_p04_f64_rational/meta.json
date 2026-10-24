@@ -1,0 +1,75 @@
+{
+ "id": "oct24_p04_f64_rational",
+ "code": "x=torch.randn(1033,dtype=torch.float64); (x*x+0.5)/(torch.abs(x)+1.0)",
+ "rtol": 2e-14,
+ "atol": 2e-14,
+ "graph_inputs": [
+  "x"
+ ],
+ "graph_outputs": [
+  "div"
+ ],
+ "kernels": [
+  {
+   "node": "div",
+   "entry": "k_div_pointwise",
+   "arg_order": [
+    "add_1_c1",
+    "add_c1",
+    "x",
+    "div"
+   ],
+   "grid": [
+    5,
+    1,
+    1
+   ],
+   "block": [
+    256,
+    1,
+    1
+   ],
+   "smem_bytes": 0,
+   "zero_outputs": [],
+   "args": [
+    {
+     "name": "add_1_c1",
+     "dtype": "f64",
+     "shape": [
+      1
+     ],
+     "data": [
+      1.0
+     ]
+    },
+    {
+     "name": "add_c1",
+     "dtype": "f64",
+     "shape": [
+      1
+     ],
+     "data": [
+      0.5
+     ]
+    },
+    {
+     "name": "x",
+     "dtype": "f64",
+     "shape": [
+      1033
+     ],
+     "seed": 0
+    },
+    {
+     "name": "div",
+     "dtype": "f64",
+     "shape": [
+      1033
+     ],
+     "output": true
+    }
+   ],
+   "final": true
+  }
+ ]
+}

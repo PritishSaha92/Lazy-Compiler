@@ -1,0 +1,244 @@
+{
+  "updated_utc": "2026-10-22T20:40:01.564667+00:00",
+  "report_time_compiler_sources_sha256": {
+    "artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+  },
+  "configuration": {
+    "problems": [
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\unsigned-word-transport\\overflow_alignment_u32_grouped",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\unsigned-word-transport\\overflow_alignment_u32_scalar",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\unsigned-word-transport\\overflow_alignment_u64_grouped",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\unsigned-word-transport\\overflow_alignment_u64_scalar"
+    ],
+    "compiler": "artifacts/validation/phase3/release-candidate/compile.py",
+    "mode": "remote",
+    "arch": "sm_89",
+    "server": "http://runner.riftstack.ai:48701",
+    "adapt_local_target": false,
+    "seeds": "0",
+    "patterns": "normal",
+    "warmup": 1,
+    "iters": 3,
+    "report": "artifacts\\validation\\phase3\\unsigned-word-transport\\remote.json",
+    "references": []
+  },
+  "results": [
+    {
+      "problem": "overflow_alignment_u32_grouped",
+      "mode": "remote",
+      "kernels": [
+        {
+          "entry": "k_regression_overflow_alignment_u32_grouped",
+          "compile_seconds": 1.575421899993671,
+          "ptx_bytes": 1203,
+          "ptx_sha256": "6b6eb1f57c0242d8df7740c4b17655a3981d757b7b3bc893ab41874efd8fbe35",
+          "compiler_sources_sha256": {
+            "artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+            "artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+          },
+          "registers": 12,
+          "cubin_id": "4e4c0e23ce765bb6d3bf746b9f9e09d6df98776ff2806d9cfb9df925000b255c"
+        }
+      ],
+      "cases": [
+        {
+          "seed_offset": 0,
+          "pattern": "normal",
+          "runs": [
+            {
+              "ok": true,
+              "entry": "k_regression_overflow_alignment_u32_grouped",
+              "grid": [
+                1,
+                1,
+                1
+              ],
+              "block": [
+                32,
+                1,
+                1
+              ],
+              "smem_bytes": 0,
+              "median_us": 5.056,
+              "iters": 3
+            }
+          ],
+          "outputs": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 8,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "problem": "overflow_alignment_u32_scalar",
+      "mode": "remote",
+      "kernels": [
+        {
+          "entry": "k_regression_overflow_alignment_u32_scalar",
+          "compile_seconds": 2.249560800002655,
+          "ptx_bytes": 1297,
+          "ptx_sha256": "f80cbb2edce882e28f7b684fa0c277fef1a6fba014a9661dc607817996897dd7",
+          "compiler_sources_sha256": {
+            "artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+            "artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+          },
+          "registers": 14,
+          "cubin_id": "245f22109f792c0168446817d548c0b8b05cd4147544e13b334ad197e2dba891"
+        }
+      ],
+      "cases": [
+        {
+          "seed_offset": 0,
+          "pattern": "normal",
+          "runs": [
+            {
+              "ok": true,
+              "entry": "k_regression_overflow_alignment_u32_scalar",
+              "grid": [
+                1,
+                1,
+                1
+              ],
+              "block": [
+                32,
+                1,
+                1
+              ],
+              "smem_bytes": 0,
+              "median_us": 4.032,
+              "iters": 3
+            }
+          ],
+          "outputs": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 8,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "problem": "overflow_alignment_u64_grouped",
+      "mode": "remote",
+      "kernels": [
+        {
+          "entry": "k_regression_overflow_alignment_u64_grouped",
+          "compile_seconds": 1.515453800006071,
+          "ptx_bytes": 1238,
+          "ptx_sha256": "e39de96cce3ce9e80152330b7ce751cb710c001e719da6c8059b9a3859408198",
+          "compiler_sources_sha256": {
+            "artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+            "artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+          },
+          "registers": 18,
+          "cubin_id": "7da5355edc7f5caa42f519a27f8b6f729f8bd443b2c0c41037bea363b0c32118"
+        }
+      ],
+      "cases": [
+        {
+          "seed_offset": 0,
+          "pattern": "normal",
+          "runs": [
+            {
+              "ok": true,
+              "entry": "k_regression_overflow_alignment_u64_grouped",
+              "grid": [
+                1,
+                1,
+                1
+              ],
+              "block": [
+                32,
+                1,
+                1
+              ],
+              "smem_bytes": 0,
+              "median_us": 3.808,
+              "iters": 3
+            }
+          ],
+          "outputs": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 8,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "problem": "overflow_alignment_u64_scalar",
+      "mode": "remote",
+      "kernels": [
+        {
+          "entry": "k_regression_overflow_alignment_u64_scalar",
+          "compile_seconds": 1.5158655999985058,
+          "ptx_bytes": 1364,
+          "ptx_sha256": "973921773a5f7a7609f9b8c272ff884959fdaf981bfdf5fcc237891ecbfdb629",
+          "compiler_sources_sha256": {
+            "artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+            "artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+          },
+          "registers": 18,
+          "cubin_id": "d08eaa73f6e47ee55ec1eca18fd88b4efd4bfefe624c52f35ef035dd4ceef501"
+        }
+      ],
+      "cases": [
+        {
+          "seed_offset": 0,
+          "pattern": "normal",
+          "runs": [
+            {
+              "ok": true,
+              "entry": "k_regression_overflow_alignment_u64_scalar",
+              "grid": [
+                1,
+                1,
+                1
+              ],
+              "block": [
+                32,
+                1,
+                1
+              ],
+              "smem_bytes": 0,
+              "median_us": 3.776,
+              "iters": 3
+            }
+          ],
+          "outputs": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 8,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    }
+  ]
+}

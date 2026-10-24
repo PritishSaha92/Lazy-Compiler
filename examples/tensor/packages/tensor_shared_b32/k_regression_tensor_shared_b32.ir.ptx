@@ -1,0 +1,182 @@
+.version 8.0
+.target sm_89
+.address_size 64
+
+
+.visible .entry k_regression_tensor_shared_b32(
+    .param .u64 param_0,
+    .param .u64 param_1,
+    .param .u64 param_2
+)
+{
+    .reg .b64 %rd<19>;
+    .reg .b32 %r<88>;
+    .reg .pred %p<17>;
+    .reg .f32 %f<11>;
+    .reg .b16 %h<3>;
+    .shared .align 128 .b8 smem_0[2048];
+    .shared .align 128 .b8 smem_1[2048];
+    ld.param.u64 %rd1, [param_0];
+    cvta.to.global.u64 %rd2, %rd1;
+    ld.param.u64 %rd3, [param_1];
+    cvta.to.global.u64 %rd4, %rd3;
+    ld.param.u64 %rd5, [param_2];
+    cvta.to.global.u64 %rd6, %rd5;
+    mov.u32 %r1, %tid.x;
+    mov.u32 %r2, %ctaid.x;
+    mov.u32 %r3, %ntid.x;
+    rem.s32 %r4, %r1, 32;
+    div.s32 %r5, %r1, 32;
+    mov.u32 %r6, smem_0;
+    mov.u32 %r7, smem_1;
+    mul.lo.s32 %r8, %r2, %r3;
+    add.s32 %r9, %r8, %r1;
+    setp.ge.s32 %p1, %r9, 32;
+    @%p1 bra endtile_1;
+    mov.s32 %r10, %r9;
+loop_2:
+    setp.ge.s32 %p2, %r10, 256;
+    @%p2 bra endloop_3;
+    mul.wide.s32 %rd7, %r10, 4;
+    add.u64 %rd8, %rd2, %rd7;
+    ld.global.f32 %f1, [%rd8+0];
+    div.s32 %r11, %r10, 16;
+    mul.lo.s32 %r12, %r11, 64;
+    rem.s32 %r13, %r10, 16;
+    add.s32 %r14, %r12, %r13;
+    shr.s32 %r15, %r14, 6;
+    and.b32 %r16, %r15, 1;
+    shl.b32 %r17, %r16, 3;
+    xor.b32 %r18, %r14, %r17;
+    mul.lo.u32 %r19, %r18, 2;
+    add.u32 %r20, %r6, %r19;
+    cvt.rn.f16.f32 %h1, %f1;
+    st.shared.b16 [%r20+0], %h1;
+    add.s32 %r21, %r10, 32;
+    mov.s32 %r10, %r21;
+    bra loop_2;
+endloop_3:
+    mov.s32 %r22, %r9;
+loop_4:
+    setp.ge.s32 %p3, %r22, 128;
+    @%p3 bra endloop_5;
+    mul.wide.s32 %rd9, %r22, 4;
+    add.u64 %rd10, %rd4, %rd9;
+    ld.global.f32 %f2, [%rd10+0];
+    div.s32 %r23, %r22, 8;
+    mul.lo.s32 %r24, %r23, 64;
+    rem.s32 %r25, %r22, 8;
+    add.s32 %r26, %r24, %r25;
+    shr.s32 %r27, %r26, 6;
+    and.b32 %r28, %r27, 1;
+    shl.b32 %r29, %r28, 3;
+    xor.b32 %r30, %r26, %r29;
+    mul.lo.u32 %r31, %r30, 2;
+    add.u32 %r32, %r7, %r31;
+    cvt.rn.f16.f32 %h2, %f2;
+    st.shared.b16 [%r32+0], %h2;
+    add.s32 %r33, %r22, 32;
+    mov.s32 %r22, %r33;
+    bra loop_4;
+endloop_5:
+    bar.sync 0;
+    mov.f32 %f3, 0f00000000;
+    mov.f32 %f4, 0f00000000;
+    mov.f32 %f5, 0f00000000;
+    mov.f32 %f6, 0f00000000;
+    mov.s32 %r40, 0;
+loop_6:
+    setp.ge.s32 %p4, %r40, 16;
+    @%p4 bra endloop_7;
+    and.b32 %r41, %r1, 31;
+    rem.s32 %r42, %r41, 16;
+    div.s32 %r43, %r41, 16;
+    mul.lo.s32 %r44, %r43, 8;
+    mul.lo.s32 %r45, %r42, 64;
+    add.s32 %r46, %r45, %r44;
+    add.s32 %r47, %r40, %r46;
+    shr.s32 %r48, %r47, 6;
+    and.b32 %r49, %r48, 1;
+    shl.b32 %r50, %r49, 3;
+    xor.b32 %r51, %r47, %r50;
+    mul.lo.u32 %r52, %r51, 2;
+    add.u32 %r53, %r6, %r52;
+    ldmatrix.sync.aligned.m8n8.x4.shared.b16 {%r54, %r55, %r56, %r57}, [%r53];
+    mov.b32 %r34, %r54;
+    mov.b32 %r35, %r55;
+    mov.b32 %r36, %r56;
+    mov.b32 %r37, %r57;
+    and.b32 %r58, %r1, 31;
+    rem.s32 %r59, %r58, 16;
+    mul.lo.s32 %r60, %r40, 64;
+    mul.lo.s32 %r61, %r59, 64;
+    add.s32 %r62, %r60, %r61;
+    shr.s32 %r63, %r62, 6;
+    and.b32 %r64, %r63, 1;
+    shl.b32 %r65, %r64, 3;
+    xor.b32 %r66, %r62, %r65;
+    mul.lo.u32 %r67, %r66, 2;
+    add.u32 %r68, %r7, %r67;
+    ldmatrix.sync.aligned.m8n8.x2.trans.shared.b16 {%r69, %r70}, [%r68];
+    mov.b32 %r38, %r69;
+    mov.b32 %r39, %r70;
+    mma.sync.aligned.m16n8k16.row.col.f32.f16.f16.f32 {%f7, %f8, %f9, %f10}, {%r34, %r35, %r36, %r37}, {%r38, %r39}, {%f3, %f4, %f5, %f6};
+    mov.f32 %f3, %f7;
+    mov.f32 %f4, %f8;
+    mov.f32 %f5, %f9;
+    mov.f32 %f6, %f10;
+    add.s32 %r71, %r40, 16;
+    mov.s32 %r40, %r71;
+    bra loop_6;
+endloop_7:
+    and.b32 %r72, %r1, 31;
+    div.s32 %r73, %r72, 4;
+    rem.s32 %r74, %r72, 4;
+    mul.lo.s32 %r75, %r74, 2;
+    setp.lt.s32 %p5, %r73, 16;
+    setp.lt.s32 %p6, %r75, 8;
+    and.pred %p7, %p5, %p6;
+    @!%p7 bra tensor_store_skip_8;
+    mul.lo.s32 %r76, %r73, 8;
+    add.s32 %r77, %r76, %r75;
+    mul.wide.s32 %rd11, %r77, 4;
+    add.u64 %rd12, %rd6, %rd11;
+    st.global.f32 [%rd12+0], %f3;
+tensor_store_skip_8:
+    add.s32 %r78, %r75, 1;
+    setp.lt.s32 %p8, %r73, 16;
+    setp.lt.s32 %p9, %r78, 8;
+    and.pred %p10, %p8, %p9;
+    @!%p10 bra tensor_store_skip_9;
+    mul.lo.s32 %r79, %r73, 8;
+    add.s32 %r80, %r79, %r78;
+    mul.wide.s32 %rd13, %r80, 4;
+    add.u64 %rd14, %rd6, %rd13;
+    st.global.f32 [%rd14+0], %f4;
+tensor_store_skip_9:
+    add.s32 %r81, %r73, 8;
+    setp.lt.s32 %p11, %r81, 16;
+    setp.lt.s32 %p12, %r75, 8;
+    and.pred %p13, %p11, %p12;
+    @!%p13 bra tensor_store_skip_10;
+    mul.lo.s32 %r82, %r81, 8;
+    add.s32 %r83, %r82, %r75;
+    mul.wide.s32 %rd15, %r83, 4;
+    add.u64 %rd16, %rd6, %rd15;
+    st.global.f32 [%rd16+0], %f5;
+tensor_store_skip_10:
+    add.s32 %r84, %r73, 8;
+    add.s32 %r85, %r75, 1;
+    setp.lt.s32 %p14, %r84, 16;
+    setp.lt.s32 %p15, %r85, 8;
+    and.pred %p16, %p14, %p15;
+    @!%p16 bra tensor_store_skip_11;
+    mul.lo.s32 %r86, %r84, 8;
+    add.s32 %r87, %r86, %r85;
+    mul.wide.s32 %rd17, %r87, 4;
+    add.u64 %rd18, %rd6, %rd17;
+    st.global.f32 [%rd18+0], %f6;
+tensor_store_skip_11:
+endtile_1:
+    ret;
+}

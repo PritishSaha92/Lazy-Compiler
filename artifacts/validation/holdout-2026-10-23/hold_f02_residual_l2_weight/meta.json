@@ -1,0 +1,87 @@
+{
+ "id": "hold_f02_residual_l2_weight",
+ "code": "x=torch.randn(21,61); r=torch.randn(21,61); w=torch.randn(61); (x+r)/torch.sqrt(((x+r)*(x+r)).sum(-1,keepdim=True)+0.0003)*w",
+ "rtol": 0.001,
+ "atol": 0.0001,
+ "graph_inputs": [
+  "x",
+  "r",
+  "w"
+ ],
+ "graph_outputs": [
+  "mul_1"
+ ],
+ "kernels": [
+  {
+   "node": "mul_1",
+   "entry": "k_mul_1_reduce",
+   "arg_order": [
+    "add_3_c1",
+    "x",
+    "r",
+    "w",
+    "mul_1"
+   ],
+   "grid": [
+    21,
+    1,
+    1
+   ],
+   "block": [
+    128,
+    1,
+    1
+   ],
+   "smem_bytes": 0,
+   "zero_outputs": [],
+   "args": [
+    {
+     "name": "add_3_c1",
+     "dtype": "f32",
+     "shape": [
+      1
+     ],
+     "data": [
+      0.0003
+     ]
+    },
+    {
+     "name": "x",
+     "dtype": "f32",
+     "shape": [
+      21,
+      61
+     ],
+     "seed": 0
+    },
+    {
+     "name": "r",
+     "dtype": "f32",
+     "shape": [
+      21,
+      61
+     ],
+     "seed": 1
+    },
+    {
+     "name": "w",
+     "dtype": "f32",
+     "shape": [
+      61
+     ],
+     "seed": 2
+    },
+    {
+     "name": "mul_1",
+     "dtype": "f32",
+     "shape": [
+      21,
+      61
+     ],
+     "output": true
+    }
+   ],
+   "final": true
+  }
+ ]
+}

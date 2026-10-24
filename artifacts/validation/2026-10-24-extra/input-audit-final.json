@@ -1,0 +1,517 @@
+{
+  "pass": true,
+  "rows": [
+    {
+      "id": "oct24_p01_f16_broadcast",
+      "pass": true,
+      "outputs": [
+        {
+          "name": "relu",
+          "dtype": "f16",
+          "shape": [
+            11,
+            67
+          ],
+          "fp32_roundtrip_rejected_elements": 0
+        }
+      ],
+      "ir_type_counts": {
+        "Tile": 1,
+        "Axis": 2,
+        "Dim": 2,
+        "Literal": 2,
+        "Load": 2,
+        "Var": 5,
+        "DataType": 6,
+        "Assign": 3,
+        "Write": 1
+      },
+      "excluded_ir_types": []
+    },
+    {
+      "id": "oct24_p02_f16_sqrt",
+      "pass": true,
+      "outputs": [
+        {
+          "name": "sqrt",
+          "dtype": "f16",
+          "shape": [
+            1031
+          ],
+          "fp32_roundtrip_rejected_elements": 0
+        }
+      ],
+      "ir_type_counts": {
+        "Tile": 1,
+        "Axis": 1,
+        "Dim": 1,
+        "Literal": 2,
+        "Load": 2,
+        "Var": 2,
+        "DataType": 6,
+        "Assign": 3,
+        "Write": 1
+      },
+      "excluded_ir_types": []
+    },
+    {
+      "id": "oct24_p04_f64_rational",
+      "pass": true,
+      "outputs": [
+        {
+          "name": "div",
+          "dtype": "f64",
+          "shape": [
+            1033
+          ],
+          "fp32_roundtrip_rejected_elements": 1033
+        }
+      ],
+      "ir_type_counts": {
+        "Tile": 1,
+        "Axis": 1,
+        "Dim": 1,
+        "Literal": 3,
+        "Load": 3,
+        "Var": 2,
+        "DataType": 9,
+        "Assign": 5,
+        "Write": 1
+      },
+      "excluded_ir_types": []
+    },
+    {
+      "id": "oct24_p05_i32_bitwise",
+      "pass": true,
+      "outputs": [
+        {
+          "name": "add",
+          "dtype": "i32",
+          "shape": [
+            17,
+            31
+          ],
+          "fp32_roundtrip_rejected_elements": 0
+        }
+      ],
+      "ir_type_counts": {
+        "Tile": 1,
+        "Axis": 1,
+        "Dim": 1,
+        "Literal": 7,
+        "Load": 2,
+        "BinaryExpr": 6,
+        "Var": 6,
+        "DataType": 6,
+        "Assign": 3,
+        "Write": 1
+      },
+      "excluded_ir_types": []
+    },
+    {
+      "id": "oct24_p06_i32_selection",
+      "pass": true,
+      "outputs": [
+        {
+          "name": "where",
+          "dtype": "i32",
+          "shape": [
+            7,
+            149
+          ],
+          "fp32_roundtrip_rejected_elements": 0
+        }
+      ],
+      "ir_type_counts": {
+        "Tile": 1,
+        "Axis": 1,
+        "Dim": 1,
+        "Literal": 7,
+        "Load": 2,
+        "BinaryExpr": 6,
+        "Var": 6,
+        "DataType": 7,
+        "Assign": 4,
+        "Write": 1
+      },
+      "excluded_ir_types": []
+    },
+    {
+      "id": "oct24_p07_sin_cos",
+      "pass": true,
+      "outputs": [
+        {
+          "name": "add",
+          "dtype": "f32",
+          "shape": [
+            2057
+          ],
+          "fp32_roundtrip_rejected_elements": 0
+        }
+      ],
+      "ir_type_counts": {
+        "Tile": 1,
+        "Axis": 1,
+        "Dim": 1,
+        "Literal": 1,
+        "Load": 1,
+        "Var": 2,
+        "DataType": 5,
+        "Assign": 3,
+        "Write": 1
+      },
+      "excluded_ir_types": []
+    },
+    {
+      "id": "oct24_p08_erf",
+      "pass": true,
+      "outputs": [
+        {
+          "name": "erf",
+          "dtype": "f32",
+          "shape": [
+            29,
+            37
+          ],
+          "fp32_roundtrip_rejected_elements": 0
+        }
+      ],
+      "ir_type_counts": {
+        "Tile": 1,
+        "Axis": 1,
+        "Dim": 1,
+        "Literal": 5,
+        "Load": 1,
+        "BinaryExpr": 4,
+        "Var": 4,
+        "DataType": 3,
+        "Assign": 1,
+        "Write": 1
+      },
+      "excluded_ir_types": []
+    },
+    {
+      "id": "oct24_r01_f16_max",
+      "pass": true,
+      "outputs": [
+        {
+          "name": "amax",
+          "dtype": "f16",
+          "shape": [
+            19
+          ],
+          "fp32_roundtrip_rejected_elements": 0
+        }
+      ],
+      "ir_type_counts": {
+        "Tile": 1,
+        "Axis": 3,
+        "Dim": 3,
+        "Literal": 6,
+        "StridedLoop": 1,
+        "Var": 7,
+        "Load": 1,
+        "DataType": 7,
+        "Accum": 1,
+        "WarpShuffle": 1,
+        "Assign": 3,
+        "Smem": 1,
+        "Cond": 2,
+        "BinaryExpr": 2,
+        "Write": 2,
+        "Sync": 1,
+        "TreeHalve": 1
+      },
+      "excluded_ir_types": []
+    },
+    {
+      "id": "oct24_r02_f16_to_f32_sum",
+      "pass": true,
+      "outputs": [
+        {
+          "name": "sum_1",
+          "dtype": "f32",
+          "shape": [
+            13
+          ],
+          "fp32_roundtrip_rejected_elements": 0
+        }
+      ],
+      "ir_type_counts": {
+        "Tile": 1,
+        "Axis": 3,
+        "Dim": 3,
+        "Literal": 6,
+        "StridedLoop": 1,
+        "Var": 7,
+        "Load": 1,
+        "DataType": 7,
+        "Assign": 3,
+        "Accum": 1,
+        "WarpShuffle": 1,
+        "Smem": 1,
+        "Cond": 2,
+        "BinaryExpr": 2,
+        "Write": 2,
+        "Sync": 1,
+        "TreeHalve": 1
+      },
+      "excluded_ir_types": []
+    },
+    {
+      "id": "oct24_r03_f64_column_sum",
+      "pass": true,
+      "outputs": [
+        {
+          "name": "sum_1",
+          "dtype": "f64",
+          "shape": [
+            17
+          ],
+          "fp32_roundtrip_rejected_elements": 17
+        }
+      ],
+      "ir_type_counts": {
+        "Tile": 1,
+        "Axis": 3,
+        "Dim": 3,
+        "Literal": 6,
+        "StridedLoop": 1,
+        "Var": 7,
+        "Load": 1,
+        "DataType": 7,
+        "Accum": 1,
+        "WarpShuffle": 1,
+        "Assign": 3,
+        "Smem": 1,
+        "Cond": 2,
+        "BinaryExpr": 2,
+        "Write": 2,
+        "Sync": 1,
+        "TreeHalve": 1
+      },
+      "excluded_ir_types": []
+    },
+    {
+      "id": "oct24_r04_i32_column_sum",
+      "pass": true,
+      "outputs": [
+        {
+          "name": "sum_1",
+          "dtype": "i64",
+          "shape": [
+            23
+          ],
+          "fp32_roundtrip_rejected_elements": 0
+        }
+      ],
+      "ir_type_counts": {
+        "Tile": 1,
+        "Axis": 3,
+        "Dim": 3,
+        "Literal": 6,
+        "StridedLoop": 1,
+        "Var": 7,
+        "Load": 1,
+        "DataType": 7,
+        "Accum": 1,
+        "WarpShuffle": 1,
+        "Assign": 3,
+        "Smem": 1,
+        "Cond": 2,
+        "BinaryExpr": 2,
+        "Write": 2,
+        "Sync": 1,
+        "TreeHalve": 1
+      },
+      "excluded_ir_types": []
+    },
+    {
+      "id": "oct24_m01_f64_ragged",
+      "pass": true,
+      "outputs": [
+        {
+          "name": "matmul",
+          "dtype": "f64",
+          "shape": [
+            13,
+            17
+          ],
+          "fp32_roundtrip_rejected_elements": 221
+        }
+      ],
+      "ir_type_counts": {
+        "Tile": 1,
+        "Axis": 4,
+        "Dim": 4,
+        "Literal": 14,
+        "StridedLoop": 1,
+        "Var": 15,
+        "Load": 4,
+        "DataType": 14,
+        "Assign": 4,
+        "Accum": 3,
+        "BinaryExpr": 8,
+        "Init": 1,
+        "Select": 1,
+        "SelectBranch": 2,
+        "WarpShuffle": 1,
+        "Smem": 1,
+        "Cond": 2,
+        "Write": 2,
+        "Sync": 1,
+        "TreeHalve": 1
+      },
+      "excluded_ir_types": []
+    },
+    {
+      "id": "oct24_f02_softmax_tail",
+      "pass": true,
+      "outputs": [
+        {
+          "name": "softmax",
+          "dtype": "f32",
+          "shape": [
+            5,
+            521
+          ],
+          "fp32_roundtrip_rejected_elements": 0
+        }
+      ],
+      "ir_type_counts": {
+        "Tile": 1,
+        "Axis": 4,
+        "Dim": 4,
+        "Literal": 9,
+        "Load": 3,
+        "DataType": 24,
+        "StridedLoop": 2,
+        "Var": 11,
+        "Assign": 31,
+        "Let": 1,
+        "Accum": 2,
+        "WarpShuffle": 1,
+        "Smem": 2,
+        "Cond": 1,
+        "BinaryExpr": 1,
+        "Write": 3,
+        "Sync": 1,
+        "TreeHalve": 1
+      },
+      "excluded_ir_types": []
+    },
+    {
+      "id": "oct24_a01_attention_tail",
+      "pass": true,
+      "outputs": [
+        {
+          "name": "matmul_1",
+          "dtype": "f32",
+          "shape": [
+            9,
+            15
+          ],
+          "fp32_roundtrip_rejected_elements": 0
+        }
+      ],
+      "ir_type_counts": {
+        "Tile": 1,
+        "Axis": 7,
+        "Dim": 7,
+        "Literal": 22,
+        "Window": 1,
+        "Load": 4,
+        "DataType": 27,
+        "StridedLoop": 1,
+        "Var": 22,
+        "Loop": 1,
+        "Assign": 25,
+        "Accum": 4,
+        "Let": 1,
+        "TernaryExpr": 1,
+        "BinaryExpr": 18,
+        "Smem": 3,
+        "Write": 4,
+        "Sync": 1,
+        "TreeHalve": 1,
+        "Cond": 2
+      },
+      "excluded_ir_types": []
+    },
+    {
+      "id": "oct24_f01_f64_centered_norm_inline",
+      "pass": true,
+      "outputs": [
+        {
+          "name": "div",
+          "dtype": "f64",
+          "shape": [
+            11,
+            71
+          ],
+          "fp32_roundtrip_rejected_elements": 780
+        }
+      ],
+      "ir_type_counts": {
+        "Tile": 1,
+        "Axis": 5,
+        "Dim": 5,
+        "Literal": 12,
+        "StridedLoop": 2,
+        "Var": 14,
+        "Load": 7,
+        "DataType": 32,
+        "Accum": 4,
+        "WarpShuffle": 1,
+        "Assign": 21,
+        "Smem": 3,
+        "Cond": 1,
+        "BinaryExpr": 1,
+        "Write": 4,
+        "Sync": 1,
+        "TreeHalve": 1,
+        "Loop": 1
+      },
+      "excluded_ir_types": []
+    },
+    {
+      "id": "oct24_m02_f16_ragged_scalar",
+      "pass": true,
+      "outputs": [
+        {
+          "name": "matmul",
+          "dtype": "f16",
+          "shape": [
+            11,
+            19
+          ],
+          "fp32_roundtrip_rejected_elements": 0
+        }
+      ],
+      "ir_type_counts": {
+        "Tile": 1,
+        "Axis": 7,
+        "Dim": 7,
+        "Literal": 25,
+        "Window": 2,
+        "Loop": 1,
+        "Load": 2,
+        "BinaryExpr": 23,
+        "Var": 12,
+        "DataType": 5,
+        "Assign": 1,
+        "Accum": 1,
+        "Cond": 1,
+        "Write": 1
+      },
+      "excluded_ir_types": []
+    }
+  ],
+  "source_sha256": "dac9ad3db21b7397b5c8ef26d710b78d3970316ad97710c5b9b3837202914d27",
+  "actual_input_dtype_census": {
+    "f16": 5,
+    "f64": 4,
+    "i32": 3,
+    "f32": 4
+  }
+}

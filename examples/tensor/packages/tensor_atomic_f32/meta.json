@@ -1,0 +1,66 @@
+{
+  "id": "tensor_atomic_f32",
+  "graph_inputs": [
+    "a",
+    "b"
+  ],
+  "graph_outputs": [
+    "out"
+  ],
+  "rtol": 0.0002,
+  "atol": 0.0002,
+  "kernels": [
+    {
+      "entry": "k_regression_tensor_atomic_f32",
+      "grid": [
+        1,
+        1,
+        1
+      ],
+      "block": [
+        32,
+        1,
+        1
+      ],
+      "smem_bytes": 0,
+      "zero_outputs": [
+        "out"
+      ],
+      "arg_order": [
+        "a",
+        "b",
+        "out"
+      ],
+      "args": [
+        {
+          "name": "a",
+          "dtype": "f32",
+          "shape": [
+            16,
+            16
+          ],
+          "seed": 0
+        },
+        {
+          "name": "b",
+          "dtype": "f32",
+          "shape": [
+            16,
+            8
+          ],
+          "seed": 1
+        },
+        {
+          "name": "out",
+          "dtype": "f32",
+          "shape": [
+            16,
+            8
+          ],
+          "output": true
+        }
+      ],
+      "final": true
+    }
+  ]
+}

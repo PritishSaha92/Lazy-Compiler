@@ -1,0 +1,87 @@
+{
+  "updated_utc": "2026-10-22T20:39:13.779877+00:00",
+  "report_time_compiler_sources_sha256": {
+    "artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+  },
+  "configuration": {
+    "problems": [
+      "artifacts/validation/phase3/word-transport-diagnostic/old-i64-wire"
+    ],
+    "compiler": "artifacts/validation/phase3/release-candidate/compile.py",
+    "mode": "remote",
+    "arch": "sm_89",
+    "server": "http://runner.riftstack.ai:48701",
+    "adapt_local_target": false,
+    "seeds": "0",
+    "patterns": "normal",
+    "warmup": 0,
+    "iters": 1,
+    "report": "artifacts\\validation\\phase3\\word-transport-diagnostic\\old-remote.json",
+    "references": []
+  },
+  "results": [
+    {
+      "problem": "safe_u64_wire_roundtrip",
+      "mode": "remote",
+      "kernels": [
+        {
+          "entry": "k_regression_safe_u64_wire_roundtrip",
+          "compile_seconds": 2.6363141000038013,
+          "ptx_bytes": 1295,
+          "ptx_sha256": "4fe49fc5030c2bd184b6a614e0774ed93e15535b2ae71c1a13a60890c96d7d58",
+          "compiler_sources_sha256": {
+            "artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+            "artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+          },
+          "registers": 22,
+          "cubin_id": "a1b325c627a04ecb0c20e6e6ee954ac18850b62e577f023b20c5bf91779bf802"
+        }
+      ],
+      "cases": [
+        {
+          "seed_offset": 0,
+          "pattern": "normal",
+          "runs": [
+            {
+              "ok": true,
+              "entry": "k_regression_safe_u64_wire_roundtrip",
+              "grid": [
+                1,
+                1,
+                1
+              ],
+              "block": [
+                32,
+                1,
+                1
+              ],
+              "smem_bytes": 0,
+              "median_us": 22.688,
+              "iters": 1
+            }
+          ],
+          "outputs": [
+            {
+              "name": "out",
+              "pass": false,
+              "elements": 16,
+              "mismatches": 2,
+              "max_abs_error": 343.0,
+              "first_failure": {
+                "index": [
+                  2,
+                  0
+                ],
+                "actual": 21504.0,
+                "expected": 21846.0
+              }
+            }
+          ],
+          "pass": false
+        }
+      ],
+      "pass": false
+    }
+  ]
+}

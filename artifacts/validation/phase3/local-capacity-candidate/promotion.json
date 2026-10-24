@@ -1,0 +1,17 @@
+{
+  "recorded_utc": "2026-10-22T20:34:23.610013+00:00",
+  "helper_written_utc": "2026-10-22T20:32:42.807773+00:00",
+  "original_helper_sha256": "8748e3acfa88795671a565273e556242bed0b800183b81ac17f1e7085fdcf7a3",
+  "promoted_helper_sha256": "e706045368a83ccb4f10577f7952cdb0f8bb2363184efca7a68083459dbe4263",
+  "test_sha256": "6944bae645ee112ac5520896ca0862624494ff6bf9b82759a38872501ffdcc10",
+  "non_driver_module_ast_identical": true,
+  "cpu_mock_methods_passed": 5,
+  "cpu_mock_scenarios": 11,
+  "gpu_executions": 0,
+  "production_compiler_files_unchanged": {
+    "compile.py": true,
+    "ptx_backend.py": true,
+    "requirements.txt": true
+  },
+  "scope": "Local CudaDriver capacity handling only. Remote helper functions unchanged. CPU mock validation does not certify actual driver execution; all further kernels use official runner."
+}

@@ -1,0 +1,519 @@
+{
+  "updated_utc": "2026-10-22T20:27:36.324616+00:00",
+  "report_time_compiler_sources_sha256": {
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+  },
+  "configuration": {
+    "problems": [
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\async_two_groups_16_bytes",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\async_two_groups_4_bytes",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\async_two_groups_8_bytes",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\dynamic_pool_distinct_alignment",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\shared_write_swizzle_B128",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\shared_write_swizzle_B128_shift_7",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\shared_write_swizzle_B32",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\shared_write_swizzle_B64",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\unaligned_grouped_load_rows"
+    ],
+    "compiler": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\compile.py",
+    "mode": "remote",
+    "arch": "sm_89",
+    "server": "http://runner.riftstack.ai:48701",
+    "adapt_local_target": false,
+    "seeds": "0",
+    "patterns": "normal",
+    "warmup": 1,
+    "iters": 3,
+    "report": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-remote\\transport.json",
+    "references": []
+  },
+  "results": [
+    {
+      "problem": "async_two_groups_16_bytes",
+      "mode": "remote",
+      "kernels": [
+        {
+          "entry": "k_regression_async_two_groups_16_bytes",
+          "compile_seconds": 1.2199631000112277,
+          "ptx_bytes": 2438,
+          "ptx_sha256": "3ef38c93a956f49ec363d7e512ff6e156f7028e18b0171b97a4abd0349b5a7a3",
+          "compiler_sources_sha256": {
+            "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+            "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+          },
+          "registers": 26,
+          "cubin_id": "72f81e3be9cc85aff68718bf8b80283079db1d0e210bca3c698a2cebed3c5418"
+        }
+      ],
+      "cases": [
+        {
+          "seed_offset": 0,
+          "pattern": "normal",
+          "runs": [
+            {
+              "ok": true,
+              "entry": "k_regression_async_two_groups_16_bytes",
+              "grid": [
+                3,
+                1,
+                1
+              ],
+              "block": [
+                32,
+                1,
+                1
+              ],
+              "smem_bytes": 0,
+              "median_us": 3.872,
+              "iters": 3
+            }
+          ],
+          "outputs": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 768,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "problem": "async_two_groups_4_bytes",
+      "mode": "remote",
+      "kernels": [
+        {
+          "entry": "k_regression_async_two_groups_4_bytes",
+          "compile_seconds": 1.2431298999872524,
+          "ptx_bytes": 2109,
+          "ptx_sha256": "d31f3ef5a4641f493f07cdaa5beb067e884b4d8156c9fe79635b4144550e0a75",
+          "compiler_sources_sha256": {
+            "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+            "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+          },
+          "registers": 20,
+          "cubin_id": "0fa14a92115ec19040c42cf0c0ec2befe699e4ea891241ad524c7c8f54e567b1"
+        }
+      ],
+      "cases": [
+        {
+          "seed_offset": 0,
+          "pattern": "normal",
+          "runs": [
+            {
+              "ok": true,
+              "entry": "k_regression_async_two_groups_4_bytes",
+              "grid": [
+                3,
+                1,
+                1
+              ],
+              "block": [
+                32,
+                1,
+                1
+              ],
+              "smem_bytes": 0,
+              "median_us": 3.68,
+              "iters": 3
+            }
+          ],
+          "outputs": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 192,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "problem": "async_two_groups_8_bytes",
+      "mode": "remote",
+      "kernels": [
+        {
+          "entry": "k_regression_async_two_groups_8_bytes",
+          "compile_seconds": 1.1345998000178952,
+          "ptx_bytes": 2393,
+          "ptx_sha256": "4212754a4fd0cbf674621deb4e86ee9263d76cac5b09739f79b0bc5780cb9239",
+          "compiler_sources_sha256": {
+            "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+            "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+          },
+          "registers": 20,
+          "cubin_id": "f2234661c8c305c04944bb306266d2ee6e9de28cce394b1dea2a05c103cc3651"
+        }
+      ],
+      "cases": [
+        {
+          "seed_offset": 0,
+          "pattern": "normal",
+          "runs": [
+            {
+              "ok": true,
+              "entry": "k_regression_async_two_groups_8_bytes",
+              "grid": [
+                3,
+                1,
+                1
+              ],
+              "block": [
+                32,
+                1,
+                1
+              ],
+              "smem_bytes": 0,
+              "median_us": 3.872,
+              "iters": 3
+            }
+          ],
+          "outputs": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 384,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "problem": "dynamic_pool_distinct_alignment",
+      "mode": "remote",
+      "kernels": [
+        {
+          "entry": "k_regression_dynamic_pool_distinct_alignment",
+          "compile_seconds": 1.11446739998064,
+          "ptx_bytes": 2794,
+          "ptx_sha256": "e5059f2a149224a5c89eeb55ba4572166a1126925505d3b256a3642e6c46f966",
+          "compiler_sources_sha256": {
+            "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+            "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+          },
+          "registers": 30,
+          "cubin_id": "f4228165c3611aec5eb0bb656ae6468e968eea7ba1075ad6b1004c9393165877"
+        }
+      ],
+      "cases": [
+        {
+          "seed_offset": 0,
+          "pattern": "normal",
+          "runs": [
+            {
+              "ok": true,
+              "entry": "k_regression_dynamic_pool_distinct_alignment",
+              "grid": [
+                1,
+                1,
+                1
+              ],
+              "block": [
+                32,
+                1,
+                1
+              ],
+              "smem_bytes": 49284,
+              "median_us": 3.68,
+              "iters": 3
+            }
+          ],
+          "outputs": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 128,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "problem": "shared_write_swizzle_B128",
+      "mode": "remote",
+      "kernels": [
+        {
+          "entry": "k_regression_shared_write_swizzle_B128",
+          "compile_seconds": 1.104626600019401,
+          "ptx_bytes": 6857,
+          "ptx_sha256": "9e49af2d1271437abbcaa2346402b0d4e01574cb621fc5fd52252bc5702fd5c0",
+          "compiler_sources_sha256": {
+            "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+            "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+          },
+          "registers": 39,
+          "cubin_id": "4ec706fb75815ff29bf8617613aaa8b7558605c4c7857b6165fac6624d05866b"
+        }
+      ],
+      "cases": [
+        {
+          "seed_offset": 0,
+          "pattern": "normal",
+          "runs": [
+            {
+              "ok": true,
+              "entry": "k_regression_shared_write_swizzle_B128",
+              "grid": [
+                2,
+                1,
+                1
+              ],
+              "block": [
+                32,
+                1,
+                1
+              ],
+              "smem_bytes": 0,
+              "median_us": 3.68,
+              "iters": 3
+            }
+          ],
+          "outputs": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 1024,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "problem": "shared_write_swizzle_B128_shift_7",
+      "mode": "remote",
+      "kernels": [
+        {
+          "entry": "k_regression_shared_write_swizzle_B128_shift_7",
+          "compile_seconds": 1.1260124999971595,
+          "ptx_bytes": 13297,
+          "ptx_sha256": "9daca11e074a827eae6330ccc539383f3489c7ca60aded127fb20f7222421d28",
+          "compiler_sources_sha256": {
+            "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+            "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+          },
+          "registers": 40,
+          "cubin_id": "35ba00b5c5a153da2768f381617d38746afb15344e2664248ca13bdd11de33d3"
+        }
+      ],
+      "cases": [
+        {
+          "seed_offset": 0,
+          "pattern": "normal",
+          "runs": [
+            {
+              "ok": true,
+              "entry": "k_regression_shared_write_swizzle_B128_shift_7",
+              "grid": [
+                2,
+                1,
+                1
+              ],
+              "block": [
+                32,
+                1,
+                1
+              ],
+              "smem_bytes": 0,
+              "median_us": 3.648,
+              "iters": 3
+            }
+          ],
+          "outputs": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 2048,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "problem": "shared_write_swizzle_B32",
+      "mode": "remote",
+      "kernels": [
+        {
+          "entry": "k_regression_shared_write_swizzle_B32",
+          "compile_seconds": 1.1321884999924805,
+          "ptx_bytes": 6856,
+          "ptx_sha256": "9b49483e184082c2cafbd71d3e07b1adda7cb805bf26e55188fb9065b9c782b5",
+          "compiler_sources_sha256": {
+            "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+            "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+          },
+          "registers": 39,
+          "cubin_id": "1c813c66b8dae8fb201a05483f91453ca7fdbe5abaf50dfd565bbc093fa598c5"
+        }
+      ],
+      "cases": [
+        {
+          "seed_offset": 0,
+          "pattern": "normal",
+          "runs": [
+            {
+              "ok": true,
+              "entry": "k_regression_shared_write_swizzle_B32",
+              "grid": [
+                2,
+                1,
+                1
+              ],
+              "block": [
+                32,
+                1,
+                1
+              ],
+              "smem_bytes": 0,
+              "median_us": 3.648,
+              "iters": 3
+            }
+          ],
+          "outputs": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 1024,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "problem": "shared_write_swizzle_B64",
+      "mode": "remote",
+      "kernels": [
+        {
+          "entry": "k_regression_shared_write_swizzle_B64",
+          "compile_seconds": 1.3811164999788161,
+          "ptx_bytes": 6856,
+          "ptx_sha256": "1cb8acdb853ba3ce7a9ca3915508ebe75b67f7a0369d9d7539c6babbd99bb947",
+          "compiler_sources_sha256": {
+            "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+            "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+          },
+          "registers": 39,
+          "cubin_id": "e589a8089e0091452fdde18911ac927a528d5b0d5c6bf82c87a18d8fc9d79cc3"
+        }
+      ],
+      "cases": [
+        {
+          "seed_offset": 0,
+          "pattern": "normal",
+          "runs": [
+            {
+              "ok": true,
+              "entry": "k_regression_shared_write_swizzle_B64",
+              "grid": [
+                2,
+                1,
+                1
+              ],
+              "block": [
+                32,
+                1,
+                1
+              ],
+              "smem_bytes": 0,
+              "median_us": 3.84,
+              "iters": 3
+            }
+          ],
+          "outputs": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 1024,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "problem": "unaligned_grouped_load_rows",
+      "mode": "remote",
+      "kernels": [
+        {
+          "entry": "k_regression_unaligned_grouped_load_rows",
+          "compile_seconds": 1.1193727000209037,
+          "ptx_bytes": 1076,
+          "ptx_sha256": "0e65e5b7ab2bc1c26eed56e2312d248434ab19e46b4132e037806999dd613911",
+          "compiler_sources_sha256": {
+            "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+            "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\release-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+          },
+          "registers": 14,
+          "cubin_id": "bb9916b336e9fc9377448183b89194fdbce3ea657fc6b799f4229eb0bbac7b7a"
+        }
+      ],
+      "cases": [
+        {
+          "seed_offset": 0,
+          "pattern": "normal",
+          "runs": [
+            {
+              "ok": true,
+              "entry": "k_regression_unaligned_grouped_load_rows",
+              "grid": [
+                1,
+                1,
+                1
+              ],
+              "block": [
+                32,
+                1,
+                1
+              ],
+              "smem_bytes": 0,
+              "median_us": 3.488,
+              "iters": 3
+            }
+          ],
+          "outputs": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 76,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    }
+  ]
+}

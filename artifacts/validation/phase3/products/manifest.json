@@ -1,0 +1,22 @@
+{
+  "scope": "Exact exponent-sum host references materialized before PTX evaluation.",
+  "source_sha256": "c4a184a73476e8f5d181d8d9cc799c3903bb14754893951aafb0d20ed9824303",
+  "cases": [
+    {
+      "id": "product_shuffle_varied_trip_counts",
+      "ir": "product_shuffle_varied_trip_counts\\k_regression_product_shuffle_varied_trip_counts.ir.json"
+    },
+    {
+      "id": "product_tree_varied_trip_counts",
+      "ir": "product_tree_varied_trip_counts\\k_regression_product_tree_varied_trip_counts.ir.json"
+    }
+  ],
+  "files_sha256": {
+    "product_shuffle_varied_trip_counts/expected.npz": "dc85b0b26d5e9579b388302fcfcf705321165e1482a475b55995a33978bc2a1f",
+    "product_shuffle_varied_trip_counts/k_regression_product_shuffle_varied_trip_counts.ir.json": "4ba9c99266cdc870ee5b16f2ab58968c0ae38ec1e06ea854fe27011f010c4103",
+    "product_shuffle_varied_trip_counts/meta.json": "da4f414153e1e1ac26adeadddc40b1336aeff51db79c803bddffb81ea8cd5264",
+    "product_tree_varied_trip_counts/expected.npz": "557e2c6f835f7f5bb40d87fe23dea8dc8872259b1df57941954f4d800cde3951",
+    "product_tree_varied_trip_counts/k_regression_product_tree_varied_trip_counts.ir.json": "87e54e600516bcd0d957ba21a2e8055180ea5397d945ad25a35f8ccc3317e9c6",
+    "product_tree_varied_trip_counts/meta.json": "2fdaaa1c9236cd17e44069c6ef2408556f69b83a49f4e3a140d892855f15e3ff"
+  }
+}

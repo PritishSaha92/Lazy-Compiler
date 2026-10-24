@@ -1,0 +1,133 @@
+{
+  "description": "Targeted layout unittest run plus warp-barrier sanitizer executions",
+  "source_sha256": {
+    "ptx_backend.py": "3e68e17421a6f620eb95f29395989eda26f695683d353c4f2b3c28194a46c36b",
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "tests\\test_layouts.py": "b752d0b41d37dc1099dedc7af4344c7714567fc960a3d7b1b05bee3357fd766f"
+  },
+  "unittest_command": "EMMY_GPU_TESTS=1 python -X utf8 -m unittest discover -s tests -p test_layouts.py -v",
+  "unittest_log": "unittest.log",
+  "distinct_programs": 8,
+  "numerical_cases": 8,
+  "assembly_checks": 16,
+  "assembly_target": "sm_89",
+  "numerical_target": "sm_75, target adapted; synchronous-copy alternative",
+  "native_async_numerical_execution": false,
+  "cases": [
+    "raster_rectangular_tail_m",
+    "raster_rectangular_tail_n",
+    "auxiliary_producer_warp",
+    "copy_swizzle_B32",
+    "copy_swizzle_B64",
+    "copy_swizzle_B128",
+    "copy_swizzle_B128_shift_7",
+    "warp_sync_uneven_work"
+  ],
+  "sanitizer": [
+    {
+      "tool": "memcheck",
+      "command": [
+        "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\compute-sanitizer\\compute-sanitizer.exe",
+        "--tool",
+        "memcheck",
+        "--target-processes",
+        "all",
+        "--error-exitcode",
+        "99",
+        "--log-file",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\warp_sync_uneven_work.memcheck.log",
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tools\\check_compiler.py",
+        "--worker",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\warp_sync_uneven_work.request.json",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\warp_sync_uneven_work.memcheck.result.json"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "worker_ok": true,
+      "comparisons": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 64,
+          "mismatches": 0,
+          "max_abs_error": 0.0
+        }
+      ],
+      "summary_lines": [
+        "========= ERROR SUMMARY: 0 errors"
+      ]
+    },
+    {
+      "tool": "racecheck",
+      "command": [
+        "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\compute-sanitizer\\compute-sanitizer.exe",
+        "--tool",
+        "racecheck",
+        "--target-processes",
+        "all",
+        "--error-exitcode",
+        "99",
+        "--log-file",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\warp_sync_uneven_work.racecheck.log",
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tools\\check_compiler.py",
+        "--worker",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\warp_sync_uneven_work.request.json",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\warp_sync_uneven_work.racecheck.result.json"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "worker_ok": true,
+      "comparisons": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 64,
+          "mismatches": 0,
+          "max_abs_error": 0.0
+        }
+      ],
+      "summary_lines": [
+        "========= RACECHECK SUMMARY: 0 hazards displayed (0 errors, 0 warnings)"
+      ]
+    },
+    {
+      "tool": "synccheck",
+      "command": [
+        "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\compute-sanitizer\\compute-sanitizer.exe",
+        "--tool",
+        "synccheck",
+        "--target-processes",
+        "all",
+        "--error-exitcode",
+        "99",
+        "--log-file",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\warp_sync_uneven_work.synccheck.log",
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tools\\check_compiler.py",
+        "--worker",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\warp_sync_uneven_work.request.json",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\warp_sync_uneven_work.synccheck.result.json"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "worker_ok": true,
+      "comparisons": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 64,
+          "mismatches": 0,
+          "max_abs_error": 0.0
+        }
+      ],
+      "summary_lines": [
+        "========= ERROR SUMMARY: 0 errors"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "clean_install": {
+    "expected_diagnostics": 3,
+    "guarded_cli_invocations": 7,
+    "packages": 7,
+    "plain_cli_invocations": 14,
+    "successful_cli_invocations": 21
+  },
+  "cpu": {
+    "errors": 0,
+    "failures": 0,
+    "gpu_execution_requested": false,
+    "passed": 55,
+    "skipped": 18,
+    "test_methods": 73
+  },
+  "current_sources_match_release": true,
+  "evidence": [
+    {
+      "path": "artifacts/validation/phase4/clean-install/summary.json",
+      "retained_path": "artifacts/release/phase4/evidence/aca189fc89912e6314ccb4f7357a175795160bf3d434990932b75e69adf1aeea.json",
+      "sha256": "aca189fc89912e6314ccb4f7357a175795160bf3d434990932b75e69adf1aeea",
+      "source_hashes_match": true,
+      "status_flags": {
+        "ok": true
+      }
+    },
+    {
+      "path": "artifacts/validation/phase4/cpu-regressions.json",
+      "retained_path": "artifacts/release/phase4/evidence/cb2b70d3a6f27edc62368c1c19ad167f2fdc8cf1624891915b67adf64e044f57.json",
+      "sha256": "cb2b70d3a6f27edc62368c1c19ad167f2fdc8cf1624891915b67adf64e044f57",
+      "source_hashes_match": true,
+      "status_flags": {
+        "pass": true
+      }
+    },
+    {
+      "path": "artifacts/validation/phase4/public-ptx-identity.json",
+      "retained_path": "artifacts/release/phase4/evidence/f021ea2c55a74a917851fa39ad5bec249d3e3ab9f17125c7a53e0b7781cb68e7.json",
+      "sha256": "f021ea2c55a74a917851fa39ad5bec249d3e3ab9f17125c7a53e0b7781cb68e7",
+      "source_hashes_match": true,
+      "status_flags": {
+        "pass": true
+      }
+    },
+    {
+      "path": "artifacts/validation/phase4/release-remote/summary.json",
+      "retained_path": "artifacts/release/phase4/evidence/7bd503dcb83f64ade2e330677df269e6fea09aa26afdccf146da44dc5140b072.json",
+      "sha256": "7bd503dcb83f64ade2e330677df269e6fea09aa26afdccf146da44dc5140b072",
+      "source_hashes_match": true,
+      "status_flags": {
+        "pass": true
+      }
+    },
+    {
+      "path": "artifacts/validation/phase4/semantic-final/summary.json",
+      "retained_path": "artifacts/release/phase4/evidence/2d9d60037c57d59578f8f0219c427a978a6bdfba81dfae40af001590f82fae34.json",
+      "sha256": "2d9d60037c57d59578f8f0219c427a978a6bdfba81dfae40af001590f82fae34",
+      "source_hashes_match": true,
+      "status_flags": {
+        "pass": true
+      }
+    }
+  ],
+  "numerical": {
+    "additional_default_checks": 23,
+    "additional_packages": 23,
+    "broad_default_checks": 213,
+    "broad_packages": 97,
+    "child_reports": [
+      {
+        "checks": 30,
+        "name": "public-normal",
+        "passes": 30,
+        "path": "artifacts/validation/phase4/release-remote/public-normal.json",
+        "sha256": "874745572a4c32602401ee3edbf5a2dc191d3c0e79215c9bed1dfba994fc636e"
+      },
+      {
+        "checks": 45,
+        "name": "public-stress",
+        "passes": 45,
+        "path": "artifacts/validation/phase4/release-remote/public-stress.json",
+        "sha256": "cd13c253faee26a64e7230c0f033ef80cd753609a7a1d49a0709a2fc157d158d"
+      },
+      {
+        "checks": 20,
+        "name": "fresh",
+        "passes": 20,
+        "path": "artifacts/validation/phase4/release-remote/fresh.json",
+        "sha256": "03ca3b356bc6998e0da698390786e027ce2edebedf7a7253cd26b34a45003510"
+      },
+      {
+        "checks": 8,
+        "name": "layouts",
+        "passes": 8,
+        "path": "artifacts/validation/phase4/release-remote/layouts.json",
+        "sha256": "2f73193cbdc0c2499f962e1a2ffbc0ba62807e017e9e9f8e1e1c23a6a3488d4a"
+      },
+      {
+        "checks": 36,
+        "name": "prior-holdout-normal",
+        "passes": 36,
+        "path": "artifacts/validation/phase4/release-remote/prior-holdout-normal.json",
+        "sha256": "c149aea75007d99e071b5c7dcf5a686928898d3a4ae9aebcd2d7194a23a558a1"
+      },
+      {
+        "checks": 18,
+        "name": "prior-holdout-wide",
+        "passes": 18,
+        "path": "artifacts/validation/phase4/release-remote/prior-holdout-wide.json",
+        "sha256": "64cd29e36a45a076db485fda228a609b1695aef92941d0263d3f228145aadc6f"
+      },
+      {
+        "checks": 10,
+        "name": "schedules-normal",
+        "passes": 10,
+        "path": "artifacts/validation/phase4/release-remote/schedules-normal.json",
+        "sha256": "920c084dad14086804b22f1669a9a3d32ff0b0dedafa77b51adaf07f74dca5a8"
+      },
+      {
+        "checks": 5,
+        "name": "schedules-wide",
+        "passes": 5,
+        "path": "artifacts/validation/phase4/release-remote/schedules-wide.json",
+        "sha256": "673bbe519257dbba3f45916ac38f6cdec2967cfe63df81d0a19787e3043fb692"
+      },
+      {
+        "checks": 9,
+        "name": "transport",
+        "passes": 9,
+        "path": "artifacts/validation/phase4/release-remote/transport.json",
+        "sha256": "ddc8423e59623a93e47c6660a6a0cc02c4746d674f217c54d33926757f209f5a"
+      },
+      {
+        "checks": 2,
+        "name": "products",
+        "passes": 2,
+        "path": "artifacts/validation/phase4/release-remote/products.json",
+        "sha256": "4318222a342beced24bf6d1c4db42f3ec99b6e93ef9de1d879fcedd75e63dbeb"
+      },
+      {
+        "checks": 30,
+        "name": "typed-semantics",
+        "passes": 30,
+        "path": "artifacts/validation/phase4/release-remote/typed-semantics.json",
+        "sha256": "dfd8906ac01f7ccde7a685007773dfa6f90024d73a2e5efe9889636a496b5573"
+      },
+      {
+        "checks": 23,
+        "name": "default",
+        "passes": 23,
+        "path": "artifacts/validation/phase4/semantic-final/default.json",
+        "sha256": "abbbfac34e6e5d85a5b7804ba89ca63609a8064f824b47a9400fec78ce5d2c2c"
+      },
+      {
+        "checks": 4,
+        "name": "rolled-interactions",
+        "passes": 4,
+        "path": "artifacts/validation/phase4/semantic-final/rolled-interactions.json",
+        "sha256": "33f0999df57682bb41667f113fb2c8a2ae1dd35627c3b50997f7a036501679bc"
+      },
+      {
+        "checks": 1,
+        "name": "sync-unrolled-async",
+        "passes": 1,
+        "path": "artifacts/validation/phase4/semantic-final/sync-unrolled-async.json",
+        "sha256": "361ed4fca0f9c74a2791ac7d25abcee123fd8dfc695fcaddcb8e262f067c6c5f"
+      },
+      {
+        "checks": 1,
+        "name": "sync-rolled-async",
+        "passes": 1,
+        "path": "artifacts/validation/phase4/semantic-final/sync-rolled-async.json",
+        "sha256": "a349d38e1c2a28d3aa3b4daeeb9eff8fb45d65a1d9d50208a0c854b084ae2fda"
+      }
+    ],
+    "default_checks": 236,
+    "default_passes": 236,
+    "distinct_workload_packages": 120,
+    "package_count_rule": "Distinct workload packages; repeated seeds, distributions and compiler variants do not add packages.",
+    "total_checks": 242,
+    "total_passes": 242,
+    "variant_checks": 6,
+    "variant_passes": 6
+  },
+  "pass": true,
+  "public_ptx_identity": {
+    "kernels": 15,
+    "pass": true
+  },
+  "release": {
+    "exact_members": [
+      "compile.py",
+      "ptx_backend.py",
+      "requirements.txt"
+    ],
+    "extracted_p00_cli": {
+      "direct_bytes_equal_build": true,
+      "ptx_bytes": 1524,
+      "ptx_sha256": "c0d81f88369a245e4144ff5e364ed1139349e24a40f8b3ca26f6257b41729a41",
+      "remote_payload_hash_and_size_match": true
+    },
+    "manifest": "artifacts/release/phase4/submission-bcbc4a8381497f1d34be-b88459958203b4fdede2.manifest.json",
+    "manifest_sha256": "b88459958203b4fdede27e69a685283b4b67bfe26c20f9e7432c40a0479f486a",
+    "post_package_verification": "artifacts/release/phase4/post-package-verification-b9af6a761233e39b8faa.json",
+    "post_package_verification_sha256": "f6b2450b8432c4ca132ee734f329604cf0e5d05014c7826ef201ee85a09e57f0",
+    "retained_evidence_reports": 5,
+    "zip": "artifacts/release/phase4/submission-bcbc4a8381497f1d34be.zip",
+    "zip_sha256": "b9af6a761233e39b8faa330e1fd01c49e8a457498cb5d3b7e2465ef5403251e8"
+  },
+  "schema": "emmy.phase4.release-summary.v1",
+  "scope": "Frozen release development evidence; organizer hidden tests unavailable. Additional selector experiments are excluded.",
+  "selector": {
+    "included_in_release_gate_counts": false,
+    "note": "Additional selector correctness, timing and promotion results belong to separate reports.",
+    "status": "pending"
+  },
+  "source_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  }
+}

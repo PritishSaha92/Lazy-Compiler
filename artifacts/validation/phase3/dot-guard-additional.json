@@ -1,0 +1,1542 @@
+{
+  "started_utc": "2026-10-22T20:13:29.468403+00:00",
+  "server": "http://runner.riftstack.ai:48701",
+  "rounds": 6,
+  "iters": 20,
+  "warmup": 3,
+  "source_sha256_before": {
+    "baseline": {
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\guard-baseline\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\guard-baseline\\ptx_backend.py": "6adcba46aef59de0eb41555ce19de22e87f1980fbcdc8fff2a24830c5be44ec9"
+    },
+    "candidate": {
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\guard-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\guard-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+    }
+  },
+  "reference_sha256": {
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tools\\expressions_open.py": "d0f8d5143b7f9e1f7a8b89cbb1e93e3401aaf32d22e6b0e4115f96688c7cb48c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tests\\expressions_holdout.py": "a220788ab8b5f62685a60a5b0be383e5de6c93c7bedcb000af7d1469dba211a6",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tests\\expressions_phase3.py": "ef49b645ff75dd28e9e746324c04e4c3b6b0a99bdaff082cbefb51b1159d7a43"
+  },
+  "harness_sha256": {
+    "tools\\compare_compilers.py": "4a23e3870054d3610171e5fb052709959a69438c7cc04f69a9a68c4a341cdf58",
+    "tools\\check_compiler.py": "8748e3acfa88795671a565273e556242bed0b800183b81ac17f1e7085fdcf7a3"
+  },
+  "results": [
+    {
+      "problem": "f01_rmsnorm",
+      "variants": {
+        "baseline": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul_1",
+                  "pass": true,
+                  "elements": 65536,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 7.584
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul_1",
+                  "pass": true,
+                  "elements": 65536,
+                  "mismatches": 0,
+                  "max_abs_error": 9.5367431640625e-07
+                }
+              ],
+              "median_us": 8.672
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul_1",
+                  "pass": true,
+                  "elements": 65536,
+                  "mismatches": 0,
+                  "max_abs_error": 7.62939453125e-06
+                }
+              ],
+              "median_us": 7.328
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul_1",
+                  "pass": true,
+                  "elements": 65536,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 5.776,
+              "round": 0,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul_1",
+                  "pass": true,
+                  "elements": 65536,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 6.432,
+              "round": 1,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul_1",
+                  "pass": true,
+                  "elements": 65536,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 5.6,
+              "round": 2,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul_1",
+                  "pass": true,
+                  "elements": 65536,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 4.816,
+              "round": 3,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul_1",
+                  "pass": true,
+                  "elements": 65536,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 4.8,
+              "round": 4,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul_1",
+                  "pass": true,
+                  "elements": 65536,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 4.784,
+              "round": 5,
+              "position": 1
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 1.196455600002082,
+          "ptx_bytes": 5730,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\dot-guard-additional-artifacts\\f01_rmsnorm-baseline.ptx",
+          "ptx_sha256": "fe35d9b789dc3c931c3e0ccd34b56d7610368d4ebab11c1a43bf5ba9d2aac191",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "9073f9962ea0647a3cdcbaa566b7c478e4887bd1360980684d95e599e04e67b0",
+            "bytes": 14112,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_mean_cbd1de"
+            ],
+            "registers": {
+              "k_mean_cbd1de": 26
+            }
+          },
+          "median_us": 5.208,
+          "min_us": 4.784,
+          "max_us": 6.432
+        },
+        "candidate": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul_1",
+                  "pass": true,
+                  "elements": 65536,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 7.168
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul_1",
+                  "pass": true,
+                  "elements": 65536,
+                  "mismatches": 0,
+                  "max_abs_error": 9.5367431640625e-07
+                }
+              ],
+              "median_us": 7.84
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul_1",
+                  "pass": true,
+                  "elements": 65536,
+                  "mismatches": 0,
+                  "max_abs_error": 7.62939453125e-06
+                }
+              ],
+              "median_us": 7.616
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul_1",
+                  "pass": true,
+                  "elements": 65536,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 5.616,
+              "round": 0,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul_1",
+                  "pass": true,
+                  "elements": 65536,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 4.816,
+              "round": 1,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul_1",
+                  "pass": true,
+                  "elements": 65536,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 6.704,
+              "round": 2,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul_1",
+                  "pass": true,
+                  "elements": 65536,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 4.96,
+              "round": 3,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul_1",
+                  "pass": true,
+                  "elements": 65536,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 4.8,
+              "round": 4,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "mul_1",
+                  "pass": true,
+                  "elements": 65536,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 4.768,
+              "round": 5,
+              "position": 0
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 1.2290107000153512,
+          "ptx_bytes": 6744,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\dot-guard-additional-artifacts\\f01_rmsnorm-candidate.ptx",
+          "ptx_sha256": "ea7c04cc7460184111a1088e521e73750fcd0027f7854db3835e0e6657ec0ea3",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "e0abc6bf9dd960b8bb593b862c91a39a49c3d364ed4fef3e910d28a115f7760b",
+            "bytes": 13720,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_mean_cbd1de"
+            ],
+            "registers": {
+              "k_mean_cbd1de": 28
+            }
+          },
+          "median_us": 4.888,
+          "min_us": 4.768,
+          "max_us": 6.704
+        }
+      },
+      "pass": true,
+      "inputs_sha256": {
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\f01_rmsnorm\\k_mean_cbd1de.ir.json": "b7598c4d7d0b7f198d6dc3cae7f6670b5d00cb30139f3f9a3e2e6e963f581baa",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\f01_rmsnorm\\meta.json": "e2b9376ca6d12936cc52daebff4515f5cf997680d2f872a48e899655757edf64",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\f01_rmsnorm\\expected.npz": "197016500cfca3ee3a1952273d50655e5bbf60093c28ad801e28eb3ccb76a6fb"
+      },
+      "identical_ptx": false,
+      "speedup": 1.065466448445172,
+      "paired_round_speedups": [
+        1.0284900284900285,
+        1.3355481727574752,
+        0.8353221957040573,
+        0.9709677419354839,
+        1.0,
+        1.0033557046979866
+      ],
+      "median_paired_speedup": 1.0016778523489933
+    },
+    {
+      "problem": "f03_l2norm",
+      "variants": {
+        "baseline": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "div",
+                  "pass": true,
+                  "elements": 32768,
+                  "mismatches": 0,
+                  "max_abs_error": 1.4901161193847656e-08
+                }
+              ],
+              "median_us": 5.344
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "div",
+                  "pass": true,
+                  "elements": 32768,
+                  "mismatches": 0,
+                  "max_abs_error": 1.4901161193847656e-08
+                }
+              ],
+              "median_us": 5.504
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "div",
+                  "pass": true,
+                  "elements": 32768,
+                  "mismatches": 0,
+                  "max_abs_error": 1.4901161193847656e-08
+                }
+              ],
+              "median_us": 5.408
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "div",
+                  "pass": true,
+                  "elements": 32768,
+                  "mismatches": 0,
+                  "max_abs_error": 1.4901161193847656e-08
+                }
+              ],
+              "median_us": 2.992,
+              "round": 0,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "div",
+                  "pass": true,
+                  "elements": 32768,
+                  "mismatches": 0,
+                  "max_abs_error": 1.4901161193847656e-08
+                }
+              ],
+              "median_us": 2.976,
+              "round": 1,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "div",
+                  "pass": true,
+                  "elements": 32768,
+                  "mismatches": 0,
+                  "max_abs_error": 1.4901161193847656e-08
+                }
+              ],
+              "median_us": 3.04,
+              "round": 2,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "div",
+                  "pass": true,
+                  "elements": 32768,
+                  "mismatches": 0,
+                  "max_abs_error": 1.4901161193847656e-08
+                }
+              ],
+              "median_us": 3.008,
+              "round": 3,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "div",
+                  "pass": true,
+                  "elements": 32768,
+                  "mismatches": 0,
+                  "max_abs_error": 1.4901161193847656e-08
+                }
+              ],
+              "median_us": 3.008,
+              "round": 4,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "div",
+                  "pass": true,
+                  "elements": 32768,
+                  "mismatches": 0,
+                  "max_abs_error": 1.4901161193847656e-08
+                }
+              ],
+              "median_us": 3.104,
+              "round": 5,
+              "position": 1
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 1.6432548000011593,
+          "ptx_bytes": 4976,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\dot-guard-additional-artifacts\\f03_l2norm-baseline.ptx",
+          "ptx_sha256": "7bcdd5a2464b15cb78be86ca43ce65ce6116786cfd1d10b2691f9db809de46a3",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "d94d96f35b6f6c8678aa9ea8ebd37458ac9d8f22c1792b0f93bf705762196588",
+            "bytes": 13104,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_div_reduce"
+            ],
+            "registers": {
+              "k_div_reduce": 26
+            }
+          },
+          "median_us": 3.008,
+          "min_us": 2.976,
+          "max_us": 3.104
+        },
+        "candidate": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "div",
+                  "pass": true,
+                  "elements": 32768,
+                  "mismatches": 0,
+                  "max_abs_error": 1.4901161193847656e-08
+                }
+              ],
+              "median_us": 5.504
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "div",
+                  "pass": true,
+                  "elements": 32768,
+                  "mismatches": 0,
+                  "max_abs_error": 1.4901161193847656e-08
+                }
+              ],
+              "median_us": 5.312
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "div",
+                  "pass": true,
+                  "elements": 32768,
+                  "mismatches": 0,
+                  "max_abs_error": 1.4901161193847656e-08
+                }
+              ],
+              "median_us": 5.472
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "div",
+                  "pass": true,
+                  "elements": 32768,
+                  "mismatches": 0,
+                  "max_abs_error": 1.4901161193847656e-08
+                }
+              ],
+              "median_us": 3.024,
+              "round": 0,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "div",
+                  "pass": true,
+                  "elements": 32768,
+                  "mismatches": 0,
+                  "max_abs_error": 1.4901161193847656e-08
+                }
+              ],
+              "median_us": 3.008,
+              "round": 1,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "div",
+                  "pass": true,
+                  "elements": 32768,
+                  "mismatches": 0,
+                  "max_abs_error": 1.4901161193847656e-08
+                }
+              ],
+              "median_us": 3.008,
+              "round": 2,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "div",
+                  "pass": true,
+                  "elements": 32768,
+                  "mismatches": 0,
+                  "max_abs_error": 1.4901161193847656e-08
+                }
+              ],
+              "median_us": 2.976,
+              "round": 3,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "div",
+                  "pass": true,
+                  "elements": 32768,
+                  "mismatches": 0,
+                  "max_abs_error": 1.4901161193847656e-08
+                }
+              ],
+              "median_us": 3.04,
+              "round": 4,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "div",
+                  "pass": true,
+                  "elements": 32768,
+                  "mismatches": 0,
+                  "max_abs_error": 1.4901161193847656e-08
+                }
+              ],
+              "median_us": 3.008,
+              "round": 5,
+              "position": 0
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 1.6676817000261508,
+          "ptx_bytes": 5990,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\dot-guard-additional-artifacts\\f03_l2norm-candidate.ptx",
+          "ptx_sha256": "06de868ef565c38e2e7dc4a29f87c5798dfd500598bdb0fc425f6cec7661446c",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "c2eb8111ac955ef7eb34e89654cba4a1c28367863dfe3ac1583e76e84b7daef7",
+            "bytes": 12848,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_div_reduce"
+            ],
+            "registers": {
+              "k_div_reduce": 28
+            }
+          },
+          "median_us": 3.008,
+          "min_us": 2.976,
+          "max_us": 3.04
+        }
+      },
+      "pass": true,
+      "inputs_sha256": {
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\f03_l2norm\\k_div_reduce.ir.json": "77a81af8de7eb9bcec026d540e9dbfcfa70aa7e228721b3faf0c52b3043a594e",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\f03_l2norm\\meta.json": "064b4df0e8807e13fbff2c1c864d302d6aca0e328119ab52d1ddd510b85cdcb3",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\f03_l2norm\\expected.npz": "fb2e242cbfe9834c6d45f27f29acc750a5b4ea8ad6ab509baa7a5b4c53586380"
+      },
+      "identical_ptx": false,
+      "speedup": 1.0,
+      "paired_round_speedups": [
+        0.9894179894179894,
+        0.9893617021276596,
+        1.0106382978723405,
+        1.010752688172043,
+        0.9894736842105263,
+        1.0319148936170213
+      ],
+      "median_paired_speedup": 1.0000559910414335
+    },
+    {
+      "problem": "hold_m01_long_reduction",
+      "variants": {
+        "baseline": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 960,
+                  "mismatches": 0,
+                  "max_abs_error": 1.52587890625e-05
+                }
+              ],
+              "median_us": 23.168
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 960,
+                  "mismatches": 0,
+                  "max_abs_error": 1.52587890625e-05
+                }
+              ],
+              "median_us": 21.92
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 960,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0009765625
+                }
+              ],
+              "median_us": 21.888
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 960,
+                  "mismatches": 0,
+                  "max_abs_error": 1.52587890625e-05
+                }
+              ],
+              "median_us": 19.104,
+              "round": 0,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 960,
+                  "mismatches": 0,
+                  "max_abs_error": 1.52587890625e-05
+                }
+              ],
+              "median_us": 19.088,
+              "round": 1,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 960,
+                  "mismatches": 0,
+                  "max_abs_error": 1.52587890625e-05
+                }
+              ],
+              "median_us": 19.136,
+              "round": 2,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 960,
+                  "mismatches": 0,
+                  "max_abs_error": 1.52587890625e-05
+                }
+              ],
+              "median_us": 19.104,
+              "round": 3,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 960,
+                  "mismatches": 0,
+                  "max_abs_error": 1.52587890625e-05
+                }
+              ],
+              "median_us": 19.104,
+              "round": 4,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 960,
+                  "mismatches": 0,
+                  "max_abs_error": 1.52587890625e-05
+                }
+              ],
+              "median_us": 19.072,
+              "round": 5,
+              "position": 1
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 1.7303798999928404,
+          "ptx_bytes": 6615,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\dot-guard-additional-artifacts\\hold_m01_long_reduction-baseline.ptx",
+          "ptx_sha256": "3f97c90a023dd233ef6dcd16f9a402c6fc25e20f4e431eff03642de4613a9a71",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "ff02bc72cdb166ce20a8da3146261501c8bbfc8da1a58417b06960832c6e5231",
+            "bytes": 13544,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_matmul_ab135c"
+            ],
+            "registers": {
+              "k_matmul_ab135c": 40
+            }
+          },
+          "median_us": 19.104,
+          "min_us": 19.072,
+          "max_us": 19.136
+        },
+        "candidate": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 960,
+                  "mismatches": 0,
+                  "max_abs_error": 1.52587890625e-05
+                }
+              ],
+              "median_us": 22.272
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 960,
+                  "mismatches": 0,
+                  "max_abs_error": 1.52587890625e-05
+                }
+              ],
+              "median_us": 23.264
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 960,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0009765625
+                }
+              ],
+              "median_us": 23.392
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 960,
+                  "mismatches": 0,
+                  "max_abs_error": 1.52587890625e-05
+                }
+              ],
+              "median_us": 19.088,
+              "round": 0,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 960,
+                  "mismatches": 0,
+                  "max_abs_error": 1.52587890625e-05
+                }
+              ],
+              "median_us": 19.136,
+              "round": 1,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 960,
+                  "mismatches": 0,
+                  "max_abs_error": 1.52587890625e-05
+                }
+              ],
+              "median_us": 19.072,
+              "round": 2,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 960,
+                  "mismatches": 0,
+                  "max_abs_error": 1.52587890625e-05
+                }
+              ],
+              "median_us": 19.456,
+              "round": 3,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 960,
+                  "mismatches": 0,
+                  "max_abs_error": 1.52587890625e-05
+                }
+              ],
+              "median_us": 19.088,
+              "round": 4,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 960,
+                  "mismatches": 0,
+                  "max_abs_error": 1.52587890625e-05
+                }
+              ],
+              "median_us": 19.104,
+              "round": 5,
+              "position": 0
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 1.7854474000050686,
+          "ptx_bytes": 7704,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\dot-guard-additional-artifacts\\hold_m01_long_reduction-candidate.ptx",
+          "ptx_sha256": "7393c581500ff541b58a7ade990943e8e82fc85db7d384242f3d4fb9da0e9f7a",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "12595a34a14e1bc4f39cb2005060e6065ac98b6ddaccf8d562f1d6d6d0e28cd6",
+            "bytes": 13048,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_matmul_ab135c"
+            ],
+            "registers": {
+              "k_matmul_ab135c": 40
+            }
+          },
+          "median_us": 19.096,
+          "min_us": 19.072,
+          "max_us": 19.456
+        }
+      },
+      "pass": true,
+      "inputs_sha256": {
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_m01_long_reduction\\k_matmul_ab135c.ir.json": "f6da52f95e1d7b589917bea132add56799d6158304220e0798ab9b7f1ad8f451",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_m01_long_reduction\\meta.json": "4dc56c5eddb2f17e48b8791bde929eab13d3a012f73611b5339fbfc6f7f9377a",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_m01_long_reduction\\expected.npz": "4215922a287dc9ee561f40984f320c8ae03b6b351bc22b0f95d82020098cc6bb"
+      },
+      "identical_ptx": false,
+      "speedup": 1.0004189359028068,
+      "paired_round_speedups": [
+        1.0008382229673092,
+        0.9974916387959867,
+        1.0033557046979866,
+        0.981907894736842,
+        1.0008382229673092,
+        0.998324958123953
+      ],
+      "median_paired_speedup": 0.9995815905456311
+    },
+    {
+      "problem": "phase3_a01_irregular_attention",
+      "variants": {
+        "baseline": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 187,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 56.672
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 187,
+                  "mismatches": 0,
+                  "max_abs_error": 8.940696716308594e-08
+                }
+              ],
+              "median_us": 56.608
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 187,
+                  "mismatches": 0,
+                  "max_abs_error": 1.33514404296875e-05
+                }
+              ],
+              "median_us": 56.032
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 187,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 53.92,
+              "round": 0,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 187,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 53.904,
+              "round": 1,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 187,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 53.92,
+              "round": 2,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 187,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 53.904,
+              "round": 3,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 187,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 53.936,
+              "round": 4,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 187,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 53.92,
+              "round": 5,
+              "position": 1
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 1.309035899990704,
+          "ptx_bytes": 15763,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\dot-guard-additional-artifacts\\phase3_a01_irregular_attention-baseline.ptx",
+          "ptx_sha256": "e462b8d67733108dc899ce0a47299e666a78f36afcb0a6e00e5083d3356988a9",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "3ef5914f0fdf5df50c3615c3ae56bb5013ff29eb222354afd48f773a9286f3a1",
+            "bytes": 36392,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_matmul_softmax_reduce_887429"
+            ],
+            "registers": {
+              "k_matmul_softmax_reduce_887429": 72
+            }
+          },
+          "median_us": 53.92,
+          "min_us": 53.904,
+          "max_us": 53.936
+        },
+        "candidate": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 187,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 54.464
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 187,
+                  "mismatches": 0,
+                  "max_abs_error": 8.940696716308594e-08
+                }
+              ],
+              "median_us": 54.688
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 187,
+                  "mismatches": 0,
+                  "max_abs_error": 1.33514404296875e-05
+                }
+              ],
+              "median_us": 54.816
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 187,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 51.872,
+              "round": 0,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 187,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 51.76,
+              "round": 1,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 187,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 51.872,
+              "round": 2,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 187,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 51.84,
+              "round": 3,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 187,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 51.872,
+              "round": 4,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 187,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 51.84,
+              "round": 5,
+              "position": 0
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 1.3619527000118978,
+          "ptx_bytes": 16243,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\dot-guard-additional-artifacts\\phase3_a01_irregular_attention-candidate.ptx",
+          "ptx_sha256": "a335d0b27b8c29ffd820a386986315ebb18c03f3df256b7af08e2f11208ed456",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "43e1a4d307805169fb188ac5f29772ec78752d32f7430d3f874a2b280205a4fb",
+            "bytes": 34296,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_matmul_softmax_reduce_887429"
+            ],
+            "registers": {
+              "k_matmul_softmax_reduce_887429": 72
+            }
+          },
+          "median_us": 51.856,
+          "min_us": 51.76,
+          "max_us": 51.872
+        }
+      },
+      "pass": true,
+      "inputs_sha256": {
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\schedules\\phase3_a01_irregular_attention\\k_matmul_softmax_reduce_887429.ir.json": "5c8d50fd1088134e09a1852b25607c574de2a07e8154419808f6269af63a35d2",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\schedules\\phase3_a01_irregular_attention\\meta.json": "30d07eb8df129d51646080850f26c992142ad0a6114e9450c285595ad06770e3",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\schedules\\phase3_a01_irregular_attention\\expected.npz": "d3f6c1d956b96c26c43041984baa4b81abe326728b5c497e1851714f75561479"
+      },
+      "identical_ptx": false,
+      "speedup": 1.0398025300833076,
+      "paired_round_speedups": [
+        1.039481801357187,
+        1.0414219474497683,
+        1.039481801357187,
+        1.0398148148148147,
+        1.03979025293029,
+        1.0401234567901234
+      ],
+      "median_paired_speedup": 1.0398025338725523
+    }
+  ],
+  "pass": true,
+  "limits": "Unlocked runner clocks; timings are indicative. Outputs are checked once per /run response, not after each repeated launch within that response. No hidden-test claim.",
+  "source_sha256_after": {
+    "baseline": {
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\guard-baseline\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\guard-baseline\\ptx_backend.py": "6adcba46aef59de0eb41555ce19de22e87f1980fbcdc8fff2a24830c5be44ec9"
+    },
+    "candidate": {
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\guard-candidate\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\performance\\guard-candidate\\ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+    }
+  },
+  "sources_unchanged": true,
+  "evidence_sha256_after": {
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tools\\expressions_open.py": "d0f8d5143b7f9e1f7a8b89cbb1e93e3401aaf32d22e6b0e4115f96688c7cb48c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tests\\expressions_holdout.py": "a220788ab8b5f62685a60a5b0be383e5de6c93c7bedcb000af7d1469dba211a6",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tests\\expressions_phase3.py": "ef49b645ff75dd28e9e746324c04e4c3b6b0a99bdaff082cbefb51b1159d7a43",
+    "tools\\compare_compilers.py": "4a23e3870054d3610171e5fb052709959a69438c7cc04f69a9a68c4a341cdf58",
+    "tools\\check_compiler.py": "8748e3acfa88795671a565273e556242bed0b800183b81ac17f1e7085fdcf7a3",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\f01_rmsnorm\\k_mean_cbd1de.ir.json": "b7598c4d7d0b7f198d6dc3cae7f6670b5d00cb30139f3f9a3e2e6e963f581baa",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\f01_rmsnorm\\meta.json": "e2b9376ca6d12936cc52daebff4515f5cf997680d2f872a48e899655757edf64",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\f01_rmsnorm\\expected.npz": "197016500cfca3ee3a1952273d50655e5bbf60093c28ad801e28eb3ccb76a6fb",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\f03_l2norm\\k_div_reduce.ir.json": "77a81af8de7eb9bcec026d540e9dbfcfa70aa7e228721b3faf0c52b3043a594e",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\f03_l2norm\\meta.json": "064b4df0e8807e13fbff2c1c864d302d6aca0e328119ab52d1ddd510b85cdcb3",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\f03_l2norm\\expected.npz": "fb2e242cbfe9834c6d45f27f29acc750a5b4ea8ad6ab509baa7a5b4c53586380",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_m01_long_reduction\\k_matmul_ab135c.ir.json": "f6da52f95e1d7b589917bea132add56799d6158304220e0798ab9b7f1ad8f451",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_m01_long_reduction\\meta.json": "4dc56c5eddb2f17e48b8791bde929eab13d3a012f73611b5339fbfc6f7f9377a",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_m01_long_reduction\\expected.npz": "4215922a287dc9ee561f40984f320c8ae03b6b351bc22b0f95d82020098cc6bb",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\schedules\\phase3_a01_irregular_attention\\k_matmul_softmax_reduce_887429.ir.json": "5c8d50fd1088134e09a1852b25607c574de2a07e8154419808f6269af63a35d2",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\schedules\\phase3_a01_irregular_attention\\meta.json": "30d07eb8df129d51646080850f26c992142ad0a6114e9450c285595ad06770e3",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\schedules\\phase3_a01_irregular_attention\\expected.npz": "d3f6c1d956b96c26c43041984baa4b81abe326728b5c497e1851714f75561479"
+  },
+  "evidence_unchanged": true,
+  "finished_utc": "2026-10-22T20:16:00.631292+00:00"
+}

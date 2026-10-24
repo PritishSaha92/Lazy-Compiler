@@ -1,0 +1,72 @@
+{
+  "pass": true,
+  "scope": "CPU reference fixtures and sm90 assembly; no GPU execution",
+  "packages": [
+    {
+      "id": "bulk_linear_multi_cta",
+      "ptx_sha256": "683d253b386b1ef576ab6c240b986c433b583cc76f22ef895a90627affdb843c",
+      "assembly": {
+        "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+        "arch": "sm_90",
+        "resource_usage": ""
+      },
+      "pass": true
+    },
+    {
+      "id": "bulk_rectangle",
+      "ptx_sha256": "71de0772afda6a977afaff64e3b24cae4f8609f64c5db08ffac40d6509ef3c5c",
+      "assembly": {
+        "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+        "arch": "sm_90",
+        "resource_usage": ""
+      },
+      "pass": true
+    },
+    {
+      "id": "bulk_phase_reuse",
+      "ptx_sha256": "252ffc21823cb33992078e612445f2eb3b5a1bf2a4a9064fa6368343e79c98f2",
+      "assembly": {
+        "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+        "arch": "sm_90",
+        "resource_usage": ""
+      },
+      "pass": true
+    },
+    {
+      "id": "bulk_ring_slots",
+      "ptx_sha256": "69e3c97daf7712bc3277a602276fd0d23f42d05b86d729a718a6c6e2b6e0d6de",
+      "assembly": {
+        "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+        "arch": "sm_90",
+        "resource_usage": ""
+      },
+      "pass": true
+    },
+    {
+      "id": "bulk_rank5_crop",
+      "ptx_sha256": "09ecfd16e34ce2e0e3796173a1f312f86a22c44e320190e254d2a40321d35347",
+      "assembly": {
+        "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+        "arch": "sm_90",
+        "resource_usage": ""
+      },
+      "pass": true
+    },
+    {
+      "id": "bulk_linear_f64",
+      "ptx_sha256": "57c67a4dd4818a79f4d81bedb466dc94d5f51d4c7e466fb617ed813094f38a04",
+      "assembly": {
+        "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+        "arch": "sm_90",
+        "resource_usage": ""
+      },
+      "pass": true
+    }
+  ],
+  "sources_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "eb12a9bb28553caa5e75605506268109edd0739edfdfbdb6178096f7407fde73",
+    "ptx_bulk.py": "ab63f516681e78e06f4b7403b24018c60c8119b8c92c34f00236d74806406c65",
+    "tests/test_bulk_copy.py": "2e41c0cc4b418c67b3d687b0828cb8c6a6067a6bc4733330db4f309b84289ca0"
+  }
+}

@@ -1,0 +1,42 @@
+Attempt 1
+  OK    hold_p01_broadcast_tanh 1 kernel(s): k_tanh_pointwise
+  OK    hold_p02_absolute_difference_3d 1 kernel(s): k_add_pointwise
+  OK    hold_p03_rational_gate 1 kernel(s): k_mul_1_pointwise
+  OK    hold_r01_column_sum  1 kernel(s): k_sum_1_reduce
+  FAIL  hold_r02_mean_two_axes trace: ValueError: a term reads ['out_coord_1'], which no enclosing level defines
+  OK    hold_r03_row_inner_product 1 kernel(s): k_sum_1_reduce
+  OK    hold_r04_column_max  1 kernel(s): k_amax_reduce
+  OK    hold_m01_long_reduction 1 kernel(s): k_matmul_ab135c
+  OK    hold_m02_tall_thin   1 kernel(s): k_matmul
+  OK    hold_m03_wide_output 1 kernel(s): k_matmul
+  OK    hold_m04_bias_relu   1 kernel(s): k_matmul_45ee83
+  OK    hold_f01_centered_affine 1 kernel(s): k_mean_91c58b
+  FAIL  hold_f02_residual_l2_weight package: <lambda>() missing 1 required positional argument: 'w'
+  OK    hold_f03_weighted_softmax_sum 1 kernel(s): k_softmax_86069b
+  OK    hold_f04_rms_sigmoid_gate 1 kernel(s): k_mean_2b1a0c
+  OK    hold_a01_long_context 1 kernel(s): k_matmul_softmax_reduce_abf187
+  OK    hold_a02_long_query  1 kernel(s): k_matmul_softmax_reduce_8b46c8
+  OK    hold_a03_attention_residual 1 kernel(s): k_matmul_softmax_reduce_396951
+
+16 ok, 2 failed: ['hold_r02_mean_two_axes', 'hold_f02_residual_l2_weight']
+
+Attempt 2
+  FAIL  hold_r02_mean_two_axes trace: ValueError: a term reads ['out_coord_1'], which no enclosing level defines
+
+0 ok, 1 failed: ['hold_r02_mean_two_axes']
+
+Attempt 3
+  FAIL  hold_r02_mean_two_axes trace: ValueError: a term reads ['out_coord_0', 'out_coord_1'], which no enclosing level defines
+
+0 ok, 1 failed: ['hold_r02_mean_two_axes']
+  OK    hold_f02_residual_l2_weight 1 kernel(s): k_mul_1_reduce
+
+1 ok, 0 failed
+  OK    hold_f01_centered_affine 1 kernel(s): k_mean_reduce_e2dbd4
+
+1 ok, 0 failed
+
+Attempt 4
+  OK    hold_r02_row_mean_square 1 kernel(s): k_mean_ecc898
+
+1 ok, 0 failed

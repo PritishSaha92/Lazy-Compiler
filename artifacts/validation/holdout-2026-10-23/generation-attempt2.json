@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:\\Users\\priti\\anaconda3\\python.exe",
+    "-u",
+    "tests/generate_stress.py",
+    "--expressions",
+    "tests/expressions_holdout.py",
+    "--only",
+    "hold_r02_mean_two_axes",
+    "--out",
+    "artifacts\\validation\\holdout-2026-10-23",
+    "--target",
+    "sm_89"
+  ],
+  "returncode": 1,
+  "finished_utc": "2026-10-22T18:43:52.157490+00:00",
+  "compiler_evaluated": false
+}

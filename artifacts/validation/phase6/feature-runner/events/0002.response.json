@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "cubin_id": "f9275b429fb3567e4e7474f236aa7912fa45e1da5678dcbed4781e1dec79b44c",
+  "bytes": 8880,
+  "arch": "sm_120",
+  "flags": [],
+  "entry_points": [
+    "k_regression_bulk_linear_multi_cta"
+  ],
+  "registers": {
+    "k_regression_bulk_linear_multi_cta": 24
+  }
+}

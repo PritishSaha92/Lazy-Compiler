@@ -1,0 +1,19 @@
+{
+  "started": "2026-10-24T15:25:51.586634+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "cubin_id": "65ded0022ed0171a23da74c5f5a7b2f9087d0a8da19cc61f62f1b99d41d7f427",
+    "bytes": 26632,
+    "arch": "sm_120",
+    "flags": [],
+    "entry_points": [
+      "k_matmul_79479f"
+    ],
+    "registers": {
+      "k_matmul_79479f": 56
+    }
+  },
+  "finished": "2026-10-24T15:25:52.868181+00:00",
+  "seconds": 1.2819964999980584
+}

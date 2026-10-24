@@ -1,0 +1,66 @@
+{
+ "id": "oct24_m02_f16_ragged_scalar",
+ "code": "a=torch.randn(11,7,dtype=torch.float16); b=torch.randn(7,19,dtype=torch.float16); a@b",
+ "rtol": 0.01,
+ "atol": 0.01,
+ "graph_inputs": [
+  "a",
+  "b"
+ ],
+ "graph_outputs": [
+  "matmul"
+ ],
+ "kernels": [
+  {
+   "node": "matmul",
+   "entry": "k_matmul_79479f",
+   "arg_order": [
+    "b",
+    "a",
+    "matmul"
+   ],
+   "grid": [
+    11,
+    1,
+    1
+   ],
+   "block": [
+    32,
+    1,
+    1
+   ],
+   "smem_bytes": 0,
+   "zero_outputs": [],
+   "args": [
+    {
+     "name": "b",
+     "dtype": "f16",
+     "shape": [
+      7,
+      19
+     ],
+     "seed": 1
+    },
+    {
+     "name": "a",
+     "dtype": "f16",
+     "shape": [
+      11,
+      7
+     ],
+     "seed": 0
+    },
+    {
+     "name": "matmul",
+     "dtype": "f16",
+     "shape": [
+      11,
+      19
+     ],
+     "output": true
+    }
+   ],
+   "final": true
+  }
+ ]
+}

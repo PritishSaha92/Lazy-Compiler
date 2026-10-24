@@ -1,0 +1,86 @@
+{
+  "backend_sha256": "1e3475212c2fd7f54060e066ba59439156b0c4d02bcae23bf5eb79ba22ef96b4",
+  "cases": [
+    {
+      "id": "raster_simplification_clamped_m",
+      "before_ptx_bytes": 1600,
+      "after_ptx_bytes": 1540,
+      "byte_identical": false,
+      "before_min_instructions": 1,
+      "after_min_instructions": 0,
+      "after_ptx_sha256": "b78a0a6ae13d38733e996e286db1143fb8d84d166003003e7b20533005d25927"
+    },
+    {
+      "id": "raster_simplification_clamped_n",
+      "before_ptx_bytes": 1600,
+      "after_ptx_bytes": 1540,
+      "byte_identical": false,
+      "before_min_instructions": 1,
+      "after_min_instructions": 0,
+      "after_ptx_sha256": "55bc25d944f65e52dd19f5578364277d976998cee872b76b7b557901f9c04d97"
+    },
+    {
+      "id": "raster_simplification_full_m",
+      "before_ptx_bytes": 1597,
+      "after_ptx_bytes": 1537,
+      "byte_identical": false,
+      "before_min_instructions": 1,
+      "after_min_instructions": 0,
+      "after_ptx_sha256": "05f6f784bc88b2f75b3999d977f157bf6345e2b608dc79cf19b8d795d4cab97d"
+    },
+    {
+      "id": "raster_simplification_full_n",
+      "before_ptx_bytes": 1595,
+      "after_ptx_bytes": 1535,
+      "byte_identical": false,
+      "before_min_instructions": 1,
+      "after_min_instructions": 0,
+      "after_ptx_sha256": "bd974fc9631e36e2d965a904141aa15ff9d5916e34158f44895c132fefbfd871"
+    },
+    {
+      "id": "raster_simplification_identity_m",
+      "before_ptx_bytes": 1565,
+      "after_ptx_bytes": 1222,
+      "byte_identical": false,
+      "before_min_instructions": 1,
+      "after_min_instructions": 0,
+      "after_ptx_sha256": "0f435aa7b4ce4015cbbb5defbca1e7c5c9c924b515dfd724a7a48ff25c5e8ce9"
+    },
+    {
+      "id": "raster_simplification_identity_n",
+      "before_ptx_bytes": 1567,
+      "after_ptx_bytes": 1223,
+      "byte_identical": false,
+      "before_min_instructions": 1,
+      "after_min_instructions": 0,
+      "after_ptx_sha256": "5f0891ece27fffd246e804f779c44f01f57a458428c7ce082eefd0832418b0a8"
+    },
+    {
+      "id": "raster_simplification_tail_m",
+      "before_ptx_bytes": 1597,
+      "after_ptx_bytes": 1597,
+      "byte_identical": true,
+      "before_min_instructions": 1,
+      "after_min_instructions": 1,
+      "after_ptx_sha256": "84975ace6f0f066368b7200e45d1def4d5f1c69234d1d1ed8a6ec45baaba5d0c"
+    },
+    {
+      "id": "raster_simplification_tail_n",
+      "before_ptx_bytes": 1597,
+      "after_ptx_bytes": 1597,
+      "byte_identical": true,
+      "before_min_instructions": 1,
+      "after_min_instructions": 1,
+      "after_ptx_sha256": "2aacef4dea377a267cfa1a8f4e2456a0aefcc487b186ba8987ba837b33ec8aa2"
+    }
+  ],
+  "a02": {
+    "before_ptx_bytes": 3793,
+    "after_ptx_bytes": 3412,
+    "assembly": {
+      "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+      "arch": "sm_89",
+      "resource_usage": ""
+    }
+  }
+}

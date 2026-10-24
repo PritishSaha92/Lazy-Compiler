@@ -1,0 +1,36 @@
+    Tile[a0, a5_blk, a1_co, a5_ln] (N=2304)
+        in0 = load mul_c1[0]
+        for a1 in a1_co..67:8
+            for a2 in 0..37
+                in2 = load q[a0, a2]
+                in1 = load kt[a2, a1]
+                f32 v0 = multiply(in1, in2)
+                f32 acc0 <- add(acc0, v0)
+            f32 v1 = multiply(acc0, in0)
+            f32 one = 1.0
+            f32 v1__gn = maximum(acc1, v1)
+            f32 v1__dg = subtract(acc1, v1__gn)
+            f32 v1__alpha = exp(v1__dg)
+            f32 v1__dg_o = subtract(v1, v1__gn)
+            f32 v1__beta = exp(v1__dg_o)
+            f32 v1__acc3_sa = multiply(acc3, v1__alpha)
+            f32 v1__acc3_sb = multiply(one, v1__beta)
+            f32 acc3 <- add(v1__acc3_sa, v1__acc3_sb)
+            f32 v1__acc5__sum_sa = multiply(acc5__sum, v1__alpha)
+            in7 = load v[a1, ((((a5_blk * 32) + a5_ln) < 15) ? ((a5_blk * 32) + a5_ln) : (15 - 1))]
+            f32 v1__acc5__sum_sb = multiply(in7, v1__beta)
+            f32 acc5__sum <- add(v1__acc5__sum_sa, v1__acc5__sum_sb)
+            f32 acc1 <- maximum(acc1, v1)
+        Smem float acc1_smem[256]
+        Smem float acc3_smem[256]
+        Smem float acc5__sum_smem[256]
+        acc1_smem[((a1_co * 32) + a5_ln)] = acc1
+        acc3_smem[((a1_co * 32) + a5_ln)] = acc3
+        acc5__sum_smem[((a1_co * 32) + a5_ln)] = acc5__sum
+        Sync
+        TreeHalve(acc1, acc3, acc5__sum, length=8, tid=a1_co)
+        if ((a1_co == 0)):
+            if ((((a5_blk * 32) + a5_ln) < 15)):
+                f32 v6 = reciprocal(acc3)
+                f32 acc5 = multiply(acc5__sum, v6)
+                matmul_1[a0, ((a5_blk * 32) + a5_ln)] = acc5

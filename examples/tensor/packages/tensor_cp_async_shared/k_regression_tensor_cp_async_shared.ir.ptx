@@ -1,0 +1,143 @@
+.version 8.0
+.target sm_89
+.address_size 64
+
+
+.visible .entry k_regression_tensor_cp_async_shared(
+    .param .u64 param_0,
+    .param .u64 param_1,
+    .param .u64 param_2
+)
+{
+    .reg .b64 %rd<19>;
+    .reg .b32 %r<64>;
+    .reg .pred %p<15>;
+    .reg .f32 %f<9>;
+    .shared .align 128 .b8 smem_0[512];
+    .shared .align 128 .b8 smem_1[256];
+    ld.param.u64 %rd1, [param_0];
+    cvta.to.global.u64 %rd2, %rd1;
+    ld.param.u64 %rd3, [param_1];
+    cvta.to.global.u64 %rd4, %rd3;
+    ld.param.u64 %rd5, [param_2];
+    cvta.to.global.u64 %rd6, %rd5;
+    mov.u32 %r1, %tid.x;
+    mov.u32 %r2, %ctaid.x;
+    mov.u32 %r3, %ntid.x;
+    rem.s32 %r4, %r1, 32;
+    div.s32 %r5, %r1, 32;
+    mov.u32 %r6, smem_0;
+    mov.u32 %r7, smem_1;
+    mul.lo.s32 %r8, %r2, %r3;
+    add.s32 %r9, %r8, %r1;
+    setp.ge.s32 %p1, %r9, 32;
+    @%p1 bra endtile_1;
+    mul.lo.s32 %r10, %r9, 8;
+    mul.lo.u32 %r11, %r10, 2;
+    add.u32 %r12, %r6, %r11;
+    mul.lo.s32 %r13, %r9, 8;
+    mul.wide.s32 %rd7, %r13, 2;
+    add.u64 %rd8, %rd2, %rd7;
+    cp.async.cg.shared.global [%r12], [%rd8], 16;
+    mul.lo.s32 %r14, %r9, 4;
+    mul.lo.u32 %r15, %r14, 2;
+    add.u32 %r16, %r7, %r15;
+    mul.lo.s32 %r17, %r9, 4;
+    mul.wide.s32 %rd9, %r17, 2;
+    add.u64 %rd10, %rd4, %rd9;
+    cp.async.ca.shared.global [%r16], [%rd10], 8;
+    cp.async.commit_group;
+    cp.async.wait_group 0;
+    bar.sync 0;
+    mov.f32 %f1, 0f00000000;
+    mov.f32 %f2, 0f00000000;
+    mov.f32 %f3, 0f00000000;
+    mov.f32 %f4, 0f00000000;
+    mov.s32 %r24, 0;
+loop_2:
+    setp.ge.s32 %p2, %r24, 16;
+    @%p2 bra endloop_3;
+    and.b32 %r25, %r1, 31;
+    rem.s32 %r26, %r25, 16;
+    div.s32 %r27, %r25, 16;
+    mul.lo.s32 %r28, %r27, 8;
+    mul.lo.s32 %r29, %r26, 16;
+    add.s32 %r30, %r29, %r28;
+    add.s32 %r31, %r24, %r30;
+    mul.lo.u32 %r32, %r31, 2;
+    add.u32 %r33, %r6, %r32;
+    ldmatrix.sync.aligned.m8n8.x4.shared.b16 {%r34, %r35, %r36, %r37}, [%r33];
+    mov.b32 %r18, %r34;
+    mov.b32 %r19, %r35;
+    mov.b32 %r20, %r36;
+    mov.b32 %r21, %r37;
+    and.b32 %r38, %r1, 31;
+    rem.s32 %r39, %r38, 16;
+    mul.lo.s32 %r40, %r24, 8;
+    mul.lo.s32 %r41, %r39, 8;
+    add.s32 %r42, %r40, %r41;
+    mul.lo.u32 %r43, %r42, 2;
+    add.u32 %r44, %r7, %r43;
+    ldmatrix.sync.aligned.m8n8.x2.trans.shared.b16 {%r45, %r46}, [%r44];
+    mov.b32 %r22, %r45;
+    mov.b32 %r23, %r46;
+    mma.sync.aligned.m16n8k16.row.col.f32.f16.f16.f32 {%f5, %f6, %f7, %f8}, {%r18, %r19, %r20, %r21}, {%r22, %r23}, {%f1, %f2, %f3, %f4};
+    mov.f32 %f1, %f5;
+    mov.f32 %f2, %f6;
+    mov.f32 %f3, %f7;
+    mov.f32 %f4, %f8;
+    add.s32 %r47, %r24, 16;
+    mov.s32 %r24, %r47;
+    bra loop_2;
+endloop_3:
+    and.b32 %r48, %r1, 31;
+    div.s32 %r49, %r48, 4;
+    rem.s32 %r50, %r48, 4;
+    mul.lo.s32 %r51, %r50, 2;
+    setp.lt.s32 %p3, %r49, 16;
+    setp.lt.s32 %p4, %r51, 8;
+    and.pred %p5, %p3, %p4;
+    @!%p5 bra tensor_store_skip_4;
+    mul.lo.s32 %r52, %r49, 8;
+    add.s32 %r53, %r52, %r51;
+    mul.wide.s32 %rd11, %r53, 4;
+    add.u64 %rd12, %rd6, %rd11;
+    st.global.f32 [%rd12+0], %f1;
+tensor_store_skip_4:
+    add.s32 %r54, %r51, 1;
+    setp.lt.s32 %p6, %r49, 16;
+    setp.lt.s32 %p7, %r54, 8;
+    and.pred %p8, %p6, %p7;
+    @!%p8 bra tensor_store_skip_5;
+    mul.lo.s32 %r55, %r49, 8;
+    add.s32 %r56, %r55, %r54;
+    mul.wide.s32 %rd13, %r56, 4;
+    add.u64 %rd14, %rd6, %rd13;
+    st.global.f32 [%rd14+0], %f2;
+tensor_store_skip_5:
+    add.s32 %r57, %r49, 8;
+    setp.lt.s32 %p9, %r57, 16;
+    setp.lt.s32 %p10, %r51, 8;
+    and.pred %p11, %p9, %p10;
+    @!%p11 bra tensor_store_skip_6;
+    mul.lo.s32 %r58, %r57, 8;
+    add.s32 %r59, %r58, %r51;
+    mul.wide.s32 %rd15, %r59, 4;
+    add.u64 %rd16, %rd6, %rd15;
+    st.global.f32 [%rd16+0], %f3;
+tensor_store_skip_6:
+    add.s32 %r60, %r49, 8;
+    add.s32 %r61, %r51, 1;
+    setp.lt.s32 %p12, %r60, 16;
+    setp.lt.s32 %p13, %r61, 8;
+    and.pred %p14, %p12, %p13;
+    @!%p14 bra tensor_store_skip_7;
+    mul.lo.s32 %r62, %r60, 8;
+    add.s32 %r63, %r62, %r61;
+    mul.wide.s32 %rd17, %r63, 4;
+    add.u64 %rd18, %rd6, %rd17;
+    st.global.f32 [%rd18+0], %f4;
+tensor_store_skip_7:
+endtile_1:
+    ret;
+}

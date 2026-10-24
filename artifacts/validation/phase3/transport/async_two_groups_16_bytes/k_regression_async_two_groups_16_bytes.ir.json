@@ -1,0 +1,53 @@
+{
+  "inputs": [
+    "x"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            2,
+            32,
+            4
+          ],
+          "dtype": "f32"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='batch', extent=Dim(3), window=None), Axis(name='cell', extent=Dim(32), window=None)), body=(Smem(name='first', extents=(128,), dtype='float', align=16), Smem(name='second', extents=(128,), dtype='float', align=16), CpAsyncCopy(smem='first', smem_index=(BinaryExpr(op='*', left=Var(name='lane'), right=Literal(value=4, dtype='int')),), src='x', src_index=(Var(name='batch'), Literal(value=0, dtype='int'), Var(name='lane'), Literal(value=0, dtype='int')), nbytes=16, swizzle='NONE', lane_index=None, lane_rows=0), CpAsyncCommit(), CpAsyncCopy(smem='second', smem_index=(BinaryExpr(op='*', left=Var(name='lane'), right=Literal(value=4, dtype='int')),), src='x', src_index=(Var(name='batch'), Literal(value=1, dtype='int'), Var(name='lane'), Literal(value=0, dtype='int')), nbytes=16, swizzle='NONE', lane_index=None, lane_rows=0), CpAsyncCommit(), CpAsyncWait(group=1), Sync(barrier_id=0, count=None, warp=False), Load(names=('v0', 'v1', 'v2', 'v3'), input='first', index=(BinaryExpr(op='*', left=BinaryExpr(op='-', left=Literal(value=31, dtype='int'), right=Var(name='lane')), right=Literal(value=4, dtype='int')),), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='out', index=(Var(name='batch'), Literal(value=0, dtype='int'), Var(name='lane'), Literal(value=0, dtype='int')), values=('v0', 'v1', 'v2', 'v3'), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE'), CpAsyncWait(group=0), Sync(barrier_id=0, count=None, warp=False), Load(names=('v0', 'v1', 'v2', 'v3'), input='second', index=(BinaryExpr(op='*', left=BinaryExpr(op='-', left=Literal(value=31, dtype='int'), right=Var(name='lane')), right=Literal(value=4, dtype='int')),), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='out', index=(Var(name='batch'), Literal(value=1, dtype='int'), Var(name='lane'), Literal(value=0, dtype='int')), values=('v0', 'v1', 'v2', 'v3'), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE')), block_threads=32, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_async_two_groups_16_bytes",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            3,
+            2,
+            32,
+            4
+          ],
+          "dtype": "f32"
+        }
+      ]
+    }
+  }
+}

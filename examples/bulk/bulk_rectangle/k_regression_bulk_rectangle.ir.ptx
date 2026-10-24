@@ -1,0 +1,77 @@
+.version 8.0
+.target sm_90
+.address_size 64
+
+
+.visible .entry k_regression_bulk_rectangle(
+    .param .u64 param_0,
+    .param .u64 param_1
+)
+{
+    .reg .b64 %rd<15>;
+    .reg .b32 %r<15>;
+    .reg .pred %p<6>;
+    .reg .f32 %f<2>;
+    .shared .align 16 .b8 smem_0[192];
+    .shared .align 8 .b8 smem_1[8];
+    ld.param.u64 %rd1, [param_0];
+    cvta.to.global.u64 %rd2, %rd1;
+    ld.param.u64 %rd3, [param_1];
+    cvta.to.global.u64 %rd4, %rd3;
+    mov.u32 %r1, %tid.x;
+    mov.u32 %r2, %ctaid.x;
+    mov.u32 %r3, %ntid.x;
+    rem.s32 %r4, %r1, 32;
+    div.s32 %r5, %r1, 32;
+    mov.u32 %r6, smem_0;
+    mov.u32 %r7, smem_1;
+    mul.lo.s32 %r8, %r2, %r3;
+    add.s32 %r9, %r8, %r1;
+    setp.ge.s32 %p1, %r9, 64;
+    @%p1 bra endtile_1;
+    setp.eq.s32 %p2, %r1, 0;
+    @!%p2 bra else_2;
+    mbarrier.init.shared::cta.b64 [%r7], 1;
+    fence.proxy.async.shared::cta;
+    bra endif_3;
+else_2:
+endif_3:
+    bar.sync 0;
+    setp.eq.s32 %p3, %r1, 0;
+    @!%p3 bra else_4;
+    mbarrier.arrive.expect_tx.release.cta.shared::cta.b64 _, [%r7], 192;
+    mul.wide.s32 %rd5, 44, 4;
+    add.u64 %rd6, %rd4, %rd5;
+    cp.async.bulk.shared::cluster.global.mbarrier::complete_tx::bytes [%r6], [%rd6], 48, [%r7];
+    mul.wide.s32 %rd7, 64, 4;
+    add.u64 %rd8, %rd4, %rd7;
+    add.u32 %r10, %r6, 48;
+    cp.async.bulk.shared::cluster.global.mbarrier::complete_tx::bytes [%r10], [%rd8], 48, [%r7];
+    mul.wide.s32 %rd9, 84, 4;
+    add.u64 %rd10, %rd4, %rd9;
+    add.u32 %r11, %r6, 96;
+    cp.async.bulk.shared::cluster.global.mbarrier::complete_tx::bytes [%r11], [%rd10], 48, [%r7];
+    mul.wide.s32 %rd11, 104, 4;
+    add.u64 %rd12, %rd4, %rd11;
+    add.u32 %r12, %r6, 144;
+    cp.async.bulk.shared::cluster.global.mbarrier::complete_tx::bytes [%r12], [%rd12], 48, [%r7];
+    bra endif_5;
+else_4:
+endif_5:
+bulk_wait_6:
+    mbarrier.try_wait.parity.acquire.cta.shared::cta.b64 %p4, [%r7], 0;
+    @!%p4 bra bulk_wait_6;
+    setp.lt.s32 %p5, %r9, 48;
+    @!%p5 bra else_7;
+    mul.lo.u32 %r13, %r9, 4;
+    add.u32 %r14, %r6, %r13;
+    ld.shared.f32 %f1, [%r14+0];
+    mul.wide.s32 %rd13, %r9, 4;
+    add.u64 %rd14, %rd2, %rd13;
+    st.global.f32 [%rd14+0], %f1;
+    bra endif_8;
+else_7:
+endif_8:
+endtile_1:
+    ret;
+}

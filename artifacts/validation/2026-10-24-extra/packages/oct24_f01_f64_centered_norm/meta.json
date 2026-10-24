@@ -1,0 +1,66 @@
+{
+ "id": "oct24_f01_f64_centered_norm",
+ "code": "x=torch.randn(11,71,dtype=torch.float64); z=x-x.mean(-1,keepdim=True); z/torch.sqrt((z*z).sum(-1,keepdim=True)+0.01)",
+ "rtol": 2e-12,
+ "atol": 2e-12,
+ "graph_inputs": [
+  "z"
+ ],
+ "graph_outputs": [
+  "div"
+ ],
+ "kernels": [
+  {
+   "node": "div",
+   "entry": "k_div_reduce",
+   "arg_order": [
+    "add_c1",
+    "z",
+    "div"
+   ],
+   "grid": [
+    11,
+    1,
+    1
+   ],
+   "block": [
+    128,
+    1,
+    1
+   ],
+   "smem_bytes": 0,
+   "zero_outputs": [],
+   "args": [
+    {
+     "name": "add_c1",
+     "dtype": "f64",
+     "shape": [
+      1
+     ],
+     "data": [
+      0.01
+     ]
+    },
+    {
+     "name": "z",
+     "dtype": "f64",
+     "shape": [
+      11,
+      71
+     ],
+     "seed": 0
+    },
+    {
+     "name": "div",
+     "dtype": "f64",
+     "shape": [
+      11,
+      71
+     ],
+     "output": true
+    }
+   ],
+   "final": true
+  }
+ ]
+}

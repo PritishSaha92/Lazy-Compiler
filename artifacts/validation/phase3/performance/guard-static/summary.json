@@ -1,0 +1,368 @@
+{
+  "source_sha256": {
+    "baseline": "6adcba46aef59de0eb41555ce19de22e87f1980fbcdc8fff2a24830c5be44ec9",
+    "candidate": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002"
+  },
+  "results": [
+    {
+      "problem": "a01_attention",
+      "variants": {
+        "baseline": {
+          "ptx_sha256": "2e95951d85039a887a14b75b000ba824b9bee9b46353fdedfa1fa0db827301da",
+          "ptx_bytes": 15711,
+          "ptx_finite_tests": 4,
+          "sass_instructions": 1392,
+          "sass_selects": 40,
+          "registers": 56,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_matmul_softmax_reduce_b55365' for 'sm_89'\nptxas info    : Function properties for k_matmul_softmax_reduce_b55365\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 56 registers, used 0 barriers, 392 bytes cmem[0]\n"
+        },
+        "candidate": {
+          "ptx_sha256": "cf041eff5d2ee7e86c80c78aadf0c6425b7a45aa3859e49c69e8d7204e8e33cb",
+          "ptx_bytes": 16023,
+          "ptx_finite_tests": 8,
+          "sass_instructions": 1544,
+          "sass_selects": 4,
+          "registers": 56,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_matmul_softmax_reduce_b55365' for 'sm_89'\nptxas info    : Function properties for k_matmul_softmax_reduce_b55365\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 56 registers, used 0 barriers, 392 bytes cmem[0]\n"
+        }
+      },
+      "changed": true
+    },
+    {
+      "problem": "a02_attention_128",
+      "variants": {
+        "baseline": {
+          "ptx_sha256": "0e241162ba3c4bc6e0788574a66c5e51f3c6731d2cda55244d9cb7d528c191d9",
+          "ptx_bytes": 3412,
+          "ptx_finite_tests": 1,
+          "sass_instructions": 816,
+          "sass_selects": 32,
+          "registers": 56,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_matmul_softmax_reduce_6f0029' for 'sm_89'\nptxas info    : Function properties for k_matmul_softmax_reduce_6f0029\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 56 registers, used 0 barriers, 392 bytes cmem[0]\n"
+        },
+        "candidate": {
+          "ptx_sha256": "6cc54c6729a956b956ceaa6e104a0cc6c7a8e39bd552dd9c96bf0f5a4740007f",
+          "ptx_bytes": 3411,
+          "ptx_finite_tests": 1,
+          "sass_instructions": 728,
+          "sass_selects": 1,
+          "registers": 56,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_matmul_softmax_reduce_6f0029' for 'sm_89'\nptxas info    : Function properties for k_matmul_softmax_reduce_6f0029\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 56 registers, used 0 barriers, 392 bytes cmem[0]\n"
+        }
+      },
+      "changed": true
+    },
+    {
+      "problem": "f01_rmsnorm",
+      "variants": {
+        "baseline": {
+          "ptx_sha256": "35b009b6b2c65973f96e56e546bc68bad8b296556cc8ab2ba552f7013fa475cf",
+          "ptx_bytes": 5533,
+          "ptx_finite_tests": 1,
+          "sass_instructions": 424,
+          "sass_selects": 7,
+          "registers": 24,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_mean_cbd1de' for 'sm_89'\nptxas info    : Function properties for k_mean_cbd1de\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 24 registers, used 1 barriers, 16 bytes smem, 392 bytes cmem[0]\n"
+        },
+        "candidate": {
+          "ptx_sha256": "35748c8dd96a8a5d8dfe68ee48baabfa66203074e1fd28508baccd59bcee22f0",
+          "ptx_bytes": 6521,
+          "ptx_finite_tests": 14,
+          "sass_instructions": 400,
+          "sass_selects": 1,
+          "registers": 23,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_mean_cbd1de' for 'sm_89'\nptxas info    : Function properties for k_mean_cbd1de\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 23 registers, used 1 barriers, 16 bytes smem, 392 bytes cmem[0]\n"
+        }
+      },
+      "changed": true
+    },
+    {
+      "problem": "f02_row_softmax",
+      "variants": {
+        "baseline": {
+          "ptx_sha256": "78fe3b93cbadd47d9421ff28f1db13e3f1c96f1e5a0191ca29145997378bf4ad",
+          "ptx_bytes": 7403,
+          "ptx_finite_tests": 0,
+          "sass_instructions": 496,
+          "sass_selects": 0,
+          "registers": 19,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_softmax_05263d' for 'sm_89'\nptxas info    : Function properties for k_softmax_05263d\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 19 registers, used 1 barriers, 32 bytes smem, 368 bytes cmem[0]\n"
+        },
+        "candidate": {
+          "ptx_sha256": "78fe3b93cbadd47d9421ff28f1db13e3f1c96f1e5a0191ca29145997378bf4ad",
+          "ptx_bytes": 7403,
+          "ptx_finite_tests": 0,
+          "sass_instructions": 496,
+          "sass_selects": 0,
+          "registers": 19,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_softmax_05263d' for 'sm_89'\nptxas info    : Function properties for k_softmax_05263d\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 19 registers, used 1 barriers, 32 bytes smem, 368 bytes cmem[0]\n"
+        }
+      },
+      "changed": false
+    },
+    {
+      "problem": "f03_l2norm",
+      "variants": {
+        "baseline": {
+          "ptx_sha256": "1bd6142fe14ecc622b7e27f95459c5f000934ed17ead3b3cef35128d81e1e57e",
+          "ptx_bytes": 4801,
+          "ptx_finite_tests": 1,
+          "sass_instructions": 384,
+          "sass_selects": 7,
+          "registers": 24,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_div_reduce' for 'sm_89'\nptxas info    : Function properties for k_div_reduce\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 24 registers, used 1 barriers, 16 bytes smem, 368 bytes cmem[0]\n"
+        },
+        "candidate": {
+          "ptx_sha256": "0491574fe37a591cd37f68b22cf78b8fbff6afee02f281dd3cc08580073dc661",
+          "ptx_bytes": 5789,
+          "ptx_finite_tests": 14,
+          "sass_instructions": 368,
+          "sass_selects": 1,
+          "registers": 23,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_div_reduce' for 'sm_89'\nptxas info    : Function properties for k_div_reduce\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 23 registers, used 1 barriers, 16 bytes smem, 368 bytes cmem[0]\n"
+        }
+      },
+      "changed": true
+    },
+    {
+      "problem": "m01_matmul_512",
+      "variants": {
+        "baseline": {
+          "ptx_sha256": "0f5cd8b0a77c0474821755833a4f0f5a526476361ee8008bfc2d77f35968a228",
+          "ptx_bytes": 272949,
+          "ptx_finite_tests": 256,
+          "sass_instructions": 7392,
+          "sass_selects": 256,
+          "registers": 40,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_matmul_2967be' for 'sm_89'\nptxas info    : Function properties for k_matmul_2967be\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 40 registers, used 1 barriers, 376 bytes cmem[0]\n"
+        },
+        "candidate": {
+          "ptx_sha256": "d569378816da8c5c0cf182781dc9fbdf74a5af8b7dd44f5cb1afd13651a9763d",
+          "ptx_bytes": 252295,
+          "ptx_finite_tests": 8,
+          "sass_instructions": 6680,
+          "sass_selects": 4,
+          "registers": 39,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_matmul_2967be' for 'sm_89'\nptxas info    : Function properties for k_matmul_2967be\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 39 registers, used 1 barriers, 376 bytes cmem[0]\n"
+        }
+      },
+      "changed": true
+    },
+    {
+      "problem": "m02_matmul_rect",
+      "variants": {
+        "baseline": {
+          "ptx_sha256": "c22423858ae8fa38c08a16fa8255ac24d2ede6297889a88982306156dabb663b",
+          "ptx_bytes": 19256,
+          "ptx_finite_tests": 16,
+          "sass_instructions": 480,
+          "sass_selects": 16,
+          "registers": 31,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_matmul' for 'sm_89'\nptxas info    : Function properties for k_matmul\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 31 registers, used 1 barriers, 1536 bytes smem, 376 bytes cmem[0]\n"
+        },
+        "candidate": {
+          "ptx_sha256": "63b2612264c4bd350b558d5ea85a05456dc0bef473ff8eee69cbd5ea2bbe2808",
+          "ptx_bytes": 18308,
+          "ptx_finite_tests": 4,
+          "sass_instructions": 440,
+          "sass_selects": 2,
+          "registers": 34,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_matmul' for 'sm_89'\nptxas info    : Function properties for k_matmul\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 34 registers, used 1 barriers, 1536 bytes smem, 376 bytes cmem[0]\n"
+        }
+      },
+      "changed": true
+    },
+    {
+      "problem": "p00_scalar_add",
+      "variants": {
+        "baseline": {
+          "ptx_sha256": "e1fef6c32b9fe35f1e1afcc3697fceeca2f6d23b9453077cabbd43e4a221eccf",
+          "ptx_bytes": 1467,
+          "ptx_finite_tests": 0,
+          "sass_instructions": 32,
+          "sass_selects": 0,
+          "registers": 16,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_add_pointwise' for 'sm_89'\nptxas info    : Function properties for k_add_pointwise\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 16 registers, used 0 barriers, 376 bytes cmem[0]\n"
+        },
+        "candidate": {
+          "ptx_sha256": "e1fef6c32b9fe35f1e1afcc3697fceeca2f6d23b9453077cabbd43e4a221eccf",
+          "ptx_bytes": 1467,
+          "ptx_finite_tests": 0,
+          "sass_instructions": 32,
+          "sass_selects": 0,
+          "registers": 16,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_add_pointwise' for 'sm_89'\nptxas info    : Function properties for k_add_pointwise\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 16 registers, used 0 barriers, 376 bytes cmem[0]\n"
+        }
+      },
+      "changed": false
+    },
+    {
+      "problem": "p01_vector_add",
+      "variants": {
+        "baseline": {
+          "ptx_sha256": "1d5dcf14e893fd64d5d90023f2ef4ce3f9eac18e1ba06b4dce9aefdd42390892",
+          "ptx_bytes": 1468,
+          "ptx_finite_tests": 0,
+          "sass_instructions": 32,
+          "sass_selects": 0,
+          "registers": 16,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_add_pointwise' for 'sm_89'\nptxas info    : Function properties for k_add_pointwise\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 16 registers, used 0 barriers, 376 bytes cmem[0]\n"
+        },
+        "candidate": {
+          "ptx_sha256": "1d5dcf14e893fd64d5d90023f2ef4ce3f9eac18e1ba06b4dce9aefdd42390892",
+          "ptx_bytes": 1468,
+          "ptx_finite_tests": 0,
+          "sass_instructions": 32,
+          "sass_selects": 0,
+          "registers": 16,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_add_pointwise' for 'sm_89'\nptxas info    : Function properties for k_add_pointwise\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 16 registers, used 0 barriers, 376 bytes cmem[0]\n"
+        }
+      },
+      "changed": false
+    },
+    {
+      "problem": "p02_scale_shift",
+      "variants": {
+        "baseline": {
+          "ptx_sha256": "0a5bbfd2100d96d311265b996b69349884c43e536d3704e2b8fd86a333d90b27",
+          "ptx_bytes": 2575,
+          "ptx_finite_tests": 0,
+          "sass_instructions": 48,
+          "sass_selects": 0,
+          "registers": 24,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_add_pointwise' for 'sm_89'\nptxas info    : Function properties for k_add_pointwise\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 24 registers, used 0 barriers, 384 bytes cmem[0]\n"
+        },
+        "candidate": {
+          "ptx_sha256": "0a5bbfd2100d96d311265b996b69349884c43e536d3704e2b8fd86a333d90b27",
+          "ptx_bytes": 2575,
+          "ptx_finite_tests": 0,
+          "sass_instructions": 48,
+          "sass_selects": 0,
+          "registers": 24,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_add_pointwise' for 'sm_89'\nptxas info    : Function properties for k_add_pointwise\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 24 registers, used 0 barriers, 384 bytes cmem[0]\n"
+        }
+      },
+      "changed": false
+    },
+    {
+      "problem": "p03_relu_mul",
+      "variants": {
+        "baseline": {
+          "ptx_sha256": "66a130d7d5a5f33fcad1ee709867a6f6d020ea259ec145d1cb0eff24b1c7ef5a",
+          "ptx_bytes": 2309,
+          "ptx_finite_tests": 0,
+          "sass_instructions": 48,
+          "sass_selects": 0,
+          "registers": 22,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_mul_pointwise' for 'sm_89'\nptxas info    : Function properties for k_mul_pointwise\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 22 registers, used 0 barriers, 376 bytes cmem[0]\n"
+        },
+        "candidate": {
+          "ptx_sha256": "66a130d7d5a5f33fcad1ee709867a6f6d020ea259ec145d1cb0eff24b1c7ef5a",
+          "ptx_bytes": 2309,
+          "ptx_finite_tests": 0,
+          "sass_instructions": 48,
+          "sass_selects": 0,
+          "registers": 22,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_mul_pointwise' for 'sm_89'\nptxas info    : Function properties for k_mul_pointwise\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 22 registers, used 0 barriers, 376 bytes cmem[0]\n"
+        }
+      },
+      "changed": false
+    },
+    {
+      "problem": "r01_array_sum",
+      "variants": {
+        "baseline": {
+          "ptx_sha256": "98d99cbfee04f3ca01e5ebad44342e65a2d2a3dfc532a7c58a5b041de39c19f9",
+          "ptx_bytes": 3063,
+          "ptx_finite_tests": 0,
+          "sass_instructions": 128,
+          "sass_selects": 0,
+          "registers": 16,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_sum_1_reduce' for 'sm_89'\nptxas info    : Function properties for k_sum_1_reduce\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 16 registers, used 1 barriers, 16 bytes smem, 368 bytes cmem[0]\n"
+        },
+        "candidate": {
+          "ptx_sha256": "98d99cbfee04f3ca01e5ebad44342e65a2d2a3dfc532a7c58a5b041de39c19f9",
+          "ptx_bytes": 3063,
+          "ptx_finite_tests": 0,
+          "sass_instructions": 128,
+          "sass_selects": 0,
+          "registers": 16,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_sum_1_reduce' for 'sm_89'\nptxas info    : Function properties for k_sum_1_reduce\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 16 registers, used 1 barriers, 16 bytes smem, 368 bytes cmem[0]\n"
+        }
+      },
+      "changed": false
+    },
+    {
+      "problem": "r02_big_sum",
+      "variants": {
+        "baseline": {
+          "ptx_sha256": "6ab66dbcfb870a70db16516d927ca68bf06c6ace5ca23f2d265aef50d4474892",
+          "ptx_bytes": 3064,
+          "ptx_finite_tests": 0,
+          "sass_instructions": 128,
+          "sass_selects": 0,
+          "registers": 16,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_sum_1_reduce' for 'sm_89'\nptxas info    : Function properties for k_sum_1_reduce\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 16 registers, used 1 barriers, 16 bytes smem, 368 bytes cmem[0]\n"
+        },
+        "candidate": {
+          "ptx_sha256": "6ab66dbcfb870a70db16516d927ca68bf06c6ace5ca23f2d265aef50d4474892",
+          "ptx_bytes": 3064,
+          "ptx_finite_tests": 0,
+          "sass_instructions": 128,
+          "sass_selects": 0,
+          "registers": 16,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_sum_1_reduce' for 'sm_89'\nptxas info    : Function properties for k_sum_1_reduce\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 16 registers, used 1 barriers, 16 bytes smem, 368 bytes cmem[0]\n"
+        }
+      },
+      "changed": false
+    },
+    {
+      "problem": "r03_mean",
+      "variants": {
+        "baseline": {
+          "ptx_sha256": "5c6cc8ddb11d88a953339f9a410523ecaea4aeafdfde578a107a9635343b1739",
+          "ptx_bytes": 3290,
+          "ptx_finite_tests": 0,
+          "sass_instructions": 240,
+          "sass_selects": 0,
+          "registers": 16,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_mean_ffcca3' for 'sm_89'\nptxas info    : Function properties for k_mean_ffcca3\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 16 registers, used 1 barriers, 16 bytes smem, 376 bytes cmem[0]\n"
+        },
+        "candidate": {
+          "ptx_sha256": "5c6cc8ddb11d88a953339f9a410523ecaea4aeafdfde578a107a9635343b1739",
+          "ptx_bytes": 3290,
+          "ptx_finite_tests": 0,
+          "sass_instructions": 240,
+          "sass_selects": 0,
+          "registers": 16,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_mean_ffcca3' for 'sm_89'\nptxas info    : Function properties for k_mean_ffcca3\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 16 registers, used 1 barriers, 16 bytes smem, 376 bytes cmem[0]\n"
+        }
+      },
+      "changed": false
+    },
+    {
+      "problem": "r04_row_sum",
+      "variants": {
+        "baseline": {
+          "ptx_sha256": "4f977fb553f9e94f3eb002941a5cf3a3a471c6eb0a10b02e92ecf370fc42f633",
+          "ptx_bytes": 3188,
+          "ptx_finite_tests": 0,
+          "sass_instructions": 152,
+          "sass_selects": 0,
+          "registers": 18,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_sum_1_reduce' for 'sm_89'\nptxas info    : Function properties for k_sum_1_reduce\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 18 registers, used 1 barriers, 16 bytes smem, 368 bytes cmem[0]\n"
+        },
+        "candidate": {
+          "ptx_sha256": "4f977fb553f9e94f3eb002941a5cf3a3a471c6eb0a10b02e92ecf370fc42f633",
+          "ptx_bytes": 3188,
+          "ptx_finite_tests": 0,
+          "sass_instructions": 152,
+          "sass_selects": 0,
+          "registers": 18,
+          "assembly_log": "ptxas info    : 0 bytes gmem\nptxas info    : Compiling entry function 'k_sum_1_reduce' for 'sm_89'\nptxas info    : Function properties for k_sum_1_reduce\n    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads\nptxas info    : Used 18 registers, used 1 barriers, 16 bytes smem, 368 bytes cmem[0]\n"
+        }
+      },
+      "changed": false
+    }
+  ]
+}

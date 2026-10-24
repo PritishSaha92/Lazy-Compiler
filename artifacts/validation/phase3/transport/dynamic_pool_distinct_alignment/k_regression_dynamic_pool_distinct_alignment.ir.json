@@ -1,0 +1,49 @@
+{
+  "inputs": [
+    "x"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            4,
+            32
+          ],
+          "dtype": "f32"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='cell', extent=Dim(32), window=None),), body=(Smem(name='left', extents=(8193,), dtype='float', align=16), Smem(name='right', extents=(4097,), dtype='float', align=128), Load(names=('input',), input='x', index=(Literal(value=0, dtype='int'), Var(name='lane')), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='left', index=(BinaryExpr(op='+', left=Literal(value=0, dtype='int'), right=Var(name='lane')),), values=('input',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE'), Load(names=('input',), input='x', index=(Literal(value=1, dtype='int'), Var(name='lane')), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='left', index=(BinaryExpr(op='+', left=Literal(value=8161, dtype='int'), right=Var(name='lane')),), values=('input',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE'), Load(names=('input',), input='x', index=(Literal(value=2, dtype='int'), Var(name='lane')), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='right', index=(BinaryExpr(op='+', left=Literal(value=0, dtype='int'), right=Var(name='lane')),), values=('input',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE'), Load(names=('input',), input='x', index=(Literal(value=3, dtype='int'), Var(name='lane')), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='right', index=(BinaryExpr(op='+', left=Literal(value=4065, dtype='int'), right=Var(name='lane')),), values=('input',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE'), Sync(barrier_id=0, count=None, warp=False), Load(names=('result',), input='left', index=(BinaryExpr(op='+', left=Literal(value=0, dtype='int'), right=BinaryExpr(op='-', left=Literal(value=31, dtype='int'), right=Var(name='lane'))),), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='out', index=(Literal(value=0, dtype='int'), Var(name='lane')), values=('result',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE'), Load(names=('result',), input='left', index=(BinaryExpr(op='+', left=Literal(value=8161, dtype='int'), right=BinaryExpr(op='-', left=Literal(value=31, dtype='int'), right=Var(name='lane'))),), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='out', index=(Literal(value=1, dtype='int'), Var(name='lane')), values=('result',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE'), Load(names=('result',), input='right', index=(BinaryExpr(op='+', left=Literal(value=0, dtype='int'), right=BinaryExpr(op='-', left=Literal(value=31, dtype='int'), right=Var(name='lane'))),), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='out', index=(Literal(value=2, dtype='int'), Var(name='lane')), values=('result',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE'), Load(names=('result',), input='right', index=(BinaryExpr(op='+', left=Literal(value=4065, dtype='int'), right=BinaryExpr(op='-', left=Literal(value=31, dtype='int'), right=Var(name='lane'))),), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='out', index=(Literal(value=3, dtype='int'), Var(name='lane')), values=('result',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE')), block_threads=32, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_dynamic_pool_distinct_alignment",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            4,
+            32
+          ],
+          "dtype": "f32"
+        }
+      ]
+    }
+  }
+}

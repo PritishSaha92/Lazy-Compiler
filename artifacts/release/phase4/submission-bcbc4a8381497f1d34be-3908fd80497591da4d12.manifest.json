@@ -1,0 +1,178 @@
+{
+  "evidence": [
+    {
+      "matched_sources_sha256": {
+        "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+        "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc",
+        "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+      },
+      "original_path": "artifacts/validation/2026-10-24-final/summary.json",
+      "production_identity_fields": {
+        "compiler_sha256": {
+          "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+          "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc",
+          "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+        }
+      },
+      "retained_path": "evidence/8501ccd7f89d1aa34dbe64433289195379945489bb5d72bb9f693401b48e3e06.json",
+      "sha256": "8501ccd7f89d1aa34dbe64433289195379945489bb5d72bb9f693401b48e3e06",
+      "status_flags": {
+        "pass": true
+      }
+    },
+    {
+      "matched_sources_sha256": {
+        "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+        "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc",
+        "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+      },
+      "original_path": "artifacts/validation/phase4/clean-install/summary.json",
+      "production_identity_fields": {
+        "source_sha256": {
+          "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+          "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc",
+          "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+        }
+      },
+      "retained_path": "evidence/aca189fc89912e6314ccb4f7357a175795160bf3d434990932b75e69adf1aeea.json",
+      "sha256": "aca189fc89912e6314ccb4f7357a175795160bf3d434990932b75e69adf1aeea",
+      "status_flags": {
+        "ok": true
+      }
+    },
+    {
+      "matched_sources_sha256": {
+        "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+        "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+      },
+      "original_path": "artifacts/validation/phase4/cpu-regressions.json",
+      "production_identity_fields": {
+        "sources_after_sha256": {
+          "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+          "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+        },
+        "sources_before_sha256": {
+          "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+          "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+        }
+      },
+      "retained_path": "evidence/cb2b70d3a6f27edc62368c1c19ad167f2fdc8cf1624891915b67adf64e044f57.json",
+      "sha256": "cb2b70d3a6f27edc62368c1c19ad167f2fdc8cf1624891915b67adf64e044f57",
+      "status_flags": {
+        "pass": true
+      }
+    },
+    {
+      "matched_sources_sha256": {
+        "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+        "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc",
+        "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+      },
+      "original_path": "artifacts/validation/phase4/public-ptx-identity.json",
+      "production_identity_fields": {
+        "sources_sha256": {
+          "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+          "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc",
+          "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+        }
+      },
+      "retained_path": "evidence/f021ea2c55a74a917851fa39ad5bec249d3e3ab9f17125c7a53e0b7781cb68e7.json",
+      "sha256": "f021ea2c55a74a917851fa39ad5bec249d3e3ab9f17125c7a53e0b7781cb68e7",
+      "status_flags": {
+        "pass": true
+      }
+    },
+    {
+      "matched_sources_sha256": {
+        "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+        "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+      },
+      "original_path": "artifacts/validation/phase4/release-remote/summary.json",
+      "production_identity_fields": {
+        "compiler_sources_after_sha256": {
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\final-compiler\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\final-compiler\\ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+        },
+        "compiler_sources_before_sha256": {
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\final-compiler\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\final-compiler\\ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+        }
+      },
+      "retained_path": "evidence/7bd503dcb83f64ade2e330677df269e6fea09aa26afdccf146da44dc5140b072.json",
+      "sha256": "7bd503dcb83f64ade2e330677df269e6fea09aa26afdccf146da44dc5140b072",
+      "status_flags": {
+        "pass": true
+      }
+    },
+    {
+      "matched_sources_sha256": {
+        "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+        "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+      },
+      "original_path": "artifacts/validation/phase4/semantic-final/summary.json",
+      "production_identity_fields": {
+        "sources_after_sha256": {
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\final-compiler\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\final-compiler\\ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+        },
+        "sources_before_sha256": {
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\final-compiler\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+          "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\final-compiler\\ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+        }
+      },
+      "retained_path": "evidence/2d9d60037c57d59578f8f0219c427a978a6bdfba81dfae40af001590f82fae34.json",
+      "sha256": "2d9d60037c57d59578f8f0219c427a978a6bdfba81dfae40af001590f82fae34",
+      "status_flags": {
+        "pass": true
+      }
+    }
+  ],
+  "extracted_cli_verification": {
+    "argv": [
+      "python",
+      "-B",
+      "compile.py",
+      "<temporary-case>/k_add_pointwise.ir.json"
+    ],
+    "audit": {
+      "blocked_events": [],
+      "guard_enabled": true
+    },
+    "entry": "k_add_pointwise",
+    "extracted_source_sha256": {
+      "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+      "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc",
+      "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+    },
+    "input_path": "problems/p00_scalar_add/k_add_pointwise.ir.json",
+    "ir_sha256": "9b0357857f0b6504ae700e117e3c59f7cb66d9357f394aa81490fc2aea811df8",
+    "metadata_sha256": "e9ede16317b2f085eb6721d37ff9fefcb1ce86c2d8d837aff49a5f936b1affa1",
+    "pass": true,
+    "ptx_bytes": 1524,
+    "ptx_sha256": "c0d81f88369a245e4144ff5e364ed1139349e24a40f8b3ca26f6257b41729a41",
+    "scope": "Real extracted CLI on installed dependencies; no installation, assembly or GPU execution. Python audit guards are regression checks, not an OS sandbox."
+  },
+  "packager_sha256": "41ddc5d9609cd1c1130cb6fcff94a8b195c3411e5b041df07c7ae4f3e592450d",
+  "pass": true,
+  "python_version": "3.12.7",
+  "schema": "emmy-submission-package-v1",
+  "source_identity_sha256": "bcbc4a8381497f1d34beb3de755f9e28734aedd75e69454ea69d7404b5aa45c1",
+  "source_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "zip": {
+    "bytes": 72180,
+    "compression": "stored",
+    "member_mode": "100644",
+    "member_timestamp": "1980-01-01T00:00:00",
+    "members": [
+      "compile.py",
+      "ptx_backend.py",
+      "requirements.txt"
+    ],
+    "path": "submission-bcbc4a8381497f1d34be.zip",
+    "sha256": "b9af6a761233e39b8faa330e1fd01c49e8a457498cb5d3b7e2465ef5403251e8"
+  }
+}

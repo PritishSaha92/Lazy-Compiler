@@ -1,0 +1,490 @@
+{
+  "manifest_version": 1,
+  "frozen_utc": "2026-10-22T18:50:25.105316+00:00",
+  "split_name": "held-out-2026-10-23",
+  "compiler_evaluated_before_freeze": false,
+  "policy_tuning_on_this_split": false,
+  "baseline_compiler_sources_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "3e68e17421a6f620eb95f29395989eda26f695683d353c4f2b3c28194a46c36b"
+  },
+  "generation_target": "sm_89",
+  "package_versions": {
+    "emmy-ml": "0.3.11",
+    "numpy": "1.26.4",
+    "torch": "2.9.1+cu126"
+  },
+  "workload_count": 18,
+  "kernel_count": 18,
+  "category_counts": {
+    "pointwise": 3,
+    "reduction": 4,
+    "matmul": 4,
+    "fused": 4,
+    "attention": 3
+  },
+  "correctness_cases": [
+    {
+      "seed_offset": 37,
+      "pattern": "normal"
+    },
+    {
+      "seed_offset": 89,
+      "pattern": "normal"
+    },
+    {
+      "seed_offset": 137,
+      "pattern": "wide"
+    }
+  ],
+  "workloads": [
+    {
+      "id": "hold_p01_broadcast_tanh",
+      "category": "pointwise",
+      "family": "two-axis broadcast with nonlinear epilogue",
+      "kernels": 1,
+      "entries": [
+        "k_tanh_pointwise"
+      ],
+      "rtol": 0.0001,
+      "atol": 1e-05,
+      "graph_inputs": [
+        "x",
+        "w",
+        "b"
+      ],
+      "graph_outputs": [
+        "tanh"
+      ]
+    },
+    {
+      "id": "hold_p02_absolute_difference_3d",
+      "category": "pointwise",
+      "family": "three-dimensional two-branch pointwise composition",
+      "kernels": 1,
+      "entries": [
+        "k_add_pointwise"
+      ],
+      "rtol": 0,
+      "atol": 0,
+      "graph_inputs": [
+        "x",
+        "y"
+      ],
+      "graph_outputs": [
+        "add"
+      ]
+    },
+    {
+      "id": "hold_p03_rational_gate",
+      "category": "pointwise",
+      "family": "odd-extent rational and sigmoid composition",
+      "kernels": 1,
+      "entries": [
+        "k_mul_1_pointwise"
+      ],
+      "rtol": 0.0001,
+      "atol": 1e-05,
+      "graph_inputs": [
+        "x",
+        "y"
+      ],
+      "graph_outputs": [
+        "mul_1"
+      ]
+    },
+    {
+      "id": "hold_r01_column_sum",
+      "category": "reduction",
+      "family": "noncontiguous column reduction",
+      "kernels": 1,
+      "entries": [
+        "k_sum_1_reduce"
+      ],
+      "rtol": 0.0001,
+      "atol": 0.0001,
+      "graph_inputs": [
+        "x"
+      ],
+      "graph_outputs": [
+        "sum_1"
+      ]
+    },
+    {
+      "id": "hold_r02_row_mean_square",
+      "category": "reduction",
+      "family": "mean-square reduction over an odd row width",
+      "kernels": 1,
+      "entries": [
+        "k_mean_ecc898"
+      ],
+      "rtol": 0.0001,
+      "atol": 0.0001,
+      "graph_inputs": [
+        "x"
+      ],
+      "graph_outputs": [
+        "mean"
+      ]
+    },
+    {
+      "id": "hold_r03_row_inner_product",
+      "category": "reduction",
+      "family": "odd-width two-input product reduction",
+      "kernels": 1,
+      "entries": [
+        "k_sum_1_reduce"
+      ],
+      "rtol": 0.001,
+      "atol": 0.001,
+      "graph_inputs": [
+        "x",
+        "y"
+      ],
+      "graph_outputs": [
+        "sum_1"
+      ]
+    },
+    {
+      "id": "hold_r04_column_max",
+      "category": "reduction",
+      "family": "odd-height noncontiguous maximum",
+      "kernels": 1,
+      "entries": [
+        "k_amax_reduce"
+      ],
+      "rtol": 0,
+      "atol": 0,
+      "graph_inputs": [
+        "x"
+      ],
+      "graph_outputs": [
+        "amax"
+      ]
+    },
+    {
+      "id": "hold_m01_long_reduction",
+      "category": "matmul",
+      "family": "long-K narrow-output matrix product",
+      "kernels": 1,
+      "entries": [
+        "k_matmul_ab135c"
+      ],
+      "rtol": 0.001,
+      "atol": 0.001,
+      "graph_inputs": [
+        "x0",
+        "x1"
+      ],
+      "graph_outputs": [
+        "matmul"
+      ]
+    },
+    {
+      "id": "hold_m02_tall_thin",
+      "category": "matmul",
+      "family": "tall-thin matrix product",
+      "kernels": 1,
+      "entries": [
+        "k_matmul"
+      ],
+      "rtol": 0.001,
+      "atol": 0.001,
+      "graph_inputs": [
+        "x0",
+        "x1"
+      ],
+      "graph_outputs": [
+        "matmul"
+      ]
+    },
+    {
+      "id": "hold_m03_wide_output",
+      "category": "matmul",
+      "family": "short-wide matrix product",
+      "kernels": 1,
+      "entries": [
+        "k_matmul"
+      ],
+      "rtol": 0.001,
+      "atol": 0.001,
+      "graph_inputs": [
+        "x0",
+        "x1"
+      ],
+      "graph_outputs": [
+        "matmul"
+      ]
+    },
+    {
+      "id": "hold_m04_bias_relu",
+      "category": "matmul",
+      "family": "matrix product with broadcast bias and activation",
+      "kernels": 1,
+      "entries": [
+        "k_matmul_45ee83"
+      ],
+      "rtol": 0.001,
+      "atol": 0.001,
+      "graph_inputs": [
+        "a",
+        "b",
+        "c"
+      ],
+      "graph_outputs": [
+        "relu"
+      ]
+    },
+    {
+      "id": "hold_f01_centered_affine",
+      "category": "fused",
+      "family": "mean-centered normalization with learned affine transform",
+      "kernels": 1,
+      "entries": [
+        "k_mean_reduce_e2dbd4"
+      ],
+      "rtol": 0.001,
+      "atol": 0.0001,
+      "graph_inputs": [
+        "x",
+        "w",
+        "b"
+      ],
+      "graph_outputs": [
+        "add_1"
+      ]
+    },
+    {
+      "id": "hold_f02_residual_l2_weight",
+      "category": "fused",
+      "family": "residual addition before L2 normalization and broadcast weight",
+      "kernels": 1,
+      "entries": [
+        "k_mul_1_reduce"
+      ],
+      "rtol": 0.001,
+      "atol": 0.0001,
+      "graph_inputs": [
+        "x",
+        "r",
+        "w"
+      ],
+      "graph_outputs": [
+        "mul_1"
+      ]
+    },
+    {
+      "id": "hold_f03_weighted_softmax_sum",
+      "category": "fused",
+      "family": "scaled online normalizer feeding a weighted reduction",
+      "kernels": 1,
+      "entries": [
+        "k_softmax_86069b"
+      ],
+      "rtol": 0.001,
+      "atol": 0.0001,
+      "graph_inputs": [
+        "x",
+        "g"
+      ],
+      "graph_outputs": [
+        "sum_1"
+      ]
+    },
+    {
+      "id": "hold_f04_rms_sigmoid_gate",
+      "category": "fused",
+      "family": "RMS normalization composed with sigmoid gating",
+      "kernels": 1,
+      "entries": [
+        "k_mean_2b1a0c"
+      ],
+      "rtol": 0.001,
+      "atol": 0.0001,
+      "graph_inputs": [
+        "x"
+      ],
+      "graph_outputs": [
+        "div"
+      ]
+    },
+    {
+      "id": "hold_a01_long_context",
+      "category": "attention",
+      "family": "long-context narrow rectangular attention",
+      "kernels": 1,
+      "entries": [
+        "k_matmul_softmax_reduce_abf187"
+      ],
+      "rtol": 0.001,
+      "atol": 0.0001,
+      "graph_inputs": [
+        "q",
+        "kt",
+        "v"
+      ],
+      "graph_outputs": [
+        "matmul_1"
+      ]
+    },
+    {
+      "id": "hold_a02_long_query",
+      "category": "attention",
+      "family": "long-query short-context rectangular attention",
+      "kernels": 1,
+      "entries": [
+        "k_matmul_softmax_reduce_8b46c8"
+      ],
+      "rtol": 0.001,
+      "atol": 0.0001,
+      "graph_inputs": [
+        "q",
+        "kt",
+        "v"
+      ],
+      "graph_outputs": [
+        "matmul_1"
+      ]
+    },
+    {
+      "id": "hold_a03_attention_residual",
+      "category": "attention",
+      "family": "rectangular attention with scaled residual epilogue",
+      "kernels": 1,
+      "entries": [
+        "k_matmul_softmax_reduce_396951"
+      ],
+      "rtol": 0.001,
+      "atol": 0.0001,
+      "graph_inputs": [
+        "q",
+        "kt",
+        "v",
+        "r"
+      ],
+      "graph_outputs": [
+        "add"
+      ]
+    }
+  ],
+  "files_sha256": {
+    "hold_p01_broadcast_tanh/expected.npz": "1158db7120e0f340f1d138fedc225e38394cf792396b8d254c3c44bd37cd67d3",
+    "hold_p01_broadcast_tanh/k_tanh_pointwise.ir.json": "e5de4289c6e9628fc4fd1e192d99e6d28027624f9237c52d917b37d7a8080325",
+    "hold_p01_broadcast_tanh/k_tanh_pointwise.ir.txt": "b83012f6787942fc9b1cdd046b117db98f790d21be645e05c211e91cd122b46c",
+    "hold_p01_broadcast_tanh/k_tanh_pointwise.ref.cu": "5b9829facc63caddce74aedf19effaae8b4a6afafe8e530a909affadfe419f70",
+    "hold_p01_broadcast_tanh/meta.json": "e552c771de1488759946be278f335485fc1a3b2ba1a9db2cc0025135d021cdbd",
+    "hold_p02_absolute_difference_3d/expected.npz": "33caf9c8f1e097140b72d76db25b64af3fe486d1a00de40c4b3684e11a8d0b55",
+    "hold_p02_absolute_difference_3d/k_add_pointwise.ir.json": "da0b82732e738f5764c93461d47b0ef037fe0a40b42be44fa3ec84d4da184232",
+    "hold_p02_absolute_difference_3d/k_add_pointwise.ir.txt": "bc0c1d115a489109cc043d8035af306b101addbd01dc0f074fd028e244c78886",
+    "hold_p02_absolute_difference_3d/k_add_pointwise.ref.cu": "e5dfeb78aa08e70e2b653c640cd8b4fd58c98c2359fce9c309af1ad9a6f3b465",
+    "hold_p02_absolute_difference_3d/meta.json": "b7a2f4fca7e6cfb7ee2a5163cabbe029b26de3c90de20e0eb13e2917ee823c93",
+    "hold_p03_rational_gate/expected.npz": "2055ec3e00ae2536536c47f65f6c71cc5f1001cac2408d7e71d7841f575a800a",
+    "hold_p03_rational_gate/k_mul_1_pointwise.ir.json": "5216353301e9db856e086b2f268aa8127263d8403e0702d5b5332873e4a80659",
+    "hold_p03_rational_gate/k_mul_1_pointwise.ir.txt": "c6d9a8631974d9547bbe1f2886fb04fabc748eedc24e8b45723126d27c66635f",
+    "hold_p03_rational_gate/k_mul_1_pointwise.ref.cu": "181078dc4bb554c20097aae0790a131702a8422705763d259ce7824bb41f1a72",
+    "hold_p03_rational_gate/meta.json": "d2e4660a2130f0c867fd8c2aca4afe286944d0d4f25b0ed6fc01b914933be334",
+    "hold_r01_column_sum/expected.npz": "39c7f4b3cd3d0a1672438e0702108fd9614155493887f08edc88bd34564f32fa",
+    "hold_r01_column_sum/k_sum_1_reduce.ir.json": "d658c2b62fea22489e73d70d10e0488cbea0b6fd8b2461e4fa5e8048d7bbff1a",
+    "hold_r01_column_sum/k_sum_1_reduce.ir.txt": "acb7ec1a33125a49c4a61a2cd50e70df7951f3744805a8e12f862a877df223a2",
+    "hold_r01_column_sum/k_sum_1_reduce.ref.cu": "b16ed1cc1f0729741ceaae9599da80edd49f0c15af88e07f00fd5e51ee959d26",
+    "hold_r01_column_sum/meta.json": "be2a6189eb94745a92d9c73de67a53b55fff04911f259c38b941afe001fff08d",
+    "hold_r02_row_mean_square/expected.npz": "1318601409b5f106a3f3526c0b4dc1e40231a084f28fee7eadfb1edfa7f98ea5",
+    "hold_r02_row_mean_square/k_mean_ecc898.ir.json": "fa628be6b36e115dc84ba6224b62749d237fd41665866419ae322377a6d1d502",
+    "hold_r02_row_mean_square/k_mean_ecc898.ir.txt": "98aa363a0d381185318296cf5ce599a22ac5667986235f2aa3c1dbf4bed76261",
+    "hold_r02_row_mean_square/k_mean_ecc898.ref.cu": "f1503228a312d28112c46eb9de82d141427f4125ce6be9f42e22a4f2cbdd3693",
+    "hold_r02_row_mean_square/meta.json": "62b3c7c1ed369dc3f751532365309ee10f0aea5b9d92e6bf3153491dbdcd11b6",
+    "hold_r03_row_inner_product/expected.npz": "3ff2d9d6e76c20dfa1601fd11c2a2f6034619d4085fe7717fa8ebb0414fe441e",
+    "hold_r03_row_inner_product/k_sum_1_reduce.ir.json": "32b3d45b5ae4104a96ff4c0ebf0f87cee8aae3f859f766d256e39ac705b6e652",
+    "hold_r03_row_inner_product/k_sum_1_reduce.ir.txt": "cad385e9334e74850704c228b51b5a98df77839b0f13e1457a182fe428a1a166",
+    "hold_r03_row_inner_product/k_sum_1_reduce.ref.cu": "b932ad8c03b913c4b7e45a3e9b743aabab9246a447223e4911496702da76cf71",
+    "hold_r03_row_inner_product/meta.json": "7e3629f09a1582d8921d7391eae9a293d8759bbb8537f88058a81de1853ba88f",
+    "hold_r04_column_max/expected.npz": "81e0ef7e3a0be383ebcaf039c3e5bcfafa25d75422c66b8a375fd18bb2f6cd16",
+    "hold_r04_column_max/k_amax_reduce.ir.json": "0d6eff8cf4a26083e48fab3c12251bc32bbb09b7f4f1530f71ee261dfb417f17",
+    "hold_r04_column_max/k_amax_reduce.ir.txt": "543be9a6a96f081347986e0d355e824ed445b54238c0cf1d65b6671547084708",
+    "hold_r04_column_max/k_amax_reduce.ref.cu": "2c075bcdeb474ba05151d28a8757375506d4b012d577e3151678304babf41947",
+    "hold_r04_column_max/meta.json": "e98fb94b6479a65a54d09dd941b885f48ea90d3c64cbaf8b6df84139010f7fb8",
+    "hold_m01_long_reduction/expected.npz": "4215922a287dc9ee561f40984f320c8ae03b6b351bc22b0f95d82020098cc6bb",
+    "hold_m01_long_reduction/k_matmul_ab135c.ir.json": "f6da52f95e1d7b589917bea132add56799d6158304220e0798ab9b7f1ad8f451",
+    "hold_m01_long_reduction/k_matmul_ab135c.ir.txt": "829566389cf65959e40746d72fb0e8cbb066ae30b78f5d7e078f6917cd81be49",
+    "hold_m01_long_reduction/k_matmul_ab135c.ref.cu": "771fb7106638335aabc6e437a620f508463321effc7dd1c5a884960eeaae7eaa",
+    "hold_m01_long_reduction/meta.json": "4dc56c5eddb2f17e48b8791bde929eab13d3a012f73611b5339fbfc6f7f9377a",
+    "hold_m02_tall_thin/expected.npz": "a934300e326fc5730aaea5ed4eed21a8a14a948a6049ac55a32e96842a24537c",
+    "hold_m02_tall_thin/k_matmul.ir.json": "dec5c505c365431108615bb04156816586af2cf18814b76909c59745a687ec69",
+    "hold_m02_tall_thin/k_matmul.ir.txt": "ead4be6ea95225c3f95a3807d3476eab7016c0cc30a4288e90d929c54909ac95",
+    "hold_m02_tall_thin/k_matmul.ref.cu": "7a75ce633df9b6ef510d982b2f7b24a1b9cee2c25173e998bdc046f68e92a77f",
+    "hold_m02_tall_thin/meta.json": "5d8b9f7e7c1152527d2249e7c3593274a21c6d4d9c65fd52c1206e72611c5346",
+    "hold_m03_wide_output/expected.npz": "9b5ec4772137b8ee797c1559daaa86a3fe08850b970d7f9ba537444239cbc5a1",
+    "hold_m03_wide_output/k_matmul.ir.json": "35a48b7a2500c6ada44aefc212be5caa7f10dd3c826e28ccfcf2a1294c85f3c8",
+    "hold_m03_wide_output/k_matmul.ir.txt": "8d8b8036fb81d783f408aca6fd77a70642c180bf49bea738fedda2fc1eec7e6e",
+    "hold_m03_wide_output/k_matmul.ref.cu": "bc38fc03e9e9da36e9737e8dd259d94cdfa07737016df7747b0e0468506ce6a1",
+    "hold_m03_wide_output/meta.json": "dbe52081a970477808b5e90956eb9bd31ecc6e2afa0b2cee3e2ae9f592ec233e",
+    "hold_m04_bias_relu/expected.npz": "87daf4b2070077802217d62921325170204294c378f954b95fc7c87e213cda82",
+    "hold_m04_bias_relu/k_matmul_45ee83.ir.json": "e087d2f1d9b98d445015c406ad631e6f346f0b86b8f8e14602630e56a0296596",
+    "hold_m04_bias_relu/k_matmul_45ee83.ir.txt": "254b500a9315e29e345e53d4519fa5dac4fd9e52274edb4e0bfe964f970a0db6",
+    "hold_m04_bias_relu/k_matmul_45ee83.ref.cu": "7e1ab8d987f767fb072e4b4bb87c57dffadcf3dbc3474ff90786fa84ba34bbb2",
+    "hold_m04_bias_relu/meta.json": "d7c80b24460dcfd1556435d2c2046a8b544761b7a17342ac8784319b500cb9fb",
+    "hold_f01_centered_affine/expected.npz": "2212e5ffdf3583763e1344d1386d8212bdb970103d8777f08bf0d8466ee7c2f8",
+    "hold_f01_centered_affine/k_mean_reduce_e2dbd4.ir.json": "25ef038382ff960105a5cf558254920f4f3ee8b85b4203a5001e25bd40b13073",
+    "hold_f01_centered_affine/k_mean_reduce_e2dbd4.ir.txt": "3a2b612f77d97ffa84da70102e8f6494ce201ba92f0dd2d40769af75302b6251",
+    "hold_f01_centered_affine/k_mean_reduce_e2dbd4.ref.cu": "dbbd32a35c2e943d70c514698edc7962671d2c5ad0f323d8caef25b4219f5da6",
+    "hold_f01_centered_affine/meta.json": "9ed43fd4b93d3317843fa87095752330854997e975ecbc4722f71ad41de15575",
+    "hold_f02_residual_l2_weight/expected.npz": "0d07eb0c401a24aae1556fd0830d2e74328f49f9919764219799987309845408",
+    "hold_f02_residual_l2_weight/k_mul_1_reduce.ir.json": "c9599a2120e50846a7179aa5a0a86d23f0496274668f788cf178f9714e2139a4",
+    "hold_f02_residual_l2_weight/k_mul_1_reduce.ir.txt": "f644c77d5feb61e0d9202a5a16495147e67bbcec83ef5c6e9de59684b100b165",
+    "hold_f02_residual_l2_weight/k_mul_1_reduce.ref.cu": "dbf4841521cf4221c2f05d86b3756363da560eea2cce6f08f7ffd88e42e73878",
+    "hold_f02_residual_l2_weight/meta.json": "6768806b605dd158c70ccb28446dce0604c37cbdd39ce7b145409c2406b6f07b",
+    "hold_f03_weighted_softmax_sum/expected.npz": "4283dfd7296e8839c698b6e13df0e9503457d14994a6ea33a1212decb8025354",
+    "hold_f03_weighted_softmax_sum/k_softmax_86069b.ir.json": "e18474393ebbc4731b2ce5668ec9edc57325bcd0b965e08b235868eebfe5c847",
+    "hold_f03_weighted_softmax_sum/k_softmax_86069b.ir.txt": "fe5f4c650cd43a28f07b7047f78d9e6112b9c8c5d4b6ee7da0c92fcd72c5ccea",
+    "hold_f03_weighted_softmax_sum/k_softmax_86069b.ref.cu": "a9bb6ad0122498ed8c88643ec36ffc34cf84adbccbdbfafa508f703eb16bfd03",
+    "hold_f03_weighted_softmax_sum/meta.json": "7809bc09886c43b8c92d8ed38d00f3919e330be9440950506e80833eb8ef458f",
+    "hold_f04_rms_sigmoid_gate/expected.npz": "47c748d45051021d3054ad781954434a7d533c860cfc79312aff191e04831c05",
+    "hold_f04_rms_sigmoid_gate/k_mean_2b1a0c.ir.json": "357d3a503917a16b2d9018e810dca55f30efdcf09048b0b1933087b345c8c575",
+    "hold_f04_rms_sigmoid_gate/k_mean_2b1a0c.ir.txt": "4bfb79017e3a4ac4a82999d7000f2a879466206640a371f15b52d7b630a219c3",
+    "hold_f04_rms_sigmoid_gate/k_mean_2b1a0c.ref.cu": "64caf2c68a45d554a27ae803357b40d12f304a24727e479aade177919cd66702",
+    "hold_f04_rms_sigmoid_gate/meta.json": "cd4171ce16abc65fa43794b5666881d840dea3c1e66895b0a446a9a29f43cf40",
+    "hold_a01_long_context/expected.npz": "e99905e495a7ad4058ddbf4e1edc7cf9564bed8b4ea8840f5105f5a1ced4c71e",
+    "hold_a01_long_context/k_matmul_softmax_reduce_abf187.ir.json": "401ccddcd9e84f8764e8031543261378773542eb98ad23a30c4da4b2e87d6cde",
+    "hold_a01_long_context/k_matmul_softmax_reduce_abf187.ir.txt": "249ccc0f7428f59c8e24e15b7eac4daa2e79e856f51d564e95e1a6f20e44548f",
+    "hold_a01_long_context/k_matmul_softmax_reduce_abf187.ref.cu": "e4816879785738fe7518b42054e8c77aac9aeb7c3483e227ca6a213ebccd79c5",
+    "hold_a01_long_context/meta.json": "0bde45d4209c5002da13d1efec17c3dc364b336886b7f4e9fad6f776d839377f",
+    "hold_a02_long_query/expected.npz": "dc9d45c0ec34c95fba1d82cc7a44af6e7285ed37ed9906b61fab4b104a109b20",
+    "hold_a02_long_query/k_matmul_softmax_reduce_8b46c8.ir.json": "1e11f01a4bd22fffae41d922d8228abec4c97f337b07315ef2bd3ed80e04e1cf",
+    "hold_a02_long_query/k_matmul_softmax_reduce_8b46c8.ir.txt": "e5312206fd81db93139fae8e0a6ca1f3666cd39533c69c10abf4ca314e5c7b9d",
+    "hold_a02_long_query/k_matmul_softmax_reduce_8b46c8.ref.cu": "2f9d118a3915bc98c94f5ecf42c62542218a6889c2f9fb5172d6c6b28abd6091",
+    "hold_a02_long_query/meta.json": "53b49fb3e65fb2742335c92124cc52bdce3c4893944eef005c3b41f887405c4e",
+    "hold_a03_attention_residual/expected.npz": "06744f32355c406f33428f72bc4b075b7978a074ad5cd83f25c33e23a16478c5",
+    "hold_a03_attention_residual/k_matmul_softmax_reduce_396951.ir.json": "3278cd7a5843e6379b2a27a85da71d274719edc1e886992ee004aaead991fbb8",
+    "hold_a03_attention_residual/k_matmul_softmax_reduce_396951.ir.txt": "b4c9ba3ebfaa251f1011ee7c5ade546441e24878476d994d0072d6acb12287d2",
+    "hold_a03_attention_residual/k_matmul_softmax_reduce_396951.ref.cu": "742f0f283660ce46d050b1d6126b3ca1ab3991f6d7a17c6a21a7a880ef397433",
+    "hold_a03_attention_residual/meta.json": "726aa893dbbe814db1e799113a79deced38b58e2e2e4cdc23c0f2d42da82e55a",
+    "protocol-source-freeze.json": "3ae1c7e126f0f4c9c55aceb552aa59446cfa0f5057c5ce08d222843456c55c31",
+    "generation.json": "f68973c58b96167cbea35488d36b7a3a60963d15595c2ed2a4d22c3d7b7882ad",
+    "generation.log": "b93057a16693adfaa53eb50429f638c276e1f2c627e026591281d8c78e87a4e3",
+    "reference-sanity.json": "49aa12f7b15689a127547eca0b987b43ab8c6ba81830395f1a1707febf390add",
+    "README.md": "041339351c36eeebf98ac324fb31d32ceb24bfd37f9e4dc253e7f116d8cc1292",
+    "generation-attempt1.json": "8d1ba2d8ef7132386b2beb89815786d07dd497c52a23ff3e734452f988351a2d",
+    "generation-attempt2.json": "73e3cbbcd1f4c81b978682d3edfa1b41944e871e4102e136a28cf12eb68efe7b",
+    "generation-attempt3.json": "6ae7128bbdb0edaf8a2765ec434b35cda5b73fd4dba2a59e40d9c7bfa025ea41",
+    "generation-attempt4.json": "0c6c5eda7d66945f1fdd93aed746e6fb2d135b951dfd5ac9990aa279c02a643e",
+    "reference-sanity-attempt1.json": "49c5235ed60e2287cd921ba1407fcc5bee0c9f1c3a6f3e086417b7a929dcbb31",
+    "reference-sanity-attempt2.json": "da3135159701f96ff45df3756f78aadfc689b49df71cc7b4bb1fc8c67596d6f9",
+    "generation-attempt1.log": "1677feddb0d0889063f990341d7300a58ca83b10d845d58fc11dc9455cd18fbc",
+    "generation-attempt2.log": "fdffa0d878d6734b59c5ada7a174c189408d7032a01762e1a7da65f8627e4656",
+    "generation-attempt3.log": "506f2aa652e9e76ad415d5807c06c5655af0d8fb68f3b282a243247535212c59",
+    "generation-attempt4.log": "c98a6f65a5367998fa31e06b5eeb18ff3b46d86dae56cebfdd6309908bd624d8",
+    "generation-repairs.json": "5e6360cd4467bce3d323669fac3f92cf6433fb521f49c70c94ed383441594bcd"
+  },
+  "test_sources_sha256": {
+    "tests/expressions_holdout.py": "a220788ab8b5f62685a60a5b0be383e5de6c93c7bedcb000af7d1469dba211a6",
+    "tests/generate_stress.py": "b90f9b7f377385f3a7c56da615fc1c408e0e381927d0fdc81cb42ab4536b57e3",
+    "tests/check_holdout_references.py": "003f037f8f4ddb9473e3d38b0d5ae1776c527c7a5394bc278d63d86140474576",
+    "tests/freeze_holdout.py": "9f315650075a60e6e54a69e5fc33d08b1e95b6793c8a422a4d91bd32eaefa7d6",
+    "tools/generate.py": "841be781022059907a18acb0673c1bc1b206826d22043fe6521ec14ee9840b1b"
+  },
+  "limitations": [
+    "Synthetic public-semantic workloads are not the organizer hidden set.",
+    "References were checked on CPU only; no PTX correctness or performance is implied by generation success.",
+    "Any policy update using these evaluation results must disclose this split as development data."
+  ]
+}

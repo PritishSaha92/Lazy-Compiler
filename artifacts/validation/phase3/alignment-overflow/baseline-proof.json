@@ -1,0 +1,62 @@
+{
+  "baseline_sha256": "b9a3d6e3ac163534218845063142565c826184604ba69afa469a04e22b20f32b",
+  "candidate_sha256": "4f677f169211e8bdbce343bef15db9e4a6046a34abae6b6ee4000d7000273255",
+  "cases": [
+    {
+      "id": "overflow_alignment_u32_scalar",
+      "baseline_has_vector": false,
+      "candidate_has_vector": true,
+      "expected_flat_indices": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "minimum_alignment_bytes": 4,
+      "v2_requires_alignment_bytes": 8,
+      "gpu_execution": false
+    },
+    {
+      "id": "overflow_alignment_u32_grouped",
+      "baseline_has_vector": true,
+      "candidate_has_vector": true,
+      "expected_flat_indices": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "minimum_alignment_bytes": 4,
+      "v2_requires_alignment_bytes": 8,
+      "gpu_execution": false
+    },
+    {
+      "id": "overflow_alignment_u64_scalar",
+      "baseline_has_vector": false,
+      "candidate_has_vector": true,
+      "expected_flat_indices": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "minimum_alignment_bytes": 4,
+      "v2_requires_alignment_bytes": 8,
+      "gpu_execution": false
+    },
+    {
+      "id": "overflow_alignment_u64_grouped",
+      "baseline_has_vector": true,
+      "candidate_has_vector": true,
+      "expected_flat_indices": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "minimum_alignment_bytes": 4,
+      "v2_requires_alignment_bytes": 8,
+      "gpu_execution": false
+    }
+  ]
+}

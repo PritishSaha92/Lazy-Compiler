@@ -1,0 +1,50 @@
+{
+  "inputs": [
+    "x"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            5,
+            7,
+            32
+          ],
+          "dtype": "f32"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='physical', extent=Dim(2240), window=None),), body=(Tile(axes=(Axis(name='batch', extent=Dim(2), window=None), Axis(name='m', extent=Dim(5), window=None), Axis(name='n', extent=Dim(7), window=None), Axis(name='cell', extent=Dim(32), window=None)), body=(Load(names=('value',), input='x', index=(Var(name='batch'), Var(name='m'), Var(name='n'), Var(name='cell')), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='out', index=(Var(name='physical'),), values=('value',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE')), block_threads=32, aux_threads=0, raster_axes=('m', 'n'), raster_group=3, raster_orient='m'),), block_threads=32, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_raster_rectangular_tail_m",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            2240
+          ],
+          "dtype": "f32"
+        }
+      ]
+    }
+  }
+}

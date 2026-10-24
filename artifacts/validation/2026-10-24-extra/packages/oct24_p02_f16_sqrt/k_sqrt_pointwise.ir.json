@@ -1,0 +1,72 @@
+{
+  "inputs": [
+    "x"
+  ],
+  "outputs": [
+    "sqrt"
+  ],
+  "nodes": {
+    "add_c1": {
+      "op": "ConstantOp",
+      "op_fields": {
+        "name": "add_c1",
+        "value": 0.5,
+        "context_value": null,
+        "load_ops": [],
+        "source_path": null,
+        "source_parts": [],
+        "source_shape": null,
+        "source_dtype": null,
+        "source_graph": null
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "add_c1",
+          "shape": [
+            1
+          ],
+          "dtype": "f16"
+        }
+      ]
+    },
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            1031
+          ],
+          "dtype": "f16"
+        }
+      ]
+    },
+    "sqrt": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='a0', extent=Dim(1031), window=None),), body=(Load(names=('in1',), input='x', index=(Var(name='a0'),), dtype=DataType(name='f16', np=dtype('float16'), nbytes=2)), Assign(name='v0', op=ElementwiseImpl('abs'), args=('in1',), dtype=DataType(name='f16', np=dtype('float16'), nbytes=2)), Load(names=('in0',), input='add_c1', index=(Literal(value=0, dtype='int'),), dtype=DataType(name='f16', np=dtype('float16'), nbytes=2)), Assign(name='v1', op=ElementwiseImpl('add'), args=('in0', 'v0'), dtype=DataType(name='f16', np=dtype('float16'), nbytes=2)), Assign(name='v2', op=ElementwiseImpl('sqrt'), args=('v1',), dtype=DataType(name='f16', np=dtype('float16'), nbytes=2)), Write(output='sqrt', index=(Var(name='a0'),), values=('v2',), value_dtype=DataType(name='f16', np=dtype('float16'), nbytes=2), atomic=False, swizzle='NONE')), block_threads=None, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_sqrt_pointwise",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "add_c1",
+        "x"
+      ],
+      "outputs": [
+        {
+          "name": "sqrt",
+          "shape": [
+            1031
+          ],
+          "dtype": "f16"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "pass": true,
+  "tests_run": 28,
+  "skipped": 0,
+  "seconds": 238.9694865999918,
+  "source_report": "release-local.json",
+  "source_report_sha256": "896ee6dd9ff050db6b422ff9097d9d5e6f4ec9eae16cc22b959f040c0e5eda27",
+  "original_wrapper_status": false,
+  "original_test_result": "28 methods passed, no skips or test failures",
+  "changed_nonexecuted_files": [
+    "tests\\evaluate_holdout.py"
+  ],
+  "executed_test_and_compiler_sources_unchanged": true,
+  "compiler_sources_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "0373bbc64340ae37274a67a92deb7320915ff4aa5cef97a231b3ac1ec7a2cc59"
+  },
+  "scope": "The original broad directory fingerprint flagged a concurrent edit to the standalone holdout evaluation script. Unittest discovers test_*.py, and none of the suite or compiler imports evaluate_holdout. All executable test fixtures, helper ir_cases.py, and compiler source hashes were unchanged. The original FAIL wrapper report is retained; this review validates its unchanged-code numerical/assembly results without rerunning unchanged GPU programs."
+}

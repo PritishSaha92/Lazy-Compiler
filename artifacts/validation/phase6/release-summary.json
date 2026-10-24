@@ -1,0 +1,202 @@
+{
+  "schema": "emmy-phase6-release-v1",
+  "pass": true,
+  "created_utc": "2026-10-24T18:16:31.204717+00:00",
+  "source_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "c718b8d2ec156626e4c74eb246632b0d430235bcf11f25e2643b4e8c185c6df6",
+    "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+    "ptx_bulk.py": "ab63f516681e78e06f4b7403b24018c60c8119b8c92c34f00236d74806406c65",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "scope": "Current-source release gates after DeepInfer/MoK review. Counts describe this release run only; historical failures remain unchanged.",
+  "changes": [
+    "Reject native CpAsyncCopy/Commit/Wait below SM80; preserve explicitly requested synchronous fallback.",
+    "Three independently referenced multiwrap ring pipelines and same-process compilation isolation tests.",
+    "Research review, exact reading coverage and refreshed submission documentation."
+  ],
+  "organizer_gpu": {
+    "public_checks": 15,
+    "public_passes": 15,
+    "feature_checks": 29,
+    "feature_passes": 29,
+    "total_checks": 44,
+    "total_passes": 44,
+    "local_gpu_used": false
+  },
+  "feature_roster": {
+    "typed_tensor_examples": 17,
+    "typed_bulk_examples": 6,
+    "typed_combined_examples": 2,
+    "unchanged_emmy_generated_ragged_matmul": 1,
+    "multiwrap_ring_pipelines": 3
+  },
+  "cpu": {
+    "methods": 117,
+    "passed": 99,
+    "explicit_local_gpu_skips": 18
+  },
+  "clean_install": {
+    "packages": 14,
+    "successful_compilations": 42,
+    "expected_diagnostics": 3
+  },
+  "baseline_ptx_identity": {
+    "retained_scalar_modules": 120,
+    "prior_feature_modules": 26,
+    "prior_features": [
+      {
+        "id": "bulk_linear_f64",
+        "ptx_sha256": "4557640efb8b4e69c66958864621f7334b3eb14a2db77869a8d3001412ac2749"
+      },
+      {
+        "id": "bulk_linear_multi_cta",
+        "ptx_sha256": "60ec6eceaa1aad0ddc8171b04a8d6a4a44194697bc0313717b99a179e70d9308"
+      },
+      {
+        "id": "bulk_phase_reuse",
+        "ptx_sha256": "8d7c07b8c71ab61d04c2924d077741f9c98735323be35c43e14d06ee5e740df7"
+      },
+      {
+        "id": "bulk_rank5_crop",
+        "ptx_sha256": "c3612a1121d1ab52178e61dbc95d853ea628cb43b235c8c916578cd870d2698b"
+      },
+      {
+        "id": "bulk_rectangle",
+        "ptx_sha256": "7c83b10ad0e13b386df43c75dd0f5e93b6b127a8242f152d7e550e11cd5515d3"
+      },
+      {
+        "id": "bulk_ring_slots",
+        "ptx_sha256": "ea067c68a8ed8933fbd1566d8f3a93ca7f8c30f354d4a0054c8614151aa5667c"
+      },
+      {
+        "id": "bulk_tensor_k48_bias_relu_transposed",
+        "ptx_sha256": "f7b2fbc72438617c28dcb0142afd7d5a4b3292f131e8d84e87466013f89380ba"
+      },
+      {
+        "id": "bulk_tensor_k48_f16",
+        "ptx_sha256": "0dda8545618bf38532c8f0bb0167566d016106b3cd75a49e402ff3321102d7f0"
+      },
+      {
+        "id": "generated_tensor",
+        "ptx_sha256": "fc734fa4d5b83a7964fde0bfc458ef474ac546652c3a77de749134b3b046354f"
+      },
+      {
+        "id": "tensor_atomic_f32",
+        "ptx_sha256": "a49633c01144c91e339b4894e78f8d73284ee70268ef0290bb5bcedfbc3899df"
+      },
+      {
+        "id": "tensor_cp_async_shared",
+        "ptx_sha256": "090ddbcb596769e792a9e3bf413a8a0fe0f74ab2267933a4901cf5663d54dbb4"
+      },
+      {
+        "id": "tensor_family_live_index",
+        "ptx_sha256": "6d9c6106e930a835f738cc07bdfbbf58184a2ccf13a3b9687d5be82cdb86dc81"
+      },
+      {
+        "id": "tensor_fused_guarded_epilogue",
+        "ptx_sha256": "6fe1a38846eb428b19d63f048b6751e0d48a9fdd60f0de7085a2eaafb53c305b"
+      },
+      {
+        "id": "tensor_global_bf16",
+        "ptx_sha256": "9020cc00d3445791d14c89af551eb54af699bb65e80072c61bb8eeb9a12042fe"
+      },
+      {
+        "id": "tensor_global_bf16_trans_ragged",
+        "ptx_sha256": "553d9e7de45c4bb90149987ab620f434da902e0a06a15e564e22c235c5456d8e"
+      },
+      {
+        "id": "tensor_global_f16",
+        "ptx_sha256": "a001a340266d79f17d5b3b315dbb01142154db70a3bae4e7cec03a2d43b6afd8"
+      },
+      {
+        "id": "tensor_global_f16_ragged",
+        "ptx_sha256": "2b21404bb4a29cdf79f9e84cbf48cf15a6cd876adf055da7e7b56cb18d18a7a8"
+      },
+      {
+        "id": "tensor_repack_f16",
+        "ptx_sha256": "7e2c974a6a705c83a79234269abff0a6fa80bac564f68b1d22c190005d347943"
+      },
+      {
+        "id": "tensor_shared_b128",
+        "ptx_sha256": "3ff0363c50c2dacd1ef5fca21a7d2176dcd6098571ab4044b71060e32c884b46"
+      },
+      {
+        "id": "tensor_shared_b32",
+        "ptx_sha256": "9a83bf98fb3276b5b9e0793a965195eb85d7339a8b0dfb01e3f3a28f954a5b60"
+      },
+      {
+        "id": "tensor_shared_b64",
+        "ptx_sha256": "592e7e043b70dcb24088822bd06a1be0e9aeb605d57113ce29df115fd1da11b9"
+      },
+      {
+        "id": "tensor_shared_bf16_trans",
+        "ptx_sha256": "4b4b07e0b49ab2ae90edf2766d58928376bff8c731b1b26c2865b43d70b1c099"
+      },
+      {
+        "id": "tensor_shared_f16",
+        "ptx_sha256": "f8716c559486e3fd3b832e267ef4e9c5d141a5219415c902b5b9e4b0c8f48ce7"
+      },
+      {
+        "id": "tensor_shared_paired",
+        "ptx_sha256": "595612da24a4e689961317252d08f53eb3a983f99cfd107188c29b18823718b0"
+      },
+      {
+        "id": "tensor_shared_paired_trans",
+        "ptx_sha256": "844260df64c0ed60e54bf257799b9026df46bdeacbca438ab1374f5a87018cb9"
+      },
+      {
+        "id": "tensor_transposed_output",
+        "ptx_sha256": "6d9a4758fe0fe89cb85e4b7b6ae7042fa91af0fb3f3aec619480f44f2ec2f864"
+      }
+    ],
+    "additional_gpu_executions": 0
+  },
+  "raw_feature_audit": {
+    "events": 58,
+    "http_attempts": 58,
+    "files_verified": 291,
+    "complete_replay": true
+  },
+  "research_review": {
+    "deepinfer_commit": "9bd9cf243fc53ef9afbf8f04d391d989117d6ab9",
+    "text_files_read": 336,
+    "utf8_lines_read": 63630,
+    "images_inspected": 6,
+    "article_figures_inspected": 6,
+    "vendor_submodule_sources_present": false
+  },
+  "historical_fp64_reference_failures": 9,
+  "historical_note": "Earlier generated FP64-buffer/FP32-state mathematical-reference failures remain failures. This release does not relabel or rerun them as part of its 44 checks.",
+  "performance_note": "One timed iteration per feature check is indicative only. No measured speed ranking or hidden-set success is asserted.",
+  "evidence": {
+    "public": {
+      "path": "artifacts/validation/phase6/public-submit/summary.json",
+      "sha256": "18b3024a7ddda6d976b682d2e52d1ab16b5335a71498323d9230e2d35300561c"
+    },
+    "features": {
+      "path": "artifacts/validation/phase6/feature-runner/summary.json",
+      "sha256": "b33b8d2a0f9e67a72f826451ea3b00c6bb4b8b758f750813d7b76c00bdcd8d98"
+    },
+    "wire_audit": {
+      "path": "artifacts/validation/phase6/feature-runner/integrity-audit.json",
+      "sha256": "2880bf280c1f59570121c3c1cb64215849a8afed0c17f428ff4d884c0124069d"
+    },
+    "cpu": {
+      "path": "artifacts/validation/phase6/cpu-regressions.json",
+      "sha256": "cf1fa0357bd2f8071dbf982b87908134b645ae7a2280a4f5d63dfbd409216696"
+    },
+    "clean_install": {
+      "path": "artifacts/validation/phase6/clean-install/summary.json",
+      "sha256": "0a9a3371789d0c32a44e2a484c7ba1a7cf3618b59d4c92cfa5573334feb9aeef"
+    },
+    "baseline_ptx": {
+      "path": "artifacts/validation/phase6/ptx-compatibility.json",
+      "sha256": "37309204c364a2a61eaab175234d75931eeeeb0b1900b21219018f0b9e570bd4"
+    },
+    "source_review": {
+      "path": "docs/research/source-review-manifest.json",
+      "sha256": "393528a6438d7246b7ef0f648751b3955a60d0593c420ffd5a57b74978478b63"
+    }
+  }
+}

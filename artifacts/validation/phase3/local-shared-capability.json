@@ -1,0 +1,28 @@
+{
+  "queried_utc": "2026-10-22T20:20:55.114805+00:00",
+  "scope": "Read-only CUDA driver device-attribute query; no context, module, kernel, or allocation.",
+  "device": "NVIDIA GeForce GTX 1650 Ti",
+  "header": "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/include/cuda.h",
+  "attributes": {
+    "max_shared_memory_per_block": {
+      "enum": 8,
+      "status": 0,
+      "bytes": 49152
+    },
+    "max_shared_memory_per_multiprocessor": {
+      "enum": 81,
+      "status": 0,
+      "bytes": 65536
+    },
+    "max_shared_memory_per_block_optin": {
+      "enum": 97,
+      "status": 0,
+      "bytes": 65536
+    },
+    "reserved_shared_memory_per_block": {
+      "enum": 111,
+      "status": 0,
+      "bytes": 0
+    }
+  }
+}

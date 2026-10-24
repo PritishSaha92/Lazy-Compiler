@@ -1,0 +1,7 @@
+test_layouts_assemble_native_and_synchronous (test_layouts.LayoutRegressionTests.test_layouts_assemble_native_and_synchronous) ... ok
+test_layouts_match_independent_exact_references (test_layouts.LayoutRegressionTests.test_layouts_match_independent_exact_references) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 21.675s
+
+OK

@@ -1,0 +1,674 @@
+{
+  "scope": "Candidate coverage accounting only. Fixture generators and unittest discovery were evaluated; no compiler, assembler, remote request or GPU launch was executed.",
+  "execution_pass_claim": false,
+  "groups": [
+    {
+      "group": "core",
+      "module": "ir_cases",
+      "generators": [
+        "cases"
+      ],
+      "fixtures": [
+        "conditional_odd_reordered",
+        "vector_1",
+        "vector_2",
+        "vector_4",
+        "rescaled_seed_false",
+        "nested_accumulator_scope",
+        "shuffle_8_threads_8",
+        "shuffle_8_threads_40",
+        "shuffle_16_threads_16",
+        "shuffle_32_threads_32",
+        "segmented_tree_broadcast"
+      ],
+      "distinct_programs": 11,
+      "assembly_checks_per_fixture": 1,
+      "gpu_executions_per_fixture": 1,
+      "assembly_checks": 11,
+      "gpu_executions": 11,
+      "formula": "one assembly and execution per fixture",
+      "test_methods": {
+        "test_compiler.CompilerTests.test_synthetic_kernels_assemble": {
+          "line": 95,
+          "sha256": "a37e61a2d07d6b89a8dd86a85edf95eef7170c482e4f4c02e171d0ff5b634746"
+        },
+        "test_compiler.CompilerTests.test_synthetic_kernels_match_independent_references": {
+          "line": 104,
+          "sha256": "89999e8a424750c2366a53d45ceb8fa50670aa9a708b46474be04afbdf214bbe"
+        }
+      }
+    },
+    {
+      "group": "semantics",
+      "module": "test_semantics",
+      "generators": [
+        "semantic_cases"
+      ],
+      "fixtures": [
+        "warp_tree_inner_lane",
+        "strided_end_binding",
+        "shuffle_uneven_loop_exit",
+        "shuffle_loaded_state_snapshot",
+        "operator_exp_fast",
+        "operator_bitwise_not",
+        "operator_erf",
+        "power_signed_square",
+        "power_signed_cube",
+        "accumulator_snapshot",
+        "half_where",
+        "signed_integer_remainder"
+      ],
+      "distinct_programs": 12,
+      "assembly_checks_per_fixture": 1,
+      "gpu_executions_per_fixture": 1,
+      "assembly_checks": 12,
+      "gpu_executions": 12,
+      "formula": "one assembly and execution per fixture",
+      "test_methods": {
+        "test_semantics.SemanticRegressionTests.test_semantic_fixtures_assemble": {
+          "line": 269,
+          "sha256": "e7c52ed604f329abba61fb3828e1bbf8512d2647b3660870495acfb0df481d79"
+        },
+        "test_semantics.SemanticRegressionTests.test_semantic_fixtures_match_references": {
+          "line": 278,
+          "sha256": "36316219ea04e7f02aa362ad1e9059b4fdf4574fd29898b1e83c063dfb39c7f1"
+        }
+      }
+    },
+    {
+      "group": "dot modes",
+      "module": "test_optimizations",
+      "generators": [
+        "dot_cases",
+        "observed_dot_cases",
+        "continuation_cases"
+      ],
+      "fixtures": [
+        "dot_rows",
+        "dot_transposed",
+        "dot_cancellation",
+        "observed_select_dot",
+        "observed_loop_bound_dot",
+        "post_dot_accumulation",
+        "dot_shuffle_dot_continuation"
+      ],
+      "distinct_programs": 7,
+      "assembly_checks_per_fixture": 2,
+      "gpu_executions_per_fixture": 2,
+      "assembly_checks": 14,
+      "gpu_executions": 14,
+      "formula": "accurate_dots and compensated_dots modes",
+      "test_methods": {
+        "test_optimizations.DotOptimizationTests.test_optional_dot_mode_assembles": {
+          "line": 246,
+          "sha256": "4f350e029c5f68d38154e9cfca01654651551b6a14636ce780c0b242f1367c17"
+        },
+        "test_optimizations.DotOptimizationTests.test_optional_dot_mode_numeric_references": {
+          "line": 262,
+          "sha256": "674d44568621956776e0dbe455682e3b10038f354d2b5d8c95964bf42735a470"
+        }
+      }
+    },
+    {
+      "group": "precision",
+      "module": "test_precision",
+      "generators": [
+        "precision_cases"
+      ],
+      "fixtures": [
+        "dot_product_and_sum_residual",
+        "dot_seed_false_slabs",
+        "dot_nested_reset",
+        "dot_shuffle_snapshot",
+        "dot_half_inputs_float_state",
+        "dot_standalone_initial_update",
+        "dot_followed_by_explicit_base"
+      ],
+      "distinct_programs": 7,
+      "assembly_checks_per_fixture": 2,
+      "gpu_executions_per_fixture": 2,
+      "assembly_checks": 14,
+      "gpu_executions": 14,
+      "formula": "unroll budgets 0 and 128",
+      "test_methods": {
+        "test_precision.PrecisionTests.test_precision_cases_assemble": {
+          "line": 206,
+          "sha256": "1fc0d9b017a8a9e295bc1261a865f4c972ff2f965d1a76ec04e83226425fad4e"
+        },
+        "test_precision.PrecisionTests.test_precision_cases_match_exact_references": {
+          "line": 218,
+          "sha256": "f63ad1c5241bc971992123d8a017079f4dc9defb4e18b281f0f1597a135aa6e5"
+        }
+      }
+    },
+    {
+      "group": "layouts",
+      "module": "test_layouts",
+      "generators": [
+        "layout_cases"
+      ],
+      "fixtures": [
+        "raster_rectangular_tail_m",
+        "raster_rectangular_tail_n",
+        "auxiliary_producer_warp",
+        "copy_swizzle_B32",
+        "copy_swizzle_B64",
+        "copy_swizzle_B128",
+        "copy_swizzle_B128_shift_7",
+        "warp_sync_uneven_work"
+      ],
+      "distinct_programs": 8,
+      "assembly_checks_per_fixture": 2,
+      "gpu_executions_per_fixture": 1,
+      "assembly_checks": 16,
+      "gpu_executions": 8,
+      "formula": "native and synchronous assembly; synchronous local execution",
+      "test_methods": {
+        "test_layouts.LayoutRegressionTests.test_layouts_assemble_native_and_synchronous": {
+          "line": 313,
+          "sha256": "b02d7c404448a2b20a724bcabff57db221dec41cc75471a991d3a341444bee26"
+        },
+        "test_layouts.LayoutRegressionTests.test_layouts_match_independent_exact_references": {
+          "line": 323,
+          "sha256": "9470c2fbc4e7c5905ef5e461ff4d26f40fece865284fc47f3cc4c9aa286e5d38"
+        }
+      }
+    },
+    {
+      "group": "contract edges",
+      "module": "test_contract_edges",
+      "generators": [
+        "contract_edge_cases"
+      ],
+      "fixtures": [
+        "named_barrier_partial_cta",
+        "named_barrier_nested_reuse",
+        "named_barrier_tree_broadcast",
+        "loop_zero_seeded_identities",
+        "loop_zero_single_seed_false",
+        "strided_zero_single_seed_modes",
+        "nested_empty_inner_reset",
+        "integer_mixed_rank_32",
+        "integer_mixed_rank_64",
+        "integer_constant_division_consistency"
+      ],
+      "distinct_programs": 10,
+      "assembly_checks_per_fixture": 2,
+      "gpu_executions_per_fixture": 2,
+      "assembly_checks": 20,
+      "gpu_executions": 20,
+      "formula": "unroll budgets 0 and 1024",
+      "test_methods": {
+        "test_contract_edges.ContractEdgeTests.test_contract_edge_kernels_assemble": {
+          "line": 355,
+          "sha256": "cae63d05a1614b1492d0d2de66b81e80e0770c455971d4f0c99a35b761206307"
+        },
+        "test_contract_edges.ContractEdgeTests.test_contract_edge_kernels_match_references": {
+          "line": 364,
+          "sha256": "96a788478a88bf60af06dbe3a6df2a02cd5730f78476ec8eed8d3d2db476e016"
+        }
+      }
+    },
+    {
+      "group": "raster simplification",
+      "module": "test_raster_simplification",
+      "generators": [
+        "raster_simplification_cases"
+      ],
+      "fixtures": [
+        "raster_simplification_identity_m",
+        "raster_simplification_identity_n",
+        "raster_simplification_full_m",
+        "raster_simplification_full_n",
+        "raster_simplification_clamped_m",
+        "raster_simplification_clamped_n",
+        "raster_simplification_tail_m",
+        "raster_simplification_tail_n"
+      ],
+      "distinct_programs": 8,
+      "assembly_checks_per_fixture": 1,
+      "gpu_executions_per_fixture": 1,
+      "assembly_checks": 8,
+      "gpu_executions": 8,
+      "formula": "one assembly and execution per fixture",
+      "test_methods": {
+        "test_raster_simplification.RasterSimplificationTests.test_raster_shapes_assemble": {
+          "line": 103,
+          "sha256": "4679f2804cb2893ad9f60c6bf103301751a6b42a45aa1b4f681fabb05d3bafae"
+        },
+        "test_raster_simplification.RasterSimplificationTests.test_raster_shapes_match_exact_physical_order": {
+          "line": 111,
+          "sha256": "31d6d9df85878d038a5d5ada1573280d3a3a18ad113ad84b20106c6c1b15ab2d"
+        }
+      }
+    },
+    {
+      "group": "numeric edges",
+      "module": "test_numerical_edges",
+      "generators": [
+        "integer_constants",
+        "floating_edges"
+      ],
+      "fixtures": [
+        "fixed_width_constant_runtime",
+        "edge_copy",
+        "edge_negative",
+        "edge_abs",
+        "edge_sqrt",
+        "edge_reciprocal",
+        "edge_rsqrt",
+        "edge_exp2",
+        "edge_exp",
+        "edge_log",
+        "edge_log2",
+        "edge_tanh",
+        "edge_sin",
+        "edge_cos"
+      ],
+      "distinct_programs": 14,
+      "assembly_checks_per_fixture": 1,
+      "gpu_executions_per_fixture": 1,
+      "assembly_checks": 14,
+      "gpu_executions": 14,
+      "formula": "one fixed-width table and every floating operator fixture",
+      "test_methods": {
+        "test_numerical_edges.NumericalEdgeTests.test_edge_programs_assemble": {
+          "line": 227,
+          "sha256": "7fd1475a3e4d61bcf4211de8a71ffe23030fd720ae1937ef2a9f23acc5b0d8b6"
+        },
+        "test_numerical_edges.NumericalEdgeTests.test_edges_match_independent_references": {
+          "line": 235,
+          "sha256": "675f110400099d3ab26a8315c06300ee7a30d10c721d8745dc25a9f2bdf04b49"
+        }
+      }
+    },
+    {
+      "group": "cast edges",
+      "module": "test_cast_edges",
+      "generators": [
+        "cast_edge_cases"
+      ],
+      "fixtures": [
+        "signed64_to_float32",
+        "integer_spelled_signed64_to_float32",
+        "unsigned64_to_float32",
+        "integer_spelled_unsigned64_to_float32",
+        "float64_to_float32",
+        "float32_to_integer32",
+        "float64_to_integer64"
+      ],
+      "distinct_programs": 7,
+      "assembly_checks_per_fixture": 1,
+      "gpu_executions_per_fixture": 1,
+      "assembly_checks": 7,
+      "gpu_executions": 7,
+      "formula": "one assembly and execution per fixture",
+      "test_methods": {
+        "test_cast_edges.CastEdgeTests.test_constant_runtime_casts_assemble": {
+          "line": 194,
+          "sha256": "e6d3d223f532b08c9c153bbecc4ad068211aa248575b84f698bbc3cc16b09ada"
+        },
+        "test_cast_edges.CastEdgeTests.test_constant_runtime_casts_match_independent_references": {
+          "line": 202,
+          "sha256": "55c7e218c0bae5996db13018be1f63a958a381327b9e77955b364b71a3e48736"
+        }
+      }
+    },
+    {
+      "group": "loop capture",
+      "module": "test_loop_capture",
+      "generators": [
+        "loop_capture_cases"
+      ],
+      "fixtures": [
+        "strided_bound_carrier_snapshot",
+        "nested_strided_bound_recapture",
+        "strided_start_capture_live_step"
+      ],
+      "distinct_programs": 3,
+      "assembly_checks_per_fixture": 2,
+      "gpu_executions_per_fixture": 2,
+      "assembly_checks": 6,
+      "gpu_executions": 6,
+      "formula": "unroll budgets 0 and 1024",
+      "test_methods": {
+        "test_loop_capture.LoopCaptureTests.test_loop_capture_assembles": {
+          "line": 144,
+          "sha256": "7f974d51dbab5d193fd613081df7242a6d05c54dadf6a41c5d4739a497e1e977"
+        },
+        "test_loop_capture.LoopCaptureTests.test_loop_capture_matches_references": {
+          "line": 153,
+          "sha256": "94345189d71d49025bd8725ed2b000496d05a3eec4669853a29accae07ecd1e0"
+        }
+      }
+    },
+    {
+      "group": "index layouts",
+      "module": "test_index_layout",
+      "generators": [
+        "index_layout_cases"
+      ],
+      "fixtures": [
+        "index_rank_mismatch_loads",
+        "index_rank_mismatch_write_1d",
+        "index_rank_mismatch_write_2d"
+      ],
+      "distinct_programs": 3,
+      "assembly_checks_per_fixture": 1,
+      "gpu_executions_per_fixture": 1,
+      "assembly_checks": 3,
+      "gpu_executions": 3,
+      "formula": "one assembly and execution per fixture; separate large-offset CPU checks excluded",
+      "test_methods": {
+        "test_index_layout.IndexLayoutTests.test_index_layout_assembles": {
+          "line": 91,
+          "sha256": "5fc4e22f43713bbf6e6301c0a074b8515345c5d3fb993ed8116207b57d3bdd02"
+        },
+        "test_index_layout.IndexLayoutTests.test_index_layout_matches_references": {
+          "line": 99,
+          "sha256": "e185b688576c0c93c37a4ca7b580023bad206e8038387a8b3373620203fdc41d"
+        }
+      }
+    },
+    {
+      "group": "predicate promotion",
+      "module": "test_predicate_promotion",
+      "generators": [
+        "predicate_promotion_cases"
+      ],
+      "fixtures": [
+        "comparison_integer_promotion"
+      ],
+      "distinct_programs": 1,
+      "assembly_checks_per_fixture": 1,
+      "gpu_executions_per_fixture": 1,
+      "assembly_checks": 1,
+      "gpu_executions": 1,
+      "formula": "one assembly and execution of the combined operator table",
+      "test_methods": {
+        "test_predicate_promotion.PredicatePromotionTests.test_predicate_arithmetic_assembles": {
+          "line": 60,
+          "sha256": "f77ff4e7e68184ad1d0b2d07c75c1928457aa7d0417ac3584089e45b5b863e70"
+        },
+        "test_predicate_promotion.PredicatePromotionTests.test_predicate_arithmetic_matches_reference": {
+          "line": 67,
+          "sha256": "c2dfe39f800bd1059515e61559366e967c2216237666655d5ae9c42555887982"
+        }
+      }
+    },
+    {
+      "group": "transport",
+      "module": "test_transport_edges",
+      "generators": [
+        "transport_cases"
+      ],
+      "fixtures": [
+        "async_two_groups_4_bytes",
+        "async_two_groups_8_bytes",
+        "async_two_groups_16_bytes",
+        "shared_write_swizzle_B32",
+        "shared_write_swizzle_B64",
+        "shared_write_swizzle_B128",
+        "shared_write_swizzle_B128_shift_7",
+        "dynamic_pool_distinct_alignment",
+        "unaligned_grouped_load_rows"
+      ],
+      "distinct_programs": 9,
+      "assembly_checks_per_fixture": 2,
+      "gpu_executions_per_fixture": 1,
+      "assembly_checks": 18,
+      "gpu_executions": 9,
+      "formula": "native and synchronous assembly; synchronous local execution",
+      "test_methods": {
+        "test_transport_edges.TransportEdgeTests.test_transport_edges_assemble_native_and_synchronous": {
+          "line": 282,
+          "sha256": "44a3f5606d316cf7b1b940dbd2b0573abdd5035ae7ad60476d8711c436e6c379"
+        },
+        "test_transport_edges.TransportEdgeTests.test_transport_edges_match_exact_references": {
+          "line": 293,
+          "sha256": "bc9021bf7513e03d67d172700337386efe6b4a3ecbe5946e4a38030f7252c3a7"
+        }
+      }
+    },
+    {
+      "group": "products",
+      "module": "test_product_reduction",
+      "generators": [
+        "product_cases"
+      ],
+      "fixtures": [
+        "product_shuffle_varied_trip_counts",
+        "product_tree_varied_trip_counts"
+      ],
+      "distinct_programs": 2,
+      "assembly_checks_per_fixture": 1,
+      "gpu_executions_per_fixture": 1,
+      "assembly_checks": 2,
+      "gpu_executions": 2,
+      "formula": "one assembly and execution per fixture",
+      "test_methods": {
+        "test_product_reduction.ProductReductionTests.test_nonempty_products_assemble": {
+          "line": 144,
+          "sha256": "57fbe01095824d8252cde34d4dcb5d28858820b1766ae4792950c6466f4360cc"
+        },
+        "test_product_reduction.ProductReductionTests.test_nonempty_products_match_exact_references": {
+          "line": 152,
+          "sha256": "59d81a225ede09386072d31d85931f55c605fdc00de4080a8ba2e6db41f25229"
+        }
+      }
+    },
+    {
+      "group": "load packing",
+      "module": "test_load_packing",
+      "generators": [
+        "load_packing_cases"
+      ],
+      "fixtures": [
+        "packing_width2_shift0",
+        "packing_width2_shift1",
+        "packing_width3_shift0",
+        "packing_width3_shift1",
+        "packing_width4_shift0",
+        "packing_width4_shift1",
+        "packing_deferred_name_binding",
+        "packing_redefined_index",
+        "packing_assign_redefines_index",
+        "packing_load_redefines_index",
+        "packing_store_boundary",
+        "packing_conditional_store_boundary",
+        "packing_floating_index_declined",
+        "packing_declared_types_i32_f32",
+        "packing_declared_types_f32_i32",
+        "packing_reused_pending_name",
+        "packing_offsets_0_2",
+        "packing_offsets_1_0",
+        "packing_offsets_0_0"
+      ],
+      "distinct_programs": 19,
+      "assembly_checks_per_fixture": 1,
+      "gpu_executions_per_fixture": 1,
+      "assembly_checks": 19,
+      "gpu_executions": 19,
+      "formula": "one assembly and execution per fixture",
+      "test_methods": {
+        "test_load_packing.LoadPackingTests.test_load_packing_cases_assemble": {
+          "line": 205,
+          "sha256": "06ce87b3c80cd30dfbaae2bdf3bd380c430802520813346ab36a8434e3537593"
+        },
+        "test_load_packing.LoadPackingTests.test_load_packing_cases_match": {
+          "line": 213,
+          "sha256": "707d73737b126f9d6a46c32d944f40b69e2a6736107315a7e60e1dec62b1dbef"
+        }
+      }
+    },
+    {
+      "group": "alignment overflow",
+      "module": "test_alignment_overflow",
+      "generators": [
+        "alignment_overflow_cases"
+      ],
+      "fixtures": [
+        "overflow_alignment_u32_scalar",
+        "overflow_alignment_u32_grouped",
+        "overflow_alignment_u64_scalar",
+        "overflow_alignment_u64_grouped"
+      ],
+      "distinct_programs": 4,
+      "assembly_checks_per_fixture": 1,
+      "gpu_executions_per_fixture": 1,
+      "assembly_checks": 4,
+      "gpu_executions": 4,
+      "formula": "32/64-bit index overflow with scalar and grouped load variants",
+      "test_methods": {
+        "test_alignment_overflow.AlignmentOverflowTests.test_wrapping_address_arithmetic_assembles_without_false_vectors": {
+          "line": 85,
+          "sha256": "d95c8e243656105d94943f162cdb8a5489745b8cb0901eebf57d12b42acbe58c"
+        },
+        "test_alignment_overflow.AlignmentOverflowTests.test_wrapping_address_arithmetic_matches_references": {
+          "line": 98,
+          "sha256": "0b849a2b66bc7ec93af5bd7cd221e1975a14bd35a9e260ff5502d7702c707ed1"
+        }
+      }
+    },
+    {
+      "group": "compensation state",
+      "module": "test_compensation_state",
+      "generators": [
+        "compensation_state_cases"
+      ],
+      "fixtures": [
+        "compensation_state_direct",
+        "compensation_state_continuation",
+        "compensation_state_init_reset",
+        "compensation_state_base_reset",
+        "compensation_state_reseed",
+        "compensation_state_empty_reseed",
+        "compensation_state_shuffle"
+      ],
+      "distinct_programs": 7,
+      "assembly_checks_per_fixture": 2,
+      "gpu_executions_per_fixture": 2,
+      "assembly_checks": 14,
+      "gpu_executions": 14,
+      "formula": "compensated dot state lifecycle and nonfinite classes with unroll budgets 0 and 1024",
+      "test_methods": {
+        "test_compensation_state.CompensationStateTests.test_compensation_states_assemble": {
+          "line": 176,
+          "sha256": "2ff0cb61d094f5024d548c5fb953a4104c78967366b175b0a94764fb1b2b9bee"
+        },
+        "test_compensation_state.CompensationStateTests.test_compensation_states_match_exact_values_and_classes": {
+          "line": 190,
+          "sha256": "5cb327151a0c62e40c213afa32f4f5179fec274624ea75928b4e566278ccaffd"
+        }
+      }
+    }
+  ],
+  "extra_policy_gpu_executions": 3,
+  "policy_formula": "First precision fixture reused for missing tolerance, exact zero tolerance, and tolerant 1e-6; no new distinct fixture.",
+  "distinct_programs": 132,
+  "assembly_checks": 183,
+  "gpu_executions": 169,
+  "unittest_method_count": 58,
+  "unittest_methods": [
+    "test_alignment_overflow.AlignmentOverflowTests.test_wrapping_address_arithmetic_assembles_without_false_vectors",
+    "test_alignment_overflow.AlignmentOverflowTests.test_wrapping_address_arithmetic_matches_references",
+    "test_cast_edges.CastEdgeTests.test_constant_runtime_casts_assemble",
+    "test_cast_edges.CastEdgeTests.test_constant_runtime_casts_match_independent_references",
+    "test_compensation_state.CompensationStateTests.test_compensation_states_assemble",
+    "test_compensation_state.CompensationStateTests.test_compensation_states_match_exact_values_and_classes",
+    "test_compiler.CompilerTests.test_compile_without_reference_or_expression_metadata",
+    "test_compiler.CompilerTests.test_every_public_kernel_emits_ascii_ptx",
+    "test_compiler.CompilerTests.test_synthetic_kernels_assemble",
+    "test_compiler.CompilerTests.test_synthetic_kernels_match_independent_references",
+    "test_compiler.HarnessTests.test_assembler_diagnostics_preserve_both_streams",
+    "test_compiler.HarnessTests.test_nan_does_not_pass",
+    "test_compiler.HarnessTests.test_relative_tolerance_uses_reference_magnitude",
+    "test_compiler.HarnessTests.test_shape_mismatch_is_not_broadcast",
+    "test_contract_edges.ContractEdgeTests.test_contract_edge_kernels_assemble",
+    "test_contract_edges.ContractEdgeTests.test_contract_edge_kernels_match_references",
+    "test_index_layout.IndexLayoutTests.test_index_layout_assembles",
+    "test_index_layout.IndexLayoutTests.test_index_layout_matches_references",
+    "test_index_layout.IndexLayoutTests.test_large_offsets_widen_before_summing",
+    "test_layouts.LayoutRegressionTests.test_layouts_assemble_native_and_synchronous",
+    "test_layouts.LayoutRegressionTests.test_layouts_match_independent_exact_references",
+    "test_load_packing.LoadPackingTests.test_load_packing_cases_assemble",
+    "test_load_packing.LoadPackingTests.test_load_packing_cases_match",
+    "test_local_capacity.CapacityQueryTests.test_actual_limit_and_missing_optin_remain_unsupported",
+    "test_local_capacity.CapacityQueryTests.test_default_memory_needs_no_optin",
+    "test_local_capacity.CapacityQueryTests.test_pre_ampere_optin_is_decided_by_device_limit",
+    "test_local_capacity.CapacityQueryTests.test_static_plus_dynamic_respects_total_limit",
+    "test_local_capacity.CapacityQueryTests.test_unexpected_attribute_error_is_not_hidden",
+    "test_loop_capture.LoopCaptureTests.test_loop_capture_assembles",
+    "test_loop_capture.LoopCaptureTests.test_loop_capture_matches_references",
+    "test_numerical_edges.NumericalEdgeTests.test_edge_programs_assemble",
+    "test_numerical_edges.NumericalEdgeTests.test_edges_match_independent_references",
+    "test_optimizations.DotOptimizationTests.test_independent_dot_recognizer_accepts_layout_variants",
+    "test_optimizations.DotOptimizationTests.test_independent_dot_recognizer_rejects_observed_carriers",
+    "test_optimizations.DotOptimizationTests.test_optional_dot_mode_assembles",
+    "test_optimizations.DotOptimizationTests.test_optional_dot_mode_numeric_references",
+    "test_policy.PolicyTests.test_cli_preserves_exact_and_selects_compensated_tolerant_contracts",
+    "test_precision.PrecisionTests.test_dot_read_by_nested_loop_bound_is_not_transformed",
+    "test_precision.PrecisionTests.test_dot_read_by_select_is_not_transformed",
+    "test_precision.PrecisionTests.test_precision_cases_assemble",
+    "test_precision.PrecisionTests.test_precision_cases_match_exact_references",
+    "test_predicate_promotion.PredicatePromotionTests.test_predicate_arithmetic_assembles",
+    "test_predicate_promotion.PredicatePromotionTests.test_predicate_arithmetic_matches_reference",
+    "test_product_reduction.ProductReductionTests.test_nonempty_products_assemble",
+    "test_product_reduction.ProductReductionTests.test_nonempty_products_match_exact_references",
+    "test_raster_simplification.RasterSimplificationTests.test_raster_shapes_assemble",
+    "test_raster_simplification.RasterSimplificationTests.test_raster_shapes_match_exact_physical_order",
+    "test_semantics.SemanticRegressionTests.test_semantic_fixtures_assemble",
+    "test_semantics.SemanticRegressionTests.test_semantic_fixtures_match_references",
+    "test_transport_edges.TransportEdgeTests.test_transport_edges_assemble_native_and_synchronous",
+    "test_transport_edges.TransportEdgeTests.test_transport_edges_match_exact_references",
+    "test_unsigned_transport.UnsignedInputTransportTests.test_changed_ptx_is_rejected_without_mutating_original",
+    "test_unsigned_transport.UnsignedInputTransportTests.test_four_alignment_packages_keep_exact_ir_references_and_cli_ptx",
+    "test_unsigned_transport.UnsignedInputTransportTests.test_full_unsigned_range_survives_float64_wire_coercion",
+    "test_unsigned_transport.UnsignedInputTransportTests.test_only_unsigned_payload_descriptors_change",
+    "test_unsigned_transport.UnsignedInputTransportTests.test_release_plan_keeps_213_cases_and_97_logical_packages",
+    "test_unsigned_transport.UnsignedInputTransportTests.test_supported_inputs_need_no_copy_or_compiler",
+    "test_unsigned_transport.UnsignedInputTransportTests.test_unsupported_unsigned_contracts_are_explicit_errors"
+  ],
+  "excluded_from_assembly_and_gpu_counts": [
+    "Public-kernel CLI emission and stripped-reference CLI tests compile PTX only.",
+    "The harness diagnostic regression mocks subprocess.run for three failed assemblies.",
+    "Large-offset address expressions and independent-dot recognizer checks are CPU-only.",
+    "Remote workload runs, paired benchmarks, and sanitizer invocations are separate reports."
+  ],
+  "sources_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002",
+    "tools\\check_compiler.py": "e706045368a83ccb4f10577f7952cdb0f8bb2363184efca7a68083459dbe4263",
+    "tests\\check_holdout_references.py": "003f037f8f4ddb9473e3d38b0d5ae1776c527c7a5394bc278d63d86140474576",
+    "tests\\evaluate_holdout.py": "d81dbc8828fb342fb273aa6f8b76fb64320a77804c38b930b46a866edff59176",
+    "tests\\expressions_holdout.py": "a220788ab8b5f62685a60a5b0be383e5de6c93c7bedcb000af7d1469dba211a6",
+    "tests\\expressions_phase3.py": "ef49b645ff75dd28e9e746324c04e4c3b6b0a99bdaff082cbefb51b1159d7a43",
+    "tests\\expressions_stress.py": "0594c95f81beebc760325d98509f25eddb05a42ce33cdf9806a97fe078b60ad4",
+    "tests\\freeze_holdout.py": "9f315650075a60e6e54a69e5fc33d08b1e95b6793c8a422a4d91bd32eaefa7d6",
+    "tests\\generate_stress.py": "b90f9b7f377385f3a7c56da615fc1c408e0e381927d0fdc81cb42ab4536b57e3",
+    "tests\\ir_cases.py": "1fb84baa1997872d4001759a44fd94e0f7e51727e74d3d83334e5192b565ca5e",
+    "tests\\test_alignment_overflow.py": "2b2e135e116365ed6a95503238a20528afbeaab506c993d020ba3724ce0990d5",
+    "tests\\test_cast_edges.py": "2014f8d699e5ca39e798db03fa5bbc2d9494cef91c2d62fa5aee0f6fb004ffd2",
+    "tests\\test_compensation_state.py": "39d678019c38ed520abe744923de8051c6e6756473b68d16b6c6d0e74469b838",
+    "tests\\test_compiler.py": "32e17387d76c5184b7cdcb47c92195c55fb034a7e2a6712856a5099ad8b70b43",
+    "tests\\test_contract_edges.py": "32dd1c6eb8936f5c908ddbc8e028a588852a3ef45eac7775d864f0e6abbc6e9e",
+    "tests\\test_index_layout.py": "3f7d6da4e5826cd115741c6c71b3a6f51beddac7fc6083a19cb257787c9fd1ae",
+    "tests\\test_layouts.py": "b752d0b41d37dc1099dedc7af4344c7714567fc960a3d7b1b05bee3357fd766f",
+    "tests\\test_load_packing.py": "9a80a33eb4a995e7fa3d0a8b3cf3e4b05e36356b3c315e85ee7fddd9c2c630f2",
+    "tests\\test_local_capacity.py": "6944bae645ee112ac5520896ca0862624494ff6bf9b82759a38872501ffdcc10",
+    "tests\\test_loop_capture.py": "003cb9f24f02503bddc045955cf7be3540f45b83d6319de7093b2aa94c7ac24f",
+    "tests\\test_numerical_edges.py": "c7096c28422a811e04d6ffadda8b018299ea52b13d89d0721cc5be967d9f9614",
+    "tests\\test_optimizations.py": "6ae5a68397025499c99c84b18e14af8744522b5df777a2d6cea2f0f4c462a3b2",
+    "tests\\test_policy.py": "0c261b6f985daa83fcadb18fbd898f1de81d11ba92764585e09dea96a1d7a898",
+    "tests\\test_precision.py": "6e012a282a37be49b04aa9b522178838734a8216ddcf1e97b22334e4602c3c31",
+    "tests\\test_predicate_promotion.py": "ca6608b6a807051d37a25d1edfc004f8f623d384ee4338808093b25ea4732d0a",
+    "tests\\test_product_reduction.py": "c4a184a73476e8f5d181d8d9cc799c3903bb14754893951aafb0d20ed9824303",
+    "tests\\test_raster_simplification.py": "39b4b5d754544644887e4a6b9b3969869feae8a70316281020c905925a2aa94d",
+    "tests\\test_semantics.py": "db9665b34fcd0692724d37f209fbde497ff716c005ef4ed48631d17d7d7330c4",
+    "tests\\test_transport_edges.py": "d84e4ac22cbee1538ad29cee3cc5c2477e18f35c2a383c5d2e966b26604d8306",
+    "tests\\test_unsigned_transport.py": "ae085e02af7c427f203b81964d39b46c3bd6e550c5e940397713c8ebfcd95565",
+    "tests\\verify_recorded_ptx.py": "6d53e30741d70750557350a8083054e453d8e1b6b483fd9e1452fe9e148b858a",
+    "artifacts\\validation\\phase3\\account_local_coverage.py": "da76770c6830bb4b141a3a6d39f96e08681b7bf3bb5fc788469599c5eeaf30ef"
+  },
+  "sources_unchanged_during_accounting": true
+}

@@ -1,0 +1,3508 @@
+{
+  "schema": "emmy-deepinfer-mok-review-v1",
+  "completed_utc": "2026-10-24T18:12:58.007053+00:00",
+  "scope": "Full-file text and image inspection of the locally present DeepInfer checkout. Vendor submodule sources absent from the checkout were not reviewed. No DeepInfer installation, code execution, model download or GPU run.",
+  "commit": "9bd9cf243fc53ef9afbf8f04d391d989117d6ab9",
+  "complete_local_coverage": true,
+  "text_files_read": 336,
+  "utf8_lines_read": 63630,
+  "images_inspected": 6,
+  "review_records": [
+    {
+      "record": "systems-read-coverage.json",
+      "sha256": "11565c41a590c6965cc5e105909920815f6038711b074a462cca804d2b4f5c48",
+      "completed_entries": 204
+    },
+    {
+      "record": "kernels-read-coverage.json",
+      "sha256": "e2fc2deb14717c87404559f5c4b20d0d17e63a605d0be9f53fe90e243ba840b5",
+      "completed_entries": 82
+    },
+    {
+      "record": "models-read-coverage.json",
+      "sha256": "b359c776ae55af6ff44c7dbd36bc150537dff01c727ca29eccaaadee720f5583",
+      "completed_entries": 57
+    }
+  ],
+  "vendor": {
+    "status": "Empty submodule directories inventoried; no source present, cloned or read",
+    "names": [
+      "DeepEP",
+      "DeepEP-Ascend",
+      "DeepGEMM",
+      "DeepGEMM-Ascend",
+      "DeepSelect",
+      "FlashMLA"
+    ]
+  },
+  "files": [
+    {
+      "path": ".clang-format",
+      "bytes": 4045,
+      "sha256": "5fdf6eefa29f2c2b2ac331caa1fd3b6d3f31c78b196700a61b260cf0a92d0ca0",
+      "utf8_lines": 135,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 1403,
+      "sha256": "8d79438578325f26174ac7915e039be17490fb94fe8390646e8a5ccab3e13df6",
+      "utf8_lines": 97,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": ".gitmodules",
+      "bytes": 684,
+      "sha256": "7c7629347dec02a11bbdc72f678c2dc72943b9bff8e231580a0a4d97c37506b0",
+      "utf8_lines": 18,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 1667,
+      "sha256": "d866fa5fcfcb452f2f587eb891493f119d0ce7be5363824ad8711d6778ac21c5",
+      "utf8_lines": 50,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11558,
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6",
+      "utf8_lines": 201,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "Makefile",
+      "bytes": 1015,
+      "sha256": "d9c3084c5b11ef92dada1592b6e6e02ce22bc26867d3eaf725dad9fe7e20d935",
+      "utf8_lines": 32,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "README.md",
+      "bytes": 4767,
+      "sha256": "ed01ea63a721cdcdefc8634783e5139fc8d8868c11f924a7c5b89fef1667bc7b",
+      "utf8_lines": 107,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json",
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "build.sh",
+      "bytes": 633,
+      "sha256": "49424a7fe42b1f08d4a52b19a13b5436095dcb57c0364b499d5334992af2d094",
+      "utf8_lines": 27,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/asc_utils.cpp",
+      "bytes": 5192,
+      "sha256": "d323a3ef6b2b458db0b2899231f0c7b9fe986e206c8e03ed59a11e3b2acffdf0",
+      "utf8_lines": 115,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/cuda_utils.cpp",
+      "bytes": 4374,
+      "sha256": "e8d3ba1c1c37697bfc9f372181ec725a9fdd82f6dfb75b8488f5fc2d2c4f1b73",
+      "utf8_lines": 109,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/cuda_utils.hpp",
+      "bytes": 1492,
+      "sha256": "42163ae8d2ebc244748938a6b42b38f14398f5e7ce3ce6b412d17a8409821848",
+      "utf8_lines": 49,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/block_manager.hpp",
+      "bytes": 7466,
+      "sha256": "ddebcb4b1100f509d86895535f83832f33830e64f80ef74e9e1b84eb9d584c09",
+      "utf8_lines": 243,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/flops_estimator.hpp",
+      "bytes": 18288,
+      "sha256": "87f77466b494f9e9a315e3f2191407f001ec6d20df133bbcdf9d230ca7c0b3e5",
+      "utf8_lines": 330,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/input_metadata/block_load_plan.cpp",
+      "bytes": 2815,
+      "sha256": "b1e2b40c504e6e96a8cc7e28f533836c46309e8e1520cb8bc9cae33c8e588f03",
+      "utf8_lines": 60,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/input_metadata/block_load_plan.hpp",
+      "bytes": 1042,
+      "sha256": "172098390671999dc1c9a42b0ece5b0d10b50f19ce4f765c7e57c5db55ba029d",
+      "utf8_lines": 34,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/input_metadata/prepare_tensor_input.hpp",
+      "bytes": 2702,
+      "sha256": "cf7bc8a98eb97ec2704b97430e9c3d904255cbd5a48efeaca941036bc13ae3f4",
+      "utf8_lines": 73,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/input_metadata/prepare_tensor_input_base.cpp",
+      "bytes": 10457,
+      "sha256": "aec1b92326ed5836298ceb117a307be8d39282c3863137e23516e7899db088cc",
+      "utf8_lines": 251,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/input_metadata/prepare_tensor_input_v4.cpp",
+      "bytes": 32774,
+      "sha256": "537d794344127241672eda48138db8c8f673c3a869c82cc9b35a3f77a32bc667",
+      "utf8_lines": 655,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/mtp_varlen.hpp",
+      "bytes": 12426,
+      "sha256": "6f50ed06691f0bda6d93b07ab058019ee3021279a1e97902bb94e8708b70e977",
+      "utf8_lines": 275,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/outputs.hpp",
+      "bytes": 15733,
+      "sha256": "5d4201a8df098d1ec91d7668b02ec1fb6b0f3f7d2c5bccbee1b7a02832d25534",
+      "utf8_lines": 308,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/prepare_sample.cpp",
+      "bytes": 16251,
+      "sha256": "7c4a611c014eb30157315fe964e53be6fe5a1c75660fa41b0c25ace6eb6fc947",
+      "utf8_lines": 284,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/prepare_sample.hpp",
+      "bytes": 1851,
+      "sha256": "ae305921502552180a5ba1be8702ecd5d4e3cf218b2fe69fd86345df725519a2",
+      "utf8_lines": 66,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/process_output.hpp",
+      "bytes": 1663,
+      "sha256": "27aa57294fce0a73eedb7b2049a3a38fdcda0ec811ebf93bc7a5c2588932ef47",
+      "utf8_lines": 39,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/pybind.cpp",
+      "bytes": 255,
+      "sha256": "6ab8529c15c87b8bdd02111fa59c3b1c1c8011b945d08d23079e10f54f78c84e",
+      "utf8_lines": 11,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/pybind.hpp",
+      "bytes": 393,
+      "sha256": "c0c8a6477fd9551be6d581e0b067ff5cc4c90a7f00665d22a4ff94c7ff753eac",
+      "utf8_lines": 14,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/pybind_output.cpp",
+      "bytes": 9171,
+      "sha256": "745c91fc707cddfbf2bcd9fe3371c73c7ba7f8fadb5b30140a7f3336ffbcbb88",
+      "utf8_lines": 138,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/pybind_scheduler.cpp",
+      "bytes": 9655,
+      "sha256": "c4dcd8b308effbb5631826e09ec72ecd49f1f1a69e8a90904f2b0d4f0d1ffb0e",
+      "utf8_lines": 138,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/pybind_sequence.cpp",
+      "bytes": 12108,
+      "sha256": "815d58c2a8969a4764ac2ddb8d8730811f550995be3c14e9d224a43626f299a6",
+      "utf8_lines": 173,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/scheduler.hpp",
+      "bytes": 67676,
+      "sha256": "a67a2306b60a3836301b927e69988a34aa6d32cfc9be13a4498e19f24ef96e04",
+      "utf8_lines": 1329,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/sequence.hpp",
+      "bytes": 17815,
+      "sha256": "b0f14d4bbf0868aa3046936a8b5dadb66e778e8cb1ac265be5b706011df4afdf",
+      "utf8_lines": 419,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/utils.hpp",
+      "bytes": 1105,
+      "sha256": "a3fb895dbd579d1e38b8d156b3f8e0ecd8759f83dd668785e6901a1babe72a85",
+      "utf8_lines": 40,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/zos.cpp",
+      "bytes": 15447,
+      "sha256": "874fcec6bad4cb8ef4ceeae8df2a96eac37a42a36661eebe2e12b0f492050605",
+      "utf8_lines": 307,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/engine/zos.hpp",
+      "bytes": 1353,
+      "sha256": "072637ba218669e79a320c6ecb7cc9e5e3ce23cfbfbe950317cb11c09e7b9bb2",
+      "utf8_lines": 30,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/graph_timer/graph_timer.hpp",
+      "bytes": 1944,
+      "sha256": "599f5453320b82cec99f1f8b7fd1af90ee2d25b0cefe6f7a0095554eeab9eee0",
+      "utf8_lines": 87,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/graph_timer/graph_timer_asc.cpp",
+      "bytes": 1916,
+      "sha256": "ab5e56815383c7b74195b0dd016dd10348c7e6726e638e10fb4565b2ddb59869",
+      "utf8_lines": 45,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/graph_timer/graph_timer_cuda.cpp",
+      "bytes": 3593,
+      "sha256": "4eddda0f73cc9d1e7228815fed46fef26130878f54e9d6b996c72b3ea5552698",
+      "utf8_lines": 91,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/graph_timer/pybind.cpp",
+      "bytes": 1952,
+      "sha256": "967053f287bd7b7869e1540c8ab9a223ffc19587b2640a7eca8bb6bbbef98ba2",
+      "utf8_lines": 31,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/pybind.cpp",
+      "bytes": 643,
+      "sha256": "7fed9e78075879f56114b86239677d8cdd48215f5a4deb510f67174b7e95bed3",
+      "utf8_lines": 17,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/utils/lockable.hpp",
+      "bytes": 1062,
+      "sha256": "e745aaf328e0c6ba19d99e729c5be065b2e65fbc8e6bc2ccfb0167c769d03efb",
+      "utf8_lines": 38,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/utils/log.hpp",
+      "bytes": 2253,
+      "sha256": "5110d65ecc631be5445dd8a5f5ea1082d8ef2ef5de43bf813315d0536721f4c9",
+      "utf8_lines": 62,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "csrc/utils/object_pool.hpp",
+      "bytes": 1333,
+      "sha256": "28f2bb462e426e691c03ab2167e0f895a038e8b58929030a302e4d943fccdbe5",
+      "utf8_lines": 48,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deep_cluster/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_lines": 0,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deep_cluster/hardware/__init__.py",
+      "bytes": 843,
+      "sha256": "baca5aeaaaa0974f7698718c32dbfecd86667af5188c1ea354cbe06095b6515f",
+      "utf8_lines": 35,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deep_cluster/hardware/ascend.py",
+      "bytes": 5780,
+      "sha256": "c6512cd31667489ff33f5fa5a5a523f18918c9feb07a076d0734c485803f3df4",
+      "utf8_lines": 155,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deep_cluster/hardware/cpu.py",
+      "bytes": 1566,
+      "sha256": "35df64cd403b3f56604482f73a502ee493c1b0f92a1e102b3dc771ff0679f8ed",
+      "utf8_lines": 47,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deep_cluster/hardware/device.py",
+      "bytes": 5658,
+      "sha256": "f5a8be9660375e813d60b24037e29b3b3f92b406595de4868d288a6c396aa1a8",
+      "utf8_lines": 182,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deep_cluster/hardware/nvidia.py",
+      "bytes": 4678,
+      "sha256": "f3f7fd9f79f89e8cf0e3d4c400c9634a812b862025ebc24a59c764eaf7372c2c",
+      "utf8_lines": 129,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deep_cluster/topology/__init__.py",
+      "bytes": 200,
+      "sha256": "b9023aad2b7be245a182ca36b9fda9c85bcbc37d606c7efbc144671755fbca37",
+      "utf8_lines": 9,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deep_cluster/topology/bind.py",
+      "bytes": 3652,
+      "sha256": "c78bc92fe068a35f37c9899732f00056ea56825a7533700e385972be36692f22",
+      "utf8_lines": 99,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/_C/__init__.pyi",
+      "bytes": 173,
+      "sha256": "3498fa34e41ad1e40e938ebc363ed0ebb5d4e8d2f0e9a57dfc1612ada048ad9d",
+      "utf8_lines": 5,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/_C/cuda_utils.pyi",
+      "bytes": 717,
+      "sha256": "adb6c38ef60fb05b1959a0722730a9d73ea9748eed406d771b13aed66ab1e692",
+      "utf8_lines": 18,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/_C/engine.pyi",
+      "bytes": 31460,
+      "sha256": "b9d5408628fb359cf307e693476b95d8790e50b859444f51a76be2f21a0a4bbd",
+      "utf8_lines": 735,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/_C/graph_timer.pyi",
+      "bytes": 1893,
+      "sha256": "2e3063c5e59a7e92d2fa0afb2c05dbf359ad8d22dc5a13ae9a764adbcc605da5",
+      "utf8_lines": 61,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/__init__.py",
+      "bytes": 2433,
+      "sha256": "52afafa99c1b480314c9a732ff13a42afc3234a218d88c3074fd167fa08ab408",
+      "utf8_lines": 64,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/attrdict.py",
+      "bytes": 3744,
+      "sha256": "e2f2efab6967f1adfd184e6d17b3b2e28ce7ebad7256f19d18907d020b46e8a1",
+      "utf8_lines": 116,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/config.py",
+      "bytes": 9763,
+      "sha256": "b21d56199b2f6f7737b1d034361dc2449b9a31eb164b2a002ed5395c109055f1",
+      "utf8_lines": 228,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/distributed/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_lines": 0,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/distributed/shm_broadcast.py",
+      "bytes": 20808,
+      "sha256": "6a1e90cf20bd9b04e61f65b5102e35f890d8a63fdf609da8347200f6dff2f273",
+      "utf8_lines": 461,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/engine/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_lines": 0,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/engine/arg_utils.py",
+      "bytes": 4115,
+      "sha256": "c4607ec49aaf88b5028e65ea726e8d6ab1a57aaf12f93013a0f64d1d1e7c9cdd",
+      "utf8_lines": 114,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/engine/engine_type.py",
+      "bytes": 467,
+      "sha256": "661b01eb55223f4c59cc120cf69df28090afb0bdfa01f9854cb76153e5b6c072",
+      "utf8_lines": 17,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/engine/llm_engine.py",
+      "bytes": 46518,
+      "sha256": "0813b95b1e53f840a7e6dacf555ef789fa4e3aa02c3e8e7124a5c9ce2f7a4724",
+      "utf8_lines": 1029,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/engine/profile_server.py",
+      "bytes": 15234,
+      "sha256": "18d3f9da10cb0107c9517463f1efd54b4bbb04ec7c1c0661be2a7a1f8e45c38d",
+      "utf8_lines": 320,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/engine/stats_logger.py",
+      "bytes": 20800,
+      "sha256": "21b7f9a1c262cfc1869a783543e7f3ac79b32e5e60e863123ed6f531ca11e236",
+      "utf8_lines": 477,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/entrypoints/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_lines": 0,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/entrypoints/llm.py",
+      "bytes": 9005,
+      "sha256": "03a48283f1c151705e55049337123ff76e9ba061e4abf516157044d430c0eb9d",
+      "utf8_lines": 198,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/environ.py",
+      "bytes": 8959,
+      "sha256": "a57e60ae55302a76688ea987c8921622ed1c5db18e4e86df57178358da8df74e",
+      "utf8_lines": 221,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/hugging_face/__init__.py",
+      "bytes": 2074,
+      "sha256": "85c69f2839b9e8eae78d3cb16336da05765c32ee94711d5085dd152401bf29d6",
+      "utf8_lines": 49,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/hugging_face/config.py",
+      "bytes": 13346,
+      "sha256": "027fa70c390315584e8cfe7f89c048153c2871aeaeed843d81daf3052478ac6d",
+      "utf8_lines": 328,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/hugging_face/loading.py",
+      "bytes": 6167,
+      "sha256": "e5e6f2c9ad698a1f97fee5f2fcad7690ae8c3be610c7d4e40c3e6a7b5966e35e",
+      "utf8_lines": 121,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/hugging_face/names.py",
+      "bytes": 8605,
+      "sha256": "060d937f762da73963afaa74dc4348869d54e001376625aaf1f0eab556ac943f",
+      "utf8_lines": 184,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/hugging_face/parameters.py",
+      "bytes": 3151,
+      "sha256": "c182cf0faf2565829e8d900b2af15d7a08f47f53bbb4f4975ff2e86540074a88",
+      "utf8_lines": 70,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/hugging_face/processor.py",
+      "bytes": 3022,
+      "sha256": "7f2782c68fb578d4ef575d34ef6d5718042869433aa59bcb7b586a9498f618f8",
+      "utf8_lines": 66,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/hugging_face/tokenizer.py",
+      "bytes": 6079,
+      "sha256": "3e0a21bef9d90cd37773566d4d460fae8146333138a19c089b7964c5c7d3674e",
+      "utf8_lines": 121,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/hugging_face/weights.py",
+      "bytes": 22368,
+      "sha256": "5c2f69260c2b09043eb6c463a27d90e503c431a647683b7497e912b60c614f61",
+      "utf8_lines": 436,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/load_class.py",
+      "bytes": 296,
+      "sha256": "d8a6dd41918393085ac502a29b1f679b49c9ad6247b296bbc3ce800e6b01b681",
+      "utf8_lines": 8,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/logger.py",
+      "bytes": 6154,
+      "sha256": "35894bf27878df9da8d7959756f4008452b177a1e11ed3f6f1a942801dd82844",
+      "utf8_lines": 174,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_config_loader.py",
+      "bytes": 909,
+      "sha256": "2f058475a30f74c6698d24e2429258b43798c5cbef77b583bc1a86d5b62dd8ca",
+      "utf8_lines": 23,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_lines": 0,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/eplb/__init__.py",
+      "bytes": 19704,
+      "sha256": "47a710a4784383ef2025635c7be63ac7319b9502e0214671f38c197f1f02e1c4",
+      "utf8_lines": 434,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/eplb/policy.py",
+      "bytes": 8002,
+      "sha256": "fc8353f463e2a7969096c9887bee6d7ba393873c873fb4c9c4a4a479c57a032e",
+      "utf8_lines": 140,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/eplb/shuffle.py",
+      "bytes": 9936,
+      "sha256": "81c5103c9677675d99ff6bba37ec9b939e607f27e5abbed17bac0dafb742b5e7",
+      "utf8_lines": 218,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/input_metadata/__init__.py",
+      "bytes": 275,
+      "sha256": "5a9ae6f845df97383ae22fafa626a205db1fedb47e3b3973b01231341ab49381",
+      "utf8_lines": 13,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/input_metadata/dflash.py",
+      "bytes": 3487,
+      "sha256": "52a449e48049fda8ffee418d2320bfbf1a524389039ccbdcd1f9649e4babe559",
+      "utf8_lines": 84,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/input_metadata/input_metadata.py",
+      "bytes": 26642,
+      "sha256": "6ed62971485e99f25a425a30529aa32ab2833e5d48ed0d58ace42086dc0788d6",
+      "utf8_lines": 490,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/input_metadata/prepare_tensor_input_zos.py",
+      "bytes": 16564,
+      "sha256": "25ecf48b3bcdae2131fe7c1b48544dbf9f2a0c370b3d0807be1846761fa36f2c",
+      "utf8_lines": 382,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/input_metadata/yoco.py",
+      "bytes": 10660,
+      "sha256": "5a9bb119372b6d3d730ba1c20e5066e05e6b005505d5de37915956992ac75760",
+      "utf8_lines": 182,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layer_utils.py",
+      "bytes": 733,
+      "sha256": "7a4e2f6e6bb83466bdde223bf355f1a0791c40f8dd92fc4de9130797685b1d0c",
+      "utf8_lines": 16,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_lines": 0,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/attention_backend.py",
+      "bytes": 6317,
+      "sha256": "4833aec77df8d37b67670fc3fde5d3839eca89465c3b38a32c7d338dcb83d42c",
+      "utf8_lines": 146,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/layernorm.py",
+      "bytes": 2076,
+      "sha256": "6322788a4318313c3858be13d51c8892191609d3ec40448e0f4400ee0902fb91",
+      "utf8_lines": 63,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/linear.py",
+      "bytes": 7035,
+      "sha256": "9a076ac0ddf1c05005ea045b22ab2a8a328c7145466435693db55f6b46b3200c",
+      "utf8_lines": 185,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/mtp_info_pool.py",
+      "bytes": 3366,
+      "sha256": "eaa3b22475cbc1bd96e3778ada452245ffc198f04b89950230c3bbec358ae1ce",
+      "utf8_lines": 78,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/rotary_embedding.py",
+      "bytes": 10694,
+      "sha256": "d2ea8585558f447da6ea6c5bd38de6c165f70d6b827d18851b3aeb13c5d601b4",
+      "utf8_lines": 284,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/sampler.py",
+      "bytes": 31412,
+      "sha256": "becb43de87d45abf2ce162b56712618ffe421a4f3a92c30efc85faddebf198be",
+      "utf8_lines": 683,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/sampler_utils.py",
+      "bytes": 8091,
+      "sha256": "bc590a79d98161d07863653576f4dfcd67c3597cb492599266560799ed1549f2",
+      "utf8_lines": 196,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_lines": 0,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_lines": 0,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/candidate_blocks.py",
+      "bytes": 22657,
+      "sha256": "6ea643a71c64b720131473159513aca5503236d39558f5e84f1d7b5b35a7b88d",
+      "utf8_lines": 350,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/compress.py",
+      "bytes": 21343,
+      "sha256": "1952c0b4abd7dd568083f9d1e6da2f4d8e8e4fe7520dcbc951c8c7733ac92ff8",
+      "utf8_lines": 407,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/compute_seqlens_k_zos.py",
+      "bytes": 2550,
+      "sha256": "1e8a1494b20a87a811b4e29bf177331ed2de10d9cc795e835977358fc179fffb",
+      "utf8_lines": 59,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/dflash.py",
+      "bytes": 6548,
+      "sha256": "01be364c557cb173541ab4bb916d54523b7c30650b5dab6803437cf9de9b6ff7",
+      "utf8_lines": 150,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/dflash_copy.py",
+      "bytes": 8643,
+      "sha256": "5ea6d509b4d3c99fc253dffe68f11af2c59fbd51f76581b6d18129b06a23c6d4",
+      "utf8_lines": 129,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/flash_mla_utils.py",
+      "bytes": 1908,
+      "sha256": "48c25b30560f66cf22d79941adb5fbf3d5327121727fc3d6f25fd7df4e79b4db",
+      "utf8_lines": 53,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/fused_sample.py",
+      "bytes": 45598,
+      "sha256": "f8ba3c2ad9cfea3a32a0a8c7126918bb678bb48c5de295affa8f2b74a2b2466e",
+      "utf8_lines": 673,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/fused_transform.py",
+      "bytes": 50340,
+      "sha256": "d80a2997a94fa1b0840b9579d062f16103b02fee7663d5e95fb9e2bdfd3deb1d",
+      "utf8_lines": 899,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/gather.py",
+      "bytes": 4235,
+      "sha256": "a5d7a870b05eae75f8b7a1f542f13e0aae0ac3d8df07a52077ef9a3b0d8bb4da",
+      "utf8_lines": 107,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/gather_engram_tokens_zos.py",
+      "bytes": 7185,
+      "sha256": "1eb6e2a7efb7c21bf0b9bc1c186f04369339af9b8a2873404823272ce205b163",
+      "utf8_lines": 145,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/gather_input_ids_zos.py",
+      "bytes": 3961,
+      "sha256": "539751cd87ff33db192a81e2d341894ec515496d02d078451f470fa1b5c373bd",
+      "utf8_lines": 87,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/get_kv_index.py",
+      "bytes": 14452,
+      "sha256": "edbbb9785d793cd579e62e1fa5e48e78fa1acac0f15c384ad1b76e6c8574f7d0",
+      "utf8_lines": 263,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/image_embed_ops.py",
+      "bytes": 22065,
+      "sha256": "b21b842f4cf7961221d2799bc37ebd4d75d589b26116026a3feefa8ed5364099",
+      "utf8_lines": 402,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/kv_index_cat.py",
+      "bytes": 3428,
+      "sha256": "b6f26b4723049c8b0aa0d83d2cebdaa6ad1e6556fa1cb5db3873b71d80e29029",
+      "utf8_lines": 71,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/kv_quant.py",
+      "bytes": 10327,
+      "sha256": "57341acbc1fc24622b3a17c87e2bc3445e634cfa8b937ef8320c894c4b19e944",
+      "utf8_lines": 196,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/load_paged_kv_cache.py",
+      "bytes": 20873,
+      "sha256": "e4b931b48c4f1e36370bda9b67c05f7dd956565c6a3c8c3491c2113d1ac0943b",
+      "utf8_lines": 345,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/norm.py",
+      "bytes": 24671,
+      "sha256": "54271d4d186105e1ee2855df06e69427455dc70d74ed30f369406d1de80f86ee",
+      "utf8_lines": 431,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/prepare_cp_mirror.py",
+      "bytes": 28083,
+      "sha256": "555ec07c9c194d97e93aedb080007897e7238ccecead07d8a1ac655892fab0ce",
+      "utf8_lines": 518,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/prepare_v4_decode_metadata.py",
+      "bytes": 12233,
+      "sha256": "4d924304ff9c2e8c7d1a7df8daa41d30593cf7a1be81404a1c19d852799b6c66",
+      "utf8_lines": 257,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/random_sampling.py",
+      "bytes": 10226,
+      "sha256": "1240319c239f35a5d1d1d407aa2f3233c44a27c7baa71ddfa067fc314e0afa19",
+      "utf8_lines": 258,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/rstd_1ulp.py",
+      "bytes": 3720,
+      "sha256": "52e5212ac4bc743bc688a93a84fd0888fabdde477ade5411ad5f4ea365538a66",
+      "utf8_lines": 98,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/sampler.py",
+      "bytes": 40146,
+      "sha256": "a66c1361d3a09c1896f283432a3e934ca0e694cab70e9e662ead1a13997b202c",
+      "utf8_lines": 663,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/schedule_mtp_varlen.py",
+      "bytes": 5252,
+      "sha256": "106977285f547d1d3f93c8d499d09cbeef3b09240f24807776dc967341d9ec18",
+      "utf8_lines": 121,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/state_cache.py",
+      "bytes": 3676,
+      "sha256": "2efbb4602f5b0726a47c3013f1633ec056973520656e59aad7ef32709e377286",
+      "utf8_lines": 96,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/store_kv_cache.py",
+      "bytes": 16954,
+      "sha256": "2898dd12e87e1c57015bf385f5da921e3785c77eeba97091453e5bfa28c1de49",
+      "utf8_lines": 310,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/store_mtp_info.py",
+      "bytes": 3239,
+      "sha256": "52ab0f3fcb0f38d0164fd7260acd0a7bb7d5dd3a3f11bc6237f50f32bf6081dd",
+      "utf8_lines": 67,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/structure_output.py",
+      "bytes": 4582,
+      "sha256": "9185510843b343f788fc2d31e5fd6a36d24a5ab2ded50e2dd46a4f1cb0ddf02f",
+      "utf8_lines": 102,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/sum_smaller_probs.py",
+      "bytes": 4813,
+      "sha256": "5c5e6ac90c37e5ea52e329bfa784ea8298971f934ed128cfe5156b6724f836e9",
+      "utf8_lines": 99,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/asc/swa_index.py",
+      "bytes": 2822,
+      "sha256": "3177a6c3aff06f88fe3e7bb7a4e3c65eba591cab378565d6e0a7c384984eec76",
+      "utf8_lines": 62,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cache_common.py",
+      "bytes": 18463,
+      "sha256": "d3cb3c0774da7a9d247e00fe1fc1b8f8e0bf306ec59ba60500414bcceb9c813e",
+      "utf8_lines": 461,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/candidate_blocks.py",
+      "bytes": 15297,
+      "sha256": "4956b7ff85dd69277214798562a78be6baeeee367cffec9e0a256a07b286bb28",
+      "utf8_lines": 328,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/common.py",
+      "bytes": 2307,
+      "sha256": "c626fc3b1c82475264e2fd668d47077fcf1be3e38eed14f7a60795ad5f698e10",
+      "utf8_lines": 53,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/compress.py",
+      "bytes": 25004,
+      "sha256": "d78125c858a2eca4ab6d50cd6c2300a90a79a90488251ae5562e007975a9bbdf",
+      "utf8_lines": 663,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/compute_seqlens_k_zos.py",
+      "bytes": 4164,
+      "sha256": "10f4d20e8bfdbcb3cf84b26674c8802e6bc56709d002668e817ff97dca079e2c",
+      "utf8_lines": 121,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/conftest.py",
+      "bytes": 4781,
+      "sha256": "590259679573633fa0c7307c8e5e7d30e9e7e66dc4592238a672b85ddf58f36f",
+      "utf8_lines": 113,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_lines": 0,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/candidate_blocks.py",
+      "bytes": 11117,
+      "sha256": "9d8b26e53487b25af2ed11cdc459b3480969e8ed5a4ec144641e7fe29f88b863",
+      "utf8_lines": 225,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/compress.py",
+      "bytes": 14789,
+      "sha256": "e55974afdc8a15750c0fd2f6449ad3ed027c06fd4d616062d3ef72bff002f041",
+      "utf8_lines": 292,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/compute_seqlens_k_zos.py",
+      "bytes": 1406,
+      "sha256": "1daf95c378fc754043db8713796b51aa0e595c29f65299a6ca2bef08d6b619a3",
+      "utf8_lines": 38,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/dflash.py",
+      "bytes": 3917,
+      "sha256": "4eb32591b46f701303ff95c9131c924d5b5298eb73f27e144652402b57b64078",
+      "utf8_lines": 119,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/dflash_copy.py",
+      "bytes": 5108,
+      "sha256": "359bcb373f6478e65aa4985f13b976c7861792ac2f3776e3db837b4e6c3ba97e",
+      "utf8_lines": 82,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/flash_mla_utils.py",
+      "bytes": 1296,
+      "sha256": "6c0bd4e21d15d8ff1bedf3560bcfd5006b0d60b9c709ae586b3edf4f09357c91",
+      "utf8_lines": 40,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/fused_sample.py",
+      "bytes": 29549,
+      "sha256": "9902cf4f22125af5245a79cfaef491cf0e0941dab2584c169110bba0458d9bfa",
+      "utf8_lines": 524,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/fused_transform.py",
+      "bytes": 35875,
+      "sha256": "7ee1e9f34806611c6ed72bf04d22042eb168c0832cab389475b6a8712a3d0f18",
+      "utf8_lines": 619,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/gather.py",
+      "bytes": 2298,
+      "sha256": "c2582cf4bce16408bca0b71710cd92c3638b6c62d3a3cd577c8de1195702e201",
+      "utf8_lines": 69,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/gather_engram_tokens_zos.py",
+      "bytes": 3276,
+      "sha256": "51c6928bd3c740dc4098e047314085c873dcdba11703fca66b594fa1a146a45f",
+      "utf8_lines": 76,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/gather_input_ids_zos.py",
+      "bytes": 1879,
+      "sha256": "4bbf93711a731cdb74500236b08214a120fa12dc2e1d2df9eb7943687d0257a5",
+      "utf8_lines": 48,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/get_kv_index.py",
+      "bytes": 6066,
+      "sha256": "730da380b4d2dd0d7fdf434594890f7321d7f0242640c6ccdb0183eff807848f",
+      "utf8_lines": 138,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/image_embed_ops.py",
+      "bytes": 12626,
+      "sha256": "22fd88f91a1bb4a7f1ad0e0049ca5851f63029d4686d67570246d8c631d59fc4",
+      "utf8_lines": 275,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/kv_index_cat.py",
+      "bytes": 3569,
+      "sha256": "c5469c3eec3ffd424e4bfc4e9da041d11184dd2cfb6e63a26b5d360d36315b24",
+      "utf8_lines": 82,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/load_paged_kv_cache.py",
+      "bytes": 9398,
+      "sha256": "6b39bdcc36af3b77f3a5ee6db39c29010dc0e5029c51d0a4dd77c2c275df8b8f",
+      "utf8_lines": 165,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/norm.py",
+      "bytes": 15571,
+      "sha256": "7024012fc8fe846df76489bd70d9a858f2979dfca92dd986504c106437dd6fcc",
+      "utf8_lines": 326,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/outlier_detection.py",
+      "bytes": 1534,
+      "sha256": "304ed04b310e82764994fbb66072aa0cbef109633e56caeff1cf2fd83ffc54bf",
+      "utf8_lines": 40,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/prepare_cp_mirror.py",
+      "bytes": 13489,
+      "sha256": "80d34b29b1580ede5c3179791289f7ba44aac1b29d7082b4278953cebd5687d5",
+      "utf8_lines": 313,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/prepare_decode_metadata.py",
+      "bytes": 9267,
+      "sha256": "4dcd5533b784d7302ef6707166ed5d535473de51729b9f048361bf9b93fcdd70",
+      "utf8_lines": 196,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/quant.py",
+      "bytes": 400,
+      "sha256": "06c6cc83a7377a852b0b594c9af767ef31e26a600690bc1c8263c238789ccfc8",
+      "utf8_lines": 9,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/random_sampling.py",
+      "bytes": 10120,
+      "sha256": "5d69880de22b8efd0efee8514831519811733afd1b6663631eca60d2a434cbd7",
+      "utf8_lines": 258,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/sampler.py",
+      "bytes": 19375,
+      "sha256": "4251d48586a7807fd148b9ab31d55e535dce32935485299eb99f12ff90c5b78c",
+      "utf8_lines": 411,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/schedule_mtp_varlen.py",
+      "bytes": 3299,
+      "sha256": "d28b1dbdaa4f420581c3eabe4a0cafdad9da7ac5b71bf52476adb51b81341f70",
+      "utf8_lines": 83,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/state_cache.py",
+      "bytes": 5597,
+      "sha256": "9e08841bffe9a6dd284c92f985665eac7f0eded511ee00922584405c8be7291a",
+      "utf8_lines": 136,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/store_kv_cache.py",
+      "bytes": 10532,
+      "sha256": "1e57ab54c1b2a7ce421bd5ef471cc4d4dde31a7620c2203f5edc34b15cf86fa8",
+      "utf8_lines": 195,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/store_mtp_info.py",
+      "bytes": 2679,
+      "sha256": "0e7e4b44f4684269a46c2d70a61df3f81e02a2c2fc793a6ce88bcf58419bc5f0",
+      "utf8_lines": 59,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/structure_output.py",
+      "bytes": 2445,
+      "sha256": "46db28b3f563a9d54f2bf391f34786a50d2e56f3a238a6df67db37462e48b219",
+      "utf8_lines": 59,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/sum_smaller_probs.py",
+      "bytes": 2302,
+      "sha256": "cd16dc513e653d7963171bcbf6016b0d6da270ba27df6bdb2ad4bb91f5482272",
+      "utf8_lines": 57,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/cuda/swa_index.py",
+      "bytes": 1224,
+      "sha256": "4d971454b9913ed13f539fc8ce7b80129ea6df0ae0258b8b85fa630435306c69",
+      "utf8_lines": 34,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/dflash.py",
+      "bytes": 8563,
+      "sha256": "dc27843aa48e5633280a2ba4012e41dea7098d85b52b35aa35030de47466886e",
+      "utf8_lines": 224,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/dflash_copy.py",
+      "bytes": 6356,
+      "sha256": "505a8a29924b107701dde3221ac158c2e1a622934a71cc7b4e453a05fd689c33",
+      "utf8_lines": 151,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/flash_mla_utils.py",
+      "bytes": 3969,
+      "sha256": "b2f298779c7e2064b8652007ac392ebce1e162ef1df8d22b4a85ddd4f15956e3",
+      "utf8_lines": 107,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/fused_sample.py",
+      "bytes": 38839,
+      "sha256": "ce647e1d09707c34d105978ec96aeab872493b0d96a2b448e836dcedc9ac5310",
+      "utf8_lines": 832,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/fused_transform.py",
+      "bytes": 48970,
+      "sha256": "eff9f919bdd54c9c492030fc1960c4b01f1666c8daca52ffc7a105c86b12e985",
+      "utf8_lines": 1330,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/gather.py",
+      "bytes": 4460,
+      "sha256": "1a819bb1a1af920c5b92aa7d334a40ed4ea57681bab0353d4f1769994887a270",
+      "utf8_lines": 136,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/gather_engram_tokens_zos.py",
+      "bytes": 9978,
+      "sha256": "686408bdd28e6bac72680934fcfcd136c8ae69b279e98ecdbe3d6772f4eb8769",
+      "utf8_lines": 248,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/gather_input_ids_zos.py",
+      "bytes": 7715,
+      "sha256": "08738832847f1346afaa05a2b507d5d07a2682ec16f4c821afbb6272cdf48bbd",
+      "utf8_lines": 193,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/get_kv_index.py",
+      "bytes": 22509,
+      "sha256": "499c353822ee3e43abddb5df6dc709fa661e4484a14ad0db45430f89da6aae34",
+      "utf8_lines": 518,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/image_embed_ops.py",
+      "bytes": 26967,
+      "sha256": "07c542963dfb56dfe1cb599e3db47be3ba2c3e8ecb78939430c2e76f95a3463a",
+      "utf8_lines": 630,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/kv_index_cat.py",
+      "bytes": 3667,
+      "sha256": "07b04bbd0a5f54c749626a9a68b66e44734ec24b0ba65f32f1b3bea3b9c0ec92",
+      "utf8_lines": 117,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/load_paged_kv_cache.py",
+      "bytes": 16881,
+      "sha256": "b587711596d95cfe53f2ff1dc9c175667bad246cede55e5b36151a5977806bd2",
+      "utf8_lines": 382,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/norm.py",
+      "bytes": 27108,
+      "sha256": "1f031c061279980211d851d34c889a7cbacaa3beeb757da7b9ce04a4bab63bb5",
+      "utf8_lines": 587,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/ops.py",
+      "bytes": 1310,
+      "sha256": "a04f600f5e826fcc1bb330d3dae73a68c386db4613502dfd5d8162c98feb1d66",
+      "utf8_lines": 32,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/outlier_detection.py",
+      "bytes": 979,
+      "sha256": "e3654001191c6e967f93bb0c523b0ebbf978d305b01f051706b63d326b8d0016",
+      "utf8_lines": 26,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/prepare_cp_mirror.py",
+      "bytes": 16063,
+      "sha256": "a84211688a4499ae112f87aacbd979ae3fefc6b042ec823f54092207dc80fc07",
+      "utf8_lines": 394,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/prepare_v4_decode_metadata.py",
+      "bytes": 25956,
+      "sha256": "e5a2524d39381d93884b054c7b424d12ab0c3a6aaaed6e9a5252de8d7bfdc378",
+      "utf8_lines": 545,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/random_sampling.py",
+      "bytes": 13632,
+      "sha256": "640f3ccd6820d338ed2cd7c1f2f3d013780ed32c2ad1bee4b9cc437a598ee4bc",
+      "utf8_lines": 332,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/sampler.py",
+      "bytes": 49930,
+      "sha256": "f2e52468adc0d7ac892a21df123c367333ff5a8de8a6878ddfd21f62e04835bb",
+      "utf8_lines": 1080,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/schedule_mtp_varlen.py",
+      "bytes": 7169,
+      "sha256": "d6d797933092e96ad61863f46d25da76d360822c4b9def629a01a79ebfcd828a",
+      "utf8_lines": 166,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/state_cache.py",
+      "bytes": 8189,
+      "sha256": "cbe3bc0d4f9a7da1da4bef61a743b23c371ed369df01a0e46c0ee3bf2fadc8e3",
+      "utf8_lines": 220,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/store_kv_cache.py",
+      "bytes": 17096,
+      "sha256": "3d501b7d4505b1d112e3e31c968a2a2f97c6b5ff9473436dba51aac998535bd3",
+      "utf8_lines": 380,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/store_mtp_info.py",
+      "bytes": 10008,
+      "sha256": "935060a38d08bdfcf775a3113993cdc4bb1171ebc815be39fa6f9464328932f1",
+      "utf8_lines": 226,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/structure_output.py",
+      "bytes": 6764,
+      "sha256": "deda9b7c08ebc790f783e451e0f7571ccaf5afa8f4bf973ddc3ebb61c4345634",
+      "utf8_lines": 150,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/sum_smaller_probs.py",
+      "bytes": 3317,
+      "sha256": "28af7d280fa550acbf97d381d7c8e35c0461f9e20fa928e62a1ca3d32df43fd9",
+      "utf8_lines": 83,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/tilelang_ops/swa_index.py",
+      "bytes": 5116,
+      "sha256": "ecc5c376d0b7b1f4a6a76a08716f35582459bb58f68228901348fc0354bc406d",
+      "utf8_lines": 117,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/layers/vocab_parallel_embedding.py",
+      "bytes": 913,
+      "sha256": "777e5cc428a52396f05014230e088dddff3183c5b512edc6be43308c5bb09393",
+      "utf8_lines": 30,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/model_loader.py",
+      "bytes": 5933,
+      "sha256": "eaf36a94580f893e8225cd2af401f39825c3c2a9239e84a73fcea00c263fc867",
+      "utf8_lines": 153,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/model_metadata_utils.py",
+      "bytes": 10009,
+      "sha256": "7caac5de631ebad5b511e3572a5ed863d23557a34b0db68a75fa0ec3eb24ce0b",
+      "utf8_lines": 188,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/model_output.py",
+      "bytes": 640,
+      "sha256": "f6b587b251a9f39b3650975c5e247207395e7ca32b67a781497ec78bb2075aad",
+      "utf8_lines": 21,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/__init__.py",
+      "bytes": 900,
+      "sha256": "3c07677ac6d4a7c9698d962aa2fe593c89f0d27608b47030b936c7ab17b7a0fb",
+      "utf8_lines": 37,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/decoder_layer.py",
+      "bytes": 11685,
+      "sha256": "bb30a0b61699be7d508f1cfd6ec12687f77069b4563c1353d4cdb2a5fce7a1f7",
+      "utf8_lines": 239,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/deepseek.py",
+      "bytes": 25377,
+      "sha256": "b6e570afd0c7f592f1ff1506e2c8ccc96b859899b4cdb9e81cffb1a1ac9ec20d",
+      "utf8_lines": 525,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/deepseek_vl.py",
+      "bytes": 15057,
+      "sha256": "49e37dcb34da2bd61a43f817cb060c8c9d63bfce26cc9653adc77c46aceaf312",
+      "utf8_lines": 267,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/mtp/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_lines": 0,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/mtp/dflash.py",
+      "bytes": 18286,
+      "sha256": "e776b57f1c17b94638078f21854095c74c70714d02fd833d2b065ca73b03ac8c",
+      "utf8_lines": 392,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/__init__.py",
+      "bytes": 2514,
+      "sha256": "7a9867e32fbb5758aaf921fa6840a69c1ef4d8ca4fedce0130ac9d5c4362ed4c",
+      "utf8_lines": 42,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/attn.py",
+      "bytes": 47258,
+      "sha256": "5e60a3985cff4411c90262399ea7f895d089999003dbbb24718a657649e3e09a",
+      "utf8_lines": 1008,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/builder.py",
+      "bytes": 6706,
+      "sha256": "3db637bddbfbd2020eeb0385a22d545aaac58a0fdb168b95dea4d315ce0c96de",
+      "utf8_lines": 130,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/compress.py",
+      "bytes": 6908,
+      "sha256": "9e00cff9a31644b6ff705279e387fe17f8a31c878d789175b7c2224259da7bb9",
+      "utf8_lines": 167,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/containers.py",
+      "bytes": 6257,
+      "sha256": "f47c790335c424b19cd849af25cfaa31b9869f735a74a25062ba1d886dd7a50d",
+      "utf8_lines": 135,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/cross_layer.py",
+      "bytes": 22987,
+      "sha256": "96432f4abddd163291e3a589181704622a28234cd6e28ef134d939735f67c7e7",
+      "utf8_lines": 383,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/engram.py",
+      "bytes": 10031,
+      "sha256": "0bf55d4be10fee2b073c9a17a440bc85777001c4d86a1cd8714a9536d66e2410",
+      "utf8_lines": 219,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/engram_metadata.py",
+      "bytes": 5149,
+      "sha256": "a88f44665085332149be328f08311d4b982937c4b93a6cbe368391557700992f",
+      "utf8_lines": 116,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/engram_parameters.py",
+      "bytes": 3057,
+      "sha256": "394a787d306750af6692d645cb7019d147aa32c05fd549215877854c1a943cd2",
+      "utf8_lines": 64,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/hc.py",
+      "bytes": 18706,
+      "sha256": "7b018ab3f5b4ff07c5361bc99c2908704f02a7a1ab5849ad7de625faac3ee336",
+      "utf8_lines": 397,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/hc_blocks.py",
+      "bytes": 4827,
+      "sha256": "8b05ea0d6f536fc43c8705d7be634ded06274e4358264291b69771aebf2390b5",
+      "utf8_lines": 109,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/hc_lazy.py",
+      "bytes": 1247,
+      "sha256": "e029498f5a6809cacc86543bb41e40e0df9e538bca82b5447db24a7e62c088ad",
+      "utf8_lines": 35,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/heads.py",
+      "bytes": 4473,
+      "sha256": "a4d961046b0cdcde93a2e75715ba771129a0ca27190f0648f921077708f1818b",
+      "utf8_lines": 108,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/index_attn.py",
+      "bytes": 26779,
+      "sha256": "c4241986f754a3366e4e3a2dd3908c73bb214b26c17739163e43d0de8182b972",
+      "utf8_lines": 575,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/linear.py",
+      "bytes": 1130,
+      "sha256": "7fca14b322d24d9b3dabe06c08af16f2535ab5b734c3e69a152812dd3e2ff1bf",
+      "utf8_lines": 34,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/mhc_modeling.py",
+      "bytes": 5066,
+      "sha256": "16cb28600a39b1090054f488340b727aa98a894ffcf28653dc801c7bdfe34f4b",
+      "utf8_lines": 142,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/mhc_ops.py",
+      "bytes": 5514,
+      "sha256": "f551594e07dfaef30b16a6514e7a2bec89a1ac13f800946bb4e856c73f196b1a",
+      "utf8_lines": 148,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/mla_attn.py",
+      "bytes": 11634,
+      "sha256": "b568bbe75357d0db40d56635d24b76c4a74d358c19096caf018d880e81374474",
+      "utf8_lines": 299,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/mlp.py",
+      "bytes": 26140,
+      "sha256": "63af63e529870a8d1f7380845f03e38e8b266e0aa8990778d6ed3e151e67245a",
+      "utf8_lines": 616,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/moe.py",
+      "bytes": 4821,
+      "sha256": "31d06e030da23690a895c88cd7e7acaaae75e19875eff484095dee76c65f0b22",
+      "utf8_lines": 112,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/norm.py",
+      "bytes": 1217,
+      "sha256": "38bcd90f2dd49b84abcf3ec67b9025d2feb5eb021b21d19fe072db6c14a93fa6",
+      "utf8_lines": 39,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/rope.py",
+      "bytes": 1803,
+      "sha256": "3070e31dd7617aae920aeda0608f0354826e3d3d07aa6128f9feb40c098a8380",
+      "utf8_lines": 53,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/utils.py",
+      "bytes": 5873,
+      "sha256": "2199848f9544805ba079f43f181a55bad071346283d20d0f668778eeb2c20df7",
+      "utf8_lines": 143,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/v4_modules/yoco.py",
+      "bytes": 6663,
+      "sha256": "4ed02fdbc6971b7d516cd792035725a136b904180857c8ae71ef012cbd60e29e",
+      "utf8_lines": 123,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/vision_encoder/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_lines": 0,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/vision_encoder/mlp_projector.py",
+      "bytes": 973,
+      "sha256": "c4f4ed3d7cdd2a2a51a03ba3775b4d4443695f94007c4488cd32700251daeb19",
+      "utf8_lines": 23,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/vision_encoder/vit.py",
+      "bytes": 9922,
+      "sha256": "65c6e3cc91f5a3846587023e9cca9a205deaa4254c9a26f3bf717d552af4202f",
+      "utf8_lines": 230,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/models/vision_encoder/vl_aligner.py",
+      "bytes": 6195,
+      "sha256": "89c3975ba91ed927c68288661450d87905ec33f9b317b5711ffbff4f5eec1b16",
+      "utf8_lines": 141,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "models-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/parallel_utils/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_lines": 0,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/parallel_utils/communication_op.py",
+      "bytes": 3231,
+      "sha256": "fba7e9ccbc2e939eb1793e25af8eaec25da869afef1cd1e5721c7641c68f8f67",
+      "utf8_lines": 82,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/parallel_utils/cp.py",
+      "bytes": 2151,
+      "sha256": "7ff23b8e5eab43d5405f9e9b874afa95a302fb224c4a11dd7686d952fb8dcb5e",
+      "utf8_lines": 54,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/parallel_utils/nccl_memory.py",
+      "bytes": 4050,
+      "sha256": "cfd0184d64a4c44265ac79c719c7a06cee7fb9059c08013cc52c2604ce981ebc",
+      "utf8_lines": 100,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/parallel_utils/parallel_state.py",
+      "bytes": 7767,
+      "sha256": "e9447b691cb971562f3525b136e09169e15744417198db4810c677447b811992",
+      "utf8_lines": 230,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/parallel_utils/userbuffer.py",
+      "bytes": 8947,
+      "sha256": "8a35529b4d3e7f65f894f1df9032422585b3b7b7bedd5c29c00384471a89c86f",
+      "utf8_lines": 240,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/sampling_inputs.py",
+      "bytes": 5047,
+      "sha256": "f6cbf56c330695ad1420ca9c4e09182fdf9d1b909799e1c5621c384b2ab83cf2",
+      "utf8_lines": 132,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/model_executor/utils.py",
+      "bytes": 3347,
+      "sha256": "4156204f037fe77ca99b13575c64f1a7fd921a3f2ef55b20dc783b9f20e88127",
+      "utf8_lines": 101,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/multimodal_tokens.py",
+      "bytes": 1462,
+      "sha256": "ab25cf5489ef11419a341ce509ad895ab53647690db1332d5c27b635d29ce2e9",
+      "utf8_lines": 41,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/npu_ops/__init__.py",
+      "bytes": 310,
+      "sha256": "762d1c52b0e12f1214c2831e155f62f5c5c014ce81eb26e59c2f70fc1004bcb6",
+      "utf8_lines": 12,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/npu_ops/deep_select.py",
+      "bytes": 824,
+      "sha256": "51995bf44c5908f3e24098399a7538ebb7a249779eccd98e8dc9a906a528b956",
+      "utf8_lines": 26,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/npu_ops/patch_imports.py",
+      "bytes": 5351,
+      "sha256": "eecbe6c3a034eeaa7f1fa23786c0dcf7f6d021c6db1d8d741ee87e5e65b9892e",
+      "utf8_lines": 142,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/npu_ops/vit_attn.py",
+      "bytes": 820,
+      "sha256": "76f2996a9fc0c557ef337e9efd8b3f03c6cdc211b231d6fe6044fa751f343a05",
+      "utf8_lines": 31,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/platform.py",
+      "bytes": 9036,
+      "sha256": "2ee0777e07a6336c7f88dd808001524d07ba690006086d13aa7c2ad4144b4612",
+      "utf8_lines": 227,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/py.typed",
+      "bytes": 72,
+      "sha256": "a116c346077bbad279991d054b0ee19743921b5c52980c4e2c17996278a7bb95",
+      "utf8_lines": 2,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/sampling_params.py",
+      "bytes": 5261,
+      "sha256": "cb0d700532f8f2f7740f8f38ccf2151504d6e7cfc976adb167129040d940a062",
+      "utf8_lines": 119,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/sequence.py",
+      "bytes": 11529,
+      "sha256": "c233bf4eb34eb1d2aa61df32724f1d7848e911bd8ab6dbfe809cf67a8301bc5d",
+      "utf8_lines": 281,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/shared_memory.py",
+      "bytes": 12744,
+      "sha256": "12f87780721d27f7c304e94bdaae567f2c2855012956802e547d4d0eff4c42d2",
+      "utf8_lines": 363,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/structure_output/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_lines": 0,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/structure_output/compiler.py",
+      "bytes": 2894,
+      "sha256": "47190896bef931b2f7cdc71762bb5ea6d882511d4ef99b21e11f1e437a2e9b3e",
+      "utf8_lines": 74,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/structure_output/mask.py",
+      "bytes": 1220,
+      "sha256": "5d83d89fc9f7dd77c85263a5980d6bdebebb09bcc1f0f9dd4c692c9941a90b73",
+      "utf8_lines": 36,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/structure_output/matcher.py",
+      "bytes": 12867,
+      "sha256": "e91a57dab3ef8dcee75e777e93ae9e13f97514a4244e8407cba20ba62896c04b",
+      "utf8_lines": 347,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/structure_output/so_matcher_builder.py",
+      "bytes": 5412,
+      "sha256": "f454f89c930a7169a78a906aa73159b86aaf73eb598bf60e64cd849b0543d548",
+      "utf8_lines": 138,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/testing.py",
+      "bytes": 1025,
+      "sha256": "7d80a4f9dbd2142df9a434e6e65d9a47629e864dc987b16833cb6556180afd67",
+      "utf8_lines": 23,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/timer.py",
+      "bytes": 10677,
+      "sha256": "d9c65020a013fc5bb35cf0e9a9cea29705c91138e626c97026f42c93ff29ac6d",
+      "utf8_lines": 295,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/utils.py",
+      "bytes": 10085,
+      "sha256": "b4ff0dd502c0b69219a3ebf81deafd3cf9d060900441ad5a7c17c4df32fec9aa",
+      "utf8_lines": 282,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/ve/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_lines": 0,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/ve/multimodal_processor.py",
+      "bytes": 16372,
+      "sha256": "d5a8cce8e75ac7297b7aca87920a9cdca93bfc64be9ceb9328332c38535824bb",
+      "utf8_lines": 326,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/ve/prepare_tensor_input_vl.py",
+      "bytes": 8903,
+      "sha256": "e62f91be7b33bcac48748df48a65f4c4660b2906d35c275c9ef897145da9e07b",
+      "utf8_lines": 163,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/ve/processor/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_lines": 0,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/ve/processor/common.py",
+      "bytes": 1387,
+      "sha256": "f09f2fa906a0441cb432d1c85218d32021efbc3f1b4e5221332a5adad248845f",
+      "utf8_lines": 52,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/ve/processor/image_processor.py",
+      "bytes": 12843,
+      "sha256": "5c833954130a6ea12e6d6b34911c053119e2a4150cb0fa21a4aab0314058f4df",
+      "utf8_lines": 318,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/ve/processor/mm_processor.py",
+      "bytes": 1292,
+      "sha256": "13901a22aac11f41eb5902f3ec5b364315e6e8481c1164a00881ca2ac5de8bb8",
+      "utf8_lines": 30,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/ve/processor/text_processor.py",
+      "bytes": 537,
+      "sha256": "0855ce59f70283ef5c5fb14435eb9c5823c64abbca9f51cf85044d0be2529099",
+      "utf8_lines": 13,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/ve/schema.py",
+      "bytes": 3298,
+      "sha256": "c907131655a0bcde8e731844cb4ef1aa78d9941d10f65cca62c44f141fe00e76",
+      "utf8_lines": 77,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/worker/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_lines": 0,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/worker/base.py",
+      "bytes": 15498,
+      "sha256": "59f62f72fdc31f3d6478cc5b31c42ed1ece478099708d5a7121c35047116a31a",
+      "utf8_lines": 357,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/worker/cache_engine.py",
+      "bytes": 50221,
+      "sha256": "009ab966490a403791025a88efa463fce4ac05990b43ffb81455186d305624b2",
+      "utf8_lines": 978,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/worker/cuda_graph_runner.py",
+      "bytes": 7375,
+      "sha256": "746c1b56669bb8d337919b2819d310330d4d11c52b0d56fdf40158b2a86f8121",
+      "utf8_lines": 168,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/worker/decode_perf_cache.py",
+      "bytes": 6875,
+      "sha256": "cb0e943073b2b6fcda8090c98a6f6b520130263295660e747da35a304d9e690a",
+      "utf8_lines": 166,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/worker/dflash_cuda_graph_runner.py",
+      "bytes": 4129,
+      "sha256": "7acc61f08078563c9c0950c7466f6ac8794397351905114403804847dd2dc316",
+      "utf8_lines": 100,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/worker/model_runner.py",
+      "bytes": 30177,
+      "sha256": "8fa315ac931ed5efcbdd8c9f23c5d52f170b12b136a69798e92439f6805cab9c",
+      "utf8_lines": 644,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/worker/runtime_config.py",
+      "bytes": 3117,
+      "sha256": "02a65df128c2a0d6f21df694d8361e44fc4a917686de6b4abe07ac511819917f",
+      "utf8_lines": 69,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "kernels-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/worker/worker.py",
+      "bytes": 11887,
+      "sha256": "ea64e6e666b331914644db3ba9cf5d3c185ae5645d4abf6444818f15cb8f98c2",
+      "utf8_lines": 283,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "deepinfer/worker/zos_status.py",
+      "bytes": 1745,
+      "sha256": "267e4f1fcac57cbde586f67971b8a9654f5e7bd473b3919c01c13f1245ed72cd",
+      "utf8_lines": 40,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "doc/images/architecture_overview.png",
+      "bytes": 1199189,
+      "sha256": "a04aed83c96ddc4a6ec7e578b961d8a3fdbea16ac72a4f51b3cc2221b858beb5",
+      "utf8_lines": null,
+      "status": "image_inspected",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "doc/images/decode_pareto.png",
+      "bytes": 108005,
+      "sha256": "26d9f0f990c236f61f5b86e248062c4436b2fef6f5852961359b15a2d4c5c65f",
+      "utf8_lines": null,
+      "status": "image_inspected",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "doc/images/prefill_pareto.png",
+      "bytes": 100168,
+      "sha256": "ef3c63e857e3340890abe2fb8379f8c8e2564c6a104975b09634875bfdc33741",
+      "utf8_lines": null,
+      "status": "image_inspected",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "doc/images/wide_ep_decode_pareto.png",
+      "bytes": 143373,
+      "sha256": "719594a75b14cbb14ddba69872eb44be7a328729716dfb3838ce59dbf898ab7c",
+      "utf8_lines": null,
+      "status": "image_inspected",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "doc/inference_deployment_qa.md",
+      "bytes": 29177,
+      "sha256": "798c8ed6f5ccc9f1d319aef1cfbfe6ebf1b3bbbab907bf97961d764145fc95a7",
+      "utf8_lines": 312,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "eval/.gitignore",
+      "bytes": 17,
+      "sha256": "cfebde3c833935021331b8eec1100973839c4cc1d66dce4ee340ca6a2e28e1e3",
+      "utf8_lines": 2,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "eval/README.md",
+      "bytes": 8718,
+      "sha256": "dce6a74cd7f093ba1cbce8b4dd4dc13e1dc17729d61f0ad49a4ab46a9ef659ee",
+      "utf8_lines": 221,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "eval/aime/bench.py",
+      "bytes": 6547,
+      "sha256": "49beb8f3fedf8724e637ab403045d0d813ff4904a169648fd087380360a3db87",
+      "utf8_lines": 181,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "eval/aime/run.sh",
+      "bytes": 1103,
+      "sha256": "0b6c373ee8361d98184841740aaf83e4c1dfe1a43aff99c4ecaacbdf8a2ff1b2",
+      "utf8_lines": 30,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "eval/common/__init__.py",
+      "bytes": 36,
+      "sha256": "6c515513d8d129cccdcb81e199e816a02e8a38bfcdade8fe6a0dfb0c0203cda0",
+      "utf8_lines": 1,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "eval/common/encoder.py",
+      "bytes": 814,
+      "sha256": "678ff886ba6956aff6a7aa1c570405b14786f12450c689a69d5db30a1d2dfa00",
+      "utf8_lines": 23,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "eval/common/io.py",
+      "bytes": 1216,
+      "sha256": "2eec3fc2c70aa168e702f9fa301f79c2301851a8b33797d77445dc08f4d5a74b",
+      "utf8_lines": 38,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "eval/common/judge.py",
+      "bytes": 16467,
+      "sha256": "c7462404fcd08bafac6de0871cfbfe1cd21f040cfe92df8f0ab0ee4e46662352",
+      "utf8_lines": 321,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "eval/common/loader.py",
+      "bytes": 815,
+      "sha256": "a9b357871f8762584780b9cd4dfdd0894f49f3755c4ff8ccbeb07e2ec7256e5e",
+      "utf8_lines": 25,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "eval/common/passk.py",
+      "bytes": 4135,
+      "sha256": "e07737f75d21883ba6518be569ad4cbb6cb394b6e5033d388f5b1103fb37fd4b",
+      "utf8_lines": 103,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "eval/common/paths.py",
+      "bytes": 1632,
+      "sha256": "229d00904ce7920fab5c662cf342d4aaefc391f65dfbd365af7a809afe39ca15",
+      "utf8_lines": 51,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "eval/gpqa/bench.py",
+      "bytes": 6061,
+      "sha256": "6caa9a932509aa322277c8dedc783dca31ab329a59fbe6fa438fff8b442a3b35",
+      "utf8_lines": 167,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "eval/gpqa/run.sh",
+      "bytes": 1105,
+      "sha256": "4c3a6a4bd105dd8f9c5833ba38ecfcd94df9843d240e47c75b4335de3f4bb094",
+      "utf8_lines": 30,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "eval/hle/bench.py",
+      "bytes": 8144,
+      "sha256": "c4aa0a220563d7c50a9b79cab16b446a4868fdec230362bc16ae2c8cd60fcf69",
+      "utf8_lines": 222,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "eval/hle/run.sh",
+      "bytes": 967,
+      "sha256": "ec9d508a18b1b6aed02b78f2bd532035a4ec27f38d37085de723d18434d8868f",
+      "utf8_lines": 26,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "eval/run_eval.py",
+      "bytes": 12897,
+      "sha256": "ddc585fcbfee0c074c967d25944f984805e07f61b37b10ad05aa1aa31c655e79",
+      "utf8_lines": 309,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "eval/score.py",
+      "bytes": 11241,
+      "sha256": "3912cef6385c97695c25f0308512721f0f22ad20f26b16dc95411581428c99d5",
+      "utf8_lines": 253,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "examples/README.md",
+      "bytes": 13674,
+      "sha256": "64596e69c14ab30a2d3f274eb3cc7c765da26b1efd944afa1102dd095f57304d",
+      "utf8_lines": 124,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "examples/_config.py",
+      "bytes": 5397,
+      "sha256": "42699ea0762cfb31822240b1d6ff82030c8765745971f1c46e549fb546287cc0",
+      "utf8_lines": 125,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "examples/_launch.py",
+      "bytes": 1843,
+      "sha256": "3425452ee1c5823b97a0ac3a27bbc80cad625b139521863f202c0a8061bb29a2",
+      "utf8_lines": 50,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "examples/_prompts.py",
+      "bytes": 14127,
+      "sha256": "a75766cf9c3604480511e5e69c832d26f1436f8679c5447765311daea60b6bdd",
+      "utf8_lines": 289,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "examples/_structured_output.py",
+      "bytes": 2898,
+      "sha256": "8b3b066ade3a7d89210f9ce4ae20f9e5faedc3ad157b3aedf994d1cda2703c74",
+      "utf8_lines": 64,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "examples/_trace.py",
+      "bytes": 8750,
+      "sha256": "90f2fa4aca31b178a8d00dd62744b4676af03e0900b2da2cb8da2c3b49db6585",
+      "utf8_lines": 186,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "examples/_ve_helper.py",
+      "bytes": 6986,
+      "sha256": "e42c6eaed4ac8d13777623b5cd9b250d559c71233dcf6000517bfefd52a44055",
+      "utf8_lines": 147,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "examples/benchmark.py",
+      "bytes": 28862,
+      "sha256": "de26c6982bef644eb61165109f0a4a3a2ac805c93e34c73c45bc6022b7e62f61",
+      "utf8_lines": 588,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "examples/images/carrots.jpeg",
+      "bytes": 212495,
+      "sha256": "5df896a4a07e127281c60fc957f8b3d73f4735b3258a0bf762b4383557f8fa9a",
+      "utf8_lines": null,
+      "status": "image_inspected",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "examples/images/ribs.jpeg",
+      "bytes": 143341,
+      "sha256": "a944b9221f08879f5e0afa7b8c58153f8af89d9cc27a2922184a11ec539eb3aa",
+      "utf8_lines": null,
+      "status": "image_inspected",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "examples/offline_inference.py",
+      "bytes": 5022,
+      "sha256": "02b50576f4fbc693c8a02c5cfea2f41d277ec961b5e7835438e1ff812b900d59",
+      "utf8_lines": 113,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "examples/refresh_offline_decode_ppl.py",
+      "bytes": 3962,
+      "sha256": "47ab02262a71359190b675f14b860d25c6203880be26605055bc6f0e4f750879",
+      "utf8_lines": 84,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "examples/sweep/plot_pareto.py",
+      "bytes": 9051,
+      "sha256": "ac200cf33a6c1f23f78112aef35475266b40d019e6bdf52fe768b055fe677e3c",
+      "utf8_lines": 179,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "examples/sweep/run_sweep.sh",
+      "bytes": 3888,
+      "sha256": "39866148c857f9be246443e9e7ce77e6e3b5e55b782212b997cacd9fa7903ab5",
+      "utf8_lines": 90,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "examples/sweep/ve_sweep.py",
+      "bytes": 6531,
+      "sha256": "04ad8053bc64975d7f63dd9064a2241a270b45e8b0071c883403516e7655292e",
+      "utf8_lines": 136,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "examples/yoco/README.md",
+      "bytes": 2308,
+      "sha256": "ef0e0706e082d2b95e92727cabc2f0f3f5ef72b72280361b02e13aa0e3b85e8f",
+      "utf8_lines": 41,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "examples/yoco/run_yoco_equiv_l2.sh",
+      "bytes": 434,
+      "sha256": "5c35002dfc9a35f0b7be543bda4279de5a576a0b170c656bbf717b5e19c9cf5a",
+      "utf8_lines": 13,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "examples/yoco/yoco_equiv.py",
+      "bytes": 52887,
+      "sha256": "4c65ff3a2fa5aad41fbc57de5ed18597d304933222d3ed14c8c66f2f4ed6b7c6",
+      "utf8_lines": 1057,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 2324,
+      "sha256": "05a79a324b30a66f12e6956b61427c4a3da27335ec96cab73507033da1dd2d8a",
+      "utf8_lines": 82,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "requirements-ascend.txt",
+      "bytes": 124,
+      "sha256": "a28fc43335ad589ca0de7a350ba5827009d26052f161d0c39b7ad1d094ca56c9",
+      "utf8_lines": 4,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "requirements-dev.txt",
+      "bytes": 502,
+      "sha256": "68972084c277b92270cc35f6792d1a20635196b5e08c224ea75ceac182353e85",
+      "utf8_lines": 19,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "requirements-nvidia.txt",
+      "bytes": 132,
+      "sha256": "845c1307b8702a319929d1ddae2e023a02612515e21ffcf56a6e82dc5931da26",
+      "utf8_lines": 5,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 363,
+      "sha256": "d00086ebbdecb7d34fdeaa85e2b2177e550c3c0c448106f62e04ae09eae4323d",
+      "utf8_lines": 21,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "scripts/build.sh",
+      "bytes": 1143,
+      "sha256": "5fbfb50aa2f40fc9c2120d038a32005bb19374b22ae92d2c68e039da55520ace",
+      "utf8_lines": 49,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "scripts/build_vendor.sh",
+      "bytes": 1638,
+      "sha256": "22eddd5908ee135dfb044a93cddff02da1332d0a0aa14b5931b1b2d593b330b2",
+      "utf8_lines": 54,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "scripts/format_csrc.sh",
+      "bytes": 2168,
+      "sha256": "efed8a427827e105abcb026d33ab27a7af82d8160874a7e2bd4d953132b2ecb7",
+      "utf8_lines": 73,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "scripts/gen_stub.sh",
+      "bytes": 511,
+      "sha256": "cca7d5e33ce273b1704abb7b7368f6c16169f7af32d7ce9b928608ff94b28807",
+      "utf8_lines": 18,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "setup.py",
+      "bytes": 3168,
+      "sha256": "2a3a8b2761888cb00f0b813f583f71f446f6a870acfb93f11b7fdcb81effffae",
+      "utf8_lines": 91,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utf8_lines": 0,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/conftest.py",
+      "bytes": 726,
+      "sha256": "2a1b9c675dcad5154aa35464c40cce8988d261e5ebb51f03c6005ea06b4fae6e",
+      "utf8_lines": 26,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/distributed/test_expert_shuffle.py",
+      "bytes": 6533,
+      "sha256": "2a450f1d3ecfd97383de8f4138039f39c506baeea2862ba823b0316f4e3345c0",
+      "utf8_lines": 144,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/distributed/test_shm_broadcast.py",
+      "bytes": 4800,
+      "sha256": "7e0e8546df78a5c8ccf6aab4659b7d662c0f6a69514507b2d18a6c23896244f1",
+      "utf8_lines": 145,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/engine/test_flops_estimator.py",
+      "bytes": 8739,
+      "sha256": "b2266ddb7b924d1a53a73548d9291889f0361ec3dc93e308f91e0a41f3d1a866",
+      "utf8_lines": 178,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/engine/test_mm_overwrite_prompt.py",
+      "bytes": 7477,
+      "sha256": "19fbdf327a7e9a3c55688761ce4cf68ec016c39266591d54cb834851b4be9854",
+      "utf8_lines": 153,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/engine/test_sequence.py",
+      "bytes": 5732,
+      "sha256": "85239461e97a0448bb4e832f145c7e50def2a36a8c00fa373bd7df630b5abab3",
+      "utf8_lines": 159,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/models/_runner.py",
+      "bytes": 1129,
+      "sha256": "5e8f6ce4cf7eb1a4cc82ea0676fecbea9df5dfd5aed5d0e5b839d8b8354f251f",
+      "utf8_lines": 32,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/models/offline_decode_ppl.json",
+      "bytes": 2045,
+      "sha256": "e8512de2469374ef4af3307ed8c453cf7fef3fd0ca180316181c6866bd50e9b6",
+      "utf8_lines": 90,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/models/test_batch_invariant.py",
+      "bytes": 4109,
+      "sha256": "cc1860982b99bca71ab5508fc9c2e0dfafc18a07650c35536424343cf8ca31b6",
+      "utf8_lines": 116,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/models/test_eplb_policy.py",
+      "bytes": 6132,
+      "sha256": "2b693c30276f6cf312dafb8d5dffe2ca34efdfdb688b15d2a637a4764ee8aa41",
+      "utf8_lines": 117,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/models/test_kl.py",
+      "bytes": 8633,
+      "sha256": "b678420198d59ecf1f5080c5e9d7b4de95c2460b6c108a16bebf45c6d568db1e",
+      "utf8_lines": 220,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/models/test_offline_inference.py",
+      "bytes": 7215,
+      "sha256": "d10bc8dd71dbfade3f797c2323509af88ac576e66d81101bc2890e575a7610aa",
+      "utf8_lines": 164,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/models/test_offline_inference_long.py",
+      "bytes": 446,
+      "sha256": "4eb332a6a27352d8f3c761866090e14ae6ae70f74209024bc4b2bfedd7e24b7d",
+      "utf8_lines": 16,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/models/test_sampler.py",
+      "bytes": 9515,
+      "sha256": "473b7939ca9057e5752a3b2c11518354d7901961127b76c4caa0d996b9d0e730",
+      "utf8_lines": 259,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/models/test_ve_batch_invariant.py",
+      "bytes": 8202,
+      "sha256": "7ef2fac7289f886c99ff9e7ee3a7eb5495fb6b8e3d62d04aba1592973135c5c0",
+      "utf8_lines": 158,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/test_cuda_sync_guards.py",
+      "bytes": 8459,
+      "sha256": "9b96b1b7dac9723f68a20a944adc5268071be76bf77557332dfdcf5b0e9d7902",
+      "utf8_lines": 213,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/ve/test_chunk_mm_metadata.py",
+      "bytes": 9339,
+      "sha256": "df9752e418042d2a7202956db302baf222466cfa04cab054e077a8d45b6eb1e2",
+      "utf8_lines": 189,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/worker/test_state_cache_ops.py",
+      "bytes": 36811,
+      "sha256": "7b775825e0798610e0f77eb45713c34514511683bd654d4e7640b10b569d8ecf",
+      "utf8_lines": 736,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    },
+    {
+      "path": "tests/worker/test_userbuffer.py",
+      "bytes": 3126,
+      "sha256": "81df6b84fda5e0e946edbb17ec55a9633b52b7254e7704751c10509566ce27e0",
+      "utf8_lines": 92,
+      "status": "text_read_complete",
+      "reviewed_by": [
+        "systems-read-coverage.json"
+      ]
+    }
+  ],
+  "article": {
+    "url": "https://cursor.com/blog/mixture-of-kittens",
+    "resolved_url": "https://cursor.com/blog/mixture-of-kittens",
+    "fetched_utc": "2026-10-24T17:38:30.133519+00:00",
+    "html_sha256": "0ef3457f2957a7531db460a60a01af109977a43112ef1ff411919c1bf25839f4",
+    "html_bytes": 849532,
+    "text_sha256": "b95d5d86048267adbf8db39624b6a6317406d01e2ca92e9bee444ce67f2276bc",
+    "text_lines": 792,
+    "scope": "Private local research snapshot, not part of the public submission bundle.",
+    "complete_unique_text_read": true,
+    "technical_figures_inspected": 6,
+    "figures": [
+      {
+        "url": "https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/blog/moe-forward-light-8oB4P86jYdEv7akurQxupC2x6VJCut.png",
+        "sha256": "b88a98d397835dd3ea1dde73915b88f1cb15842a124aff62cbf79921d467bbdb",
+        "visually_inspected": true
+      },
+      {
+        "url": "https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/blog/pvp-dispatch-light-neEuNH9Bsl5cwfAh8KHsvvbxSd96Rt.png",
+        "sha256": "497f28bb70f8db50d6b7b5b625b4676f073b5f3da01d1344ebde596118568e54",
+        "visually_inspected": true
+      },
+      {
+        "url": "https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/blog/fine-coarse-light-48pUffAHZCSN3oRNYJ3dlnVg9jMAGg.png",
+        "sha256": "b4be76340ea1c73e00abc29569ee284457f6a7e297f43079beac95e87cd2a907",
+        "visually_inspected": true
+      },
+      {
+        "url": "https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/blog/minibatch-light-rpB7k0EeXrBjPyO5DNDtH44ki6cPB5.png",
+        "sha256": "0ca8986e173232cee0b15b61a324cf804161b505ef7e9f384fc32cdff87ec331",
+        "visually_inspected": true
+      },
+      {
+        "url": "https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/blog/minibatch-2-light-7PsFKWZYeq5ckiMU3WfpOT00ZgsMfn.png",
+        "sha256": "7052188eb506d5b5a528502c167c0becde510164b41ac2747ef6b5ea900251ad",
+        "visually_inspected": true
+      },
+      {
+        "url": "https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/blog/minibatch-3-light-6sCFZaei9WotkdFUDJewSnWO1BuMvG.png",
+        "sha256": "0805d4c42c8aea99feaf615a64bace3ee141e088a57dff82f8b452baab9f514e",
+        "visually_inspected": true
+      }
+    ],
+    "text_lf_normalized_sha256": "5603cd6491dbcbe06c1ef93058a6a97650f163e104e236d141e92de3d8a64c2a",
+    "text_file_note": "Raw UTF-8 text file uses Windows CRLF; normalized logical-text hash is recorded separately."
+  },
+  "compiler_effect": "One demonstrated native-cp.async target-admission correction; multiwrap ring-pipeline and compile-state-isolation regressions. No imported third-party backend or distributed runtime."
+}

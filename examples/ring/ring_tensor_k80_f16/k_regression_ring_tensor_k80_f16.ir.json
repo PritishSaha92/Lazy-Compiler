@@ -1,0 +1,66 @@
+{
+  "inputs": [
+    "a",
+    "b"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "a": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "a",
+          "shape": [
+            16,
+            80
+          ],
+          "dtype": "f16"
+        }
+      ]
+    },
+    "b": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "b",
+          "shape": [
+            80,
+            8
+          ],
+          "dtype": "f16"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='batch', extent=Dim(1), window=None), Axis(name='cell', extent=Dim(32), window=None)), body=(Smem(name='aring', extents=(32, 16), dtype='__half', align=16), Smem(name='bring', extents=(32, 8), dtype='__half', align=16), Smem(name='bar', extents=(2,), dtype='unsigned long long', align=8), TmaDescriptor(name='adesc', src_buf='a', src_shape=(16, 80), box_extents=(16, 16), swizzle='NONE', dtype='__half'), TmaDescriptor(name='bdesc', src_buf='b', src_shape=(80, 8), box_extents=(16, 8), swizzle='NONE', dtype='__half'), RegFragment(name='af', role='a', shape=(16, 8, 16), dtype=DataType(name='f16', np=dtype('float16'), nbytes=2), count=1, nregs=None), RegFragment(name='bf', role='b', shape=(16, 8, 16), dtype=DataType(name='f16', np=dtype('float16'), nbytes=2), count=1, nregs=None), RegFragment(name='cf', role='c', shape=(16, 8, 16), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), count=1, nregs=None), Cond(cond=BinaryExpr(op='==', left=Var(name='_tid'), right=Literal(value=0, dtype='int')), body=(MbarrierInit(mbar='bar', count=1, slot=Literal(value=0, dtype='int')), MbarrierInit(mbar='bar', count=1, slot=Literal(value=1, dtype='int'))), else_body=()), Sync(barrier_id=0, count=None, warp=False), Cond(cond=BinaryExpr(op='==', left=Var(name='_tid'), right=Literal(value=0, dtype='int')), body=(MbarrierArriveExpectTx(mbar='bar', bytes_=768, slot=BinaryExpr(op='%', left=Literal(value=0, dtype='int'), right=Literal(value=2, dtype='int'))), TmaLoad(smem='aring', smem_index=(BinaryExpr(op='*', left=BinaryExpr(op='%', left=Literal(value=0, dtype='int'), right=Literal(value=2, dtype='int')), right=Literal(value=256, dtype='int')),), desc='adesc', coords=(BinaryExpr(op='*', left=Var(name='batch'), right=Literal(value=16, dtype='int')), BinaryExpr(op='*', left=Literal(value=0, dtype='int'), right=Literal(value=16, dtype='int'))), mbar='bar', mbar_slot=BinaryExpr(op='%', left=Literal(value=0, dtype='int'), right=Literal(value=2, dtype='int'))), TmaLoad(smem='bring', smem_index=(BinaryExpr(op='*', left=BinaryExpr(op='%', left=Literal(value=0, dtype='int'), right=Literal(value=2, dtype='int')), right=Literal(value=128, dtype='int')),), desc='bdesc', coords=(BinaryExpr(op='*', left=Literal(value=0, dtype='int'), right=Literal(value=16, dtype='int')), Literal(value=0, dtype='int')), mbar='bar', mbar_slot=BinaryExpr(op='%', left=Literal(value=0, dtype='int'), right=Literal(value=2, dtype='int')))), else_body=()), Loop(axis=Axis(name='slab', extent=Dim(4), window=None), body=(Cond(cond=BinaryExpr(op='==', left=Var(name='_tid'), right=Literal(value=0, dtype='int')), body=(MbarrierArriveExpectTx(mbar='bar', bytes_=768, slot=BinaryExpr(op='%', left=BinaryExpr(op='+', left=Var(name='slab'), right=Literal(value=1, dtype='int')), right=Literal(value=2, dtype='int'))), TmaLoad(smem='aring', smem_index=(BinaryExpr(op='*', left=BinaryExpr(op='%', left=BinaryExpr(op='+', left=Var(name='slab'), right=Literal(value=1, dtype='int')), right=Literal(value=2, dtype='int')), right=Literal(value=256, dtype='int')),), desc='adesc', coords=(BinaryExpr(op='*', left=Var(name='batch'), right=Literal(value=16, dtype='int')), BinaryExpr(op='*', left=BinaryExpr(op='+', left=Var(name='slab'), right=Literal(value=1, dtype='int')), right=Literal(value=16, dtype='int'))), mbar='bar', mbar_slot=BinaryExpr(op='%', left=BinaryExpr(op='+', left=Var(name='slab'), right=Literal(value=1, dtype='int')), right=Literal(value=2, dtype='int'))), TmaLoad(smem='bring', smem_index=(BinaryExpr(op='*', left=BinaryExpr(op='%', left=BinaryExpr(op='+', left=Var(name='slab'), right=Literal(value=1, dtype='int')), right=Literal(value=2, dtype='int')), right=Literal(value=128, dtype='int')),), desc='bdesc', coords=(BinaryExpr(op='*', left=BinaryExpr(op='+', left=Var(name='slab'), right=Literal(value=1, dtype='int')), right=Literal(value=16, dtype='int')), Literal(value=0, dtype='int')), mbar='bar', mbar_slot=BinaryExpr(op='%', left=BinaryExpr(op='+', left=Var(name='slab'), right=Literal(value=1, dtype='int')), right=Literal(value=2, dtype='int')))), else_body=()), MbarrierWait(mbar='bar', phase=BinaryExpr(op='%', left=BinaryExpr(op='//', left=Var(name='slab'), right=Literal(value=2, dtype='int')), right=Literal(value=2, dtype='int')), slot=BinaryExpr(op='%', left=Var(name='slab'), right=Literal(value=2, dtype='int'))), LdmatrixLoad(frag='af', src_buffer='aring', src_index=(BinaryExpr(op='*', left=BinaryExpr(op='%', left=Var(name='slab'), right=Literal(value=2, dtype='int')), right=Literal(value=16, dtype='int')), Literal(value=0, dtype='int')), role='a', ldm=16, swizzle='NONE', staged=True, gmem_guard=None, k_zero=None, b_trans=False, pair_frag=None, byte_slab=False, scale_buffer=None, scale_index=(), scale_ldm=0, fragment_layout='m16n8k16', fragment_index=0), LdmatrixLoad(frag='bf', src_buffer='bring', src_index=(BinaryExpr(op='*', left=BinaryExpr(op='%', left=Var(name='slab'), right=Literal(value=2, dtype='int')), right=Literal(value=16, dtype='int')), Literal(value=0, dtype='int')), role='b', ldm=8, swizzle='NONE', staged=True, gmem_guard=None, k_zero=None, b_trans=False, pair_frag=None, byte_slab=False, scale_buffer=None, scale_index=(), scale_ldm=0, fragment_layout='m16n8k16', fragment_index=0), MmaSyncPtx(c_frag='cf', a_frag='af', b_frag='bf', shape=(16, 8, 16), ab_dtype='f16', c_dtype='f32', b_row_major=False, sfa_frag=None, sfb_frag=None), Sync(barrier_id=0, count=None, warp=False)), unroll=False, seed=True), MbarrierWait(mbar='bar', phase=BinaryExpr(op='%', left=BinaryExpr(op='//', left=Literal(value=4, dtype='int'), right=Literal(value=2, dtype='int')), right=Literal(value=2, dtype='int')), slot=BinaryExpr(op='%', left=Literal(value=4, dtype='int'), right=Literal(value=2, dtype='int'))), LdmatrixLoad(frag='af', src_buffer='aring', src_index=(BinaryExpr(op='*', left=BinaryExpr(op='%', left=Literal(value=4, dtype='int'), right=Literal(value=2, dtype='int')), right=Literal(value=16, dtype='int')), Literal(value=0, dtype='int')), role='a', ldm=16, swizzle='NONE', staged=True, gmem_guard=None, k_zero=None, b_trans=False, pair_frag=None, byte_slab=False, scale_buffer=None, scale_index=(), scale_ldm=0, fragment_layout='m16n8k16', fragment_index=0), LdmatrixLoad(frag='bf', src_buffer='bring', src_index=(BinaryExpr(op='*', left=BinaryExpr(op='%', left=Literal(value=4, dtype='int'), right=Literal(value=2, dtype='int')), right=Literal(value=16, dtype='int')), Literal(value=0, dtype='int')), role='b', ldm=8, swizzle='NONE', staged=True, gmem_guard=None, k_zero=None, b_trans=False, pair_frag=None, byte_slab=False, scale_buffer=None, scale_index=(), scale_ldm=0, fragment_layout='m16n8k16', fragment_index=0), MmaSyncPtx(c_frag='cf', a_frag='af', b_frag='bf', shape=(16, 8, 16), ab_dtype='f16', c_dtype='f32', b_row_major=False, sfa_frag=None, sfb_frag=None), Sync(barrier_id=0, count=None, warp=False), RegStore(dst_buffer='out', dst_index=(BinaryExpr(op='*', left=Var(name='batch'), right=Literal(value=16, dtype='int')), Literal(value=0, dtype='int')), frag='cf', shape=(16, 8, 16), ldm=0, epilogue=None, extra_frags=(), m_guard=None, n_guard=None, atomic=False, fragment_layout='m16n8k16', volta_interleaved=False, fragment_index=(0, 0), swizzle='NONE', row_dim=None, col_dim=None)), block_threads=32, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_ring_tensor_k80_f16",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "a",
+        "b"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            16,
+            8
+          ],
+          "dtype": "f32"
+        }
+      ]
+    }
+  }
+}

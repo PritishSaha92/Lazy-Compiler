@@ -1,0 +1,16 @@
+{
+  "scope": "One additional input variant of an existing generated graph, not another generated shape",
+  "parent_id": "oct24_p06_i32_selection",
+  "pass": true,
+  "cpu_torch_numpy_exact": true,
+  "fp32_roundtrip_sensitive_outputs": 625,
+  "elements": 1043,
+  "min_output": -67108870,
+  "max_output": 67108868,
+  "files_sha256": {
+    "expected.npz": "046b3de606a6b886559424ebb898eb35543f88225606f09629e6d3f81098e7a3",
+    "k_where_pointwise.ir.json": "e563747835db3c0335cb4013ea0091dc712ce63ac5609d09dfc1ed725d0fa3a8",
+    "meta.json": "7bad1bf4ee55ba6fb8dde5e8d96167b7c08fa53fd1104e42b8e44245db43b150"
+  },
+  "source_sha256": "5ac02b29523ac787e445190ba2020096afbc6f0549ac5797a051293ea444d628"
+}

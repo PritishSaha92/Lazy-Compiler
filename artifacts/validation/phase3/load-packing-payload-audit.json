@@ -1,0 +1,117 @@
+{
+  "original_report_sha256": "2baae9f1832a3a30cd1406f804b1e88b32c564b71a8abf884e1535bd92f6f3cf",
+  "scope": "The original ptx_sha256 fields hash saved artifacts, whose Windows text write duplicated CR. Deterministic re-emission from unchanged frozen CLI snapshots reconstructs exactly the posted payload. Original artifacts and report retained.",
+  "measurements": [
+    {
+      "problem": "p00_scalar_add",
+      "variant": "baseline",
+      "original_artifact_sha256": "05d00ca9321cd423ee7c2a5ec78aa7d99d739cd16216f8a1338f64fd17d5f2dd",
+      "submitted_payload_sha256": "c0d81f88369a245e4144ff5e364ed1139349e24a40f8b3ca26f6257b41729a41",
+      "submitted_payload_bytes": 1524,
+      "recovered_exactly_by_removing_duplicate_CR": true,
+      "payload_path": "artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\p00_scalar_add-baseline.submitted.ptx"
+    },
+    {
+      "problem": "p00_scalar_add",
+      "variant": "candidate",
+      "original_artifact_sha256": "5e78806757712d45e1a0edd0a9cb9b2d09bb15d7a1644fa22eb4d8a7fe604362",
+      "submitted_payload_sha256": "21659499cfac19c98706ae056c76d47d695003f9ab6950a1f40fe60b455202e3",
+      "submitted_payload_bytes": 1220,
+      "recovered_exactly_by_removing_duplicate_CR": true,
+      "payload_path": "artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\p00_scalar_add-candidate.submitted.ptx"
+    },
+    {
+      "problem": "p01_vector_add",
+      "variant": "baseline",
+      "original_artifact_sha256": "118624328f68d631c0c68aa66f9330e99dc17b461448d3496ab356c081eb7225",
+      "submitted_payload_sha256": "a81dac104a87400e25ea14b163b3aa7ed72fed34c80a6cac9484b041fc79c4f0",
+      "submitted_payload_bytes": 1525,
+      "recovered_exactly_by_removing_duplicate_CR": true,
+      "payload_path": "artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\p01_vector_add-baseline.submitted.ptx"
+    },
+    {
+      "problem": "p01_vector_add",
+      "variant": "candidate",
+      "original_artifact_sha256": "3a3741e069c0e8edf8c72928de2a2ef844f373db209b5148e5afe06ffad3cb9d",
+      "submitted_payload_sha256": "a208e0b6243d163ea0e0592cca8221b8f2c74a711bd0af264b8ec275caa7a56e",
+      "submitted_payload_bytes": 1221,
+      "recovered_exactly_by_removing_duplicate_CR": true,
+      "payload_path": "artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\p01_vector_add-candidate.submitted.ptx"
+    },
+    {
+      "problem": "p02_scale_shift",
+      "variant": "baseline",
+      "original_artifact_sha256": "78705f45c0a67971237b79486f6d6235a6f951a31b9f701b83e5741f23e7a8d1",
+      "submitted_payload_sha256": "1bb270b71d0e71908cdd7f1da464044ff42e42fc0e9e510341b05f22d5def89a",
+      "submitted_payload_bytes": 2666,
+      "recovered_exactly_by_removing_duplicate_CR": true,
+      "payload_path": "artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\p02_scale_shift-baseline.submitted.ptx"
+    },
+    {
+      "problem": "p02_scale_shift",
+      "variant": "candidate",
+      "original_artifact_sha256": "1509455e25702470bb2bd68ceab123358f62ec416476154c9b61c67fbd49aa42",
+      "submitted_payload_sha256": "473991e79fe6f141c2c18e3e4a2406790e3650aaeab095c250766bcde320e6c4",
+      "submitted_payload_bytes": 2204,
+      "recovered_exactly_by_removing_duplicate_CR": true,
+      "payload_path": "artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\p02_scale_shift-candidate.submitted.ptx"
+    },
+    {
+      "problem": "p03_relu_mul",
+      "variant": "baseline",
+      "original_artifact_sha256": "46f1a13c929232bf3b4169c61ac3953670e083ad1c51724de8cf62189d6b2662",
+      "submitted_payload_sha256": "5e9872b5d6660e715976ad012a06a5e44d0f634d1a9f5a0e4960bcb3b82b20fc",
+      "submitted_payload_bytes": 2392,
+      "recovered_exactly_by_removing_duplicate_CR": true,
+      "payload_path": "artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\p03_relu_mul-baseline.submitted.ptx"
+    },
+    {
+      "problem": "p03_relu_mul",
+      "variant": "candidate",
+      "original_artifact_sha256": "f5075da34786066c564b1c09d7c63e654eea39dbcb825699b20907e97d2ea05c",
+      "submitted_payload_sha256": "63f198d7d08f2d1997a16a2c86e8c9161cc81c1383a937831830e2d32e714472",
+      "submitted_payload_bytes": 1468,
+      "recovered_exactly_by_removing_duplicate_CR": true,
+      "payload_path": "artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\p03_relu_mul-candidate.submitted.ptx"
+    },
+    {
+      "problem": "bandwidth_add_262144",
+      "variant": "baseline",
+      "original_artifact_sha256": "a6e6785def46fd73caf9b7facc32fa17c7a5bbd403554aacfae36aa8db36769f",
+      "submitted_payload_sha256": "dfe4e5179e6886f978ee07c5e42424a5991d4df8224e4e6ad75a634d45835350",
+      "submitted_payload_bytes": 2246,
+      "recovered_exactly_by_removing_duplicate_CR": true,
+      "payload_path": "artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\bandwidth_add_262144-baseline.submitted.ptx"
+    },
+    {
+      "problem": "bandwidth_add_262144",
+      "variant": "candidate",
+      "original_artifact_sha256": "b1823bcfa40955766a448ca0e4a4099cb7f2117ebd148ec3670f352e478eacff",
+      "submitted_payload_sha256": "b3dba0153fcb645a748ebc2d5db540d0d091883cb74633a2f2fd4e4e3f67ed95",
+      "submitted_payload_bytes": 1322,
+      "recovered_exactly_by_removing_duplicate_CR": true,
+      "payload_path": "artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\bandwidth_add_262144-candidate.submitted.ptx"
+    },
+    {
+      "problem": "bandwidth_relu_mul_1048576",
+      "variant": "baseline",
+      "original_artifact_sha256": "c285cafcc9109548a76a288a4e3c1ef8fc21fba9acdaab4d1c4cb7c8c49c85f7",
+      "submitted_payload_sha256": "cd167987c4f7e680f2c1e9f039637d454c0ade6a8f9783f29f7cd474b236e704",
+      "submitted_payload_bytes": 2395,
+      "recovered_exactly_by_removing_duplicate_CR": true,
+      "payload_path": "artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\bandwidth_relu_mul_1048576-baseline.submitted.ptx"
+    },
+    {
+      "problem": "bandwidth_relu_mul_1048576",
+      "variant": "candidate",
+      "original_artifact_sha256": "97c3813096c6dafecd864bb61763c965d21d49af965b6846ad15349dad2898ef",
+      "submitted_payload_sha256": "10e1ceb7700881e0174dfe8e699b7d18d23e9ab9c9f551a8e011757a10da0a6e",
+      "submitted_payload_bytes": 1471,
+      "recovered_exactly_by_removing_duplicate_CR": true,
+      "payload_path": "artifacts\\validation\\phase3\\load-packing-comparison-artifacts\\bandwidth_relu_mul_1048576-candidate.submitted.ptx"
+    }
+  ],
+  "harness_note": "The benchmark imported the archived check_compiler.py before a concurrent local-assembler error-message fix. The changed assemble() function is not called by this remote benchmark; all imported comparison/remote helpers were unchanged.",
+  "source_snapshots_unchanged": true,
+  "loaded_check_compiler_sha256": "f9bdd50393b9c7628bfbc801bb4b76ba6bdabc9bd607b718cc66e288dd22d5fc"
+}

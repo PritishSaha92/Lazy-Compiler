@@ -1,0 +1,19 @@
+{
+  "started": "2026-10-24T15:26:15.393832+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "cubin_id": "a89a1a82144562f2d7fea6b51687f27ac7beff49f73bb0d36ee1ffe6a2dab51a",
+    "bytes": 10400,
+    "arch": "sm_120",
+    "flags": [],
+    "entry_points": [
+      "k_regression_tensor_fused_guarded_epilogue"
+    ],
+    "registers": {
+      "k_regression_tensor_fused_guarded_epilogue": 40
+    }
+  },
+  "finished": "2026-10-24T15:26:16.184968+00:00",
+  "seconds": 0.7912285999991582
+}

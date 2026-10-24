@@ -1,0 +1,74 @@
+{
+  "id": "tensor_fused_guarded_epilogue",
+  "graph_inputs": [
+    "a",
+    "b",
+    "bias"
+  ],
+  "graph_outputs": [
+    "out"
+  ],
+  "rtol": 0.0002,
+  "atol": 0.0002,
+  "kernels": [
+    {
+      "entry": "k_regression_tensor_fused_guarded_epilogue",
+      "grid": [
+        1,
+        1,
+        1
+      ],
+      "block": [
+        32,
+        1,
+        1
+      ],
+      "smem_bytes": 0,
+      "zero_outputs": [],
+      "arg_order": [
+        "a",
+        "b",
+        "bias",
+        "out"
+      ],
+      "args": [
+        {
+          "name": "a",
+          "dtype": "f32",
+          "shape": [
+            11,
+            19
+          ],
+          "seed": 0
+        },
+        {
+          "name": "b",
+          "dtype": "f32",
+          "shape": [
+            19,
+            7
+          ],
+          "seed": 1
+        },
+        {
+          "name": "bias",
+          "dtype": "f32",
+          "shape": [
+            7
+          ],
+          "seed": 2
+        },
+        {
+          "name": "out",
+          "dtype": "f32",
+          "shape": [
+            11,
+            7
+          ],
+          "output": true
+        }
+      ],
+      "final": true
+    }
+  ]
+}

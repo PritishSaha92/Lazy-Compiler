@@ -1,0 +1,66 @@
+{
+ "id": "oct24_p06_i32_selection",
+ "code": "x=torch.randint(-9,10,(7,149),dtype=torch.int32); y=torch.randint(-9,10,(7,149),dtype=torch.int32); torch.where(x<y,x-y,x+y)",
+ "rtol": 0,
+ "atol": 0,
+ "graph_inputs": [
+  "x",
+  "y"
+ ],
+ "graph_outputs": [
+  "where"
+ ],
+ "kernels": [
+  {
+   "node": "where",
+   "entry": "k_where_pointwise",
+   "arg_order": [
+    "y",
+    "x",
+    "where"
+   ],
+   "grid": [
+    5,
+    1,
+    1
+   ],
+   "block": [
+    256,
+    1,
+    1
+   ],
+   "smem_bytes": 0,
+   "zero_outputs": [],
+   "args": [
+    {
+     "name": "y",
+     "dtype": "i32",
+     "shape": [
+      7,
+      149
+     ],
+     "seed": 1
+    },
+    {
+     "name": "x",
+     "dtype": "i32",
+     "shape": [
+      7,
+      149
+     ],
+     "seed": 0
+    },
+    {
+     "name": "where",
+     "dtype": "i32",
+     "shape": [
+      7,
+      149
+     ],
+     "output": true
+    }
+   ],
+   "final": true
+  }
+ ]
+}

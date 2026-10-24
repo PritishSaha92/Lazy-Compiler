@@ -1,0 +1,49 @@
+{
+  "inputs": [
+    "x"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            19,
+            7
+          ],
+          "dtype": "f32"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='row', extent=Dim(19), window=None),), body=(Load(names=('unaligned_0', 'unaligned_1', 'unaligned_2', 'unaligned_3'), input='x', index=(Var(name='row'), Literal(value=1, dtype='int')), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='out', index=(Var(name='row'), Literal(value=0, dtype='int')), values=('unaligned_0', 'unaligned_1', 'unaligned_2', 'unaligned_3'), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE')), block_threads=None, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_unaligned_grouped_load_rows",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            19,
+            4
+          ],
+          "dtype": "f32"
+        }
+      ]
+    }
+  }
+}

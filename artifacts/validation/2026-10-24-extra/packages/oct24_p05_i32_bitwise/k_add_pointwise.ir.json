@@ -1,0 +1,66 @@
+{
+  "inputs": [
+    "x",
+    "y"
+  ],
+  "outputs": [
+    "add"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            17,
+            31
+          ],
+          "dtype": "i32"
+        }
+      ]
+    },
+    "y": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "y",
+          "shape": [
+            17,
+            31
+          ],
+          "dtype": "i32"
+        }
+      ]
+    },
+    "add": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='a0', extent=Dim(527), window=None),), body=(Load(names=('in0',), input='x', index=(BinaryExpr(op='//', left=Var(name='a0'), right=Literal(value=31, dtype='int')), BinaryExpr(op='%', left=Var(name='a0'), right=Literal(value=31, dtype='int'))), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Load(names=('in1',), input='y', index=(BinaryExpr(op='//', left=Var(name='a0'), right=Literal(value=31, dtype='int')), BinaryExpr(op='%', left=Var(name='a0'), right=Literal(value=31, dtype='int'))), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Assign(name='v0', op=ElementwiseImpl('bitwise_and'), args=('in0', 'in1'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Assign(name='v1', op=ElementwiseImpl('bitwise_xor'), args=('in0', 'in1'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Assign(name='v2', op=ElementwiseImpl('add'), args=('v0', 'v1'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Write(output='add', index=(BinaryExpr(op='//', left=Var(name='a0'), right=Literal(value=31, dtype='int')), BinaryExpr(op='%', left=Var(name='a0'), right=Literal(value=31, dtype='int'))), values=('v2',), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE')), block_threads=None, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_add_pointwise",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "y",
+        "x"
+      ],
+      "outputs": [
+        {
+          "name": "add",
+          "shape": [
+            17,
+            31
+          ],
+          "dtype": "i32"
+        }
+      ]
+    }
+  }
+}

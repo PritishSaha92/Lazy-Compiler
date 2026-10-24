@@ -1,0 +1,66 @@
+{
+  "inputs": [
+    "a",
+    "b"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "a": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "a",
+          "shape": [
+            16,
+            16
+          ],
+          "dtype": "f32"
+        }
+      ]
+    },
+    "b": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "b",
+          "shape": [
+            16,
+            8
+          ],
+          "dtype": "f32"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='lane', extent=Dim(32), window=None),), body=(RegFragment(name='af', role='a', shape=(16, 8, 16), dtype=DataType(name='f16', np=dtype('float16'), nbytes=2), count=1, nregs=None), RegFragment(name='bf', role='b', shape=(16, 8, 16), dtype=DataType(name='f16', np=dtype('float16'), nbytes=2), count=1, nregs=None), RegFragment(name='cf', role='c', shape=(16, 8, 16), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), count=1, nregs=None), StridedLoop(axis=Axis(name='kk', extent=Dim(16), window=None), start=Literal(value=0, dtype='int'), step=Literal(value=16, dtype='int'), body=(LdmatrixLoad(frag='af', src_buffer='a', src_index=(Literal(value=0, dtype='int'), Var(name='kk')), role='a', ldm=16, swizzle='NONE', staged=False, gmem_guard=(Literal(value=0, dtype='int'), Literal(value=16, dtype='int')), k_zero=(Var(name='kk'), Literal(value=16, dtype='int')), b_trans=False, pair_frag=None, byte_slab=False, scale_buffer=None, scale_index=(), scale_ldm=0, fragment_layout='m16n8k16', fragment_index=0), LdmatrixLoad(frag='bf', src_buffer='b', src_index=(Var(name='kk'), Literal(value=0, dtype='int')), role='b', ldm=8, swizzle='NONE', staged=False, gmem_guard=(Literal(value=0, dtype='int'), Literal(value=8, dtype='int')), k_zero=(Var(name='kk'), Literal(value=16, dtype='int')), b_trans=False, pair_frag=None, byte_slab=False, scale_buffer=None, scale_index=(), scale_ldm=0, fragment_layout='m16n8k16', fragment_index=0), MmaSyncPtx(c_frag='cf', a_frag='af', b_frag='bf', shape=(16, 8, 16), ab_dtype='f16', c_dtype='f32', b_row_major=False, sfa_frag=None, sfb_frag=None)), unroll=False, end=None, seed=True), RegStore(dst_buffer='out', dst_index=(Literal(value=0, dtype='int'), Literal(value=0, dtype='int')), frag='cf', shape=(16, 8, 16), ldm=0, epilogue=None, extra_frags=(), m_guard=(Literal(value=0, dtype='int'), Literal(value=16, dtype='int')), n_guard=(Literal(value=0, dtype='int'), Literal(value=8, dtype='int')), atomic=True, fragment_layout='m16n8k16', volta_interleaved=False, fragment_index=(0, 0), swizzle='NONE', row_dim=0, col_dim=1)), block_threads=None, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_tensor_atomic_f32",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "a",
+        "b"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            16,
+            8
+          ],
+          "dtype": "f32"
+        }
+      ]
+    }
+  }
+}

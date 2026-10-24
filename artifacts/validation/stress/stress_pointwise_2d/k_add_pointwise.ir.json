@@ -1,0 +1,49 @@
+{
+  "inputs": [
+    "x"
+  ],
+  "outputs": [
+    "add"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            17,
+            65
+          ],
+          "dtype": "f32"
+        }
+      ]
+    },
+    "add": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='a0', extent=Dim(1105), window=None),), body=(Load(names=('in0',), input='x', index=(BinaryExpr(op='//', left=Var(name='a0'), right=Literal(value=65, dtype='int')), BinaryExpr(op='%', left=Var(name='a0'), right=Literal(value=65, dtype='int'))), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Assign(name='v0', op=ElementwiseImpl('sigmoid'), args=('in0',), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Assign(name='v1', op=ElementwiseImpl('tanh'), args=('in0',), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Assign(name='v2', op=ElementwiseImpl('add'), args=('v0', 'v1'), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='add', index=(BinaryExpr(op='//', left=Var(name='a0'), right=Literal(value=65, dtype='int')), BinaryExpr(op='%', left=Var(name='a0'), right=Literal(value=65, dtype='int'))), values=('v2',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE')), block_threads=None, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_add_pointwise",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x"
+      ],
+      "outputs": [
+        {
+          "name": "add",
+          "shape": [
+            17,
+            65
+          ],
+          "dtype": "f32"
+        }
+      ]
+    }
+  }
+}

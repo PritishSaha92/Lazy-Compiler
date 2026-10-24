@@ -1,0 +1,64 @@
+{
+ "id": "oct24_p02_f16_sqrt",
+ "code": "x=torch.randn(1031,dtype=torch.float16); torch.sqrt(torch.abs(x)+0.5)",
+ "rtol": 0.001,
+ "atol": 0.001,
+ "graph_inputs": [
+  "x"
+ ],
+ "graph_outputs": [
+  "sqrt"
+ ],
+ "kernels": [
+  {
+   "node": "sqrt",
+   "entry": "k_sqrt_pointwise",
+   "arg_order": [
+    "add_c1",
+    "x",
+    "sqrt"
+   ],
+   "grid": [
+    5,
+    1,
+    1
+   ],
+   "block": [
+    256,
+    1,
+    1
+   ],
+   "smem_bytes": 0,
+   "zero_outputs": [],
+   "args": [
+    {
+     "name": "add_c1",
+     "dtype": "f16",
+     "shape": [
+      1
+     ],
+     "data": [
+      0.5
+     ]
+    },
+    {
+     "name": "x",
+     "dtype": "f16",
+     "shape": [
+      1031
+     ],
+     "seed": 0
+    },
+    {
+     "name": "sqrt",
+     "dtype": "f16",
+     "shape": [
+      1031
+     ],
+     "output": true
+    }
+   ],
+   "final": true
+  }
+ ]
+}

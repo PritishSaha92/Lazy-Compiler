@@ -1,0 +1,33 @@
+    Tile[a0, a1_co] (N=2432)
+        in0 = load mul_c1[0]
+        for a1 in a1_co..137:128
+            in1 = load x[a0, a1]
+            f32 v0 = multiply(in0, in1)
+            f32 one = 1.0
+            f32 v0__gn = maximum(acc0, v0)
+            f32 v0__dg = subtract(acc0, v0__gn)
+            f32 v0__alpha = exp(v0__dg)
+            f32 v0__dg_o = subtract(v0, v0__gn)
+            f32 v0__beta = exp(v0__dg_o)
+            f32 v0__acc1_sa = multiply(acc1, v0__alpha)
+            f32 v0__acc1_sb = multiply(one, v0__beta)
+            f32 acc1 <- add(v0__acc1_sa, v0__acc1_sb)
+            f32 v0__acc2__sum_sa = multiply(acc2__sum, v0__alpha)
+            in3 = load g[a0, a1]
+            f32 v0__acc2__sum_sb = multiply(in3, v0__beta)
+            f32 acc2__sum <- add(v0__acc2__sum_sa, v0__acc2__sum_sb)
+            f32 acc0 <- maximum(acc0, v0)
+        WarpShuffle(acc0, acc1, acc2__sum, length=32)
+        Smem float acc0_smem[4]
+        Smem float acc1_smem[4]
+        Smem float acc2__sum_smem[4]
+        if ((lane == 0)):
+            acc0_smem[warp] = acc0
+            acc1_smem[warp] = acc1
+            acc2__sum_smem[warp] = acc2__sum
+        Sync
+        TreeHalve(acc0, acc1, acc2__sum, length=4, tid=warp)
+        if ((a1_co == 0)):
+            f32 v4 = reciprocal(acc1)
+            f32 acc2 = multiply(acc2__sum, v4)
+            sum_1[a0] = acc2

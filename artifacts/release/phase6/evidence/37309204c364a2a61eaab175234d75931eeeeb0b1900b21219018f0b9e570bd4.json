@@ -1,0 +1,1227 @@
+{
+  "pass": true,
+  "scope": "PTX byte identity only; no additional numerical executions",
+  "baseline_zip_sha256": "598fe981e4471f46a3417cf2760412ee3fa6e39e66289c4beef425a30ac1c116",
+  "baseline_backend_sha256": "eb12a9bb28553caa5e75605506268109edd0739edfdfbdb6178096f7407fde73",
+  "compiler_sources_before_sha256": {
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_backend.py": "c718b8d2ec156626e4c74eb246632b0d430235bcf11f25e2643b4e8c185c6df6",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_bulk.py": "ab63f516681e78e06f4b7403b24018c60c8119b8c92c34f00236d74806406c65",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "compiler_sources_after_sha256": {
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_backend.py": "c718b8d2ec156626e4c74eb246632b0d430235bcf11f25e2643b4e8c185c6df6",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_bulk.py": "ab63f516681e78e06f4b7403b24018c60c8119b8c92c34f00236d74806406c65",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "input_sha256": {
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_a01_long_context\\k_matmul_softmax_reduce_abf187.ir.json": "401ccddcd9e84f8764e8031543261378773542eb98ad23a30c4da4b2e87d6cde",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_a01_long_context\\meta.json": "0bde45d4209c5002da13d1efec17c3dc364b336886b7f4e9fad6f776d839377f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_a02_long_query\\k_matmul_softmax_reduce_8b46c8.ir.json": "1e11f01a4bd22fffae41d922d8228abec4c97f337b07315ef2bd3ed80e04e1cf",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_a02_long_query\\meta.json": "53b49fb3e65fb2742335c92124cc52bdce3c4893944eef005c3b41f887405c4e",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_a03_attention_residual\\k_matmul_softmax_reduce_396951.ir.json": "3278cd7a5843e6379b2a27a85da71d274719edc1e886992ee004aaead991fbb8",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_a03_attention_residual\\meta.json": "726aa893dbbe814db1e799113a79deced38b58e2e2e4cdc23c0f2d42da82e55a",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_f01_centered_affine\\k_mean_reduce_e2dbd4.ir.json": "25ef038382ff960105a5cf558254920f4f3ee8b85b4203a5001e25bd40b13073",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_f01_centered_affine\\meta.json": "9ed43fd4b93d3317843fa87095752330854997e975ecbc4722f71ad41de15575",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_f02_residual_l2_weight\\k_mul_1_reduce.ir.json": "c9599a2120e50846a7179aa5a0a86d23f0496274668f788cf178f9714e2139a4",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_f02_residual_l2_weight\\meta.json": "6768806b605dd158c70ccb28446dce0604c37cbdd39ce7b145409c2406b6f07b",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_f03_weighted_softmax_sum\\k_softmax_86069b.ir.json": "e18474393ebbc4731b2ce5668ec9edc57325bcd0b965e08b235868eebfe5c847",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_f03_weighted_softmax_sum\\meta.json": "7809bc09886c43b8c92d8ed38d00f3919e330be9440950506e80833eb8ef458f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_f04_rms_sigmoid_gate\\k_mean_2b1a0c.ir.json": "357d3a503917a16b2d9018e810dca55f30efdcf09048b0b1933087b345c8c575",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_f04_rms_sigmoid_gate\\meta.json": "cd4171ce16abc65fa43794b5666881d840dea3c1e66895b0a446a9a29f43cf40",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_m01_long_reduction\\k_matmul_ab135c.ir.json": "f6da52f95e1d7b589917bea132add56799d6158304220e0798ab9b7f1ad8f451",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_m01_long_reduction\\meta.json": "4dc56c5eddb2f17e48b8791bde929eab13d3a012f73611b5339fbfc6f7f9377a",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_m02_tall_thin\\k_matmul.ir.json": "dec5c505c365431108615bb04156816586af2cf18814b76909c59745a687ec69",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_m02_tall_thin\\meta.json": "5d8b9f7e7c1152527d2249e7c3593274a21c6d4d9c65fd52c1206e72611c5346",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_m03_wide_output\\k_matmul.ir.json": "35a48b7a2500c6ada44aefc212be5caa7f10dd3c826e28ccfcf2a1294c85f3c8",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_m03_wide_output\\meta.json": "dbe52081a970477808b5e90956eb9bd31ecc6e2afa0b2cee3e2ae9f592ec233e",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_m04_bias_relu\\k_matmul_45ee83.ir.json": "e087d2f1d9b98d445015c406ad631e6f346f0b86b8f8e14602630e56a0296596",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_m04_bias_relu\\meta.json": "d7c80b24460dcfd1556435d2c2046a8b544761b7a17342ac8784319b500cb9fb",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_p01_broadcast_tanh\\k_tanh_pointwise.ir.json": "e5de4289c6e9628fc4fd1e192d99e6d28027624f9237c52d917b37d7a8080325",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_p01_broadcast_tanh\\meta.json": "e552c771de1488759946be278f335485fc1a3b2ba1a9db2cc0025135d021cdbd",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_p02_absolute_difference_3d\\k_add_pointwise.ir.json": "da0b82732e738f5764c93461d47b0ef037fe0a40b42be44fa3ec84d4da184232",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_p02_absolute_difference_3d\\meta.json": "b7a2f4fca7e6cfb7ee2a5163cabbe029b26de3c90de20e0eb13e2917ee823c93",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_p03_rational_gate\\k_mul_1_pointwise.ir.json": "5216353301e9db856e086b2f268aa8127263d8403e0702d5b5332873e4a80659",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_p03_rational_gate\\meta.json": "d2e4660a2130f0c867fd8c2aca4afe286944d0d4f25b0ed6fc01b914933be334",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_r01_column_sum\\k_sum_1_reduce.ir.json": "d658c2b62fea22489e73d70d10e0488cbea0b6fd8b2461e4fa5e8048d7bbff1a",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_r01_column_sum\\meta.json": "be2a6189eb94745a92d9c73de67a53b55fff04911f259c38b941afe001fff08d",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_r02_row_mean_square\\k_mean_ecc898.ir.json": "fa628be6b36e115dc84ba6224b62749d237fd41665866419ae322377a6d1d502",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_r02_row_mean_square\\meta.json": "62b3c7c1ed369dc3f751532365309ee10f0aea5b9d92e6bf3153491dbdcd11b6",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_r03_row_inner_product\\k_sum_1_reduce.ir.json": "32b3d45b5ae4104a96ff4c0ebf0f87cee8aae3f859f766d256e39ac705b6e652",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_r03_row_inner_product\\meta.json": "7e3629f09a1582d8921d7391eae9a293d8759bbb8537f88058a81de1853ba88f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_r04_column_max\\k_amax_reduce.ir.json": "0d6eff8cf4a26083e48fab3c12251bc32bbb09b7f4f1530f71ee261dfb417f17",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\holdout-2026-10-23\\hold_r04_column_max\\meta.json": "e98fb94b6479a65a54d09dd941b885f48ea90d3c64cbaf8b6df84139010f7fb8",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\auxiliary_producer_warp\\k_regression_auxiliary_producer_warp.ir.json": "f3a3ecb3901ed78f05dd56a3b3ec7d66873a2b03c76db1d0fce81b083e642de5",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\auxiliary_producer_warp\\meta.json": "a03826189f2e9e114ce4fabd7e4a936ebba983128fa90360686c971426d2fdb3",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\copy_swizzle_B128\\k_regression_copy_swizzle_B128.ir.json": "ba17307b98d4c27f4746cf1638308d2b8b035fca63cd1a953e752170e7f7b078",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\copy_swizzle_B128\\meta.json": "159fd4c8e63007a06abce5e68bb40c306e5a2dedc922d51ad537547f883e7eab",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\copy_swizzle_B128_shift_7\\k_regression_copy_swizzle_B128_shift_7.ir.json": "82be25fa2f1e69c09dc403bdb4df6f13f9796bd21bffa4f6f2bcd40fba61660e",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\copy_swizzle_B128_shift_7\\meta.json": "5b8dae30b1b50d47b3e321affffec69282e50a2e6cabf0430ddda9b59ec84f08",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\copy_swizzle_B32\\k_regression_copy_swizzle_B32.ir.json": "03d46be806997d35959cce8a04285250ba03d2b653513ecd152d7483b6e045ad",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\copy_swizzle_B32\\meta.json": "ade4f10b99cefce11c2cfff113203a6f27ace255d89361e1202e74f7a134c781",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\copy_swizzle_B64\\k_regression_copy_swizzle_B64.ir.json": "c695a370003cc5a8ab231d89dc997a1b3be6dbc10b1aa75c65fcab5c3016cecd",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\copy_swizzle_B64\\meta.json": "f6b3f1015032a3204f8389e1788e50ae5d2c5b12230dea154fc91b0680e8d73b",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\raster_rectangular_tail_m\\k_regression_raster_rectangular_tail_m.ir.json": "11041e188ac0bdb4ba28eb93a89ae8e286285e1e286d29970e6f05a989406c35",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\raster_rectangular_tail_m\\meta.json": "0519d76b71c316f6ff131f170351ef0b4c7a2183cd4d5a4c70c65777fde8080b",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\raster_rectangular_tail_n\\k_regression_raster_rectangular_tail_n.ir.json": "6ba3ceb92a7f955d24a73743f1c260ae6ebef9c73389e2e12c455fbf639b02f5",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\raster_rectangular_tail_n\\meta.json": "130ce4aa75e17ff19a7e61a9f16d8305166eb2ab615930cf5233294e3400099d",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\warp_sync_uneven_work\\k_regression_warp_sync_uneven_work.ir.json": "03c2f12b46e8c6ed9c429989c8e1ad70de84b316720d8ed8c33ec8c147fb1062",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\layouts\\warp_sync_uneven_work\\meta.json": "02b68064218ac09631c7c140ed494b19efad38e76ea45abcd3ba3953d75c20ef",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\products\\product_shuffle_varied_trip_counts\\k_regression_product_shuffle_varied_trip_counts.ir.json": "4ba9c99266cdc870ee5b16f2ab58968c0ae38ec1e06ea854fe27011f010c4103",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\products\\product_shuffle_varied_trip_counts\\meta.json": "da4f414153e1e1ac26adeadddc40b1336aeff51db79c803bddffb81ea8cd5264",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\products\\product_tree_varied_trip_counts\\k_regression_product_tree_varied_trip_counts.ir.json": "87e54e600516bcd0d957ba21a2e8055180ea5397d945ad25a35f8ccc3317e9c6",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\products\\product_tree_varied_trip_counts\\meta.json": "2fdaaa1c9236cd17e44069c6ef2408556f69b83a49f4e3a140d892855f15e3ff",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\schedules\\phase3_a01_irregular_attention\\k_matmul_softmax_reduce_887429.ir.json": "5c8d50fd1088134e09a1852b25607c574de2a07e8154419808f6269af63a35d2",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\schedules\\phase3_a01_irregular_attention\\meta.json": "30d07eb8df129d51646080850f26c992142ad0a6114e9450c285595ad06770e3",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\schedules\\phase3_f01_column_softmax\\k_softmax_5b5f5a.ir.json": "aa5670fb6beda2de1b3af8e20fed6fc0aa98469face4e0578700b6e37790d740",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\schedules\\phase3_f01_column_softmax\\meta.json": "ece062d9835e54f197077041977fd6a7bf51b1c6639988b414dd5800ec3c24aa",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\schedules\\phase3_f02_centered_column_l2\\k_mean_reduce_18dd53.ir.json": "3f3020549914e4fd90f6a48a71ecddf26c4c0b99555850c11ac6c1ef4b224b22",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\schedules\\phase3_f02_centered_column_l2\\meta.json": "858c34c7e9ed9adeb384611f0d6bb60ceeab5a7221367096b64ee382384c44a0",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\schedules\\phase3_m01_batched_odd_matmul\\k_matmul_44c580.ir.json": "280e60ba304016a4c8d210fc47e13e6282993c1cd6969e29b5b589308d71633d",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\schedules\\phase3_m01_batched_odd_matmul\\meta.json": "14d9f77a59fd932888bcc9f155b06b2dd200c91568c13d2ff1f4db356dc695a8",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\schedules\\phase3_p01_three_axis_broadcast\\k_relu_pointwise.ir.json": "907815dd172109165a536ca32a804a7193c2a96b85ed6e6498101df056611adf",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\schedules\\phase3_p01_three_axis_broadcast\\meta.json": "a8a2f30bf334d5f074756de550db33c9c32db16779f9a4c690bc6fadbc3b21d9",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\async_two_groups_16_bytes\\k_regression_async_two_groups_16_bytes.ir.json": "2aad993569c81ee26fb0f2ef488ac00c9c37b08bc00efde82ff96d51d3886985",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\async_two_groups_16_bytes\\meta.json": "d32317e13c352601cded39d24709f754096cae6918494899031d0d107fc32d90",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\async_two_groups_4_bytes\\k_regression_async_two_groups_4_bytes.ir.json": "59ac69bc5d50444e3d4c3025e9c6ccdb3c46b3d91399b10a20e660fcb5aea332",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\async_two_groups_4_bytes\\meta.json": "10b9fed30bd6af723deea28f5be258097c7d7e8d969dcb6ba534d74ddb61e747",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\async_two_groups_8_bytes\\k_regression_async_two_groups_8_bytes.ir.json": "ee4e2fdec70511f9aa4fca490573425fb1851034879b34e56498bf272c1ec107",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\async_two_groups_8_bytes\\meta.json": "0ceb7fd28aefabdc3f2b80ebaf7914aee39dac53569c3bdbd5b4170cfe64b055",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\dynamic_pool_distinct_alignment\\k_regression_dynamic_pool_distinct_alignment.ir.json": "b3e3c3b3848d8280f900ebbb1fe17380c537af09197e1cfdb39f6a913d8b9d27",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\dynamic_pool_distinct_alignment\\meta.json": "3089ae0f46b27db9353226d2af9cec9eba14ad5c70d24b49d731cb3c144e1340",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\shared_write_swizzle_B128\\k_regression_shared_write_swizzle_B128.ir.json": "50bae6385a36d53ad99d2b7254ec443778cf29ab79bd08cd672983d42a2123f8",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\shared_write_swizzle_B128\\meta.json": "51aadb1c526ce17c2c87a197ca845c94ea2c3db8bee48480d5ba70caf36172ac",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\shared_write_swizzle_B128_shift_7\\k_regression_shared_write_swizzle_B128_shift_7.ir.json": "991bbd21da25582f15434e62677c45ec6d020c90aa8d32964b4e17be8ad01c53",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\shared_write_swizzle_B128_shift_7\\meta.json": "bd78dd581eb914a30c1aee988087bb26da69b9c33c8fe74b90d47c6478cc7ee3",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\shared_write_swizzle_B32\\k_regression_shared_write_swizzle_B32.ir.json": "bbc246b504dbceac28cd1348b75596da4758f85f46f773ffc7f9c43f66250c9a",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\shared_write_swizzle_B32\\meta.json": "7d7302e1f8e3a4c7f7b314313c0a457cf313029446beebddaf61c6d67325cf56",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\shared_write_swizzle_B64\\k_regression_shared_write_swizzle_B64.ir.json": "f8584314a677a99669137d7fe64cff28b6b08286672e4139a029168672f768b4",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\shared_write_swizzle_B64\\meta.json": "01ed58fd4f8c69aecec7dfdd3043afe2e25101ba6d81d675f8a8f04564db55cf",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\unaligned_grouped_load_rows\\k_regression_unaligned_grouped_load_rows.ir.json": "5984c451ccbbf843b863ff14fb8b2e121ef7eae5bfc94e12e5050e6122dd3eb6",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase3\\transport\\unaligned_grouped_load_rows\\meta.json": "6a5dd61f4042af173e8acd261562f655770024eb45e597efca0879d5ee904b8a",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\comparison_integer_promotion\\k_regression_comparison_integer_promotion.ir.json": "92f36c27f9f96537598a2bb1b106d9f47486aecc9bdb11acef997bec2ba83f31",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\comparison_integer_promotion\\meta.json": "c62f8e5d9a84d2d8cab860f3e3d25bf2055cacd5e46a9ce807a526153d2b2ebf",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\index_rank_mismatch_loads\\k_regression_index_rank_mismatch_loads.ir.json": "f1e5a00a83d6d7243fb68e282a0832eacd3a5ea88d830d80f1b685fad08606ca",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\index_rank_mismatch_loads\\meta.json": "24403b764c45fb6cacd2b08c0aafe240a394b45ded914753620b97e5fded2e4e",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\index_rank_mismatch_write_1d\\k_regression_index_rank_mismatch_write_1d.ir.json": "0b2e946350d52b8cbc2bab6bdd35fbf370eb26687a049d281e411f5d5e7fcfdf",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\index_rank_mismatch_write_1d\\meta.json": "eeb784cfb4edb72f41a4587128f12786be082cf7bcd95ff6a1ee0b0d92d42901",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\index_rank_mismatch_write_2d\\k_regression_index_rank_mismatch_write_2d.ir.json": "476c92df042d9aee2b413081d5e2bfc7412424d94f145b37930b2a66fbebb88b",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\index_rank_mismatch_write_2d\\meta.json": "6c3525765e69d494d803ffca7ab0135991133735226017f7e6e9b48cb3b6acf3",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\nested_strided_bound_recapture\\k_regression_nested_strided_bound_recapture.ir.json": "2dbb24eb4c8a23e7c36b99cbbf43ce78a28e2b2b17d36656b4198bcc97e88b1b",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\nested_strided_bound_recapture\\meta.json": "6341e972a5fd135242ee1d4436025a785faa837104ee83628bdeb2a8d82308d1",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\overflow_alignment_u32_grouped\\k_regression_overflow_alignment_u32_grouped.ir.json": "49cb14218c3a6fc4b09ed97a7ecab783726149b46375f070d3fa0318bf99314b",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\overflow_alignment_u32_grouped\\meta.json": "892edfe55862e516b23a6988fe66413d5aba5be6055beee01bc075e77a478d40",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\overflow_alignment_u32_scalar\\k_regression_overflow_alignment_u32_scalar.ir.json": "a63f8883bdf70b39c2233bd497ecd9901cb62d156a60c0b3a454b3b7212bf64f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\overflow_alignment_u32_scalar\\meta.json": "0110db1417e09dd9acf557653a431c7bc831b8dc264230284f473c696180899e",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\overflow_alignment_u64_grouped\\k_regression_overflow_alignment_u64_grouped.ir.json": "23d14d9e7d5595d446874d55b1d1cc0eb997fedd4a033b95ea330f93f51e8840",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\overflow_alignment_u64_grouped\\meta.json": "60ba4e3cf0817f790d1a312c42a754900c3701cdcd5b29a79b80b1a08a8e9a29",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\overflow_alignment_u64_scalar\\k_regression_overflow_alignment_u64_scalar.ir.json": "42d26c580e1ea61631a7095f2f098ccfabb624635b30b5ae03d60cabfe700f59",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\overflow_alignment_u64_scalar\\meta.json": "6fa1e3a6ebe16630894a74dbd57f61d01446b202c5753a5aee9af91693cf481d",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_assign_redefines_index\\k_regression_packing_assign_redefines_index.ir.json": "6046258beff2fad8d816fb472c332c07f5953fc2bd51cc898d26990c3d02805b",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_assign_redefines_index\\meta.json": "4a0b1e50365ba13fb6a575202a57009b579820ac0fa1fb3a89ccf49d37bce4a8",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_conditional_store_boundary\\k_regression_packing_conditional_store_boundary.ir.json": "e9dffe281f979ef9327ce290824b37b4991aa690cc8e97caff558e69222d00c6",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_conditional_store_boundary\\meta.json": "eb965b881e0708883dca9867de3fe45d5be8fcc71190e3e96e1f5d29f99823fa",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_declared_types_f32_i32\\k_regression_packing_declared_types_f32_i32.ir.json": "e4da5cd4917666641bc8f09a8d76e2c30d1cd8e51e2226dfd932dece6a48e20c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_declared_types_f32_i32\\meta.json": "13ce5042d0d9d7038a879c2cdb6f7eb8c06fb8986bf0bf6163afe049617d52b9",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_declared_types_i32_f32\\k_regression_packing_declared_types_i32_f32.ir.json": "19637a68c9e5fa1aeffca200222e4982927e312b159217785069da7c96e95e3d",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_declared_types_i32_f32\\meta.json": "5624a0371e040efd5a09d8457fd2ea2eca4be383fd48067b4bf43cf9618f510e",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_deferred_name_binding\\k_regression_packing_deferred_name_binding.ir.json": "409dbee3ef54c0779acf54b2ab3bce065bf3b4333fd1f2d8133e841b446919f7",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_deferred_name_binding\\meta.json": "8d3898c533ae13d5de941d4b2ab9b5a18ab50a8372b35faaf0a986b4600d3e72",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_floating_index_declined\\k_regression_packing_floating_index_declined.ir.json": "1020fbfc0e1b0cdf7f0e0a9a24aa504791bebda6cbf82e003ff354948a0e9e91",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_floating_index_declined\\meta.json": "d3ffe49fa49c4b0d77b39acff73705a007fb84daa832bfdd0324924401451c48",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_load_redefines_index\\k_regression_packing_load_redefines_index.ir.json": "4bde50f9271bfb40cace37235afd9ae582cd6f888865bfa1e3564bd5ec942816",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_load_redefines_index\\meta.json": "eca0e7f3f22fbd826f5b19ac941f1bf22e89123b821598f0d59485f10a0be31a",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_offsets_0_0\\k_regression_packing_offsets_0_0.ir.json": "3d0a501f482e499c6e52b31d41a93fbe37aef246c4f5ac545b43f8402e840965",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_offsets_0_0\\meta.json": "5436198c0f1fecfb76b37dcf3f454e1ba38cad3b36b67f195007b6f09bfe1234",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_offsets_0_2\\k_regression_packing_offsets_0_2.ir.json": "ed152ecc451f43bb57d4c410e406f9036fdfe36448f3ea6907d2aea20ac9ba8f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_offsets_0_2\\meta.json": "d5e527bad3a275bb5825a27244670ad772fbe6cce39d4da178f183239a76327b",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_offsets_1_0\\k_regression_packing_offsets_1_0.ir.json": "c726afb2973607b1ac89cdd8ee2c801ce09a375238f98c1715606f5dacc70bb0",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_offsets_1_0\\meta.json": "d67e742565b6cd2b9f0b2a3ae9ec40e06209eed2c2ec483c5ea2c040efd0fbc5",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_redefined_index\\k_regression_packing_redefined_index.ir.json": "f7843f55c3a846daa86f57da3dcdcd8921d77ca05582e853c6cdb5ed770dbfc5",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_redefined_index\\meta.json": "b5b731058fa03c5d683f7c807943e4e983959fa22de951c971b6e14809004e7c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_reused_pending_name\\k_regression_packing_reused_pending_name.ir.json": "02cce517d9b4035b9fafed545cb3a1d20b1a2478bd630ac339e589932ecad21a",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_reused_pending_name\\meta.json": "76c5d041a71ad171532344d326fa990252acb9ea55c9b0d62a1dff34d3bff18a",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_store_boundary\\k_regression_packing_store_boundary.ir.json": "414cd1bd3cae21e3dd056876e05dc1899ba22d746f3bad43cd9f1de736d4ac61",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_store_boundary\\meta.json": "53834d49da8b6bbe3f0a8c10d36cb1c0cce2c280d01f27f748a435f9943f9956",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_width2_shift0\\k_regression_packing_width2_shift0.ir.json": "c0765103b2b5801b3866fff7676cc5940908861075d56b1e1084c0f2615f4d67",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_width2_shift0\\meta.json": "02c65a3ff059acadc74885757c1807362edbf326afc2aa5452e8e5bbd7050c21",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_width2_shift1\\k_regression_packing_width2_shift1.ir.json": "4cafc1f3c8dc00fc28a7dbe8f70814bb2adb02e907de96cf0304ca7eb0d112d8",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_width2_shift1\\meta.json": "f26af52d1a6b0f0af5ed04d4cf1b01503cd176e0de66a3ec6aee5a6a23aa77cd",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_width3_shift0\\k_regression_packing_width3_shift0.ir.json": "dce55bc08376d069d3ee7e90a8cb1373abcfdea0f7770ee0ec5b9f97e5314225",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_width3_shift0\\meta.json": "34b87ac712f1842af63034da64367a3742ec66b1c324e25257d90839c8add53b",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_width3_shift1\\k_regression_packing_width3_shift1.ir.json": "63dc9310911b9b1be9316de7478066f0f36524092fcf1a6fd58e818c6eff427a",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_width3_shift1\\meta.json": "82bab19e57f0c16d6ee02c923ffc1baadbdfc6b911d0a4be1df4e5a79598e96d",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_width4_shift0\\k_regression_packing_width4_shift0.ir.json": "5c837c6a7847d75dff902eb8d05f69205d1607906ab4ca34d15f5005315e6e51",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_width4_shift0\\meta.json": "3479e137f794511a85349be61155c177639155474f94fbd4abef79f2cf95092d",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_width4_shift1\\k_regression_packing_width4_shift1.ir.json": "01cd390130eafa5f13efa3f221737313916c4ad53028318c57b1276bfd19f161",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_width4_shift1\\meta.json": "10f471ad5f0927c7e3b300e8552c58a85b2d9af2b69d940aafa89d17261fa333",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\strided_bound_carrier_snapshot\\k_regression_strided_bound_carrier_snapshot.ir.json": "776620837520923113732bce16f634e3b0607af1b45c2410375aefbfa65373d6",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\strided_bound_carrier_snapshot\\meta.json": "f588a782a8fb958faf02c79716237e5747712e7623c62abbb81b64383a30ee6f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\strided_start_capture_live_step\\k_regression_strided_start_capture_live_step.ir.json": "c186e50b26090ac0c11a860cbb0fc449542dbd15ae325bc72c8bb18094621015",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\release-remote\\typed-inputs\\strided_start_capture_live_step\\meta.json": "89d94ded17b8a83e86b5c3c75e14b4bf7df363c55a0497069ab8228fa562cfa6",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\interaction_async_two_slots_seven_stages_cross_warp\\k_regression_interaction_async_two_slots_seven_stages_cross_warp.ir.json": "7c608ccf36705a5aa47db804a9186dd7098f6a64a4458a7a099ff7345f309de1",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\interaction_async_two_slots_seven_stages_cross_warp\\meta.json": "bce74291e2bc080fe74a429df3396abf5a581494779997932f48ed02fd47470b",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\interaction_guard_nested_row_tail_state\\k_regression_interaction_guard_nested_row_tail_state.ir.json": "1fadb8e79cb689f04a5e0c40ba731e09b4c4074745cfcf349856dd4bc8288a90",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\interaction_guard_nested_row_tail_state\\meta.json": "46f1ffe39149d4a7029e99687a819015ba496af9e66422f41cce91c6a1e48fbc",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\interaction_guard_previous_live_state\\k_regression_interaction_guard_previous_live_state.ir.json": "9dc1bd5928d91c3bd5e6ca00427462de831e17bb74734c9de33742e8871d4f9a",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\interaction_guard_previous_live_state\\meta.json": "7afdf43776c8e65e3dcb0546bd848c929e7cd6382c104de96778046ade0bbdbe",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\interaction_ragged_inner_row_alignment_cleanup\\k_regression_interaction_ragged_inner_row_alignment_cleanup.ir.json": "6f9f223750ab45125e7711f24f6566f0a7a920ecff159348f601237500b1cb94",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\interaction_ragged_inner_row_alignment_cleanup\\meta.json": "af3e21f4cc0b61478bfbb7ef98a76c64cb3d0f6a973a71074e80b83d0892d161",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_assign\\k_regression_types_bf16_assign.ir.json": "b77988e36000c17c2e0295fc46516b342e5740f03bb04d3d91e1187bfb62e53e",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_assign\\meta.json": "601063f17f68da0533a21e378c4126b27968678f25e1280d54a7f4ab6192c98f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_binary\\k_regression_types_bf16_binary.ir.json": "a95401e346d2357c2291b4ef0099bbadf965daf5e41c6151a58456f93420251f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_binary\\meta.json": "d1121f5f4cc23f955cdcd77f504e612314e51cabea09c88cbe670ad8b29cb6af",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_bitcast\\k_regression_types_bf16_bitcast.ir.json": "3555c257a6f6b2f415c749e141fe065264680c57f548862cc75b023517a11794",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_bitcast\\meta.json": "e465536f7a20ffcb4fa11aa3a24996982c540b5b8252de781df0077e4ab3cc36",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_compare_cast\\k_regression_types_bf16_compare_cast.ir.json": "47810f92be6b39da8ab7cf0052f9f0d83cf4544a7ce6dab8898a1eb78321adf9",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_compare_cast\\meta.json": "89640824bba2b512240f5c4055a5edf8a9e7797544bd7929cfb99ced198d9873",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_function\\k_regression_types_bf16_function.ir.json": "50d9625757ba671d6bf673b5430eba07f53875221a9e4934766c2e5f4b993517",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_function\\meta.json": "63e0d5436a747411365063deb3792e4a17ac90416e31d87e7a978c72b3007c08",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_nested_round\\k_regression_types_bf16_nested_round.ir.json": "892349233dfe31d6eb14bb59f0af85dc4cb2a228d7902d4799511d0b6c7f3d0d",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_nested_round\\meta.json": "9673ebf3c340a359289ae14e686b421ca99a3a6df1ce860df4711da727b1776d",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_nonfinite_predicates\\k_regression_types_bf16_nonfinite_predicates.ir.json": "f32942f79953db9693f97eb84b05c06e00d56300a02cd8a0d82e5994d893d6e7",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_nonfinite_predicates\\meta.json": "d631fb851c02a424997c0b02c452d4d21fc8411c29a27056507fa47ec15577bf",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_assign\\k_regression_types_f16_assign.ir.json": "d59db3b57f758f2ffbe5ca54abd71e5f4e12264125d334338c272aff1d9a0b26",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_assign\\meta.json": "f34524908b154ee0d25111f9c305543ad013840a7f486def02774ac140772ad0",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_binary\\k_regression_types_f16_binary.ir.json": "34f7d941939885715ff2e1cdecb26ce79cbea2b4291bcf2adb23899b1d5efc5c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_binary\\meta.json": "1571b8d41de5960ca69c2a06f597d01e75c20bddf80c1b7579512a6aeb956fcd",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_bitcast\\k_regression_types_f16_bitcast.ir.json": "35a87750c4d02550868b61144946bc8207c4d4e62ee5ba00ee40df79652e84b7",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_bitcast\\meta.json": "01e72cb7a7913cc916c7e59854282ad96b054cc14ff2eb8cab4e50aec2cd4e79",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_compare_cast\\k_regression_types_f16_compare_cast.ir.json": "e186574c44440c1e541db773ab4e603a222c52902f49cc8d7da9d88a8cb7fa57",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_compare_cast\\meta.json": "6a6cc23488e990c17221d688e93e8c3dc16893b407d2bc4dfc77da96aa94bb73",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_function\\k_regression_types_f16_function.ir.json": "aabfcb96c81059041e742b1fcac66582726bb87a8d3c512d70948a06b378d033",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_function\\meta.json": "6bb1f3f34ca235c3ddd7ce76e505b21ab296dd63b83c8bd234d834e819aef4eb",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_nested_round\\k_regression_types_f16_nested_round.ir.json": "e3ce462c3e5aac546c0a5c59b469afdef0d928a81f70c00ed8b81a2024fe5283",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_nested_round\\meta.json": "2b7005e62b1dacc7856d5db170ecd5c652f95004247ee2f06357c4e7c652730c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_nonfinite_predicates\\k_regression_types_f16_nonfinite_predicates.ir.json": "86ce3f5a7f21f31d8bfb8b617ead70e74b8de351b0b7f6cc26b889ff171a7ef3",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_nonfinite_predicates\\meta.json": "fd31c4bf5aacfda43fe0194952b90eec323dd97381ea49b7b6ce01084b3513a8",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_i32_signed_count\\k_regression_types_i32_signed_count.ir.json": "46eade6baa1eaff5b40920881a19aff5a7572260e6a9ca3814fc82c206de1d8a",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_i32_signed_count\\meta.json": "8599885c5cd25fabc04295a4695faf9f3bf204ad38b1bb04fe9f92ece9086895",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_i64_signed_count\\k_regression_types_i64_signed_count.ir.json": "95d75f1eeb1c17643dc256a2f2ef82f3e8c9ec270f6b117ed276e27abc81f950",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_i64_signed_count\\meta.json": "17dd9ba9816661d2fc5ad8cacd7ce31f0c90add08e26b086844b7d95c349c004",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_small_integer_select_bits\\k_regression_types_small_integer_select_bits.ir.json": "5d157f04cc8017e7e5826f29113443a4037ce6ad7d6edeb68426aef8ce46ef05",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_small_integer_select_bits\\meta.json": "7aa6496531519a0ee6f21ab2c5613d66dedcb3174ad95ebe11971d107c12c5da",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_u32_unary\\k_regression_types_u32_unary.ir.json": "16cdd15a87b12bf816791fdd116e04e7a888c10d1f8097f65fff0a05da3f13b0",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_u32_unary\\meta.json": "2db4dfd6cfc4982b1827c2dcffdfa5cbc416874e11235c641d7174a39ecd8b03",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_u64_unary\\k_regression_types_u64_unary.ir.json": "07d9700e42910316a63ac1332155324e30fbdac1df98e7dca0491a584634f890",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\phase4\\semantic-final\\inputs\\types_u64_unary\\meta.json": "6db1d2cff218881a92e94a451d991a32e99563d22fed50860074eab4558e58da",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_attention_rect\\k_matmul_softmax_reduce_7d959d.ir.json": "e1521391984d9f048508e7622d2f4e350a5c94e7ae7cadb082d4caef2ea2e11f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_attention_rect\\meta.json": "8f82cce7b1e830ab4b651b80c228fbf99c7043baf4dc74731cfd46ebe6737240",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_matmul_rect\\k_matmul.ir.json": "9540a3e4e2896da09d7a0e22b360d739bf5dab0cd5205350a621c8289cf83311",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_matmul_rect\\meta.json": "6878382700d5dbc439f5eb4cda9b8af6e0dd2300f47a02af3096cedb2bee6f7a",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_matmul_tail\\k_matmul_7a3eb5.ir.json": "777267075202680eab3e7ab5c3d6c6a416fc2b752bbf36b7240e0a80e50b0463",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_matmul_tail\\meta.json": "656ab91a2ed6294667e429b844cb2d0c859e253be25d1313511390387dcb026c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_max_tail\\k_amax_reduce.ir.json": "6863c335943313311c6bcfc22dc5cf05c90da8a650d9af7182ff4c50fb6b9531",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_max_tail\\meta.json": "84506431101cddc9d63b8355c5d0d98121c4f5c737e35d3636d173b7c65ad156",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_pointwise_2d\\k_add_pointwise.ir.json": "b32383dfcdb23acc2bb092389cf12b4492b945809fb245758c81a221d7c0f743",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_pointwise_2d\\meta.json": "ae860ab21233f652f3c17d0688d1ed81d6b75c1d7b806778753582cc085d1259",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_pointwise_prime\\k_mul_pointwise.ir.json": "391272460d9966a269d0ffd77ecbf40699e7ad85c2fc005ad148a94977f4625f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_pointwise_prime\\meta.json": "f858e191703f2f7013c02089ae1d1391fa7300c1d7c9e603aef4cc1ecd0e4ad6",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_rmsnorm_tail\\k_mean_5e47f3.ir.json": "8f107bc3058010298243efd4faf72dfb5b946d5fee09a3e9565370be3f646c3b",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_rmsnorm_tail\\meta.json": "2f9d1dc4b476283c37bca6c5568d31e7cd15241c7d1f89129f882f2df7d8d493",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_row_sum_tail\\k_sum_1_reduce.ir.json": "2cc716beaa667ff67b349b08105c30362c1d7493a180a539f167ab44ce2ebcf7",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_row_sum_tail\\meta.json": "df26305708e679bc79749deee0ce010c495e22a3b45c5bed285e247d7b563a2a",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_softmax_tail\\k_softmax_aa476e.ir.json": "27e48b38eb5d46ba4b119863d59ccabf07d763c6039729c9498b02df92a239af",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_softmax_tail\\meta.json": "9e650d373a3b38c3db0c333409874bbbcae0720ee53ce00a51a89cd4c708af85",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_sum_prime\\k_sum_1_reduce.ir.json": "3d0c62c8aaa426e43c9f84dd5e297875dc348fd1c23a396c1f507cdd14d62a7b",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\stress\\stress_sum_prime\\meta.json": "81dc6623dd0495092e1739f1045e7cfe2130419110691d59e90288173a005cb5",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\a01_attention\\k_matmul_softmax_reduce_b55365.ir.json": "e1474ca91ac87c976c38ff130a24499e16d4052e1fac60f5fab806303c4bcdd6",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\a01_attention\\meta.json": "b8b003ae791859795a8073598f466c1a3b10382fe13ac14ea280794dc94b8e2b",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\a02_attention_128\\k_matmul_softmax_reduce_6f0029.ir.json": "906a5eb477fd04a4669e8e0a30d055b73625689d0f93557707ec55320196734e",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\a02_attention_128\\meta.json": "bd05d4c39c0d5a98ceb1517d5c34ec227571b1e898e1bf4a7c71ea98566a5873",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\f01_rmsnorm\\k_mean_cbd1de.ir.json": "b7598c4d7d0b7f198d6dc3cae7f6670b5d00cb30139f3f9a3e2e6e963f581baa",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\f01_rmsnorm\\meta.json": "e2b9376ca6d12936cc52daebff4515f5cf997680d2f872a48e899655757edf64",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\f02_row_softmax\\k_softmax_05263d.ir.json": "4827adaccb6dbb0e2aa7ad426f28c94e14b4c9444e7410f2fa33f3b4185d73da",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\f02_row_softmax\\meta.json": "ed99aaee9077078426ccf9396d149b3c704886f4005c651490648d51202ecdd2",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\f03_l2norm\\k_div_reduce.ir.json": "77a81af8de7eb9bcec026d540e9dbfcfa70aa7e228721b3faf0c52b3043a594e",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\f03_l2norm\\meta.json": "064b4df0e8807e13fbff2c1c864d302d6aca0e328119ab52d1ddd510b85cdcb3",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\m01_matmul_512\\k_matmul_2967be.ir.json": "7c16561164b9a9e280a756950cac999b6b6cd707d7a6d679bcfb1e68833bd425",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\m01_matmul_512\\meta.json": "813dbcd2202cde96cde7621007459bae2ec181564b3ca7be47f5f6fe43b77b5e",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\m02_matmul_rect\\k_matmul.ir.json": "4e22568c61715d9921f59e0dc4b122b36264d7c197266dd31c3ad8d2585675ed",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\m02_matmul_rect\\meta.json": "c57b163eb0ae40439cadf1b6d57110bb20f6c148558b0b0e9e31c498b1c9fa24",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p00_scalar_add\\k_add_pointwise.ir.json": "9b0357857f0b6504ae700e117e3c59f7cb66d9357f394aa81490fc2aea811df8",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p00_scalar_add\\meta.json": "e9ede16317b2f085eb6721d37ff9fefcb1ce86c2d8d837aff49a5f936b1affa1",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p01_vector_add\\k_add_pointwise.ir.json": "0061553f361d6ba3ec24b2e03dec7f3508e168b1244563869ae528eb5a0d61bb",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p01_vector_add\\meta.json": "7817b03dfdbe5782b400ab01a11309320e640f0905aac1f3207f482013774e0f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p02_scale_shift\\k_add_pointwise.ir.json": "a39aa5f9e6c1909a336376d4249ecf3a640212c7bb36fba17d54b58e45a9bf9f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p02_scale_shift\\meta.json": "e0e609e5b425a4743f3a55ed11f178e63124caa5787bf9a6491d200f745e68be",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p03_relu_mul\\k_mul_pointwise.ir.json": "57fc50895f5e9232b03a016e770816d45f55aa465e9c48d8fa74ae2543b84109",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\p03_relu_mul\\meta.json": "725dffee431bc62f94749bd143d3e14891f4a802689ade7a640759bfbf7a082f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\r01_array_sum\\k_sum_1_reduce.ir.json": "7b9e35a3be06fbc37fec7f5390277517233db0e19c7e161232d94d6a0885c87a",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\r01_array_sum\\meta.json": "9cb0497e75f9a4d167e351a0aca2cfa8435c8236ef741960189ab6e95a3c6e65",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\r02_big_sum\\k_sum_1_reduce.ir.json": "a0dad205917e6feb4f3ea1d0e7ad24d79f0d476c1f9230a497f5a92b6d9703b3",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\r02_big_sum\\meta.json": "345b53d6f3fbadef15193f9dbfd3071a399eb5813c71591da8328ebd374df0f7",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\r03_mean\\k_mean_ffcca3.ir.json": "44f768792a8dfe1ef667b55786696fd45af76841da2fd128294c516335ca798c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\r03_mean\\meta.json": "9dbbff91bb831ecd5f9fa2b352303d3060d08a189725704d44067eab87c2c73f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\r04_row_sum\\k_sum_1_reduce.ir.json": "6c87582da81ed3c247be2741b2f7a195da7ff0173b9d3035f21f904fbb4ab963",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\problems\\r04_row_sum\\meta.json": "3dcd801b62acffc043e8bebae51a8b3a37d80c15a6be577d6ff7837e202ba101"
+  },
+  "inputs_unchanged": true,
+  "kernels": 120,
+  "identical": 120,
+  "rows": [
+    {
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_a01_long_context\\k_matmul_softmax_reduce_abf187.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "112eb6016b8bf934d19092c6fe372ea115d05757cd4661be6dcfa75d08b7bc9c",
+      "candidate_ptx_sha256": "112eb6016b8bf934d19092c6fe372ea115d05757cd4661be6dcfa75d08b7bc9c",
+      "baseline_bytes": 5479,
+      "candidate_bytes": 5479
+    },
+    {
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_a02_long_query\\k_matmul_softmax_reduce_8b46c8.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "9fb5260167e5ca981b483047db3f7548b138e23eb3749d3d0a5c4b6a023fcee0",
+      "candidate_ptx_sha256": "9fb5260167e5ca981b483047db3f7548b138e23eb3749d3d0a5c4b6a023fcee0",
+      "baseline_bytes": 64892,
+      "candidate_bytes": 64892
+    },
+    {
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_a03_attention_residual\\k_matmul_softmax_reduce_396951.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "bfe4f8b817ba8a48fc7419ad5387a17236ba69dc4de14d667adfcc76bf0640b5",
+      "candidate_ptx_sha256": "bfe4f8b817ba8a48fc7419ad5387a17236ba69dc4de14d667adfcc76bf0640b5",
+      "baseline_bytes": 14569,
+      "candidate_bytes": 14569
+    },
+    {
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_f01_centered_affine\\k_mean_reduce_e2dbd4.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "3006843353f47a76fd07af1ce76152a814d8557da2ac2fc483cd97d854857465",
+      "candidate_ptx_sha256": "3006843353f47a76fd07af1ce76152a814d8557da2ac2fc483cd97d854857465",
+      "baseline_bytes": 9426,
+      "candidate_bytes": 9426
+    },
+    {
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_f02_residual_l2_weight\\k_mul_1_reduce.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "775e3a4d3e491923e413dadd2572602eba97a82c99d86669223413c2c8d7af0d",
+      "candidate_ptx_sha256": "775e3a4d3e491923e413dadd2572602eba97a82c99d86669223413c2c8d7af0d",
+      "baseline_bytes": 6730,
+      "candidate_bytes": 6730
+    },
+    {
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_f03_weighted_softmax_sum\\k_softmax_86069b.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "b737513239050b449674b156bbd17dc0549deecd86e8374a2a0ad2a938ceba13",
+      "candidate_ptx_sha256": "b737513239050b449674b156bbd17dc0549deecd86e8374a2a0ad2a938ceba13",
+      "baseline_bytes": 9632,
+      "candidate_bytes": 9632
+    },
+    {
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_f04_rms_sigmoid_gate\\k_mean_2b1a0c.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "5c2358c6f91b920e743f9ad8956551a2c299190ced5d08ac5fff1359b873c871",
+      "candidate_ptx_sha256": "5c2358c6f91b920e743f9ad8956551a2c299190ced5d08ac5fff1359b873c871",
+      "baseline_bytes": 6489,
+      "candidate_bytes": 6489
+    },
+    {
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_m01_long_reduction\\k_matmul_ab135c.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "6dac234a6220de365d57c72ac0253158db3bf6d54fed0120c2c4f38d6adddfc4",
+      "candidate_ptx_sha256": "6dac234a6220de365d57c72ac0253158db3bf6d54fed0120c2c4f38d6adddfc4",
+      "baseline_bytes": 7449,
+      "candidate_bytes": 7449
+    },
+    {
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_m02_tall_thin\\k_matmul.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "9cf598b936b5367e76d5c8e96d86645da1b65fd4a0f809e2fa1da8d9fce0e767",
+      "candidate_ptx_sha256": "9cf598b936b5367e76d5c8e96d86645da1b65fd4a0f809e2fa1da8d9fce0e767",
+      "baseline_bytes": 183299,
+      "candidate_bytes": 183299
+    },
+    {
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_m03_wide_output\\k_matmul.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "b27c2a370410a1cff769e71f9e98e88c7879c13c1d86deb4de85a2a91d0525a1",
+      "candidate_ptx_sha256": "b27c2a370410a1cff769e71f9e98e88c7879c13c1d86deb4de85a2a91d0525a1",
+      "baseline_bytes": 14433,
+      "candidate_bytes": 14433
+    },
+    {
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_m04_bias_relu\\k_matmul_45ee83.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "b08355f80b3790162f3f6f6c8daa6399edefefbc32bed5bf0b85208377ead2b6",
+      "candidate_ptx_sha256": "b08355f80b3790162f3f6f6c8daa6399edefefbc32bed5bf0b85208377ead2b6",
+      "baseline_bytes": 7445,
+      "candidate_bytes": 7445
+    },
+    {
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_p01_broadcast_tanh\\k_tanh_pointwise.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "282632eea76237402ab5f9a80146c600147fee6db1591e51106680985b62a919",
+      "candidate_ptx_sha256": "282632eea76237402ab5f9a80146c600147fee6db1591e51106680985b62a919",
+      "baseline_bytes": 2096,
+      "candidate_bytes": 2096
+    },
+    {
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_p02_absolute_difference_3d\\k_add_pointwise.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "5d66c65c92c7377d98e336994d0af8b554651e64376260b735b996f193fdba7d",
+      "candidate_ptx_sha256": "5d66c65c92c7377d98e336994d0af8b554651e64376260b735b996f193fdba7d",
+      "baseline_bytes": 5803,
+      "candidate_bytes": 5803
+    },
+    {
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_p03_rational_gate\\k_mul_1_pointwise.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "1ca6abe1fbc301fde5fdfc817ad32f26bd0db9f47426e6a5fe4f74b7e9c5e252",
+      "candidate_ptx_sha256": "1ca6abe1fbc301fde5fdfc817ad32f26bd0db9f47426e6a5fe4f74b7e9c5e252",
+      "baseline_bytes": 1489,
+      "candidate_bytes": 1489
+    },
+    {
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_r01_column_sum\\k_sum_1_reduce.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "65913252f693b78e11ce8727271f4015da4bb79349f52cbbf477535aaae4af81",
+      "candidate_ptx_sha256": "65913252f693b78e11ce8727271f4015da4bb79349f52cbbf477535aaae4af81",
+      "baseline_bytes": 3186,
+      "candidate_bytes": 3186
+    },
+    {
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_r02_row_mean_square\\k_mean_ecc898.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "ce0c898ca32f101533ba896bb20b19c45a4bdbc661a647d53a5faeea27ff2ef7",
+      "candidate_ptx_sha256": "ce0c898ca32f101533ba896bb20b19c45a4bdbc661a647d53a5faeea27ff2ef7",
+      "baseline_bytes": 5652,
+      "candidate_bytes": 5652
+    },
+    {
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_r03_row_inner_product\\k_sum_1_reduce.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "d0cb637c14e7f23cb4bf06084a70b8ec0614adf0edd95be48c6dea9a1ce6c18a",
+      "candidate_ptx_sha256": "d0cb637c14e7f23cb4bf06084a70b8ec0614adf0edd95be48c6dea9a1ce6c18a",
+      "baseline_bytes": 5646,
+      "candidate_bytes": 5646
+    },
+    {
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_r04_column_max\\k_amax_reduce.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "f2b3d8e3843f5476299cb555dd2e0025f6ff9d38fb9819cf5b714af948ee037d",
+      "candidate_ptx_sha256": "f2b3d8e3843f5476299cb555dd2e0025f6ff9d38fb9819cf5b714af948ee037d",
+      "baseline_bytes": 3162,
+      "candidate_bytes": 3162
+    },
+    {
+      "ir": "artifacts\\validation\\layouts\\auxiliary_producer_warp\\k_regression_auxiliary_producer_warp.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "51e0dd61582934a7cfafaa1733f6730165d8cc218eeedbb79083d75c6e45e3cb",
+      "candidate_ptx_sha256": "51e0dd61582934a7cfafaa1733f6730165d8cc218eeedbb79083d75c6e45e3cb",
+      "baseline_bytes": 1492,
+      "candidate_bytes": 1492
+    },
+    {
+      "ir": "artifacts\\validation\\layouts\\copy_swizzle_B128\\k_regression_copy_swizzle_B128.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "95a1c4240f1fe7aa50f98e8c788d197384155e8bc1815e3c65f3c0eda59bd472",
+      "candidate_ptx_sha256": "95a1c4240f1fe7aa50f98e8c788d197384155e8bc1815e3c65f3c0eda59bd472",
+      "baseline_bytes": 6149,
+      "candidate_bytes": 6149
+    },
+    {
+      "ir": "artifacts\\validation\\layouts\\copy_swizzle_B128_shift_7\\k_regression_copy_swizzle_B128_shift_7.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "e53db17770cd13b8f15f4e541e4a7db69361b5ac68d5aebee5c4a5f4b619aebf",
+      "candidate_ptx_sha256": "e53db17770cd13b8f15f4e541e4a7db69361b5ac68d5aebee5c4a5f4b619aebf",
+      "baseline_bytes": 11828,
+      "candidate_bytes": 11828
+    },
+    {
+      "ir": "artifacts\\validation\\layouts\\copy_swizzle_B32\\k_regression_copy_swizzle_B32.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "511a66d5e7c8aaddeb6e1688d86957654c416e3cd3cc4a36e514bbe3a66b4e2c",
+      "candidate_ptx_sha256": "511a66d5e7c8aaddeb6e1688d86957654c416e3cd3cc4a36e514bbe3a66b4e2c",
+      "baseline_bytes": 6148,
+      "candidate_bytes": 6148
+    },
+    {
+      "ir": "artifacts\\validation\\layouts\\copy_swizzle_B64\\k_regression_copy_swizzle_B64.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "caf5cdd285db5181dde2389e2c2f22012bf8d696750e0d49447ae6b75c6391b1",
+      "candidate_ptx_sha256": "caf5cdd285db5181dde2389e2c2f22012bf8d696750e0d49447ae6b75c6391b1",
+      "baseline_bytes": 6148,
+      "candidate_bytes": 6148
+    },
+    {
+      "ir": "artifacts\\validation\\layouts\\raster_rectangular_tail_m\\k_regression_raster_rectangular_tail_m.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "50c8aa66b98fcd2d271c8570c8b9b91b5f7eb5a7511eddc17acf5b72a0efb601",
+      "candidate_ptx_sha256": "50c8aa66b98fcd2d271c8570c8b9b91b5f7eb5a7511eddc17acf5b72a0efb601",
+      "baseline_bytes": 1594,
+      "candidate_bytes": 1594
+    },
+    {
+      "ir": "artifacts\\validation\\layouts\\raster_rectangular_tail_n\\k_regression_raster_rectangular_tail_n.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "9b96f329653cea0d943b2913aec232c53fc7f1334475fd9c0e241a50a2db33f2",
+      "candidate_ptx_sha256": "9b96f329653cea0d943b2913aec232c53fc7f1334475fd9c0e241a50a2db33f2",
+      "baseline_bytes": 1594,
+      "candidate_bytes": 1594
+    },
+    {
+      "ir": "artifacts\\validation\\layouts\\warp_sync_uneven_work\\k_regression_warp_sync_uneven_work.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "5e77ee681163a4fe7b604bc33e35874c16b28cc4d76b67e25a2fffb6bde0efe5",
+      "candidate_ptx_sha256": "5e77ee681163a4fe7b604bc33e35874c16b28cc4d76b67e25a2fffb6bde0efe5",
+      "baseline_bytes": 1849,
+      "candidate_bytes": 1849
+    },
+    {
+      "ir": "artifacts\\validation\\phase3\\products\\product_shuffle_varied_trip_counts\\k_regression_product_shuffle_varied_trip_counts.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "f1de7193175a0877b7d6c2f0be606ac607d78eb780eca46973b0efe2b06735d5",
+      "candidate_ptx_sha256": "f1de7193175a0877b7d6c2f0be606ac607d78eb780eca46973b0efe2b06735d5",
+      "baseline_bytes": 1577,
+      "candidate_bytes": 1577
+    },
+    {
+      "ir": "artifacts\\validation\\phase3\\products\\product_tree_varied_trip_counts\\k_regression_product_tree_varied_trip_counts.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "f6eb3e9811dff2f60111308f7168398e4f87ef6d34e0ef18468102a61a992fb6",
+      "candidate_ptx_sha256": "f6eb3e9811dff2f60111308f7168398e4f87ef6d34e0ef18468102a61a992fb6",
+      "baseline_bytes": 4259,
+      "candidate_bytes": 4259
+    },
+    {
+      "ir": "artifacts\\validation\\phase3\\schedules\\phase3_a01_irregular_attention\\k_matmul_softmax_reduce_887429.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "72cb3895ad1b6e1a6b317b2e9e593c6950b3d2a9bf19c04c163e7065e7872686",
+      "candidate_ptx_sha256": "72cb3895ad1b6e1a6b317b2e9e593c6950b3d2a9bf19c04c163e7065e7872686",
+      "baseline_bytes": 15717,
+      "candidate_bytes": 15717
+    },
+    {
+      "ir": "artifacts\\validation\\phase3\\schedules\\phase3_f01_column_softmax\\k_softmax_5b5f5a.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "f457f2e52529dcfc1dc99788672b78eb300b24d8bebd5c61d6ca0edf4ba6b625",
+      "candidate_ptx_sha256": "f457f2e52529dcfc1dc99788672b78eb300b24d8bebd5c61d6ca0edf4ba6b625",
+      "baseline_bytes": 7376,
+      "candidate_bytes": 7376
+    },
+    {
+      "ir": "artifacts\\validation\\phase3\\schedules\\phase3_f02_centered_column_l2\\k_mean_reduce_18dd53.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "f794f9370f1b4fa107c4ffbc02ed38fb852ecdc38dcb607de96a8fea0e70336b",
+      "candidate_ptx_sha256": "f794f9370f1b4fa107c4ffbc02ed38fb852ecdc38dcb607de96a8fea0e70336b",
+      "baseline_bytes": 8564,
+      "candidate_bytes": 8564
+    },
+    {
+      "ir": "artifacts\\validation\\phase3\\schedules\\phase3_m01_batched_odd_matmul\\k_matmul_44c580.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "0b015afd14eb765b34992af6b430538cefc7aea4191ff7df43362bf4b94570f1",
+      "candidate_ptx_sha256": "0b015afd14eb765b34992af6b430538cefc7aea4191ff7df43362bf4b94570f1",
+      "baseline_bytes": 6008,
+      "candidate_bytes": 6008
+    },
+    {
+      "ir": "artifacts\\validation\\phase3\\schedules\\phase3_p01_three_axis_broadcast\\k_relu_pointwise.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "bdf880c362151008c0110c6cca81a6ea798c3806a9311b3ac306e7afafc70410",
+      "candidate_ptx_sha256": "bdf880c362151008c0110c6cca81a6ea798c3806a9311b3ac306e7afafc70410",
+      "baseline_bytes": 1709,
+      "candidate_bytes": 1709
+    },
+    {
+      "ir": "artifacts\\validation\\phase3\\transport\\async_two_groups_16_bytes\\k_regression_async_two_groups_16_bytes.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "d4fad275d38a97808d480441c81cf6298b8756e4b089fde82b9f79e1333e1d3b",
+      "candidate_ptx_sha256": "d4fad275d38a97808d480441c81cf6298b8756e4b089fde82b9f79e1333e1d3b",
+      "baseline_bytes": 2354,
+      "candidate_bytes": 2354
+    },
+    {
+      "ir": "artifacts\\validation\\phase3\\transport\\async_two_groups_4_bytes\\k_regression_async_two_groups_4_bytes.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "ad214af8727f0677496c9c3a905f32c7f57b160e5ef6efb733b4b33ba3bac483",
+      "candidate_ptx_sha256": "ad214af8727f0677496c9c3a905f32c7f57b160e5ef6efb733b4b33ba3bac483",
+      "baseline_bytes": 2033,
+      "candidate_bytes": 2033
+    },
+    {
+      "ir": "artifacts\\validation\\phase3\\transport\\async_two_groups_8_bytes\\k_regression_async_two_groups_8_bytes.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "f0f3e32d951992608c9afa50901633c2d6b763cadf35121ff348d93fa5d9d739",
+      "candidate_ptx_sha256": "f0f3e32d951992608c9afa50901633c2d6b763cadf35121ff348d93fa5d9d739",
+      "baseline_bytes": 2309,
+      "candidate_bytes": 2309
+    },
+    {
+      "ir": "artifacts\\validation\\phase3\\transport\\dynamic_pool_distinct_alignment\\k_regression_dynamic_pool_distinct_alignment.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "38059f89761bfb33f8edb72e15dca9091212015875f171bfe87358c980167250",
+      "candidate_ptx_sha256": "38059f89761bfb33f8edb72e15dca9091212015875f171bfe87358c980167250",
+      "baseline_bytes": 2698,
+      "candidate_bytes": 2698
+    },
+    {
+      "ir": "artifacts\\validation\\phase3\\transport\\shared_write_swizzle_B128\\k_regression_shared_write_swizzle_B128.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "92c0efcf0d4028754aee07b05b8c7f1c16351ba378fe068b5b2c18f248ec142c",
+      "candidate_ptx_sha256": "92c0efcf0d4028754aee07b05b8c7f1c16351ba378fe068b5b2c18f248ec142c",
+      "baseline_bytes": 6638,
+      "candidate_bytes": 6638
+    },
+    {
+      "ir": "artifacts\\validation\\phase3\\transport\\shared_write_swizzle_B128_shift_7\\k_regression_shared_write_swizzle_B128_shift_7.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "10aaef098f6ffe6e1a169fac8d7e035af6e5ef735ad9c536c52c1332b3cd7084",
+      "candidate_ptx_sha256": "10aaef098f6ffe6e1a169fac8d7e035af6e5ef735ad9c536c52c1332b3cd7084",
+      "baseline_bytes": 12890,
+      "candidate_bytes": 12890
+    },
+    {
+      "ir": "artifacts\\validation\\phase3\\transport\\shared_write_swizzle_B32\\k_regression_shared_write_swizzle_B32.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "45e8e3a0a1c804fc925df332e0e2a307ef89980fe03b9ee07e64457ddf0ad136",
+      "candidate_ptx_sha256": "45e8e3a0a1c804fc925df332e0e2a307ef89980fe03b9ee07e64457ddf0ad136",
+      "baseline_bytes": 6637,
+      "candidate_bytes": 6637
+    },
+    {
+      "ir": "artifacts\\validation\\phase3\\transport\\shared_write_swizzle_B64\\k_regression_shared_write_swizzle_B64.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "4c5f52bce348c229fba58966a6f9204075864c0d0fc2cf93678f1286257638ad",
+      "candidate_ptx_sha256": "4c5f52bce348c229fba58966a6f9204075864c0d0fc2cf93678f1286257638ad",
+      "baseline_bytes": 6637,
+      "candidate_bytes": 6637
+    },
+    {
+      "ir": "artifacts\\validation\\phase3\\transport\\unaligned_grouped_load_rows\\k_regression_unaligned_grouped_load_rows.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "2bbfdcdd1d84aa3873805c382334e2445ca375304d1b5f662ffc3b06d687ee74",
+      "candidate_ptx_sha256": "2bbfdcdd1d84aa3873805c382334e2445ca375304d1b5f662ffc3b06d687ee74",
+      "baseline_bytes": 1034,
+      "candidate_bytes": 1034
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\comparison_integer_promotion\\k_regression_comparison_integer_promotion.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "d165fd4300a565e2589ad6bda7ec76302ee826ca43c8a4160c0a6150a098c699",
+      "candidate_ptx_sha256": "d165fd4300a565e2589ad6bda7ec76302ee826ca43c8a4160c0a6150a098c699",
+      "baseline_bytes": 2785,
+      "candidate_bytes": 2785
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\index_rank_mismatch_loads\\k_regression_index_rank_mismatch_loads.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "49ad8f413c783188a230e045d0f4a04a030fe7747effcab68535390bd047d321",
+      "candidate_ptx_sha256": "49ad8f413c783188a230e045d0f4a04a030fe7747effcab68535390bd047d321",
+      "baseline_bytes": 1529,
+      "candidate_bytes": 1529
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\index_rank_mismatch_write_1d\\k_regression_index_rank_mismatch_write_1d.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "61462c7b351df3f1b0398b4fb40cb11de630a1ae379231c04e8fc722f40a860e",
+      "candidate_ptx_sha256": "61462c7b351df3f1b0398b4fb40cb11de630a1ae379231c04e8fc722f40a860e",
+      "baseline_bytes": 884,
+      "candidate_bytes": 884
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\index_rank_mismatch_write_2d\\k_regression_index_rank_mismatch_write_2d.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "3f6bfe450c072d34bd3df5f6a023d59ab3468a54afcc35408d6c8be45efb0559",
+      "candidate_ptx_sha256": "3f6bfe450c072d34bd3df5f6a023d59ab3468a54afcc35408d6c8be45efb0559",
+      "baseline_bytes": 911,
+      "candidate_bytes": 911
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\nested_strided_bound_recapture\\k_regression_nested_strided_bound_recapture.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "86e2959501b2a89d34f9a14c881a37170ff256a168847703ea54f0ddd55c827b",
+      "candidate_ptx_sha256": "86e2959501b2a89d34f9a14c881a37170ff256a168847703ea54f0ddd55c827b",
+      "baseline_bytes": 1562,
+      "candidate_bytes": 1562
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\overflow_alignment_u32_grouped\\k_regression_overflow_alignment_u32_grouped.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "437fe5225f8457c2f46427ed6c76af399cfd42e638be69d611525a4b5685fb5a",
+      "candidate_ptx_sha256": "437fe5225f8457c2f46427ed6c76af399cfd42e638be69d611525a4b5685fb5a",
+      "baseline_bytes": 1157,
+      "candidate_bytes": 1157
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\overflow_alignment_u32_scalar\\k_regression_overflow_alignment_u32_scalar.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "fa0e67e1523f1f9be9027230b3433b4be1205f6c658ff10b9ce78b7a700c3454",
+      "candidate_ptx_sha256": "fa0e67e1523f1f9be9027230b3433b4be1205f6c658ff10b9ce78b7a700c3454",
+      "baseline_bytes": 1248,
+      "candidate_bytes": 1248
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\overflow_alignment_u64_grouped\\k_regression_overflow_alignment_u64_grouped.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "443221f392be25048d7cb54c538972c552eb147b2beb9e7cff918a14ecc59b1a",
+      "candidate_ptx_sha256": "443221f392be25048d7cb54c538972c552eb147b2beb9e7cff918a14ecc59b1a",
+      "baseline_bytes": 1191,
+      "candidate_bytes": 1191
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\overflow_alignment_u64_scalar\\k_regression_overflow_alignment_u64_scalar.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "7f7af6f884e1e2011b9b387940d38a7ff535420fe075149f664a91a2fe68aaa1",
+      "candidate_ptx_sha256": "7f7af6f884e1e2011b9b387940d38a7ff535420fe075149f664a91a2fe68aaa1",
+      "baseline_bytes": 1313,
+      "candidate_bytes": 1313
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_assign_redefines_index\\k_regression_packing_assign_redefines_index.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "d58f867254c4533e2f94ab59e3afb7b4e263d9ba8ba578e92c99e6ec5aaf116a",
+      "candidate_ptx_sha256": "d58f867254c4533e2f94ab59e3afb7b4e263d9ba8ba578e92c99e6ec5aaf116a",
+      "baseline_bytes": 1051,
+      "candidate_bytes": 1051
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_conditional_store_boundary\\k_regression_packing_conditional_store_boundary.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "f89e851e41747ec4fb6ed63bf0f64fc39faee603551ee494f15deb5294b3fb97",
+      "candidate_ptx_sha256": "f89e851e41747ec4fb6ed63bf0f64fc39faee603551ee494f15deb5294b3fb97",
+      "baseline_bytes": 1321,
+      "candidate_bytes": 1321
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_declared_types_f32_i32\\k_regression_packing_declared_types_f32_i32.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "551d488539cce95abd7210966e4edeccff7ad2c35a79191bfb78db801d5ce9c5",
+      "candidate_ptx_sha256": "551d488539cce95abd7210966e4edeccff7ad2c35a79191bfb78db801d5ce9c5",
+      "baseline_bytes": 1054,
+      "candidate_bytes": 1054
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_declared_types_i32_f32\\k_regression_packing_declared_types_i32_f32.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "8687bca7f8418e54be0a0094bc4e8af38f915cfd384844de08428fec0d1a72cc",
+      "candidate_ptx_sha256": "8687bca7f8418e54be0a0094bc4e8af38f915cfd384844de08428fec0d1a72cc",
+      "baseline_bytes": 1054,
+      "candidate_bytes": 1054
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_deferred_name_binding\\k_regression_packing_deferred_name_binding.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "410c083a1fe48af4202fb0d066079f15c310d99ea3a2d1e25e4a6179a4f84ea3",
+      "candidate_ptx_sha256": "410c083a1fe48af4202fb0d066079f15c310d99ea3a2d1e25e4a6179a4f84ea3",
+      "baseline_bytes": 1249,
+      "candidate_bytes": 1249
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_floating_index_declined\\k_regression_packing_floating_index_declined.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "282af161dbb92f6f46681454ad887108f9246efe1c9edda54c2ee956b85d9553",
+      "candidate_ptx_sha256": "282af161dbb92f6f46681454ad887108f9246efe1c9edda54c2ee956b85d9553",
+      "baseline_bytes": 1120,
+      "candidate_bytes": 1120
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_load_redefines_index\\k_regression_packing_load_redefines_index.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "4e9d9073359c01a6e0a6d8d0ceb9750bdf1654ed7a21d3b2849060eb2618c7d7",
+      "candidate_ptx_sha256": "4e9d9073359c01a6e0a6d8d0ceb9750bdf1654ed7a21d3b2849060eb2618c7d7",
+      "baseline_bytes": 1064,
+      "candidate_bytes": 1064
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_offsets_0_0\\k_regression_packing_offsets_0_0.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "31cdd1a17aa1d1c5b7b5dd92e8158bb29d4f7c6a30abe224fc050191f4794b93",
+      "candidate_ptx_sha256": "31cdd1a17aa1d1c5b7b5dd92e8158bb29d4f7c6a30abe224fc050191f4794b93",
+      "baseline_bytes": 1016,
+      "candidate_bytes": 1016
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_offsets_0_2\\k_regression_packing_offsets_0_2.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "fb866971de37425f8841761d919c3a4589f67532cbf4fd9730918e74fc658f1c",
+      "candidate_ptx_sha256": "fb866971de37425f8841761d919c3a4589f67532cbf4fd9730918e74fc658f1c",
+      "baseline_bytes": 1043,
+      "candidate_bytes": 1043
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_offsets_1_0\\k_regression_packing_offsets_1_0.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "7bed7a7ad95b5fbcd269f308d4d9a6ab8998217d3146b33f3bcad08e5dbe504e",
+      "candidate_ptx_sha256": "7bed7a7ad95b5fbcd269f308d4d9a6ab8998217d3146b33f3bcad08e5dbe504e",
+      "baseline_bytes": 1043,
+      "candidate_bytes": 1043
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_redefined_index\\k_regression_packing_redefined_index.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "c59ddbbadd56209e8b7a1032af05979316278fd07646d2ac9ffae9f4a2dbd893",
+      "candidate_ptx_sha256": "c59ddbbadd56209e8b7a1032af05979316278fd07646d2ac9ffae9f4a2dbd893",
+      "baseline_bytes": 1044,
+      "candidate_bytes": 1044
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_reused_pending_name\\k_regression_packing_reused_pending_name.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "6f728fa583b400022dff8774be5ac8f14c8fee91aec442b52f94c868a11f9130",
+      "candidate_ptx_sha256": "6f728fa583b400022dff8774be5ac8f14c8fee91aec442b52f94c868a11f9130",
+      "baseline_bytes": 1371,
+      "candidate_bytes": 1371
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_store_boundary\\k_regression_packing_store_boundary.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "1c9073bc1fec2745a136920ef2933ff2e1118f3440300b46c83ae32f216f9eb1",
+      "candidate_ptx_sha256": "1c9073bc1fec2745a136920ef2933ff2e1118f3440300b46c83ae32f216f9eb1",
+      "baseline_bytes": 1223,
+      "candidate_bytes": 1223
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_width2_shift0\\k_regression_packing_width2_shift0.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "5699d34a915521e7f2814c63345037fcab3ef4cc3ba258f8a02ffd8d74784363",
+      "candidate_ptx_sha256": "5699d34a915521e7f2814c63345037fcab3ef4cc3ba258f8a02ffd8d74784363",
+      "baseline_bytes": 1089,
+      "candidate_bytes": 1089
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_width2_shift1\\k_regression_packing_width2_shift1.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "970efb9f67416f35322e7470d061469bbdf928e5bd771c154473fd22213dbfa4",
+      "candidate_ptx_sha256": "970efb9f67416f35322e7470d061469bbdf928e5bd771c154473fd22213dbfa4",
+      "baseline_bytes": 1143,
+      "candidate_bytes": 1143
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_width3_shift0\\k_regression_packing_width3_shift0.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "825f3073a523583a15d0aeed9036d78086056e8b08f4aab66ae8c0bb8f121c19",
+      "candidate_ptx_sha256": "825f3073a523583a15d0aeed9036d78086056e8b08f4aab66ae8c0bb8f121c19",
+      "baseline_bytes": 1326,
+      "candidate_bytes": 1326
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_width3_shift1\\k_regression_packing_width3_shift1.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "674897c4359d8c5ad3c36ef0dfba0232a16df6517c513d3254d24cf7e329ac53",
+      "candidate_ptx_sha256": "674897c4359d8c5ad3c36ef0dfba0232a16df6517c513d3254d24cf7e329ac53",
+      "baseline_bytes": 1407,
+      "candidate_bytes": 1407
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_width4_shift0\\k_regression_packing_width4_shift0.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "1dfce4385b753a3fdc94e78a455d11e5a8b8d2a41c7de1ccf35ad706a34b157f",
+      "candidate_ptx_sha256": "1dfce4385b753a3fdc94e78a455d11e5a8b8d2a41c7de1ccf35ad706a34b157f",
+      "baseline_bytes": 1453,
+      "candidate_bytes": 1453
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\packing_width4_shift1\\k_regression_packing_width4_shift1.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "b808eaf3a6453290f0613c323264cec6419e7957a1098808508c69df5da01346",
+      "candidate_ptx_sha256": "b808eaf3a6453290f0613c323264cec6419e7957a1098808508c69df5da01346",
+      "baseline_bytes": 1561,
+      "candidate_bytes": 1561
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\strided_bound_carrier_snapshot\\k_regression_strided_bound_carrier_snapshot.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "21ac293a2c970b75c14d80b4f04cbcb3df16b05c4401dd23c02fd1f249b502ef",
+      "candidate_ptx_sha256": "21ac293a2c970b75c14d80b4f04cbcb3df16b05c4401dd23c02fd1f249b502ef",
+      "baseline_bytes": 1203,
+      "candidate_bytes": 1203
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\release-remote\\typed-inputs\\strided_start_capture_live_step\\k_regression_strided_start_capture_live_step.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "bfb929cab6a06dcda3bdfe1eac644c31e4df59ddd935ec901b7f9a864e0fb23a",
+      "candidate_ptx_sha256": "bfb929cab6a06dcda3bdfe1eac644c31e4df59ddd935ec901b7f9a864e0fb23a",
+      "baseline_bytes": 1153,
+      "candidate_bytes": 1153
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\interaction_async_two_slots_seven_stages_cross_warp\\k_regression_interaction_async_two_slots_seven_stages_cross_warp.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "bc20d1a20ddf9ea4812c9819e45689b21e6916f307da155fed7ba22a25748b82",
+      "candidate_ptx_sha256": "bc20d1a20ddf9ea4812c9819e45689b21e6916f307da155fed7ba22a25748b82",
+      "baseline_bytes": 6427,
+      "candidate_bytes": 6427
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\interaction_guard_nested_row_tail_state\\k_regression_interaction_guard_nested_row_tail_state.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "6d6e72b97707487fc706d48f6bef446595e34d7c29a7e43e710eebf27ba9fbea",
+      "candidate_ptx_sha256": "6d6e72b97707487fc706d48f6bef446595e34d7c29a7e43e710eebf27ba9fbea",
+      "baseline_bytes": 1834,
+      "candidate_bytes": 1834
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\interaction_guard_previous_live_state\\k_regression_interaction_guard_previous_live_state.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "c3c0dc0789e7b035a3339ea8029cbec65b45bda62240fb218d0f7646e9b903de",
+      "candidate_ptx_sha256": "c3c0dc0789e7b035a3339ea8029cbec65b45bda62240fb218d0f7646e9b903de",
+      "baseline_bytes": 1369,
+      "candidate_bytes": 1369
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\interaction_ragged_inner_row_alignment_cleanup\\k_regression_interaction_ragged_inner_row_alignment_cleanup.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "bd5a21a5b772dca4b38ea4fa8653ab4632226858b5f30d890713fc10f1e72e5a",
+      "candidate_ptx_sha256": "bd5a21a5b772dca4b38ea4fa8653ab4632226858b5f30d890713fc10f1e72e5a",
+      "baseline_bytes": 11228,
+      "candidate_bytes": 11228
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_assign\\k_regression_types_bf16_assign.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "63bdbad999bde900ad82d0f552e182d98cd7fd9abaecb342a13b2036c771f467",
+      "candidate_ptx_sha256": "63bdbad999bde900ad82d0f552e182d98cd7fd9abaecb342a13b2036c771f467",
+      "baseline_bytes": 2172,
+      "candidate_bytes": 2172
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_binary\\k_regression_types_bf16_binary.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "e1a8e7d54bdd942694a8d75ca4dd7a1658cb4481ea2896ed18cdc9b98aff957c",
+      "candidate_ptx_sha256": "e1a8e7d54bdd942694a8d75ca4dd7a1658cb4481ea2896ed18cdc9b98aff957c",
+      "baseline_bytes": 2172,
+      "candidate_bytes": 2172
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_bitcast\\k_regression_types_bf16_bitcast.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "7a964b18185ba797e95453d7481bb0e7ff1df8f670ee0ecdc4ec2258e97e24dd",
+      "candidate_ptx_sha256": "7a964b18185ba797e95453d7481bb0e7ff1df8f670ee0ecdc4ec2258e97e24dd",
+      "baseline_bytes": 1196,
+      "candidate_bytes": 1196
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_compare_cast\\k_regression_types_bf16_compare_cast.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "1e04f21a44fbbf9b7e848777498ea7c871275e72825900bd9db86a73bc0f9a2e",
+      "candidate_ptx_sha256": "1e04f21a44fbbf9b7e848777498ea7c871275e72825900bd9db86a73bc0f9a2e",
+      "baseline_bytes": 2565,
+      "candidate_bytes": 2565
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_function\\k_regression_types_bf16_function.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "aa5d67a0e97c70c0b9bc59a7526d9f5b77a2bbb818e23c22a64cd9fffe89082e",
+      "candidate_ptx_sha256": "aa5d67a0e97c70c0b9bc59a7526d9f5b77a2bbb818e23c22a64cd9fffe89082e",
+      "baseline_bytes": 2174,
+      "candidate_bytes": 2174
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_nested_round\\k_regression_types_bf16_nested_round.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "bb96189df539783b46baf09600a8806a2022ccac40d416292e0c3f625da5aea4",
+      "candidate_ptx_sha256": "bb96189df539783b46baf09600a8806a2022ccac40d416292e0c3f625da5aea4",
+      "baseline_bytes": 1359,
+      "candidate_bytes": 1359
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\types_bf16_nonfinite_predicates\\k_regression_types_bf16_nonfinite_predicates.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "0abb109897f1a2391d893f6b3a9ef6664ece7927f146b3968b72a382affd526a",
+      "candidate_ptx_sha256": "0abb109897f1a2391d893f6b3a9ef6664ece7927f146b3968b72a382affd526a",
+      "baseline_bytes": 2611,
+      "candidate_bytes": 2611
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_assign\\k_regression_types_f16_assign.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "db1b63328c773590ac053b730d25c2424f539bf36a6b0b10cd7a7ff787a48a0c",
+      "candidate_ptx_sha256": "db1b63328c773590ac053b730d25c2424f539bf36a6b0b10cd7a7ff787a48a0c",
+      "baseline_bytes": 2153,
+      "candidate_bytes": 2153
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_binary\\k_regression_types_f16_binary.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "5b3bf0969fca0cc901f2ed90c97e78734d5b2abc4bbd313e81803cdc47500f4a",
+      "candidate_ptx_sha256": "5b3bf0969fca0cc901f2ed90c97e78734d5b2abc4bbd313e81803cdc47500f4a",
+      "baseline_bytes": 2153,
+      "candidate_bytes": 2153
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_bitcast\\k_regression_types_f16_bitcast.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "d75f6ed53d3045ae2737c01df15c82be2c0aa9d94c4c1aed659593f84d0192d7",
+      "candidate_ptx_sha256": "d75f6ed53d3045ae2737c01df15c82be2c0aa9d94c4c1aed659593f84d0192d7",
+      "baseline_bytes": 1193,
+      "candidate_bytes": 1193
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_compare_cast\\k_regression_types_f16_compare_cast.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "ebb681c1dba09bddd1426efd1957501e1cc4d97e718a31ea319fa7e693687fe7",
+      "candidate_ptx_sha256": "ebb681c1dba09bddd1426efd1957501e1cc4d97e718a31ea319fa7e693687fe7",
+      "baseline_bytes": 2387,
+      "candidate_bytes": 2387
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_function\\k_regression_types_f16_function.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "79fe3f70532645496b16116824f50867918b08bac8e9adfa5d6657daa7732177",
+      "candidate_ptx_sha256": "79fe3f70532645496b16116824f50867918b08bac8e9adfa5d6657daa7732177",
+      "baseline_bytes": 2155,
+      "candidate_bytes": 2155
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_nested_round\\k_regression_types_f16_nested_round.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "037d7797af1c16d88791e3ff5fbd93ab3660369fb5d2a2dec4a57963e0dd6159",
+      "candidate_ptx_sha256": "037d7797af1c16d88791e3ff5fbd93ab3660369fb5d2a2dec4a57963e0dd6159",
+      "baseline_bytes": 1349,
+      "candidate_bytes": 1349
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\types_f16_nonfinite_predicates\\k_regression_types_f16_nonfinite_predicates.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "bc3bd5f5b4abebc757376e07443156ec307af4ca432153def9cd0e5b1e45f9d4",
+      "candidate_ptx_sha256": "bc3bd5f5b4abebc757376e07443156ec307af4ca432153def9cd0e5b1e45f9d4",
+      "baseline_bytes": 2318,
+      "candidate_bytes": 2318
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\types_i32_signed_count\\k_regression_types_i32_signed_count.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "e93794fb14501289cb4dee42c4c94f6800c22d77ce7e4f12f60ca0c74fb927ec",
+      "candidate_ptx_sha256": "e93794fb14501289cb4dee42c4c94f6800c22d77ce7e4f12f60ca0c74fb927ec",
+      "baseline_bytes": 933,
+      "candidate_bytes": 933
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\types_i64_signed_count\\k_regression_types_i64_signed_count.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "6aacfa807a2366e5f93c284680a4437ee6e35e0655bdef1eefc10d0a20f4cbdf",
+      "candidate_ptx_sha256": "6aacfa807a2366e5f93c284680a4437ee6e35e0655bdef1eefc10d0a20f4cbdf",
+      "baseline_bytes": 967,
+      "candidate_bytes": 967
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\types_small_integer_select_bits\\k_regression_types_small_integer_select_bits.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "b050d37931dad1b20a63c1f977b7ba6c202eb6ccc4568230d02dbd780e48b446",
+      "candidate_ptx_sha256": "b050d37931dad1b20a63c1f977b7ba6c202eb6ccc4568230d02dbd780e48b446",
+      "baseline_bytes": 1898,
+      "candidate_bytes": 1898
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\types_u32_unary\\k_regression_types_u32_unary.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "bf6bf44731fbe0529feb20c96a7fc6a284787bf2c0ba6bfc8484bb7e3907ab02",
+      "candidate_ptx_sha256": "bf6bf44731fbe0529feb20c96a7fc6a284787bf2c0ba6bfc8484bb7e3907ab02",
+      "baseline_bytes": 1361,
+      "candidate_bytes": 1361
+    },
+    {
+      "ir": "artifacts\\validation\\phase4\\semantic-final\\inputs\\types_u64_unary\\k_regression_types_u64_unary.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "f5091dcf483cf53279b90975a8b6f12b89bf34d9d2922fdf6db778dad321094f",
+      "candidate_ptx_sha256": "f5091dcf483cf53279b90975a8b6f12b89bf34d9d2922fdf6db778dad321094f",
+      "baseline_bytes": 1369,
+      "candidate_bytes": 1369
+    },
+    {
+      "ir": "artifacts\\validation\\stress\\stress_attention_rect\\k_matmul_softmax_reduce_7d959d.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "27d9f64e503ba7e5a1f5f74ee3e23abab3a6cf0129f593acd1ce76879dff118f",
+      "candidate_ptx_sha256": "27d9f64e503ba7e5a1f5f74ee3e23abab3a6cf0129f593acd1ce76879dff118f",
+      "baseline_bytes": 7337,
+      "candidate_bytes": 7337
+    },
+    {
+      "ir": "artifacts\\validation\\stress\\stress_matmul_rect\\k_matmul.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "ef53fb39a6ab29781e804668a4ce9f15f580cc6105ab7b91b0e0ca76c1bd1cb6",
+      "candidate_ptx_sha256": "ef53fb39a6ab29781e804668a4ce9f15f580cc6105ab7b91b0e0ca76c1bd1cb6",
+      "baseline_bytes": 23557,
+      "candidate_bytes": 23557
+    },
+    {
+      "ir": "artifacts\\validation\\stress\\stress_matmul_tail\\k_matmul_7a3eb5.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "778e9c88991ade82bf5f9086178b4356c7206e540687046fbbc015fd44bfcb80",
+      "candidate_ptx_sha256": "778e9c88991ade82bf5f9086178b4356c7206e540687046fbbc015fd44bfcb80",
+      "baseline_bytes": 6099,
+      "candidate_bytes": 6099
+    },
+    {
+      "ir": "artifacts\\validation\\stress\\stress_max_tail\\k_amax_reduce.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "617ccb1508438d36c451b49a3da07b6d9018e66cd20036a6c6a368a9e0034f01",
+      "candidate_ptx_sha256": "617ccb1508438d36c451b49a3da07b6d9018e66cd20036a6c6a368a9e0034f01",
+      "baseline_bytes": 3161,
+      "candidate_bytes": 3161
+    },
+    {
+      "ir": "artifacts\\validation\\stress\\stress_pointwise_2d\\k_add_pointwise.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "8ddeffac18ecfbb5c6d2040eb4283ad3513a889fc0672b026fea448990a18cfd",
+      "candidate_ptx_sha256": "8ddeffac18ecfbb5c6d2040eb4283ad3513a889fc0672b026fea448990a18cfd",
+      "baseline_bytes": 1896,
+      "candidate_bytes": 1896
+    },
+    {
+      "ir": "artifacts\\validation\\stress\\stress_pointwise_prime\\k_mul_pointwise.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "9df89f367c23ce711776d13c3e4de9ff3d95448535fcff2ea79d2aad271c9a6a",
+      "candidate_ptx_sha256": "9df89f367c23ce711776d13c3e4de9ff3d95448535fcff2ea79d2aad271c9a6a",
+      "baseline_bytes": 1063,
+      "candidate_bytes": 1063
+    },
+    {
+      "ir": "artifacts\\validation\\stress\\stress_rmsnorm_tail\\k_mean_5e47f3.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "6c51288905da20527238fb9c6a7c1c15df4259a2c7624a3268e5ac9080292762",
+      "candidate_ptx_sha256": "6c51288905da20527238fb9c6a7c1c15df4259a2c7624a3268e5ac9080292762",
+      "baseline_bytes": 6280,
+      "candidate_bytes": 6280
+    },
+    {
+      "ir": "artifacts\\validation\\stress\\stress_row_sum_tail\\k_sum_1_reduce.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "23264069405ab0bfb012c02d8dd1b53347d609a3788463587c67c560f05b9649",
+      "candidate_ptx_sha256": "23264069405ab0bfb012c02d8dd1b53347d609a3788463587c67c560f05b9649",
+      "baseline_bytes": 3187,
+      "candidate_bytes": 3187
+    },
+    {
+      "ir": "artifacts\\validation\\stress\\stress_softmax_tail\\k_softmax_aa476e.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "cab712657f101501c96b3621171beaec747ae8be4987fb1e59c98ebb558b220c",
+      "candidate_ptx_sha256": "cab712657f101501c96b3621171beaec747ae8be4987fb1e59c98ebb558b220c",
+      "baseline_bytes": 7397,
+      "candidate_bytes": 7397
+    },
+    {
+      "ir": "artifacts\\validation\\stress\\stress_sum_prime\\k_sum_1_reduce.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "175506d7ae45a7ee4d26ab018b211ad04faf75706e1daafcd24a2bbb4dd6fe1c",
+      "candidate_ptx_sha256": "175506d7ae45a7ee4d26ab018b211ad04faf75706e1daafcd24a2bbb4dd6fe1c",
+      "baseline_bytes": 3063,
+      "candidate_bytes": 3063
+    },
+    {
+      "ir": "problems\\a01_attention\\k_matmul_softmax_reduce_b55365.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "cf041eff5d2ee7e86c80c78aadf0c6425b7a45aa3859e49c69e8d7204e8e33cb",
+      "candidate_ptx_sha256": "cf041eff5d2ee7e86c80c78aadf0c6425b7a45aa3859e49c69e8d7204e8e33cb",
+      "baseline_bytes": 16023,
+      "candidate_bytes": 16023
+    },
+    {
+      "ir": "problems\\a02_attention_128\\k_matmul_softmax_reduce_6f0029.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "6cc54c6729a956b956ceaa6e104a0cc6c7a8e39bd552dd9c96bf0f5a4740007f",
+      "candidate_ptx_sha256": "6cc54c6729a956b956ceaa6e104a0cc6c7a8e39bd552dd9c96bf0f5a4740007f",
+      "baseline_bytes": 3411,
+      "candidate_bytes": 3411
+    },
+    {
+      "ir": "problems\\f01_rmsnorm\\k_mean_cbd1de.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "35748c8dd96a8a5d8dfe68ee48baabfa66203074e1fd28508baccd59bcee22f0",
+      "candidate_ptx_sha256": "35748c8dd96a8a5d8dfe68ee48baabfa66203074e1fd28508baccd59bcee22f0",
+      "baseline_bytes": 6521,
+      "candidate_bytes": 6521
+    },
+    {
+      "ir": "problems\\f02_row_softmax\\k_softmax_05263d.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "78fe3b93cbadd47d9421ff28f1db13e3f1c96f1e5a0191ca29145997378bf4ad",
+      "candidate_ptx_sha256": "78fe3b93cbadd47d9421ff28f1db13e3f1c96f1e5a0191ca29145997378bf4ad",
+      "baseline_bytes": 7403,
+      "candidate_bytes": 7403
+    },
+    {
+      "ir": "problems\\f03_l2norm\\k_div_reduce.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "0491574fe37a591cd37f68b22cf78b8fbff6afee02f281dd3cc08580073dc661",
+      "candidate_ptx_sha256": "0491574fe37a591cd37f68b22cf78b8fbff6afee02f281dd3cc08580073dc661",
+      "baseline_bytes": 5789,
+      "candidate_bytes": 5789
+    },
+    {
+      "ir": "problems\\m01_matmul_512\\k_matmul_2967be.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "d569378816da8c5c0cf182781dc9fbdf74a5af8b7dd44f5cb1afd13651a9763d",
+      "candidate_ptx_sha256": "d569378816da8c5c0cf182781dc9fbdf74a5af8b7dd44f5cb1afd13651a9763d",
+      "baseline_bytes": 252295,
+      "candidate_bytes": 252295
+    },
+    {
+      "ir": "problems\\m02_matmul_rect\\k_matmul.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "63b2612264c4bd350b558d5ea85a05456dc0bef473ff8eee69cbd5ea2bbe2808",
+      "candidate_ptx_sha256": "63b2612264c4bd350b558d5ea85a05456dc0bef473ff8eee69cbd5ea2bbe2808",
+      "baseline_bytes": 18308,
+      "candidate_bytes": 18308
+    },
+    {
+      "ir": "problems\\p00_scalar_add\\k_add_pointwise.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "e1fef6c32b9fe35f1e1afcc3697fceeca2f6d23b9453077cabbd43e4a221eccf",
+      "candidate_ptx_sha256": "e1fef6c32b9fe35f1e1afcc3697fceeca2f6d23b9453077cabbd43e4a221eccf",
+      "baseline_bytes": 1467,
+      "candidate_bytes": 1467
+    },
+    {
+      "ir": "problems\\p01_vector_add\\k_add_pointwise.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "1d5dcf14e893fd64d5d90023f2ef4ce3f9eac18e1ba06b4dce9aefdd42390892",
+      "candidate_ptx_sha256": "1d5dcf14e893fd64d5d90023f2ef4ce3f9eac18e1ba06b4dce9aefdd42390892",
+      "baseline_bytes": 1468,
+      "candidate_bytes": 1468
+    },
+    {
+      "ir": "problems\\p02_scale_shift\\k_add_pointwise.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "0a5bbfd2100d96d311265b996b69349884c43e536d3704e2b8fd86a333d90b27",
+      "candidate_ptx_sha256": "0a5bbfd2100d96d311265b996b69349884c43e536d3704e2b8fd86a333d90b27",
+      "baseline_bytes": 2575,
+      "candidate_bytes": 2575
+    },
+    {
+      "ir": "problems\\p03_relu_mul\\k_mul_pointwise.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "66a130d7d5a5f33fcad1ee709867a6f6d020ea259ec145d1cb0eff24b1c7ef5a",
+      "candidate_ptx_sha256": "66a130d7d5a5f33fcad1ee709867a6f6d020ea259ec145d1cb0eff24b1c7ef5a",
+      "baseline_bytes": 2309,
+      "candidate_bytes": 2309
+    },
+    {
+      "ir": "problems\\r01_array_sum\\k_sum_1_reduce.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "98d99cbfee04f3ca01e5ebad44342e65a2d2a3dfc532a7c58a5b041de39c19f9",
+      "candidate_ptx_sha256": "98d99cbfee04f3ca01e5ebad44342e65a2d2a3dfc532a7c58a5b041de39c19f9",
+      "baseline_bytes": 3063,
+      "candidate_bytes": 3063
+    },
+    {
+      "ir": "problems\\r02_big_sum\\k_sum_1_reduce.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "6ab66dbcfb870a70db16516d927ca68bf06c6ace5ca23f2d265aef50d4474892",
+      "candidate_ptx_sha256": "6ab66dbcfb870a70db16516d927ca68bf06c6ace5ca23f2d265aef50d4474892",
+      "baseline_bytes": 3064,
+      "candidate_bytes": 3064
+    },
+    {
+      "ir": "problems\\r03_mean\\k_mean_ffcca3.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "5c6cc8ddb11d88a953339f9a410523ecaea4aeafdfde578a107a9635343b1739",
+      "candidate_ptx_sha256": "5c6cc8ddb11d88a953339f9a410523ecaea4aeafdfde578a107a9635343b1739",
+      "baseline_bytes": 3290,
+      "candidate_bytes": 3290
+    },
+    {
+      "ir": "problems\\r04_row_sum\\k_sum_1_reduce.ir.json",
+      "pass": true,
+      "baseline_ptx_sha256": "4f977fb553f9e94f3eb002941a5cf3a3a471c6eb0a10b02e92ecf370fc42f633",
+      "candidate_ptx_sha256": "4f977fb553f9e94f3eb002941a5cf3a3a471c6eb0a10b02e92ecf370fc42f633",
+      "baseline_bytes": 3188,
+      "candidate_bytes": 3188
+    }
+  ]
+}

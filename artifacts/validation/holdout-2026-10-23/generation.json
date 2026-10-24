@@ -1,0 +1,15 @@
+{
+  "returncode": 0,
+  "finished_utc": "2026-10-22T18:50:23.202493+00:00",
+  "compiler_evaluated": false,
+  "successfully_packaged_workloads": 18,
+  "attempt_reports": [
+    "generation-attempt1.json",
+    "generation-attempt2.json",
+    "generation-attempt3.json",
+    "generation-attempt4.json"
+  ],
+  "repairs": "generation-repairs.json",
+  "unresolved_generation_failures": [],
+  "note": "Earlier failures and the setup-input substitution were repaired before final artifact freeze; no backend result was used."
+}

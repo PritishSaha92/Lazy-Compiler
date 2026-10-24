@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-10-22T18:35:47.534579+00:00",
+  "split": "new held-out validation, 2026-10-23",
+  "phase": "source and evaluation protocol frozen before generation or compiler evaluation",
+  "data_source": "Original synthetic expressions authored from public task semantics; no organizer hidden inputs or labels.",
+  "target": "sm_89",
+  "emmy_version": "0.3.11",
+  "source_sha256": {
+    "tests/expressions_holdout.py": "796e1a42a82a1b779f9241ab34fab457b8639944291564a52ccecc79cc04f3e0",
+    "tests/generate_stress.py": "b90f9b7f377385f3a7c56da615fc1c408e0e381927d0fdc81cb42ab4536b57e3",
+    "tools/generate.py": "841be781022059907a18acb0673c1bc1b206826d22043fe6521ec14ee9840b1b",
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "3e68e17421a6f620eb95f29395989eda26f695683d353c4f2b3c28194a46c36b"
+  },
+  "planned_workloads": 18,
+  "correctness_cases": [
+    {
+      "seed_offset": 37,
+      "pattern": "normal"
+    },
+    {
+      "seed_offset": 89,
+      "pattern": "normal"
+    },
+    {
+      "seed_offset": 137,
+      "pattern": "wide"
+    }
+  ],
+  "correctness_policy": "Original per-expression rtol/atol; no tolerance changes or case removal based on PTX outcomes. Any generation-only repair must be disclosed before final artifact freeze.",
+  "performance_policy": "No held-out timing or compiler evaluation until candidate source and policy hashes are frozen. If a held-out result changes policy, this corpus becomes development data and must not be reported as untouched evaluation.",
+  "evaluation_authorized": false
+}

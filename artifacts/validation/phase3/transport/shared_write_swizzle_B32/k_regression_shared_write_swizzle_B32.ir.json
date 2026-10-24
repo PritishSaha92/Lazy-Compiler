@@ -1,0 +1,51 @@
+{
+  "inputs": [
+    "x"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            8,
+            64
+          ],
+          "dtype": "f32"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='batch', extent=Dim(2), window=None), Axis(name='cell', extent=Dim(32), window=None)), body=(Smem(name='layout', extents=(8, 64), dtype='float', align=16), Loop(axis=Axis(name='stripe', extent=Dim(4), window=None), body=(Load(names=('value_0', 'value_1', 'value_2', 'value_3'), input='x', index=(Var(name='batch'), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='stripe'), right=Literal(value=2, dtype='int')), right=BinaryExpr(op='/', left=Var(name='lane'), right=Literal(value=16, dtype='int'))), BinaryExpr(op='*', left=BinaryExpr(op='%', left=Var(name='lane'), right=Literal(value=16, dtype='int')), right=Literal(value=4, dtype='int'))), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='layout', index=(BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='stripe'), right=Literal(value=2, dtype='int')), right=BinaryExpr(op='/', left=Var(name='lane'), right=Literal(value=16, dtype='int'))), BinaryExpr(op='*', left=BinaryExpr(op='%', left=Var(name='lane'), right=Literal(value=16, dtype='int')), right=Literal(value=4, dtype='int'))), values=('value_0', 'value_1', 'value_2', 'value_3'), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='B32')), unroll=True, seed=True), Sync(barrier_id=0, count=None, warp=False), Loop(axis=Axis(name='stripe', extent=Dim(4), window=None), body=(Load(names=('value_0', 'value_1', 'value_2', 'value_3'), input='layout', index=(BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='stripe'), right=Literal(value=2, dtype='int')), right=BinaryExpr(op='/', left=Var(name='lane'), right=Literal(value=16, dtype='int'))), BinaryExpr(op='*', left=BinaryExpr(op='%', left=Var(name='lane'), right=Literal(value=16, dtype='int')), right=Literal(value=4, dtype='int'))), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='out', index=(Var(name='batch'), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='stripe'), right=Literal(value=2, dtype='int')), right=BinaryExpr(op='/', left=Var(name='lane'), right=Literal(value=16, dtype='int'))), BinaryExpr(op='*', left=BinaryExpr(op='%', left=Var(name='lane'), right=Literal(value=16, dtype='int')), right=Literal(value=4, dtype='int'))), values=('value_0', 'value_1', 'value_2', 'value_3'), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE')), unroll=True, seed=True)), block_threads=32, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_shared_write_swizzle_B32",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            2,
+            8,
+            64
+          ],
+          "dtype": "f32"
+        }
+      ]
+    }
+  }
+}

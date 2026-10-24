@@ -1,0 +1,6 @@
+    Tile[a0] (N=2057)
+        in0 = load x[a0]
+        f32 v0 = cos(in0)
+        f32 v1 = sin(in0)
+        f32 v2 = add(v0, v1)
+        add[a0] = v2

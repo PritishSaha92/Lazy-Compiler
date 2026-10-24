@@ -1,0 +1,53 @@
+{
+ "id": "oct24_p07_sin_cos",
+ "code": "x=torch.randn(2057); torch.sin(x)+torch.cos(x)",
+ "rtol": 3e-06,
+ "atol": 3e-06,
+ "graph_inputs": [
+  "x"
+ ],
+ "graph_outputs": [
+  "add"
+ ],
+ "kernels": [
+  {
+   "node": "add",
+   "entry": "k_add_pointwise",
+   "arg_order": [
+    "x",
+    "add"
+   ],
+   "grid": [
+    9,
+    1,
+    1
+   ],
+   "block": [
+    256,
+    1,
+    1
+   ],
+   "smem_bytes": 0,
+   "zero_outputs": [],
+   "args": [
+    {
+     "name": "x",
+     "dtype": "f32",
+     "shape": [
+      2057
+     ],
+     "seed": 0
+    },
+    {
+     "name": "add",
+     "dtype": "f32",
+     "shape": [
+      2057
+     ],
+     "output": true
+    }
+   ],
+   "final": true
+  }
+ ]
+}

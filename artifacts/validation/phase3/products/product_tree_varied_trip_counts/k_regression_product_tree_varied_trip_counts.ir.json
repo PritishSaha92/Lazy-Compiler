@@ -1,0 +1,49 @@
+{
+  "inputs": [
+    "x"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            64,
+            3
+          ],
+          "dtype": "f32"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='i', extent=Dim(64), window=None),), body=(StridedLoop(axis=Axis(name='k', extent=Dim(3), window=None), start=Literal(value=0, dtype='int'), step=Literal(value=1, dtype='int'), body=(Load(names=('value',), input='x', index=(Var(name='i'), Var(name='k')), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Accum(name='product', value='value', op=ElementwiseImpl('multiply'), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), axes=(), base=None)), unroll=False, end=BinaryExpr(op='%', left=Var(name='i'), right=Literal(value=4, dtype='int')), seed=True), Let(name='local_product', value=Var(name='product'), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Smem(name='partials', extents=(64,), dtype='float', align=0), Write(output='partials', index=(Var(name='i'),), values=('product',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE'), Sync(barrier_id=0, count=None, warp=False), TreeHalve(bufs=('partials',), state=('product',), state_b=('other',), combine_states=(Assign(name='product', op=ElementwiseImpl('multiply'), args=('product', 'other'), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)),), length=64, tid_var='i', dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), barrier_id=0, barrier_count=None, inner=None), Write(output='out', index=(Var(name='i'), Literal(value=0, dtype='int')), values=('local_product', 'product'), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE')), block_threads=64, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_product_tree_varied_trip_counts",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            64,
+            2
+          ],
+          "dtype": "f32"
+        }
+      ]
+    }
+  }
+}

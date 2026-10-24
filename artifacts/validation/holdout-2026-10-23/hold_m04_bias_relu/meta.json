@@ -1,0 +1,76 @@
+{
+ "id": "hold_m04_bias_relu",
+ "code": "a=torch.randn(48,160); b=torch.randn(160,24); c=torch.randn(24); torch.relu(a@b+c)",
+ "rtol": 0.001,
+ "atol": 0.001,
+ "graph_inputs": [
+  "a",
+  "b",
+  "c"
+ ],
+ "graph_outputs": [
+  "relu"
+ ],
+ "kernels": [
+  {
+   "node": "relu",
+   "entry": "k_matmul_45ee83",
+   "arg_order": [
+    "c",
+    "b",
+    "a",
+    "relu"
+   ],
+   "grid": [
+    1152,
+    1,
+    1
+   ],
+   "block": [
+    256,
+    1,
+    1
+   ],
+   "smem_bytes": 0,
+   "zero_outputs": [],
+   "args": [
+    {
+     "name": "c",
+     "dtype": "f32",
+     "shape": [
+      24
+     ],
+     "seed": 2
+    },
+    {
+     "name": "b",
+     "dtype": "f32",
+     "shape": [
+      160,
+      24
+     ],
+     "seed": 1
+    },
+    {
+     "name": "a",
+     "dtype": "f32",
+     "shape": [
+      48,
+      160
+     ],
+     "seed": 0
+    },
+    {
+     "name": "relu",
+     "dtype": "f32",
+     "shape": [
+      48,
+      24
+     ],
+     "output": true
+    }
+   ],
+   "final": true
+  }
+ ]
+}

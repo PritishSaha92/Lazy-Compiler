@@ -1,0 +1,74 @@
+{
+ "id": "hold_p03_rational_gate",
+ "code": "x=torch.randn(2053); y=torch.randn(2053); torch.sigmoid(x)*(y/(1.0+x*x))",
+ "rtol": 0.0001,
+ "atol": 1e-05,
+ "graph_inputs": [
+  "x",
+  "y"
+ ],
+ "graph_outputs": [
+  "mul_1"
+ ],
+ "kernels": [
+  {
+   "node": "mul_1",
+   "entry": "k_mul_1_pointwise",
+   "arg_order": [
+    "add_c1",
+    "x",
+    "y",
+    "mul_1"
+   ],
+   "grid": [
+    9,
+    1,
+    1
+   ],
+   "block": [
+    256,
+    1,
+    1
+   ],
+   "smem_bytes": 0,
+   "zero_outputs": [],
+   "args": [
+    {
+     "name": "add_c1",
+     "dtype": "f32",
+     "shape": [
+      1
+     ],
+     "data": [
+      1.0
+     ]
+    },
+    {
+     "name": "x",
+     "dtype": "f32",
+     "shape": [
+      2053
+     ],
+     "seed": 0
+    },
+    {
+     "name": "y",
+     "dtype": "f32",
+     "shape": [
+      2053
+     ],
+     "seed": 1
+    },
+    {
+     "name": "mul_1",
+     "dtype": "f32",
+     "shape": [
+      2053
+     ],
+     "output": true
+    }
+   ],
+   "final": true
+  }
+ ]
+}

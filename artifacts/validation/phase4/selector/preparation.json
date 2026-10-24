@@ -1,0 +1,3690 @@
+{
+  "started": "2026-10-23T00:06:19.752240+00:00",
+  "cpu_only": true,
+  "rows": [
+    {
+      "id": "selector_affine_relu_0",
+      "family": "affine_relu",
+      "split": "train",
+      "category": "pointwise",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 7967,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 7967,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 7967,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 0,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 256,
+        "conditional_count": 0,
+        "dtype_f32_count": 7,
+        "expression_count": 7,
+        "grid_blocks": 32,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 8255,
+        "launch_shared_bytes": 0,
+        "load_count": 3,
+        "loop_count": 0,
+        "loop_extent_max": 0,
+        "loop_extent_sum": 0,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 0,
+        "output_elements": 7967,
+        "plain_loop_count": 0,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 0,
+        "shared_bytes_declared": 0,
+        "statement_count": 8,
+        "store_count": 1,
+        "strided_loop_count": 0,
+        "sync_count": 0,
+        "tile_cells_max": 7967,
+        "tile_count": 1,
+        "tree_count": 0,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 0
+      },
+      "meta": "corpus\\selector_affine_relu_0\\meta.json",
+      "ir": "corpus\\selector_affine_relu_0\\k_relu_pointwise.ir.json",
+      "inputs": [
+        "inputs\\selector_affine_relu_0-0-normal.json",
+        "inputs\\selector_affine_relu_0-17-normal.json",
+        "inputs\\selector_affine_relu_0-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\cc29a8b01b23aae86ecfb97a2a6a112f11002dd5a1f55b4a99c087d965147e02.ptx",
+          "ptx_sha256": "cc29a8b01b23aae86ecfb97a2a6a112f11002dd5a1f55b4a99c087d965147e02",
+          "ptx_bytes": 1472,
+          "compile_seconds": 0.008765799982938915,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\cc29a8b01b23aae86ecfb97a2a6a112f11002dd5a1f55b4a99c087d965147e02.ptx",
+          "ptx_sha256": "cc29a8b01b23aae86ecfb97a2a6a112f11002dd5a1f55b4a99c087d965147e02",
+          "ptx_bytes": 1472,
+          "compile_seconds": 0.046247500053141266
+        },
+        "1024": {
+          "ptx": "ptx\\cc29a8b01b23aae86ecfb97a2a6a112f11002dd5a1f55b4a99c087d965147e02.ptx",
+          "ptx_sha256": "cc29a8b01b23aae86ecfb97a2a6a112f11002dd5a1f55b4a99c087d965147e02",
+          "ptx_bytes": 1472,
+          "compile_seconds": 0.03812739998102188
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_affine_relu_1",
+      "family": "affine_relu",
+      "split": "train",
+      "category": "pointwise",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 130175,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 130175,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 130175,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 0,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 256,
+        "conditional_count": 0,
+        "dtype_f32_count": 7,
+        "expression_count": 7,
+        "grid_blocks": 509,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 131327,
+        "launch_shared_bytes": 0,
+        "load_count": 3,
+        "loop_count": 0,
+        "loop_extent_max": 0,
+        "loop_extent_sum": 0,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 0,
+        "output_elements": 130175,
+        "plain_loop_count": 0,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 0,
+        "shared_bytes_declared": 0,
+        "statement_count": 8,
+        "store_count": 1,
+        "strided_loop_count": 0,
+        "sync_count": 0,
+        "tile_cells_max": 130175,
+        "tile_count": 1,
+        "tree_count": 0,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 0
+      },
+      "meta": "corpus\\selector_affine_relu_1\\meta.json",
+      "ir": "corpus\\selector_affine_relu_1\\k_relu_pointwise.ir.json",
+      "inputs": [
+        "inputs\\selector_affine_relu_1-0-normal.json",
+        "inputs\\selector_affine_relu_1-17-normal.json",
+        "inputs\\selector_affine_relu_1-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\35302a8f3dfa1083f169cb0f807f84b6e32fc36ec0cbd32b349b56ff729d57f6.ptx",
+          "ptx_sha256": "35302a8f3dfa1083f169cb0f807f84b6e32fc36ec0cbd32b349b56ff729d57f6",
+          "ptx_bytes": 1478,
+          "compile_seconds": 0.006334999983664602,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\35302a8f3dfa1083f169cb0f807f84b6e32fc36ec0cbd32b349b56ff729d57f6.ptx",
+          "ptx_sha256": "35302a8f3dfa1083f169cb0f807f84b6e32fc36ec0cbd32b349b56ff729d57f6",
+          "ptx_bytes": 1478,
+          "compile_seconds": 0.007570700021460652
+        },
+        "1024": {
+          "ptx": "ptx\\35302a8f3dfa1083f169cb0f807f84b6e32fc36ec0cbd32b349b56ff729d57f6.ptx",
+          "ptx_sha256": "35302a8f3dfa1083f169cb0f807f84b6e32fc36ec0cbd32b349b56ff729d57f6",
+          "ptx_bytes": 1478,
+          "compile_seconds": 0.014040599984582514
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_row_dot_0",
+      "family": "row_dot",
+      "split": "train",
+      "category": "reduction",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 17,
+              "mismatches": 0,
+              "max_abs_error": 2.86102294921875e-06
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 17,
+              "mismatches": 0,
+              "max_abs_error": 1.9073486328125e-06
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 17,
+              "mismatches": 0,
+              "max_abs_error": 0.0001220703125
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 1,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 128,
+        "conditional_count": 2,
+        "dtype_f32_count": 9,
+        "expression_count": 14,
+        "grid_blocks": 17,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 4318,
+        "launch_shared_bytes": 0,
+        "load_count": 2,
+        "loop_count": 1,
+        "loop_extent_max": 127,
+        "loop_extent_sum": 127,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 1,
+        "output_elements": 17,
+        "plain_loop_count": 0,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 16,
+        "shared_bytes_declared": 16,
+        "statement_count": 16,
+        "store_count": 2,
+        "strided_loop_count": 1,
+        "sync_count": 1,
+        "tile_cells_max": 2176,
+        "tile_count": 1,
+        "tree_count": 1,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 1
+      },
+      "meta": "corpus\\selector_row_dot_0\\meta.json",
+      "ir": "corpus\\selector_row_dot_0\\k_sum_1_reduce.ir.json",
+      "inputs": [
+        "inputs\\selector_row_dot_0-0-normal.json",
+        "inputs\\selector_row_dot_0-17-normal.json",
+        "inputs\\selector_row_dot_0-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\17bcfebf63ad324203978e41abe0a63a77ae1019523da3c4dd5a21d219bea637.ptx",
+          "ptx_sha256": "17bcfebf63ad324203978e41abe0a63a77ae1019523da3c4dd5a21d219bea637",
+          "ptx_bytes": 5646,
+          "compile_seconds": 0.09213419997831807,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\17bcfebf63ad324203978e41abe0a63a77ae1019523da3c4dd5a21d219bea637.ptx",
+          "ptx_sha256": "17bcfebf63ad324203978e41abe0a63a77ae1019523da3c4dd5a21d219bea637",
+          "ptx_bytes": 5646,
+          "compile_seconds": 0.052028799953404814
+        },
+        "1024": {
+          "ptx": "ptx\\17bcfebf63ad324203978e41abe0a63a77ae1019523da3c4dd5a21d219bea637.ptx",
+          "ptx_sha256": "17bcfebf63ad324203978e41abe0a63a77ae1019523da3c4dd5a21d219bea637",
+          "ptx_bytes": 5646,
+          "compile_seconds": 0.0549172000028193
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_row_dot_1",
+      "family": "row_dot",
+      "split": "train",
+      "category": "reduction",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 63,
+              "mismatches": 0,
+              "max_abs_error": 1.1444091796875e-05
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 63,
+              "mismatches": 0,
+              "max_abs_error": 9.5367431640625e-06
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 63,
+              "mismatches": 0,
+              "max_abs_error": 0.0006103515625
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 1,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 128,
+        "conditional_count": 2,
+        "dtype_f32_count": 9,
+        "expression_count": 14,
+        "grid_blocks": 63,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 129150,
+        "launch_shared_bytes": 0,
+        "load_count": 2,
+        "loop_count": 1,
+        "loop_extent_max": 1025,
+        "loop_extent_sum": 1025,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 1,
+        "output_elements": 63,
+        "plain_loop_count": 0,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 16,
+        "shared_bytes_declared": 16,
+        "statement_count": 16,
+        "store_count": 2,
+        "strided_loop_count": 1,
+        "sync_count": 1,
+        "tile_cells_max": 8064,
+        "tile_count": 1,
+        "tree_count": 1,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 1
+      },
+      "meta": "corpus\\selector_row_dot_1\\meta.json",
+      "ir": "corpus\\selector_row_dot_1\\k_sum_1_reduce.ir.json",
+      "inputs": [
+        "inputs\\selector_row_dot_1-0-normal.json",
+        "inputs\\selector_row_dot_1-17-normal.json",
+        "inputs\\selector_row_dot_1-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\f77d574fbaa9712aeb0286182a91b7c4716713795afb17974200338506ae326d.ptx",
+          "ptx_sha256": "f77d574fbaa9712aeb0286182a91b7c4716713795afb17974200338506ae326d",
+          "ptx_bytes": 5649,
+          "compile_seconds": 0.012007099983748049,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\f77d574fbaa9712aeb0286182a91b7c4716713795afb17974200338506ae326d.ptx",
+          "ptx_sha256": "f77d574fbaa9712aeb0286182a91b7c4716713795afb17974200338506ae326d",
+          "ptx_bytes": 5649,
+          "compile_seconds": 0.016246100014541298
+        },
+        "1024": {
+          "ptx": "ptx\\f77d574fbaa9712aeb0286182a91b7c4716713795afb17974200338506ae326d.ptx",
+          "ptx_sha256": "f77d574fbaa9712aeb0286182a91b7c4716713795afb17974200338506ae326d",
+          "ptx_bytes": 5649,
+          "compile_seconds": 0.01214770000660792
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_plain_gemm_0",
+      "family": "plain_gemm",
+      "split": "train",
+      "category": "matmul",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 3072,
+              "mismatches": 0,
+              "max_abs_error": 9.5367431640625e-06
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 3072,
+              "mismatches": 0,
+              "max_abs_error": 1.71661376953125e-05
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 3072,
+              "mismatches": 0,
+              "max_abs_error": 0.000732421875
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 1,
+        "async_copy_count": 6,
+        "async_copy_site_bytes": 96,
+        "atomic_store_count": 1,
+        "auxiliary_threads_max": 0,
+        "block_threads": 512,
+        "conditional_count": 0,
+        "dtype_f32_count": 6,
+        "expression_count": 326,
+        "grid_blocks": 48,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 1,
+        "hinted_loop_work_max": 16,
+        "input_elements": 10752,
+        "launch_shared_bytes": 0,
+        "load_count": 2,
+        "loop_count": 8,
+        "loop_extent_max": 32,
+        "loop_extent_sum": 160,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 2,
+        "output_elements": 3072,
+        "plain_loop_count": 1,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 2304,
+        "shared_bytes_declared": 2304,
+        "statement_count": 29,
+        "store_count": 1,
+        "strided_loop_count": 7,
+        "sync_count": 2,
+        "tile_cells_max": 24576,
+        "tile_count": 1,
+        "tree_count": 0,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 0
+      },
+      "meta": "corpus\\selector_plain_gemm_0\\meta.json",
+      "ir": "corpus\\selector_plain_gemm_0\\k_matmul.ir.json",
+      "inputs": [
+        "inputs\\selector_plain_gemm_0-0-normal.json",
+        "inputs\\selector_plain_gemm_0-17-normal.json",
+        "inputs\\selector_plain_gemm_0-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\597fd9edb416966160dbb1423ab79be0c29796765bf2515c1182869712656fd0.ptx",
+          "ptx_sha256": "597fd9edb416966160dbb1423ab79be0c29796765bf2515c1182869712656fd0",
+          "ptx_bytes": 9450,
+          "compile_seconds": 0.05964459996903315,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\f80911942a14b9066de5640a958cc26722203f3e517cdce4283c03b0c00f4fe4.ptx",
+          "ptx_sha256": "f80911942a14b9066de5640a958cc26722203f3e517cdce4283c03b0c00f4fe4",
+          "ptx_bytes": 12889,
+          "compile_seconds": 0.03966690000379458,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "1024": {
+          "ptx": "ptx\\f80911942a14b9066de5640a958cc26722203f3e517cdce4283c03b0c00f4fe4.ptx",
+          "ptx_sha256": "f80911942a14b9066de5640a958cc26722203f3e517cdce4283c03b0c00f4fe4",
+          "ptx_bytes": 12889,
+          "compile_seconds": 0.03201259998604655
+        }
+      },
+      "unique_ptx": 2
+    },
+    {
+      "id": "selector_plain_gemm_1",
+      "family": "plain_gemm",
+      "split": "train",
+      "category": "matmul",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 24576,
+              "mismatches": 0,
+              "max_abs_error": 3.814697265625e-05
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 24576,
+              "mismatches": 0,
+              "max_abs_error": 3.4332275390625e-05
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 24576,
+              "mismatches": 0,
+              "max_abs_error": 0.0029296875
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 2,
+        "async_copy_count": 12,
+        "async_copy_site_bytes": 192,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 256,
+        "conditional_count": 0,
+        "dtype_f32_count": 10,
+        "expression_count": 770,
+        "grid_blocks": 48,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 81920,
+        "launch_shared_bytes": 0,
+        "load_count": 3,
+        "loop_count": 2,
+        "loop_extent_max": 256,
+        "loop_extent_sum": 384,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 2,
+        "output_elements": 24576,
+        "plain_loop_count": 1,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 49152,
+        "shared_bytes_declared": 49152,
+        "statement_count": 33,
+        "store_count": 2,
+        "strided_loop_count": 1,
+        "sync_count": 2,
+        "tile_cells_max": 12288,
+        "tile_count": 1,
+        "tree_count": 0,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 0
+      },
+      "meta": "corpus\\selector_plain_gemm_1\\meta.json",
+      "ir": "corpus\\selector_plain_gemm_1\\k_matmul_dc72cd.ir.json",
+      "inputs": [
+        "inputs\\selector_plain_gemm_1-0-normal.json",
+        "inputs\\selector_plain_gemm_1-17-normal.json",
+        "inputs\\selector_plain_gemm_1-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\0700fdc8073f11d7fbae442202f0462c2be64b94c994ea91e3b80aba58124497.ptx",
+          "ptx_sha256": "0700fdc8073f11d7fbae442202f0462c2be64b94c994ea91e3b80aba58124497",
+          "ptx_bytes": 17914,
+          "compile_seconds": 0.08219510002527386,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\0700fdc8073f11d7fbae442202f0462c2be64b94c994ea91e3b80aba58124497.ptx",
+          "ptx_sha256": "0700fdc8073f11d7fbae442202f0462c2be64b94c994ea91e3b80aba58124497",
+          "ptx_bytes": 17914,
+          "compile_seconds": 0.064119299990125
+        },
+        "1024": {
+          "ptx": "ptx\\0700fdc8073f11d7fbae442202f0462c2be64b94c994ea91e3b80aba58124497.ptx",
+          "ptx_sha256": "0700fdc8073f11d7fbae442202f0462c2be64b94c994ea91e3b80aba58124497",
+          "ptx_bytes": 17914,
+          "compile_seconds": 0.05745599995134398
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_weighted_rms_0",
+      "family": "weighted_rms",
+      "split": "train",
+      "category": "fused",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 3281,
+              "mismatches": 0,
+              "max_abs_error": 4.76837158203125e-07
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 3281,
+              "mismatches": 0,
+              "max_abs_error": 4.76837158203125e-07
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 3281,
+              "mismatches": 0,
+              "max_abs_error": 3.814697265625e-06
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 1,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 128,
+        "conditional_count": 1,
+        "dtype_f32_count": 19,
+        "expression_count": 17,
+        "grid_blocks": 17,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 3476,
+        "launch_shared_bytes": 0,
+        "load_count": 5,
+        "loop_count": 2,
+        "loop_extent_max": 193,
+        "loop_extent_sum": 386,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 1,
+        "output_elements": 3281,
+        "plain_loop_count": 0,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 16,
+        "shared_bytes_declared": 16,
+        "statement_count": 26,
+        "store_count": 2,
+        "strided_loop_count": 2,
+        "sync_count": 1,
+        "tile_cells_max": 2176,
+        "tile_count": 1,
+        "tree_count": 1,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 1
+      },
+      "meta": "corpus\\selector_weighted_rms_0\\meta.json",
+      "ir": "corpus\\selector_weighted_rms_0\\k_mean_27ac9c.ir.json",
+      "inputs": [
+        "inputs\\selector_weighted_rms_0-0-normal.json",
+        "inputs\\selector_weighted_rms_0-17-normal.json",
+        "inputs\\selector_weighted_rms_0-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\97bf604b1805f66e828f4dec517adb837b137952a8f81c86a37a5e871918d1b9.ptx",
+          "ptx_sha256": "97bf604b1805f66e828f4dec517adb837b137952a8f81c86a37a5e871918d1b9",
+          "ptx_bytes": 6516,
+          "compile_seconds": 0.015173899999354035,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\97bf604b1805f66e828f4dec517adb837b137952a8f81c86a37a5e871918d1b9.ptx",
+          "ptx_sha256": "97bf604b1805f66e828f4dec517adb837b137952a8f81c86a37a5e871918d1b9",
+          "ptx_bytes": 6516,
+          "compile_seconds": 0.029391300049610436
+        },
+        "1024": {
+          "ptx": "ptx\\97bf604b1805f66e828f4dec517adb837b137952a8f81c86a37a5e871918d1b9.ptx",
+          "ptx_sha256": "97bf604b1805f66e828f4dec517adb837b137952a8f81c86a37a5e871918d1b9",
+          "ptx_bytes": 6516,
+          "compile_seconds": 0.034320799983106554
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_weighted_rms_1",
+      "family": "weighted_rms",
+      "split": "train",
+      "category": "fused",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 49216,
+              "mismatches": 0,
+              "max_abs_error": 9.5367431640625e-07
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 49216,
+              "mismatches": 0,
+              "max_abs_error": 9.5367431640625e-07
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 49216,
+              "mismatches": 0,
+              "max_abs_error": 7.62939453125e-06
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 1,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 128,
+        "conditional_count": 1,
+        "dtype_f32_count": 19,
+        "expression_count": 17,
+        "grid_blocks": 64,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 49987,
+        "launch_shared_bytes": 0,
+        "load_count": 5,
+        "loop_count": 2,
+        "loop_extent_max": 769,
+        "loop_extent_sum": 1538,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 1,
+        "output_elements": 49216,
+        "plain_loop_count": 0,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 16,
+        "shared_bytes_declared": 16,
+        "statement_count": 26,
+        "store_count": 2,
+        "strided_loop_count": 2,
+        "sync_count": 1,
+        "tile_cells_max": 8192,
+        "tile_count": 1,
+        "tree_count": 1,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 1
+      },
+      "meta": "corpus\\selector_weighted_rms_1\\meta.json",
+      "ir": "corpus\\selector_weighted_rms_1\\k_mean_a7b167.ir.json",
+      "inputs": [
+        "inputs\\selector_weighted_rms_1-0-normal.json",
+        "inputs\\selector_weighted_rms_1-17-normal.json",
+        "inputs\\selector_weighted_rms_1-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\bafb34da3afe9a9a3e3699fa73a6c464efeec8e63d1a0e33a82b9dc5ff265a8e.ptx",
+          "ptx_sha256": "bafb34da3afe9a9a3e3699fa73a6c464efeec8e63d1a0e33a82b9dc5ff265a8e",
+          "ptx_bytes": 6516,
+          "compile_seconds": 0.033756299992091954,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\bafb34da3afe9a9a3e3699fa73a6c464efeec8e63d1a0e33a82b9dc5ff265a8e.ptx",
+          "ptx_sha256": "bafb34da3afe9a9a3e3699fa73a6c464efeec8e63d1a0e33a82b9dc5ff265a8e",
+          "ptx_bytes": 6516,
+          "compile_seconds": 0.038633499993011355
+        },
+        "1024": {
+          "ptx": "ptx\\bafb34da3afe9a9a3e3699fa73a6c464efeec8e63d1a0e33a82b9dc5ff265a8e.ptx",
+          "ptx_sha256": "bafb34da3afe9a9a3e3699fa73a6c464efeec8e63d1a0e33a82b9dc5ff265a8e",
+          "ptx_bytes": 6516,
+          "compile_seconds": 0.030751100042834878
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_scaled_attention_0",
+      "family": "scaled_attention",
+      "split": "train",
+      "category": "attention",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 192,
+              "mismatches": 0,
+              "max_abs_error": 7.450580596923828e-08
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 192,
+              "mismatches": 0,
+              "max_abs_error": 2.086162567138672e-07
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 192,
+              "mismatches": 0,
+              "max_abs_error": 5.14984130859375e-05
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 11,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 128,
+        "conditional_count": 2,
+        "dtype_f32_count": 63,
+        "expression_count": 42,
+        "grid_blocks": 192,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 2849,
+        "launch_shared_bytes": 0,
+        "load_count": 7,
+        "loop_count": 3,
+        "loop_extent_max": 64,
+        "loop_extent_sum": 112,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 2,
+        "output_elements": 192,
+        "plain_loop_count": 2,
+        "rescaled_accumulator_count": 6,
+        "shared_bytes_aligned": 48,
+        "shared_bytes_declared": 48,
+        "statement_count": 95,
+        "store_count": 4,
+        "strided_loop_count": 1,
+        "sync_count": 1,
+        "tile_cells_max": 24576,
+        "tile_count": 1,
+        "tree_count": 1,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 1
+      },
+      "meta": "corpus\\selector_scaled_attention_0\\meta.json",
+      "ir": "corpus\\selector_scaled_attention_0\\k_matmul_softmax_reduce_c87fc2.ir.json",
+      "inputs": [
+        "inputs\\selector_scaled_attention_0-0-normal.json",
+        "inputs\\selector_scaled_attention_0-17-normal.json",
+        "inputs\\selector_scaled_attention_0-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\2ef959862fea248ab05f2cd8287ac18eb2eed4ea8494421f892498d05b63a646.ptx",
+          "ptx_sha256": "2ef959862fea248ab05f2cd8287ac18eb2eed4ea8494421f892498d05b63a646",
+          "ptx_bytes": 13571,
+          "compile_seconds": 0.07741030002944171,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\2ef959862fea248ab05f2cd8287ac18eb2eed4ea8494421f892498d05b63a646.ptx",
+          "ptx_sha256": "2ef959862fea248ab05f2cd8287ac18eb2eed4ea8494421f892498d05b63a646",
+          "ptx_bytes": 13571,
+          "compile_seconds": 0.2157600999926217
+        },
+        "1024": {
+          "ptx": "ptx\\2ef959862fea248ab05f2cd8287ac18eb2eed4ea8494421f892498d05b63a646.ptx",
+          "ptx_sha256": "2ef959862fea248ab05f2cd8287ac18eb2eed4ea8494421f892498d05b63a646",
+          "ptx_bytes": 13571,
+          "compile_seconds": 0.20835929998429492
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_scaled_attention_1",
+      "family": "scaled_attention",
+      "split": "train",
+      "category": "attention",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 1536,
+              "mismatches": 0,
+              "max_abs_error": 1.1920928955078125e-07
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 1536,
+              "mismatches": 0,
+              "max_abs_error": 1.341104507446289e-07
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 1536,
+              "mismatches": 0,
+              "max_abs_error": 0.00015592575073242188
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 13,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 256,
+        "conditional_count": 0,
+        "dtype_f32_count": 74,
+        "expression_count": 99,
+        "grid_blocks": 2,
+        "grouped_load_count": 1,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 11777,
+        "launch_shared_bytes": 0,
+        "load_count": 4,
+        "loop_count": 2,
+        "loop_extent_max": 160,
+        "loop_extent_sum": 192,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 2,
+        "output_elements": 1536,
+        "plain_loop_count": 2,
+        "rescaled_accumulator_count": 8,
+        "shared_bytes_aligned": 0,
+        "shared_bytes_declared": 0,
+        "statement_count": 77,
+        "store_count": 4,
+        "strided_loop_count": 0,
+        "sync_count": 0,
+        "tile_cells_max": 384,
+        "tile_count": 1,
+        "tree_count": 0,
+        "vector_width_max": 4,
+        "warp_shuffle_count": 0
+      },
+      "meta": "corpus\\selector_scaled_attention_1\\meta.json",
+      "ir": "corpus\\selector_scaled_attention_1\\k_matmul_softmax_reduce_b310c6.ir.json",
+      "inputs": [
+        "inputs\\selector_scaled_attention_1-0-normal.json",
+        "inputs\\selector_scaled_attention_1-17-normal.json",
+        "inputs\\selector_scaled_attention_1-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\bc55955ef9fcf6d4b244f6f89b27f14d30e99bf1200e3578b91e83ec3a21674f.ptx",
+          "ptx_sha256": "bc55955ef9fcf6d4b244f6f89b27f14d30e99bf1200e3578b91e83ec3a21674f",
+          "ptx_bytes": 6591,
+          "compile_seconds": 0.21720310003729537,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\bc55955ef9fcf6d4b244f6f89b27f14d30e99bf1200e3578b91e83ec3a21674f.ptx",
+          "ptx_sha256": "bc55955ef9fcf6d4b244f6f89b27f14d30e99bf1200e3578b91e83ec3a21674f",
+          "ptx_bytes": 6591,
+          "compile_seconds": 0.04974940000101924
+        },
+        "1024": {
+          "ptx": "ptx\\bc55955ef9fcf6d4b244f6f89b27f14d30e99bf1200e3578b91e83ec3a21674f.ptx",
+          "ptx_sha256": "bc55955ef9fcf6d4b244f6f89b27f14d30e99bf1200e3578b91e83ec3a21674f",
+          "ptx_bytes": 6591,
+          "compile_seconds": 0.042530299979262054
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_rational_gate_0",
+      "family": "rational_gate",
+      "split": "validation",
+      "category": "pointwise",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 4099,
+              "mismatches": 0,
+              "max_abs_error": 2.384185791015625e-07
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 4099,
+              "mismatches": 0,
+              "max_abs_error": 2.384185791015625e-07
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 4099,
+              "mismatches": 0,
+              "max_abs_error": 9.5367431640625e-07
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 0,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 256,
+        "conditional_count": 0,
+        "dtype_f32_count": 9,
+        "expression_count": 4,
+        "grid_blocks": 17,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 8199,
+        "launch_shared_bytes": 0,
+        "load_count": 3,
+        "loop_count": 0,
+        "loop_extent_max": 0,
+        "loop_extent_sum": 0,
+        "max_buffer_rank": 1,
+        "max_loop_depth": 0,
+        "output_elements": 4099,
+        "plain_loop_count": 0,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 0,
+        "shared_bytes_declared": 0,
+        "statement_count": 10,
+        "store_count": 1,
+        "strided_loop_count": 0,
+        "sync_count": 0,
+        "tile_cells_max": 4099,
+        "tile_count": 1,
+        "tree_count": 0,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 0
+      },
+      "meta": "corpus\\selector_rational_gate_0\\meta.json",
+      "ir": "corpus\\selector_rational_gate_0\\k_mul_1_pointwise.ir.json",
+      "inputs": [
+        "inputs\\selector_rational_gate_0-0-normal.json",
+        "inputs\\selector_rational_gate_0-17-normal.json",
+        "inputs\\selector_rational_gate_0-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\2652ee2376a840cad81f5e1a9ff2f7899ee9f1d4fbb7fec664add30e522b008d.ptx",
+          "ptx_sha256": "2652ee2376a840cad81f5e1a9ff2f7899ee9f1d4fbb7fec664add30e522b008d",
+          "ptx_bytes": 1489,
+          "compile_seconds": 0.006159499986097217,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\2652ee2376a840cad81f5e1a9ff2f7899ee9f1d4fbb7fec664add30e522b008d.ptx",
+          "ptx_sha256": "2652ee2376a840cad81f5e1a9ff2f7899ee9f1d4fbb7fec664add30e522b008d",
+          "ptx_bytes": 1489,
+          "compile_seconds": 0.005692999984603375
+        },
+        "1024": {
+          "ptx": "ptx\\2652ee2376a840cad81f5e1a9ff2f7899ee9f1d4fbb7fec664add30e522b008d.ptx",
+          "ptx_sha256": "2652ee2376a840cad81f5e1a9ff2f7899ee9f1d4fbb7fec664add30e522b008d",
+          "ptx_bytes": 1489,
+          "compile_seconds": 0.006438100012019277
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_rational_gate_1",
+      "family": "rational_gate",
+      "split": "validation",
+      "category": "pointwise",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 32771,
+              "mismatches": 0,
+              "max_abs_error": 2.384185791015625e-07
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 32771,
+              "mismatches": 0,
+              "max_abs_error": 2.384185791015625e-07
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 32771,
+              "mismatches": 0,
+              "max_abs_error": 1.430511474609375e-06
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 0,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 256,
+        "conditional_count": 0,
+        "dtype_f32_count": 9,
+        "expression_count": 4,
+        "grid_blocks": 129,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 65543,
+        "launch_shared_bytes": 0,
+        "load_count": 3,
+        "loop_count": 0,
+        "loop_extent_max": 0,
+        "loop_extent_sum": 0,
+        "max_buffer_rank": 1,
+        "max_loop_depth": 0,
+        "output_elements": 32771,
+        "plain_loop_count": 0,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 0,
+        "shared_bytes_declared": 0,
+        "statement_count": 10,
+        "store_count": 1,
+        "strided_loop_count": 0,
+        "sync_count": 0,
+        "tile_cells_max": 32771,
+        "tile_count": 1,
+        "tree_count": 0,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 0
+      },
+      "meta": "corpus\\selector_rational_gate_1\\meta.json",
+      "ir": "corpus\\selector_rational_gate_1\\k_mul_1_pointwise.ir.json",
+      "inputs": [
+        "inputs\\selector_rational_gate_1-0-normal.json",
+        "inputs\\selector_rational_gate_1-17-normal.json",
+        "inputs\\selector_rational_gate_1-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\2421fbcf8d171a770323368c6cd7519e0e4803ee9a078878cb35bda3bd682316.ptx",
+          "ptx_sha256": "2421fbcf8d171a770323368c6cd7519e0e4803ee9a078878cb35bda3bd682316",
+          "ptx_bytes": 1490,
+          "compile_seconds": 0.010919000022113323,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\2421fbcf8d171a770323368c6cd7519e0e4803ee9a078878cb35bda3bd682316.ptx",
+          "ptx_sha256": "2421fbcf8d171a770323368c6cd7519e0e4803ee9a078878cb35bda3bd682316",
+          "ptx_bytes": 1490,
+          "compile_seconds": 0.019042600004468113
+        },
+        "1024": {
+          "ptx": "ptx\\2421fbcf8d171a770323368c6cd7519e0e4803ee9a078878cb35bda3bd682316.ptx",
+          "ptx_sha256": "2421fbcf8d171a770323368c6cd7519e0e4803ee9a078878cb35bda3bd682316",
+          "ptx_bytes": 1490,
+          "compile_seconds": 0.01761340000666678
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_column_max_0",
+      "family": "column_max",
+      "split": "validation",
+      "category": "reduction",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 13,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 13,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 13,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 1,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 128,
+        "conditional_count": 2,
+        "dtype_f32_count": 7,
+        "expression_count": 12,
+        "grid_blocks": 13,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 1261,
+        "launch_shared_bytes": 0,
+        "load_count": 1,
+        "loop_count": 1,
+        "loop_extent_max": 97,
+        "loop_extent_sum": 97,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 1,
+        "output_elements": 13,
+        "plain_loop_count": 0,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 16,
+        "shared_bytes_declared": 16,
+        "statement_count": 14,
+        "store_count": 2,
+        "strided_loop_count": 1,
+        "sync_count": 1,
+        "tile_cells_max": 1664,
+        "tile_count": 1,
+        "tree_count": 1,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 1
+      },
+      "meta": "corpus\\selector_column_max_0\\meta.json",
+      "ir": "corpus\\selector_column_max_0\\k_amax_reduce.ir.json",
+      "inputs": [
+        "inputs\\selector_column_max_0-0-normal.json",
+        "inputs\\selector_column_max_0-17-normal.json",
+        "inputs\\selector_column_max_0-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\a3062fe425894f5f96d25fe413b2a8e36635d67423d41231f7b86df4fe1a24dc.ptx",
+          "ptx_sha256": "a3062fe425894f5f96d25fe413b2a8e36635d67423d41231f7b86df4fe1a24dc",
+          "ptx_bytes": 3161,
+          "compile_seconds": 0.006686199980322272,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\a3062fe425894f5f96d25fe413b2a8e36635d67423d41231f7b86df4fe1a24dc.ptx",
+          "ptx_sha256": "a3062fe425894f5f96d25fe413b2a8e36635d67423d41231f7b86df4fe1a24dc",
+          "ptx_bytes": 3161,
+          "compile_seconds": 0.021162500022910535
+        },
+        "1024": {
+          "ptx": "ptx\\a3062fe425894f5f96d25fe413b2a8e36635d67423d41231f7b86df4fe1a24dc.ptx",
+          "ptx_sha256": "a3062fe425894f5f96d25fe413b2a8e36635d67423d41231f7b86df4fe1a24dc",
+          "ptx_bytes": 3161,
+          "compile_seconds": 0.017701799981296062
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_column_max_1",
+      "family": "column_max",
+      "split": "validation",
+      "category": "reduction",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 65,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 65,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 65,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 1,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 128,
+        "conditional_count": 2,
+        "dtype_f32_count": 7,
+        "expression_count": 12,
+        "grid_blocks": 65,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 33345,
+        "launch_shared_bytes": 0,
+        "load_count": 1,
+        "loop_count": 1,
+        "loop_extent_max": 513,
+        "loop_extent_sum": 513,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 1,
+        "output_elements": 65,
+        "plain_loop_count": 0,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 16,
+        "shared_bytes_declared": 16,
+        "statement_count": 14,
+        "store_count": 2,
+        "strided_loop_count": 1,
+        "sync_count": 1,
+        "tile_cells_max": 8320,
+        "tile_count": 1,
+        "tree_count": 1,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 1
+      },
+      "meta": "corpus\\selector_column_max_1\\meta.json",
+      "ir": "corpus\\selector_column_max_1\\k_amax_reduce.ir.json",
+      "inputs": [
+        "inputs\\selector_column_max_1-0-normal.json",
+        "inputs\\selector_column_max_1-17-normal.json",
+        "inputs\\selector_column_max_1-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\82faf83f5f48bc657dbbb8578a88bc5a7edfe36d35829e8cc09eb82b07fc421d.ptx",
+          "ptx_sha256": "82faf83f5f48bc657dbbb8578a88bc5a7edfe36d35829e8cc09eb82b07fc421d",
+          "ptx_bytes": 3162,
+          "compile_seconds": 0.08986799995182082,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\82faf83f5f48bc657dbbb8578a88bc5a7edfe36d35829e8cc09eb82b07fc421d.ptx",
+          "ptx_sha256": "82faf83f5f48bc657dbbb8578a88bc5a7edfe36d35829e8cc09eb82b07fc421d",
+          "ptx_bytes": 3162,
+          "compile_seconds": 0.06876710004871711
+        },
+        "1024": {
+          "ptx": "ptx\\82faf83f5f48bc657dbbb8578a88bc5a7edfe36d35829e8cc09eb82b07fc421d.ptx",
+          "ptx_sha256": "82faf83f5f48bc657dbbb8578a88bc5a7edfe36d35829e8cc09eb82b07fc421d",
+          "ptx_bytes": 3162,
+          "compile_seconds": 0.04694030003156513
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_bias_relu_gemm_0",
+      "family": "bias_relu_gemm",
+      "split": "validation",
+      "category": "matmul",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 1551,
+              "mismatches": 0,
+              "max_abs_error": 5.7220458984375e-06
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 1551,
+              "mismatches": 0,
+              "max_abs_error": 5.7220458984375e-06
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 1551,
+              "mismatches": 0,
+              "max_abs_error": 0.0006103515625
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 7,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 64,
+        "conditional_count": 2,
+        "dtype_f32_count": 30,
+        "expression_count": 70,
+        "grid_blocks": 1551,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 5247,
+        "launch_shared_bytes": 0,
+        "load_count": 9,
+        "loop_count": 1,
+        "loop_extent_max": 65,
+        "loop_extent_sum": 65,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 1,
+        "output_elements": 1551,
+        "plain_loop_count": 0,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 8,
+        "shared_bytes_declared": 8,
+        "statement_count": 40,
+        "store_count": 2,
+        "strided_loop_count": 1,
+        "sync_count": 1,
+        "tile_cells_max": 99264,
+        "tile_count": 1,
+        "tree_count": 1,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 1
+      },
+      "meta": "corpus\\selector_bias_relu_gemm_0\\meta.json",
+      "ir": "corpus\\selector_bias_relu_gemm_0\\k_matmul_fc09c8.ir.json",
+      "inputs": [
+        "inputs\\selector_bias_relu_gemm_0-0-normal.json",
+        "inputs\\selector_bias_relu_gemm_0-17-normal.json",
+        "inputs\\selector_bias_relu_gemm_0-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\fd1398966ed7df7f2d30398f8e8d82c318f857c2dda0e1b025c19d38d1fb1e0e.ptx",
+          "ptx_sha256": "fd1398966ed7df7f2d30398f8e8d82c318f857c2dda0e1b025c19d38d1fb1e0e",
+          "ptx_bytes": 8112,
+          "compile_seconds": 0.11779519997071475,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\fd1398966ed7df7f2d30398f8e8d82c318f857c2dda0e1b025c19d38d1fb1e0e.ptx",
+          "ptx_sha256": "fd1398966ed7df7f2d30398f8e8d82c318f857c2dda0e1b025c19d38d1fb1e0e",
+          "ptx_bytes": 8112,
+          "compile_seconds": 0.0738926000194624
+        },
+        "1024": {
+          "ptx": "ptx\\fd1398966ed7df7f2d30398f8e8d82c318f857c2dda0e1b025c19d38d1fb1e0e.ptx",
+          "ptx_sha256": "fd1398966ed7df7f2d30398f8e8d82c318f857c2dda0e1b025c19d38d1fb1e0e",
+          "ptx_bytes": 8112,
+          "compile_seconds": 0.19718359998660162
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_bias_relu_gemm_1",
+      "family": "bias_relu_gemm",
+      "split": "validation",
+      "category": "matmul",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 15360,
+              "mismatches": 0,
+              "max_abs_error": 2.6702880859375e-05
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 15360,
+              "mismatches": 0,
+              "max_abs_error": 2.288818359375e-05
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 15360,
+              "mismatches": 0,
+              "max_abs_error": 0.001953125
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 1,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 512,
+        "conditional_count": 0,
+        "dtype_f32_count": 8,
+        "expression_count": 47,
+        "grid_blocks": 30,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 49312,
+        "launch_shared_bytes": 0,
+        "load_count": 3,
+        "loop_count": 1,
+        "loop_extent_max": 192,
+        "loop_extent_sum": 192,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 1,
+        "output_elements": 15360,
+        "plain_loop_count": 1,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 0,
+        "shared_bytes_declared": 0,
+        "statement_count": 10,
+        "store_count": 1,
+        "strided_loop_count": 0,
+        "sync_count": 0,
+        "tile_cells_max": 15360,
+        "tile_count": 1,
+        "tree_count": 0,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 0
+      },
+      "meta": "corpus\\selector_bias_relu_gemm_1\\meta.json",
+      "ir": "corpus\\selector_bias_relu_gemm_1\\k_matmul_784440.ir.json",
+      "inputs": [
+        "inputs\\selector_bias_relu_gemm_1-0-normal.json",
+        "inputs\\selector_bias_relu_gemm_1-17-normal.json",
+        "inputs\\selector_bias_relu_gemm_1-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\937206398eb6e1448efb23400e55b11fd589be0f36797428b9c1faec41561da4.ptx",
+          "ptx_sha256": "937206398eb6e1448efb23400e55b11fd589be0f36797428b9c1faec41561da4",
+          "ptx_bytes": 2638,
+          "compile_seconds": 0.018853900022804737,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\937206398eb6e1448efb23400e55b11fd589be0f36797428b9c1faec41561da4.ptx",
+          "ptx_sha256": "937206398eb6e1448efb23400e55b11fd589be0f36797428b9c1faec41561da4",
+          "ptx_bytes": 2638,
+          "compile_seconds": 0.01586189999943599
+        },
+        "1024": {
+          "ptx": "ptx\\937206398eb6e1448efb23400e55b11fd589be0f36797428b9c1faec41561da4.ptx",
+          "ptx_sha256": "937206398eb6e1448efb23400e55b11fd589be0f36797428b9c1faec41561da4",
+          "ptx_bytes": 2638,
+          "compile_seconds": 0.01579520001541823
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_weighted_softmax_0",
+      "family": "weighted_softmax",
+      "split": "validation",
+      "category": "fused",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 19,
+              "mismatches": 0,
+              "max_abs_error": 2.9802322387695312e-08
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 19,
+              "mismatches": 0,
+              "max_abs_error": 2.2351741790771484e-08
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 19,
+              "mismatches": 0,
+              "max_abs_error": 1.1920928955078125e-06
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 3,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 128,
+        "conditional_count": 2,
+        "dtype_f32_count": 28,
+        "expression_count": 18,
+        "grid_blocks": 19,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 5207,
+        "launch_shared_bytes": 0,
+        "load_count": 3,
+        "loop_count": 1,
+        "loop_extent_max": 137,
+        "loop_extent_sum": 137,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 1,
+        "output_elements": 19,
+        "plain_loop_count": 0,
+        "rescaled_accumulator_count": 2,
+        "shared_bytes_aligned": 48,
+        "shared_bytes_declared": 48,
+        "statement_count": 57,
+        "store_count": 4,
+        "strided_loop_count": 1,
+        "sync_count": 1,
+        "tile_cells_max": 2432,
+        "tile_count": 1,
+        "tree_count": 1,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 1
+      },
+      "meta": "corpus\\selector_weighted_softmax_0\\meta.json",
+      "ir": "corpus\\selector_weighted_softmax_0\\k_softmax_86069b.ir.json",
+      "inputs": [
+        "inputs\\selector_weighted_softmax_0-0-normal.json",
+        "inputs\\selector_weighted_softmax_0-17-normal.json",
+        "inputs\\selector_weighted_softmax_0-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\b737513239050b449674b156bbd17dc0549deecd86e8374a2a0ad2a938ceba13.ptx",
+          "ptx_sha256": "b737513239050b449674b156bbd17dc0549deecd86e8374a2a0ad2a938ceba13",
+          "ptx_bytes": 9632,
+          "compile_seconds": 0.04216039995662868,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\b737513239050b449674b156bbd17dc0549deecd86e8374a2a0ad2a938ceba13.ptx",
+          "ptx_sha256": "b737513239050b449674b156bbd17dc0549deecd86e8374a2a0ad2a938ceba13",
+          "ptx_bytes": 9632,
+          "compile_seconds": 0.02239019999979064
+        },
+        "1024": {
+          "ptx": "ptx\\b737513239050b449674b156bbd17dc0549deecd86e8374a2a0ad2a938ceba13.ptx",
+          "ptx_sha256": "b737513239050b449674b156bbd17dc0549deecd86e8374a2a0ad2a938ceba13",
+          "ptx_bytes": 9632,
+          "compile_seconds": 0.024346199992578477
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_weighted_softmax_1",
+      "family": "weighted_softmax",
+      "split": "validation",
+      "category": "fused",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 63,
+              "mismatches": 0,
+              "max_abs_error": 1.4901161193847656e-08
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 63,
+              "mismatches": 0,
+              "max_abs_error": 2.2351741790771484e-08
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 63,
+              "mismatches": 0,
+              "max_abs_error": 3.814697265625e-06
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 3,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 128,
+        "conditional_count": 2,
+        "dtype_f32_count": 28,
+        "expression_count": 18,
+        "grid_blocks": 63,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 65647,
+        "launch_shared_bytes": 0,
+        "load_count": 3,
+        "loop_count": 1,
+        "loop_extent_max": 521,
+        "loop_extent_sum": 521,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 1,
+        "output_elements": 63,
+        "plain_loop_count": 0,
+        "rescaled_accumulator_count": 2,
+        "shared_bytes_aligned": 48,
+        "shared_bytes_declared": 48,
+        "statement_count": 57,
+        "store_count": 4,
+        "strided_loop_count": 1,
+        "sync_count": 1,
+        "tile_cells_max": 8064,
+        "tile_count": 1,
+        "tree_count": 1,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 1
+      },
+      "meta": "corpus\\selector_weighted_softmax_1\\meta.json",
+      "ir": "corpus\\selector_weighted_softmax_1\\k_softmax_b292de.ir.json",
+      "inputs": [
+        "inputs\\selector_weighted_softmax_1-0-normal.json",
+        "inputs\\selector_weighted_softmax_1-17-normal.json",
+        "inputs\\selector_weighted_softmax_1-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\5cf9922a9818689a6b84c50ebe0fbcf0eaee4d88cf939f9810a4546b6fd39b52.ptx",
+          "ptx_sha256": "5cf9922a9818689a6b84c50ebe0fbcf0eaee4d88cf939f9810a4546b6fd39b52",
+          "ptx_bytes": 9632,
+          "compile_seconds": 0.017516400024760514,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\5cf9922a9818689a6b84c50ebe0fbcf0eaee4d88cf939f9810a4546b6fd39b52.ptx",
+          "ptx_sha256": "5cf9922a9818689a6b84c50ebe0fbcf0eaee4d88cf939f9810a4546b6fd39b52",
+          "ptx_bytes": 9632,
+          "compile_seconds": 0.021668899978976697
+        },
+        "1024": {
+          "ptx": "ptx\\5cf9922a9818689a6b84c50ebe0fbcf0eaee4d88cf939f9810a4546b6fd39b52.ptx",
+          "ptx_sha256": "5cf9922a9818689a6b84c50ebe0fbcf0eaee4d88cf939f9810a4546b6fd39b52",
+          "ptx_bytes": 9632,
+          "compile_seconds": 0.02083750005112961
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_residual_attention_0",
+      "family": "residual_attention",
+      "split": "validation",
+      "category": "attention",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 204,
+              "mismatches": 0,
+              "max_abs_error": 1.043081283569336e-07
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 204,
+              "mismatches": 0,
+              "max_abs_error": 1.043081283569336e-07
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 204,
+              "mismatches": 0,
+              "max_abs_error": 6.4849853515625e-05
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 25,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 512,
+        "conditional_count": 2,
+        "dtype_f32_count": 131,
+        "expression_count": 87,
+        "grid_blocks": 204,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 2082,
+        "launch_shared_bytes": 0,
+        "load_count": 15,
+        "loop_count": 5,
+        "loop_extent_max": 48,
+        "loop_extent_sum": 128,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 2,
+        "output_elements": 204,
+        "plain_loop_count": 4,
+        "rescaled_accumulator_count": 14,
+        "shared_bytes_aligned": 192,
+        "shared_bytes_declared": 192,
+        "statement_count": 167,
+        "store_count": 4,
+        "strided_loop_count": 1,
+        "sync_count": 1,
+        "tile_cells_max": 104448,
+        "tile_count": 1,
+        "tree_count": 1,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 1
+      },
+      "meta": "corpus\\selector_residual_attention_0\\meta.json",
+      "ir": "corpus\\selector_residual_attention_0\\k_matmul_softmax_reduce_590df8.ir.json",
+      "inputs": [
+        "inputs\\selector_residual_attention_0-0-normal.json",
+        "inputs\\selector_residual_attention_0-17-normal.json",
+        "inputs\\selector_residual_attention_0-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\d21dd8d5c99881ec65a2f471d94d48fbab54cce16317be5bebbabf4b8c65c83c.ptx",
+          "ptx_sha256": "d21dd8d5c99881ec65a2f471d94d48fbab54cce16317be5bebbabf4b8c65c83c",
+          "ptx_bytes": 23074,
+          "compile_seconds": 0.08353200001874939,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\d21dd8d5c99881ec65a2f471d94d48fbab54cce16317be5bebbabf4b8c65c83c.ptx",
+          "ptx_sha256": "d21dd8d5c99881ec65a2f471d94d48fbab54cce16317be5bebbabf4b8c65c83c",
+          "ptx_bytes": 23074,
+          "compile_seconds": 0.06896129995584488
+        },
+        "1024": {
+          "ptx": "ptx\\d21dd8d5c99881ec65a2f471d94d48fbab54cce16317be5bebbabf4b8c65c83c.ptx",
+          "ptx_sha256": "d21dd8d5c99881ec65a2f471d94d48fbab54cce16317be5bebbabf4b8c65c83c",
+          "ptx_bytes": 23074,
+          "compile_seconds": 0.2763277000049129
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_residual_attention_1",
+      "family": "residual_attention",
+      "split": "validation",
+      "category": "attention",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 1536,
+              "mismatches": 0,
+              "max_abs_error": 1.9371509552001953e-07
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 1536,
+              "mismatches": 0,
+              "max_abs_error": 2.086162567138672e-07
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 1536,
+              "mismatches": 0,
+              "max_abs_error": 0.00016042590141296387
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 4,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 64,
+        "conditional_count": 1,
+        "dtype_f32_count": 27,
+        "expression_count": 78,
+        "grid_blocks": 64,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 12290,
+        "launch_shared_bytes": 0,
+        "load_count": 6,
+        "loop_count": 2,
+        "loop_extent_max": 128,
+        "loop_extent_sum": 168,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 2,
+        "output_elements": 1536,
+        "plain_loop_count": 2,
+        "rescaled_accumulator_count": 2,
+        "shared_bytes_aligned": 0,
+        "shared_bytes_declared": 0,
+        "statement_count": 31,
+        "store_count": 1,
+        "strided_loop_count": 0,
+        "sync_count": 0,
+        "tile_cells_max": 4096,
+        "tile_count": 1,
+        "tree_count": 0,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 0
+      },
+      "meta": "corpus\\selector_residual_attention_1\\meta.json",
+      "ir": "corpus\\selector_residual_attention_1\\k_matmul_softmax_reduce_89c5df.ir.json",
+      "inputs": [
+        "inputs\\selector_residual_attention_1-0-normal.json",
+        "inputs\\selector_residual_attention_1-17-normal.json",
+        "inputs\\selector_residual_attention_1-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\33a47448cf45ead43b234681c14be411535229b6c61e14fe9056ba13af4534c2.ptx",
+          "ptx_sha256": "33a47448cf45ead43b234681c14be411535229b6c61e14fe9056ba13af4534c2",
+          "ptx_bytes": 4060,
+          "compile_seconds": 0.02071730000898242,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\33a47448cf45ead43b234681c14be411535229b6c61e14fe9056ba13af4534c2.ptx",
+          "ptx_sha256": "33a47448cf45ead43b234681c14be411535229b6c61e14fe9056ba13af4534c2",
+          "ptx_bytes": 4060,
+          "compile_seconds": 0.16850149998208508
+        },
+        "1024": {
+          "ptx": "ptx\\33a47448cf45ead43b234681c14be411535229b6c61e14fe9056ba13af4534c2.ptx",
+          "ptx_sha256": "33a47448cf45ead43b234681c14be411535229b6c61e14fe9056ba13af4534c2",
+          "ptx_bytes": 4060,
+          "compile_seconds": 0.045703699986916035
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_absolute_difference_0",
+      "family": "absolute_difference",
+      "split": "final",
+      "category": "pointwise",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 2109,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 2109,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 2109,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 0,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 256,
+        "conditional_count": 0,
+        "dtype_f32_count": 24,
+        "expression_count": 225,
+        "grid_blocks": 3,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 4218,
+        "launch_shared_bytes": 0,
+        "load_count": 6,
+        "loop_count": 0,
+        "loop_extent_max": 0,
+        "loop_extent_sum": 0,
+        "max_buffer_rank": 3,
+        "max_loop_depth": 0,
+        "output_elements": 2109,
+        "plain_loop_count": 0,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 0,
+        "shared_bytes_declared": 0,
+        "statement_count": 25,
+        "store_count": 3,
+        "strided_loop_count": 0,
+        "sync_count": 0,
+        "tile_cells_max": 703,
+        "tile_count": 1,
+        "tree_count": 0,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 0
+      },
+      "meta": "corpus\\selector_absolute_difference_0\\meta.json",
+      "ir": "corpus\\selector_absolute_difference_0\\k_add_pointwise.ir.json",
+      "inputs": [
+        "inputs\\selector_absolute_difference_0-0-normal.json",
+        "inputs\\selector_absolute_difference_0-17-normal.json",
+        "inputs\\selector_absolute_difference_0-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\5d66c65c92c7377d98e336994d0af8b554651e64376260b735b996f193fdba7d.ptx",
+          "ptx_sha256": "5d66c65c92c7377d98e336994d0af8b554651e64376260b735b996f193fdba7d",
+          "ptx_bytes": 5803,
+          "compile_seconds": 0.06317389995092526,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\5d66c65c92c7377d98e336994d0af8b554651e64376260b735b996f193fdba7d.ptx",
+          "ptx_sha256": "5d66c65c92c7377d98e336994d0af8b554651e64376260b735b996f193fdba7d",
+          "ptx_bytes": 5803,
+          "compile_seconds": 0.04229419998591766
+        },
+        "1024": {
+          "ptx": "ptx\\5d66c65c92c7377d98e336994d0af8b554651e64376260b735b996f193fdba7d.ptx",
+          "ptx_sha256": "5d66c65c92c7377d98e336994d0af8b554651e64376260b735b996f193fdba7d",
+          "ptx_bytes": 5803,
+          "compile_seconds": 0.052757499972358346
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_absolute_difference_1",
+      "family": "absolute_difference",
+      "split": "final",
+      "category": "pointwise",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 27993,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 27993,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 27993,
+              "mismatches": 0,
+              "max_abs_error": 0.0
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 0,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 256,
+        "conditional_count": 0,
+        "dtype_f32_count": 24,
+        "expression_count": 225,
+        "grid_blocks": 37,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 55986,
+        "launch_shared_bytes": 0,
+        "load_count": 6,
+        "loop_count": 0,
+        "loop_extent_max": 0,
+        "loop_extent_sum": 0,
+        "max_buffer_rank": 3,
+        "max_loop_depth": 0,
+        "output_elements": 27993,
+        "plain_loop_count": 0,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 0,
+        "shared_bytes_declared": 0,
+        "statement_count": 25,
+        "store_count": 3,
+        "strided_loop_count": 0,
+        "sync_count": 0,
+        "tile_cells_max": 9331,
+        "tile_count": 1,
+        "tree_count": 0,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 0
+      },
+      "meta": "corpus\\selector_absolute_difference_1\\meta.json",
+      "ir": "corpus\\selector_absolute_difference_1\\k_add_pointwise.ir.json",
+      "inputs": [
+        "inputs\\selector_absolute_difference_1-0-normal.json",
+        "inputs\\selector_absolute_difference_1-17-normal.json",
+        "inputs\\selector_absolute_difference_1-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\c481c8eec8c754a492bc8ec14108f9a912954ae36d95181ab2b7c2966b134e5c.ptx",
+          "ptx_sha256": "c481c8eec8c754a492bc8ec14108f9a912954ae36d95181ab2b7c2966b134e5c",
+          "ptx_bytes": 5849,
+          "compile_seconds": 0.04396410001209006,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\c481c8eec8c754a492bc8ec14108f9a912954ae36d95181ab2b7c2966b134e5c.ptx",
+          "ptx_sha256": "c481c8eec8c754a492bc8ec14108f9a912954ae36d95181ab2b7c2966b134e5c",
+          "ptx_bytes": 5849,
+          "compile_seconds": 0.050747099972795695
+        },
+        "1024": {
+          "ptx": "ptx\\c481c8eec8c754a492bc8ec14108f9a912954ae36d95181ab2b7c2966b134e5c.ptx",
+          "ptx_sha256": "c481c8eec8c754a492bc8ec14108f9a912954ae36d95181ab2b7c2966b134e5c",
+          "ptx_bytes": 5849,
+          "compile_seconds": 0.02587309997761622
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_sigmoid_product_0",
+      "family": "sigmoid_product",
+      "split": "final",
+      "category": "reduction",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 23,
+              "mismatches": 0,
+              "max_abs_error": 4.656612873077393e-10
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 23,
+              "mismatches": 0,
+              "max_abs_error": 4.0745362639427185e-10
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 23,
+              "mismatches": 0,
+              "max_abs_error": 4.656612873077393e-10
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 1,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 128,
+        "conditional_count": 2,
+        "dtype_f32_count": 12,
+        "expression_count": 13,
+        "grid_blocks": 23,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 254,
+        "launch_shared_bytes": 0,
+        "load_count": 2,
+        "loop_count": 1,
+        "loop_extent_max": 11,
+        "loop_extent_sum": 11,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 1,
+        "output_elements": 23,
+        "plain_loop_count": 0,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 16,
+        "shared_bytes_declared": 16,
+        "statement_count": 19,
+        "store_count": 2,
+        "strided_loop_count": 1,
+        "sync_count": 1,
+        "tile_cells_max": 2944,
+        "tile_count": 1,
+        "tree_count": 1,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 1
+      },
+      "meta": "corpus\\selector_sigmoid_product_0\\meta.json",
+      "ir": "corpus\\selector_sigmoid_product_0\\k_exp_reduce.ir.json",
+      "inputs": [
+        "inputs\\selector_sigmoid_product_0-0-normal.json",
+        "inputs\\selector_sigmoid_product_0-17-normal.json",
+        "inputs\\selector_sigmoid_product_0-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\8e1d68eb75fbbcb02f0167b377bba40c1372b3b8cf7dc92a68500348d1252fc9.ptx",
+          "ptx_sha256": "8e1d68eb75fbbcb02f0167b377bba40c1372b3b8cf7dc92a68500348d1252fc9",
+          "ptx_bytes": 3723,
+          "compile_seconds": 0.01663550001103431,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\8e1d68eb75fbbcb02f0167b377bba40c1372b3b8cf7dc92a68500348d1252fc9.ptx",
+          "ptx_sha256": "8e1d68eb75fbbcb02f0167b377bba40c1372b3b8cf7dc92a68500348d1252fc9",
+          "ptx_bytes": 3723,
+          "compile_seconds": 0.012235799978952855
+        },
+        "1024": {
+          "ptx": "ptx\\8e1d68eb75fbbcb02f0167b377bba40c1372b3b8cf7dc92a68500348d1252fc9.ptx",
+          "ptx_sha256": "8e1d68eb75fbbcb02f0167b377bba40c1372b3b8cf7dc92a68500348d1252fc9",
+          "ptx_bytes": 3723,
+          "compile_seconds": 0.011606399959418923
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_sigmoid_product_1",
+      "family": "sigmoid_product",
+      "split": "final",
+      "category": "reduction",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 65,
+              "mismatches": 0,
+              "max_abs_error": 3.979039320256561e-13
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 65,
+              "mismatches": 0,
+              "max_abs_error": 3.694822225952521e-13
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 65,
+              "mismatches": 0,
+              "max_abs_error": 1.6484591469634324e-12
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 1,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 128,
+        "conditional_count": 2,
+        "dtype_f32_count": 12,
+        "expression_count": 13,
+        "grid_blocks": 65,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 1496,
+        "launch_shared_bytes": 0,
+        "load_count": 2,
+        "loop_count": 1,
+        "loop_extent_max": 23,
+        "loop_extent_sum": 23,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 1,
+        "output_elements": 65,
+        "plain_loop_count": 0,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 16,
+        "shared_bytes_declared": 16,
+        "statement_count": 19,
+        "store_count": 2,
+        "strided_loop_count": 1,
+        "sync_count": 1,
+        "tile_cells_max": 8320,
+        "tile_count": 1,
+        "tree_count": 1,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 1
+      },
+      "meta": "corpus\\selector_sigmoid_product_1\\meta.json",
+      "ir": "corpus\\selector_sigmoid_product_1\\k_exp_reduce.ir.json",
+      "inputs": [
+        "inputs\\selector_sigmoid_product_1-0-normal.json",
+        "inputs\\selector_sigmoid_product_1-17-normal.json",
+        "inputs\\selector_sigmoid_product_1-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\aec04807ef071c781ed19cfd730b4fe2eb02eac78c21345bb126706db3a9602f.ptx",
+          "ptx_sha256": "aec04807ef071c781ed19cfd730b4fe2eb02eac78c21345bb126706db3a9602f",
+          "ptx_bytes": 3723,
+          "compile_seconds": 0.011546600027941167,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\aec04807ef071c781ed19cfd730b4fe2eb02eac78c21345bb126706db3a9602f.ptx",
+          "ptx_sha256": "aec04807ef071c781ed19cfd730b4fe2eb02eac78c21345bb126706db3a9602f",
+          "ptx_bytes": 3723,
+          "compile_seconds": 0.010163099970668554
+        },
+        "1024": {
+          "ptx": "ptx\\aec04807ef071c781ed19cfd730b4fe2eb02eac78c21345bb126706db3a9602f.ptx",
+          "ptx_sha256": "aec04807ef071c781ed19cfd730b4fe2eb02eac78c21345bb126706db3a9602f",
+          "ptx_bytes": 3723,
+          "compile_seconds": 0.008754200011026114
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_batched_gemm_0",
+      "family": "batched_gemm",
+      "split": "final",
+      "category": "matmul",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 714,
+              "mismatches": 0,
+              "max_abs_error": 2.86102294921875e-06
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 714,
+              "mismatches": 0,
+              "max_abs_error": 3.814697265625e-06
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 714,
+              "mismatches": 0,
+              "max_abs_error": 0.000244140625
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 3,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 128,
+        "conditional_count": 2,
+        "dtype_f32_count": 15,
+        "expression_count": 38,
+        "grid_blocks": 714,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 2508,
+        "launch_shared_bytes": 0,
+        "load_count": 4,
+        "loop_count": 1,
+        "loop_extent_max": 33,
+        "loop_extent_sum": 33,
+        "max_buffer_rank": 3,
+        "max_loop_depth": 1,
+        "output_elements": 714,
+        "plain_loop_count": 0,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 16,
+        "shared_bytes_declared": 16,
+        "statement_count": 23,
+        "store_count": 2,
+        "strided_loop_count": 1,
+        "sync_count": 1,
+        "tile_cells_max": 91392,
+        "tile_count": 1,
+        "tree_count": 1,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 1
+      },
+      "meta": "corpus\\selector_batched_gemm_0\\meta.json",
+      "ir": "corpus\\selector_batched_gemm_0\\k_matmul_8eb20e.ir.json",
+      "inputs": [
+        "inputs\\selector_batched_gemm_0-0-normal.json",
+        "inputs\\selector_batched_gemm_0-17-normal.json",
+        "inputs\\selector_batched_gemm_0-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\e66d3795555872e64b8877233dc27af06aeea171b5a2e1e9ec6ad204ec7f26c8.ptx",
+          "ptx_sha256": "e66d3795555872e64b8877233dc27af06aeea171b5a2e1e9ec6ad204ec7f26c8",
+          "ptx_bytes": 7003,
+          "compile_seconds": 0.014534999965690076,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\e66d3795555872e64b8877233dc27af06aeea171b5a2e1e9ec6ad204ec7f26c8.ptx",
+          "ptx_sha256": "e66d3795555872e64b8877233dc27af06aeea171b5a2e1e9ec6ad204ec7f26c8",
+          "ptx_bytes": 7003,
+          "compile_seconds": 0.02416820003418252
+        },
+        "1024": {
+          "ptx": "ptx\\e66d3795555872e64b8877233dc27af06aeea171b5a2e1e9ec6ad204ec7f26c8.ptx",
+          "ptx_sha256": "e66d3795555872e64b8877233dc27af06aeea171b5a2e1e9ec6ad204ec7f26c8",
+          "ptx_bytes": 7003,
+          "compile_seconds": 0.025918200029991567
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_batched_gemm_1",
+      "family": "batched_gemm",
+      "split": "final",
+      "category": "matmul",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 9216,
+              "mismatches": 0,
+              "max_abs_error": 1.1444091796875e-05
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 9216,
+              "mismatches": 0,
+              "max_abs_error": 1.71661376953125e-05
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 9216,
+              "mismatches": 0,
+              "max_abs_error": 0.0008544921875
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 2,
+        "async_copy_count": 4,
+        "async_copy_site_bytes": 64,
+        "atomic_store_count": 2,
+        "auxiliary_threads_max": 0,
+        "block_threads": 256,
+        "conditional_count": 0,
+        "dtype_f32_count": 10,
+        "expression_count": 292,
+        "grid_blocks": 36,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 1,
+        "hinted_loop_work_max": 112,
+        "input_elements": 32256,
+        "launch_shared_bytes": 0,
+        "load_count": 3,
+        "loop_count": 6,
+        "loop_extent_max": 128,
+        "loop_extent_sum": 448,
+        "max_buffer_rank": 3,
+        "max_loop_depth": 2,
+        "output_elements": 9216,
+        "plain_loop_count": 1,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 6144,
+        "shared_bytes_declared": 6144,
+        "statement_count": 29,
+        "store_count": 2,
+        "strided_loop_count": 5,
+        "sync_count": 2,
+        "tile_cells_max": 9216,
+        "tile_count": 1,
+        "tree_count": 0,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 0
+      },
+      "meta": "corpus\\selector_batched_gemm_1\\meta.json",
+      "ir": "corpus\\selector_batched_gemm_1\\k_matmul.ir.json",
+      "inputs": [
+        "inputs\\selector_batched_gemm_1-0-normal.json",
+        "inputs\\selector_batched_gemm_1-17-normal.json",
+        "inputs\\selector_batched_gemm_1-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\19c1315ac655a67a5c07c025ec94fd3da45cff0200776e5cbca665188be96810.ptx",
+          "ptx_sha256": "19c1315ac655a67a5c07c025ec94fd3da45cff0200776e5cbca665188be96810",
+          "ptx_bytes": 9505,
+          "compile_seconds": 0.09962769999401644,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\8f6e55ea64396a1d09afdf859d38d669b40a72d27fa48bf34edc12622f86eeed.ptx",
+          "ptx_sha256": "8f6e55ea64396a1d09afdf859d38d669b40a72d27fa48bf34edc12622f86eeed",
+          "ptx_bytes": 42100,
+          "compile_seconds": 0.5237852999707684,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "1024": {
+          "ptx": "ptx\\8f6e55ea64396a1d09afdf859d38d669b40a72d27fa48bf34edc12622f86eeed.ptx",
+          "ptx_sha256": "8f6e55ea64396a1d09afdf859d38d669b40a72d27fa48bf34edc12622f86eeed",
+          "ptx_bytes": 42100,
+          "compile_seconds": 0.12140589999035001
+        }
+      },
+      "unique_ptx": 2
+    },
+    {
+      "id": "selector_centered_column_l2_0",
+      "family": "centered_column_l2",
+      "split": "final",
+      "category": "fused",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 1387,
+              "mismatches": 0,
+              "max_abs_error": 2.9802322387695312e-08
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 1387,
+              "mismatches": 0,
+              "max_abs_error": 2.9802322387695312e-08
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 1387,
+              "mismatches": 0,
+              "max_abs_error": 5.960464477539063e-08
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 4,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 128,
+        "conditional_count": 1,
+        "dtype_f32_count": 34,
+        "expression_count": 20,
+        "grid_blocks": 1387,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 1391,
+        "launch_shared_bytes": 0,
+        "load_count": 7,
+        "loop_count": 2,
+        "loop_extent_max": 73,
+        "loop_extent_sum": 146,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 1,
+        "output_elements": 1387,
+        "plain_loop_count": 1,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 48,
+        "shared_bytes_declared": 48,
+        "statement_count": 45,
+        "store_count": 4,
+        "strided_loop_count": 1,
+        "sync_count": 1,
+        "tile_cells_max": 177536,
+        "tile_count": 1,
+        "tree_count": 1,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 1
+      },
+      "meta": "corpus\\selector_centered_column_l2_0\\meta.json",
+      "ir": "corpus\\selector_centered_column_l2_0\\k_mean_reduce_18dd53.ir.json",
+      "inputs": [
+        "inputs\\selector_centered_column_l2_0-0-normal.json",
+        "inputs\\selector_centered_column_l2_0-17-normal.json",
+        "inputs\\selector_centered_column_l2_0-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\f794f9370f1b4fa107c4ffbc02ed38fb852ecdc38dcb607de96a8fea0e70336b.ptx",
+          "ptx_sha256": "f794f9370f1b4fa107c4ffbc02ed38fb852ecdc38dcb607de96a8fea0e70336b",
+          "ptx_bytes": 8564,
+          "compile_seconds": 0.05730379995657131,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\f794f9370f1b4fa107c4ffbc02ed38fb852ecdc38dcb607de96a8fea0e70336b.ptx",
+          "ptx_sha256": "f794f9370f1b4fa107c4ffbc02ed38fb852ecdc38dcb607de96a8fea0e70336b",
+          "ptx_bytes": 8564,
+          "compile_seconds": 0.04051439999602735
+        },
+        "1024": {
+          "ptx": "ptx\\f794f9370f1b4fa107c4ffbc02ed38fb852ecdc38dcb607de96a8fea0e70336b.ptx",
+          "ptx_sha256": "f794f9370f1b4fa107c4ffbc02ed38fb852ecdc38dcb607de96a8fea0e70336b",
+          "ptx_bytes": 8564,
+          "compile_seconds": 0.03815390000818297
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_centered_column_l2_1",
+      "family": "centered_column_l2",
+      "split": "final",
+      "category": "fused",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 17219,
+              "mismatches": 0,
+              "max_abs_error": 2.9802322387695312e-08
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 17219,
+              "mismatches": 0,
+              "max_abs_error": 2.9802322387695312e-08
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 17219,
+              "mismatches": 0,
+              "max_abs_error": 2.9802322387695312e-08
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 4,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 128,
+        "conditional_count": 1,
+        "dtype_f32_count": 34,
+        "expression_count": 20,
+        "grid_blocks": 17219,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 17223,
+        "launch_shared_bytes": 0,
+        "load_count": 7,
+        "loop_count": 2,
+        "loop_extent_max": 257,
+        "loop_extent_sum": 514,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 1,
+        "output_elements": 17219,
+        "plain_loop_count": 1,
+        "rescaled_accumulator_count": 0,
+        "shared_bytes_aligned": 48,
+        "shared_bytes_declared": 48,
+        "statement_count": 45,
+        "store_count": 4,
+        "strided_loop_count": 1,
+        "sync_count": 1,
+        "tile_cells_max": 2204032,
+        "tile_count": 1,
+        "tree_count": 1,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 1
+      },
+      "meta": "corpus\\selector_centered_column_l2_1\\meta.json",
+      "ir": "corpus\\selector_centered_column_l2_1\\k_mean_reduce_7e2f13.ir.json",
+      "inputs": [
+        "inputs\\selector_centered_column_l2_1-0-normal.json",
+        "inputs\\selector_centered_column_l2_1-17-normal.json",
+        "inputs\\selector_centered_column_l2_1-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\30e53c5af973a8661522ac5126118728ddb78aaae563c807127b12de38b402dc.ptx",
+          "ptx_sha256": "30e53c5af973a8661522ac5126118728ddb78aaae563c807127b12de38b402dc",
+          "ptx_bytes": 8567,
+          "compile_seconds": 0.031222200021147728,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\30e53c5af973a8661522ac5126118728ddb78aaae563c807127b12de38b402dc.ptx",
+          "ptx_sha256": "30e53c5af973a8661522ac5126118728ddb78aaae563c807127b12de38b402dc",
+          "ptx_bytes": 8567,
+          "compile_seconds": 0.024591299996245652
+        },
+        "1024": {
+          "ptx": "ptx\\30e53c5af973a8661522ac5126118728ddb78aaae563c807127b12de38b402dc.ptx",
+          "ptx_sha256": "30e53c5af973a8661522ac5126118728ddb78aaae563c807127b12de38b402dc",
+          "ptx_bytes": 8567,
+          "compile_seconds": 0.03707600000780076
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_score_bias_attention_0",
+      "family": "score_bias_attention",
+      "split": "final",
+      "category": "attention",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 221,
+              "mismatches": 0,
+              "max_abs_error": 1.1920928955078125e-07
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 221,
+              "mismatches": 0,
+              "max_abs_error": 2.980232238769531e-07
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 221,
+              "mismatches": 0,
+              "max_abs_error": 6.818771362304688e-05
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 11,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 32,
+        "conditional_count": 1,
+        "dtype_f32_count": 60,
+        "expression_count": 42,
+        "grid_blocks": 221,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 2719,
+        "launch_shared_bytes": 0,
+        "load_count": 9,
+        "loop_count": 3,
+        "loop_extent_max": 59,
+        "loop_extent_sum": 105,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 2,
+        "output_elements": 221,
+        "plain_loop_count": 2,
+        "rescaled_accumulator_count": 6,
+        "shared_bytes_aligned": 0,
+        "shared_bytes_declared": 0,
+        "statement_count": 78,
+        "store_count": 1,
+        "strided_loop_count": 1,
+        "sync_count": 0,
+        "tile_cells_max": 7072,
+        "tile_count": 1,
+        "tree_count": 0,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 1
+      },
+      "meta": "corpus\\selector_score_bias_attention_0\\meta.json",
+      "ir": "corpus\\selector_score_bias_attention_0\\k_matmul_softmax_reduce_57af64.ir.json",
+      "inputs": [
+        "inputs\\selector_score_bias_attention_0-0-normal.json",
+        "inputs\\selector_score_bias_attention_0-17-normal.json",
+        "inputs\\selector_score_bias_attention_0-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\65698910102039786687cf65cde3342886786a810949a42a59b455aaee780eed.ptx",
+          "ptx_sha256": "65698910102039786687cf65cde3342886786a810949a42a59b455aaee780eed",
+          "ptx_bytes": 9962,
+          "compile_seconds": 0.0323301000171341,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\65698910102039786687cf65cde3342886786a810949a42a59b455aaee780eed.ptx",
+          "ptx_sha256": "65698910102039786687cf65cde3342886786a810949a42a59b455aaee780eed",
+          "ptx_bytes": 9962,
+          "compile_seconds": 0.2784417000366375
+        },
+        "1024": {
+          "ptx": "ptx\\65698910102039786687cf65cde3342886786a810949a42a59b455aaee780eed.ptx",
+          "ptx_sha256": "65698910102039786687cf65cde3342886786a810949a42a59b455aaee780eed",
+          "ptx_bytes": 9962,
+          "compile_seconds": 0.25065010000253096
+        }
+      },
+      "unique_ptx": 1
+    },
+    {
+      "id": "selector_score_bias_attention_1",
+      "family": "score_bias_attention",
+      "split": "final",
+      "category": "attention",
+      "pass": true,
+      "oracle_checks": [
+        {
+          "seed": 0,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 1536,
+              "mismatches": 0,
+              "max_abs_error": 2.086162567138672e-07
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "pattern": "normal",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 1536,
+              "mismatches": 0,
+              "max_abs_error": 5.066394805908203e-07
+            }
+          ]
+        },
+        {
+          "seed": 101,
+          "pattern": "wide",
+          "pass": true,
+          "checks": [
+            {
+              "name": "out",
+              "pass": true,
+              "elements": 1536,
+              "mismatches": 0,
+              "max_abs_error": 0.0002079010009765625
+            }
+          ]
+        }
+      ],
+      "features": {
+        "accumulator_count": 4,
+        "async_copy_count": 0,
+        "async_copy_site_bytes": 0,
+        "atomic_store_count": 0,
+        "auxiliary_threads_max": 0,
+        "block_threads": 32,
+        "conditional_count": 1,
+        "dtype_f32_count": 26,
+        "expression_count": 16,
+        "grid_blocks": 1536,
+        "grouped_load_count": 0,
+        "grouped_store_count": 0,
+        "hinted_loop_count": 0,
+        "hinted_loop_work_max": 0,
+        "input_elements": 11338,
+        "launch_shared_bytes": 0,
+        "load_count": 5,
+        "loop_count": 2,
+        "loop_extent_max": 129,
+        "loop_extent_sum": 169,
+        "max_buffer_rank": 2,
+        "max_loop_depth": 2,
+        "output_elements": 1536,
+        "plain_loop_count": 1,
+        "rescaled_accumulator_count": 2,
+        "shared_bytes_aligned": 0,
+        "shared_bytes_declared": 0,
+        "statement_count": 42,
+        "store_count": 1,
+        "strided_loop_count": 1,
+        "sync_count": 0,
+        "tile_cells_max": 49152,
+        "tile_count": 1,
+        "tree_count": 0,
+        "vector_width_max": 1,
+        "warp_shuffle_count": 1
+      },
+      "meta": "corpus\\selector_score_bias_attention_1\\meta.json",
+      "ir": "corpus\\selector_score_bias_attention_1\\k_matmul_softmax_reduce_b5eab2.ir.json",
+      "inputs": [
+        "inputs\\selector_score_bias_attention_1-0-normal.json",
+        "inputs\\selector_score_bias_attention_1-17-normal.json",
+        "inputs\\selector_score_bias_attention_1-101-wide.json"
+      ],
+      "actions": {
+        "0": {
+          "ptx": "ptx\\7cd7e2ba10215aa8ca0efb3b42fe53c3066fe865c90d93a43ce84ee817fcba11.ptx",
+          "ptx_sha256": "7cd7e2ba10215aa8ca0efb3b42fe53c3066fe865c90d93a43ce84ee817fcba11",
+          "ptx_bytes": 7009,
+          "compile_seconds": 0.1489337999955751,
+          "cpu_assembly": {
+            "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+            "arch": "sm_89",
+            "resource_usage": ""
+          }
+        },
+        "256": {
+          "ptx": "ptx\\7cd7e2ba10215aa8ca0efb3b42fe53c3066fe865c90d93a43ce84ee817fcba11.ptx",
+          "ptx_sha256": "7cd7e2ba10215aa8ca0efb3b42fe53c3066fe865c90d93a43ce84ee817fcba11",
+          "ptx_bytes": 7009,
+          "compile_seconds": 0.05078469996806234
+        },
+        "1024": {
+          "ptx": "ptx\\7cd7e2ba10215aa8ca0efb3b42fe53c3066fe865c90d93a43ce84ee817fcba11.ptx",
+          "ptx_sha256": "7cd7e2ba10215aa8ca0efb3b42fe53c3066fe865c90d93a43ce84ee817fcba11",
+          "ptx_bytes": 7009,
+          "compile_seconds": 0.040094500000122935
+        }
+      },
+      "unique_ptx": 1
+    }
+  ],
+  "pass": true,
+  "environment": {
+    "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26340-SP0",
+    "packages": {
+      "emmy-ml": "0.3.11",
+      "numpy": "1.26.4",
+      "torch": "2.9.1+cu126"
+    }
+  },
+  "cpu_assembly_requested": true,
+  "analysis_backend": "frozen analyzer bound to the same frozen backend used for emission",
+  "finished": "2026-10-23T00:08:18.386911+00:00",
+  "source_evidence_unchanged": true
+}

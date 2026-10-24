@@ -1,0 +1,49 @@
+{
+  "inputs": [
+    "x"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            8,
+            20
+          ],
+          "dtype": "f32"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='cell', extent=Dim(64), window=None),), body=(Smem(name='scratch', extents=(4, 12), dtype='float', align=16), Smem(name='bar', extents=(1,), dtype='unsigned long long', align=8), TmaDescriptor(name='desc', src_buf='x', src_shape=(8, 20), box_extents=(4, 12), swizzle='NONE', dtype='float'), Cond(cond=BinaryExpr(op='==', left=Var(name='_tid'), right=Literal(value=0, dtype='int')), body=(MbarrierInit(mbar='bar', count=1, slot=None),), else_body=()), Sync(barrier_id=0, count=None, warp=False), Cond(cond=BinaryExpr(op='==', left=Var(name='_tid'), right=Literal(value=0, dtype='int')), body=(MbarrierArriveExpectTx(mbar='bar', bytes_=192, slot=None), TmaLoad(smem='scratch', smem_index=(Literal(value=0, dtype='int'),), desc='desc', coords=(Literal(value=2, dtype='int'), Literal(value=4, dtype='int')), mbar='bar', mbar_slot=None)), else_body=()), MbarrierWait(mbar='bar', phase=Literal(value=0, dtype='int'), slot=None), Cond(cond=BinaryExpr(op='<', left=Var(name='cell'), right=Literal(value=48, dtype='int')), body=(Load(names=('value',), input='scratch', index=(Var(name='cell'),), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='out', index=(Var(name='cell'),), values=('value',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE')), else_body=())), block_threads=64, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_bulk_rectangle",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            4,
+            12
+          ],
+          "dtype": "f32"
+        }
+      ]
+    }
+  }
+}

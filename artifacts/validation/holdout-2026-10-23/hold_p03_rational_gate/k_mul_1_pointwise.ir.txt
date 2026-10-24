@@ -1,0 +1,10 @@
+    Tile[a0] (N=2053)
+        in1 = load x[a0]
+        f32 v0 = multiply(in1, in1)
+        in0 = load add_c1[0]
+        f32 v1 = add(in0, v0)
+        f32 v2 = sigmoid(in1)
+        in2 = load y[a0]
+        f32 v3 = divide(in2, v1)
+        f32 v4 = multiply(v2, v3)
+        mul_1[a0] = v4

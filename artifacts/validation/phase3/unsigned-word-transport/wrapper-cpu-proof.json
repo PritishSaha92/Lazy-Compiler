@@ -1,0 +1,54 @@
+{
+  "scope": "CPU-only wrapper and input transport validation; entire remote workflow is mocked in one test. No GPU executions.",
+  "test_methods": 7,
+  "compiler_compilations_in_real_cli_test": 8,
+  "results": [
+    {
+      "command": [
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_unsigned_transport.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "log_sha256": "b0d289abedddae12cf96a59e650f59934c39682c54689f8114dae3011849e063"
+    },
+    {
+      "command": [
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "--ignore",
+        "E402",
+        "tools/check_release.py",
+        "tests/test_unsigned_transport.py"
+      ],
+      "returncode": 0,
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    }
+  ],
+  "sources_before_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84",
+    "tools\\check_compiler.py": "e706045368a83ccb4f10577f7952cdb0f8bb2363184efca7a68083459dbe4263",
+    "tools\\check_release.py": "d2b56384a5f374ed48cda666a0715582a4914098cd263af84130aa9ec43a3c63",
+    "tests\\test_unsigned_transport.py": "ae085e02af7c427f203b81964d39b46c3bd6e550c5e940397713c8ebfcd95565"
+  },
+  "sources_after_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "8afa55d5ac32da2eda6184058de9aa40ee8327366fc9fa6261b82fb0ed2ce002",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84",
+    "tools\\check_compiler.py": "e706045368a83ccb4f10577f7952cdb0f8bb2363184efca7a68083459dbe4263",
+    "tools\\check_release.py": "d2b56384a5f374ed48cda666a0715582a4914098cd263af84130aa9ec43a3c63",
+    "tests\\test_unsigned_transport.py": "ae085e02af7c427f203b81964d39b46c3bd6e550c5e940397713c8ebfcd95565"
+  },
+  "sources_unchanged": true,
+  "pass": true
+}

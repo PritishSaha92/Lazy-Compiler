@@ -1,0 +1,49 @@
+{
+  "inputs": [
+    "x"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            40,
+            5
+          ],
+          "dtype": "f32"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='i', extent=Dim(40), window=None),), body=(StridedLoop(axis=Axis(name='k', extent=Dim(5), window=None), start=Literal(value=0, dtype='int'), step=Literal(value=1, dtype='int'), body=(Load(names=('value',), input='x', index=(Var(name='i'), Var(name='k')), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Accum(name='product', value='value', op=ElementwiseImpl('multiply'), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), axes=(), base=None)), unroll=False, end=BinaryExpr(op='%', left=Var(name='i'), right=Literal(value=6, dtype='int')), seed=True), Let(name='local_product', value=Var(name='product'), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), WarpShuffle(state=('product',), state_b=('other',), combine_states=(Assign(name='product', op=ElementwiseImpl('multiply'), args=('product', 'other'), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)),), length=8, dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='out', index=(Var(name='i'), Literal(value=0, dtype='int')), values=('local_product', 'product'), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE')), block_threads=40, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_product_shuffle_varied_trip_counts",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            40,
+            2
+          ],
+          "dtype": "f32"
+        }
+      ]
+    }
+  }
+}

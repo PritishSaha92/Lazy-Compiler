@@ -1,0 +1,1049 @@
+{
+  "started_utc": "2026-10-24T00:21:33.510406+00:00",
+  "pass": true,
+  "planned_packages": [
+    "oct24_p01_f16_broadcast",
+    "oct24_p02_f16_sqrt",
+    "oct24_p04_f64_rational",
+    "oct24_p05_i32_bitwise"
+  ],
+  "planned_checks": 12,
+  "scope": "Organizer GPU correctness only; exactly normal seeds0/17 and wide seed101; no local GPU",
+  "tracked_sha256": {
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tools\\check_compiler.py": "e706045368a83ccb4f10577f7952cdb0f8bb2363184efca7a68083459dbe4263",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tools\\selector_study.py": "b495a2f0389463f8010a9a68be69f129cd8d8d786dce711c82bb73cf90626ba4",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\tests\\expressions_oct24.py": "a7ff15ed50c382ec80c7dbe59d0add05e4c2a247190680dc5f4f64452c160083",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\reference-sanity.json": "d31bbe8ecf7c46791bc340e6700620713b9cc3b03f6fe899ef58e82bdd99bb69",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-root-audit\\run_early_remote.py": "00721ff501d5ddb18f2b119aec8eef258c2d18fd4028167cd9d2080f5f86cc3b",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p01_f16_broadcast\\expected.npz": "2ef78bfc3621a5c450e85f7e1211c28ad8bcf421638cef7ef80ea2772a146706",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p01_f16_broadcast\\k_relu_pointwise.ir.json": "e13032b70e2a1b5ff8ac2626cad11542aed9b8d0895db9b670c5f1ac72549342",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p01_f16_broadcast\\k_relu_pointwise.ir.txt": "c16ccce120de24f65e62f0c6aacfb7771eaf2fa3463cc0ae15bb7e251e5f8f07",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p01_f16_broadcast\\k_relu_pointwise.ref.cu": "8c219da25256ff2639e26c7c68a6cfa2117ad9526b8b2c41b7a2210b49d0cff5",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p01_f16_broadcast\\meta.json": "6624ff2cf2e875f0c05de6a3e2f709548acb1908a40c8dab173772a9f7254b6c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p02_f16_sqrt\\expected.npz": "0846dd95e9b137beda0ddf308bcaf105e2ad49957926a5811ea402e8cd65079a",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p02_f16_sqrt\\k_sqrt_pointwise.ir.json": "6637e03b7dee07e9e18e16759779b817176d5b3c3c4beb5f8b81f17ad98815e9",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p02_f16_sqrt\\k_sqrt_pointwise.ir.txt": "73bc93ad2a7a6c73ce94837c9709dc2af38314a69ea9ad6e02d814e72ee1c1c5",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p02_f16_sqrt\\k_sqrt_pointwise.ref.cu": "173cbd10bcac94ef0798b679b8c59e7201b9f1450659c82a2e426cbf2a5ac435",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p02_f16_sqrt\\meta.json": "5f3a09260cd31c6bf3365c304cb8f3b39fa436ba84c83663ddb492fe8f98f5d4",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p04_f64_rational\\expected.npz": "82cc69fe9cb9626219a9eb9a7f40fc382dcb08a0a8bee8363fc6c3e729705df1",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p04_f64_rational\\k_div_pointwise.ir.json": "3452415e979e0d0bccc1da2b3d73b490af4cae46778fba71ffcad86259689af7",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p04_f64_rational\\k_div_pointwise.ir.txt": "1db98c3ca9c9aa4f9a9ed4a9186ee4e56f133dde0d42f86d8cee6b8b671d77c8",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p04_f64_rational\\k_div_pointwise.ref.cu": "aec9f00f37985c5b449b29ad86c3ff3c32e7dfc403daa0e852737416ee4159af",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p04_f64_rational\\meta.json": "997f6a86772f79bac4afa94cdddb5d65dc468cafbec0a77ba9c187d504cb37ea",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p05_i32_bitwise\\expected.npz": "8aff1c9586f53b34a1b7ff3e56ea0f0eb6fa8a0fd65d170c3b0048225dbd06f3",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p05_i32_bitwise\\k_add_pointwise.ir.json": "92498e8cf19a96a12a8ad56eaaa87a8e094addbc77d9cbcc420d134cf4d48f6c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p05_i32_bitwise\\k_add_pointwise.ir.txt": "508fb6cd62eac344c784c6da7b5a0cd613b2044d33b6b2888fcfe79669f3604c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p05_i32_bitwise\\k_add_pointwise.ref.cu": "409bb203c6ea52b85191111fba6fc80e19922ae4d380a55e61d4e4c9e46083f0",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\artifacts\\validation\\2026-10-24-extra\\packages\\oct24_p05_i32_bitwise\\meta.json": "c7ce0bb11881049646654bb8d87f3e57dc542c397a0095b2a15686a482b0d3f9"
+  },
+  "compiler_sha256": {
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+  },
+  "output_abi_validation": [
+    {
+      "id": "oct24_p01_f16_broadcast",
+      "output": "relu",
+      "dtype": "f16",
+      "shape": [
+        11,
+        67
+      ],
+      "cpu_reference_agrees": true
+    },
+    {
+      "id": "oct24_p02_f16_sqrt",
+      "output": "sqrt",
+      "dtype": "f16",
+      "shape": [
+        1031
+      ],
+      "cpu_reference_agrees": true
+    },
+    {
+      "id": "oct24_p04_f64_rational",
+      "output": "div",
+      "dtype": "f64",
+      "shape": [
+        1033
+      ],
+      "cpu_reference_agrees": true
+    },
+    {
+      "id": "oct24_p05_i32_bitwise",
+      "output": "add",
+      "dtype": "i32",
+      "shape": [
+        17,
+        31
+      ],
+      "cpu_reference_agrees": true
+    }
+  ],
+  "events": [
+    {
+      "index": 0,
+      "endpoint": "/compile",
+      "job": 0,
+      "request_sha256": "a2daa594e8d579512533d68ee50a2e8989e7b5ff1e3d7ba30573ff186d688cbf",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0000.http-00.json",
+          "sha256": "1873dc2cc76bbdf26b1c4b50ccabe05f6aacbe0a5f06741cb7362dc0a779541b"
+        }
+      ],
+      "response_sha256": "67322bd1d04916459a08d12a2a9e7ed0ac540700e39d4e47853211727944b87b"
+    },
+    {
+      "index": 1,
+      "endpoint": "/run",
+      "job": 0,
+      "request_sha256": "e89bdcefd99076274913f5bf8de62124a7cf9ef4c7c549e02de901e9762ee57e",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0001.http-00.json",
+          "sha256": "817edd97b9e074560056acc1901f0d91073ca79dc9d932eb6b9677bf5896ed3c"
+        }
+      ],
+      "response_sha256": "8994b78eb68796884310b4784d0960d7bc98ca6213b9a9aca1c231969c01cf5f"
+    },
+    {
+      "index": 2,
+      "endpoint": "/run",
+      "job": 0,
+      "request_sha256": "3993d729affae029b494719f045c2c91f03ba0680daf0097ca3a62b5ba34f590",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0002.http-00.json",
+          "sha256": "25002fdfd310afa71582e9c09d412ebc3980ed3a3c3709ebf409a0f1d87cf41e"
+        }
+      ],
+      "response_sha256": "09676e519c14ccf0da8f43033c90f3e0df387bebca975c419d4e7c57458cade8"
+    },
+    {
+      "index": 3,
+      "endpoint": "/compile",
+      "job": 1,
+      "request_sha256": "a2daa594e8d579512533d68ee50a2e8989e7b5ff1e3d7ba30573ff186d688cbf",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0003.http-00.json",
+          "sha256": "96368c4e47737c808f886e200f1df3926a383a2a5465ee7d1c0c42ab260a8a18"
+        }
+      ],
+      "response_sha256": "67322bd1d04916459a08d12a2a9e7ed0ac540700e39d4e47853211727944b87b"
+    },
+    {
+      "index": 4,
+      "endpoint": "/run",
+      "job": 1,
+      "request_sha256": "5d5b556a0aed872ae7378a943f45ecb70950026f8de65af7ba9a830e39cd1a51",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0004.http-00.json",
+          "sha256": "90cf34f5cc810029ec94c5e97ce653ca16b989317c89d966cb3e8f13afae41aa"
+        }
+      ],
+      "response_sha256": "218b6fbb3c7c85fc0989bdba0c103eef3a9f79ec3aa6f1b0237f39e27aa708c9"
+    },
+    {
+      "index": 5,
+      "endpoint": "/compile",
+      "job": 2,
+      "request_sha256": "72b96abcf7d8af3802a3bd8b8cc3c0913365bb956ff587dc3b41bb6d554b07e6",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0005.http-00.json",
+          "sha256": "4f312a8e01618e1b06b09abf20aefd945d5f5d2ad840558828e32fc4f5613b17"
+        }
+      ],
+      "response_sha256": "a9b37884917cd63f12d57b2bb2926f1f9cb20574f62f449e7751e5137986961a"
+    },
+    {
+      "index": 6,
+      "endpoint": "/run",
+      "job": 2,
+      "request_sha256": "99c2c874772a55873c804d88554194dec4d47e3538ba84b2291446a0cad9ead0",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0006.http-00.json",
+          "sha256": "2088decbca44cf0df6981a5ef0088862412fa1e102a4b1ad19cc43a9cce2d46d"
+        }
+      ],
+      "response_sha256": "e07fc36dba4eca3308a8fa3514599d12c36e565113a49d5a08266ab7940401e3"
+    },
+    {
+      "index": 7,
+      "endpoint": "/run",
+      "job": 2,
+      "request_sha256": "7af0e38f153ee92bd6310e993b865f5a79c9050d5ea8cc5850deb61a7bde6bb8",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0007.http-00.json",
+          "sha256": "73703dd1a55e3c92d237a5806dd76ef134f0c8e529556cd0407f79a9f2621231"
+        }
+      ],
+      "response_sha256": "cbd0bb45cfb3b250d74ed6fc184dea09d716460c4b070fa767448b4c2d5a4635"
+    },
+    {
+      "index": 8,
+      "endpoint": "/compile",
+      "job": 3,
+      "request_sha256": "72b96abcf7d8af3802a3bd8b8cc3c0913365bb956ff587dc3b41bb6d554b07e6",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0008.http-00.json",
+          "sha256": "c3eab3a59c4bb5157288fab84b7b5965ec12098245e95ed4374297bd0fe3d994"
+        }
+      ],
+      "response_sha256": "a9b37884917cd63f12d57b2bb2926f1f9cb20574f62f449e7751e5137986961a"
+    },
+    {
+      "index": 9,
+      "endpoint": "/run",
+      "job": 3,
+      "request_sha256": "e669488f499168e5b02d1c7e3f04f8351c640ea3eea3011de55314fb816d4b32",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0009.http-00.json",
+          "sha256": "9f50a3d892c9ee7f8a56f3e0c98274900b3b4a3414044428e27cace632034669"
+        }
+      ],
+      "response_sha256": "04776eac0dc5cbed37da5925459d59b342b01f7d046f9f30ffc95ab8e310c299"
+    },
+    {
+      "index": 10,
+      "endpoint": "/compile",
+      "job": 4,
+      "request_sha256": "ab056895b436c2a42325ab00ae33838dbb52b78c3ea6e3ee952d220fbb06ff0e",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0010.http-00.json",
+          "sha256": "13b0ae55461857adb8386e67f40cc3178732263fcd5f8238cd0e15df9442fa0c"
+        }
+      ],
+      "response_sha256": "0b57087e526fca9ae84e5beb99bc37c3a63cc2f499a298c6e78021794489fa44"
+    },
+    {
+      "index": 11,
+      "endpoint": "/run",
+      "job": 4,
+      "request_sha256": "48f4e2e23b099ac3e9d39b69772b5a7355a1ef84ef60148afef75296962a60ca",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0011.http-00.json",
+          "sha256": "5ecdcebc85cbc728e71206c73f020849ced1cec8d32feeaaa3cfb3d1b0c992d8"
+        }
+      ],
+      "response_sha256": "edbde5e17821d6d7a96c4a8393a2503f4a862b73ec8f48ed0ac582c62d899769"
+    },
+    {
+      "index": 12,
+      "endpoint": "/run",
+      "job": 4,
+      "request_sha256": "717cae0b1b63a80fa0063228be9627aa37d1899418eb31718c41b2fe258dd3f9",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0012.http-00.json",
+          "sha256": "a3405f92334578e504f4721c587ea17d99a71aa9669632044812158ae0beff1b"
+        }
+      ],
+      "response_sha256": "2f546845cd1028e62a77c54f07a2f9732cb96aaa16676ae771d68a19be158c0c"
+    },
+    {
+      "index": 13,
+      "endpoint": "/compile",
+      "job": 5,
+      "request_sha256": "ab056895b436c2a42325ab00ae33838dbb52b78c3ea6e3ee952d220fbb06ff0e",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0013.http-00.json",
+          "sha256": "53d0d4b35868de341a1464c128ec6de62492350f824c3ee97e8ad517f4e383e6"
+        }
+      ],
+      "response_sha256": "0b57087e526fca9ae84e5beb99bc37c3a63cc2f499a298c6e78021794489fa44"
+    },
+    {
+      "index": 14,
+      "endpoint": "/run",
+      "job": 5,
+      "request_sha256": "cf2ed1b59e9f087643e328dab6d5d8a6f52e777f6ca210036e59cddb9ee159f3",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0014.http-00.json",
+          "sha256": "f5d84fea39d619302e47b975e57cb535d20c4ae72d8c87a01ae99aacbc9fb5d4"
+        }
+      ],
+      "response_sha256": "59219c161437735f5ce3c2121cc290cbe9aa224fe2dae3421bce6f43ac423187"
+    },
+    {
+      "index": 15,
+      "endpoint": "/compile",
+      "job": 6,
+      "request_sha256": "d7603f4dc11305ea3c535a5e336f60a5c7b73e3414c81b96dd0819caf887494c",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0015.http-00.json",
+          "sha256": "f44cdc1b07283f8033586bdb54d4c0c7dca8be14fb394ab513894caec9dd45d3"
+        }
+      ],
+      "response_sha256": "742ae6e37746b41e2a875648c1af10d94795fc6fc88fda3991e084720b036dde"
+    },
+    {
+      "index": 16,
+      "endpoint": "/run",
+      "job": 6,
+      "request_sha256": "9799a85f96cc31f3047a09f093be7a63cd5944b403a9c3bc164e023d87d5bf17",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0016.http-00.json",
+          "sha256": "a54a225f1a6eca57baff983d5acfaab85c4b0b4a84ff0fffd2a6fee0f00ccf4a"
+        }
+      ],
+      "response_sha256": "260d428521391a68ceb17be2029ae0ea88b7152c79d7edac1992b28904b4c74f"
+    },
+    {
+      "index": 17,
+      "endpoint": "/run",
+      "job": 6,
+      "request_sha256": "59462853540ddd802b5ea8b39ef7b66f12538a2d881fcbde682ca095aba05c4a",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0017.http-00.json",
+          "sha256": "68bb0c8ca263368197fbbeb010d84bb1abefd6eba07e77c2b6bb9e903711860c"
+        }
+      ],
+      "response_sha256": "1141aa93156665b3197edeef595a108546bda07cf85b96396911057d374cc0b9"
+    },
+    {
+      "index": 18,
+      "endpoint": "/compile",
+      "job": 7,
+      "request_sha256": "d7603f4dc11305ea3c535a5e336f60a5c7b73e3414c81b96dd0819caf887494c",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0018.http-00.json",
+          "sha256": "6eee672a8481b7f6502f6405fc5bb386eceff0b0c3c7de57500fdecb68c59024"
+        }
+      ],
+      "response_sha256": "742ae6e37746b41e2a875648c1af10d94795fc6fc88fda3991e084720b036dde"
+    },
+    {
+      "index": 19,
+      "endpoint": "/run",
+      "job": 7,
+      "request_sha256": "dd761b007ca422a30d3e207c68e07b6e4753fb55cce0d756333fd58eb9f9ed0b",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0019.http-00.json",
+          "sha256": "9c8ebaaf8d40195629d2eae515b98211b70b3e23d4697ad44b9666e5001f46ca"
+        }
+      ],
+      "response_sha256": "f5b9559cde9ff6d40d8d6cbfbe1ea2413f56c94ef3e6d173af595e19c08f23a8"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "oct24_p01_f16_broadcast",
+      "seeds": "0,17",
+      "pattern": "normal",
+      "pass": true,
+      "result": {
+        "problem": "oct24_p01_f16_broadcast",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_relu_pointwise",
+            "compile_seconds": 8.163413399997808,
+            "ptx_bytes": 1569,
+            "ptx_sha256": "2ab00be7472a7fef3d570e0284cc816b957a5bb46137810ed032d2517ce911c7",
+            "compiler_sources_sha256": {
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 14,
+            "cubin_id": "dd4ca50ec388a1e51cbbdea4463a4a37d13841686054af1ddc5455a67d37d061"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_relu_pointwise",
+                "grid": [
+                  3,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 20.48,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "relu",
+                "pass": true,
+                "elements": 737,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          },
+          {
+            "seed_offset": 17,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_relu_pointwise",
+                "grid": [
+                  3,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 23.424,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "relu",
+                "pass": true,
+                "elements": 737,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_p01_f16_broadcast",
+      "seeds": "101",
+      "pattern": "wide",
+      "pass": true,
+      "result": {
+        "problem": "oct24_p01_f16_broadcast",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_relu_pointwise",
+            "compile_seconds": 3.9870784000013373,
+            "ptx_bytes": 1569,
+            "ptx_sha256": "2ab00be7472a7fef3d570e0284cc816b957a5bb46137810ed032d2517ce911c7",
+            "compiler_sources_sha256": {
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 14,
+            "cubin_id": "dd4ca50ec388a1e51cbbdea4463a4a37d13841686054af1ddc5455a67d37d061"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 101,
+            "pattern": "wide",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_relu_pointwise",
+                "grid": [
+                  3,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 24.384,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "relu",
+                "pass": true,
+                "elements": 737,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_p02_f16_sqrt",
+      "seeds": "0,17",
+      "pattern": "normal",
+      "pass": true,
+      "result": {
+        "problem": "oct24_p02_f16_sqrt",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_sqrt_pointwise",
+            "compile_seconds": 5.044454000002588,
+            "ptx_bytes": 1346,
+            "ptx_sha256": "67835fbbdec1f9cf2acb750c202b9b08bf8acdf8a81403f1653e76e4d4511f62",
+            "compiler_sources_sha256": {
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 11,
+            "cubin_id": "17c76fd4042f1d67155037239d4623db1c66880a3fb29bf7fa7eb56ceaff5455"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_sqrt_pointwise",
+                "grid": [
+                  5,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 20.736,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "sqrt",
+                "pass": true,
+                "elements": 1031,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          },
+          {
+            "seed_offset": 17,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_sqrt_pointwise",
+                "grid": [
+                  5,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 24.128,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "sqrt",
+                "pass": true,
+                "elements": 1031,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_p02_f16_sqrt",
+      "seeds": "101",
+      "pattern": "wide",
+      "pass": true,
+      "result": {
+        "problem": "oct24_p02_f16_sqrt",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_sqrt_pointwise",
+            "compile_seconds": 4.002598200000648,
+            "ptx_bytes": 1346,
+            "ptx_sha256": "67835fbbdec1f9cf2acb750c202b9b08bf8acdf8a81403f1653e76e4d4511f62",
+            "compiler_sources_sha256": {
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 11,
+            "cubin_id": "17c76fd4042f1d67155037239d4623db1c66880a3fb29bf7fa7eb56ceaff5455"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 101,
+            "pattern": "wide",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_sqrt_pointwise",
+                "grid": [
+                  5,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 23.968,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "sqrt",
+                "pass": true,
+                "elements": 1031,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_p04_f64_rational",
+      "seeds": "0,17",
+      "pattern": "normal",
+      "pass": true,
+      "result": {
+        "problem": "oct24_p04_f64_rational",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_div_pointwise",
+            "compile_seconds": 3.7038234999999986,
+            "ptx_bytes": 1391,
+            "ptx_sha256": "ff40483156a3ebe44dc7e7ba5e95ff8edf07dd7557bf6d910e29ed21bfe43aa5",
+            "compiler_sources_sha256": {
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 25,
+            "cubin_id": "ec771f6e44ca21bf76280e853a929b6a1687f5c40745805b7b1a369b93c0fef3"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_div_pointwise",
+                "grid": [
+                  5,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 15.52,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "div",
+                "pass": true,
+                "elements": 1033,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          },
+          {
+            "seed_offset": 17,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_div_pointwise",
+                "grid": [
+                  5,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 16.736,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "div",
+                "pass": true,
+                "elements": 1033,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_p04_f64_rational",
+      "seeds": "101",
+      "pattern": "wide",
+      "pass": true,
+      "result": {
+        "problem": "oct24_p04_f64_rational",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_div_pointwise",
+            "compile_seconds": 4.856116399998427,
+            "ptx_bytes": 1391,
+            "ptx_sha256": "ff40483156a3ebe44dc7e7ba5e95ff8edf07dd7557bf6d910e29ed21bfe43aa5",
+            "compiler_sources_sha256": {
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 25,
+            "cubin_id": "ec771f6e44ca21bf76280e853a929b6a1687f5c40745805b7b1a369b93c0fef3"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 101,
+            "pattern": "wide",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_div_pointwise",
+                "grid": [
+                  5,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 16.64,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "div",
+                "pass": true,
+                "elements": 1033,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_p05_i32_bitwise",
+      "seeds": "0,17",
+      "pattern": "normal",
+      "pass": true,
+      "result": {
+        "problem": "oct24_p05_i32_bitwise",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_add_pointwise",
+            "compile_seconds": 5.076271500001894,
+            "ptx_bytes": 1476,
+            "ptx_sha256": "a7135540478911ce857ef6143ccc77dc654a645db5d3839dd8084ebf7ccf6ace",
+            "compiler_sources_sha256": {
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 14,
+            "cubin_id": "37a20fe4c345a817edc1504876bd285f9398d03af0a386b6c9b958991745b5ac"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_add_pointwise",
+                "grid": [
+                  3,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 20.576,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "add",
+                "pass": true,
+                "elements": 527,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          },
+          {
+            "seed_offset": 17,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_add_pointwise",
+                "grid": [
+                  3,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 23.776,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "add",
+                "pass": true,
+                "elements": 527,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "oct24_p05_i32_bitwise",
+      "seeds": "101",
+      "pattern": "wide",
+      "pass": true,
+      "result": {
+        "problem": "oct24_p05_i32_bitwise",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_add_pointwise",
+            "compile_seconds": 4.133386800000153,
+            "ptx_bytes": 1476,
+            "ptx_sha256": "a7135540478911ce857ef6143ccc77dc654a645db5d3839dd8084ebf7ccf6ace",
+            "compiler_sources_sha256": {
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+            },
+            "registers": 14,
+            "cubin_id": "37a20fe4c345a817edc1504876bd285f9398d03af0a386b6c9b958991745b5ac"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 101,
+            "pattern": "wide",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_add_pointwise",
+                "grid": [
+                  3,
+                  1,
+                  1
+                ],
+                "block": [
+                  256,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 23.904,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "add",
+                "pass": true,
+                "elements": 527,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    }
+  ],
+  "checks": 12,
+  "passed_checks": 12,
+  "tracked_unchanged": true,
+  "http_attempts": 20,
+  "artifact_sha256": {
+    "events/0000.http-00.json": "1873dc2cc76bbdf26b1c4b50ccabe05f6aacbe0a5f06741cb7362dc0a779541b",
+    "events/0000.request.json": "a2daa594e8d579512533d68ee50a2e8989e7b5ff1e3d7ba30573ff186d688cbf",
+    "events/0000.response.json": "67322bd1d04916459a08d12a2a9e7ed0ac540700e39d4e47853211727944b87b",
+    "events/0001.http-00.json": "817edd97b9e074560056acc1901f0d91073ca79dc9d932eb6b9677bf5896ed3c",
+    "events/0001.request.json": "e89bdcefd99076274913f5bf8de62124a7cf9ef4c7c549e02de901e9762ee57e",
+    "events/0001.response.json": "8994b78eb68796884310b4784d0960d7bc98ca6213b9a9aca1c231969c01cf5f",
+    "events/0002.http-00.json": "25002fdfd310afa71582e9c09d412ebc3980ed3a3c3709ebf409a0f1d87cf41e",
+    "events/0002.request.json": "3993d729affae029b494719f045c2c91f03ba0680daf0097ca3a62b5ba34f590",
+    "events/0002.response.json": "09676e519c14ccf0da8f43033c90f3e0df387bebca975c419d4e7c57458cade8",
+    "events/0003.http-00.json": "96368c4e47737c808f886e200f1df3926a383a2a5465ee7d1c0c42ab260a8a18",
+    "events/0003.request.json": "a2daa594e8d579512533d68ee50a2e8989e7b5ff1e3d7ba30573ff186d688cbf",
+    "events/0003.response.json": "67322bd1d04916459a08d12a2a9e7ed0ac540700e39d4e47853211727944b87b",
+    "events/0004.http-00.json": "90cf34f5cc810029ec94c5e97ce653ca16b989317c89d966cb3e8f13afae41aa",
+    "events/0004.request.json": "5d5b556a0aed872ae7378a943f45ecb70950026f8de65af7ba9a830e39cd1a51",
+    "events/0004.response.json": "218b6fbb3c7c85fc0989bdba0c103eef3a9f79ec3aa6f1b0237f39e27aa708c9",
+    "events/0005.http-00.json": "4f312a8e01618e1b06b09abf20aefd945d5f5d2ad840558828e32fc4f5613b17",
+    "events/0005.request.json": "72b96abcf7d8af3802a3bd8b8cc3c0913365bb956ff587dc3b41bb6d554b07e6",
+    "events/0005.response.json": "a9b37884917cd63f12d57b2bb2926f1f9cb20574f62f449e7751e5137986961a",
+    "events/0006.http-00.json": "2088decbca44cf0df6981a5ef0088862412fa1e102a4b1ad19cc43a9cce2d46d",
+    "events/0006.request.json": "99c2c874772a55873c804d88554194dec4d47e3538ba84b2291446a0cad9ead0",
+    "events/0006.response.json": "e07fc36dba4eca3308a8fa3514599d12c36e565113a49d5a08266ab7940401e3",
+    "events/0007.http-00.json": "73703dd1a55e3c92d237a5806dd76ef134f0c8e529556cd0407f79a9f2621231",
+    "events/0007.request.json": "7af0e38f153ee92bd6310e993b865f5a79c9050d5ea8cc5850deb61a7bde6bb8",
+    "events/0007.response.json": "cbd0bb45cfb3b250d74ed6fc184dea09d716460c4b070fa767448b4c2d5a4635",
+    "events/0008.http-00.json": "c3eab3a59c4bb5157288fab84b7b5965ec12098245e95ed4374297bd0fe3d994",
+    "events/0008.request.json": "72b96abcf7d8af3802a3bd8b8cc3c0913365bb956ff587dc3b41bb6d554b07e6",
+    "events/0008.response.json": "a9b37884917cd63f12d57b2bb2926f1f9cb20574f62f449e7751e5137986961a",
+    "events/0009.http-00.json": "9f50a3d892c9ee7f8a56f3e0c98274900b3b4a3414044428e27cace632034669",
+    "events/0009.request.json": "e669488f499168e5b02d1c7e3f04f8351c640ea3eea3011de55314fb816d4b32",
+    "events/0009.response.json": "04776eac0dc5cbed37da5925459d59b342b01f7d046f9f30ffc95ab8e310c299",
+    "events/0010.http-00.json": "13b0ae55461857adb8386e67f40cc3178732263fcd5f8238cd0e15df9442fa0c",
+    "events/0010.request.json": "ab056895b436c2a42325ab00ae33838dbb52b78c3ea6e3ee952d220fbb06ff0e",
+    "events/0010.response.json": "0b57087e526fca9ae84e5beb99bc37c3a63cc2f499a298c6e78021794489fa44",
+    "events/0011.http-00.json": "5ecdcebc85cbc728e71206c73f020849ced1cec8d32feeaaa3cfb3d1b0c992d8",
+    "events/0011.request.json": "48f4e2e23b099ac3e9d39b69772b5a7355a1ef84ef60148afef75296962a60ca",
+    "events/0011.response.json": "edbde5e17821d6d7a96c4a8393a2503f4a862b73ec8f48ed0ac582c62d899769",
+    "events/0012.http-00.json": "a3405f92334578e504f4721c587ea17d99a71aa9669632044812158ae0beff1b",
+    "events/0012.request.json": "717cae0b1b63a80fa0063228be9627aa37d1899418eb31718c41b2fe258dd3f9",
+    "events/0012.response.json": "2f546845cd1028e62a77c54f07a2f9732cb96aaa16676ae771d68a19be158c0c",
+    "events/0013.http-00.json": "53d0d4b35868de341a1464c128ec6de62492350f824c3ee97e8ad517f4e383e6",
+    "events/0013.request.json": "ab056895b436c2a42325ab00ae33838dbb52b78c3ea6e3ee952d220fbb06ff0e",
+    "events/0013.response.json": "0b57087e526fca9ae84e5beb99bc37c3a63cc2f499a298c6e78021794489fa44",
+    "events/0014.http-00.json": "f5d84fea39d619302e47b975e57cb535d20c4ae72d8c87a01ae99aacbc9fb5d4",
+    "events/0014.request.json": "cf2ed1b59e9f087643e328dab6d5d8a6f52e777f6ca210036e59cddb9ee159f3",
+    "events/0014.response.json": "59219c161437735f5ce3c2121cc290cbe9aa224fe2dae3421bce6f43ac423187",
+    "events/0015.http-00.json": "f44cdc1b07283f8033586bdb54d4c0c7dca8be14fb394ab513894caec9dd45d3",
+    "events/0015.request.json": "d7603f4dc11305ea3c535a5e336f60a5c7b73e3414c81b96dd0819caf887494c",
+    "events/0015.response.json": "742ae6e37746b41e2a875648c1af10d94795fc6fc88fda3991e084720b036dde",
+    "events/0016.http-00.json": "a54a225f1a6eca57baff983d5acfaab85c4b0b4a84ff0fffd2a6fee0f00ccf4a",
+    "events/0016.request.json": "9799a85f96cc31f3047a09f093be7a63cd5944b403a9c3bc164e023d87d5bf17",
+    "events/0016.response.json": "260d428521391a68ceb17be2029ae0ea88b7152c79d7edac1992b28904b4c74f",
+    "events/0017.http-00.json": "68bb0c8ca263368197fbbeb010d84bb1abefd6eba07e77c2b6bb9e903711860c",
+    "events/0017.request.json": "59462853540ddd802b5ea8b39ef7b66f12538a2d881fcbde682ca095aba05c4a",
+    "events/0017.response.json": "1141aa93156665b3197edeef595a108546bda07cf85b96396911057d374cc0b9",
+    "events/0018.http-00.json": "6eee672a8481b7f6502f6405fc5bb386eceff0b0c3c7de57500fdecb68c59024",
+    "events/0018.request.json": "d7603f4dc11305ea3c535a5e336f60a5c7b73e3414c81b96dd0819caf887494c",
+    "events/0018.response.json": "742ae6e37746b41e2a875648c1af10d94795fc6fc88fda3991e084720b036dde",
+    "events/0019.http-00.json": "9c8ebaaf8d40195629d2eae515b98211b70b3e23d4697ad44b9666e5001f46ca",
+    "events/0019.request.json": "dd761b007ca422a30d3e207c68e07b6e4753fb55cce0d756333fd58eb9f9ed0b",
+    "events/0019.response.json": "f5b9559cde9ff6d40d8d6cbfbe1ea2413f56c94ef3e6d173af595e19c08f23a8"
+  },
+  "finished_utc": "2026-10-24T00:22:36.424168+00:00"
+}

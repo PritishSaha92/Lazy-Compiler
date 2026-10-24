@@ -1,0 +1,10 @@
+{
+  "classification": "sandbox_network_access_failure",
+  "affected_invocations": 15,
+  "compiler_or_kernel_failure_established": false,
+  "numerical_checks_completed": 0,
+  "included_in_success_totals": false,
+  "summary_sha256": "612f9b323884d23e7a32efe3940f0c14ae151c37c35d886e8f69cab28dcee1b4",
+  "successful_retry": "../2026-10-24-public-submit-runner/summary.json",
+  "note": "The organizer health endpoint returned200 outside the network-restricted sandbox; all15 unmodified public client commands passed in the separate authorized retry."
+}

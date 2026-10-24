@@ -1,0 +1,18 @@
+{
+  "summary": "summary.json",
+  "summary_sha256": "a4c4c83b5f4f069481d28a41c4c6d586207c8675f3efd8e04d4b0b532f8c7ea0",
+  "integrity_pass": true,
+  "complete_90_check_gate": true,
+  "partial_attempt": false,
+  "returned_checks": 90,
+  "passed_checks": 90,
+  "received_events": 120,
+  "unrecorded_responses_validated_after_failure": [],
+  "pending_events": [],
+  "seal_sha256": "986f8ab464389db6fb144abdf8162acdfce98b44ebfc5a446bdaa42f9c875c93",
+  "compiler_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc"
+  },
+  "audit_source_sha256": "6378a15633a8fbdee1c5deeccb87e2fb2a5aeab1880560f06bef6df65b7ca615"
+}

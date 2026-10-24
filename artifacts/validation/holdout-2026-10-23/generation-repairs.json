@@ -1,0 +1,41 @@
+{
+  "repairs": [
+    {
+      "id": "hold_r02_mean_two_axes",
+      "reason": "Emmy 0.3.11 generation failed: ValueError: a term reads [out_coord_1], which no enclosing level defines",
+      "original_expression": "torch.randn(5,17,29).mean(dim=(0,2))",
+      "replacement_expression": "torch.randn(5,17,29).mean(dim=(1,2))",
+      "before_expression_sha256": "796e1a42a82a1b779f9241ab34fab457b8639944291564a52ccecc79cc04f3e0",
+      "compiler_evaluated": false,
+      "generation_only": true,
+      "after_expression_sha256": "5196a340eac869a0e7868ab8805b42956f2e9f476f53b7bc406add1142742f63",
+      "revised_utc": "2026-10-22T18:39:59.484949+00:00"
+    },
+    {
+      "id": "frontend_generation_repairs",
+      "changed_workloads": [
+        "hold_r02_mean_two_axes",
+        "hold_f01_centered_affine",
+        "hold_f02_residual_l2_weight"
+      ],
+      "reason": "Adjacent-axis mean also fails upstream coordinate validation. Emmy CLI traces only the final expression, so setup z becomes a graph input; inline centered/residual computations to preserve intended graph semantics.",
+      "before_expression_sha256": "5196a340eac869a0e7868ab8805b42956f2e9f476f53b7bc406add1142742f63",
+      "compiler_evaluated": false,
+      "generation_only": true,
+      "after_expression_sha256": "f2ec788734b71a720f2e6f62984d6e11285f7286896d1aaa11f9bd924eec59e6",
+      "revised_utc": "2026-10-22T18:45:35.187235+00:00"
+    },
+    {
+      "id": "hold_r02_row_mean_square",
+      "replaces_id": "hold_r02_mean_two_axes",
+      "reason": "All tested 3D mean forms fail Emmy 0.3.11 coordinate validation; replace unsupported proposal with an odd-width 2D row mean-square reduction before any backend evaluation.",
+      "original_expression": "torch.randn(5,17,29).mean()",
+      "replacement_expression": "x=torch.randn(17,251); (x*x).mean(-1)",
+      "before_expression_sha256": "f2ec788734b71a720f2e6f62984d6e11285f7286896d1aaa11f9bd924eec59e6",
+      "compiler_evaluated": false,
+      "generation_only": true,
+      "after_expression_sha256": "a220788ab8b5f62685a60a5b0be383e5de6c93c7bedcb000af7d1469dba211a6",
+      "revised_utc": "2026-10-22T18:48:48.616532+00:00"
+    }
+  ]
+}

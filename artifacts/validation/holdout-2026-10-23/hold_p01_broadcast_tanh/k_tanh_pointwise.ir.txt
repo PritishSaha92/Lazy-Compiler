@@ -1,0 +1,8 @@
+    Tile[a0, a1] (N=1081)
+        in2 = load w[a1]
+        in1 = load x[a0, a1]
+        f32 v0 = multiply(in1, in2)
+        in0 = load b[a0, 0]
+        f32 v1 = add(in0, v0)
+        f32 v2 = tanh(v1)
+        tanh[a0, a1] = v2

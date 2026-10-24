@@ -1,0 +1,17 @@
+{
+  "original_package": "artifacts/validation/2026-10-24-extra/packages/oct24_m02_f16_ragged",
+  "original_files_sha256": {
+    "expected.npz": "d988b0e930e87d68914d329d4750e1f06f047b8a64af8202c557d2239eaa63a5",
+    "k_matmul_79479f.ir.json": "d7ac2f46708459544ebe8cfbaccf6bc12cc5ad58e02dc95147423370f16a5661",
+    "meta.json": "022e198c3e7bad70749990dbe6ef65c3ac09dca9a1ce847509f0fad6696d93a5"
+  },
+  "original_bytes_preserved": true,
+  "scope": "Original Emmy-generated FP16 ragged tensor IR; previously rejected by the scalar-only backend. Reference and tolerances unchanged.",
+  "assembly": [
+    {
+      "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+      "arch": "sm_89",
+      "resource_usage": ""
+    }
+  ]
+}

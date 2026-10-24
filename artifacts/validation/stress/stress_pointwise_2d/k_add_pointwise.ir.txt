@@ -1,0 +1,6 @@
+    Tile[a0] (N=1105)
+        in0 = load x[(a0 // 65), (a0 % 65)]
+        f32 v0 = sigmoid(in0)
+        f32 v1 = tanh(in0)
+        f32 v2 = add(v0, v1)
+        add[(a0 // 65), (a0 % 65)] = v2

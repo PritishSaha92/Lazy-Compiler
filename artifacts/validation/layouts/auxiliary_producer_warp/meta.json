@@ -1,0 +1,53 @@
+{
+  "id": "auxiliary_producer_warp",
+  "graph_inputs": [
+    "x"
+  ],
+  "graph_outputs": [
+    "out"
+  ],
+  "rtol": 0,
+  "atol": 0,
+  "kernels": [
+    {
+      "entry": "k_regression_auxiliary_producer_warp",
+      "grid": [
+        3,
+        1,
+        1
+      ],
+      "block": [
+        64,
+        1,
+        1
+      ],
+      "smem_bytes": 0,
+      "zero_outputs": [],
+      "arg_order": [
+        "x",
+        "out"
+      ],
+      "args": [
+        {
+          "name": "x",
+          "dtype": "f32",
+          "shape": [
+            3,
+            32
+          ],
+          "seed": 0
+        },
+        {
+          "name": "out",
+          "dtype": "f32",
+          "shape": [
+            3,
+            32
+          ],
+          "output": true
+        }
+      ],
+      "final": true
+    }
+  ]
+}
