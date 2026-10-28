@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "cubin_id": "ae7c7d525493c77c851d908fa06cf77e3dfdff5c5600b7dc9f82a120c2bb6c99",
+  "bytes": 5512,
+  "arch": "sm_120",
+  "flags": [],
+  "entry_points": [
+    "k_regression_probe_strided_int32_start"
+  ],
+  "registers": {
+    "k_regression_probe_strided_int32_start": 6
+  }
+}

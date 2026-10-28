@@ -5,6 +5,9 @@ runner, execute GPU kernels, or repeat the historical unit-test suites. Their
 counts are reported separately from the fresh CLI checks performed here.
 Retained CLI hashes use Windows CRLF; uniform LF output is compared after only
 that line-ending conversion, with its native hash and comparison mode retained.
+The original archive remains historical provenance. A version-2 checkout binds
+its current runtime and CLI expectations to separate, inventoried validation
+reports; it does not claim that a changed runtime matches the old archive.
 """
 from __future__ import annotations
 
@@ -58,7 +61,8 @@ def file_record(path: Path) -> dict:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--report", type=Path, default=PHASE7 / "checkout/verification.json")
+    parser.add_argument("--report", type=Path,
+                        default=ROOT / "artifacts/validation/checkout-current/verification.json")
     args = parser.parse_args()
     destination = args.report.resolve()
     if destination.exists():
@@ -75,7 +79,10 @@ def main() -> int:
     try:
         inventory_before = digest(manifest_path.read_bytes())
         manifest = read_json(manifest_path)
-        assert manifest["schema"] == "emmy-git-checkout-v1", "unexpected checkout manifest schema"
+        assert manifest["schema"] in ("emmy-git-checkout-v1", "emmy-git-checkout-v2"), "unexpected checkout manifest schema"
+        current_validation = manifest.get("current_validation")
+        if manifest["schema"] == "emmy-git-checkout-v2":
+            assert current_validation, "version-2 checkout requires current_validation"
         files = manifest["files"]
         assert isinstance(files, dict) and files and "REVIEW_MANIFEST.json" not in files
         excluded_paths = tuple(p.rstrip("/") for p in manifest["excluded_paths"])
@@ -111,19 +118,36 @@ def main() -> int:
                                "excluded_paths": list(excluded_paths),
                                "excluded_directory_names": sorted(excluded_names)}
 
-        release = read_json(PHASE7 / "release-summary.json")
+        historical_release = read_json(PHASE7 / "release-summary.json")
         retained = read_json(PHASE7 / "review-bundle-verification.json")
-        assert release["pass"] and retained["pass"], "retained release/verification gate failed"
+        assert historical_release["pass"] and retained["pass"], "retained release/verification gate failed"
+        historical_runtime = historical_release["source_sha256"]
+        assert set(historical_runtime) == RUNTIME
+        assert historical_runtime == retained["runtime_source_sha256"]
+
+        release, cli_reference = historical_release, retained
+        if current_validation is not None:
+            assert isinstance(current_validation, dict), "current_validation must be an object"
+            references = {}
+            for kind in ("release", "cli"):
+                name = current_validation[kind + "_path"]
+                assert name in files, f"current {kind} reference is not inventoried: {name}"
+                path = relative_path(name)
+                assert digest(path.read_bytes()) == current_validation[kind + "_sha256"], f"current {kind} reference hash mismatch"
+                references[kind] = read_json(path)
+                assert references[kind]["pass"], f"current {kind} reference gate failed"
+            release, cli_reference = references["release"], references["cli"]
+            report["current_validation"] = current_validation
         runtime = {name: before[name]["sha256"] for name in sorted(RUNTIME)}
         assert set(manifest["runtime_sha256"]) == RUNTIME
-        assert runtime == manifest["runtime_sha256"] == release["source_sha256"] == retained["runtime_source_sha256"]
+        assert runtime == manifest["runtime_sha256"] == release["source_sha256"] == cli_reference["runtime_source_sha256"]
         origin = manifest["origin"]
         archive_inventory_path = relative_path(origin["archive_inventory_path"])
         assert origin["archive_inventory_path"] in files
         assert digest(archive_inventory_path.read_bytes()) == origin["archive_inventory_sha256"]
         archive_inventory = read_json(archive_inventory_path)
         assert archive_inventory["schema"] == "emmy-review-bundle-contents-v1"
-        assert archive_inventory["runtime_sha256"] == runtime
+        assert archive_inventory["runtime_sha256"] == historical_runtime
         assert origin["archive_sha256"] == retained["archive"]["sha256"]
         assert len(archive_inventory["files"]) + 1 == retained["archive"]["verified_members"]
         original_files = archive_inventory["files"]
@@ -135,8 +159,10 @@ def main() -> int:
                                if files[name] != original_files[name]),
         }
         report["runtime_sha256"] = runtime
+        report["historical_archive_runtime_sha256"] = historical_runtime
         # These are historical gates, not fresh tests executed by this command.
         report["retained_full_cpu_gate"] = release["cpu"]
+        report["retained_original_release_cpu_gate"] = historical_release["cpu"]
         report["retained_archive_focused_cpu_gate"] = retained["focused_test_totals"]
 
         env = os.environ.copy()
@@ -151,7 +177,7 @@ def main() -> int:
         module_origins = json.loads(module_result.stdout)
         assert all(Path(path).resolve().parent == ROOT for path in module_origins.values())
         report["module_origins"] = module_origins
-        checks = retained["cli_checks"]
+        checks = cli_reference["cli_checks"]
         assert len(checks) == 20 and len({row["ir"] for row in checks}) == 20
         report["fresh_cli_checks"] = []
         for expected in checks:
@@ -189,7 +215,9 @@ def main() -> int:
                                       "comparison": "Native stdout compared first; uniform LF may be converted to retained Windows CRLF, with every other byte preserved"}
 
         links, distribution_links = [], []
-        for name in PRIMARY_PAGES:
+        primary_pages = PRIMARY_PAGES + (("docs/PHASE8.md",)
+                                        if manifest["schema"] == "emmy-git-checkout-v2" else ())
+        for name in primary_pages:
             assert name in files, f"missing primary reviewer page: {name}"
             page = relative_path(name)
             for raw in re.findall(r"\]\(([^)]+)\)", page.read_text(encoding="utf-8-sig")):
@@ -205,7 +233,7 @@ def main() -> int:
                                                "reason": "Distribution ZIP intentionally kept outside the Git source checkout"})
                 else:
                     raise AssertionError(f"broken primary reviewer link: {name} -> {link}")
-        report["primary_links"] = {"pages": list(PRIMARY_PAGES), "verified": len(links),
+        report["primary_links"] = {"pages": list(primary_pages), "verified": len(links),
                                    "external_distribution_zips": distribution_links}
         report["pass"] = True
     except Exception as exc:

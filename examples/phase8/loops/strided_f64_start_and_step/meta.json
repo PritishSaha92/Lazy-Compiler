@@ -1,0 +1,70 @@
+{
+  "id": "strided_f64_start_and_step",
+  "graph_inputs": [
+    "x",
+    "y"
+  ],
+  "graph_outputs": [
+    "out"
+  ],
+  "rtol": 0,
+  "atol": 0,
+  "kernels": [
+    {
+      "entry": "k_regression_strided_f64_start_and_step",
+      "grid": [
+        1,
+        1,
+        1
+      ],
+      "block": [
+        32,
+        1,
+        1
+      ],
+      "smem_bytes": 0,
+      "zero_outputs": [],
+      "arg_order": [
+        "x",
+        "y",
+        "out"
+      ],
+      "args": [
+        {
+          "name": "x",
+          "dtype": "f64",
+          "shape": [
+            3
+          ],
+          "data": [
+            0.75,
+            1.75,
+            2.75
+          ]
+        },
+        {
+          "name": "y",
+          "dtype": "f64",
+          "shape": [
+            3
+          ],
+          "data": [
+            1.25,
+            1.75,
+            2.5
+          ]
+        },
+        {
+          "name": "out",
+          "dtype": "i32",
+          "shape": [
+            3,
+            2
+          ],
+          "output": true
+        }
+      ],
+      "final": true
+    }
+  ]
+}

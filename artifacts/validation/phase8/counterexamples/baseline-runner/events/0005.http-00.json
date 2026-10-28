@@ -1,0 +1,43 @@
+{
+  "started": "2026-10-28T09:57:26.471818+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "entry": "k_regression_probe_f64_remainder_quotient",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "median_us": 22.048,
+    "iters": 1,
+    "outputs": {
+      "out": {
+        "shape": [
+          8
+        ],
+        "dtype": "f64",
+        "sum": 3.1000000000000005,
+        "values": [
+          1.0,
+          2.0,
+          0.0,
+          0.0,
+          0.09999999999999964,
+          8.881784197001252e-16,
+          1.0,
+          -1.0
+        ],
+        "truncated": false
+      }
+    }
+  },
+  "finished": "2026-10-28T09:57:27.215682+00:00",
+  "seconds": 0.7437555000069551
+}

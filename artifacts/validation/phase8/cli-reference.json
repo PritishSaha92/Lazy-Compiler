@@ -1,0 +1,135 @@
+{
+  "schema": "emmy-phase8-cli-reference-v1",
+  "pass": true,
+  "runtime_source_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "6a501221f0bf98c6639b79b3e09330b068fa397919c211d5bddea07c5a1e1a89",
+    "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+    "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "cli_checks": [
+    {
+      "ir": "problems/p00_scalar_add/k_add_pointwise.ir.json",
+      "pass": true,
+      "ptx_sha256": "17d321b58a4f85d03e2721a64038370333a3d30fdd4b09e2b417ab0706a2fcc9",
+      "ptx_bytes": 1544
+    },
+    {
+      "ir": "examples/tensor/packages/tensor_global_f16/k_regression_tensor_global_f16.ir.json",
+      "pass": true,
+      "ptx_sha256": "0f2b77b8d5c9abf5b2a1527f3062af1a1e49d277f8f9d951db9d02cbddc75a9e",
+      "ptx_bytes": 8266
+    },
+    {
+      "ir": "examples/bulk/bulk_rectangle/k_regression_bulk_rectangle.ir.json",
+      "pass": true,
+      "ptx_sha256": "2ae70e24cc2e57787ea2ec81bce0746b00fd4aa8e1d962503b4bc9fbdf862fd9",
+      "ptx_bytes": 2295
+    },
+    {
+      "ir": "examples/combined/bulk_tensor_k48_f16/k_regression_bulk_tensor_k48_f16.ir.json",
+      "pass": true,
+      "ptx_sha256": "9d528c7edf55b85265fdbd4947558c3897d9669e6c13ae3e826ab19642386088",
+      "ptx_bytes": 10782
+    },
+    {
+      "ir": "examples/generated_tensor/k_matmul_79479f.ir.json",
+      "pass": true,
+      "ptx_sha256": "1f1368263f827a651db49ed31f317e8a195bbce0356e394bb024310bdadd2be3",
+      "ptx_bytes": 38445
+    },
+    {
+      "ir": "examples/ring/ring_tensor_k80_f16/k_regression_ring_tensor_k80_f16.ir.json",
+      "pass": true,
+      "ptx_sha256": "4e23eab94073b47cbd92a65860c91ae04bafdf9fbdea57c79dd520e1322492ce",
+      "ptx_bytes": 22565
+    },
+    {
+      "ir": "examples/ring/ring_tensor_k112_bf16/k_regression_ring_tensor_k112_bf16.ir.json",
+      "pass": true,
+      "ptx_sha256": "6fb2e533fa2ae0e00cfea38c4dc8d8b1dfd97b89a9d14045efc8c091d168e3dd",
+      "ptx_bytes": 24860
+    },
+    {
+      "ir": "examples/ring/ring_tensor_k112_f16_two_cta/k_regression_ring_tensor_k112_f16_two_cta.ir.json",
+      "pass": true,
+      "ptx_sha256": "73365b7bf43af45ceed2a0df256996c444d70867e5346f131c3168c59ad4e425",
+      "ptx_bytes": 22586
+    },
+    {
+      "ir": "examples/phase7/builtins/auxiliary_raw_thread_named_barrier/k_regression_auxiliary_raw_thread_named_barrier.ir.json",
+      "pass": true,
+      "ptx_sha256": "f0791073392a626ab3df4ef75e601f04b374f2bc74ab1560a37df4ac0ebb76ab",
+      "ptx_bytes": 2419
+    },
+    {
+      "ir": "examples/phase7/builtins/builtin_unsigned_arithmetic/k_regression_builtin_unsigned_arithmetic.ir.json",
+      "pass": true,
+      "ptx_sha256": "dcbb0b04c652043796c8bb5e5d50f230a86887941b053fbba75a6ec683b248c6",
+      "ptx_bytes": 5612
+    },
+    {
+      "ir": "examples/phase7/builtins/builtin_values_3d/k_regression_builtin_values_3d.ir.json",
+      "pass": true,
+      "ptx_sha256": "5c6753be02be35bcc07b0a90532a2903812715ebb47dab71007550cccdac8639",
+      "ptx_bytes": 3885
+    },
+    {
+      "ir": "examples/phase7/builtins/bulk_builtin_block_coordinate/k_regression_bulk_builtin_block_coordinate.ir.json",
+      "pass": true,
+      "ptx_sha256": "75f87463ed8420bd8147fc4aab37a62f925627d4f732149091191c207be9aa42",
+      "ptx_bytes": 1857
+    },
+    {
+      "ir": "examples/phase7/integer/shift_narrow_left_promotion/k_regression_shift_narrow_left_promotion.ir.json",
+      "pass": true,
+      "ptx_sha256": "af3b46cba578fcb2e5248e11335905581997b7fde64e95194aad499728b422ec",
+      "ptx_bytes": 2593
+    },
+    {
+      "ir": "examples/phase7/integer/shift_signed_right_unsigned_count/k_regression_shift_signed_right_unsigned_count.ir.json",
+      "pass": true,
+      "ptx_sha256": "d91289c52302519be1b70f45aa97b7764b7d38a6a9b65b6ff55929d88ac2dd42",
+      "ptx_bytes": 2372
+    },
+    {
+      "ir": "examples/phase7/integer/shift_unsigned_left_wide_count/k_regression_shift_unsigned_left_wide_count.ir.json",
+      "pass": true,
+      "ptx_sha256": "525655e37b204f91d3691cec17b2208507bac0b4d99c0dacc62ea12812f8a308",
+      "ptx_bytes": 2385
+    },
+    {
+      "ir": "examples/phase7/integer/stamped_integer_policy_controls/k_regression_stamped_integer_policy_controls.ir.json",
+      "pass": true,
+      "ptx_sha256": "15fdcfa04fabd60144a96906e960a0c2ad468c274f46e2917432a43e14653e96",
+      "ptx_bytes": 1056
+    },
+    {
+      "ir": "examples/phase7/integer/unstamped_mixed_integer_add/k_regression_unstamped_mixed_integer_add.ir.json",
+      "pass": true,
+      "ptx_sha256": "c0bd6f29f89b36750e916ed646015279efb14ff614153f66b40edd2015c1933a",
+      "ptx_bytes": 1154
+    },
+    {
+      "ir": "examples/phase7/integer/unstamped_mixed_integer_and/k_regression_unstamped_mixed_integer_and.ir.json",
+      "pass": true,
+      "ptx_sha256": "c9453f5fbfd427b9b31f4acb9d0b5e56dbc1efd1d5bd81e0ed3f34ab946acb1d",
+      "ptx_bytes": 1154
+    },
+    {
+      "ir": "examples/phase7/integer/unstamped_mixed_integer_xor/k_regression_unstamped_mixed_integer_xor.ir.json",
+      "pass": true,
+      "ptx_sha256": "a4fd33336e53e77ef495d9e4891721a9590b73b40fad8eb179df059ea6cf542a",
+      "ptx_bytes": 1154
+    },
+    {
+      "ir": "examples/phase7/retained/comparison_integer_promotion/k_regression_comparison_integer_promotion.ir.json",
+      "pass": true,
+      "ptx_sha256": "fd062976f47d32a8a5a70459229155f01e5a1388f2ea9a5711593eb4007ed693",
+      "ptx_bytes": 2903
+    }
+  ],
+  "scope": "Actual default CLI stdout; source-bound reference for checkout reproduction, no GPU execution",
+  "sources_unchanged": true
+}

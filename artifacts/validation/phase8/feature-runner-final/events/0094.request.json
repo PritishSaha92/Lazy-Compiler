@@ -1,0 +1,6 @@
+{
+  "endpoint": "/compile",
+  "payload": {
+    "ptx": ".version 8.0\r\n.target sm_89\r\n.address_size 64\r\n\r\n\r\n.visible .entry k_regression_unstamped_mixed_integer_add(\r\n    .param .u64 param_0,\r\n    .param .u64 param_1,\r\n    .param .u64 param_2\r\n)\r\n.maxntid 32, 1, 1\r\n{\r\n    .reg .b64 %rd<13>;\r\n    .reg .b32 %r<13>;\r\n    .reg .pred %p<2>;\r\n    ld.param.u64 %rd1, [param_0];\r\n    cvta.to.global.u64 %rd2, %rd1;\r\n    ld.param.u64 %rd3, [param_1];\r\n    cvta.to.global.u64 %rd4, %rd3;\r\n    ld.param.u64 %rd5, [param_2];\r\n    cvta.to.global.u64 %rd6, %rd5;\r\n    mov.u32 %r1, %tid.x;\r\n    mov.u32 %r2, %ctaid.x;\r\n    mov.u32 %r3, %ntid.x;\r\n    rem.s32 %r4, %r1, 32;\r\n    div.s32 %r5, %r1, 32;\r\n    mul.lo.s32 %r6, %r2, %r3;\r\n    add.s32 %r7, %r6, %r1;\r\n    setp.ge.s32 %p1, %r7, 1;\r\n    @%p1 bra endtile_1;\r\n    mul.wide.s32 %rd7, %r7, 4;\r\n    add.u64 %rd8, %rd2, %rd7;\r\n    ld.global.s32 %r8, [%rd8+0];\r\n    cvt.s16.s32 %r9, %r8;\r\n    mul.wide.s32 %rd9, %r7, 4;\r\n    add.u64 %rd10, %rd4, %rd9;\r\n    ld.global.s32 %r10, [%rd10+0];\r\n    cvt.s32.s16 %r11, %r9;\r\n    add.s32 %r12, %r11, %r10;\r\n    mul.wide.s32 %rd11, %r7, 4;\r\n    add.u64 %rd12, %rd6, %rd11;\r\n    st.global.s32 [%rd12+0], %r12;\r\nendtile_1:\r\n    ret;\r\n}\r\n"
+  }
+}

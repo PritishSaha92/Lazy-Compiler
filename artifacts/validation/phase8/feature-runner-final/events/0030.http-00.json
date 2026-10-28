@@ -1,0 +1,19 @@
+{
+  "started": "2026-10-28T10:29:56.439973+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "cubin_id": "04bb12f8fa34cc0b959593ab5ca61aece49c082f585d25dca0c18e037c9c5bce",
+    "bytes": 10200,
+    "arch": "sm_120",
+    "flags": [],
+    "entry_points": [
+      "k_regression_bulk_ring_slots"
+    ],
+    "registers": {
+      "k_regression_bulk_ring_slots": 29
+    }
+  },
+  "finished": "2026-10-28T10:29:57.311485+00:00",
+  "seconds": 0.8707755000214092
+}

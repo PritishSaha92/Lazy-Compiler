@@ -1,0 +1,19 @@
+{
+  "started": "2026-10-28T10:30:33.195761+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "cubin_id": "ea768b5120064abc7ac75a67867dd77bf21ea9db8123bef7a1770adc5d9fe9a3",
+    "bytes": 8256,
+    "arch": "sm_120",
+    "flags": [],
+    "entry_points": [
+      "k_regression_tensor_cp_async_shared"
+    ],
+    "registers": {
+      "k_regression_tensor_cp_async_shared": 22
+    }
+  },
+  "finished": "2026-10-28T10:30:33.945044+00:00",
+  "seconds": 0.7493202000041492
+}

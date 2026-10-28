@@ -1,0 +1,38 @@
+{
+  "started": "2026-10-28T10:21:16.196023+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "entry": "k_regression_strided_end_reads_initialized_axis",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "median_us": 27.136,
+    "iters": 1,
+    "outputs": {
+      "out": {
+        "shape": [
+          1,
+          2
+        ],
+        "dtype": "i32",
+        "sum": 9.0,
+        "values": [
+          3.0,
+          6.0
+        ],
+        "truncated": false
+      }
+    }
+  },
+  "finished": "2026-10-28T10:21:16.991433+00:00",
+  "seconds": 0.7955703999614343
+}

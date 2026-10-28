@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "entry": "k_regression_strided_live_fractional_step",
+  "grid": [
+    1,
+    1,
+    1
+  ],
+  "block": [
+    32,
+    1,
+    1
+  ],
+  "smem_bytes": 0,
+  "median_us": 24.544,
+  "iters": 1,
+  "outputs": {
+    "out": {
+      "shape": [
+        1,
+        2
+      ],
+      "dtype": "i32",
+      "sum": 15.0,
+      "values": [
+        5.0,
+        10.0
+      ],
+      "truncated": false
+    }
+  }
+}

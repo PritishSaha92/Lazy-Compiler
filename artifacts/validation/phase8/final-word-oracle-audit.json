@@ -1,0 +1,54 @@
+{
+  "schema": "emmy-phase8-word-oracle-audit-v1",
+  "pass": true,
+  "scope": "Supplement for corrected two-i32-word F64 fixtures; historical i64 fixture references remain mathematical evidence only",
+  "backend_sha256": "6a501221f0bf98c6639b79b3e09330b068fa397919c211d5bddea07c5a1e1a89",
+  "packages": 2,
+  "remainder_values": 1056,
+  "checked_input_words": 4224,
+  "checked_output_words": 2112,
+  "oracle": "Exact Fraction floor remainder + independent nearest-even IEEE encoding + explicit low/high signed-i32 extraction",
+  "wire_model": "JSON signed integers -> float64 -> int32, checked byte-for-byte for inputs and outputs",
+  "historical_i64_counterexample": {
+    "source": -9223372036854775807,
+    "after_float64": -9223372036854775808
+  },
+  "compiler_process_network_execution_blocked": true,
+  "gpu_used": false,
+  "sources_and_fixtures_unchanged": true,
+  "files_sha256": {
+    "ptx_backend.py": "6a501221f0bf98c6639b79b3e09330b068fa397919c211d5bddea07c5a1e1a89",
+    "tests/test_floating_remainder.py": "ff1e16bddd93e945da813cc2c005b830485286c2bb799707facff85f40c3d70c",
+    "tests/ir_cases.py": "1fb84baa1997872d4001759a44fd94e0f7e51727e74d3d83334e5192b565ca5e",
+    "tests/test_contract_edges.py": "32dd1c6eb8936f5c908ddbc8e028a588852a3ef45eac7775d864f0e6abbc6e9e",
+    "examples/phase8/remainder_words/floating_f64_mod_words/expected.npz": "3ec15357c45ad8cad991b8f8336741984ba3fdc55112f86f14f95d32c719c5ec",
+    "examples/phase8/remainder_words/floating_f64_mod_words/k_regression_floating_f64_mod_words.ir.json": "88cddec2eeaf3e0108d9ed95dbd14157eb27158694efe9cf7b1151ace031d362",
+    "examples/phase8/remainder_words/floating_f64_mod_words/meta.json": "97c1d42feee66e98e0ee4ad54cc5c8a55c567b042cf48b0b61ceb49f42cce693",
+    "examples/phase8/remainder_words/floating_f64_remainder_words/expected.npz": "3ec15357c45ad8cad991b8f8336741984ba3fdc55112f86f14f95d32c719c5ec",
+    "examples/phase8/remainder_words/floating_f64_remainder_words/k_regression_floating_f64_remainder_words.ir.json": "6df63cb65bb07c43e7030a855defed3c2f89865f1fae3e1e7c389fd5db86b084",
+    "examples/phase8/remainder_words/floating_f64_remainder_words/meta.json": "19e36ae49bc895fa3a987b30efec09e004f7b63b97a82a4aecabcc2c481e42b3"
+  },
+  "audit_script_sha256": "07739f7f23ff9f25bad9579b82ea6cff59b4e114c234611a3c4f1d0f2cb78ab5",
+  "rows": [
+    {
+      "id": "floating_f64_mod_words",
+      "pass": true,
+      "remainder_values": 528,
+      "input_i32_words": 2112,
+      "output_i32_words": 1056,
+      "expected_array_sha256": "e86b878e650552997d0ab515e82f45a7d4f8f50ad09ffa91ee032351f5afe12d",
+      "ir_metadata_and_arrays_regenerated_exactly": true,
+      "float64_intermediate_transport_is_byte_exact": true
+    },
+    {
+      "id": "floating_f64_remainder_words",
+      "pass": true,
+      "remainder_values": 528,
+      "input_i32_words": 2112,
+      "output_i32_words": 1056,
+      "expected_array_sha256": "e86b878e650552997d0ab515e82f45a7d4f8f50ad09ffa91ee032351f5afe12d",
+      "ir_metadata_and_arrays_regenerated_exactly": true,
+      "float64_intermediate_transport_is_byte_exact": true
+    }
+  ]
+}

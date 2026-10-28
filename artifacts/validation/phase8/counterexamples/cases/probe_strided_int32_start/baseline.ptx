@@ -1,0 +1,40 @@
+.version 8.0
+.target sm_89
+.address_size 64
+
+
+.visible .entry k_regression_probe_strided_int32_start(
+    .param .u64 param_0
+)
+{
+    .reg .b64 %rd<7>;
+    .reg .b32 %r<10>;
+    .reg .pred %p<3>;
+    ld.param.u64 %rd1, [param_0];
+    cvta.to.global.u64 %rd2, %rd1;
+    mov.u32 %r1, %tid.x;
+    mov.u32 %r2, %ctaid.x;
+    mov.u32 %r3, %ntid.x;
+    rem.s32 %r4, %r1, 32;
+    div.s32 %r5, %r1, 32;
+    mul.lo.s32 %r6, %r2, %r3;
+    add.s32 %r7, %r6, %r1;
+    setp.ge.s32 %p1, %r7, 1;
+    @%p1 bra endtile_1;
+    mov.s32 %r8, 0;
+    mov.s64 %rd3, 4294967296;
+loop_2:
+    setp.ge.s64 %p2, %rd3, 1;
+    @%p2 bra endloop_3;
+    add.s32 %r9, %r8, 1;
+    mov.s32 %r8, %r9;
+    add.s64 %rd4, %rd3, 1;
+    mov.s64 %rd3, %rd4;
+    bra loop_2;
+endloop_3:
+    mul.wide.s32 %rd5, 0, 4;
+    add.u64 %rd6, %rd2, %rd5;
+    st.global.s32 [%rd6+0], %r8;
+endtile_1:
+    ret;
+}

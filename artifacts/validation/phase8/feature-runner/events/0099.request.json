@@ -1,0 +1,52 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_unstamped_mixed_integer_xor",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "x",
+        "dtype": "i32",
+        "shape": [
+          1
+        ],
+        "data": [
+          255
+        ]
+      },
+      {
+        "name": "y",
+        "dtype": "i32",
+        "shape": [
+          1
+        ],
+        "data": [
+          16777217
+        ]
+      },
+      {
+        "name": "out",
+        "dtype": "i32",
+        "shape": [
+          1
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "3cbedcb342e0871418922e6d098ad0f5475929193d8603047095a2bbff1e93ef"
+  }
+}

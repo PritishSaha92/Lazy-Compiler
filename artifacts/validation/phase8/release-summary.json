@@ -1,0 +1,181 @@
+{
+  "schema": "emmy-phase8-release-v1",
+  "pass": true,
+  "created_utc": "2026-10-28T10:41:12.983587+00:00",
+  "source_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "6a501221f0bf98c6639b79b3e09330b068fa397919c211d5bddea07c5a1e1a89",
+    "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+    "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "scope": "Final default compiler on public and explicit development fixtures; exact source/evidence linkage. No hidden tests or competitor execution.",
+  "changes": [
+    "Prescribed maxntid launch bound",
+    "Pinned int loop bindings and capture order",
+    "Exact binary floating remainder reduction",
+    "Exact zero-tolerance integer test comparisons"
+  ],
+  "organizer_gpu": {
+    "public_checks": 15,
+    "public_passes": 15,
+    "additional_checks": 51,
+    "additional_passes": 51,
+    "total_checks": 66,
+    "total_passes": 66,
+    "local_gpu_used": false
+  },
+  "cpu": {
+    "methods": 139,
+    "passed": 120,
+    "explicit_local_gpu_skips": 19,
+    "executed_sources_unchanged": true
+  },
+  "feature_wire_audit": {
+    "integrity_pass": true,
+    "numerical_gate_pass": true,
+    "events_verified": 102,
+    "http_attempts_verified": 102
+  },
+  "initial_feature_attempt": {
+    "checks": 51,
+    "passed": 49,
+    "failed": 2,
+    "reason": "Raw I64 FP64 bit transport lost low bits through runner binary64 coercion; failed fixtures/results preserved. Final roster replaces them with lossless two-I32-word fixtures, without changing reference semantics or tolerance."
+  },
+  "separate_counterexamples": {
+    "baseline_failures": 3,
+    "repaired_passes": 3,
+    "included_in_66_count": false
+  },
+  "performance": {
+    "baseline": "Our frozen phase7 compiler",
+    "workloads": 10,
+    "rounds": 5,
+    "warmup": 3,
+    "iterations": 30,
+    "rows": [
+      {
+        "problem": "a01_attention",
+        "speedup": 0.9999381609053245,
+        "median_paired_speedup": 1.0
+      },
+      {
+        "problem": "a02_attention_128",
+        "speedup": 2.6014917421417154,
+        "median_paired_speedup": 2.6020245071923283
+      },
+      {
+        "problem": "m01_matmul_512",
+        "speedup": 0.9998237574903066,
+        "median_paired_speedup": 0.9998237574903066
+      },
+      {
+        "problem": "m02_matmul_rect",
+        "speedup": 1.0,
+        "median_paired_speedup": 1.0031847133757963
+      },
+      {
+        "problem": "r02_big_sum",
+        "speedup": 1.0,
+        "median_paired_speedup": 1.0
+      },
+      {
+        "problem": "f02_row_softmax",
+        "speedup": 1.0,
+        "median_paired_speedup": 1.0
+      },
+      {
+        "problem": "hold_a01_long_context",
+        "speedup": 1.0515800203873598,
+        "median_paired_speedup": 1.0517944535073411
+      },
+      {
+        "problem": "hold_a02_long_query",
+        "speedup": 1.0014705882352941,
+        "median_paired_speedup": 1.0
+      },
+      {
+        "problem": "hold_m02_tall_thin",
+        "speedup": 1.0,
+        "median_paired_speedup": 1.0014409221902016
+      },
+      {
+        "problem": "hold_f03_weighted_softmax_sum",
+        "speedup": 1.014218009478673,
+        "median_paired_speedup": 1.009478672985782
+      }
+    ],
+    "limits": "Unlocked clocks. No head-to-head competitor comparison or general speedup claim."
+  },
+  "historical_fp64_reference_failures": 9,
+  "limitations": [
+    "Development fixtures are not organizer hidden tests.",
+    "Local GPU test methods were explicitly skipped; organizer GPU evidence is separate.",
+    "The earlier nine FP64-buffer/FP32-state reference conflicts remain failures.",
+    "Full-width I64 wire values are not certified by the current runner transport.",
+    "Floating remainder is a correctness fallback, not a throughput optimization."
+  ],
+  "evidence": {
+    "public": {
+      "path": "artifacts/validation/phase8/public-submit/summary.json",
+      "sha256": "b7a81e69f5426e38eae1ad815a30827383c4613aa276596ce17149c8ca8e7931"
+    },
+    "features": {
+      "path": "artifacts/validation/phase8/feature-runner-final/summary.json",
+      "sha256": "e679461d268e2b42b00a10344de84a41d9968ee013e41b6c158520ec94f214e1"
+    },
+    "feature_audit": {
+      "path": "artifacts/validation/phase8/feature-runner-final/integrity-audit.json",
+      "sha256": "9331cc433d86ab92c4f4493cee45be80c18e3035ec75ecf4747530bb5ccd57a3"
+    },
+    "manifest": {
+      "path": "artifacts/validation/phase8/feature-manifest-final.json",
+      "sha256": "059ad5c1b35ac5618b6350144740df8e6197737c832f9ed13c2c7939142dd623"
+    },
+    "cpu": {
+      "path": "artifacts/validation/phase8/cpu-regressions-words.json",
+      "sha256": "f16f94b9a9503c34ccad6797db846db72cec5684f076634b1d90fff9b954e873"
+    },
+    "initial_features": {
+      "path": "artifacts/validation/phase8/feature-runner/summary.json",
+      "sha256": "951fc95dc838daa9bb78e8137c897f4db03e43e060b305dc1c38a01189e5a37f"
+    },
+    "baseline_failures": {
+      "path": "artifacts/validation/phase8/counterexamples/baseline-runner/summary.json",
+      "sha256": "b8c3fd80d082f3c2637c0f3f52c3510f17f72885e7da54698a99c41379ec0ee2"
+    },
+    "repaired_counterexamples": {
+      "path": "artifacts/validation/phase8/counterexamples/repaired-runner/summary.json",
+      "sha256": "270acfa0a30f6098779b61b6b11b342499684b7d8a5faf51b1d9279658d24ddf"
+    },
+    "performance_public": {
+      "path": "artifacts/validation/phase8/launch-bounds/paired-runner.json",
+      "sha256": "e0f6251dd740a2e33418eca391dcfb1aab8d4a5c1ec35181350af5cef29c7d21"
+    },
+    "performance_development": {
+      "path": "artifacts/validation/phase8/launch-bounds/paired-holdout-runner.json",
+      "sha256": "6a6b81d989f3fce0f509e2cabae8419856cb955f55c018bffdbaf89d1f959d1f"
+    },
+    "compatibility": {
+      "path": "artifacts/validation/phase8/final-compatibility-launch-bounds.json",
+      "sha256": "9bfcf8b01d68dd517189b9ca5bc9644cb73183923e0ad11cdeafdc1ab1128c9b"
+    },
+    "benchmark_linkage": {
+      "path": "artifacts/validation/phase8/final-benchmark-linkage.json",
+      "sha256": "a65626678b912e52e6e7297ed1cf875d3be65e8e9969e2cf4ea93d78fb96253f"
+    },
+    "development_benchmark_linkage": {
+      "path": "artifacts/validation/phase8/final-holdout-benchmark-linkage.json",
+      "sha256": "087d5d0c1cb285a2ca6a18839c2a00f9e5e0ee65abd5e55264467d60a97a4ff5"
+    },
+    "initial_oracles": {
+      "path": "artifacts/validation/phase8/final-oracle-audit.json",
+      "sha256": "3be09f70bc586c41a11786ba33d58db7fe7da7ec3b3d2a1478cb6ec19aa2fbc9"
+    },
+    "word_oracles": {
+      "path": "artifacts/validation/phase8/final-word-oracle-audit.json",
+      "sha256": "d14a4e50a54be65c3dfd473195d50d4fdd709d44d12abcf7cdaeecae13699f1d"
+    }
+  }
+}

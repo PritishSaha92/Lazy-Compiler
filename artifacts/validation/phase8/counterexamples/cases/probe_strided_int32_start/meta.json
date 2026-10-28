@@ -1,0 +1,40 @@
+{
+  "id": "probe_strided_int32_start",
+  "graph_inputs": [],
+  "graph_outputs": [
+    "out"
+  ],
+  "rtol": 0,
+  "atol": 0,
+  "kernels": [
+    {
+      "entry": "k_regression_probe_strided_int32_start",
+      "grid": [
+        1,
+        1,
+        1
+      ],
+      "block": [
+        32,
+        1,
+        1
+      ],
+      "smem_bytes": 0,
+      "zero_outputs": [],
+      "arg_order": [
+        "out"
+      ],
+      "args": [
+        {
+          "name": "out",
+          "dtype": "i32",
+          "shape": [
+            1
+          ],
+          "output": true
+        }
+      ],
+      "final": true
+    }
+  ]
+}

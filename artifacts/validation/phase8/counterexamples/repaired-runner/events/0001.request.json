@@ -1,0 +1,32 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_probe_strided_int32_start",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "out",
+        "dtype": "i32",
+        "shape": [
+          1
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "78b0fac1e7fb30148b8bfd08686d20936d2228d553e890c239ae5d4e62470a14"
+  }
+}

@@ -200,8 +200,18 @@ def compare_outputs(produced: dict, expected: dict, rtol: float, atol: float) ->
                 raise ValueError(
                     f"Output {name} shape {actual.shape} != reference {reference.shape}"
                 )
-        good = np.isclose(actual, reference, rtol=rtol, atol=atol, equal_nan=False)
-        delta = np.abs(actual.astype(np.float64) - reference.astype(np.float64))
+        if reference.dtype.kind in "iu" and rtol == atol == 0:
+            if actual.dtype.kind not in "iu":
+                raise ValueError(f"Output {name} requires exact integer values")
+            # isclose (and mixed int64/uint64 equality) can promote to float64,
+            # hiding adjacent integers above 2**53. Python integers preserve
+            # both comparison and subtraction, including endpoint differences.
+            exact_actual, exact_reference = actual.astype(object), reference.astype(object)
+            good = exact_actual == exact_reference
+            delta = np.asarray(np.abs(exact_actual - exact_reference), dtype=np.float64)
+        else:
+            good = np.isclose(actual, reference, rtol=rtol, atol=atol, equal_nan=False)
+            delta = np.abs(actual.astype(np.float64) - reference.astype(np.float64))
         finite_delta = delta[np.isfinite(delta)]
         row = {
             "name": name,
@@ -214,8 +224,8 @@ def compare_outputs(produced: dict, expected: dict, rtol: float, atol: float) ->
             index = tuple(np.argwhere(~good)[0]) if actual.shape else ()
             row["first_failure"] = {
                 "index": list(map(int, index)),
-                "actual": float(actual[index]),
-                "expected": float(reference[index]),
+                "actual": actual[index].item(),
+                "expected": reference[index].item(),
             }
         rows.append(row)
     return rows

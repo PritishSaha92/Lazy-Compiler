@@ -1,0 +1,19 @@
+{
+  "started": "2026-10-28T09:57:14.974229+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "cubin_id": "b1fd97a4390e5091a5db951610d6809fba73aa14f678daf09e9fd39d1cb649b4",
+    "bytes": 8752,
+    "arch": "sm_120",
+    "flags": [],
+    "entry_points": [
+      "k_regression_probe_f32_remainder_quotient"
+    ],
+    "registers": {
+      "k_regression_probe_f32_remainder_quotient": 18
+    }
+  },
+  "finished": "2026-10-28T09:57:15.982400+00:00",
+  "seconds": 1.0072836000472307
+}

@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "cubin_id": "e939aa1f27ef65063e2d33d843249ce3329c3f9c24c45d8c2a06fd7896a78056",
+  "bytes": 9984,
+  "arch": "sm_120",
+  "flags": [],
+  "entry_points": [
+    "k_regression_floating_f64_mod"
+  ],
+  "registers": {
+    "k_regression_floating_f64_mod": 19
+  }
+}

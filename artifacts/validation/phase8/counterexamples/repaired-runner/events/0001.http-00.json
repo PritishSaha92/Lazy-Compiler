@@ -1,0 +1,36 @@
+{
+  "started": "2026-10-28T10:10:58.935459+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "entry": "k_regression_probe_strided_int32_start",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "median_us": 20.992,
+    "iters": 1,
+    "outputs": {
+      "out": {
+        "shape": [
+          1
+        ],
+        "dtype": "i32",
+        "sum": 1.0,
+        "values": [
+          1.0
+        ],
+        "truncated": false
+      }
+    }
+  },
+  "finished": "2026-10-28T10:10:59.701583+00:00",
+  "seconds": 0.7661433999892324
+}

@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "cubin_id": "bed6f9eb98ae33308f98103d008b008eb012030a6fc4a22a796a53046f1a0891",
+  "bytes": 10432,
+  "arch": "sm_120",
+  "flags": [],
+  "entry_points": [
+    "k_regression_tensor_fused_guarded_epilogue"
+  ],
+  "registers": {
+    "k_regression_tensor_fused_guarded_epilogue": 48
+  }
+}

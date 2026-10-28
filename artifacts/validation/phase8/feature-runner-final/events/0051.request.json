@@ -1,0 +1,59 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_tensor_fused_guarded_epilogue",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "a",
+        "dtype": "f32",
+        "shape": [
+          11,
+          19
+        ],
+        "seed": 0
+      },
+      {
+        "name": "b",
+        "dtype": "f32",
+        "shape": [
+          19,
+          7
+        ],
+        "seed": 1
+      },
+      {
+        "name": "bias",
+        "dtype": "f32",
+        "shape": [
+          7
+        ],
+        "seed": 2
+      },
+      {
+        "name": "out",
+        "dtype": "f32",
+        "shape": [
+          11,
+          7
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "bed6f9eb98ae33308f98103d008b008eb012030a6fc4a22a796a53046f1a0891"
+  }
+}

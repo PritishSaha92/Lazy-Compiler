@@ -5,7 +5,45 @@ interface. Assembly success, numerical correctness, and timing are separate
 results. Tests never replace the submitted translation with Emmy's renderer,
 nvcc, LLVM, Triton, or a reference CUDA file.
 
-## Current phase-7 release
+## Current phase-8 revision
+
+The [phase-8 report](PHASE8.md) covers prescribed launch bounds, signed integer
+loop bindings, floating floor remainder and the exact integer output oracle.
+A fresh run through the unchanged organizer `submit.py` passed **15/15 public
+problems**. The final additional runner gate passed **51/51 packages**:
+41 retained, six loop-binding and four remainder. CPU/assembler discovery passed
+**120 methods**, with 19 local-GPU skips out of 139 discovered methods and no
+failures or errors. The [current release summary](../artifacts/validation/phase8/release-summary.json)
+records source hashes, these completed gates, raw-response replay and checkout
+verification. No local GPU was used for this revision.
+
+The initial broad gate passed **49/51**. Its two FP64 raw-I64 fixture failures
+remain recorded: the runner's binary64 numeric conversion lost low bits.
+The final roster replaces those two fixtures with two-I32-word transport;
+references and zero tolerance are unchanged. This is a test-transport repair,
+not a conversion of the original failed attempts into passes. See
+[PHASE8.md](PHASE8.md) for both runs and their attribution.
+
+The four remainder packages use 528 input pairs per type through both named
+aliases. FP32 uses one I32 word and FP64 uses two I32 words per value to preserve
+raw IEEE bits through the runner's numeric conversion. The output
+oracle compares zero-tolerance integers without floating-point coercion,
+including mixed signed/unsigned 64-bit values. NaN outputs are explicitly
+canonicalized for these fixtures rather than accepted by the ordinary floating
+comparison policy. [Oracle tests](../tests/test_integer_oracle.py) cover the
+checker independently of the backend.
+
+A separate exact rational/IEEE-encoding audit passed for all **1,056 FP64
+remainder values** in the two word-transport packages. It checked **4,224 input
+words and 2,112 output words** through the observed binary64-to-I32 wire model.
+That is independent reference/transport evidence, not another GPU execution.
+
+The phase-8 paired launch-bound experiment is performance evidence against our
+previous compiler, separate from the correctness gate. See its retained
+[timing reports and limitations](PHASE8.md#performance-experiment).
+Earlier phase reports keep their original sources, results and failures below.
+
+## Historical phase-7 release
 
 The [phase-7 release](PHASE7.md) corrects logical builtin names/types,
 unstamped mixed-integer operations and expression-shift promotion. Fresh checks
@@ -15,8 +53,9 @@ changed. Complete discovery passed **110 CPU/assembler methods**, with 19 explic
 local-GPU skips. The isolated install passed 25 packages, 75 compilations and
 three expected diagnostics. The [source-bound
 summary](../artifacts/validation/phase7/release-summary.json) links all reports.
-No local GPU was used. The following phase-6 results belong to the previously
-packaged sources and are retained unchanged.
+No local GPU was used. These results belong to the phase-7 sources, not the
+changed phase-8 backend. The following phase-6 results likewise belong to their
+previously packaged sources and are retained unchanged.
 
 ## Previously packaged phase-6 research-informed release
 
@@ -375,8 +414,20 @@ current source's totals.
 
 ## Reproduce the checks
 
-The current complete gate uses the retained generated packages and creates a
-new report directory. It serializes all GPU launches on the official runner:
+Start with the current [phase-8 gate](PHASE8.md) and source-checkout verification:
+
+```console
+python tools/check_checkout.py
+python tools/run_regressions.py --report artifacts/validation/checkout-current/cpu-regressions.json
+```
+
+The first command defaults to
+`artifacts/validation/checkout-current/verification.json`; use a fresh `--report`
+path for repeated checks. These commands do not contact the organizers' runner.
+
+The broader historical corpus can be checked separately with the following
+commands. They use retained generated packages, require unused report
+directories and serialize GPU launches on the official runner:
 
 ```console
 python tools/check_release.py --compiler compile.py --report-dir artifacts/validation/release-recheck
@@ -438,7 +489,9 @@ if either compiler source changes during its invocation.
 The checker compares every returned element with the independent NumPy
 references and the package's `rtol`/`atol`. Output shape mismatches fail instead of
 using NumPy broadcasting. Missing/truncated outputs fail. Matching NaNs do not
-count as a pass. Seed zero uses the supplied `expected.npz`; additional seeds use
+count as a pass. Zero-tolerance integer references require integer outputs and
+use exact value comparisons, avoiding float64 rounding above `2**53`. Integer
+first-failure values remain integers in JSON. Seed zero uses the supplied `expected.npz`; additional seeds use
 the mathematical references in `tools/expressions_open.py`. Additional spec files
 can be supplied using `--references`.
 

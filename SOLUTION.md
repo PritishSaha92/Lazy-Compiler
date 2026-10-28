@@ -36,22 +36,37 @@ stderr and a nonzero status. The submission consists of `compile.py`,
 
 ## Current manual-review release
 
-The [phase-7 release](docs/PHASE7.md) adds logical GPU builtin names/types,
-unstamped mixed-integer inference, and expression-shift promotion corrections.
-Its fresh organizer-GPU checks passed **15/15 public + 41/41 additional packages**:
-29 previous feature examples, 11 new counterexamples and one retained scalar
-case with changed PTX. Complete CPU/assembler discovery passed 110 methods with
-19 explicit local-GPU skips; 25 isolated-install packages passed 75 compilations
-and three expected diagnostics. No local GPU was used.
+The current [phase-8 revision](docs/PHASE8.md) emits launch bounds from the
+prescribed block size and corrects integer loop bindings and floating floor
+remainder. The diagnostic harness now compares zero-tolerance integer outputs
+exactly, preserving large integer failure values. A fresh run through the
+unchanged organizer client passed **15/15 public problems**, and the final
+additional feature gate passed **51/51 packages**. CPU/assembler discovery
+passed **120 methods**, with 19 explicit local-GPU skips out of 139 methods. The
+[source-bound summary](artifacts/validation/phase8/release-summary.json) records
+the current feature, CPU/assembler and checkout evidence; these outcomes are
+distinct from the historical counts below.
+
+The phase-8 feature gate covers 41 retained packages, six new loop-binding
+packages and four new remainder packages. Its initial **49/51 run remains a
+failed gate**: the two FP64 raw-I64 fixtures lost low bits in runner transport.
+The final roster substitutes two-I32-word fixtures with unchanged references
+and zero tolerance; the failed attempts are retained. The
+[phase-8 report](docs/PHASE8.md) records this distinction and the independent
+word-transport audit. All GPU validation for this revision uses the organizers'
+runner. The [phase-7 report](docs/PHASE7.md), including its 41 additional GPU
+passes and 110 CPU/assembler passes, remains evidence for the previous compiler.
 
 The [submission overview](SUBMISSION.md) and [feature index](docs/FEATURES.md)
 cover the tensor-core and bulk-copy extensions, examples, tests and exact limits.
-A [runtime ZIP](artifacts/release/phase7/latest.json) and a
-[complete review/source bundle](artifacts/release/phase7/review/latest.json)
-are provided. Use the review bundle for manual inspection. The
+Use this source checkout for the repository submission; a new ZIP is not needed.
+The [checkout notes](docs/CHECKOUT.md) explain the version-2 inventory, current
+runtime references and verification commands. The preserved
+[phase-7 archive pointers](artifacts/release/phase7/review/latest.json) describe
+the previous packaged release, not the current backend. The
 [phase-6 report](docs/PHASE6.md) remains the historical snapshot described in
-the recorded video; the phase-7 report documents the subsequent corrections.
-Preparing these local artifacts does not update the public repository or entry.
+the recorded video; later reports document the subsequent corrections.
+Updating this checkout does not itself push the public repository or update the entry.
 
 ## Historical phase-4 runtime artifact
 
@@ -116,6 +131,12 @@ dispatch, reference-code reads, expected-output access, or precomputed answers.
   commit groups, waits, and subsequent consumer synchronization remain distinct.
 - Addressing follows tensor layouts and prescribed thread mapping. Vector memory
   operations require proven alignment; split-K writes use atomic accumulation.
+- Loop variables use signed 32-bit bindings. Explicit ends are captured once
+  after initialization; live increments compute with promoted operands before
+  assigning back to the induction variable.
+- Named FP32/FP64 floor remainder uses exact power-of-two scaling and subtraction
+  instead of forming a rounded quotient. Integer-bit transport fixtures check
+  low-bit results, subnormals, signed zero and canonicalized NaN outcomes.
 
 The continued audit also fixed four general cases: capture mutable strided-loop
 bounds once at entry; implement the source IR's legacy flattened-index convention;
@@ -155,6 +176,15 @@ on the runner, not guarantees for every shape. A scalar-load-packing experiment
 was rejected after it showed no broad runtime gain. The
 [performance study](docs/PERFORMANCE.md) records the proof, measurements and
 tradeoffs. Scheduled unrolling has per-loop and per-kernel size budgets.
+
+Phase 8 adds `.maxntid` from the supplied block dimensions, including helper
+threads. A paired experiment against our frozen previous compiler found a
+2.60x median improvement on `a02_attention_128`, while the other sampled public
+workloads were approximately unchanged. The [phase-8 measurements](docs/PHASE8.md#performance-experiment)
+retain rounds, input checks and limits; this is not a ranking against other
+submissions or a claim for every shape. The exact remainder fallback may be
+slow for extreme exponent ratios. Existing approximate exp and sigmoid/SiLU
+formula policies remain unchanged and explicit in the [type rules](docs/TYPE_SUPPORT.md).
 
 A separate [selector pilot](docs/SELECTOR_STUDY.md) explores fixed heuristics,
 a shallow tree and offline bandit replay over existing unroll budgets. Its

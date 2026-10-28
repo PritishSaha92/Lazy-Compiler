@@ -1,0 +1,44 @@
+{
+  "started": "2026-10-28T10:31:59.302026+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "entry": "k_regression_shift_narrow_left_promotion",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "median_us": 23.872,
+    "iters": 1,
+    "outputs": {
+      "out": {
+        "shape": [
+          4,
+          2
+        ],
+        "dtype": "i64",
+        "sum": 8182.0,
+        "values": [
+          -2.0,
+          -2.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          4095.0,
+          4095.0
+        ],
+        "truncated": false
+      }
+    }
+  },
+  "finished": "2026-10-28T10:32:00.039749+00:00",
+  "seconds": 0.7373212999664247
+}

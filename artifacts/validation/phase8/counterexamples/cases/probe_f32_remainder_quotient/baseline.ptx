@@ -1,0 +1,46 @@
+.version 8.0
+.target sm_89
+.address_size 64
+
+
+.visible .entry k_regression_probe_f32_remainder_quotient(
+    .param .u64 param_0,
+    .param .u64 param_1,
+    .param .u64 param_2
+)
+{
+    .reg .b64 %rd<13>;
+    .reg .b32 %r<8>;
+    .reg .pred %p<2>;
+    .reg .f32 %f<7>;
+    ld.param.u64 %rd1, [param_0];
+    cvta.to.global.u64 %rd2, %rd1;
+    ld.param.u64 %rd3, [param_1];
+    cvta.to.global.u64 %rd4, %rd3;
+    ld.param.u64 %rd5, [param_2];
+    cvta.to.global.u64 %rd6, %rd5;
+    mov.u32 %r1, %tid.x;
+    mov.u32 %r2, %ctaid.x;
+    mov.u32 %r3, %ntid.x;
+    rem.s32 %r4, %r1, 32;
+    div.s32 %r5, %r1, 32;
+    mul.lo.s32 %r6, %r2, %r3;
+    add.s32 %r7, %r6, %r1;
+    setp.ge.s32 %p1, %r7, 8;
+    @%p1 bra endtile_1;
+    mul.wide.s32 %rd7, %r7, 4;
+    add.u64 %rd8, %rd2, %rd7;
+    ld.global.f32 %f1, [%rd8+0];
+    mul.wide.s32 %rd9, %r7, 4;
+    add.u64 %rd10, %rd4, %rd9;
+    ld.global.f32 %f2, [%rd10+0];
+    div.rn.f32 %f3, %f1, %f2;
+    cvt.rmi.f32.f32 %f4, %f3;
+    mul.rn.f32 %f5, %f4, %f2;
+    sub.rn.f32 %f6, %f1, %f5;
+    mul.wide.s32 %rd11, %r7, 4;
+    add.u64 %rd12, %rd6, %rd11;
+    st.global.f32 [%rd12+0], %f6;
+endtile_1:
+    ret;
+}

@@ -16,10 +16,39 @@ different schedule. No CUDA renderer or existing compiler performs its lowering.
 | Scalar data types | FP16/BF16/FP32/FP64, signed/unsigned 8/16/32/64-bit integers, predicates and raw-bit transport, with per-operation admission | [Type rules](TYPE_SUPPORT.md), [type tests](../tests/test_type_capabilities.py), [cast tests](../tests/test_cast_edges.py) |
 | Required scheduled IR | Tile/raster mapping, scoped loops, explicit accumulator bases, ordered coupled-state reductions, shared broadcast, vector memory and atomics | [Architecture](COMPILER.md), [semantic tests](../tests/test_semantics.py), public problems in all five categories |
 | Logical GPU builtins and auxiliary-role guards | Canonical Emmy names and CUDA aliases, unsigned geometry components, signed warp size, explicit raw-thread conditions with existing Tile auxiliary decoding | [Builtin/auxiliary examples](../tests/test_builtin_aux.py); [phase-7 scope and validation](PHASE7.md) |
+| Prescribed launch bounds | `.maxntid` from all metadata block dimensions, including auxiliary threads; no schedule or register-cap change | [Launch-bound tests](../tests/test_launch_bounds.py), [paired measurements](PHASE8.md#performance-experiment) |
+| Integer loop bindings | Signed 32-bit induction variable, captured explicit end and live promoted increments | [Loop-binding examples and tests](../tests/test_loop_bindings.py), [lifetime tests](../tests/test_loop_capture.py) |
+| Floating floor remainder | FP32/FP64 power-of-two reduction, divisor-sign adjustment and explicit exceptional-value handling | [Remainder examples and tests](../tests/test_floating_remainder.py), [exact integer oracle tests](../tests/test_integer_oracle.py) |
 
-The phase-7 release also corrects unstamped mixed-integer arithmetic and
-expression-shift promotion; see the [type rules](TYPE_SUPPORT.md) and
-[independent integer fixtures](../tests/test_unstamped_integer.py).
+The earlier phase-7 corrections to unstamped mixed-integer arithmetic and
+expression-shift promotion remain included; see the [type rules](TYPE_SUPPORT.md)
+and [independent integer fixtures](../tests/test_unstamped_integer.py).
+Current validation is tracked in [PHASE8.md](PHASE8.md), with historical reports
+kept separate from the current source.
+
+## Scalar edge contracts
+
+`Loop` and `StridedLoop` bind their induction variable as signed 32-bit `int`,
+independently of the start expression's type. An explicit end is evaluated after
+that binding and captured once as another `int`. The live increment is evaluated
+after the body, computes with ordinary operand promotions, then narrows back to
+the induction variable. This preserves fractional-step and mutable-bound cases.
+
+Named floating `remainder`/`mod` use exact power-of-two scaling and subtraction
+before the floor-remainder sign correction. The FP32/FP64 path preserves
+subnormal residuals and the divisor's sign for zero. Invalid inputs produce NaN;
+NaN payload and sign are unspecified. FP16/BF16 use FP32 computation followed by
+their existing narrowing rule. Floating `BinaryExpr('%')` remains rejected.
+Extreme exponent ratios can require 277 visits per phase in FP32 or 2,098 in
+FP64; this fallback prioritizes correctness, not remainder throughput.
+
+The final runner fixtures transport FP32 remainder as one I32 word and FP64 as
+two I32 words per value, preserving every bit through the runner's numeric
+conversion. They canonicalize expected NaNs. The initial raw-I64 transport
+failures remain documented in [PHASE8.md](PHASE8.md). Zero-tolerance integer
+output comparisons use exact
+values, including mixed signed/unsigned 64-bit results; first-failure diagnostics
+retain integer values. This avoids hiding low-bit errors through float64 rounding.
 
 ## Tensor-core contract
 

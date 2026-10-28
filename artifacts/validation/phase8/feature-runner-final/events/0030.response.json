@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "cubin_id": "04bb12f8fa34cc0b959593ab5ca61aece49c082f585d25dca0c18e037c9c5bce",
+  "bytes": 10200,
+  "arch": "sm_120",
+  "flags": [],
+  "entry_points": [
+    "k_regression_bulk_ring_slots"
+  ],
+  "registers": {
+    "k_regression_bulk_ring_slots": 29
+  }
+}

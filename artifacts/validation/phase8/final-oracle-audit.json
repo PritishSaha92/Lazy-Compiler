@@ -1,0 +1,176 @@
+{
+  "schema": "emmy-phase8-independent-oracle-audit-v1",
+  "pass": true,
+  "scope": "Ten new fixture packages reconstructed without compiler execution; independent rational/recurrence oracles match exact expected arrays",
+  "compiler_process_network_execution_blocked": true,
+  "gpu_used": false,
+  "source_and_fixture_files_unchanged": true,
+  "files_sha256": {
+    "ptx_backend.py": "6a501221f0bf98c6639b79b3e09330b068fa397919c211d5bddea07c5a1e1a89",
+    "tests\\test_loop_bindings.py": "711a6e612a14c8b3a80c8543f258e6f15429676d6be605223a204eb8287dc08d",
+    "tests\\test_floating_remainder.py": "02bace76d8a3eb802c0a9ba6df682ed167afca3dfbb308fc482ab5fa50ce28e2",
+    "tests\\ir_cases.py": "1fb84baa1997872d4001759a44fd94e0f7e51727e74d3d83334e5192b565ca5e",
+    "tests\\test_contract_edges.py": "32dd1c6eb8936f5c908ddbc8e028a588852a3ef45eac7775d864f0e6abbc6e9e",
+    "tools\\check_compiler.py": "0ac83d1690a1e5e1ef90de18a1b65de50b48f35f97e2150936908cea5e2ab1f1",
+    "examples\\phase8\\loops\\strided_end_reads_initialized_axis\\expected.npz": "7eaa6de68aa60f54e408baac5d1a5091965b5071d0091c5d56bb18603e1589b1",
+    "examples\\phase8\\loops\\strided_end_reads_initialized_axis\\k_regression_strided_end_reads_initialized_axis.ir.json": "b4ba9de4d8f60a697b129d9375841eac54fbe40b239784384826f6739494509a",
+    "examples\\phase8\\loops\\strided_end_reads_initialized_axis\\meta.json": "0bd1b05aef5b3d67b4523620ecba2a29ed76657e668e292735c5bab92521ddfa",
+    "examples\\phase8\\loops\\strided_f64_end_snapshot\\expected.npz": "72139044469306cdc23d211e5ed9268b312fc1b0db102b522292409f3dec4bb5",
+    "examples\\phase8\\loops\\strided_f64_end_snapshot\\k_regression_strided_f64_end_snapshot.ir.json": "899727d16ba9b67ce5c95eca751b5b72a643b62392fb6824be1c38ee427fbd52",
+    "examples\\phase8\\loops\\strided_f64_end_snapshot\\meta.json": "6ec7d8b3eb7a27e33f8e9fe5837966f5ef23f54c85bd5c9d56e60fd3761b709b",
+    "examples\\phase8\\loops\\strided_f64_start_and_step\\expected.npz": "2d365662598e0dd4a9525eade2694649c40fd501a24a7c6b5529611fa8410640",
+    "examples\\phase8\\loops\\strided_f64_start_and_step\\k_regression_strided_f64_start_and_step.ir.json": "d683f8f98261a7cca94f1d9b2784397a6b336420557bacc4c9d0e5d636e682f3",
+    "examples\\phase8\\loops\\strided_f64_start_and_step\\meta.json": "e7480f6c6cfb72cb68f8a04a413d3a1ab81e836bbe5bd49168825ca7e268d96f",
+    "examples\\phase8\\loops\\strided_i64_start_narrows\\expected.npz": "d4b4ca3a952aa9bedd087344297a055bf3348ed9de15f6473b8b056cd565ec17",
+    "examples\\phase8\\loops\\strided_i64_start_narrows\\k_regression_strided_i64_start_narrows.ir.json": "60fea2e935467ca31d145d8516b746cbcea4ea843997e6282d1e6d997d6c9dc8",
+    "examples\\phase8\\loops\\strided_i64_start_narrows\\meta.json": "f1770e29287734e56b34598bc3b628fed86650904fd99630398986f241d00c43",
+    "examples\\phase8\\loops\\strided_live_fractional_step\\expected.npz": "6e6a48f71e0bbbc315eda7e47836d7152747d16167f10fcf8cf6d9fa92f0a4ac",
+    "examples\\phase8\\loops\\strided_live_fractional_step\\k_regression_strided_live_fractional_step.ir.json": "ba12e27280bb7addbdebf5600028f7ee40a978af0bd835c71f2e1de4d3a7f2a9",
+    "examples\\phase8\\loops\\strided_live_fractional_step\\meta.json": "157147c9b6e81b61d047d4970333b8ac173154e036a70abd6c16e664f672cff2",
+    "examples\\phase8\\loops\\strided_unsigned_start_negative_end\\expected.npz": "577ab3e85af4e51aa9a2bba134fc884aa866e9e5602c282664a7af6a491ca451",
+    "examples\\phase8\\loops\\strided_unsigned_start_negative_end\\k_regression_strided_unsigned_start_negative_end.ir.json": "64396b26dd396efff6bdfc62829b50f4cc199f781065ac05848279480753e5b2",
+    "examples\\phase8\\loops\\strided_unsigned_start_negative_end\\meta.json": "d6149e60e5b0047d1c825536cbcfbd76c531ee21198c71ea40392c97ef8486dd",
+    "examples\\phase8\\remainder\\floating_f32_mod\\expected.npz": "0dd22de33bffe72230bc1278167a8c3230f42fadb70dad7c7d86f94380434cbd",
+    "examples\\phase8\\remainder\\floating_f32_mod\\k_regression_floating_f32_mod.ir.json": "01a6900431a6582f8a7cabd4dd6df6a907cd1ec594d38c9009c35e6a2db2eda3",
+    "examples\\phase8\\remainder\\floating_f32_mod\\meta.json": "21fd6e02c0432dde7771d471a5c7ef3348feffa706beb596bef5c80524c25406",
+    "examples\\phase8\\remainder\\floating_f32_remainder\\expected.npz": "0dd22de33bffe72230bc1278167a8c3230f42fadb70dad7c7d86f94380434cbd",
+    "examples\\phase8\\remainder\\floating_f32_remainder\\k_regression_floating_f32_remainder.ir.json": "78b272809f0b0c876c1d447d47f467b0c6593ec62b89679ce5595b50be230f2c",
+    "examples\\phase8\\remainder\\floating_f32_remainder\\meta.json": "7591e637440f56ac261f05ba817b2d2967538858c7a24c89b247f3c2467ce022",
+    "examples\\phase8\\remainder\\floating_f64_mod\\expected.npz": "6c22550afe4b85b0f9f4502695571f6f61d8b1b3f56a6caee2bd069e010432ea",
+    "examples\\phase8\\remainder\\floating_f64_mod\\k_regression_floating_f64_mod.ir.json": "ac25e50d1e7a6dfd7683c8c05610579e0aeea24cfb6acdca112a8c7193b24fcf",
+    "examples\\phase8\\remainder\\floating_f64_mod\\meta.json": "3cd983a8b8cee7a6f170e3c5afec2db3f7eb6711ecce8d1c78738f6d3db193b6",
+    "examples\\phase8\\remainder\\floating_f64_remainder\\expected.npz": "6c22550afe4b85b0f9f4502695571f6f61d8b1b3f56a6caee2bd069e010432ea",
+    "examples\\phase8\\remainder\\floating_f64_remainder\\k_regression_floating_f64_remainder.ir.json": "173636aad714a2800cff9e0ad1f092bef83758371c357720b46f6a8ea85a707b",
+    "examples\\phase8\\remainder\\floating_f64_remainder\\meta.json": "bb3daaae0468adc280789d9a3516f7e4433f91f8dd2b8b2369987ce6c1ee2b5c"
+  },
+  "packages": 10,
+  "elements": 2145,
+  "rows": [
+    {
+      "id": "strided_end_reads_initialized_axis",
+      "pass": true,
+      "elements": 2,
+      "dtype": "int32",
+      "shape": [
+        1,
+        2
+      ],
+      "oracle": "Bounded Python integer/double recurrence independent of compiler and fixture reference arrays",
+      "expected_array_sha256": "a261fdbd200fc62f1f60925d762d7b1489665f1f6605ac4deefea89b19abc9fb",
+      "fixture_ir_and_metadata_regenerated_exactly": true
+    },
+    {
+      "id": "strided_f64_end_snapshot",
+      "pass": true,
+      "elements": 9,
+      "dtype": "int32",
+      "shape": [
+        3,
+        3
+      ],
+      "oracle": "Bounded Python integer/double recurrence independent of compiler and fixture reference arrays",
+      "expected_array_sha256": "72584eb73a34deeadc590e405a275ca7dae63aa0fb548eb0fabe71588dba22e9",
+      "fixture_ir_and_metadata_regenerated_exactly": true
+    },
+    {
+      "id": "strided_f64_start_and_step",
+      "pass": true,
+      "elements": 6,
+      "dtype": "int32",
+      "shape": [
+        3,
+        2
+      ],
+      "oracle": "Bounded Python integer/double recurrence independent of compiler and fixture reference arrays",
+      "expected_array_sha256": "bce3d9efebf8776f7c3203c06686747c2ec9da497e91106ffda355aacecb49ac",
+      "fixture_ir_and_metadata_regenerated_exactly": true
+    },
+    {
+      "id": "strided_i64_start_narrows",
+      "pass": true,
+      "elements": 6,
+      "dtype": "int32",
+      "shape": [
+        3,
+        2
+      ],
+      "oracle": "Bounded Python integer/double recurrence independent of compiler and fixture reference arrays",
+      "expected_array_sha256": "921af133598fb0482d888d956d358226775489e7d0ddcc3c8fbdade032b01fe6",
+      "fixture_ir_and_metadata_regenerated_exactly": true
+    },
+    {
+      "id": "strided_live_fractional_step",
+      "pass": true,
+      "elements": 2,
+      "dtype": "int32",
+      "shape": [
+        1,
+        2
+      ],
+      "oracle": "Bounded Python integer/double recurrence independent of compiler and fixture reference arrays",
+      "expected_array_sha256": "f24c0b13b5961501f5776f71f9fa4a669e2d0545aac705ce35924fd45f7b60c4",
+      "fixture_ir_and_metadata_regenerated_exactly": true
+    },
+    {
+      "id": "strided_unsigned_start_negative_end",
+      "pass": true,
+      "elements": 8,
+      "dtype": "int32",
+      "shape": [
+        4,
+        2
+      ],
+      "oracle": "Bounded Python integer/double recurrence independent of compiler and fixture reference arrays",
+      "expected_array_sha256": "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925",
+      "fixture_ir_and_metadata_regenerated_exactly": true
+    },
+    {
+      "id": "floating_f32_mod",
+      "pass": true,
+      "elements": 528,
+      "dtype": "int32",
+      "shape": [
+        528
+      ],
+      "oracle": "Exact Fraction floor quotient and residual, independent RNE IEEE encoding; explicit exceptional-value rules",
+      "expected_array_sha256": "727a1ff9a9ab5a37aba2e21d136e02792bbf83dd8844ed2612935756bd16e09f",
+      "fixture_ir_and_metadata_regenerated_exactly": true
+    },
+    {
+      "id": "floating_f32_remainder",
+      "pass": true,
+      "elements": 528,
+      "dtype": "int32",
+      "shape": [
+        528
+      ],
+      "oracle": "Exact Fraction floor quotient and residual, independent RNE IEEE encoding; explicit exceptional-value rules",
+      "expected_array_sha256": "727a1ff9a9ab5a37aba2e21d136e02792bbf83dd8844ed2612935756bd16e09f",
+      "fixture_ir_and_metadata_regenerated_exactly": true
+    },
+    {
+      "id": "floating_f64_mod",
+      "pass": true,
+      "elements": 528,
+      "dtype": "int64",
+      "shape": [
+        528
+      ],
+      "oracle": "Exact Fraction floor quotient and residual, independent RNE IEEE encoding; explicit exceptional-value rules",
+      "expected_array_sha256": "e86b878e650552997d0ab515e82f45a7d4f8f50ad09ffa91ee032351f5afe12d",
+      "fixture_ir_and_metadata_regenerated_exactly": true
+    },
+    {
+      "id": "floating_f64_remainder",
+      "pass": true,
+      "elements": 528,
+      "dtype": "int64",
+      "shape": [
+        528
+      ],
+      "oracle": "Exact Fraction floor quotient and residual, independent RNE IEEE encoding; explicit exceptional-value rules",
+      "expected_array_sha256": "e86b878e650552997d0ab515e82f45a7d4f8f50ad09ffa91ee032351f5afe12d",
+      "fixture_ir_and_metadata_regenerated_exactly": true
+    }
+  ]
+}

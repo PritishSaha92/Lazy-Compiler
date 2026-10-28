@@ -1,0 +1,30 @@
+{
+  "inputs": [],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='i', extent=Dim(1), window=None),), body=(Let(name='one', value=Literal(value=1, dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Init(name='count', identity=0, dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Init(name='sum', identity=0, dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Init(name='step', identity=-1.25, dtype=DataType(name='f64', np=dtype('float64'), nbytes=8)), Let(name='increment', value=Literal(value=1.0, dtype=DataType(name='f64', np=dtype('float64'), nbytes=8)), dtype=DataType(name='f64', np=dtype('float64'), nbytes=8)), StridedLoop(axis=Axis(name='j', extent=Dim(6), window=None), start=Literal(value=2, dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), step=Var(name='step'), body=(Accum(name='step', value='increment', op=ElementwiseImpl('add'), dtype=DataType(name='f64', np=dtype('float64'), nbytes=8), axes=(), base=None), Let(name='index', value=Var(name='j'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Accum(name='count', value='one', op=ElementwiseImpl('add'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), axes=(), base=None), Accum(name='sum', value='index', op=ElementwiseImpl('add'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), axes=(), base=None)), unroll=False, end=None, seed=False), Write(output='out', index=(Var(name='i'), Literal(value=0, dtype=DataType(name='i32', np=dtype('int32'), nbytes=4))), values=('count', 'sum'), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE')), block_threads=None, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_strided_live_fractional_step",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "i32"
+        }
+      ]
+    }
+  }
+}

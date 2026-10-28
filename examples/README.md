@@ -31,6 +31,7 @@ Do not move an IR away from its companion `meta.json`.
 | [phase7/integer](phase7/integer) | Seven exact-reference packages: mixed-integer operations, constant/runtime shift promotion and explicit-dtype controls |
 | [phase7/builtins](phase7/builtins) | Four packages: 3-D raw builtin values, unsigned geometry semantics, explicit 64-compute/32-helper roles, and multi-CTA bulk coordinates |
 | [phase7/retained](phase7/retained) | One unchanged scalar package rechecked because its emitted shift-count type changed |
+| [phase8](phase8) | Six loop-binding packages and four current floating-remainder packages; original failed I64 transport fixtures are retained separately from the final roster |
 
 Run the focused CPU/assembler tests:
 
@@ -42,6 +43,9 @@ python -m unittest discover -s tests -p test_ring_pipeline.py -v
 python -m unittest discover -s tests -p test_async_target.py -v
 python -m unittest discover -s tests -p test_unstamped_integer.py -v
 python -m unittest discover -s tests -p test_builtin_aux.py -v
+python -m unittest discover -s tests -p test_loop_bindings.py -v
+python -m unittest discover -s tests -p test_floating_remainder.py -v
+python -m unittest discover -s tests -p test_launch_bounds.py -v
 ```
 
 If `ptxas` is unavailable, assembler-specific methods report a skip. These
@@ -51,6 +55,7 @@ wire evidence, choose a new report directory:
 ```console
 python tools/check_feature_examples.py examples/combined/bulk_tensor_k48_f16 examples/combined/bulk_tensor_k48_bias_relu_transposed --report-dir build/my-feature-check
 python tools/check_feature_examples.py examples/phase7/builtins/auxiliary_raw_thread_named_barrier examples/phase7/integer/shift_signed_right_unsigned_count --report-dir build/my-phase7-check
+python tools/check_feature_examples.py examples/phase8/loops/strided_i64_start_narrows examples/phase8/remainder_words/floating_f64_mod_words --report-dir build/my-phase8-check
 python submit.py p00_scalar_add --compiler compile.py
 ```
 
@@ -63,13 +68,17 @@ matmul retains its original IR, metadata and reference bytes; its provenance
 is recorded beside the copy.
 
 The previous 29-package corpus is pinned by
-[research-feature-manifest.json](research-feature-manifest.json). The latest
+[research-feature-manifest.json](research-feature-manifest.json). The earlier
 [phase-7 manifest](../artifacts/validation/phase7/new-feature-manifest.json)
 adds 11 packages; the [retained scalar
 manifest](../artifacts/validation/phase7/changed-scalar-manifest.json) records
 the twelfth package under `phase7`. All 41 additional packages and all 15 public
-problems passed fresh organizer-GPU checks for this release; see
-[PHASE7.md](../docs/PHASE7.md). These are correctness tests, not hidden-set results.
+problems passed organizer-GPU checks for phase 7; see
+[PHASE7.md](../docs/PHASE7.md). The current
+[phase-8 roster](../artifacts/validation/phase8/feature-manifest-final.json)
+adds ten packages. All 51 additional and 15 public packages passed with the
+current compiler; see [PHASE8.md](../docs/PHASE8.md). These are development
+correctness tests, not hidden-set results.
 
 Ring fixtures can be regenerated with
 `python tests/test_ring_pipeline.py --export NEW_DIRECTORY`. The new definitions

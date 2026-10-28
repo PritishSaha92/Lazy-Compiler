@@ -1,0 +1,29 @@
+{
+  "inputs": [],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='i', extent=Dim(1), window=None),), body=(Let(name='one', value=Literal(value=1, dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Init(name='count', identity=0, dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), StridedLoop(axis=Axis(name='j', extent=Dim(1), window=None), start=Literal(value=4294967296, dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), step=Literal(value=1, dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), body=(Accum(name='count', value='one', op=ElementwiseImpl('add'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), axes=(), base=None),), unroll=False, end=None, seed=False), Write(output='out', index=(Literal(value=0, dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)),), values=('count',), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE')), block_threads=None, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_probe_strided_int32_start",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            1
+          ],
+          "dtype": "i32"
+        }
+      ]
+    }
+  }
+}

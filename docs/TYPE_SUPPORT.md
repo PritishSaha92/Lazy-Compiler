@@ -18,7 +18,7 @@ The compiler does not implement all NumPy functions or every PTX instruction fam
 | Type family | Storage and transport | Computation |
 |---|---|---|
 | FP32 | Scalar and aligned grouped loads/stores | Existing explicit-rounding arithmetic and FP32 composite functions |
-| FP64 | Scalar and grouped transport within PTX vector-size limits | Basic arithmetic, comparisons, extrema, FMA, square root, reciprocal and floating integral rounding; transcendental composites rejected |
+| FP64 | Scalar and grouped transport within PTX vector-size limits | Basic arithmetic, floor remainder, comparisons, extrema, FMA, square root, reciprocal and floating integral rounding; transcendental composites rejected |
 | FP16 | 16-bit payload in `.b16` registers | Exact expansion to FP32, computation, explicit nearest-even narrowing; comparisons and selections preserve typed values |
 | BF16 | 16-bit payload in `.b16` registers | FP32 expansion and explicit narrowing; arithmetic/comparison never requires native `sm_90` BF16 ALU instructions |
 | Signed/unsigned integers, 8/16 bits | Memory width is 8/16 bits, virtual register width is 32 bits | Expression integer promotion; explicitly narrow statement results truncate to the declared width; small selections use legal 32-bit instructions |
@@ -35,6 +35,7 @@ The compiler does not implement all NumPy functions or every PTX instruction fam
 | `Let` / `CastExpr` | Convert the computed expression to the declared dtype with explicit rounding. A final cast does not remove intermediate expression rounding. |
 | `TernaryExpr` / `where` | Select already computed typed values. FP16/BF16 payloads are selected with `selp.b16`; small integer selections widen and narrow explicitly. |
 | `Builtin` | `thread_idx`, `block_idx`, `block_dim` and `grid_dim` x/y/z components are `u32`; `warp_size` is `s32`. CUDA-spelling aliases have identical lowering. |
+| `Loop` / `StridedLoop` | Induction variables are signed 32-bit `int` bindings. Explicit ends are evaluated after induction initialization, converted to `int` and captured once. Live steps use ordinary promotions before assignment back to the induction variable. |
 
 The pinned Emmy 0.3.11 `Assign` definition distinguishes declared result dtype
 from argument dtype and describes its promote-then-demote path. `BinaryExpr` is
@@ -44,9 +45,11 @@ There is a known distinction between Python's negative integer division and the
 IR's C rendering; the backend retains its tested C/ PTX truncation rule. Named
 `floor_divide`/`remainder` implement floor/sign correction separately.
 
-The [phase-7 release](PHASE7.md) adds mixed-integer inference and shift
+The historical [phase-7 release](PHASE7.md) added mixed-integer inference and shift
 counterexamples, including explicit-dtype controls and matching constant/runtime
-results. Its validation status is recorded separately from earlier releases.
+results. The current [phase-8 report](PHASE8.md) covers loop bindings, floating
+remainder and exact integer output checks. Results remain tied to their own
+source revisions.
 
 ## Operation families
 
@@ -64,6 +67,19 @@ Aliases (`sum`, `prod`, `sub`, `mul`, `neg`, `true_divide`, `amax`, `max`, `min`
 | `exp`, `exp2`, `log`, `log2`, `log10`, `sin`, `cos`, `tanh`, `erf`, `sigmoid`, `silu`, `power` | FP32 and narrow floating results through the existing FP32 composite implementation |
 | `bitcast` | Equal-width non-predicate numeric or raw-bit types; 8/16-bit integer and floating register-width differences are handled explicitly |
 | Atomic add | FP32, FP64, signed/unsigned 32-bit and unsigned 64-bit; other types are rejected |
+
+Named floating `remainder`/`mod` compute a truncating residual through exact
+power-of-two scaling and subtraction, then apply the divisor-sign correction.
+This avoids loss from a rounded quotient, including for `f32(1e8) % 3` and
+`f64(1e20) % 3`. FP32/FP64 subnormals, signed zero and exceptional input classes
+are handled explicitly; NaN payload/sign is unspecified. Narrow floating results
+retain FP32 computation followed by final narrowing. The integer operation and
+the rejection of floating `BinaryExpr('%')` are unchanged. See
+[the remainder tests](../tests/test_floating_remainder.py) for independent
+references and bit-preserving I32-word transport (two words per FP64 value).
+The original raw-I64 transport failures remain in [PHASE8.md](PHASE8.md).
+Extreme exponent ratios use a
+bounded but potentially slow reduction loop; this is not a throughput guarantee.
 
 `bitwise_count` is a deliberate named-operation semantic correction, not merely
 an instruction-admission change. NumPy's named function counts the magnitude of
@@ -83,6 +99,12 @@ computation followed by narrowing is the declared narrow-composite policy; it is
 not advertised as a universally correctly rounded native half-precision FMA or
 transcendental implementation. No fast-math, FTZ, reassociation or schedule change
 is introduced by admission checks.
+
+Natural `exp` retains rounded FP32 scaling by log2(e) followed by approximate
+exp2; it has no universal correctly rounded or strict relative-error guarantee.
+Sigmoid and SiLU retain the pinned IR's `1/(1+exp(-x))` and `x/(1+exp(-x))`
+formulas, including possible intermediate overflow in negative tails. A stable
+mathematical rearrangement is not claimed to have identical FP32 evaluation.
 
 ## BF16 conversion boundary
 
@@ -135,8 +157,10 @@ rounding, comparison, conversions, small integer selection, unsigned unary
 operations and payload bitcast round trips. These tests separate numerical
 lowering from API representation; BF16 storage transport is a separate concern.
 
-Pre-change source and hashes of all fifteen public PTX outputs are retained in
-`build/type-capabilities/`. The unchanged public PTX identity check protects the
-existing FP32/default kernel behavior. Assembly is evidence of instruction
-legality, not GPU numerical execution; organizer-run results belong in the
-release validation report with the final backend hash.
+The historical type-admission comparison in `build/type-capabilities/` retains
+its pre-change sources and public PTX hashes. It does not assert that the current
+phase-8 PTX is identical: launch-bound directives now change module text.
+Assembly is evidence of instruction legality, not GPU numerical execution.
+Current organizer-run results belong to [PHASE8.md](PHASE8.md) and its source-bound
+release report. Exact integer output checks have a separate
+[oracle regression suite](../tests/test_integer_oracle.py).

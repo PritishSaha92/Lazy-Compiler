@@ -1,0 +1,30 @@
+{
+  "ok": true,
+  "entry": "k_regression_unstamped_mixed_integer_add",
+  "grid": [
+    1,
+    1,
+    1
+  ],
+  "block": [
+    32,
+    1,
+    1
+  ],
+  "smem_bytes": 0,
+  "median_us": 23.136,
+  "iters": 1,
+  "outputs": {
+    "out": {
+      "shape": [
+        1
+      ],
+      "dtype": "i32",
+      "sum": 16777218.0,
+      "values": [
+        16777218.0
+      ],
+      "truncated": false
+    }
+  }
+}

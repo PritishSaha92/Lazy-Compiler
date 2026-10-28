@@ -1,0 +1,320 @@
+{
+  "scope": "Canonical explicit-data examples on organizer GPU; no local GPU or timing claim",
+  "started_utc": "2026-10-28T10:10:53.201245+00:00",
+  "pass": true,
+  "compiler_sha256": {
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\ptx_backend.py": "6a501221f0bf98c6639b79b3e09330b068fa397919c211d5bddea07c5a1e1a89",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "tracked_sha256": {
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\tools\\check_feature_examples.py": "ccddb4869af0c6c09afae89175c4f882bff116f1f82c884fcfb6f89b6606d848",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\tools\\check_compiler.py": "edc8ee9700be8ab766178c8acc0fb8cac056c521274694024786b8980c6d3558",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\tools\\selector_study.py": "b495a2f0389463f8010a9a68be69f129cd8d8d786dce711c82bb73cf90626ba4",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\own-probes\\cases\\probe_strided_int32_start\\baseline.ptx": "3a215851d9345169ae3158a706c302473dc53285802c5ccd010427347f058270",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\own-probes\\cases\\probe_strided_int32_start\\expected.npz": "3176d97e5580cbeea8c8ff4445c213694ea4652ec80f1209180cbe3a16c260e4",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\own-probes\\cases\\probe_strided_int32_start\\k_regression_probe_strided_int32_start.ir.json": "becef93747d60e5de9d66736c49d207a61433135ee736d5bd9acd86c6e1672a3",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\own-probes\\cases\\probe_strided_int32_start\\meta.json": "24170971c0220cbfd5dfc3496540ccf606c966409412e6b233af90631a80dc07",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\own-probes\\cases\\probe_f32_remainder_quotient\\baseline.ptx": "542896b97c2dff175d495a338803707fc8f66291fb8f16914d187f5358efc2c5",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\own-probes\\cases\\probe_f32_remainder_quotient\\expected.npz": "81cda145d818352009473e7a1cc993b0025b68418d5b5cceeb4f61ade181a79c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\own-probes\\cases\\probe_f32_remainder_quotient\\k_regression_probe_f32_remainder_quotient.ir.json": "8545dbd5a71d5790f95bc2ad8f4101b1b24e25bca9b2c6ed252f83702a8dd596",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\own-probes\\cases\\probe_f32_remainder_quotient\\meta.json": "347e1901a5fda85bd06b9dc3f65e9882d3657f5d0bbb9cce1cfb2ed55ddc0406",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\own-probes\\cases\\probe_f64_remainder_quotient\\baseline.ptx": "39347e6f1212d951fd3753051386d774f27f5a3664c15b2bae13a27cc5ffb9c2",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\own-probes\\cases\\probe_f64_remainder_quotient\\expected.npz": "b73475fe1c628d5763cd181a820fd9143e48f2dc94ee3cf162e76ba23cf8de64",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\own-probes\\cases\\probe_f64_remainder_quotient\\k_regression_probe_f64_remainder_quotient.ir.json": "6dcb2c81be717ccf40826ee468f11b763af104c5e99a3cc1a7402b22c8a99476",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\own-probes\\cases\\probe_f64_remainder_quotient\\meta.json": "e230d5ddeeaa092073a5211a63c678c91e1f3410bfd78db826732b13ada2e5a1"
+  },
+  "planned_packages": [
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\own-probes\\cases\\probe_strided_int32_start",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\own-probes\\cases\\probe_f32_remainder_quotient",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\own-probes\\cases\\probe_f64_remainder_quotient"
+  ],
+  "planned_checks": 3,
+  "events": [
+    {
+      "index": 0,
+      "endpoint": "/compile",
+      "job": 0,
+      "request_sha256": "e308f7178b1fe6b5e37c7ca2bdb68e879a1b1022df96ff74b7ee59f118540ad0",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0000.http-00.json",
+          "sha256": "cae888add4efbc06b94c94a2b6cd8c283bfc3b35e9cc8db6b1c2fef0ae8c8eb7"
+        }
+      ],
+      "response_sha256": "4374b9bd5041f03b0ec4c9a267ad614ea2688bdfa7349ac8f898ccfbd589bc1d"
+    },
+    {
+      "index": 1,
+      "endpoint": "/run",
+      "job": 0,
+      "request_sha256": "1e9a6df986af5184227973865fb7f1da3dfefe8dbeb2d30035d39836780df168",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0001.http-00.json",
+          "sha256": "01b763789aec2bb7042184f2dea480818785665b54b8b6c563a93fba0999aee0"
+        }
+      ],
+      "response_sha256": "426ca790f9515bcb27f2ba4380a29daa70ffc5c40fccc97b4b89be70793c9de7"
+    },
+    {
+      "index": 2,
+      "endpoint": "/compile",
+      "job": 1,
+      "request_sha256": "4ce87eaf466cda1362a06fc60a8d43cbf440b529de522634a1fec22f4c0744e6",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0002.http-00.json",
+          "sha256": "e2140f535451b869b53fa54069baaac37111aae148fc85dd750b3751711876be"
+        }
+      ],
+      "response_sha256": "ae527d2bb95f5634c4c22a79c4bdfc6db91c0ef4df24fc8c8c3fb2c0af9a546c"
+    },
+    {
+      "index": 3,
+      "endpoint": "/run",
+      "job": 1,
+      "request_sha256": "6ff9f0653f5da47ec304923ea57794696a7b1c78676a12714cf49cb732eebdaa",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0003.http-00.json",
+          "sha256": "85b52692f8d24d38946707e6b4c85ea41e202bad0dfb1928c2ca3c65a088b127"
+        }
+      ],
+      "response_sha256": "0803be7fa4dbdafdad331060f9217573c8ac73c223342738d742d6923ba41037"
+    },
+    {
+      "index": 4,
+      "endpoint": "/compile",
+      "job": 2,
+      "request_sha256": "91cb9b6a221755175fa6fb666d96883deae67b592558c4c72224e7beedaf9d55",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0004.http-00.json",
+          "sha256": "c8785a003e1ced50812d16b4f9c2430fe4d8af00ac79dca6c9395a359fa2c5bb"
+        }
+      ],
+      "response_sha256": "ba55c05d3198d81c1ffd8d4b28cbecbddad1d32ce9c0589a98ff89550d5004c8"
+    },
+    {
+      "index": 5,
+      "endpoint": "/run",
+      "job": 2,
+      "request_sha256": "087241fb90471d68139aae67dece43277439fef2220e8efa318a7fe792783f3e",
+      "status": "received",
+      "http": [
+        {
+          "path": "events/0005.http-00.json",
+          "sha256": "5f760a75015b2354cd5279460b33971d8cd7f9a8e2e580adfd7d10af1d0209cf"
+        }
+      ],
+      "response_sha256": "9b89d33baa5b53481072c5286bc467f5a50525f23a89f17d2719fe17b4296207"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "probe_strided_int32_start",
+      "package": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\own-probes\\cases\\probe_strided_int32_start",
+      "pass": true,
+      "result": {
+        "problem": "probe_strided_int32_start",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_regression_probe_strided_int32_start",
+            "compile_seconds": 2.522019599971827,
+            "ptx_bytes": 904,
+            "ptx_sha256": "b5da4e2987da6dd1c5bcfa44e8039674f17df6fcdf1acbff989006903c664a66",
+            "compiler_sources_sha256": {
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\ptx_backend.py": "6a501221f0bf98c6639b79b3e09330b068fa397919c211d5bddea07c5a1e1a89",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+            },
+            "registers": 8,
+            "cubin_id": "78b0fac1e7fb30148b8bfd08686d20936d2228d553e890c239ae5d4e62470a14"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_regression_probe_strided_int32_start",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "block": [
+                  32,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 20.992,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "out",
+                "pass": true,
+                "elements": 1,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "probe_f32_remainder_quotient",
+      "package": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\own-probes\\cases\\probe_f32_remainder_quotient",
+      "pass": true,
+      "result": {
+        "problem": "probe_f32_remainder_quotient",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_regression_probe_f32_remainder_quotient",
+            "compile_seconds": 2.3465391999925487,
+            "ptx_bytes": 2198,
+            "ptx_sha256": "39103ab69009e72a365dc823172a8a9d43559194807636bc1fba191b0fe7ec1e",
+            "compiler_sources_sha256": {
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\ptx_backend.py": "6a501221f0bf98c6639b79b3e09330b068fa397919c211d5bddea07c5a1e1a89",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+            },
+            "registers": 12,
+            "cubin_id": "185d9d8cdbe1c3b0e76a36753d65fbe8d01a6abcc40e5769a12d14a10a741145"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_regression_probe_f32_remainder_quotient",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "block": [
+                  32,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 21.184,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "out",
+                "pass": true,
+                "elements": 8,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    },
+    {
+      "id": "probe_f64_remainder_quotient",
+      "package": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\own-probes\\cases\\probe_f64_remainder_quotient",
+      "pass": true,
+      "result": {
+        "problem": "probe_f64_remainder_quotient",
+        "mode": "remote",
+        "kernels": [
+          {
+            "entry": "k_regression_probe_f64_remainder_quotient",
+            "compile_seconds": 2.4027382999775,
+            "ptx_bytes": 2270,
+            "ptx_sha256": "14b466acc515e370ed89df3968daae8b1fc9a153087f1e9ee4ef1a494d78702b",
+            "compiler_sources_sha256": {
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\ptx_backend.py": "6a501221f0bf98c6639b79b3e09330b068fa397919c211d5bddea07c5a1e1a89",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+              "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+            },
+            "registers": 19,
+            "cubin_id": "bfc8cb6e0cff84fb6d25c09656b47245025da736fa67e104e0a6082fc914daf8"
+          }
+        ],
+        "cases": [
+          {
+            "seed_offset": 0,
+            "pattern": "normal",
+            "runs": [
+              {
+                "ok": true,
+                "entry": "k_regression_probe_f64_remainder_quotient",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "block": [
+                  32,
+                  1,
+                  1
+                ],
+                "smem_bytes": 0,
+                "median_us": 27.712,
+                "iters": 1
+              }
+            ],
+            "outputs": [
+              {
+                "name": "out",
+                "pass": true,
+                "elements": 8,
+                "mismatches": 0,
+                "max_abs_error": 0.0
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "pass": true
+      }
+    }
+  ],
+  "checks": 3,
+  "passed_checks": 3,
+  "compiler_sha256_after": {
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\ptx_backend.py": "6a501221f0bf98c6639b79b3e09330b068fa397919c211d5bddea07c5a1e1a89",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "tracked_unchanged": true,
+  "finished_utc": "2026-10-28T10:11:07.906588+00:00"
+}

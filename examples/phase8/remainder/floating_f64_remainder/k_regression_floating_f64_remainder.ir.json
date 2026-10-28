@@ -1,0 +1,63 @@
+{
+  "inputs": [
+    "x",
+    "y"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            528
+          ],
+          "dtype": "i64"
+        }
+      ]
+    },
+    "y": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "y",
+          "shape": [
+            528
+          ],
+          "dtype": "i64"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='i', extent=Dim(528), window=None),), body=(Load(names=('raw_x',), input='x', index=(Var(name='i'),), dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), Load(names=('raw_y',), input='y', index=(Var(name='i'),), dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), Assign(name='x_value', op=ElementwiseImpl('bitcast'), args=('raw_x',), dtype=DataType(name='f64', np=dtype('float64'), nbytes=8)), Assign(name='y_value', op=ElementwiseImpl('bitcast'), args=('raw_y',), dtype=DataType(name='f64', np=dtype('float64'), nbytes=8)), Assign(name='r', op=ElementwiseImpl('remainder'), args=('x_value', 'y_value'), dtype=DataType(name='f64', np=dtype('float64'), nbytes=8)), Assign(name='raw_r', op=ElementwiseImpl('bitcast'), args=('r',), dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), Assign(name='not_nan', op=ElementwiseImpl('equal'), args=('r', 'r'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='nan_bits', value=Literal(value=9221120237041090560, dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), Assign(name='canonical', op=ElementwiseImpl('where'), args=('not_nan', 'raw_r', 'nan_bits'), dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), Write(output='out', index=(Var(name='i'),), values=('canonical',), value_dtype=DataType(name='i64', np=dtype('int64'), nbytes=8), atomic=False, swizzle='NONE')), block_threads=None, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_floating_f64_remainder",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x",
+        "y"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            528
+          ],
+          "dtype": "i64"
+        }
+      ]
+    }
+  }
+}

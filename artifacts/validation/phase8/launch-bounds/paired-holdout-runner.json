@@ -1,0 +1,1412 @@
+{
+  "started_utc": "2026-10-28T10:05:27.557942+00:00",
+  "server": "http://runner.riftstack.ai:48701",
+  "rounds": 5,
+  "iters": 30,
+  "warmup": 3,
+  "source_sha256_before": {
+    "baseline": {
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\baseline\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\baseline\\ptx_backend.py": "3344668fe0b3f94a7198478fcccc50a51e80d70a33c67a868942353918dc9d4f",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\baseline\\ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\baseline\\ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\baseline\\requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+    },
+    "candidate": {
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\candidate\\compile.py": "7b0a798b6e35439f87019627a754f4462c9d58b5cef2a480fc5abba847e5077a",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\candidate\\ptx_backend.py": "3344668fe0b3f94a7198478fcccc50a51e80d70a33c67a868942353918dc9d4f",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\candidate\\ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\candidate\\ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\candidate\\requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+    }
+  },
+  "reference_sha256": {
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\tools\\expressions_open.py": "d0f8d5143b7f9e1f7a8b89cbb1e93e3401aaf32d22e6b0e4115f96688c7cb48c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\tests\\expressions_holdout.py": "a220788ab8b5f62685a60a5b0be383e5de6c93c7bedcb000af7d1469dba211a6"
+  },
+  "harness_sha256": {
+    "tools\\compare_compilers.py": "4a23e3870054d3610171e5fb052709959a69438c7cc04f69a9a68c4a341cdf58",
+    "tools\\check_compiler.py": "edc8ee9700be8ab766178c8acc0fb8cac056c521274694024786b8980c6d3558"
+  },
+  "results": [
+    {
+      "problem": "hold_a01_long_context",
+      "variants": {
+        "baseline": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 96,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 85.824
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 96,
+                  "mismatches": 0,
+                  "max_abs_error": 1.341104507446289e-07
+                }
+              ],
+              "median_us": 85.024
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 96,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 85.312
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 96,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 82.528,
+              "round": 0,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 96,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 82.56,
+              "round": 1,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 96,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 82.528,
+              "round": 2,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 96,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 82.528,
+              "round": 3,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 96,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 82.544,
+              "round": 4,
+              "position": 0
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 3.3586212000227533,
+          "ptx_bytes": 5671,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\paired-holdout-runner-artifacts\\hold_a01_long_context-baseline.ptx",
+          "ptx_sha256": "0866aad32fffc021d1675effad71e599722b6741ace38fdc591b45fe2049dc2f",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "9bf05e67927842e4e81b6c29f87a5f6d2f73b2424bef3ffd742f1cdb30574188",
+            "bytes": 21960,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_matmul_softmax_reduce_abf187"
+            ],
+            "registers": {
+              "k_matmul_softmax_reduce_abf187": 96
+            }
+          },
+          "median_us": 82.528,
+          "min_us": 82.528,
+          "max_us": 82.56
+        },
+        "candidate": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 96,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 81.376
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 96,
+                  "mismatches": 0,
+                  "max_abs_error": 1.341104507446289e-07
+                }
+              ],
+              "median_us": 81.472
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 96,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 81.12
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 96,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 78.48,
+              "round": 0,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 96,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 78.48,
+              "round": 1,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 96,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 78.496,
+              "round": 2,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 96,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 78.464,
+              "round": 3,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 96,
+                  "mismatches": 0,
+                  "max_abs_error": 1.1920928955078125e-07
+                }
+              ],
+              "median_us": 78.464,
+              "round": 4,
+              "position": 1
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 3.764209699991625,
+          "ptx_bytes": 5691,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\paired-holdout-runner-artifacts\\hold_a01_long_context-candidate.ptx",
+          "ptx_sha256": "9518e9d792aec6896320d6d0983413c1a64119ff09d3d7ef8089b58cd020010b",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "f5e3f2221534aca97fad5eb6fc48eb5c057accf85f180cd5f93971e116dbf374",
+            "bytes": 21976,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_matmul_softmax_reduce_abf187"
+            ],
+            "registers": {
+              "k_matmul_softmax_reduce_abf187": 100
+            }
+          },
+          "median_us": 78.48,
+          "min_us": 78.464,
+          "max_us": 78.496
+        }
+      },
+      "pass": true,
+      "inputs_sha256": {
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_a01_long_context\\k_matmul_softmax_reduce_abf187.ir.json": "401ccddcd9e84f8764e8031543261378773542eb98ad23a30c4da4b2e87d6cde",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_a01_long_context\\meta.json": "0bde45d4209c5002da13d1efec17c3dc364b336886b7f4e9fad6f776d839377f",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_a01_long_context\\expected.npz": "e99905e495a7ad4058ddbf4e1edc7cf9564bed8b4ea8840f5105f5a1ced4c71e"
+      },
+      "identical_ptx": false,
+      "speedup": 1.0515800203873598,
+      "paired_round_speedups": [
+        1.0515800203873598,
+        1.0519877675840978,
+        1.0513656746840605,
+        1.0517944535073411,
+        1.0519983686786296
+      ],
+      "median_paired_speedup": 1.0517944535073411
+    },
+    {
+      "problem": "hold_a02_long_query",
+      "variants": {
+        "baseline": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 3200,
+                  "mismatches": 0,
+                  "max_abs_error": 2.384185791015625e-07
+                }
+              ],
+              "median_us": 13.312
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 3200,
+                  "mismatches": 0,
+                  "max_abs_error": 2.384185791015625e-07
+                }
+              ],
+              "median_us": 13.856
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 3200,
+                  "mismatches": 0,
+                  "max_abs_error": 4.291534423828125e-05
+                }
+              ],
+              "median_us": 13.792
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 3200,
+                  "mismatches": 0,
+                  "max_abs_error": 2.384185791015625e-07
+                }
+              ],
+              "median_us": 10.88,
+              "round": 0,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 3200,
+                  "mismatches": 0,
+                  "max_abs_error": 2.384185791015625e-07
+                }
+              ],
+              "median_us": 10.896,
+              "round": 1,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 3200,
+                  "mismatches": 0,
+                  "max_abs_error": 2.384185791015625e-07
+                }
+              ],
+              "median_us": 10.88,
+              "round": 2,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 3200,
+                  "mismatches": 0,
+                  "max_abs_error": 2.384185791015625e-07
+                }
+              ],
+              "median_us": 10.928,
+              "round": 3,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 3200,
+                  "mismatches": 0,
+                  "max_abs_error": 2.384185791015625e-07
+                }
+              ],
+              "median_us": 10.912,
+              "round": 4,
+              "position": 0
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 3.5279450999805704,
+          "ptx_bytes": 66878,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\paired-holdout-runner-artifacts\\hold_a02_long_query-baseline.ptx",
+          "ptx_sha256": "a5639c5ef83289a0c692ad751ee7871799de9da3d5676416934799ae853406c6",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "da83a17c6a97faa5951f2ade5cdb076185c7f885119496afaa4d2686184a82d8",
+            "bytes": 90152,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_matmul_softmax_reduce_8b46c8"
+            ],
+            "registers": {
+              "k_matmul_softmax_reduce_8b46c8": 48
+            }
+          },
+          "median_us": 10.896,
+          "min_us": 10.88,
+          "max_us": 10.928
+        },
+        "candidate": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 3200,
+                  "mismatches": 0,
+                  "max_abs_error": 2.384185791015625e-07
+                }
+              ],
+              "median_us": 13.984
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 3200,
+                  "mismatches": 0,
+                  "max_abs_error": 2.384185791015625e-07
+                }
+              ],
+              "median_us": 13.088
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 3200,
+                  "mismatches": 0,
+                  "max_abs_error": 4.291534423828125e-05
+                }
+              ],
+              "median_us": 12.928
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 3200,
+                  "mismatches": 0,
+                  "max_abs_error": 2.384185791015625e-07
+                }
+              ],
+              "median_us": 10.912,
+              "round": 0,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 3200,
+                  "mismatches": 0,
+                  "max_abs_error": 2.384185791015625e-07
+                }
+              ],
+              "median_us": 10.88,
+              "round": 1,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 3200,
+                  "mismatches": 0,
+                  "max_abs_error": 2.384185791015625e-07
+                }
+              ],
+              "median_us": 10.88,
+              "round": 2,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 3200,
+                  "mismatches": 0,
+                  "max_abs_error": 2.384185791015625e-07
+                }
+              ],
+              "median_us": 10.88,
+              "round": 3,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul_1",
+                  "pass": true,
+                  "elements": 3200,
+                  "mismatches": 0,
+                  "max_abs_error": 2.384185791015625e-07
+                }
+              ],
+              "median_us": 10.912,
+              "round": 4,
+              "position": 1
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 2.850976100016851,
+          "ptx_bytes": 66898,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\paired-holdout-runner-artifacts\\hold_a02_long_query-candidate.ptx",
+          "ptx_sha256": "b0a3450acc1e3dde085ad418dbddf7675bc1d95ab741dc5d6d1b98ceb28968fc",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "6b235afb0b15b6c796692a0e81e702ce4bc0e5ac0d0d999b0428831752fb96c9",
+            "bytes": 90168,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_matmul_softmax_reduce_8b46c8"
+            ],
+            "registers": {
+              "k_matmul_softmax_reduce_8b46c8": 48
+            }
+          },
+          "median_us": 10.88,
+          "min_us": 10.88,
+          "max_us": 10.912
+        }
+      },
+      "pass": true,
+      "inputs_sha256": {
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_a02_long_query\\k_matmul_softmax_reduce_8b46c8.ir.json": "1e11f01a4bd22fffae41d922d8228abec4c97f337b07315ef2bd3ed80e04e1cf",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_a02_long_query\\meta.json": "53b49fb3e65fb2742335c92124cc52bdce3c4893944eef005c3b41f887405c4e",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_a02_long_query\\expected.npz": "dc9d45c0ec34c95fba1d82cc7a44af6e7285ed37ed9906b61fab4b104a109b20"
+      },
+      "identical_ptx": false,
+      "speedup": 1.0014705882352941,
+      "paired_round_speedups": [
+        0.9970674486803519,
+        1.0014705882352941,
+        1.0,
+        1.0044117647058823,
+        1.0
+      ],
+      "median_paired_speedup": 1.0
+    },
+    {
+      "problem": "hold_m02_tall_thin",
+      "variants": {
+        "baseline": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 2304,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 13.216
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 2304,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 13.088
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 2304,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0001220703125
+                }
+              ],
+              "median_us": 13.536
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 2304,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 11.296,
+              "round": 0,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 2304,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 11.136,
+              "round": 1,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 2304,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 11.12,
+              "round": 2,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 2304,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 11.104,
+              "round": 3,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 2304,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 11.232,
+              "round": 4,
+              "position": 0
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 16.186195399961434,
+          "ptx_bytes": 188567,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\paired-holdout-runner-artifacts\\hold_m02_tall_thin-baseline.ptx",
+          "ptx_sha256": "21edc00a56145018055c6a842a7fd6628d79132937e3e466dc24b7c61f876fcf",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "d6698855cd2b316f6ace9eaf6916979baa3dccce7a08398cac5f20cf0dc28ac9",
+            "bytes": 65136,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_matmul"
+            ],
+            "registers": {
+              "k_matmul": 62
+            }
+          },
+          "median_us": 11.136,
+          "min_us": 11.104,
+          "max_us": 11.296
+        },
+        "candidate": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 2304,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 12.736
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 2304,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 13.344
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 2304,
+                  "mismatches": 0,
+                  "max_abs_error": 0.0001220703125
+                }
+              ],
+              "median_us": 13.12
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 2304,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 11.136,
+              "round": 0,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 2304,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 11.104,
+              "round": 1,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 2304,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 11.104,
+              "round": 2,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 2304,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 11.184,
+              "round": 3,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "matmul",
+                  "pass": true,
+                  "elements": 2304,
+                  "mismatches": 0,
+                  "max_abs_error": 1.9073486328125e-06
+                }
+              ],
+              "median_us": 11.456,
+              "round": 4,
+              "position": 1
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 10.543033100024331,
+          "ptx_bytes": 188587,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\paired-holdout-runner-artifacts\\hold_m02_tall_thin-candidate.ptx",
+          "ptx_sha256": "4c099c2d6ddd0e8c0c0ded98f50026dd2b5b3a920ebb16fbdf8e0de5e6a08c98",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "0c757e0eb9b7773a69621df8d3ce0c9c4b8a24509da318dc1da9826091700e64",
+            "bytes": 65152,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_matmul"
+            ],
+            "registers": {
+              "k_matmul": 61
+            }
+          },
+          "median_us": 11.136,
+          "min_us": 11.104,
+          "max_us": 11.456
+        }
+      },
+      "pass": true,
+      "inputs_sha256": {
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_m02_tall_thin\\k_matmul.ir.json": "dec5c505c365431108615bb04156816586af2cf18814b76909c59745a687ec69",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_m02_tall_thin\\meta.json": "5d8b9f7e7c1152527d2249e7c3593274a21c6d4d9c65fd52c1206e72611c5346",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_m02_tall_thin\\expected.npz": "a934300e326fc5730aaea5ed4eed21a8a14a948a6049ac55a32e96842a24537c"
+      },
+      "identical_ptx": false,
+      "speedup": 1.0,
+      "paired_round_speedups": [
+        1.014367816091954,
+        1.0028818443804035,
+        1.0014409221902016,
+        0.9928469241773963,
+        0.9804469273743016
+      ],
+      "median_paired_speedup": 1.0014409221902016
+    },
+    {
+      "problem": "hold_f03_weighted_softmax_sum",
+      "variants": {
+        "baseline": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "sum_1",
+                  "pass": true,
+                  "elements": 19,
+                  "mismatches": 0,
+                  "max_abs_error": 2.9802322387695312e-08
+                }
+              ],
+              "median_us": 5.824
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "sum_1",
+                  "pass": true,
+                  "elements": 19,
+                  "mismatches": 0,
+                  "max_abs_error": 1.6763806343078613e-08
+                }
+              ],
+              "median_us": 5.856
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "sum_1",
+                  "pass": true,
+                  "elements": 19,
+                  "mismatches": 0,
+                  "max_abs_error": 1.430511474609375e-06
+                }
+              ],
+              "median_us": 7.296
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "sum_1",
+                  "pass": true,
+                  "elements": 19,
+                  "mismatches": 0,
+                  "max_abs_error": 2.9802322387695312e-08
+                }
+              ],
+              "median_us": 3.456,
+              "round": 0,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "sum_1",
+                  "pass": true,
+                  "elements": 19,
+                  "mismatches": 0,
+                  "max_abs_error": 2.9802322387695312e-08
+                }
+              ],
+              "median_us": 3.44,
+              "round": 1,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "sum_1",
+                  "pass": true,
+                  "elements": 19,
+                  "mismatches": 0,
+                  "max_abs_error": 2.9802322387695312e-08
+                }
+              ],
+              "median_us": 3.424,
+              "round": 2,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "sum_1",
+                  "pass": true,
+                  "elements": 19,
+                  "mismatches": 0,
+                  "max_abs_error": 2.9802322387695312e-08
+                }
+              ],
+              "median_us": 3.36,
+              "round": 3,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "sum_1",
+                  "pass": true,
+                  "elements": 19,
+                  "mismatches": 0,
+                  "max_abs_error": 2.9802322387695312e-08
+                }
+              ],
+              "median_us": 3.408,
+              "round": 4,
+              "position": 0
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 3.2503711999743246,
+          "ptx_bytes": 9952,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\paired-holdout-runner-artifacts\\hold_f03_weighted_softmax_sum-baseline.ptx",
+          "ptx_sha256": "a54d3ab3c4d4c75e57c98a29787d21e5d23a661d6fe9cfaa49af9ebc83b2d38b",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "e52b51198e6b17440995ab98fb57f5a4be056f86a67e65ef213f65947d4e14f5",
+            "bytes": 15944,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_softmax_86069b"
+            ],
+            "registers": {
+              "k_softmax_86069b": 36
+            }
+          },
+          "median_us": 3.424,
+          "min_us": 3.36,
+          "max_us": 3.456
+        },
+        "candidate": {
+          "correctness": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "sum_1",
+                  "pass": true,
+                  "elements": 19,
+                  "mismatches": 0,
+                  "max_abs_error": 2.9802322387695312e-08
+                }
+              ],
+              "median_us": 5.92
+            },
+            {
+              "seed": 17,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "sum_1",
+                  "pass": true,
+                  "elements": 19,
+                  "mismatches": 0,
+                  "max_abs_error": 1.6763806343078613e-08
+                }
+              ],
+              "median_us": 6.784
+            },
+            {
+              "seed": 101,
+              "pattern": "wide",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "sum_1",
+                  "pass": true,
+                  "elements": 19,
+                  "mismatches": 0,
+                  "max_abs_error": 1.430511474609375e-06
+                }
+              ],
+              "median_us": 5.728
+            }
+          ],
+          "timings": [
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "sum_1",
+                  "pass": true,
+                  "elements": 19,
+                  "mismatches": 0,
+                  "max_abs_error": 2.9802322387695312e-08
+                }
+              ],
+              "median_us": 3.36,
+              "round": 0,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "sum_1",
+                  "pass": true,
+                  "elements": 19,
+                  "mismatches": 0,
+                  "max_abs_error": 2.9802322387695312e-08
+                }
+              ],
+              "median_us": 3.376,
+              "round": 1,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "sum_1",
+                  "pass": true,
+                  "elements": 19,
+                  "mismatches": 0,
+                  "max_abs_error": 2.9802322387695312e-08
+                }
+              ],
+              "median_us": 3.408,
+              "round": 2,
+              "position": 1
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "sum_1",
+                  "pass": true,
+                  "elements": 19,
+                  "mismatches": 0,
+                  "max_abs_error": 2.9802322387695312e-08
+                }
+              ],
+              "median_us": 3.424,
+              "round": 3,
+              "position": 0
+            },
+            {
+              "seed": 0,
+              "pattern": "normal",
+              "pass": true,
+              "outputs": [
+                {
+                  "name": "sum_1",
+                  "pass": true,
+                  "elements": 19,
+                  "mismatches": 0,
+                  "max_abs_error": 2.9802322387695312e-08
+                }
+              ],
+              "median_us": 3.376,
+              "round": 4,
+              "position": 1
+            }
+          ],
+          "pass": true,
+          "compile_seconds": 2.8092217999510467,
+          "ptx_bytes": 9972,
+          "ptx_path": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\paired-holdout-runner-artifacts\\hold_f03_weighted_softmax_sum-candidate.ptx",
+          "ptx_sha256": "bdc811eaa889c4cb8a8cc16f5f5b533a47e88b0780eae41ef18a7672601271de",
+          "assembly": {
+            "ok": true,
+            "cubin_id": "51884996218ec2bd8e47bb851982ff2aa565b7ba79f5c4066f7aae6481b450d6",
+            "bytes": 15960,
+            "arch": "sm_120",
+            "flags": [],
+            "entry_points": [
+              "k_softmax_86069b"
+            ],
+            "registers": {
+              "k_softmax_86069b": 36
+            }
+          },
+          "median_us": 3.376,
+          "min_us": 3.36,
+          "max_us": 3.424
+        }
+      },
+      "pass": true,
+      "inputs_sha256": {
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_f03_weighted_softmax_sum\\k_softmax_86069b.ir.json": "e18474393ebbc4731b2ce5668ec9edc57325bcd0b965e08b235868eebfe5c847",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_f03_weighted_softmax_sum\\meta.json": "7809bc09886c43b8c92d8ed38d00f3919e330be9440950506e80833eb8ef458f",
+        "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_f03_weighted_softmax_sum\\expected.npz": "4283dfd7296e8839c698b6e13df0e9503457d14994a6ea33a1212decb8025354"
+      },
+      "identical_ptx": false,
+      "speedup": 1.014218009478673,
+      "paired_round_speedups": [
+        1.0285714285714287,
+        1.018957345971564,
+        1.0046948356807512,
+        0.9813084112149533,
+        1.009478672985782
+      ],
+      "median_paired_speedup": 1.009478672985782
+    }
+  ],
+  "pass": true,
+  "limits": "Unlocked runner clocks; timings are indicative. Outputs are checked once per /run response, not after each repeated launch within that response. No hidden-test claim.",
+  "source_sha256_after": {
+    "baseline": {
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\baseline\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\baseline\\ptx_backend.py": "3344668fe0b3f94a7198478fcccc50a51e80d70a33c67a868942353918dc9d4f",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\baseline\\ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\baseline\\ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\baseline\\requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+    },
+    "candidate": {
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\candidate\\compile.py": "7b0a798b6e35439f87019627a754f4462c9d58b5cef2a480fc5abba847e5077a",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\candidate\\ptx_backend.py": "3344668fe0b3f94a7198478fcccc50a51e80d70a33c67a868942353918dc9d4f",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\candidate\\ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\candidate\\ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+      "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\research\\competitors-2026-10-28\\launch-bounds-experiment\\candidate\\requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+    }
+  },
+  "sources_unchanged": true,
+  "evidence_sha256_after": {
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\tools\\expressions_open.py": "d0f8d5143b7f9e1f7a8b89cbb1e93e3401aaf32d22e6b0e4115f96688c7cb48c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\tests\\expressions_holdout.py": "a220788ab8b5f62685a60a5b0be383e5de6c93c7bedcb000af7d1469dba211a6",
+    "tools\\compare_compilers.py": "4a23e3870054d3610171e5fb052709959a69438c7cc04f69a9a68c4a341cdf58",
+    "tools\\check_compiler.py": "edc8ee9700be8ab766178c8acc0fb8cac056c521274694024786b8980c6d3558",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_a01_long_context\\k_matmul_softmax_reduce_abf187.ir.json": "401ccddcd9e84f8764e8031543261378773542eb98ad23a30c4da4b2e87d6cde",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_a01_long_context\\meta.json": "0bde45d4209c5002da13d1efec17c3dc364b336886b7f4e9fad6f776d839377f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_a01_long_context\\expected.npz": "e99905e495a7ad4058ddbf4e1edc7cf9564bed8b4ea8840f5105f5a1ced4c71e",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_a02_long_query\\k_matmul_softmax_reduce_8b46c8.ir.json": "1e11f01a4bd22fffae41d922d8228abec4c97f337b07315ef2bd3ed80e04e1cf",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_a02_long_query\\meta.json": "53b49fb3e65fb2742335c92124cc52bdce3c4893944eef005c3b41f887405c4e",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_a02_long_query\\expected.npz": "dc9d45c0ec34c95fba1d82cc7a44af6e7285ed37ed9906b61fab4b104a109b20",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_m02_tall_thin\\k_matmul.ir.json": "dec5c505c365431108615bb04156816586af2cf18814b76909c59745a687ec69",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_m02_tall_thin\\meta.json": "5d8b9f7e7c1152527d2249e7c3593274a21c6d4d9c65fd52c1206e72611c5346",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_m02_tall_thin\\expected.npz": "a934300e326fc5730aaea5ed4eed21a8a14a948a6049ac55a32e96842a24537c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_f03_weighted_softmax_sum\\k_softmax_86069b.ir.json": "e18474393ebbc4731b2ce5668ec9edc57325bcd0b965e08b235868eebfe5c847",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_f03_weighted_softmax_sum\\meta.json": "7809bc09886c43b8c92d8ed38d00f3919e330be9440950506e80833eb8ef458f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_f03_weighted_softmax_sum\\expected.npz": "4283dfd7296e8839c698b6e13df0e9503457d14994a6ea33a1212decb8025354"
+  },
+  "evidence_unchanged": true,
+  "finished_utc": "2026-10-28T10:07:39.712455+00:00"
+}

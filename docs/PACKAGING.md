@@ -1,11 +1,16 @@
 # Reproducible submission packaging
 
+The current submission is this source checkout. Push it to the repository used
+for the entry; a new ZIP is not required. [CHECKOUT.md](CHECKOUT.md) describes the
+current inventory and local verification commands. The rest of this document
+also retains the optional archive workflow and historical package provenance.
+
 `tools/package_submission.py` creates a minimal submission ZIP only after supplied
 validation reports pass and identify the current source. It does not submit,
 publish, install dependencies, assemble PTX, contact the organizer or execute a
 GPU kernel.
 
-The current runtime ZIP contains exactly these five files at its root:
+A minimal runtime ZIP contains exactly these five files at its root:
 
 - `compile.py`
 - `ptx_backend.py`
@@ -19,23 +24,30 @@ the submission ZIP. The entry command after extraction remains
 
 ## Current source checkout and release archive
 
-This Git checkout contains the validated phase-7 compiler, runnable examples,
-tests and technical evidence. `REVIEW_MANIFEST.json` inventories this checkout;
-[CHECKOUT.md](CHECKOUT.md) explains its scope and verification commands.
-Presentation drafts and a scratch PTX output are omitted from the source tree.
+This Git checkout contains the current phase-8 compiler, runnable examples,
+tests and technical evidence. [PHASE8.md](PHASE8.md) and its
+[release summary](../artifacts/validation/phase8/release-summary.json) record the
+current validation status. `REVIEW_MANIFEST.json` uses the version-2 checkout
+schema: current runtime/CLI evidence is distinct from the preserved archive's
+provenance. Presentation drafts and a scratch PTX output are omitted.
 
 The [phase-7 runtime pointer](../artifacts/release/phase7/latest.json) identifies
 the five-file compiler archive. The [review pointer](../artifacts/release/phase7/review/latest.json)
 identifies the original full release archive. Its original inventory is retained
 as [source-archive-inventory.json](../artifacts/validation/phase7/source-archive-inventory.json).
-Those archive hashes describe the original release, not this cleaned checkout.
-The five runtime files match the [phase-7 validation](PHASE7.md) byte for byte.
+Those archive hashes describe the original phase-7 release, not this revised
+checkout. The current backend has changed; it is verified against its own
+phase-8 source hashes rather than represented as byte-identical to phase 7.
 
 Historical build and verification scripts under `artifacts/validation/phase*`
 record how the original archives were produced. They may reference presentation
 files omitted here. Use `tools/check_checkout.py` for this checkout and
 `tools/package_review.py` to create a new bundle from the current source tree.
 The older release archives and their numerical results remain historical.
+`python tools/check_checkout.py` writes the current check to
+`artifacts/validation/checkout-current/verification.json` by default and refuses
+to replace an existing report. It checks both current identity and historical
+provenance without requiring the original distribution ZIP to be present.
 
 ## Previous phase-4 evidence manifest (24 October 2026)
 

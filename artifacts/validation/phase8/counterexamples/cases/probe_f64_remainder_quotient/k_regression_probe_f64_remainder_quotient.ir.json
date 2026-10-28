@@ -1,0 +1,63 @@
+{
+  "inputs": [
+    "x",
+    "y"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            8
+          ],
+          "dtype": "f64"
+        }
+      ]
+    },
+    "y": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "y",
+          "shape": [
+            8
+          ],
+          "dtype": "f64"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='i', extent=Dim(8), window=None),), body=(Load(names=('xv',), input='x', index=(Var(name='i'),), dtype=DataType(name='f64', np=dtype('float64'), nbytes=8)), Load(names=('yv',), input='y', index=(Var(name='i'),), dtype=DataType(name='f64', np=dtype('float64'), nbytes=8)), Assign(name='result', op=ElementwiseImpl('remainder'), args=('xv', 'yv'), dtype=DataType(name='f64', np=dtype('float64'), nbytes=8)), Write(output='out', index=(Var(name='i'),), values=('result',), value_dtype=DataType(name='f64', np=dtype('float64'), nbytes=8), atomic=False, swizzle='NONE')), block_threads=None, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_probe_f64_remainder_quotient",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x",
+        "y"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            8
+          ],
+          "dtype": "f64"
+        }
+      ]
+    }
+  }
+}

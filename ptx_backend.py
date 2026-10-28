@@ -233,10 +233,12 @@ class Compiler:
         fuse_accumulations=False,
         accurate_dots=False,
         compensated_dots=False,
+        launch_bounds=True,
     ):
         if not re.fullmatch(r"sm_[0-9]+[af]?", target):
             raise CompileError(f"invalid PTX target {target!r}")
         self.graph, self.meta, self.target = graph, meta, target
+        self.launch_bounds = launch_bounds
         self.synchronous_copy = synchronous_copy
         self.unroll_budget = unroll_budget
         self.unroll_remaining = 4096
@@ -833,6 +835,60 @@ class Compiler:
             return self.select(p, a, b, dt)
         raise CompileError(f"unsupported expression {type(expr).__name__}")
 
+    def floating_remainder(self, x, y):
+        """Floor remainder via exact binary long division, then divisor-sign adjust.
+
+        No quotient is represented in floating point. All reduction subtractions
+        are exact (Sterbenz); powers of two retain every bit, including subnormals.
+        The finite-input loops have <=277 (f32) or <=2098 (f64) visits per phase.
+        """
+        dt = x.type
+        if dt not in ("f32", "f64") or y.type != dt:
+            raise ValueError("floating_remainder requires matching f32/f64 operands")
+        zero = self.literal(0.0, dt)
+        result, residual, scaled = self.reg(dt), self.reg(dt), self.reg(dt)
+        count = self.reg("u32")
+        up, down, signed, done = (self.label("rem_" + name)
+                                 for name in ("up", "down", "signed", "done"))
+        self.move(result, self.literal(float("nan"), dt))
+        finite_x = self.instruction(f"testp.finite.{dt}", "pred", x)
+        nan_y = self.instruction(f"testp.notanumber.{dt}", "pred", y)
+        zero_y = self.compare("eq", y, zero)
+        self.emit(f"@!{finite_x} bra {done};")
+        self.emit(f"@{nan_y} bra {done};")
+        self.emit(f"@{zero_y} bra {done};")
+        self.emit(f"abs.{dt} {residual}, {x};")
+        self.emit(f"abs.{dt} {scaled}, {y};")
+        self.move(count, self.literal(0, "u32"))
+        smaller = self.compare("lt", residual, scaled)
+        self.emit(f"@{smaller} bra {signed};")
+        self.mark(up)
+        doubled = self.instruction(f"mul.rn.{dt}", dt, scaled, self.literal(2.0, dt))
+        too_large = self.compare("gt", doubled, residual)
+        self.emit(f"@{too_large} bra {down};")
+        self.move(scaled, doubled)
+        self.emit(f"add.u32 {count}, {count}, 1;")
+        self.emit(f"bra {up};")
+        self.mark(down)
+        subtract = self.compare("ge", residual, scaled)
+        self.emit(f"@{subtract} sub.rn.{dt} {residual}, {residual}, {scaled};")
+        finished = self.compare("eq", count, self.literal(0, "u32"))
+        self.emit(f"@{finished} bra {signed};")
+        self.emit(f"mul.rn.{dt} {scaled}, {scaled}, {self.literal(0.5, dt)};")
+        self.emit(f"sub.u32 {count}, {count}, 1;")
+        self.emit(f"bra {down};")
+        self.mark(signed)
+        self.emit(f"copysign.{dt} {result}, {x}, {residual};")
+        negative_x, negative_y = self.compare("lt", x, zero), self.compare("lt", y, zero)
+        different = self.instruction("xor.pred", "pred", negative_x, negative_y)
+        nonzero = self.compare("ne", result, zero)
+        adjust = self.binary("&&", different, nonzero)
+        self.emit(f"@{adjust} add.rn.{dt} {result}, {result}, {y};")
+        is_zero = self.compare("eq", result, zero)
+        self.emit(f"@{is_zero} copysign.{dt} {result}, {y}, {zero};")
+        self.mark(done)
+        return result
+
     def operation(self, name, args, dt):
         dt = dtype(dt)
         aliases = {
@@ -940,8 +996,7 @@ class Compiler:
             )
             return self.binary("-", q, self.convert(correction, dt))
         if name in ("mod", "remainder") and dt.startswith("f"):
-            q = self.operation("floor", [self.binary("/", *args)], dt)
-            return self.binary("-", args[0], self.binary("*", q, args[1]))
+            return self.floating_remainder(*args)
         if name in ("mod", "remainder") and dt.startswith("s"):
             rem = self.binary("%", *args)
             different_signs = self.compare(
@@ -1443,19 +1498,26 @@ class Compiler:
                     self.body(s.body)
                 self.env = saved
                 return
+        # Loop/StridedLoop declare an int induction variable, independently of
+        # the start expression's type. Compound increments still compute with
+        # the step's usual promotions before assigning back to this s32 slot.
         start = self.expr(s.start) if isinstance(s, StridedLoop) else self.literal(0)
-        bound = (
-            self.expr(s.end)
-            if isinstance(s, StridedLoop) and s.end is not None
-            else self.literal(extent(s.axis.extent))
-        )
+        iv = self.mutable_reg("s32")
+        self.move(iv, start)
+        self.env[s.axis.name] = iv
+        if isinstance(s, StridedLoop) and s.end is not None:
+            # The second int for-init binding sees the initialized induction
+            # variable and rounds/truncates independently of its source type.
+            bound = self.convert(self.expr(s.end), "s32")
+        else:
+            # An implicit extent is a decimal C integer literal, not an int
+            # binding. Preserve a large literal's width in the comparison.
+            count = extent(s.axis.extent)
+            bound = self.literal(count, "s64" if count > 2**31 - 1 else "s32")
         # The explicit end is a for-init binding, evaluated once on entry.
         # A bare carrier Var may otherwise alias a register mutated by the
         # body, changing both the stop condition and the <axis>_end binding.
         bound = self.snapshot(bound)
-        iv = self.mutable_reg(start.type)
-        self.move(iv, start)
-        self.env[s.axis.name] = iv
         if isinstance(s, StridedLoop) and s.end is not None:
             self.env[s.axis.name + "_end"] = bound
         head, end = self.label("loop"), self.label("endloop")
@@ -1714,8 +1776,19 @@ class Compiler:
         externs = "\n".join(
             line for line in self.declarations if line.startswith(".extern")
         )
+        bounds = ""
+        if self.launch_bounds:
+            # The launch contract includes helper threads and every block
+            # dimension. Give ptxas this truthful bound without changing the
+            # schedule, register cap, or numerical instruction sequence.
+            block = self.meta["block"]
+            if (not isinstance(block, (list, tuple)) or len(block) != 3
+                    or any(type(n) is not int or n < 1 for n in block)
+                    or math.prod(block) > 1024):
+                raise CompileError("block must contain three positive integers with at most 1024 threads")
+            bounds = ".maxntid " + ", ".join(map(str, block)) + "\n"
         source = (
-            f".version 8.0\n.target {self.target}\n.address_size 64\n{externs}\n\n.visible .entry {self.kernel.name}(\n{params}\n)\n{{\n"
+            f".version 8.0\n.target {self.target}\n.address_size 64\n{externs}\n\n.visible .entry {self.kernel.name}(\n{params}\n)\n{bounds}{{\n"
             + "\n".join(declarations + self.lines)
             + "\n}\n"
         )
@@ -1732,6 +1805,7 @@ def compile_file(
     fuse_accumulations=False,
     accurate_dots=False,
     compensated_dots=None,
+    launch_bounds=True,
 ):
     """Compile one packaged kernel using its ABI and numerical contract.
 
@@ -1776,4 +1850,5 @@ def compile_file(
         fuse_accumulations=fuse_accumulations,
         accurate_dots=accurate_dots,
         compensated_dots=compensated_dots,
+        launch_bounds=launch_bounds,
     ).compile()

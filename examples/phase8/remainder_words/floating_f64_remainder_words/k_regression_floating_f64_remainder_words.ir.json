@@ -1,0 +1,66 @@
+{
+  "inputs": [
+    "x",
+    "y"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            528,
+            2
+          ],
+          "dtype": "i32"
+        }
+      ]
+    },
+    "y": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "y",
+          "shape": [
+            528,
+            2
+          ],
+          "dtype": "i32"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='i', extent=Dim(528), window=None),), body=(Let(name='word_shift', value=Literal(value=32, dtype=DataType(name='u32', np=dtype('uint32'), nbytes=4)), dtype=DataType(name='u32', np=dtype('uint32'), nbytes=4)), Load(names=('x_low',), input='x', index=(Var(name='i'), Literal(value=0, dtype='int')), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Load(names=('x_high',), input='x', index=(Var(name='i'), Literal(value=1, dtype='int')), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Assign(name='x_low_u32', op=ElementwiseImpl('bitcast'), args=('x_low',), dtype=DataType(name='u32', np=dtype('uint32'), nbytes=4)), Assign(name='x_high_u32', op=ElementwiseImpl('bitcast'), args=('x_high',), dtype=DataType(name='u32', np=dtype('uint32'), nbytes=4)), Let(name='x_low_u64', value=Var(name='x_low_u32'), dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8)), Let(name='x_high_u64', value=Var(name='x_high_u32'), dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8)), Assign(name='x_upper', op=ElementwiseImpl('left_shift'), args=('x_high_u64', 'word_shift'), dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8)), Assign(name='x_bits', op=ElementwiseImpl('bitwise_or'), args=('x_low_u64', 'x_upper'), dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8)), Assign(name='x_value', op=ElementwiseImpl('bitcast'), args=('x_bits',), dtype=DataType(name='f64', np=dtype('float64'), nbytes=8)), Load(names=('y_low',), input='y', index=(Var(name='i'), Literal(value=0, dtype='int')), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Load(names=('y_high',), input='y', index=(Var(name='i'), Literal(value=1, dtype='int')), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Assign(name='y_low_u32', op=ElementwiseImpl('bitcast'), args=('y_low',), dtype=DataType(name='u32', np=dtype('uint32'), nbytes=4)), Assign(name='y_high_u32', op=ElementwiseImpl('bitcast'), args=('y_high',), dtype=DataType(name='u32', np=dtype('uint32'), nbytes=4)), Let(name='y_low_u64', value=Var(name='y_low_u32'), dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8)), Let(name='y_high_u64', value=Var(name='y_high_u32'), dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8)), Assign(name='y_upper', op=ElementwiseImpl('left_shift'), args=('y_high_u64', 'word_shift'), dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8)), Assign(name='y_bits', op=ElementwiseImpl('bitwise_or'), args=('y_low_u64', 'y_upper'), dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8)), Assign(name='y_value', op=ElementwiseImpl('bitcast'), args=('y_bits',), dtype=DataType(name='f64', np=dtype('float64'), nbytes=8)), Assign(name='r', op=ElementwiseImpl('remainder'), args=('x_value', 'y_value'), dtype=DataType(name='f64', np=dtype('float64'), nbytes=8)), Assign(name='raw_r', op=ElementwiseImpl('bitcast'), args=('r',), dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8)), Assign(name='not_nan', op=ElementwiseImpl('equal'), args=('r', 'r'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='nan_bits', value=Literal(value=9221120237041090560, dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8)), dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8)), Assign(name='canonical', op=ElementwiseImpl('where'), args=('not_nan', 'raw_r', 'nan_bits'), dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8)), Let(name='low_u32', value=Var(name='canonical'), dtype=DataType(name='u32', np=dtype('uint32'), nbytes=4)), Assign(name='upper_u64', op=ElementwiseImpl('right_shift'), args=('canonical', 'word_shift'), dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8)), Let(name='high_u32', value=Var(name='upper_u64'), dtype=DataType(name='u32', np=dtype('uint32'), nbytes=4)), Assign(name='low', op=ElementwiseImpl('bitcast'), args=('low_u32',), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Assign(name='high', op=ElementwiseImpl('bitcast'), args=('high_u32',), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Write(output='out', index=(Var(name='i'), Literal(value=0, dtype='int')), values=('low',), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE'), Write(output='out', index=(Var(name='i'), Literal(value=1, dtype='int')), values=('high',), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE')), block_threads=None, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_floating_f64_remainder_words",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x",
+        "y"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            528,
+            2
+          ],
+          "dtype": "i32"
+        }
+      ]
+    }
+  }
+}

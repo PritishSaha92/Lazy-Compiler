@@ -1,0 +1,66 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_probe_f32_remainder_quotient",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "x",
+        "dtype": "f32",
+        "shape": [
+          8
+        ],
+        "data": [
+          100000000.0,
+          -100000000.0,
+          1.0000000200408773e+20,
+          -1.0000000200408773e+20,
+          5.300000190734863,
+          -5.300000190734863,
+          1.0,
+          -1.0
+        ]
+      },
+      {
+        "name": "y",
+        "dtype": "f32",
+        "shape": [
+          8
+        ],
+        "data": [
+          3.0,
+          3.0,
+          3.0,
+          -3.0,
+          0.10000000149011612,
+          0.10000000149011612,
+          3.0,
+          -3.0
+        ]
+      },
+      {
+        "name": "out",
+        "dtype": "f32",
+        "shape": [
+          8
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "185d9d8cdbe1c3b0e76a36753d65fbe8d01a6abcc40e5769a12d14a10a741145"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "ok": true,
+  "entry": "k_regression_stamped_integer_policy_controls",
+  "grid": [
+    1,
+    1,
+    1
+  ],
+  "block": [
+    32,
+    1,
+    1
+  ],
+  "smem_bytes": 0,
+  "median_us": 24.8,
+  "iters": 1,
+  "outputs": {
+    "out": {
+      "shape": [
+        4
+      ],
+      "dtype": "i64",
+      "sum": 33554689.0,
+      "values": [
+        16777216.0,
+        16777218.0,
+        1.0,
+        254.0
+      ],
+      "truncated": false
+    }
+  }
+}

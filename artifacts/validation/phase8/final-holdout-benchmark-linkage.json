@@ -1,0 +1,102 @@
+{
+  "schema": "emmy-final-holdout-ptx-linkage-v1",
+  "pass": true,
+  "scope": "Exact PTX linkage for four previously measured development kernels; not new timing or hidden-set execution",
+  "source_sha256": {
+    "baseline": {
+      "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+      "ptx_backend.py": "3344668fe0b3f94a7198478fcccc50a51e80d70a33c67a868942353918dc9d4f",
+      "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+      "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+      "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+    },
+    "current": {
+      "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+      "ptx_backend.py": "6a501221f0bf98c6639b79b3e09330b068fa397919c211d5bddea07c5a1e1a89",
+      "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+      "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+      "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+    }
+  },
+  "source_and_inputs_unchanged": true,
+  "benchmark_report_sha256": "6a6b81d989f3fce0f509e2cabae8419856cb955f55c018bffdbaf89d1f959d1f",
+  "input_files_sha256": {
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_a01_long_context\\k_matmul_softmax_reduce_abf187.ir.json": "401ccddcd9e84f8764e8031543261378773542eb98ad23a30c4da4b2e87d6cde",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_a01_long_context\\meta.json": "0bde45d4209c5002da13d1efec17c3dc364b336886b7f4e9fad6f776d839377f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_a01_long_context\\expected.npz": "e99905e495a7ad4058ddbf4e1edc7cf9564bed8b4ea8840f5105f5a1ced4c71e",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_a02_long_query\\k_matmul_softmax_reduce_8b46c8.ir.json": "1e11f01a4bd22fffae41d922d8228abec4c97f337b07315ef2bd3ed80e04e1cf",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_a02_long_query\\meta.json": "53b49fb3e65fb2742335c92124cc52bdce3c4893944eef005c3b41f887405c4e",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_a02_long_query\\expected.npz": "dc9d45c0ec34c95fba1d82cc7a44af6e7285ed37ed9906b61fab4b104a109b20",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_m02_tall_thin\\k_matmul.ir.json": "dec5c505c365431108615bb04156816586af2cf18814b76909c59745a687ec69",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_m02_tall_thin\\meta.json": "5d8b9f7e7c1152527d2249e7c3593274a21c6d4d9c65fd52c1206e72611c5346",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_m02_tall_thin\\expected.npz": "a934300e326fc5730aaea5ed4eed21a8a14a948a6049ac55a32e96842a24537c",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_f03_weighted_softmax_sum\\k_softmax_86069b.ir.json": "e18474393ebbc4731b2ce5668ec9edc57325bcd0b965e08b235868eebfe5c847",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_f03_weighted_softmax_sum\\meta.json": "7809bc09886c43b8c92d8ed38d00f3919e330be9440950506e80833eb8ef458f",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\holdout-2026-10-23\\hold_f03_weighted_softmax_sum\\expected.npz": "4283dfd7296e8839c698b6e13df0e9503457d14994a6ea33a1212decb8025354"
+  },
+  "modules": 4,
+  "gpu_used": false,
+  "network_used": false,
+  "rows": [
+    {
+      "problem": "hold_a01_long_context",
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_a01_long_context\\k_matmul_softmax_reduce_abf187.ir.json",
+      "pass": true,
+      "baseline": {
+        "recorded_ptx_sha256": "0866aad32fffc021d1675effad71e599722b6741ace38fdc591b45fe2049dc2f",
+        "fresh_ptx_lf_sha256": "112eb6016b8bf934d19092c6fe372ea115d05757cd4661be6dcfa75d08b7bc9c",
+        "byte_equal_after_uniform_newlines": true
+      },
+      "candidate": {
+        "recorded_ptx_sha256": "9518e9d792aec6896320d6d0983413c1a64119ff09d3d7ef8089b58cd020010b",
+        "fresh_ptx_lf_sha256": "bfa35e618f181caac84c4186cba59b9debc9f9cac2f1947342577ca19253851e",
+        "byte_equal_after_uniform_newlines": true
+      }
+    },
+    {
+      "problem": "hold_a02_long_query",
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_a02_long_query\\k_matmul_softmax_reduce_8b46c8.ir.json",
+      "pass": true,
+      "baseline": {
+        "recorded_ptx_sha256": "a5639c5ef83289a0c692ad751ee7871799de9da3d5676416934799ae853406c6",
+        "fresh_ptx_lf_sha256": "9fb5260167e5ca981b483047db3f7548b138e23eb3749d3d0a5c4b6a023fcee0",
+        "byte_equal_after_uniform_newlines": true
+      },
+      "candidate": {
+        "recorded_ptx_sha256": "b0a3450acc1e3dde085ad418dbddf7675bc1d95ab741dc5d6d1b98ceb28968fc",
+        "fresh_ptx_lf_sha256": "33746e48dad969ba53e55b8385929582efd68336429ce45e3b896c4b127e8e41",
+        "byte_equal_after_uniform_newlines": true
+      }
+    },
+    {
+      "problem": "hold_m02_tall_thin",
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_m02_tall_thin\\k_matmul.ir.json",
+      "pass": true,
+      "baseline": {
+        "recorded_ptx_sha256": "21edc00a56145018055c6a842a7fd6628d79132937e3e466dc24b7c61f876fcf",
+        "fresh_ptx_lf_sha256": "9cf598b936b5367e76d5c8e96d86645da1b65fd4a0f809e2fa1da8d9fce0e767",
+        "byte_equal_after_uniform_newlines": true
+      },
+      "candidate": {
+        "recorded_ptx_sha256": "4c099c2d6ddd0e8c0c0ded98f50026dd2b5b3a920ebb16fbdf8e0de5e6a08c98",
+        "fresh_ptx_lf_sha256": "af8bdc18ac16cf89b0f5c4fce82cdba2c19d0bbbf6fa405493da4180e5a1b787",
+        "byte_equal_after_uniform_newlines": true
+      }
+    },
+    {
+      "problem": "hold_f03_weighted_softmax_sum",
+      "ir": "artifacts\\validation\\holdout-2026-10-23\\hold_f03_weighted_softmax_sum\\k_softmax_86069b.ir.json",
+      "pass": true,
+      "baseline": {
+        "recorded_ptx_sha256": "a54d3ab3c4d4c75e57c98a29787d21e5d23a661d6fe9cfaa49af9ebc83b2d38b",
+        "fresh_ptx_lf_sha256": "b737513239050b449674b156bbd17dc0549deecd86e8374a2a0ad2a938ceba13",
+        "byte_equal_after_uniform_newlines": true
+      },
+      "candidate": {
+        "recorded_ptx_sha256": "bdc811eaa889c4cb8a8cc16f5f5b533a47e88b0780eae41ef18a7672601271de",
+        "fresh_ptx_lf_sha256": "4a63f1a0be6bf2a6c7fbd3d7167833f16150b22b2e228866faec665b4cdde771",
+        "byte_equal_after_uniform_newlines": true
+      }
+    }
+  ]
+}

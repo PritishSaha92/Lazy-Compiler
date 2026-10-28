@@ -1,0 +1,33 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_strided_unsigned_start_negative_end",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "out",
+        "dtype": "i32",
+        "shape": [
+          4,
+          2
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "21b21d07f73d609715678bda4fb3214c4aa5640915e1dde061f79c459b7a46dd"
+  }
+}

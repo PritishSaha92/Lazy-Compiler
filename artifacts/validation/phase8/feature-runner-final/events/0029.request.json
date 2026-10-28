@@ -1,0 +1,42 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_bulk_rectangle",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      64,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "out",
+        "dtype": "f32",
+        "shape": [
+          4,
+          12
+        ],
+        "output": true
+      },
+      {
+        "name": "x",
+        "dtype": "f32",
+        "shape": [
+          8,
+          20
+        ],
+        "seed": 0
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "d255673bc77f5b67cfb1d54078b99682bcec0feadf0d0f6bb8d8f4e5f88e6d53"
+  }
+}

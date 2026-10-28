@@ -1,0 +1,41 @@
+{
+  "id": "strided_end_reads_initialized_axis",
+  "graph_inputs": [],
+  "graph_outputs": [
+    "out"
+  ],
+  "rtol": 0,
+  "atol": 0,
+  "kernels": [
+    {
+      "entry": "k_regression_strided_end_reads_initialized_axis",
+      "grid": [
+        1,
+        1,
+        1
+      ],
+      "block": [
+        32,
+        1,
+        1
+      ],
+      "smem_bytes": 0,
+      "zero_outputs": [],
+      "arg_order": [
+        "out"
+      ],
+      "args": [
+        {
+          "name": "out",
+          "dtype": "i32",
+          "shape": [
+            1,
+            2
+          ],
+          "output": true
+        }
+      ],
+      "final": true
+    }
+  ]
+}

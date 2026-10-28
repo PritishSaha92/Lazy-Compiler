@@ -179,6 +179,7 @@ def bare_compiler(target="sm_89"):
     compiler.target = target
     compiler.lines, compiler.declarations = [], []
     compiler.counts, compiler.regtypes = defaultdict(int), {}
+    compiler.labels = 0
     return compiler
 
 

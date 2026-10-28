@@ -5,12 +5,13 @@ Start with the [submission overview](SUBMISSION.md),
 [feature/example/test index](docs/FEATURES.md), and [runnable examples](examples/README.md).
 The optional extensions include FP16/BF16 tensor cores and an SM90 bulk-copy
 path. Their exact supported forms and limits are explicit. The current
-[phase-7 release](docs/PHASE7.md) adds integer-semantics and logical GPU builtin
-corrections. Fresh organizer-GPU validation passed all 15 public problems and
-41 additional packages: 29 previous feature examples, 11 new counterexamples
-and one retained scalar case with changed PTX. The [earlier research
-review](docs/RESEARCH_REVIEW.md) explains the ring-pipeline tests and
-architecture-admission correction.
+[phase-8 revision](docs/PHASE8.md) adds prescribed launch bounds and fixes loop
+integer bindings and floating floor remainder. Fresh organizer-GPU validation
+passed **15/15 public problems and the final 51/51 additional packages**.
+CPU/assembler discovery passed **120 methods**, with 19 local-GPU methods skipped.
+The phase-8 report retains the initial transport failures, the corrected FP64
+word-transport fixtures and source-bound evidence.
+Earlier release reports remain historical records, with their original results.
 
 This Python backend translates Emmy's scheduled Kernel IR directly into PTX.
 Emmy 0.3.11 supplies parsing and typed IR structures; this compiler implements
@@ -37,21 +38,25 @@ whole module succeeds, with diagnostics on stderr.
 
 | Read in this order | Responsibility |
 |---|---|
-| [`compile_file`](ptx_backend.py#L1726), [`compile`](ptx_backend.py#L1674) | Read the ABI and numerical contract, declare parameters/registers/shared memory, assemble the module. |
-| [`statement`](ptx_backend.py#L1299), [`tile`](ptx_backend.py#L1490), [`loop`](ptx_backend.py#L1419) | Dispatch typed IR; preserve work ownership, bounds, lexical scope and accumulator lifetime. |
-| [`expr`](ptx_backend.py#L799), [`operation`](ptx_backend.py#L836), [`convert`](ptx_backend.py#L466) | Lower typed arithmetic with explicit conversion, rounding and unsupported-operation diagnostics. |
-| [`address`](ptx_backend.py#L1165), [`load`](ptx_backend.py#L1204), [`store`](ptx_backend.py#L1225) | Flatten indices and emit global/shared memory operations; vectorize only with sufficient alignment evidence. |
-| [`shuffle`](ptx_backend.py#L1584), [`tree`](ptx_backend.py#L1621), [`sync`](ptx_backend.py#L1560) | Preserve subgroup membership, ordered coupled-state merges, shared-memory barriers and result broadcast. |
+| [`compile_file`](ptx_backend.py#L1799), [`compile`](ptx_backend.py#L1736) | Read the ABI and numerical contract, declare parameters/registers/shared memory, assemble the module. |
+| [`statement`](ptx_backend.py#L1354), [`tile`](ptx_backend.py#L1552), [`loop`](ptx_backend.py#L1474) | Dispatch typed IR; preserve work ownership, bounds, lexical scope and accumulator lifetime. |
+| [`expr`](ptx_backend.py#L801), [`operation`](ptx_backend.py#L892), [`convert`](ptx_backend.py#L468) | Lower typed arithmetic with explicit conversion, rounding and unsupported-operation diagnostics. |
+| [`address`](ptx_backend.py#L1220), [`load`](ptx_backend.py#L1259), [`store`](ptx_backend.py#L1280) | Flatten indices and emit global/shared memory operations; vectorize only with sufficient alignment evidence. |
+| [`shuffle`](ptx_backend.py#L1646), [`tree`](ptx_backend.py#L1683), [`sync`](ptx_backend.py#L1622) | Preserve subgroup membership, ordered coupled-state merges, shared-memory barriers and result broadcast. |
 | [`TensorLowering`](ptx_tensor.py) | Lower explicit m16n8k16 fragments, operand transport, MMA, guarded stores and epilogues. |
 | [`BulkLowering`](ptx_bulk.py) | Prove aligned box-copy bounds, emit native bulk transactions and preserve mbarrier phases. |
 
 GPU builtins retain their signed/unsigned types. Unstamped mixed-integer
 arithmetic stays in the integer family, and expression shifts take their type
 from the promoted left operand. Auxiliary-thread examples use explicit role
-guards and barriers; the [phase-7 scope](docs/PHASE7.md) states the launch and
-instruction limits.
+guards and barriers. Loops use signed 32-bit induction bindings, capture explicit
+ends once, and evaluate live increments after the body. Named floating remainder
+uses power-of-two reduction instead of a rounded quotient. See the
+[feature contracts](docs/FEATURES.md) for boundaries and examples.
 
-The prescribed launch and schedule are retained. Optimizations are bounded:
+The prescribed launch and schedule are retained. `.maxntid` exposes the supplied
+block size to the assembler; the [paired experiment](docs/PHASE8.md#performance-experiment)
+compares it with our previous compiler. Other optimizations are bounded:
 schedule-hinted loop unrolling and, only under a nonzero tolerance, compensation
 for eligible independent FP32 dots. Exact or missing tolerances retain ordinary
 FP32 dot arithmetic. Operation/type support is explicit; see
@@ -131,8 +136,10 @@ different shapes and ops, no surprise concepts.
 
 ## Submitting
 
-Submit at [riftstack.ai/hackathon/submit](https://riftstack.ai/hackathon/submit) before
-**23:59 AoE on Tuesday, October 27**. A submission is:
+Submit at [riftstack.ai/hackathon/submit](https://riftstack.ai/hackathon/submit).
+Check the organizer's current deadline and submission instructions there. The
+repository and project video are the entry; a local ZIP is not required to push
+this checkout. A submission includes:
 
 - a **public GitHub repository** with `compile.py` at its root, runnable as
   `python compile.py path/to/kernel.ir.json > out.ptx`;

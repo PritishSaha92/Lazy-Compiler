@@ -1,0 +1,6 @@
+{
+  "endpoint": "/compile",
+  "payload": {
+    "ptx": ".version 8.0\r\n.target sm_89\r\n.address_size 64\r\n\r\n\r\n.visible .entry k_regression_probe_strided_int32_start(\r\n    .param .u64 param_0\r\n)\r\n{\r\n    .reg .b64 %rd<7>;\r\n    .reg .b32 %r<10>;\r\n    .reg .pred %p<3>;\r\n    ld.param.u64 %rd1, [param_0];\r\n    cvta.to.global.u64 %rd2, %rd1;\r\n    mov.u32 %r1, %tid.x;\r\n    mov.u32 %r2, %ctaid.x;\r\n    mov.u32 %r3, %ntid.x;\r\n    rem.s32 %r4, %r1, 32;\r\n    div.s32 %r5, %r1, 32;\r\n    mul.lo.s32 %r6, %r2, %r3;\r\n    add.s32 %r7, %r6, %r1;\r\n    setp.ge.s32 %p1, %r7, 1;\r\n    @%p1 bra endtile_1;\r\n    mov.s32 %r8, 0;\r\n    mov.s64 %rd3, 4294967296;\r\nloop_2:\r\n    setp.ge.s64 %p2, %rd3, 1;\r\n    @%p2 bra endloop_3;\r\n    add.s32 %r9, %r8, 1;\r\n    mov.s32 %r8, %r9;\r\n    add.s64 %rd4, %rd3, 1;\r\n    mov.s64 %rd3, %rd4;\r\n    bra loop_2;\r\nendloop_3:\r\n    mul.wide.s32 %rd5, 0, 4;\r\n    add.u64 %rd6, %rd2, %rd5;\r\n    st.global.s32 [%rd6+0], %r8;\r\nendtile_1:\r\n    ret;\r\n}\r\n"
+  }
+}
