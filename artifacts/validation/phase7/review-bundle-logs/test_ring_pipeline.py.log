@@ -1,0 +1,9 @@
+test_actual_cli_and_architecture_admission (test_ring_pipeline.RingPipelineTests.test_actual_cli_and_architecture_admission) ... ok
+test_exact_references_detect_missing_stale_and_cross_slab_data (test_ring_pipeline.RingPipelineTests.test_exact_references_detect_missing_stale_and_cross_slab_data) ... ok
+test_ring_pipelines_assemble (test_ring_pipeline.RingPipelineTests.test_ring_pipelines_assemble) ... ok
+test_same_process_compile_state_isolation (test_ring_pipeline.RingPipelineTests.test_same_process_compile_state_isolation) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 11.192s
+
+OK

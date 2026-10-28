@@ -17,18 +17,25 @@ Documentation, test inputs, generated PTX and validation evidence remain outside
 the submission ZIP. The entry command after extraction remains
 `python compile.py path/to/kernel.ir.json`, with that input's `meta.json` beside it.
 
-## Current review/source bundle
+## Current source checkout and release archive
 
-The [phase-6 runtime pointer](../artifacts/release/phase6/latest.json) selects
-the minimal compiler ZIP. The [review pointer](../artifacts/release/phase6/review/latest.json)
-selects a separate bundle built by `tools/package_review.py`: compiler sources,
-examples, tests, tools, documentation, required small fixture trees and explicitly
-selected evidence. `REVIEW_MANIFEST.json` records every member hash. The review
-bundle is extracted and its advertised feature tests and CLI commands are checked
-before delivery. Neither packaging tool publishes the repository or submits an entry.
+This Git checkout contains the validated phase-7 compiler, runnable examples,
+tests and technical evidence. `REVIEW_MANIFEST.json` inventories this checkout;
+[CHECKOUT.md](CHECKOUT.md) explains its scope and verification commands.
+Presentation drafts and a scratch PTX output are omitted from the source tree.
 
-The [phase-6 release report](PHASE6.md) identifies the current evidence. The
-older three-file archive described below remains unchanged and historical.
+The [phase-7 runtime pointer](../artifacts/release/phase7/latest.json) identifies
+the five-file compiler archive. The [review pointer](../artifacts/release/phase7/review/latest.json)
+identifies the original full release archive. Its original inventory is retained
+as [source-archive-inventory.json](../artifacts/validation/phase7/source-archive-inventory.json).
+Those archive hashes describe the original release, not this cleaned checkout.
+The five runtime files match the [phase-7 validation](PHASE7.md) byte for byte.
+
+Historical build and verification scripts under `artifacts/validation/phase*`
+record how the original archives were produced. They may reference presentation
+files omitted here. Use `tools/check_checkout.py` for this checkout and
+`tools/package_review.py` to create a new bundle from the current source tree.
+The older release archives and their numerical results remain historical.
 
 ## Previous phase-4 evidence manifest (24 October 2026)
 
@@ -160,7 +167,7 @@ Its release was created with this actual command from the repository root:
 python tools/package_submission.py --release-dir artifacts/release/phase4 --evidence artifacts/validation/phase4/release-remote/summary.json artifacts/validation/phase4/semantic-final/summary.json artifacts/validation/phase4/cpu-regressions.json artifacts/validation/phase4/clean-install/summary.json artifacts/validation/phase4/public-ptx-identity.json --update-latest
 ```
 
-The immutable [submission ZIP](../artifacts/release/phase4/submission-bcbc4a8381497f1d34be.zip)
+The immutable submission ZIP (`submission-bcbc4a8381497f1d34be.zip`, separate historical release artifact)
 has SHA-256
 `b9af6a761233e39b8faa330e1fd01c49e8a457498cb5d3b7e2465ef5403251e8`.
 Its [manifest](../artifacts/release/phase4/submission-bcbc4a8381497f1d34be-b88459958203b4fdede2.manifest.json)

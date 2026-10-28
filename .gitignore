@@ -1,0 +1,7 @@
+# Local Python and compiler outputs
+__pycache__/
+*.py[cod]
+.pytest_cache/
+/.build/
+/out.ptx
+*.cubin

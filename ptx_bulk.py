@@ -46,10 +46,11 @@ class BulkLowering:
 
     def __init__(self, compiler):
         # Local import keeps the extension independent of backend import order.
-        from ptx_backend import CompileError, _SIZE, dtype, extent
+        from ptx_backend import CompileError, _SIZE, builtin_operand, dtype, extent
 
         self.c = compiler
         self.error, self.size, self.dtype, self.extent = CompileError, _SIZE, dtype, extent
+        self.builtin_operand = builtin_operand
         self.descriptors = {}
         self.ranges = {}
 
@@ -61,6 +62,16 @@ class BulkLowering:
                 raise self.error("bulk copies require positive one-dimensional block and grid launches")
         block = self.c.meta.get("block", [1, 1, 1])[0]
         grid = self.c.meta.get("grid", [1, 1, 1])[0]
+        self.builtin_ranges = {"WARP_SZ": (32, 32)}
+        for position, axis in enumerate("xyz"):
+            block_extent = self.c.meta.get("block", [1, 1, 1])[position]
+            grid_extent = self.c.meta.get("grid", [1, 1, 1])[position]
+            self.builtin_ranges.update({
+                f"%tid.{axis}": (0, block_extent - 1),
+                f"%ctaid.{axis}": (0, grid_extent - 1),
+                f"%ntid.{axis}": (block_extent, block_extent),
+                f"%nctaid.{axis}": (grid_extent, grid_extent),
+            })
         ranges = {
             "_tid": (0, block - 1), "_cta": (0, grid - 1),
             "lane": (0, min(block, 32) - 1), "warp": (0, (block - 1) // 32),
@@ -112,6 +123,13 @@ class BulkLowering:
                 self._collect(statement.body, ranges.copy())
                 self._collect(statement.else_body, ranges.copy())
 
+    def _has_unsigned_builtin(self, expr):
+        if isinstance(expr, Builtin):
+            return self.builtin_operand(expr.name) != "WARP_SZ"
+        if isinstance(expr, BinaryExpr):
+            return self._has_unsigned_builtin(expr.left) or self._has_unsigned_builtin(expr.right)
+        return False
+
     def _interval(self, expr, ranges):
         """Small signed-int32 proof domain: literals, axes, +,-,*,/,%.
 
@@ -127,10 +145,7 @@ class BulkLowering:
         elif isinstance(expr, Var):
             result = ranges.get(expr.name)
         elif isinstance(expr, Builtin):
-            bound = {"threadIdx.x": self.c.meta.get("block", [1])[0],
-                     "blockIdx.x": self.c.meta.get("grid", [1])[0]}.get(expr.name)
-            if bound is not None:
-                result = (0, bound - 1)
+            result = self.builtin_ranges.get(self.builtin_operand(expr.name))
         elif isinstance(expr, BinaryExpr):
             a, b = self._interval(expr.left, ranges), self._interval(expr.right, ranges)
             if expr.op == "+":
@@ -146,7 +161,8 @@ class BulkLowering:
                 result = (0, min(a[1], b[0] - 1))
             elif expr.op == "&" and a[0] >= 0 and b[0] == b[1] and b[0] >= 0:
                 result = (0, min(a[1], b[0]))
-        if result is None or not (-2**31 <= result[0] <= result[1] < 2**31):
+        if (result is None or not (-2**31 <= result[0] <= result[1] < 2**31)
+                or (result[0] < 0 and self._has_unsigned_builtin(expr))):
             raise self.error("bulk copy requires provable, overflow-free int32 index bounds")
         return result
 

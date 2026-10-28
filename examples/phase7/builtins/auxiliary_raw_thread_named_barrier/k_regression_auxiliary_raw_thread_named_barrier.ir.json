@@ -1,0 +1,49 @@
+{
+  "inputs": [
+    "x"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            64
+          ],
+          "dtype": "f32"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='batch', extent=Dim(3), window=None), Axis(name='cell', extent=Dim(64), window=None)), body=(Smem(name='scratch', extents=(64,), dtype='float', align=16), Cond(cond=BinaryExpr(op='>=', left=Builtin(name='thread_idx.x'), right=Literal(value=64, dtype='int')), body=(Load(names=('first',), input='x', index=(Var(name='batch'), BinaryExpr(op='-', left=Builtin(name='thread_idx.x'), right=Literal(value=64, dtype='int'))), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Load(names=('second',), input='x', index=(Var(name='batch'), BinaryExpr(op='+', left=BinaryExpr(op='-', left=Builtin(name='thread_idx.x'), right=Literal(value=64, dtype='int')), right=Literal(value=32, dtype='int'))), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='scratch', index=(BinaryExpr(op='-', left=Builtin(name='thread_idx.x'), right=Literal(value=64, dtype='int')),), values=('first',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE'), Write(output='scratch', index=(BinaryExpr(op='+', left=BinaryExpr(op='-', left=Builtin(name='thread_idx.x'), right=Literal(value=64, dtype='int')), right=Literal(value=32, dtype='int')),), values=('second',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE')), else_body=()), Sync(barrier_id=0, count=None, warp=False), Cond(cond=BinaryExpr(op='<', left=Builtin(name='thread_idx.x'), right=Literal(value=64, dtype='int')), body=(Load(names=('held',), input='scratch', index=(Var(name='cell'),), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Sync(barrier_id=1, count=64, warp=False), Write(output='scratch', index=(BinaryExpr(op='-', left=Literal(value=63, dtype='int'), right=Var(name='cell')),), values=('held',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE'), Sync(barrier_id=1, count=64, warp=False), Load(names=('reversed',), input='scratch', index=(Var(name='cell'),), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='out', index=(Var(name='batch'), Var(name='cell')), values=('reversed',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE')), else_body=())), block_threads=64, aux_threads=32, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_auxiliary_raw_thread_named_barrier",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            3,
+            64
+          ],
+          "dtype": "f32"
+        }
+      ]
+    }
+  }
+}

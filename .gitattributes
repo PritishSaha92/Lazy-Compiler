@@ -1,0 +1,2 @@
+# Preserve the exact source and validation bytes recorded in release manifests.
+* -text

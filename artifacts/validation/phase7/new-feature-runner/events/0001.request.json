@@ -1,0 +1,42 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_auxiliary_raw_thread_named_barrier",
+    "grid": [
+      3,
+      1,
+      1
+    ],
+    "block": [
+      96,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "x",
+        "dtype": "f32",
+        "shape": [
+          3,
+          64
+        ],
+        "seed": 0
+      },
+      {
+        "name": "out",
+        "dtype": "f32",
+        "shape": [
+          3,
+          64
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "4d71e6708be57cd80c5c41c77b4488b473b3131d05a988d6b53f7c2dabd4bb3e"
+  }
+}

@@ -81,8 +81,7 @@ source bundle with examples and tests. Its manifest hashes every member.
 [PACKAGING.md](PACKAGING.md) describes the extracted-CLI and archive checks.
 
 The existing phase-4 release and its reports remain historical artifacts.
-Use [SUBMISSION.md](../SUBMISSION.md) for the current reviewer-facing overview
-and [VIDEO_SCRIPT_PHASE5.md](VIDEO_SCRIPT_PHASE5.md) for the updated 592-word walkthrough.
+Use [SUBMISSION.md](../SUBMISSION.md) for the current reviewer-facing overview.
 
 The final runtime archive is `submission-a762243a66b4b7586ac6.zip`, SHA-256
 `598fe981e4471f46a3417cf2760412ee3fa6e39e66289c4beef425a30ac1c116`.

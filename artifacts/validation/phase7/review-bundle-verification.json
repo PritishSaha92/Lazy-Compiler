@@ -1,0 +1,235 @@
+{
+  "schema": "emmy-review-extraction-verification-v1",
+  "pass": true,
+  "started_utc": "2026-10-28T00:22:32.276095+00:00",
+  "local_gpu_used": false,
+  "network_used": false,
+  "scope": "Archive integrity, source identity, extracted CLI execution, focused CPU/assembler tests and primary reviewer links; no additional GPU results.",
+  "retained_full_cpu_gate": {
+    "methods": 129,
+    "passed": 110,
+    "explicit_local_gpu_skips": 19,
+    "initial_diagnostic_expectation_failures": 2,
+    "runtime_unchanged_between_runs": true
+  },
+  "archive": {
+    "path": "artifacts\\release\\phase7\\review\\review-07b8078ddddffc564db5.zip",
+    "sha256": "69746a1c9b02ff20820c1bf1546fcccab4d2bf44b4a05b2ec3aa8451db696a11",
+    "bytes": 16121880,
+    "verified_members": 1552
+  },
+  "extraction": ".build\\phase7-review-yiyetbxs",
+  "runtime_source_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "3344668fe0b3f94a7198478fcccc50a51e80d70a33c67a868942353918dc9d4f",
+    "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+    "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "runtime_zip": {
+    "path": "artifacts\\release\\phase7\\submission-7f64258bc6cfbf6dfe11.zip",
+    "sha256": "a75f1dd59a48b4cf9c07aeb1b7b492a0ab619d3eeed5f6c9ff6a9ed92e93b359"
+  },
+  "extracted_module_origins": {
+    "ptx_backend": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\.build\\phase7-review-yiyetbxs\\ptx_backend.py",
+    "ptx_tensor": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\.build\\phase7-review-yiyetbxs\\ptx_tensor.py",
+    "ptx_bulk": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\.build\\phase7-review-yiyetbxs\\ptx_bulk.py"
+  },
+  "cli_checks": [
+    {
+      "ir": "problems/p00_scalar_add/k_add_pointwise.ir.json",
+      "pass": true,
+      "ptx_sha256": "c0d81f88369a245e4144ff5e364ed1139349e24a40f8b3ca26f6257b41729a41",
+      "ptx_bytes": 1524
+    },
+    {
+      "ir": "examples/tensor/packages/tensor_global_f16/k_regression_tensor_global_f16.ir.json",
+      "pass": true,
+      "ptx_sha256": "a001a340266d79f17d5b3b315dbb01142154db70a3bae4e7cec03a2d43b6afd8",
+      "ptx_bytes": 8247
+    },
+    {
+      "ir": "examples/bulk/bulk_rectangle/k_regression_bulk_rectangle.ir.json",
+      "pass": true,
+      "ptx_sha256": "7c83b10ad0e13b386df43c75dd0f5e93b6b127a8242f152d7e550e11cd5515d3",
+      "ptx_bytes": 2276
+    },
+    {
+      "ir": "examples/combined/bulk_tensor_k48_f16/k_regression_bulk_tensor_k48_f16.ir.json",
+      "pass": true,
+      "ptx_sha256": "0dda8545618bf38532c8f0bb0167566d016106b3cd75a49e402ff3321102d7f0",
+      "ptx_bytes": 10763
+    },
+    {
+      "ir": "examples/generated_tensor/k_matmul_79479f.ir.json",
+      "pass": true,
+      "ptx_sha256": "fc734fa4d5b83a7964fde0bfc458ef474ac546652c3a77de749134b3b046354f",
+      "ptx_bytes": 38425
+    },
+    {
+      "ir": "examples/ring/ring_tensor_k80_f16/k_regression_ring_tensor_k80_f16.ir.json",
+      "pass": true,
+      "ptx_sha256": "c1ed2e8824ff132bfc4c14adfe75404a173410d2e2be89dac5bbed5ce52ba867",
+      "ptx_bytes": 22546
+    },
+    {
+      "ir": "examples/ring/ring_tensor_k112_bf16/k_regression_ring_tensor_k112_bf16.ir.json",
+      "pass": true,
+      "ptx_sha256": "710d3a97bd6368db8a5326d05c6499abd53464cbd47f0943870f187827021442",
+      "ptx_bytes": 24841
+    },
+    {
+      "ir": "examples/ring/ring_tensor_k112_f16_two_cta/k_regression_ring_tensor_k112_f16_two_cta.ir.json",
+      "pass": true,
+      "ptx_sha256": "f86aac8a7d920c3d18c01058d9a53a77321ea2f0d0ff2e64b7188ce80cf23643",
+      "ptx_bytes": 22567
+    },
+    {
+      "ir": "examples/phase7/builtins/auxiliary_raw_thread_named_barrier/k_regression_auxiliary_raw_thread_named_barrier.ir.json",
+      "pass": true,
+      "ptx_sha256": "bef69664298aaacbec8ee873c178fe396ca42a2119d8acd176d70e0fb19e074e",
+      "ptx_bytes": 2400
+    },
+    {
+      "ir": "examples/phase7/builtins/builtin_unsigned_arithmetic/k_regression_builtin_unsigned_arithmetic.ir.json",
+      "pass": true,
+      "ptx_sha256": "b1b228c2574f9034cee1fca883d8da8ed50e4c01ea3868176817bd3759acbd65",
+      "ptx_bytes": 5593
+    },
+    {
+      "ir": "examples/phase7/builtins/builtin_values_3d/k_regression_builtin_values_3d.ir.json",
+      "pass": true,
+      "ptx_sha256": "6d689e4de2f9adf80b23e062145d18ec6889a69554371cf55bf865f3c06b62c3",
+      "ptx_bytes": 3867
+    },
+    {
+      "ir": "examples/phase7/builtins/bulk_builtin_block_coordinate/k_regression_bulk_builtin_block_coordinate.ir.json",
+      "pass": true,
+      "ptx_sha256": "0571670a9dff84011705135319d684d3dd1a803e78227a4ab7a8ecf71071db3f",
+      "ptx_bytes": 1838
+    },
+    {
+      "ir": "examples/phase7/integer/shift_narrow_left_promotion/k_regression_shift_narrow_left_promotion.ir.json",
+      "pass": true,
+      "ptx_sha256": "5f4e9b4d5fc8c3f7ca29d40fbdd99d898ece501f29810ab87423a47dcef37e20",
+      "ptx_bytes": 2574
+    },
+    {
+      "ir": "examples/phase7/integer/shift_signed_right_unsigned_count/k_regression_shift_signed_right_unsigned_count.ir.json",
+      "pass": true,
+      "ptx_sha256": "a84c7aba35bafa317c1e8a60a1af019780b1ef9ab8b2321ce71216669520805f",
+      "ptx_bytes": 2353
+    },
+    {
+      "ir": "examples/phase7/integer/shift_unsigned_left_wide_count/k_regression_shift_unsigned_left_wide_count.ir.json",
+      "pass": true,
+      "ptx_sha256": "e7bbd60d35b0d8d2aea2fedf53a6b68cd684331907f5fbb66120b181698723d6",
+      "ptx_bytes": 2366
+    },
+    {
+      "ir": "examples/phase7/integer/stamped_integer_policy_controls/k_regression_stamped_integer_policy_controls.ir.json",
+      "pass": true,
+      "ptx_sha256": "1c4836925ad0a1f1464bad212fc48dc8a22e33f0dd733b152cf2ccdae4ad414c",
+      "ptx_bytes": 1037
+    },
+    {
+      "ir": "examples/phase7/integer/unstamped_mixed_integer_add/k_regression_unstamped_mixed_integer_add.ir.json",
+      "pass": true,
+      "ptx_sha256": "bd2d7fdfb5196c26fe012a4a87dc74ab87e12f2736a5face061e4e959f096e04",
+      "ptx_bytes": 1135
+    },
+    {
+      "ir": "examples/phase7/integer/unstamped_mixed_integer_and/k_regression_unstamped_mixed_integer_and.ir.json",
+      "pass": true,
+      "ptx_sha256": "129d3ff36edf7f5b6ffef57621fe203d2e4e55699ef2d710c85e17231dcc1a6c",
+      "ptx_bytes": 1135
+    },
+    {
+      "ir": "examples/phase7/integer/unstamped_mixed_integer_xor/k_regression_unstamped_mixed_integer_xor.ir.json",
+      "pass": true,
+      "ptx_sha256": "d517b2b58b2ba95079ba47e3b6ae52be1f743837f1e145770158bc95fd285bf0",
+      "ptx_bytes": 1135
+    },
+    {
+      "ir": "examples/phase7/retained/comparison_integer_promotion/k_regression_comparison_integer_promotion.ir.json",
+      "pass": true,
+      "ptx_sha256": "b65374ff63be7ae550ae271e67819fc09cf33650453b4ef3a1d824b30ebe0e0d",
+      "ptx_bytes": 2884
+    }
+  ],
+  "focused_tests": [
+    {
+      "suite": "test_tensor_cores.py",
+      "returncode": 0,
+      "methods": 8,
+      "skipped": 0,
+      "log": "artifacts\\validation\\phase7\\review-bundle-logs\\test_tensor_cores.py.log",
+      "log_sha256": "c2b1e67e4cec29e3db561f25f40603b657e90007549de63dfe6ae165a44ecddb"
+    },
+    {
+      "suite": "test_bulk_copy.py",
+      "returncode": 0,
+      "methods": 9,
+      "skipped": 0,
+      "log": "artifacts\\validation\\phase7\\review-bundle-logs\\test_bulk_copy.py.log",
+      "log_sha256": "d74966dc184fede00abeea074e035485b0d38af5565d192dbe29af06b83081d9"
+    },
+    {
+      "suite": "test_feature_interactions.py",
+      "returncode": 0,
+      "methods": 3,
+      "skipped": 0,
+      "log": "artifacts\\validation\\phase7\\review-bundle-logs\\test_feature_interactions.py.log",
+      "log_sha256": "45b25ab5557497455ed990c86ebe4e02136d892f4d56a527f6e85f3431fcefa1"
+    },
+    {
+      "suite": "test_ring_pipeline.py",
+      "returncode": 0,
+      "methods": 4,
+      "skipped": 0,
+      "log": "artifacts\\validation\\phase7\\review-bundle-logs\\test_ring_pipeline.py.log",
+      "log_sha256": "cadb2c6d13dd355082a35b2453cb4551c99803ae1ee0435f1267a64e3b8e56b4"
+    },
+    {
+      "suite": "test_async_target.py",
+      "returncode": 0,
+      "methods": 6,
+      "skipped": 0,
+      "log": "artifacts\\validation\\phase7\\review-bundle-logs\\test_async_target.py.log",
+      "log_sha256": "24c093226fa81de82ca569102bf05150db194aad1e628c4f87e2e0e5920010f0"
+    },
+    {
+      "suite": "test_builtin_aux.py",
+      "returncode": 0,
+      "methods": 7,
+      "skipped": 0,
+      "log": "artifacts\\validation\\phase7\\review-bundle-logs\\test_builtin_aux.py.log",
+      "log_sha256": "d73da4ec4a958c0aff504f37761c59c2ba8edad3f177c5591a32d0f2e38f34e3"
+    },
+    {
+      "suite": "test_unstamped_integer.py",
+      "returncode": 0,
+      "methods": 5,
+      "skipped": 1,
+      "log": "artifacts\\validation\\phase7\\review-bundle-logs\\test_unstamped_integer.py.log",
+      "log_sha256": "695d6e31a7de2667e7110d481907d4309f9e89daaa8d1b74e23364d49d59ddc0"
+    }
+  ],
+  "focused_test_totals": {
+    "methods": 42,
+    "skipped": 1,
+    "passed": 41
+  },
+  "primary_links": {
+    "verified": 144,
+    "external_release_artifacts": [
+      {
+        "page": "docs/PHASE7.md",
+        "link": "../artifacts/release/phase7/review/latest.json",
+        "reason": "Distribution-only archive/pointer documented in SUBMISSION.md"
+      }
+    ]
+  },
+  "sources_unchanged": true,
+  "finished_utc": "2026-10-28T00:25:20.135791+00:00"
+}

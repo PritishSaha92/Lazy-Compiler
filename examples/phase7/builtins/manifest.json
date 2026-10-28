@@ -1,0 +1,56 @@
+{
+  "pass": true,
+  "scope": "Independent exact-reference packages and assembly; no GPU execution",
+  "packages": [
+    {
+      "id": "builtin_values_3d",
+      "target": "sm_89",
+      "ptx_sha256": "742a3b0533f9cda5368fd8a9d5930c378c4132a256232402b75b3e11d3de1088",
+      "assembly": {
+        "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+        "arch": "sm_89",
+        "resource_usage": ""
+      },
+      "pass": true
+    },
+    {
+      "id": "auxiliary_raw_thread_named_barrier",
+      "target": "sm_89",
+      "ptx_sha256": "841996fd020abbc082ac817006c1761da7c7b0b4da84c860de7ef6994b3b3992",
+      "assembly": {
+        "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+        "arch": "sm_89",
+        "resource_usage": ""
+      },
+      "pass": true
+    },
+    {
+      "id": "bulk_builtin_block_coordinate",
+      "target": "sm_90",
+      "ptx_sha256": "3307e532e53730b68c38a6512efde01210a9d90403499fc72d658639f1120add",
+      "assembly": {
+        "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+        "arch": "sm_90",
+        "resource_usage": ""
+      },
+      "pass": true
+    },
+    {
+      "id": "builtin_unsigned_arithmetic",
+      "target": "sm_89",
+      "ptx_sha256": "26e61dfcc44a9df696e8733e2cb79483f3bfd731aa6cac7283895912d29d3706",
+      "assembly": {
+        "assembler": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.6\\bin\\ptxas.EXE",
+        "arch": "sm_89",
+        "resource_usage": ""
+      },
+      "pass": true
+    }
+  ],
+  "sources_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "3344668fe0b3f94a7198478fcccc50a51e80d70a33c67a868942353918dc9d4f",
+    "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "tests/test_builtin_aux.py": "73f4d8539e624c33e1d799098e3fb394b995434cc88c0ead7fd1681aaa9a8b5d"
+  }
+}

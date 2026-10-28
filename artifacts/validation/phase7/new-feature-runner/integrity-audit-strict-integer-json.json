@@ -1,0 +1,140 @@
+{
+  "schema": "emmy-phase7-feature-wire-audit-v1",
+  "summary": "artifacts/validation/phase7/new-feature-runner/summary.json",
+  "manifest": "artifacts/validation/phase7/new-feature-manifest.json",
+  "integer_comparison": "Exact typed equality for zero-tolerance integer outputs; no float64 conversion before comparison",
+  "scope": "Independent offline raw HTTP/ABI/typed-output replay and real CLI PTX reproduction; no network, assembly or GPU execution",
+  "audited_utc": "2026-10-28T00:12:54.014858+00:00",
+  "integrity_pass": false,
+  "numerical_gate_pass": false,
+  "original_report_pass": true,
+  "summary_sha256": "3f44eadaab8e49cdce20981666f89c72ead5614f80aaf8e9ae00f6c533546f34",
+  "feature_manifest_sha256": "5b9e5757829791dd1adbd38074c60e71b64c9e000f77e06ce30e918ff0b56171",
+  "compiler_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "3344668fe0b3f94a7198478fcccc50a51e80d70a33c67a868942353918dc9d4f",
+    "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+    "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "auditor_sha256": "401939e7ee3f8b1cd12f473b4e5a01fd9660a30fd51f8aa856a4be7df2052fce",
+  "jobs": [
+    {
+      "id": "auxiliary_raw_thread_named_barrier",
+      "package": "examples/phase7/builtins/auxiliary_raw_thread_named_barrier",
+      "ptx_sha256": "bef69664298aaacbec8ee873c178fe396ca42a2119d8acd176d70e0fb19e074e",
+      "cli_byte_identical": true,
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 192,
+          "mismatches": 0,
+          "max_abs_error": 0.0
+        }
+      ],
+      "inputs": [
+        {
+          "name": "x",
+          "dtype": "f32",
+          "shape": [
+            3,
+            64
+          ],
+          "bytes_sha256": "f474591c78dfed11ac9d9b4d5a10614b54ef2bd9c066a4a9aa575e228d6b8263"
+        }
+      ]
+    },
+    {
+      "id": "builtin_unsigned_arithmetic",
+      "package": "examples/phase7/builtins/builtin_unsigned_arithmetic",
+      "ptx_sha256": "b1b228c2574f9034cee1fca883d8da8ed50e4c01ea3868176817bd3759acbd65",
+      "cli_byte_identical": true,
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 1632,
+          "mismatches": 0,
+          "max_abs_error": 0.0
+        }
+      ],
+      "inputs": []
+    },
+    {
+      "id": "builtin_values_3d",
+      "package": "examples/phase7/builtins/builtin_values_3d",
+      "ptx_sha256": "6d689e4de2f9adf80b23e062145d18ec6889a69554371cf55bf865f3c06b62c3",
+      "cli_byte_identical": true,
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 1664,
+          "mismatches": 0,
+          "max_abs_error": 0.0
+        }
+      ],
+      "inputs": []
+    },
+    {
+      "id": "bulk_builtin_block_coordinate",
+      "package": "examples/phase7/builtins/bulk_builtin_block_coordinate",
+      "ptx_sha256": "0571670a9dff84011705135319d684d3dd1a803e78227a4ab7a8ecf71071db3f",
+      "cli_byte_identical": true,
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 192,
+          "mismatches": 0,
+          "max_abs_error": 0.0
+        }
+      ],
+      "inputs": [
+        {
+          "name": "x",
+          "dtype": "f32",
+          "shape": [
+            192
+          ],
+          "bytes_sha256": "f474591c78dfed11ac9d9b4d5a10614b54ef2bd9c066a4a9aa575e228d6b8263"
+        }
+      ]
+    },
+    {
+      "id": "shift_narrow_left_promotion",
+      "package": "examples/phase7/integer/shift_narrow_left_promotion",
+      "ptx_sha256": "5f4e9b4d5fc8c3f7ca29d40fbdd99d898ece501f29810ab87423a47dcef37e20",
+      "cli_byte_identical": true,
+      "numerical_pass": false,
+      "output_comparisons": [],
+      "inputs": [
+        {
+          "name": "x",
+          "dtype": "i32",
+          "shape": [
+            4
+          ],
+          "bytes_sha256": "4183b314be9062feb362eaf04e644b788bfc395b192e50e4d93d49a1611e48f1"
+        },
+        {
+          "name": "n",
+          "dtype": "i64",
+          "shape": [
+            4
+          ],
+          "bytes_sha256": "ae454edee096254deb9f0a45eb23633ddc790368aff0621eb9cdb0c8a1f82c2a"
+        }
+      ]
+    }
+  ],
+  "events_verified": 22,
+  "http_attempts_verified": 22,
+  "error": "ValueError: out: integer wire values are not exact in-range JSON integers",
+  "finished_utc": "2026-10-28T00:13:13.873552+00:00"
+}

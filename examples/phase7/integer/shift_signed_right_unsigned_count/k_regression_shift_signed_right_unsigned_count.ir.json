@@ -1,0 +1,64 @@
+{
+  "inputs": [
+    "x",
+    "n"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            4
+          ],
+          "dtype": "i32"
+        }
+      ]
+    },
+    "n": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "n",
+          "shape": [
+            4
+          ],
+          "dtype": "i64"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='i', extent=Dim(1), window=None),), body=(Load(names=('raw_a',), input='x', index=(Literal(value=0, dtype='int'),), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='a', value=Var(name='raw_a'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Load(names=('raw_b',), input='n', index=(Literal(value=0, dtype='int'),), dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), Let(name='b', value=Var(name='raw_b'), dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8)), Let(name='runtime', value=BinaryExpr(op='>>', left=Var(name='a'), right=Var(name='b')), dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), Let(name='constant', value=BinaryExpr(op='>>', left=Literal(value=-4, dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), right=Literal(value=1, dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8))), dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), Write(output='out', index=(Literal(value=0, dtype='int'), Literal(value=0, dtype='int')), values=('runtime', 'constant'), value_dtype=DataType(name='i64', np=dtype('int64'), nbytes=8), atomic=False, swizzle='NONE'), Load(names=('raw_a',), input='x', index=(Literal(value=1, dtype='int'),), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='a', value=Var(name='raw_a'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Load(names=('raw_b',), input='n', index=(Literal(value=1, dtype='int'),), dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), Let(name='b', value=Var(name='raw_b'), dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8)), Let(name='runtime', value=BinaryExpr(op='>>', left=Var(name='a'), right=Var(name='b')), dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), Let(name='constant', value=BinaryExpr(op='>>', left=Literal(value=-2147483648, dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), right=Literal(value=31, dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8))), dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), Write(output='out', index=(Literal(value=1, dtype='int'), Literal(value=0, dtype='int')), values=('runtime', 'constant'), value_dtype=DataType(name='i64', np=dtype('int64'), nbytes=8), atomic=False, swizzle='NONE'), Load(names=('raw_a',), input='x', index=(Literal(value=2, dtype='int'),), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='a', value=Var(name='raw_a'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Load(names=('raw_b',), input='n', index=(Literal(value=2, dtype='int'),), dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), Let(name='b', value=Var(name='raw_b'), dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8)), Let(name='runtime', value=BinaryExpr(op='>>', left=Var(name='a'), right=Var(name='b')), dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), Let(name='constant', value=BinaryExpr(op='>>', left=Literal(value=-1, dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), right=Literal(value=0, dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8))), dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), Write(output='out', index=(Literal(value=2, dtype='int'), Literal(value=0, dtype='int')), values=('runtime', 'constant'), value_dtype=DataType(name='i64', np=dtype('int64'), nbytes=8), atomic=False, swizzle='NONE'), Load(names=('raw_a',), input='x', index=(Literal(value=3, dtype='int'),), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='a', value=Var(name='raw_a'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Load(names=('raw_b',), input='n', index=(Literal(value=3, dtype='int'),), dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), Let(name='b', value=Var(name='raw_b'), dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8)), Let(name='runtime', value=BinaryExpr(op='>>', left=Var(name='a'), right=Var(name='b')), dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), Let(name='constant', value=BinaryExpr(op='>>', left=Literal(value=2147483647, dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), right=Literal(value=2, dtype=DataType(name='u64', np=dtype('uint64'), nbytes=8))), dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), Write(output='out', index=(Literal(value=3, dtype='int'), Literal(value=0, dtype='int')), values=('runtime', 'constant'), value_dtype=DataType(name='i64', np=dtype('int64'), nbytes=8), atomic=False, swizzle='NONE')), block_threads=None, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_shift_signed_right_unsigned_count",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x",
+        "n"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            4,
+            2
+          ],
+          "dtype": "i64"
+        }
+      ]
+    }
+  }
+}

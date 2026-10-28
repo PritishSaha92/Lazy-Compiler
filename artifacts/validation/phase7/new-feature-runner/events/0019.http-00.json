@@ -1,0 +1,36 @@
+{
+  "started": "2026-10-28T00:06:26.125304+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "entry": "k_regression_unstamped_mixed_integer_and",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "median_us": 20.16,
+    "iters": 1,
+    "outputs": {
+      "out": {
+        "shape": [
+          1
+        ],
+        "dtype": "i32",
+        "sum": 254.0,
+        "values": [
+          254.0
+        ],
+        "truncated": false
+      }
+    }
+  },
+  "finished": "2026-10-28T00:06:26.865854+00:00",
+  "seconds": 0.7403776000137441
+}

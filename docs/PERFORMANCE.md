@@ -178,7 +178,7 @@ shrinking from 15,711 to 15,228 bytes. Register count alone did not predict
 runtime. The option was removed from production; a02 and the tested matmuls
 had unchanged emitted PTX, so incidental timing differences there establish no
 benefit. See the [complete experiment](../artifacts/validation/phase2/loop-fusion.json)
-and [rejected source archive](../artifacts/validation/phase2/rejected-loop-fusion.zip).
+and rejected source archive (`rejected-loop-fusion.zip`, separate historical release artifact).
 
 **Retain exact raster simplification.** If the second raster extent is one,
 the mapping is the identity. When the first extent is an integer multiple of

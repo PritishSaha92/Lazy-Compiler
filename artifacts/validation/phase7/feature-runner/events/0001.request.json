@@ -1,0 +1,40 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_bulk_linear_f64",
+    "grid": [
+      3,
+      1,
+      1
+    ],
+    "block": [
+      64,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "x",
+        "dtype": "f64",
+        "shape": [
+          192
+        ],
+        "seed": 0
+      },
+      {
+        "name": "out",
+        "dtype": "f64",
+        "shape": [
+          192
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "53245bf3785f617e8611d7fe20d4ea071e0805fb2a62e6561278bd71fc37ac6c"
+  }
+}

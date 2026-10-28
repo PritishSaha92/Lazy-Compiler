@@ -1,0 +1,8 @@
+test_actual_cli_selects_sm90_and_keeps_both_instruction_families (test_feature_interactions.FeatureInteractionTests.test_actual_cli_selects_sm90_and_keeps_both_instruction_families) ... ok
+test_combined_pipelines_assemble (test_feature_interactions.FeatureInteractionTests.test_combined_pipelines_assemble) ... ok
+test_explicit_f16_inputs_exact_oracle_and_all_slab_contributions (test_feature_interactions.FeatureInteractionTests.test_explicit_f16_inputs_exact_oracle_and_all_slab_contributions) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 4.446s
+
+OK

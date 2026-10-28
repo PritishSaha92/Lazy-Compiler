@@ -1,0 +1,59 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_shift_narrow_left_promotion",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "x",
+        "dtype": "i32",
+        "shape": [
+          4
+        ],
+        "data": [
+          -4,
+          -32768,
+          -1,
+          32767
+        ]
+      },
+      {
+        "name": "n",
+        "dtype": "i64",
+        "shape": [
+          4
+        ],
+        "data": [
+          1,
+          15,
+          0,
+          3
+        ]
+      },
+      {
+        "name": "out",
+        "dtype": "i64",
+        "shape": [
+          4,
+          2
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "1f08a5e62b392ddc594a3570d1ad5a3888d8fc5580d228abef27a3206be715ee"
+  }
+}

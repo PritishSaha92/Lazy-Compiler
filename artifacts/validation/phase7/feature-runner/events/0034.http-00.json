@@ -1,0 +1,19 @@
+{
+  "started": "2026-10-28T00:08:46.434196+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "cubin_id": "d55453186d135ab9a3bdafdbf8e3dbe209333c6e43dcecf20716ab3cc68e80c9",
+    "bytes": 10016,
+    "arch": "sm_120",
+    "flags": [],
+    "entry_points": [
+      "k_regression_tensor_global_bf16_trans_ragged"
+    ],
+    "registers": {
+      "k_regression_tensor_global_bf16_trans_ragged": 40
+    }
+  },
+  "finished": "2026-10-28T00:08:47.175751+00:00",
+  "seconds": 0.7412951000151224
+}

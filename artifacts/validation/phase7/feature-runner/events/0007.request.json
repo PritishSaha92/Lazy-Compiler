@@ -1,0 +1,48 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_bulk_rank5_crop",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "x",
+        "dtype": "f32",
+        "shape": [
+          3,
+          2,
+          3,
+          4,
+          8
+        ],
+        "seed": 0
+      },
+      {
+        "name": "out",
+        "dtype": "f32",
+        "shape": [
+          2,
+          1,
+          2,
+          2,
+          4
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "2181e5ea753e0624055e1bb958595bb233d6781ff52c7c61495202f693d6eef2"
+  }
+}

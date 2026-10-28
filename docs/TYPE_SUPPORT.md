@@ -28,12 +28,13 @@ The compiler does not implement all NumPy functions or every PTX instruction fam
 
 | IR node | Type rule and rounding boundary |
 |---|---|
-| `BinaryExpr` | Infer the common operand type, apply integer promotions, then emit the operator. Narrow floating results round at **each binary node**, including a nested expression whose enclosing `Let` has FP32 dtype. Floating `%` and bitwise/shift expressions are rejected. `/` and `//` retain the IR's C-style emitted division spelling; signed integer division truncates toward zero. |
-| `Assign` | Its declared result dtype controls the operation; a narrow floating operation expands operands to FP32 and narrows the statement result. This preserves the existing backend policy for composite operations. |
+| `BinaryExpr` | Apply the operator's integer promotions. Most arithmetic uses the common operand type; shifts take the promoted **left** operand's type and convert the count separately for PTX. Narrow floating results round at **each binary node**, including a nested expression whose enclosing `Let` has FP32 dtype. Floating `%` and bitwise/shift expressions are rejected. `/` and `//` retain the IR's C-style emitted division spelling; signed integer division truncates toward zero. |
+| `Assign` | An explicit result dtype controls the operation. Without one, supported integer arithmetic/bitwise operations use integer rank/sign promotion, with unsigned winning equal-width ties. Other existing defaults are unchanged. A narrow floating operation expands operands to FP32 and narrows the statement result. |
 | `FuncCallExpr` | Uses the same operation admission and lowering as `Assign`, with the existing first-operand result-type rule. It is an optional extension beyond the required contest subset. |
 | `Accum` and cooperative combine programs | Use the same operation checks; state lifetime, explicit bases and existing FP32 dot policy are unchanged. |
 | `Let` / `CastExpr` | Convert the computed expression to the declared dtype with explicit rounding. A final cast does not remove intermediate expression rounding. |
 | `TernaryExpr` / `where` | Select already computed typed values. FP16/BF16 payloads are selected with `selp.b16`; small integer selections widen and narrow explicitly. |
+| `Builtin` | `thread_idx`, `block_idx`, `block_dim` and `grid_dim` x/y/z components are `u32`; `warp_size` is `s32`. CUDA-spelling aliases have identical lowering. |
 
 The pinned Emmy 0.3.11 `Assign` definition distinguishes declared result dtype
 from argument dtype and describes its promote-then-demote path. `BinaryExpr` is
@@ -42,6 +43,10 @@ promotion. The backend reads these typed classes; it never calls their renderer.
 There is a known distinction between Python's negative integer division and the
 IR's C rendering; the backend retains its tested C/ PTX truncation rule. Named
 `floor_divide`/`remainder` implement floor/sign correction separately.
+
+The [phase-7 release](PHASE7.md) adds mixed-integer inference and shift
+counterexamples, including explicit-dtype controls and matching constant/runtime
+results. Its validation status is recorded separately from earlier releases.
 
 ## Operation families
 

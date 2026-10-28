@@ -234,7 +234,9 @@ class TypeCapabilitiesTests(unittest.TestCase):
             bare_compiler().operation("add", [Value("%f", "f32")], "f32")
         for symbol in ("%", "&", "|", "^", "<<", ">>"):
             with self.subTest(symbol=symbol):
-                with self.assertRaisesRegex(CompileError, "binary operator.*f32"):
+                diagnostic = ("shift operator.*requires integer operands"
+                              if symbol in ("<<", ">>") else "binary operator.*f32")
+                with self.assertRaisesRegex(CompileError, diagnostic):
                     bare_compiler().binary(symbol, Value("%a", "f32"), Value("%b", "f32"))
 
     def test_conversion_admission(self):

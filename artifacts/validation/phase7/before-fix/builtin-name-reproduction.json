@@ -1,0 +1,44 @@
+[
+  {
+    "case": "builtin_values_3d",
+    "legacy": false,
+    "ir": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\.build\\improvement-audit\\aux\\packages\\builtin_values_3d\\k_regression_builtin_values_3d.ir.json",
+    "ok": false,
+    "error": "Let: unknown builtin block_idx.z"
+  },
+  {
+    "case": "builtin_values_3d",
+    "legacy": true,
+    "ir": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\.build\\improvement-audit\\aux\\packages\\builtin_values_3d_legacy\\k_regression_builtin_values_3d.ir.json",
+    "ok": false,
+    "error": "Let: unknown builtin warpSize"
+  },
+  {
+    "case": "auxiliary_raw_thread_named_barrier",
+    "legacy": false,
+    "ir": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\.build\\improvement-audit\\aux\\packages\\auxiliary_raw_thread_named_barrier\\k_regression_auxiliary_raw_thread_named_barrier.ir.json",
+    "ok": false,
+    "error": "Tile: Cond: unknown builtin thread_idx.x"
+  },
+  {
+    "case": "auxiliary_raw_thread_named_barrier",
+    "legacy": true,
+    "ir": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\.build\\improvement-audit\\aux\\packages\\auxiliary_raw_thread_named_barrier_legacy\\k_regression_auxiliary_raw_thread_named_barrier.ir.json",
+    "ok": true,
+    "ptx_bytes": 2309
+  },
+  {
+    "case": "bulk_builtin_block_coordinate",
+    "legacy": false,
+    "ir": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\.build\\improvement-audit\\aux\\packages\\bulk_builtin_block_coordinate\\k_regression_bulk_builtin_block_coordinate.ir.json",
+    "ok": false,
+    "error": "Tile: Cond: TmaLoad: bulk copy requires provable, overflow-free int32 index bounds"
+  },
+  {
+    "case": "bulk_builtin_block_coordinate",
+    "legacy": true,
+    "ir": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\.build\\improvement-audit\\aux\\packages\\bulk_builtin_block_coordinate_legacy\\k_regression_bulk_builtin_block_coordinate.ir.json",
+    "ok": true,
+    "ptx_bytes": 1771
+  }
+]

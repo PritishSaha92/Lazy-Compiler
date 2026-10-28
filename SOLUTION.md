@@ -5,7 +5,7 @@ in [ptx_backend.py](ptx_backend.py). Emmy **0.3.11** supplies deserialization an
 definitions. No existing CUDA/PTX compiler or Emmy renderer performs the translation.
 The generated PTX 8.0 normally targets `sm_89` and selects `sm_90` for bulk-copy/barrier nodes; the runner's `ptxas` assembles it downstream.
 
-Run these commands from the `emmy-hackathon-2026` directory:
+Run these commands from the repository root:
 
 ```console
 python -m pip install -r requirements.txt
@@ -36,17 +36,26 @@ stderr and a nonzero status. The submission consists of `compile.py`,
 
 ## Current manual-review release
 
+The [phase-7 release](docs/PHASE7.md) adds logical GPU builtin names/types,
+unstamped mixed-integer inference, and expression-shift promotion corrections.
+Its fresh organizer-GPU checks passed **15/15 public + 41/41 additional packages**:
+29 previous feature examples, 11 new counterexamples and one retained scalar
+case with changed PTX. Complete CPU/assembler discovery passed 110 methods with
+19 explicit local-GPU skips; 25 isolated-install packages passed 75 compilations
+and three expected diagnostics. No local GPU was used.
+
 The [submission overview](SUBMISSION.md) and [feature index](docs/FEATURES.md)
 cover the tensor-core and bulk-copy extensions, examples, tests and exact limits.
-The [phase-6 report](docs/PHASE6.md) records 15/15 public and 29/29 extra feature
-runner passes, 99 passed CPU/assembler methods with 18 local-GPU skips, and
-14 clean-install packages. A [runtime ZIP](artifacts/release/phase6/latest.json)
-and a [complete review/source bundle](artifacts/release/phase6/review/latest.json)
-are provided. Use the review bundle for manual inspection.
+A [runtime ZIP](artifacts/release/phase7/latest.json) and a
+[complete review/source bundle](artifacts/release/phase7/review/latest.json)
+are provided. Use the review bundle for manual inspection. The
+[phase-6 report](docs/PHASE6.md) remains the historical snapshot described in
+the recorded video; the phase-7 report documents the subsequent corrections.
+Preparing these local artifacts does not update the public repository or entry.
 
 ## Historical phase-4 runtime artifact
 
-The prior [phase 4 submission archive](artifacts/release/phase4/submission-bcbc4a8381497f1d34be.zip)
+The prior phase 4 submission archive (`submission-bcbc4a8381497f1d34be.zip`, separate historical release artifact)
 contains the original three runtime files. Its
 [phase-4 manifest](artifacts/release/phase4/submission-bcbc4a8381497f1d34be-3908fd80497591da4d12.manifest.json)
 binds the unchanged source hashes and six evidence snapshots, including the
@@ -57,8 +66,8 @@ actual CLI outputs, each in its own problem directory. Their bytes match the
 official runner payloads in the
 [15/15 identity check](artifacts/validation/phase4/public-ptx-identity.json).
 This export supersedes `build/open-ptx-phase4`, whose filename collisions and
-newline handling made it unsuitable as an exact CLI export. [out.ptx](out.ptx)
-is one historical generated example; the compiler sources are the submitted program.
+newline handling made it unsuitable as an exact CLI export. Generate `out.ptx`
+with the command above; the compiler sources are the submitted program.
 
 ## Previous scalar-only runner review (24 October 2026)
 
@@ -212,6 +221,4 @@ These are separate measurements, not additive unique-program counts.
 Read [VALIDATION.md](docs/VALIDATION.md) for complete commands, source hashes, reports,
 target-adaptation limits, and current status; [SEMANTICS.md](docs/SEMANTICS.md) for
 the node contracts; and [COMPILER.md](docs/COMPILER.md) for architecture and limitations.
-The [read-aloud script](docs/VIDEO_SCRIPT.md) provides the current video text;
-the older [video guide](docs/VIDEO_GUIDE.md) retains additional rehearsal notes.
 Passing these checks does not establish hidden-set correctness or a winning score.

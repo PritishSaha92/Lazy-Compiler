@@ -1,0 +1,31 @@
+{
+  "archive_integrity_pass": true,
+  "contents_manifest": {
+    "member": "REVIEW_MANIFEST.json",
+    "sha256": "07b8078ddddffc564db557bdf4e6f093381b999c90a8e31cc8a1189bdaa74a7f"
+  },
+  "evidence": [
+    {
+      "path": "artifacts/validation/phase7/release-summary.json",
+      "reported_status": {
+        "pass": true
+      },
+      "sha256": "58c94ef4ad87e08d24ae049de7375d2f973c353e76a5fc48e51a6fa761fb666b"
+    }
+  ],
+  "runtime_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "3344668fe0b3f94a7198478fcccc50a51e80d70a33c67a868942353918dc9d4f",
+    "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "schema": "emmy-review-bundle-v1",
+  "scope": "Archive member/CRC/source identity verification only; no installation, compilation, test execution, network access or GPU use.",
+  "zip": {
+    "bytes": 16121880,
+    "members": 1552,
+    "path": "review-07b8078ddddffc564db5.zip",
+    "sha256": "69746a1c9b02ff20820c1bf1546fcccab4d2bf44b4a05b2ec3aa8451db696a11"
+  }
+}

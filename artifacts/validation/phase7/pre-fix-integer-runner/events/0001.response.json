@@ -1,0 +1,38 @@
+{
+  "ok": true,
+  "entry": "k_regression_shift_narrow_left_promotion",
+  "grid": [
+    1,
+    1,
+    1
+  ],
+  "block": [
+    32,
+    1,
+    1
+  ],
+  "smem_bytes": 0,
+  "median_us": 21.056,
+  "iters": 1,
+  "outputs": {
+    "out": {
+      "shape": [
+        4,
+        2
+      ],
+      "dtype": "i64",
+      "sum": 1125899906850806.0,
+      "values": [
+        9.223372036854776e+18,
+        9.223372036854776e+18,
+        562949953421311.0,
+        562949953421311.0,
+        -1.0,
+        -1.0,
+        4095.0,
+        4095.0
+      ],
+      "truncated": false
+    }
+  }
+}

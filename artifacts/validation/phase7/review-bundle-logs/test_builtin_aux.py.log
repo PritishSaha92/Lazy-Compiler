@@ -1,0 +1,12 @@
+test_bulk_coordinate_proof_covers_every_cta (test_builtin_aux.BuiltinAuxiliaryTests.test_bulk_coordinate_proof_covers_every_cta) ... ok
+test_bulk_dimension_and_warp_constants_have_precise_bounds (test_builtin_aux.BuiltinAuxiliaryTests.test_bulk_dimension_and_warp_constants_have_precise_bounds) ... ok
+test_bulk_unsigned_wrap_is_not_treated_as_a_signed_interval (test_builtin_aux.BuiltinAuxiliaryTests.test_bulk_unsigned_wrap_is_not_treated_as_a_signed_interval) ... ok
+test_logical_names_and_legacy_aliases_emit_identical_modules (test_builtin_aux.BuiltinAuxiliaryTests.test_logical_names_and_legacy_aliases_emit_identical_modules) ... ok
+test_native_assembler (test_builtin_aux.BuiltinAuxiliaryTests.test_native_assembler) ... ok
+test_serialized_fixtures_compile_through_cli (test_builtin_aux.BuiltinAuxiliaryTests.test_serialized_fixtures_compile_through_cli) ... ok
+test_unknown_builtin_is_diagnosed (test_builtin_aux.BuiltinAuxiliaryTests.test_unknown_builtin_is_diagnosed) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 7.625s
+
+OK

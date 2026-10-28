@@ -1,0 +1,29 @@
+{
+  "inputs": [],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='i', extent=Dim(1), window=None),), body=(Let(name='a', value=Literal(value=1, dtype=DataType(name='i16', np=dtype('int16'), nbytes=2)), dtype=DataType(name='i16', np=dtype('int16'), nbytes=2)), Let(name='b', value=Literal(value=16777217, dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Assign(name='floating_add', op=ElementwiseImpl('add'), args=('a', 'b'), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Assign(name='integer_add', op=ElementwiseImpl('add'), args=('a', 'b'), dtype=DataType(name='i64', np=dtype('int64'), nbytes=8)), Let(name='mask', value=Literal(value=255, dtype=DataType(name='i16', np=dtype('int16'), nbytes=2)), dtype=DataType(name='i16', np=dtype('int16'), nbytes=2)), Let(name='bits', value=Literal(value=16777470, dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Assign(name='logical_and', op=ElementwiseImpl('bitwise_and'), args=('mask', 'bits'), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Assign(name='integer_and', op=ElementwiseImpl('bitwise_and'), args=('mask', 'bits'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Write(output='out', index=(Literal(value=0, dtype='int'),), values=('floating_add', 'integer_add', 'logical_and', 'integer_and'), value_dtype=DataType(name='i64', np=dtype('int64'), nbytes=8), atomic=False, swizzle='NONE')), block_threads=None, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_stamped_integer_policy_controls",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            4
+          ],
+          "dtype": "i64"
+        }
+      ]
+    }
+  }
+}

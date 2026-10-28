@@ -1,0 +1,19 @@
+{
+  "started": "2026-10-27T23:55:29.718542+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "cubin_id": "15e63a4be213990b40b49bf39559e82c43660d37a394d9c906908a1abf552540",
+    "bytes": 5880,
+    "arch": "sm_120",
+    "flags": [],
+    "entry_points": [
+      "k_regression_unstamped_mixed_integer_add"
+    ],
+    "registers": {
+      "k_regression_unstamped_mixed_integer_add": 14
+    }
+  },
+  "finished": "2026-10-27T23:55:30.440246+00:00",
+  "seconds": 0.7213065000250936
+}

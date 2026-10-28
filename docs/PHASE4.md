@@ -100,7 +100,7 @@ release gates.
 | `ptx_backend.py` | `5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc` |
 | `requirements.txt` | `5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84` |
 
-The [submission ZIP](../artifacts/release/phase4/submission-bcbc4a8381497f1d34be.zip)
+The submission ZIP (`submission-bcbc4a8381497f1d34be.zip`, separate historical release artifact)
 contains exactly these three files, with SHA-256
 `b9af6a761233e39b8faa330e1fd01c49e8a457498cb5d3b7e2465ef5403251e8`.
 The [manifest](../artifacts/release/phase4/submission-bcbc4a8381497f1d34be-b88459958203b4fdede2.manifest.json)

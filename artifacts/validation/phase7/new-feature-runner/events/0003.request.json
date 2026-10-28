@@ -1,0 +1,33 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_builtin_unsigned_arithmetic",
+    "grid": [
+      3,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "out",
+        "dtype": "f32",
+        "shape": [
+          96,
+          17
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "b5486b8eae10ed5e84efc4016368fec2a4259c412ff511eec04f53c0e968288c"
+  }
+}

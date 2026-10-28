@@ -1,0 +1,33 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_builtin_values_3d",
+    "grid": [
+      2,
+      2,
+      2
+    ],
+    "block": [
+      4,
+      2,
+      2
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "out",
+        "dtype": "f32",
+        "shape": [
+          128,
+          13
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "ae03c5f5c0a3efcfe14b210ed79a357b090d45ebcc918323577048832125454e"
+  }
+}

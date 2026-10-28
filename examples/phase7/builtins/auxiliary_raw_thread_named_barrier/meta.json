@@ -1,0 +1,58 @@
+{
+  "id": "auxiliary_raw_thread_named_barrier",
+  "graph_inputs": [
+    "x"
+  ],
+  "graph_outputs": [
+    "out"
+  ],
+  "rtol": 0,
+  "atol": 0,
+  "kernels": [
+    {
+      "entry": "k_regression_auxiliary_raw_thread_named_barrier",
+      "grid": [
+        3,
+        1,
+        1
+      ],
+      "block": [
+        96,
+        1,
+        1
+      ],
+      "smem_bytes": 0,
+      "zero_outputs": [],
+      "arg_order": [
+        "x",
+        "out"
+      ],
+      "args": [
+        {
+          "name": "x",
+          "dtype": "f32",
+          "shape": [
+            3,
+            64
+          ],
+          "seed": 0
+        },
+        {
+          "name": "out",
+          "dtype": "f32",
+          "shape": [
+            3,
+            64
+          ],
+          "output": true
+        }
+      ],
+      "final": true
+    }
+  ],
+  "fixture_provenance": {
+    "construction": "Explicit typed Emmy 0.3.11 IR with independent NumPy reference",
+    "feature": "logical GPU builtins and raw-thread auxiliary-band coordination",
+    "local_gpu_used": false
+  }
+}

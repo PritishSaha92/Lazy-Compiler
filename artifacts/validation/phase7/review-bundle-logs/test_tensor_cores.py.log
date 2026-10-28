@@ -1,0 +1,13 @@
+test_actual_cli_assembles_all_examples (test_tensor_cores.TensorCoreTests.test_actual_cli_assembles_all_examples) ... ok
+test_auxiliary_partition_rejected_if_it_splits_a_warp (test_tensor_cores.TensorCoreTests.test_auxiliary_partition_rejected_if_it_splits_a_warp) ... ok
+test_epilogue_unbound_coordinate_rejected (test_tensor_cores.TensorCoreTests.test_epilogue_unbound_coordinate_rejected) ... ok
+test_fragment_contract_rejections (test_tensor_cores.TensorCoreTests.test_fragment_contract_rejections) ... ok
+test_late_axis_update_invalidates_next_iteration_alignment (test_tensor_cores.TensorCoreTests.test_late_axis_update_invalidates_next_iteration_alignment) ... ok
+test_reference_distinguishes_wrong_shapes_and_zero_results (test_tensor_cores.TensorCoreTests.test_reference_distinguishes_wrong_shapes_and_zero_results) ... ok
+test_reused_load_meets_alignment_facts_from_every_scope (test_tensor_cores.TensorCoreTests.test_reused_load_meets_alignment_facts_from_every_scope) ... ok
+test_unsupported_architecture_rejected_before_output (test_tensor_cores.TensorCoreTests.test_unsupported_architecture_rejected_before_output) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 36.578s
+
+OK

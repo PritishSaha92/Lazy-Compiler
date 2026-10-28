@@ -1,0 +1,63 @@
+{
+  "inputs": [
+    "x",
+    "y"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            1
+          ],
+          "dtype": "i32"
+        }
+      ]
+    },
+    "y": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "y",
+          "shape": [
+            1
+          ],
+          "dtype": "i32"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='i', extent=Dim(1), window=None),), body=(Load(names=('raw_a',), input='x', index=(Var(name='i'),), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='a', value=Var(name='raw_a'), dtype=DataType(name='i16', np=dtype('int16'), nbytes=2)), Load(names=('b',), input='y', index=(Var(name='i'),), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Assign(name='v', op=ElementwiseImpl('bitwise_xor'), args=('a', 'b'), dtype=None), Write(output='out', index=(Var(name='i'),), values=('v',), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE')), block_threads=None, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_unstamped_mixed_integer_xor",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x",
+        "y"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            1
+          ],
+          "dtype": "i32"
+        }
+      ]
+    }
+  }
+}

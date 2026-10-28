@@ -56,6 +56,33 @@ class CompileError(ValueError):
     """An unsupported or inconsistent IR, diagnosed before printing any PTX."""
 
 
+_BUILTIN_OPERANDS = {
+    f"{spelling}.{axis}": f"%{register}.{axis}"
+    for logical, cuda, register in (
+        ("thread_idx", "threadIdx", "tid"),
+        ("block_idx", "blockIdx", "ctaid"),
+        ("block_dim", "blockDim", "ntid"),
+        ("grid_dim", "gridDim", "nctaid"),
+    )
+    for spelling in (logical, cuda)
+    for axis in "xyz"
+}
+_BUILTIN_OPERANDS.update(warp_size="WARP_SZ", warpSize="WARP_SZ")
+
+
+def builtin_operand(name):
+    """Resolve Emmy's logical GPU names and retained CUDA-spelling aliases.
+
+    Emmy 0.3.11 emits names such as ``thread_idx.x``. The same resolver is
+    used by instruction emission and the bulk-copy address bounds proof.
+    WARP_SZ is PTX's predefined immediate, not a percent-prefixed register.
+    """
+    try:
+        return _BUILTIN_OPERANDS[name]
+    except KeyError as exc:
+        raise CompileError(f"unknown builtin {name}") from exc
+
+
 _TYPES = {
     "float": "f32",
     "double": "f64",
@@ -561,6 +588,29 @@ class Compiler:
         self.move(low, correction)
         self.move(high, total)
 
+    @staticmethod
+    def assign_type(name, args):
+        """Infer an unstamped Assign without turning mixed integer ops into f32.
+
+        Keep the existing same-type and floating/mask defaults. Emmy's mixed
+        integer rule uses rank and sign before the operation, so packed words
+        must not pass through a floating value or the legacy logical-mask path.
+        """
+        fallback = (
+            args[0].type if args and all(a.type == args[0].type for a in args)
+            else "f32"
+        )
+        integer_ops = {
+            "add", "sum", "subtract", "sub", "multiply", "mul", "prod",
+            "floor_divide", "remainder", "mod", "left_shift", "right_shift",
+            "bitwise_and", "bitwise_or", "bitwise_xor", "bitwise_count",
+        }
+        if name not in integer_ops or not args or not all(a.type in _INTEGERS for a in args):
+            return fallback
+        signed = max((_SIZE[a.type] for a in args if a.type.startswith("s")), default=0)
+        unsigned = max((_SIZE[a.type] for a in args if a.type.startswith("u")), default=0)
+        return f"{'s' if signed > unsigned else 'u'}{8 * max(signed, unsigned)}"
+
     def common_type(self, a, b):
         for t in ("f64", "f32", "f16", "bf16"):
             if t in (a.type, b.type):
@@ -624,6 +674,13 @@ class Compiler:
                 a,
                 b,
             )
+        if op in ("<<", ">>") and dt is None:
+            # C shifts promote each operand independently. A wide or unsigned
+            # count must not widen the value or change an arithmetic right
+            # shift into a logical shift. Named operations pass explicit dt.
+            if a.type not in _INTEGERS | {"pred"} or b.type not in _INTEGERS | {"pred"}:
+                raise CompileError(f"shift operator {op!r} requires integer operands")
+            dt = a.type if _SIZE[a.type] >= 4 else "s32"
         dt = dt or self.common_type(a, b)
         # Comparisons produce predicates, but C arithmetic and bitwise
         # operators promote two boolean operands to int. Logical operators
@@ -649,7 +706,10 @@ class Compiler:
             return self.convert(
                 self.binary(op, self.convert(a, "s32"), self.convert(b, "s32")), dt
             )
-        a, b = self.convert(a, dt), self.convert(b, dt)
+        a = self.convert(a, dt)
+        # The shift count is an independent integer operand; PTX takes u32.
+        # Keep its mathematical constant until folding, and convert at emit.
+        b = b if op in ("<<", ">>") else self.convert(b, dt)
         integer = dt[0] in "sub"
         if integer and a.constant is not None and b.constant is not None:
             x, y = int(a.constant), int(b.constant)
@@ -754,23 +814,11 @@ class Compiler:
         if isinstance(expr, BinaryExpr):
             return self.binary(expr.op, self.expr(expr.left), self.expr(expr.right))
         if isinstance(expr, Builtin):
-            aliases = {
-                "threadIdx.x": "%tid.x",
-                "threadIdx.y": "%tid.y",
-                "threadIdx.z": "%tid.z",
-                "blockIdx.x": "%ctaid.x",
-                "blockIdx.y": "%ctaid.y",
-                "blockIdx.z": "%ctaid.z",
-                "blockDim.x": "%ntid.x",
-                "blockDim.y": "%ntid.y",
-                "blockDim.z": "%ntid.z",
-                "gridDim.x": "%nctaid.x",
-                "gridDim.y": "%nctaid.y",
-                "gridDim.z": "%nctaid.z",
-            }
-            if expr.name not in aliases:
-                raise CompileError(f"unknown builtin {expr.name}")
-            return self.instruction("mov.u32", "s32", aliases[expr.name])
+            operand = builtin_operand(expr.name)
+            # CUDA geometry components are unsigned int; warpSize is int.
+            # Keep this type through expression promotions, including a
+            # comparison against -1 or arithmetic that crosses the high bit.
+            return self.instruction("mov.u32", "s32" if operand == "WARP_SZ" else "u32", operand)
         if isinstance(expr, CastExpr):
             return self.convert(self.expr(expr.expr), dtype(expr.dtype))
         if isinstance(expr, FlatIndex):
@@ -1293,14 +1341,7 @@ class Compiler:
             )
         elif isinstance(s, Assign):
             args = [self.lookup(n) for n in s.args]
-            dt = dtype(
-                s.dtype,
-                (
-                    args[0].type
-                    if args and all(a.type == args[0].type for a in args)
-                    else "f32"
-                ),
-            )
+            dt = dtype(s.dtype, self.assign_type(s.op.name, args))
             self.env[s.name] = self.snapshot(self.operation(s.op.name, args, dt))
         elif isinstance(s, Let):
             value = self.expr(s.value)

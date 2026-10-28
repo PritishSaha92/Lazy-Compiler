@@ -75,8 +75,8 @@ Use the extracted review/source bundle for the public code repository, with
 layout; an archive cannot embed its own final pointer. The extracted bundle's
 `REVIEW_MANIFEST.json` identifies every included member.
 
-Use the current [submission overview](../SUBMISSION.md),
-[form answers](SUBMISSION_FORM.md), and [609-word video script](VIDEO_SCRIPT.md).
+Use the current [submission overview](../SUBMISSION.md) and
+[architecture map](../README.md#compiler-architecture).
 Packaging does not publish a repository, upload a video or submit an entry.
 
 The nine earlier generated FP64-buffer/FP32-state mathematical-reference

@@ -1,0 +1,113 @@
+{
+  "schema": "emmy-phase7-release-v1",
+  "pass": true,
+  "created_utc": "2026-10-28T00:18:05.742783+00:00",
+  "source_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "3344668fe0b3f94a7198478fcccc50a51e80d70a33c67a868942353918dc9d4f",
+    "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+    "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "scope": "Fresh organizer-GPU and CPU/assembler checks for integer and logical-builtin corrections; prior release evidence remains historical.",
+  "changes": [
+    "Correct unstamped mixed-integer Assign promotion without a float fallback.",
+    "Use promoted left-operand type for expression shifts and independent unsigned PTX counts.",
+    "Support Emmy logical GPU builtin names and CUDA aliases with unsigned geometry semantics, sharing resolution with conservative bulk bounds proofs."
+  ],
+  "organizer_gpu": {
+    "public_checks": 15,
+    "public_passes": 15,
+    "prior_feature_checks": 29,
+    "new_counterexample_checks": 11,
+    "changed_scalar_rechecks": 1,
+    "additional_checks": 41,
+    "additional_passes": 41,
+    "total_checks": 56,
+    "total_passes": 56,
+    "local_gpu_used": false
+  },
+  "cpu": {
+    "methods": 129,
+    "passed": 110,
+    "explicit_local_gpu_skips": 19,
+    "initial_diagnostic_expectation_failures": 2,
+    "runtime_unchanged_between_runs": true
+  },
+  "clean_install": {
+    "packages": 25,
+    "successful_compilations": 75,
+    "expected_diagnostics": 3
+  },
+  "ptx_compatibility": {
+    "scalar_modules": 120,
+    "identical_scalar_modules": 119,
+    "changed_scalar_modules": 1,
+    "changed_scalar_fresh_gpu_passes": 1,
+    "prior_feature_modules": 29,
+    "identical_prior_features": 29,
+    "identity_audit_is_not_gpu_execution": true
+  },
+  "historical_fp64_reference_failures": 9,
+  "limitations": [
+    "Development counterexamples are not organizer hidden tests.",
+    "No new performance ranking or learned optimization benefit is asserted.",
+    "Auxiliary coverage is explicit tested IR; SetMaxNReg, WGMMA, host tensor-map TMA and general 3-D Tile schedules are outside the contract.",
+    "The nine earlier FP64-buffer/FP32-state reference failures remain failures.",
+    "The recorded video documents phase6 architecture and results; phase7 release notes document this subsequent correction."
+  ],
+  "evidence": {
+    "public": {
+      "path": "artifacts/validation/phase7/public-submit/summary.json",
+      "sha256": "e0a9b85f0f59bc50e285d2f19a998f954edda720d13b62d80706e3a470d93f06"
+    },
+    "features": {
+      "path": "artifacts/validation/phase7/feature-runner/summary.json",
+      "sha256": "da93eeeea4c2a8cac18389fbcdc6ac6c154c3e2c5b49624d3d629fd35bd26013"
+    },
+    "new_features": {
+      "path": "artifacts/validation/phase7/new-feature-runner/summary.json",
+      "sha256": "3f44eadaab8e49cdce20981666f89c72ead5614f80aaf8e9ae00f6c533546f34"
+    },
+    "changed_scalar": {
+      "path": "artifacts/validation/phase7/changed-scalar-runner/summary.json",
+      "sha256": "3d22db4b0e7df199be5b30f0ce3bf5ad59e54000cb6bbf2525bd6381aabc23e1"
+    },
+    "features_audit": {
+      "path": "artifacts/validation/phase7/feature-runner/integrity-audit.json",
+      "sha256": "573b09e92e773a28b4f872b21f3039fa84a2a94897e8b89303dee6a5af78189e"
+    },
+    "new_features_audit": {
+      "path": "artifacts/validation/phase7/new-feature-runner/integrity-audit.json",
+      "sha256": "08340693487f8ba608b33b01cf6e5b28a361d150be4ebcaad609fc4b02434620"
+    },
+    "changed_scalar_audit": {
+      "path": "artifacts/validation/phase7/changed-scalar-runner/integrity-audit.json",
+      "sha256": "b120f9ee5b7845130f1709e29bf72e47dfdf4605dc6c7276129a84264971fe07"
+    },
+    "cpu": {
+      "path": "artifacts/validation/phase7/cpu-regressions-final.json",
+      "sha256": "cab02e18155954c84c2f09dfddcc619f5069abb6faf1126b2a155bba628fdb88"
+    },
+    "clean": {
+      "path": "artifacts/validation/phase7/clean-install/summary.json",
+      "sha256": "31f54e5ef7304ab7bf495904f90f7d9cd05ab4d0dcecd82d0003ed0cb1aa85c7"
+    },
+    "compatibility": {
+      "path": "artifacts/validation/phase7/compatibility.json",
+      "sha256": "69d09bed1b9388c745cb445fc0fed3b9c08cc5694032aef6d36e33979c29dcaa"
+    },
+    "changed_scalar_copy": {
+      "path": "artifacts/validation/phase7/changed-scalar-copy.json",
+      "sha256": "936a6a4397d93333c532dd562e71e23ce0ad2251f86d76eb39673df50ca9e2ac"
+    },
+    "initial_cpu": {
+      "path": "artifacts/validation/phase7/cpu-regressions.json",
+      "sha256": "0125b950558d93b7ae4db56a2f3a3cc5ec73c8d4141c1cfe7ffd5741bd637802"
+    },
+    "pre_fix": {
+      "path": "artifacts/validation/phase7/pre-fix-integer-runner/summary.json",
+      "sha256": "8671c3274023b0ce21387856ea937f622bdeb06ae3c6e3112f3c2b57728c94a8"
+    }
+  }
+}

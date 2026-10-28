@@ -1,0 +1,71 @@
+{
+  "schema": "emmy-phase7-feature-inputs-v1",
+  "scope": "Immutable fixture-file snapshot and selected roster bound to the phase7 compiler; created after roster-source execution",
+  "created_utc": "2026-10-28T00:12:20.075554+00:00",
+  "compiler_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "3344668fe0b3f94a7198478fcccc50a51e80d70a33c67a868942353918dc9d4f",
+    "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+    "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "package_count": 11,
+  "packages": [
+    "examples/phase7/builtins/auxiliary_raw_thread_named_barrier",
+    "examples/phase7/builtins/builtin_unsigned_arithmetic",
+    "examples/phase7/builtins/builtin_values_3d",
+    "examples/phase7/builtins/bulk_builtin_block_coordinate",
+    "examples/phase7/integer/shift_narrow_left_promotion",
+    "examples/phase7/integer/shift_signed_right_unsigned_count",
+    "examples/phase7/integer/shift_unsigned_left_wide_count",
+    "examples/phase7/integer/stamped_integer_policy_controls",
+    "examples/phase7/integer/unstamped_mixed_integer_add",
+    "examples/phase7/integer/unstamped_mixed_integer_and",
+    "examples/phase7/integer/unstamped_mixed_integer_xor"
+  ],
+  "files_sha256": {
+    "examples/phase7/builtins/auxiliary_raw_thread_named_barrier/expected.npz": "588f88a4969916de7ba50ca5b83556fddd42de5abf1415bd305a9c35040532d0",
+    "examples/phase7/builtins/auxiliary_raw_thread_named_barrier/k_regression_auxiliary_raw_thread_named_barrier.ir.json": "70946f1065ffa42c9f183466142a40f5ac6a4e513a81228520af49907272eedf",
+    "examples/phase7/builtins/auxiliary_raw_thread_named_barrier/k_regression_auxiliary_raw_thread_named_barrier.ir.ptx": "bef69664298aaacbec8ee873c178fe396ca42a2119d8acd176d70e0fb19e074e",
+    "examples/phase7/builtins/auxiliary_raw_thread_named_barrier/meta.json": "dba966d6335c8696bdf465856b026dbe5f51b01c47bd081e1503f236fd1d388a",
+    "examples/phase7/builtins/builtin_unsigned_arithmetic/expected.npz": "e3d7d11b8e5b7f91a84a3649e5001cc6924ae2b279e564c059bbf8a71cda2259",
+    "examples/phase7/builtins/builtin_unsigned_arithmetic/k_regression_builtin_unsigned_arithmetic.ir.json": "1dcd138e6d0696b057296044fe7714c195f47478ce94504fb7a700b32127ed23",
+    "examples/phase7/builtins/builtin_unsigned_arithmetic/k_regression_builtin_unsigned_arithmetic.ir.ptx": "b1b228c2574f9034cee1fca883d8da8ed50e4c01ea3868176817bd3759acbd65",
+    "examples/phase7/builtins/builtin_unsigned_arithmetic/meta.json": "4e834bca64211f93a7932b30671b60d79b92a9b87d2892edd2391ac60a0d9c4e",
+    "examples/phase7/builtins/builtin_values_3d/expected.npz": "72def37a71fd13d497eaa3e4b36da174931b4bc33f53518d3923e8fc021bfa40",
+    "examples/phase7/builtins/builtin_values_3d/k_regression_builtin_values_3d.ir.json": "da8a3e873b84132d063a6be2f675d075f76ce47e4da61253e7541ed2bcfe8dde",
+    "examples/phase7/builtins/builtin_values_3d/k_regression_builtin_values_3d.ir.ptx": "6d689e4de2f9adf80b23e062145d18ec6889a69554371cf55bf865f3c06b62c3",
+    "examples/phase7/builtins/builtin_values_3d/meta.json": "2d0abf9f3ca6759c85244f03532e459f28c8b70bae24aa55cde749690ee2be29",
+    "examples/phase7/builtins/bulk_builtin_block_coordinate/expected.npz": "fc928250039fe97de7e009d07a4a8fb0aff4748c98abff859bded2ff949bd2af",
+    "examples/phase7/builtins/bulk_builtin_block_coordinate/k_regression_bulk_builtin_block_coordinate.ir.json": "014982e34e348b3368590d6c2060411f5e54ca1bc1435db02283b0b15c24925a",
+    "examples/phase7/builtins/bulk_builtin_block_coordinate/k_regression_bulk_builtin_block_coordinate.ir.ptx": "0571670a9dff84011705135319d684d3dd1a803e78227a4ab7a8ecf71071db3f",
+    "examples/phase7/builtins/bulk_builtin_block_coordinate/meta.json": "7ce75a3b709ba81e40396c6f435574b1a80cca911c2ba9c4f70765f6783b7dda",
+    "examples/phase7/integer/shift_narrow_left_promotion/expected.npz": "ef96d43201c5373409b231433e68dc0446e321f01853393ee5dfa582f2a5dcc5",
+    "examples/phase7/integer/shift_narrow_left_promotion/k_regression_shift_narrow_left_promotion.ir.json": "d38868efb80a23245e402af3f1a2bfb49a8ed5c4c5b8cf64be9111aae72acdf9",
+    "examples/phase7/integer/shift_narrow_left_promotion/meta.json": "d6376431041400ff38c6e25ce9603b5d932feb783394b00e99a3aec03a83c1cf",
+    "examples/phase7/integer/shift_signed_right_unsigned_count/expected.npz": "b8bbbb3b59a575e592ec42334a29b0f479fbda7a06ed292c9bbe36a5081ef53d",
+    "examples/phase7/integer/shift_signed_right_unsigned_count/k_regression_shift_signed_right_unsigned_count.ir.json": "8ee0feaf7519e467acb7798235fdb228c2bfd4147f518e16a9d41f99623f8dbc",
+    "examples/phase7/integer/shift_signed_right_unsigned_count/meta.json": "33f074df8fdb4dfe29fb120ed2bc54148aa173f29dd55b5cdb7d10b03ac68576",
+    "examples/phase7/integer/shift_unsigned_left_wide_count/expected.npz": "79c702affc89fba834da1fda816cd28804c8ebd77a6ea89124c7fb53d5191e63",
+    "examples/phase7/integer/shift_unsigned_left_wide_count/k_regression_shift_unsigned_left_wide_count.ir.json": "8d7f324c21ab951b5e7fa23f993b3f1b94cc8df2eafe287decb01aac9ed80763",
+    "examples/phase7/integer/shift_unsigned_left_wide_count/meta.json": "db51bb1575f5725b813c9993650a24a0c19e210cd79e0366c4c3ff40efee563c",
+    "examples/phase7/integer/stamped_integer_policy_controls/expected.npz": "8c174f4bba347f80bd8964fd021877490b51ad51e58b46a934f3a8442a4eaeee",
+    "examples/phase7/integer/stamped_integer_policy_controls/k_regression_stamped_integer_policy_controls.ir.json": "77d0f7063f08e5d34f332c65656cffbcba312ccdd0bfa893ddf4c41eb83df4bf",
+    "examples/phase7/integer/stamped_integer_policy_controls/meta.json": "10b17430aa2a768eda31ac147f3858f743f7e8389cd8946835a070c77cfbced5",
+    "examples/phase7/integer/unstamped_mixed_integer_add/expected.npz": "5eb3e9ee538958d0a8b81c9bd8927c2a808a660ede78e8e8e6b7081af66a874e",
+    "examples/phase7/integer/unstamped_mixed_integer_add/k_regression_unstamped_mixed_integer_add.ir.json": "e4949d1044d20889f69fd50007edb9fa8e0508185cec588a335950762a20c485",
+    "examples/phase7/integer/unstamped_mixed_integer_add/meta.json": "45c9daa36b607ef37b2a3e9db17fc30ce8886cf864423ed17069127f5642d7f2",
+    "examples/phase7/integer/unstamped_mixed_integer_and/expected.npz": "99bf5c6fdb1b7144bcfaef75a1f168f745c30b6daff2aa65bc4c686fedfa9617",
+    "examples/phase7/integer/unstamped_mixed_integer_and/k_regression_unstamped_mixed_integer_and.ir.json": "f869bb29a538105b75dcff0ce1ad159ed1e5267c03852fa558acea628009a98f",
+    "examples/phase7/integer/unstamped_mixed_integer_and/meta.json": "27046e499c2b591b93af550b24925e6d846c41e976c1fb24212df4370347d876",
+    "examples/phase7/integer/unstamped_mixed_integer_xor/expected.npz": "8a85512bf6ea14f284d25cf21ba0ae07de1617f7e2fc1f609e03889c5cc14bee",
+    "examples/phase7/integer/unstamped_mixed_integer_xor/k_regression_unstamped_mixed_integer_xor.ir.json": "c9e1c1729926c336c22675485fb55141291a11e346110c79a9fdcfcff6672962",
+    "examples/phase7/integer/unstamped_mixed_integer_xor/meta.json": "8f21918979de27b55e8d67da278faf2902e632621b93c614a049b850f8052d49"
+  },
+  "provenance": {
+    "roster_source_report": {
+      "path": "artifacts/validation/phase7/new-feature-runner/summary.json",
+      "sha256": "3f44eadaab8e49cdce20981666f89c72ead5614f80aaf8e9ae00f6c533546f34"
+    }
+  }
+}

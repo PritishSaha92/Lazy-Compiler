@@ -1,0 +1,11 @@
+test_each_native_copy_node_rejects_pre_ampere (test_async_target.AsyncTargetTests.test_each_native_copy_node_rejects_pre_ampere) ... ok
+test_explicit_synchronous_fallback_preserves_copy_and_barrier (test_async_target.AsyncTargetTests.test_explicit_synchronous_fallback_preserves_copy_and_barrier) ... ok
+test_native_copies_compile_on_sm80_and_sm89 (test_async_target.AsyncTargetTests.test_native_copies_compile_on_sm80_and_sm89) ... ok
+test_nested_conditional_and_loop_are_validated (test_async_target.AsyncTargetTests.test_nested_conditional_and_loop_are_validated) ... ok
+test_older_target_remains_available_without_native_copies (test_async_target.AsyncTargetTests.test_older_target_remains_available_without_native_copies) ... ok
+test_supported_and_fallback_modules_assemble (test_async_target.AsyncTargetTests.test_supported_and_fallback_modules_assemble) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.244s
+
+OK

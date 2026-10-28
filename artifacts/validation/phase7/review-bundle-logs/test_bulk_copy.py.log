@@ -1,0 +1,14 @@
+test_axis_shadowing_does_not_reuse_stale_bounds (test_bulk_copy.BulkCopyTests.test_axis_shadowing_does_not_reuse_stale_bounds) ... ok
+test_cli_target_and_pointer_abi (test_bulk_copy.BulkCopyTests.test_cli_target_and_pointer_abi) ... ok
+test_loop_axis_shadowing_is_rejected (test_bulk_copy.BulkCopyTests.test_loop_axis_shadowing_is_rejected) ... ok
+test_multidimensional_launch_is_rejected (test_bulk_copy.BulkCopyTests.test_multidimensional_launch_is_rejected) ... ok
+test_references_are_exact_copy_slices (test_bulk_copy.BulkCopyTests.test_references_are_exact_copy_slices) ... ok
+test_reject_invalid_boxes (test_bulk_copy.BulkCopyTests.test_reject_invalid_boxes) ... ok
+test_reused_node_merges_context_ranges (test_bulk_copy.BulkCopyTests.test_reused_node_merges_context_ranges) ... ok
+test_sm90_assembler (test_bulk_copy.BulkCopyTests.test_sm90_assembler) ... ok
+test_unsupported_architecture (test_bulk_copy.BulkCopyTests.test_unsupported_architecture) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.128s
+
+OK

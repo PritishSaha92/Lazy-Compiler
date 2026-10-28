@@ -15,6 +15,11 @@ different schedule. No CUDA renderer or existing compiler performs its lowering.
 | Ordinary asynchronous copies | Native 4/8/16-byte `cp.async`, commit groups, nonzero wait groups and separate consumer barriers | [Transport tests](../tests/test_transport_edges.py), [interaction tests](../tests/test_interactions.py) |
 | Scalar data types | FP16/BF16/FP32/FP64, signed/unsigned 8/16/32/64-bit integers, predicates and raw-bit transport, with per-operation admission | [Type rules](TYPE_SUPPORT.md), [type tests](../tests/test_type_capabilities.py), [cast tests](../tests/test_cast_edges.py) |
 | Required scheduled IR | Tile/raster mapping, scoped loops, explicit accumulator bases, ordered coupled-state reductions, shared broadcast, vector memory and atomics | [Architecture](COMPILER.md), [semantic tests](../tests/test_semantics.py), public problems in all five categories |
+| Logical GPU builtins and auxiliary-role guards | Canonical Emmy names and CUDA aliases, unsigned geometry components, signed warp size, explicit raw-thread conditions with existing Tile auxiliary decoding | [Builtin/auxiliary examples](../tests/test_builtin_aux.py); [phase-7 scope and validation](PHASE7.md) |
+
+The phase-7 release also corrects unstamped mixed-integer arithmetic and
+expression-shift promotion; see the [type rules](TYPE_SUPPORT.md) and
+[independent integer fixtures](../tests/test_unstamped_integer.py).
 
 ## Tensor-core contract
 
@@ -72,8 +77,24 @@ repeated phases.
 
 Bulk instructions require SM90. The normal CLI selects SM89 for the original
 vocabulary and tensor-only kernels, and SM90 when bulk/barrier nodes appear.
-An explicitly supplied API target is never silently upgraded. Block and grid
-launches remain one-dimensional.
+An explicitly supplied API target is never silently upgraded. Bulk and tensor
+paths require one-dimensional block and grid launches.
+
+## Builtins and auxiliary threads
+
+The backend accepts all x/y/z components of `thread_idx`, `block_idx`,
+`block_dim` and `grid_dim`, plus `warp_size`, and their CUDA-spelling aliases.
+Geometry components use `u32` expression semantics; warp size is signed `s32`.
+Bulk address proofs share this resolver and conservatively reject unproved
+unsigned wraparound.
+
+Explicit raw-thread conditions can distinguish helper threads from compute
+threads in a Tile with `aux_threads`. The new fixture uses 64 compute threads,
+32 helper threads, a publishing CTA barrier and counted consumer barriers.
+The IR remains responsible for valid participation and buffer reuse.
+`SetMaxNReg` and general warp-specialized schedules are not added by this change.
+The direct 3-D builtin fixture has no Tile; general 3-D Tile launch mapping is
+outside the current contract. See [PHASE7.md](PHASE7.md) for release evidence.
 
 ## Additional interaction and architecture checks
 

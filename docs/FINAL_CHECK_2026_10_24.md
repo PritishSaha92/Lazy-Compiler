@@ -157,16 +157,15 @@ not a claim of correctly rounded native FP16 GEMM. Tight FP64 cases check a
 different numerical requirement. Timings from correctness launches are not
 paired performance benchmarks.
 
-## Review and presentation changes
+## Documentation and source review
 
 The [README architecture map](../README.md#compiler-architecture) points to the
 actual ABI, statement, expression, memory and cooperative-lowering functions.
-The [video script](VIDEO_SCRIPT.md) contains 617 spoken words, approximately
-4-5 minutes, with separate screen cues. It explains Tile and StridedLoop,
-shuffle/tree state combination and broadcast, asynchronous-copy grouping,
-tolerance-gated independent-dot compensation, and architecture-dependent BF16
-conversion. The source review found no demonstrated defect in those mechanisms
-that justified changing the tested implementation merely to shorten it.
+The source review covered Tile and StridedLoop, shuffle/tree state combination
+and broadcast, asynchronous-copy grouping, tolerance-gated independent-dot
+compensation, and architecture-dependent BF16 conversion. It found no demonstrated
+defect in those mechanisms that justified changing the tested implementation
+merely to shorten it.
 
 [SEMANTICS.md](SEMANTICS.md) also corrects an outdated narrow-type limitation:
 the phase-4 implementation already handles FP16 division and BF16 binary
@@ -183,7 +182,7 @@ The production files remain the tested phase-4 files:
 | `ptx_backend.py` | `5cb3a351840ca03055b9725471fd3b44afee7a1d8e2832c49d439018da5ba9fc` |
 | `requirements.txt` | `5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84` |
 
-The [submission ZIP](../artifacts/release/phase4/submission-bcbc4a8381497f1d34be.zip)
+The submission ZIP (`submission-bcbc4a8381497f1d34be.zip`, separate historical release artifact)
 contains exactly these files and was independently checked byte-for-byte against
 the current source. Its SHA-256 remains
 `b9af6a761233e39b8faa330e1fd01c49e8a457498cb5d3b7e2465ef5403251e8`.

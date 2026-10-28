@@ -52,6 +52,13 @@ transaction barriers without adding host tensor-map arguments. The
 examples, negative tests and remaining IR preconditions. These extensions are
 selected by node type and leave ordinary scalar scheduling unchanged.
 
+Logical GPU builtins and their CUDA aliases share one resolver. Geometry
+components remain unsigned 32-bit values through expression promotion;
+`warp_size` is signed 32-bit. Explicit raw-thread role conditions work with the
+existing Tile auxiliary decoding and barrier instructions. General 3-D Tile
+mapping and `SetMaxNReg` remain outside the supported contract. The direct 3-D
+builtin fixture does not use Tile. See the [phase-7 release](PHASE7.md).
+
 ## State and synchronization
 
 Each loop seeds only its immediate accumulators. `seed=False` updates an
@@ -81,6 +88,12 @@ instructions. Vector operations are emitted only when their address alignment
 is proven; otherwise the same consecutive elements use scalar memory operations.
 Constants passed as buffer parameters remain loads, rather than being replaced
 by presumed input data.
+
+Unstamped supported integer arithmetic/bitwise Assigns use rank/sign promotion
+without a floating intermediate. Expression shifts take the promoted left
+operand's type and use an independent PTX count. Explicit result dtypes and the
+existing floating-point policies are unchanged; [TYPE_SUPPORT.md](TYPE_SUPPORT.md)
+describes the distinction between statement and expression typing.
 
 The file-level default uses compensated FP32 for independent additive dots when
 metadata specifies nonzero `rtol` or `atol`. Exact or missing tolerances retain
@@ -120,7 +133,7 @@ the attention runtime cost of the selected default.
 
 See [VALIDATION.md](VALIDATION.md) for recorded results and reproduction commands,
 [SEMANTICS.md](SEMANTICS.md) for the node-by-node interpretation, and
-[VIDEO_GUIDE.md](VIDEO_GUIDE.md) for a walkthrough to prepare in your own words.
+[the README architecture map](../README.md#compiler-architecture) for a code navigation guide.
 
 The demonstrated workload families are FP32 pointwise, reductions, matmul,
 normalization, softmax and attention. Smaller tests additionally exercise
@@ -147,5 +160,5 @@ altering the production compiler. Access-site bytes are not measured memory
 traffic, and virtual registers are not physical allocation.
 
 The public tests and generated counterexamples provide evidence of generality,
-not access to the hidden tests or a promise of winning. The existing user's
-README edit is preserved; no repository has been published or entry submitted.
+not access to the hidden tests or a promise of winning. Packaging and verification
+tools do not publish a repository or submit an entry.

@@ -1,0 +1,91 @@
+.version 8.0
+.target sm_89
+.address_size 64
+
+
+.visible .entry k_regression_auxiliary_raw_thread_named_barrier(
+    .param .u64 param_0,
+    .param .u64 param_1
+)
+{
+    .reg .b64 %rd<11>;
+    .reg .b32 %r<41>;
+    .reg .pred %p<4>;
+    .reg .f32 %f<5>;
+    .shared .align 16 .b8 smem_0[256];
+    ld.param.u64 %rd1, [param_0];
+    cvta.to.global.u64 %rd2, %rd1;
+    ld.param.u64 %rd3, [param_1];
+    cvta.to.global.u64 %rd4, %rd3;
+    mov.u32 %r1, %tid.x;
+    mov.u32 %r2, %ctaid.x;
+    mov.u32 %r3, %ntid.x;
+    rem.s32 %r4, %r1, 32;
+    div.s32 %r5, %r1, 32;
+    mov.u32 %r6, smem_0;
+    rem.s32 %r7, %r1, 64;
+    mul.lo.s32 %r8, %r2, 64;
+    add.s32 %r9, %r8, %r7;
+    setp.ge.s32 %p1, %r9, 192;
+    @%p1 bra endtile_1;
+    div.s32 %r10, %r9, 64;
+    rem.s32 %r11, %r9, 64;
+    mov.u32 %r12, %tid.x;
+    setp.ge.u32 %p2, %r12, 64;
+    @!%p2 bra else_2;
+    mul.lo.s32 %r13, %r10, 64;
+    mov.u32 %r14, %tid.x;
+    sub.u32 %r15, %r14, 64;
+    add.s32 %r16, %r13, %r15;
+    mul.wide.s32 %rd5, %r16, 4;
+    add.u64 %rd6, %rd2, %rd5;
+    ld.global.f32 %f1, [%rd6+0];
+    mul.lo.s32 %r17, %r10, 64;
+    mov.u32 %r18, %tid.x;
+    sub.u32 %r19, %r18, 64;
+    add.u32 %r20, %r19, 32;
+    add.s32 %r21, %r17, %r20;
+    mul.wide.s32 %rd7, %r21, 4;
+    add.u64 %rd8, %rd2, %rd7;
+    ld.global.f32 %f2, [%rd8+0];
+    mov.u32 %r22, %tid.x;
+    sub.u32 %r23, %r22, 64;
+    mul.lo.u32 %r24, %r23, 4;
+    add.u32 %r25, %r6, %r24;
+    st.shared.f32 [%r25+0], %f1;
+    mov.u32 %r26, %tid.x;
+    sub.u32 %r27, %r26, 64;
+    add.u32 %r28, %r27, 32;
+    mul.lo.u32 %r29, %r28, 4;
+    add.u32 %r30, %r6, %r29;
+    st.shared.f32 [%r30+0], %f2;
+    bra endif_3;
+else_2:
+endif_3:
+    bar.sync 0;
+    mov.u32 %r31, %tid.x;
+    setp.lt.u32 %p3, %r31, 64;
+    @!%p3 bra else_4;
+    mul.lo.u32 %r32, %r11, 4;
+    add.u32 %r33, %r6, %r32;
+    ld.shared.f32 %f3, [%r33+0];
+    bar.sync 1, 64;
+    sub.s32 %r34, 63, %r11;
+    mul.lo.u32 %r35, %r34, 4;
+    add.u32 %r36, %r6, %r35;
+    st.shared.f32 [%r36+0], %f3;
+    bar.sync 1, 64;
+    mul.lo.u32 %r37, %r11, 4;
+    add.u32 %r38, %r6, %r37;
+    ld.shared.f32 %f4, [%r38+0];
+    mul.lo.s32 %r39, %r10, 64;
+    add.s32 %r40, %r39, %r11;
+    mul.wide.s32 %rd9, %r40, 4;
+    add.u64 %rd10, %rd4, %rd9;
+    st.global.f32 [%rd10+0], %f4;
+    bra endif_5;
+else_4:
+endif_5:
+endtile_1:
+    ret;
+}

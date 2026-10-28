@@ -1,0 +1,50 @@
+{
+  "schema": "emmy-phase7-feature-wire-audit-v1",
+  "summary": "artifacts/validation/phase7/changed-scalar-runner/summary.json",
+  "manifest": "artifacts/validation/phase7/changed-scalar-manifest.json",
+  "integer_comparison": "Exact typed equality for zero-tolerance integer outputs; integral JSON floats accepted only within the binary64 safe integer range",
+  "scope": "Independent offline raw HTTP/ABI/typed-output replay and real CLI PTX reproduction; no network, assembly or GPU execution",
+  "audited_utc": "2026-10-28T00:16:24.857163+00:00",
+  "integrity_pass": true,
+  "numerical_gate_pass": true,
+  "original_report_pass": true,
+  "summary_sha256": "3d22db4b0e7df199be5b30f0ce3bf5ad59e54000cb6bbf2525bd6381aabc23e1",
+  "feature_manifest_sha256": "e93ad3dc922aeae8093eca0c15f626e14b55e9b79b6dc364951152a04a167815",
+  "compiler_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "3344668fe0b3f94a7198478fcccc50a51e80d70a33c67a868942353918dc9d4f",
+    "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+    "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "auditor_sha256": "4429cec8a3e0780ec0df36c4bb3c384cc188920dab03bd4bbf0190d0594e67fd",
+  "jobs": [
+    {
+      "id": "comparison_integer_promotion",
+      "package": "examples/phase7/retained/comparison_integer_promotion",
+      "ptx_sha256": "b65374ff63be7ae550ae271e67819fc09cf33650453b4ef3a1d824b30ebe0e0d",
+      "cli_byte_identical": true,
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 108,
+          "mismatches": 0,
+          "max_abs_error": 0.0
+        }
+      ],
+      "inputs": []
+    }
+  ],
+  "events_verified": 2,
+  "http_attempts_verified": 2,
+  "planned_checks": 1,
+  "checks": 1,
+  "passed_checks": 1,
+  "failed_checks": 0,
+  "exact_selected_roster": true,
+  "files_verified": 14,
+  "complete_replay": true,
+  "finished_utc": "2026-10-28T00:16:26.789959+00:00"
+}

@@ -1,0 +1,10 @@
+{
+  "source": "artifacts/validation/phase4/release-remote/typed-inputs/comparison_integer_promotion",
+  "destination": "examples/phase7/retained/comparison_integer_promotion",
+  "sha256": {
+    "expected.npz": "6e031d6e76cabb0c2fdd460552b4fc6010525fed8cfdad346ba9fcc2be73ab82",
+    "k_regression_comparison_integer_promotion.ir.json": "92f36c27f9f96537598a2bb1b106d9f47486aecc9bdb11acef997bec2ba83f31",
+    "meta.json": "c62f8e5d9a84d2d8cab860f3e3d25bf2055cacd5e46a9ce807a526153d2b2ebf"
+  },
+  "byte_identical": true
+}

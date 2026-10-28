@@ -1,0 +1,56 @@
+{
+  "inputs": [],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Let(name='physical', value=BinaryExpr(op='+', left=BinaryExpr(op='*', left=BinaryExpr(op='+', left=BinaryExpr(op='*', left=BinaryExpr(op='+', left=BinaryExpr(op='*', left=Builtin(name='block_idx.z'), right=Builtin(name='grid_dim.y')), right=Builtin(name='block_idx.y')), right=Builtin(name='grid_dim.x')), right=Builtin(name='block_idx.x')), right=Literal(value=16, dtype='int')), right=BinaryExpr(op='+', left=BinaryExpr(op='*', left=BinaryExpr(op='+', left=BinaryExpr(op='*', left=Builtin(name='thread_idx.z'), right=Builtin(name='block_dim.y')), right=Builtin(name='thread_idx.y')), right=Builtin(name='block_dim.x')), right=Builtin(name='thread_idx.x'))), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4))",
+          "Let(name='value_0', value=Builtin(name='thread_idx.x'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4))",
+          "Write(output='out', index=(Var(name='physical'), Literal(value=0, dtype='int')), values=('value_0',), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE')",
+          "Let(name='value_1', value=Builtin(name='thread_idx.y'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4))",
+          "Write(output='out', index=(Var(name='physical'), Literal(value=1, dtype='int')), values=('value_1',), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE')",
+          "Let(name='value_2', value=Builtin(name='thread_idx.z'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4))",
+          "Write(output='out', index=(Var(name='physical'), Literal(value=2, dtype='int')), values=('value_2',), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE')",
+          "Let(name='value_3', value=Builtin(name='block_idx.x'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4))",
+          "Write(output='out', index=(Var(name='physical'), Literal(value=3, dtype='int')), values=('value_3',), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE')",
+          "Let(name='value_4', value=Builtin(name='block_idx.y'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4))",
+          "Write(output='out', index=(Var(name='physical'), Literal(value=4, dtype='int')), values=('value_4',), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE')",
+          "Let(name='value_5', value=Builtin(name='block_idx.z'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4))",
+          "Write(output='out', index=(Var(name='physical'), Literal(value=5, dtype='int')), values=('value_5',), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE')",
+          "Let(name='value_6', value=Builtin(name='block_dim.x'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4))",
+          "Write(output='out', index=(Var(name='physical'), Literal(value=6, dtype='int')), values=('value_6',), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE')",
+          "Let(name='value_7', value=Builtin(name='block_dim.y'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4))",
+          "Write(output='out', index=(Var(name='physical'), Literal(value=7, dtype='int')), values=('value_7',), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE')",
+          "Let(name='value_8', value=Builtin(name='block_dim.z'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4))",
+          "Write(output='out', index=(Var(name='physical'), Literal(value=8, dtype='int')), values=('value_8',), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE')",
+          "Let(name='value_9', value=Builtin(name='grid_dim.x'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4))",
+          "Write(output='out', index=(Var(name='physical'), Literal(value=9, dtype='int')), values=('value_9',), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE')",
+          "Let(name='value_10', value=Builtin(name='grid_dim.y'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4))",
+          "Write(output='out', index=(Var(name='physical'), Literal(value=10, dtype='int')), values=('value_10',), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE')",
+          "Let(name='value_11', value=Builtin(name='grid_dim.z'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4))",
+          "Write(output='out', index=(Var(name='physical'), Literal(value=11, dtype='int')), values=('value_11',), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE')",
+          "Let(name='value_12', value=Builtin(name='warp_size'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4))",
+          "Write(output='out', index=(Var(name='physical'), Literal(value=12, dtype='int')), values=('value_12',), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE')"
+        ],
+        "name": "k_regression_builtin_values_3d",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            128,
+            13
+          ],
+          "dtype": "f32"
+        }
+      ]
+    }
+  }
+}

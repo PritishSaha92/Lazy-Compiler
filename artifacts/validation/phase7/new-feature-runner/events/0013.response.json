@@ -1,0 +1,38 @@
+{
+  "ok": true,
+  "entry": "k_regression_shift_unsigned_left_wide_count",
+  "grid": [
+    1,
+    1,
+    1
+  ],
+  "block": [
+    32,
+    1,
+    1
+  ],
+  "smem_bytes": 0,
+  "median_us": 29.728,
+  "iters": 1,
+  "outputs": {
+    "out": {
+      "shape": [
+        4,
+        2
+      ],
+      "dtype": "i64",
+      "sum": 21474836472.0,
+      "values": [
+        4294967294.0,
+        4294967294.0,
+        4294967294.0,
+        4294967294.0,
+        0.0,
+        0.0,
+        2147483648.0,
+        2147483648.0
+      ],
+      "truncated": false
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "emmy-phase7-feature-inputs-v1",
+  "scope": "Immutable fixture-file snapshot and selected roster bound to the phase7 compiler; created after roster-source execution",
+  "created_utc": "2026-10-28T00:16:23.982406+00:00",
+  "compiler_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "3344668fe0b3f94a7198478fcccc50a51e80d70a33c67a868942353918dc9d4f",
+    "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+    "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "package_count": 1,
+  "packages": [
+    "examples/phase7/retained/comparison_integer_promotion"
+  ],
+  "files_sha256": {
+    "examples/phase7/retained/comparison_integer_promotion/expected.npz": "6e031d6e76cabb0c2fdd460552b4fc6010525fed8cfdad346ba9fcc2be73ab82",
+    "examples/phase7/retained/comparison_integer_promotion/k_regression_comparison_integer_promotion.ir.json": "92f36c27f9f96537598a2bb1b106d9f47486aecc9bdb11acef997bec2ba83f31",
+    "examples/phase7/retained/comparison_integer_promotion/meta.json": "c62f8e5d9a84d2d8cab860f3e3d25bf2055cacd5e46a9ce807a526153d2b2ebf"
+  },
+  "provenance": {
+    "roster_source_report": {
+      "path": "artifacts/validation/phase7/changed-scalar-runner/summary.json",
+      "sha256": "3d22db4b0e7df199be5b30f0ce3bf5ad59e54000cb6bbf2525bd6381aabc23e1"
+    }
+  }
+}

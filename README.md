@@ -1,17 +1,20 @@
-# Emmy Kernel IR to PTX compiler
+# Lazy Compiler
 
 **Implementation:** [`compile.py`](compile.py) now provides a direct PTX backend.
 Start with the [submission overview](SUBMISSION.md),
 [feature/example/test index](docs/FEATURES.md), and [runnable examples](examples/README.md).
 The optional extensions include FP16/BF16 tensor cores and an SM90 bulk-copy
-path. Their exact supported forms and limits are explicit. The latest [release report](docs/PHASE6.md)
-and [DeepInfer/MoK research review](docs/RESEARCH_REVIEW.md) describe the additional
-ring-pipeline tests and architecture-admission correction.
+path. Their exact supported forms and limits are explicit. The current
+[phase-7 release](docs/PHASE7.md) adds integer-semantics and logical GPU builtin
+corrections. Fresh organizer-GPU validation passed all 15 public problems and
+41 additional packages: 29 previous feature examples, 11 new counterexamples
+and one retained scalar case with changed PTX. The [earlier research
+review](docs/RESEARCH_REVIEW.md) explains the ring-pipeline tests and
+architecture-admission correction.
 
-Emmy (github.com/cloudrift-ai/emmy) compiles PyTorch to CUDA C++ and builds it with `nvcc`.
-**Your task: write a compiler that takes Emmy's Kernel IR and emits PTX directly**, skipping the
-CUDA C++ step. `ptxas` turns PTX into the same GPU binary ~19× faster than the full `nvcc`
-pipeline — Emmy's autotuner compiles thousands of kernel variants, so that middle step matters.
+This Python backend translates Emmy's scheduled Kernel IR directly into PTX.
+Emmy 0.3.11 supplies parsing and typed IR structures; this compiler implements
+the lowering. NVIDIA's `ptxas` assembles the emitted PTX downstream.
 
 You do **not** need a GPU. A hosted runner at `http://runner.riftstack.ai:48701` (the default in `submit.py`) compiles
 your PTX with `ptxas`, executes it on real hardware, and tells you whether the output is correct. See [docs/API.md](docs/API.md).
@@ -34,21 +37,26 @@ whole module succeeds, with diagnostics on stderr.
 
 | Read in this order | Responsibility |
 |---|---|
-| [`compile_file`](ptx_backend.py#L1685), [`compile`](ptx_backend.py#L1633) | Read the ABI and numerical contract, declare parameters/registers/shared memory, assemble the module. |
-| [`statement`](ptx_backend.py#L1251), [`tile`](ptx_backend.py#L1449), [`loop`](ptx_backend.py#L1378) | Dispatch typed IR; preserve work ownership, bounds, lexical scope and accumulator lifetime. |
-| [`expr`](ptx_backend.py#L739), [`operation`](ptx_backend.py#L788), [`convert`](ptx_backend.py#L439) | Lower typed arithmetic with explicit conversion, rounding and unsupported-operation diagnostics. |
-| [`address`](ptx_backend.py#L1117), [`load`](ptx_backend.py#L1156), [`store`](ptx_backend.py#L1177) | Flatten indices and emit global/shared memory operations; vectorize only with sufficient alignment evidence. |
-| [`shuffle`](ptx_backend.py#L1543), [`tree`](ptx_backend.py#L1580), [`sync`](ptx_backend.py#L1519) | Preserve subgroup membership, ordered coupled-state merges, shared-memory barriers and result broadcast. |
+| [`compile_file`](ptx_backend.py#L1726), [`compile`](ptx_backend.py#L1674) | Read the ABI and numerical contract, declare parameters/registers/shared memory, assemble the module. |
+| [`statement`](ptx_backend.py#L1299), [`tile`](ptx_backend.py#L1490), [`loop`](ptx_backend.py#L1419) | Dispatch typed IR; preserve work ownership, bounds, lexical scope and accumulator lifetime. |
+| [`expr`](ptx_backend.py#L799), [`operation`](ptx_backend.py#L836), [`convert`](ptx_backend.py#L466) | Lower typed arithmetic with explicit conversion, rounding and unsupported-operation diagnostics. |
+| [`address`](ptx_backend.py#L1165), [`load`](ptx_backend.py#L1204), [`store`](ptx_backend.py#L1225) | Flatten indices and emit global/shared memory operations; vectorize only with sufficient alignment evidence. |
+| [`shuffle`](ptx_backend.py#L1584), [`tree`](ptx_backend.py#L1621), [`sync`](ptx_backend.py#L1560) | Preserve subgroup membership, ordered coupled-state merges, shared-memory barriers and result broadcast. |
 | [`TensorLowering`](ptx_tensor.py) | Lower explicit m16n8k16 fragments, operand transport, MMA, guarded stores and epilogues. |
 | [`BulkLowering`](ptx_bulk.py) | Prove aligned box-copy bounds, emit native bulk transactions and preserve mbarrier phases. |
+
+GPU builtins retain their signed/unsigned types. Unstamped mixed-integer
+arithmetic stays in the integer family, and expression shifts take their type
+from the promoted left operand. Auxiliary-thread examples use explicit role
+guards and barriers; the [phase-7 scope](docs/PHASE7.md) states the launch and
+instruction limits.
 
 The prescribed launch and schedule are retained. Optimizations are bounded:
 schedule-hinted loop unrolling and, only under a nonzero tolerance, compensation
 for eligible independent FP32 dots. Exact or missing tolerances retain ordinary
 FP32 dot arithmetic. Operation/type support is explicit; see
 [the type rules](docs/TYPE_SUPPORT.md), [lowering contracts](docs/TRANSFORMATION_CONTRACTS.md),
-[validation evidence](docs/VALIDATION.md) and the
-[read-aloud video script](docs/VIDEO_SCRIPT.md). Passing the public set is a
+[validation evidence](docs/VALIDATION.md). Passing the public set is a
 baseline check; additional generated workloads test shapes and operation mixes
 outside it.
 
@@ -163,3 +171,8 @@ tools/        how the problems were generated (emmy compile -c ... --ir cuda)
 TASK.md       the task, the categories, the CLI contract
 MVP.md        the minimum bar
 ```
+
+## Development
+
+Development and code review were AI-assisted. See [the checkout notes](docs/CHECKOUT.md)
+for source provenance and the checks on this repository.

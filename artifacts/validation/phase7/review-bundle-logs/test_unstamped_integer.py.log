@@ -1,0 +1,10 @@
+test_constant_shift_result_uses_promoted_left_type (test_unstamped_integer.UnstampedIntegerTests.test_constant_shift_result_uses_promoted_left_type) ... ok
+test_integer_programs_match_independent_references (test_unstamped_integer.UnstampedIntegerTests.test_integer_programs_match_independent_references) ... skipped 'set EMMY_GPU_TESTS=1 for CUDA execution'
+test_integer_rank_and_sign_without_float_fallback (test_unstamped_integer.UnstampedIntegerTests.test_integer_rank_and_sign_without_float_fallback) ... ok
+test_portable_integer_programs_assemble (test_unstamped_integer.UnstampedIntegerTests.test_portable_integer_programs_assemble) ... ok
+test_shift_rejects_floating_operands (test_unstamped_integer.UnstampedIntegerTests.test_shift_rejects_floating_operands) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.681s
+
+OK (skipped=1)

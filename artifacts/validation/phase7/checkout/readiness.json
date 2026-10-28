@@ -1,0 +1,47 @@
+{
+  "schema": "emmy-checkout-readiness-v1",
+  "pass": true,
+  "created_utc": "2026-10-28T00:46:23.591266+00:00",
+  "scope": "Fresh checks in the actual Git checkout; the organizer GPU results are retained evidence for byte-identical runtime files.",
+  "source_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "3344668fe0b3f94a7198478fcccc50a51e80d70a33c67a868942353918dc9d4f",
+    "ptx_tensor.py": "5d97c908dc0f397401cbe7894343dd1bbc3a2d8d3b0827fe650ccb3a3015e935",
+    "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "inventory_sha256": "bab2702498c6aaa079b16ed428152614507e732ce26edde935a4db74ee2df162",
+  "cpu": {
+    "methods": 129,
+    "passed": 110,
+    "explicit_local_gpu_skips": 19
+  },
+  "cli": {
+    "checks": 20,
+    "passed": 20,
+    "raw_matches": 20,
+    "line_ending_normalized_matches": 0,
+    "comparison": "Native stdout compared first; uniform LF may be converted to retained Windows CRLF, with every other byte preserved"
+  },
+  "verified_documentation_links": 236,
+  "retained_organizer_gpu": {
+    "public_checks": 15,
+    "public_passes": 15,
+    "prior_feature_checks": 29,
+    "new_counterexample_checks": 11,
+    "changed_scalar_rechecks": 1,
+    "additional_checks": 41,
+    "additional_passes": 41,
+    "total_checks": 56,
+    "total_passes": 56,
+    "local_gpu_used": false
+  },
+  "evidence": {
+    "cpu-regressions.json": "a674466f9f39d2b77659b8098b4f3b3e6c4c55f6b0ba508b7bb2cc1982810266",
+    "cpu-regressions.log": "2382074c835918d7c44cc0b43eb4dd5c916df46ed3142a23332f10d7d6ecf84b",
+    "verification.json": "9326c41900ee2368bc350f3d924d1ff6a9ac5f4fd9bb57bcc1c936ea3425f71f"
+  },
+  "presentation_drafts_removed": true,
+  "local_gpu_used": false,
+  "pushed": false
+}

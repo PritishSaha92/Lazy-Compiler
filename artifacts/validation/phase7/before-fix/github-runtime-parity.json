@@ -1,0 +1,32 @@
+[
+  {
+    "file": "compile.py",
+    "github_blob_sha": "ae37115cbde613cbe7c49643148edc7d28dfe777",
+    "raw_match": true,
+    "lf_match": true
+  },
+  {
+    "file": "ptx_backend.py",
+    "github_blob_sha": "5930f11184c08feae12da9c02a307f56d1afaee5",
+    "raw_match": false,
+    "lf_match": true
+  },
+  {
+    "file": "ptx_bulk.py",
+    "github_blob_sha": "237a43061ccd0524662227af8c935614897d9ce7",
+    "raw_match": true,
+    "lf_match": true
+  },
+  {
+    "file": "ptx_tensor.py",
+    "github_blob_sha": "d297eb614c0962bfc0ab0e172a3440ee60f5719e",
+    "raw_match": true,
+    "lf_match": true
+  },
+  {
+    "file": "requirements.txt",
+    "github_blob_sha": "7d7f6683163007670b61e102b2392000863e6d7f",
+    "raw_match": true,
+    "lf_match": true
+  }
+]

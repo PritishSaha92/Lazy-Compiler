@@ -1,0 +1,59 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_shift_signed_right_unsigned_count",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "x",
+        "dtype": "i32",
+        "shape": [
+          4
+        ],
+        "data": [
+          -4,
+          -2147483648,
+          -1,
+          2147483647
+        ]
+      },
+      {
+        "name": "n",
+        "dtype": "i64",
+        "shape": [
+          4
+        ],
+        "data": [
+          1,
+          31,
+          0,
+          2
+        ]
+      },
+      {
+        "name": "out",
+        "dtype": "i64",
+        "shape": [
+          4,
+          2
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "344e3d04443d75cefe63898b47fd23da535fc743b59b50f590d06b7f5bf56123"
+  }
+}

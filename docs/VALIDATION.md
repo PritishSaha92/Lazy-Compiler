@@ -5,7 +5,20 @@ interface. Assembly success, numerical correctness, and timing are separate
 results. Tests never replace the submitted translation with Emmy's renderer,
 nvcc, LLVM, Triton, or a reference CUDA file.
 
-## Current phase-6 research-informed release
+## Current phase-7 release
+
+The [phase-7 release](PHASE7.md) corrects logical builtin names/types,
+unstamped mixed-integer operations and expression-shift promotion. Fresh checks
+passed **15/15 public + 41/41 additional organizer-GPU packages**: 29 previous
+feature examples, 11 new counterexamples and one retained scalar case whose PTX
+changed. Complete discovery passed **110 CPU/assembler methods**, with 19 explicit
+local-GPU skips. The isolated install passed 25 packages, 75 compilations and
+three expected diagnostics. The [source-bound
+summary](../artifacts/validation/phase7/release-summary.json) links all reports.
+No local GPU was used. The following phase-6 results belong to the previously
+packaged sources and are retained unchanged.
+
+## Previously packaged phase-6 research-informed release
 
 See [PHASE6.md](PHASE6.md): **15/15 public** and **29/29 optional-feature**
 organizer-GPU checks; **99 CPU/assembler methods passed**, with 18 explicit

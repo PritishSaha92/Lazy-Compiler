@@ -1,0 +1,30 @@
+{
+  "inputs": [],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='i', extent=Dim(9), window=None),), body=(Let(name='v0', value=BinaryExpr(op='+', left=BinaryExpr(op='<', left=Var(name='i'), right=Literal(value=4, dtype='int')), right=BinaryExpr(op='>=', left=Var(name='i'), right=Literal(value=2, dtype='int'))), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='v1', value=BinaryExpr(op='-', left=BinaryExpr(op='<', left=Var(name='i'), right=Literal(value=4, dtype='int')), right=BinaryExpr(op='>=', left=Var(name='i'), right=Literal(value=2, dtype='int'))), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='v2', value=BinaryExpr(op='*', left=BinaryExpr(op='<', left=Var(name='i'), right=Literal(value=4, dtype='int')), right=BinaryExpr(op='>=', left=Var(name='i'), right=Literal(value=2, dtype='int'))), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='v3', value=BinaryExpr(op='&', left=BinaryExpr(op='<', left=Var(name='i'), right=Literal(value=4, dtype='int')), right=BinaryExpr(op='>=', left=Var(name='i'), right=Literal(value=2, dtype='int'))), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='v4', value=BinaryExpr(op='|', left=BinaryExpr(op='<', left=Var(name='i'), right=Literal(value=4, dtype='int')), right=BinaryExpr(op='>=', left=Var(name='i'), right=Literal(value=2, dtype='int'))), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='v5', value=BinaryExpr(op='^', left=BinaryExpr(op='<', left=Var(name='i'), right=Literal(value=4, dtype='int')), right=BinaryExpr(op='>=', left=Var(name='i'), right=Literal(value=2, dtype='int'))), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='v6', value=BinaryExpr(op='<<', left=BinaryExpr(op='<', left=Var(name='i'), right=Literal(value=4, dtype='int')), right=BinaryExpr(op='>=', left=Var(name='i'), right=Literal(value=2, dtype='int'))), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='v7', value=BinaryExpr(op='>>', left=BinaryExpr(op='<', left=Var(name='i'), right=Literal(value=4, dtype='int')), right=BinaryExpr(op='>=', left=Var(name='i'), right=Literal(value=2, dtype='int'))), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='v8', value=BinaryExpr(op='/', left=BinaryExpr(op='<', left=Var(name='i'), right=Literal(value=4, dtype='int')), right=BinaryExpr(op='>=', left=Var(name='i'), right=Literal(value=0, dtype='int'))), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='v9', value=BinaryExpr(op='%', left=BinaryExpr(op='<', left=Var(name='i'), right=Literal(value=4, dtype='int')), right=BinaryExpr(op='>=', left=Var(name='i'), right=Literal(value=0, dtype='int'))), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='v10', value=BinaryExpr(op='&&', left=BinaryExpr(op='<', left=Var(name='i'), right=Literal(value=4, dtype='int')), right=BinaryExpr(op='>=', left=Var(name='i'), right=Literal(value=2, dtype='int'))), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='v11', value=BinaryExpr(op='||', left=BinaryExpr(op='<', left=Var(name='i'), right=Literal(value=4, dtype='int')), right=BinaryExpr(op='>=', left=Var(name='i'), right=Literal(value=2, dtype='int'))), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Write(output='out', index=(Var(name='i'), Literal(value=0, dtype='int')), values=('v0', 'v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11'), value_dtype=DataType(name='i32', np=dtype('int32'), nbytes=4), atomic=False, swizzle='NONE')), block_threads=None, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_comparison_integer_promotion",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            9,
+            12
+          ],
+          "dtype": "i32"
+        }
+      ]
+    }
+  }
+}
