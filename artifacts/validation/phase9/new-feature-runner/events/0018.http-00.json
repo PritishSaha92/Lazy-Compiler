@@ -1,0 +1,19 @@
+{
+  "started": "2026-10-28T11:43:31.342673+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "cubin_id": "7dc2c5580c3d4b2af93b89381c327ae5a8a1093b2fbd47b3483d4fd87afd9c3f",
+    "bytes": 10384,
+    "arch": "sm_120",
+    "flags": [],
+    "entry_points": [
+      "k_regression_activation_gelu_f16"
+    ],
+    "registers": {
+      "k_regression_activation_gelu_f16": 20
+    }
+  },
+  "finished": "2026-10-28T11:43:32.174938+00:00",
+  "seconds": 0.832618199987337
+}

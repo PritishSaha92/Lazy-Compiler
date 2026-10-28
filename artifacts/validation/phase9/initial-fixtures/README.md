@@ -1,0 +1,1 @@
+Original fixture files from the initial 16-package run. Two requests were rejected with HTTP 422 before GPU execution because data arrays were nested instead of flat. The later fixture correction only flattens these metadata lists; it does not change IR, values, shapes, expected arrays or tolerances. The original failed attempt remains in ../new-feature-runner.

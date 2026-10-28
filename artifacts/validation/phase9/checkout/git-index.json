@@ -1,0 +1,32 @@
+{
+  "schema": "emmy-phase9-git-index-audit-v1",
+  "pass": true,
+  "created_utc": "2026-10-28T12:29:27.355655+00:00",
+  "parent_commit": "ae302aec05803f992ad813ecfc7b443c2fe1263e",
+  "manifest_sha256": "985834dc899559520d409b7111c8df238c9d1dec0e0b9c0f22006253f34c91eb",
+  "runtime_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "f998d378fffff3f228fb9f90386542dd185dd1dfbe5a0a5b3dc559dc68bc46ca",
+    "ptx_tensor.py": "9046e52c80db822421398a5b8b8778e1c035194a8b35820d078013fde5b5b885",
+    "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "inventoried_files": 3299,
+  "staged_files_verified": 3312,
+  "staged_files_outside_inventory": [
+    "artifacts/validation/checkout-current/first-inventory.json",
+    "artifacts/validation/checkout-current/git-index.json",
+    "artifacts/validation/checkout-current/verification-final.json",
+    "artifacts/validation/checkout-current/verification.json",
+    "artifacts/validation/phase7/checkout/cpu-regressions.json",
+    "artifacts/validation/phase7/checkout/cpu-regressions.log",
+    "artifacts/validation/phase7/checkout/readiness.json",
+    "artifacts/validation/phase7/checkout/verification.json",
+    "artifacts/validation/phase9/checkout/publication.json",
+    "artifacts/validation/phase9/checkout/verification-complete.json",
+    "artifacts/validation/phase9/checkout/verification-initial.json",
+    "artifacts/validation/phase9/checkout/verification.json"
+  ],
+  "scope": "All staged file blob identities matched disk bytes, and all inventory files matched SHA256 and lengths. This report is written after that check and is excluded from its own inventory.",
+  "script_sha256": "2253757c59398c51bcbea026386375a9c37ea2aba78fbd2bcf10aa8c0d5f2a26"
+}

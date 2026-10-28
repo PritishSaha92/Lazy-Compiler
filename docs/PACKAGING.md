@@ -24,10 +24,14 @@ the submission ZIP. The entry command after extraction remains
 
 ## Current source checkout and release archive
 
-This Git checkout contains the current phase-8 compiler, runnable examples,
-tests and technical evidence. [PHASE8.md](PHASE8.md) and its
-[release summary](../artifacts/validation/phase8/release-summary.json) record the
-current validation status. `REVIEW_MANIFEST.json` uses the version-2 checkout
+This Git checkout contains the current phase-9 compiler, runnable examples,
+tests and technical evidence. [PHASE9.md](PHASE9.md) records current validation
+status; public, feature and CPU gates passed. The separate generated
+composition study retains its 21/24 mathematical result. The
+[checkout report](../artifacts/validation/phase9/checkout/verification.json)
+records source-inventory and CLI verification separately. The
+[phase-8 release summary](../artifacts/validation/phase8/release-summary.json)
+remains tied to its earlier runtime. `REVIEW_MANIFEST.json` uses the version-2 checkout
 schema: current runtime/CLI evidence is distinct from the preserved archive's
 provenance. Presentation drafts and a scratch PTX output are omitted.
 
@@ -37,16 +41,18 @@ identifies the original full release archive. Its original inventory is retained
 as [source-archive-inventory.json](../artifacts/validation/phase7/source-archive-inventory.json).
 Those archive hashes describe the original phase-7 release, not this revised
 checkout. The current backend has changed; it is verified against its own
-phase-8 source hashes rather than represented as byte-identical to phase 7.
+current source hashes rather than represented as byte-identical to phase 7.
 
 Historical build and verification scripts under `artifacts/validation/phase*`
 record how the original archives were produced. They may reference presentation
 files omitted here. Use `tools/check_checkout.py` for this checkout and
 `tools/package_review.py` to create a new bundle from the current source tree.
 The older release archives and their numerical results remain historical.
-`python tools/check_checkout.py` writes the current check to
-`artifacts/validation/checkout-current/verification.json` by default and refuses
-to replace an existing report. It checks both current identity and historical
+The current release check is
+`python tools/check_checkout.py --report artifacts/validation/phase9/checkout/verification.json`.
+It refuses to replace an existing report; reviewers should use another name
+such as `artifacts/validation/phase9/checkout/my-verification.json`.
+It checks both current identity and historical
 provenance without requiring the original distribution ZIP to be present.
 
 ## Previous phase-4 evidence manifest (24 October 2026)

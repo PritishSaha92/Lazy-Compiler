@@ -1,0 +1,42 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_fragment_row_multiply_ordered",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "x",
+        "dtype": "f32",
+        "shape": [
+          16,
+          16
+        ],
+        "seed": 0
+      },
+      {
+        "name": "out",
+        "dtype": "f32",
+        "shape": [
+          16,
+          8
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "f0b2f887a723f6cec08d083681c2e5a234a9dccd68bed41e5e0bd81f88529207"
+  }
+}

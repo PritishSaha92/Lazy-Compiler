@@ -10,6 +10,8 @@ different schedule. No CUDA renderer or existing compiler performs its lowering.
 | Warp tensor cores | [ptx_tensor.py](../ptx_tensor.py): `mma.sync.aligned.m16n8k16`, FP16 or BF16 multiplicands, FP32 accumulator | [Tensor examples](../examples/tensor/packages), [tests](../tests/test_tensor_cores.py) |
 | Tensor fragment transport | Native shared `ldmatrix.x4`, `x2.trans`, paired B loads, transposed B, B32/B64/B128 software swizzles; global gathers with M/N clamping and K zero-fill | Shared, paired, transposed, swizzled and ragged examples in the tensor suite |
 | Fragment state and epilogues | Runtime-indexed fragment families, persistent accumulators, guarded stores, scalar bias/ReLU epilogues, transposed output, atomic accumulation and C-to-A repacking | Tensor family, epilogue, atomic and repack tests; original generated ragged FP16 matmul |
+| Direct GELU operations | Separate erf and cubic/tanh formulas; F32 computation, F16/BF16 operation-level narrowing, F64 diagnostics | [Activation examples](../examples/phase9/gelu), [tests](../tests/test_gelu.py) |
+| Fragment algebra and row folds | M16N8 FP32 C fragments, five operand distributions, guarded GMEM, unary post chains, ordered four-lane row folds | [Fragment examples](../examples/phase9/fragments), [tests](../tests/test_fragment_rows.py), including one complete attention tile |
 | Bulk copy engine | [ptx_bulk.py](../ptx_bulk.py): native `cp.async.bulk`, rectangular pointer-based transfers, transaction barriers and parity waits | [Bulk examples](../examples/bulk), [tests](../tests/test_bulk_copy.py) |
 | Combined engine pipeline | Bulk copies feed `ldmatrix` and tensor MMA across three K slabs; accumulator state survives barrier and buffer reuse | [Combined examples](../examples/combined), [tests](../tests/test_feature_interactions.py) |
 | Ordinary asynchronous copies | Native 4/8/16-byte `cp.async`, commit groups, nonzero wait groups and separate consumer barriers | [Transport tests](../tests/test_transport_edges.py), [interaction tests](../tests/test_interactions.py) |
@@ -23,7 +25,7 @@ different schedule. No CUDA renderer or existing compiler performs its lowering.
 The earlier phase-7 corrections to unstamped mixed-integer arithmetic and
 expression-shift promotion remain included; see the [type rules](TYPE_SUPPORT.md)
 and [independent integer fixtures](../tests/test_unstamped_integer.py).
-Current validation is tracked in [PHASE8.md](PHASE8.md), with historical reports
+Current validation is tracked in [PHASE9.md](PHASE9.md), with historical reports
 kept separate from the current source.
 
 ## Scalar edge contracts
@@ -52,8 +54,9 @@ retain integer values. This avoids hiding low-bit errors through float64 roundin
 
 ## Tensor-core contract
 
-Only the explicit `RegFragment`, `LdmatrixLoad`, `MmaSyncPtx`, `RegStore` and
-`FragmentRepack` forms described above are admitted. The supported atom is
+Only the explicit `RegFragment`, `LdmatrixLoad`, `MmaSyncPtx`, `RegStore`,
+`FragmentRepack`, `FragmentApply` and `FragmentRowReduce` forms described here
+are admitted. The supported atom is
 **m16n8k16, row-major A / column-major B, FP16 or BF16 inputs, FP32 accumulation**,
 requiring SM80 or newer. FP16-accumulator, FP8, block-scaled, Volta and WGMMA
 forms are rejected. This extension does not change the numerical policy of
@@ -79,6 +82,28 @@ does not prove arbitrary branch uniformity. The scheduled IR must satisfy the
 PTX collective-participation contract. Shared row alignment is proved from
 address divisibility and conservative loop facts; rebinding and repeated-node
 cases have rejection regressions.
+
+### Fragment algebra and row folds
+
+`FragmentApply` admits the M16N8 four-register FP32 C layout. FRAG, ROW, UNIFORM,
+COORD and GMEM operands follow pinned Emmy 0.3.11 `kernel/ir.py:993-1171`.
+Coordinate templates require explicit origins. In-place family updates and unary
+post chains reuse the scalar operation admission table. `where` evaluates GMEM
+operands only inside the selected branch. F64 ROW, numeric COORD and UNIFORM
+expression results are diagnosed to avoid premature narrowing; named UNIFORM
+and GMEM operands retain their specified FP32 conversion.
+
+`FragmentRowReduce` admits add/multiply/minimum/maximum on nonempty FP32 C
+fragments. Its fragment-major left fold precedes XOR shuffles 2 and 1, matching
+pinned `kernel/ir.py:1175-1226`. ROW results broadcast to their two per-lane rows.
+Complete warps are required; conditional ancestry, nonliteral strided-loop
+controls and enclosing induction rebinding are rejected. This conservative
+admission does not prove arbitrary control-flow uniformity.
+
+The attention example is one complete 16-by-16 score tile with QK, row
+normalization, FP16 weight repacking and PV. It is not a multi-tile online
+attention implementation. See [tests](../tests/test_fragment_rows.py) for the
+independent reference, cancellation-order cases and negative admission checks.
 
 ## Bulk-copy contract
 

@@ -1,0 +1,42 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_fragment_family_row_softmax",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "x",
+        "dtype": "f32",
+        "shape": [
+          16,
+          16
+        ],
+        "seed": 0
+      },
+      {
+        "name": "out",
+        "dtype": "f32",
+        "shape": [
+          16,
+          16
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "c8b861b0cb5f58a4bac0a898c8c15d2c64cae0662f044ed6cb263f332b16e4f6"
+  }
+}

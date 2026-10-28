@@ -1,0 +1,19 @@
+{
+  "started": "2026-10-28T12:05:34.085833+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "cubin_id": "2ff85beb0bc551e86899814f7173ec3698eed184c5b0de0cf696e14ce37c09ef",
+    "bytes": 11048,
+    "arch": "sm_120",
+    "flags": [],
+    "entry_points": [
+      "k_sum_1_reduce"
+    ],
+    "registers": {
+      "k_sum_1_reduce": 29
+    }
+  },
+  "finished": "2026-10-28T12:05:34.617509+00:00",
+  "seconds": 0.53124049998587
+}

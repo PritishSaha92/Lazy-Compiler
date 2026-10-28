@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "cubin_id": "bb3146157ad4ee4ec78d0b4d326aa6eeaf3d889276c109acc4fbbd763a8f0881",
+  "bytes": 9056,
+  "arch": "sm_120",
+  "flags": [],
+  "entry_points": [
+    "k_gelu_pointwise"
+  ],
+  "registers": {
+    "k_gelu_pointwise": 19
+  }
+}

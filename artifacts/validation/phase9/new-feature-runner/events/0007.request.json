@@ -1,0 +1,51 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_fragment_mma_row_normalization",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "a",
+        "dtype": "f32",
+        "shape": [
+          16,
+          16
+        ],
+        "seed": 0
+      },
+      {
+        "name": "b",
+        "dtype": "f32",
+        "shape": [
+          16,
+          8
+        ],
+        "seed": 1
+      },
+      {
+        "name": "out",
+        "dtype": "f32",
+        "shape": [
+          16,
+          8
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "dd88bed4e731527ed3ea5a15b547aa1f6c3280a5d203d0f9fb3e25b8df951240"
+  }
+}

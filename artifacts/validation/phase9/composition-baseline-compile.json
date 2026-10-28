@@ -1,0 +1,61 @@
+{
+  "scope": "Phase8 compiler CLI only; no GPU",
+  "rows": [
+    {
+      "ir": "examples/phase9/generated/phase9_bias_gelu_gemm/k_matmul_9712dd.ir.json",
+      "ir_sha256": "2e99e6441513a673b8d6a8273832fbff5dda6b84d4b1e94b44f1e5dbd4a6575e",
+      "returncode": 0,
+      "stderr": "",
+      "ptx_sha256": "705607c273d71f84948d5023ba26ef98daa58d1cc275e59eb5609ad0c721ffb2"
+    },
+    {
+      "ir": "examples/phase9/generated/phase9_gelu_attention/k_matmul_softmax_reduce_88d497.ir.json",
+      "ir_sha256": "43f2231f443876707aff79f3079bdd97a66d92c6a27f6b97667c811de5b2f2f3",
+      "returncode": 0,
+      "stderr": "",
+      "ptx_sha256": "64e8810d866db1ba44fd6fed78853ce2f7beac9f27446cb54ae6b5dc972c55d2"
+    },
+    {
+      "ir": "examples/phase9/generated/phase9_gelu_erf_half/k_gelu_pointwise.ir.json",
+      "ir_sha256": "9ca4d6857e8a61f102e55658667ae94c1d1c3b1aa9b2ffaf99bea3ab1457373a",
+      "returncode": 0,
+      "stderr": "",
+      "ptx_sha256": "6ef970e6d81477cb7744dd4923c8dfda7ffa0a534940c7a15ae827f833200bbe"
+    },
+    {
+      "ir": "examples/phase9/generated/phase9_gelu_erf_tail/k_gelu_pointwise.ir.json",
+      "ir_sha256": "fd862c847c9843ca7353d713e7471c632dd29d326000050d59aff08e8460a047",
+      "returncode": 0,
+      "stderr": "",
+      "ptx_sha256": "7d12f9dd74b7fd6ac2a2fc4136cb8d08b7a58d4a546d27994d0d3c90a74163d1"
+    },
+    {
+      "ir": "examples/phase9/generated/phase9_gelu_row_dot/k_sum_1_reduce.ir.json",
+      "ir_sha256": "46ab7956a3572f37cb46c21e9e83bc4c6c0836707e730af7f90113e84feec653",
+      "returncode": 0,
+      "stderr": "",
+      "ptx_sha256": "9cb2abae2c1c4a0c3d386a9d5a5a6be8c891321531807d7ba0856ed59ab07d04"
+    },
+    {
+      "ir": "examples/phase9/generated/phase9_gelu_tanh_half/k_gelu_pointwise.ir.json",
+      "ir_sha256": "acef07d60e658b407df29b7eb154c47882f1e1f68a12cc500565ca4be984c33b",
+      "returncode": 0,
+      "stderr": "",
+      "ptx_sha256": "45145aa294ce992aae41b46e795bdaf099715fc6b12b085a403f8377107952b7"
+    },
+    {
+      "ir": "examples/phase9/generated/phase9_gelu_tanh_matrix/k_gelu_pointwise.ir.json",
+      "ir_sha256": "1e75e0b7b79954f74270bf4ac31c0910cf243774ed2faf61e346acb1ea66dd13",
+      "returncode": 0,
+      "stderr": "",
+      "ptx_sha256": "3f10db0a60e899b47014583b4dec8f487637c66f1e326bd6db6d182454710d23"
+    },
+    {
+      "ir": "examples/phase9/generated/phase9_half_gelu_gemm/k_matmul_6269af.ir.json",
+      "ir_sha256": "37971f09e6d44a90f6ed2daeb20425566581bbd89939ae40d917174ab0e5de35",
+      "returncode": 0,
+      "stderr": "",
+      "ptx_sha256": "df2939113b7e1ae9e597db2cedac5080b663f043fe5272d13b835161c2bde357"
+    }
+  ]
+}

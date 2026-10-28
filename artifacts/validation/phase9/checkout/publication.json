@@ -1,0 +1,1147 @@
+{
+  "pass": true,
+  "scope": "Checkout-report publication and extra documentation link audit; no new GPU or unit tests.",
+  "initial_report": {
+    "path": "verification-initial.json",
+    "sha256": "9b986b51a570740afb1097b4aac25b5e43d1308a8df22db892704476086bfa13",
+    "pass": false
+  },
+  "completed_report": {
+    "path": "verification-complete.json",
+    "sha256": "7a6a6c145817369b9972967bb53e1ebfabdc7f98298d5dbf01490f8f5f93a92a",
+    "pass": true
+  },
+  "current_report": {
+    "path": "verification.json",
+    "sha256": "7a6a6c145817369b9972967bb53e1ebfabdc7f98298d5dbf01490f8f5f93a92a",
+    "byte_identical_to_completed": true
+  },
+  "explanation": "The first verification reproduced all20 CLI outputs but failed because the documentation linked to its not-yet-written report. The second verification passed with unchanged inventory/source. The first result is retained verbatim; verification.json is a byte-identical copy of the completed result.",
+  "additional_doc_pages": [
+    "README.md",
+    "SUBMISSION.md",
+    "SOLUTION.md",
+    "docs/PHASE9.md",
+    "docs/FEATURES.md",
+    "docs/TYPE_SUPPORT.md",
+    "docs/VALIDATION.md",
+    "docs/CHECKOUT.md",
+    "docs/PACKAGING.md",
+    "examples/README.md"
+  ],
+  "local_links_verified": 278,
+  "links": [
+    {
+      "page": "README.md",
+      "target": "compile.py"
+    },
+    {
+      "page": "README.md",
+      "target": "SUBMISSION.md"
+    },
+    {
+      "page": "README.md",
+      "target": "docs/FEATURES.md"
+    },
+    {
+      "page": "README.md",
+      "target": "examples/README.md"
+    },
+    {
+      "page": "README.md",
+      "target": "docs/PHASE9.md"
+    },
+    {
+      "page": "README.md",
+      "target": "docs/PHASE9.md"
+    },
+    {
+      "page": "README.md",
+      "target": "artifacts/validation/phase9/release-summary.json"
+    },
+    {
+      "page": "README.md",
+      "target": "docs/PHASE9.md"
+    },
+    {
+      "page": "README.md",
+      "target": "docs/API.md"
+    },
+    {
+      "page": "README.md",
+      "target": "compile.py"
+    },
+    {
+      "page": "README.md",
+      "target": "ptx_backend.py"
+    },
+    {
+      "page": "README.md",
+      "target": "ptx_tensor.py"
+    },
+    {
+      "page": "README.md",
+      "target": "ptx_bulk.py"
+    },
+    {
+      "page": "README.md",
+      "target": "requirements.txt"
+    },
+    {
+      "page": "README.md",
+      "target": "ptx_backend.py"
+    },
+    {
+      "page": "README.md",
+      "target": "ptx_backend.py"
+    },
+    {
+      "page": "README.md",
+      "target": "ptx_backend.py"
+    },
+    {
+      "page": "README.md",
+      "target": "ptx_backend.py"
+    },
+    {
+      "page": "README.md",
+      "target": "ptx_backend.py"
+    },
+    {
+      "page": "README.md",
+      "target": "ptx_backend.py"
+    },
+    {
+      "page": "README.md",
+      "target": "ptx_backend.py"
+    },
+    {
+      "page": "README.md",
+      "target": "ptx_backend.py"
+    },
+    {
+      "page": "README.md",
+      "target": "ptx_backend.py"
+    },
+    {
+      "page": "README.md",
+      "target": "ptx_backend.py"
+    },
+    {
+      "page": "README.md",
+      "target": "ptx_backend.py"
+    },
+    {
+      "page": "README.md",
+      "target": "ptx_backend.py"
+    },
+    {
+      "page": "README.md",
+      "target": "ptx_backend.py"
+    },
+    {
+      "page": "README.md",
+      "target": "ptx_backend.py"
+    },
+    {
+      "page": "README.md",
+      "target": "ptx_tensor.py"
+    },
+    {
+      "page": "README.md",
+      "target": "ptx_bulk.py"
+    },
+    {
+      "page": "README.md",
+      "target": "docs/FEATURES.md"
+    },
+    {
+      "page": "README.md",
+      "target": "docs/PHASE8.md"
+    },
+    {
+      "page": "README.md",
+      "target": "docs/TYPE_SUPPORT.md"
+    },
+    {
+      "page": "README.md",
+      "target": "docs/TRANSFORMATION_CONTRACTS.md"
+    },
+    {
+      "page": "README.md",
+      "target": "docs/VALIDATION.md"
+    },
+    {
+      "page": "README.md",
+      "target": "examples/README.md"
+    },
+    {
+      "page": "README.md",
+      "target": "TASK.md"
+    },
+    {
+      "page": "README.md",
+      "target": "MVP.md"
+    },
+    {
+      "page": "README.md",
+      "target": "problems/PROVENANCE.md"
+    },
+    {
+      "page": "README.md",
+      "target": "TASK.md"
+    },
+    {
+      "page": "README.md",
+      "target": "docs/CHECKOUT.md"
+    },
+    {
+      "page": "SUBMISSION.md",
+      "target": "docs/FEATURES.md"
+    },
+    {
+      "page": "SUBMISSION.md",
+      "target": "artifacts/validation/phase9/release-summary.json"
+    },
+    {
+      "page": "SUBMISSION.md",
+      "target": "docs/PHASE9.md"
+    },
+    {
+      "page": "SUBMISSION.md",
+      "target": "artifacts/validation/phase9/numerics/half-gelu-stage-final.json"
+    },
+    {
+      "page": "SUBMISSION.md",
+      "target": "docs/PHASE8.md"
+    },
+    {
+      "page": "SUBMISSION.md",
+      "target": "docs/FINAL_CHECK_2026_10_24.md"
+    },
+    {
+      "page": "SUBMISSION.md",
+      "target": "README.md"
+    },
+    {
+      "page": "SUBMISSION.md",
+      "target": "docs/FEATURES.md"
+    },
+    {
+      "page": "SUBMISSION.md",
+      "target": "ptx_tensor.py"
+    },
+    {
+      "page": "SUBMISSION.md",
+      "target": "ptx_bulk.py"
+    },
+    {
+      "page": "SUBMISSION.md",
+      "target": "tests/test_feature_interactions.py"
+    },
+    {
+      "page": "SUBMISSION.md",
+      "target": "examples/README.md"
+    },
+    {
+      "page": "SUBMISSION.md",
+      "target": "docs/PHASE9.md"
+    },
+    {
+      "page": "SUBMISSION.md",
+      "target": "docs/RESEARCH_REVIEW.md"
+    },
+    {
+      "page": "SUBMISSION.md",
+      "target": "docs/CHECKOUT.md"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "ptx_backend.py"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "docs/PHASE9.md"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "artifacts/validation/phase9/release-summary.json"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "artifacts/validation/phase9/numerics/half-gelu-stage-final.json"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "docs/PHASE8.md"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "SUBMISSION.md"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "docs/FEATURES.md"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "docs/CHECKOUT.md"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "artifacts/release/phase7/review/latest.json"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "docs/PHASE6.md"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "artifacts/release/phase4/submission-bcbc4a8381497f1d34be-3908fd80497591da4d12.manifest.json"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "build/open-ptx-phase4-cli/manifest.json"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "artifacts/validation/phase4/public-ptx-identity.json"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "docs/FINAL_CHECK_2026_10_24.md"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "artifacts/validation/2026-10-24-final/summary.json"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "docs/TYPE_SUPPORT.md"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "docs/TRANSFORMATION_CONTRACTS.md"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "docs/PERFORMANCE.md"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "docs/PHASE8.md"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "docs/TYPE_SUPPORT.md"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "docs/SELECTOR_STUDY.md"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "docs/SELECTOR_REVIEW.md"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "artifacts/validation/phase4/selector/feasibility.json"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "artifacts/validation/phase4/release-remote/summary.json"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "artifacts/validation/phase4/semantic-final/summary.json"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "artifacts/validation/phase4/selector-correctness-retry01/summary.json"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "artifacts/validation/phase4/selector-correctness-retry01/integrity-audit.json"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "artifacts/validation/phase4/final-summary.json"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "docs/VALIDATION.md"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "docs/SEMANTICS.md"
+    },
+    {
+      "page": "SOLUTION.md",
+      "target": "docs/COMPILER.md"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "artifacts/validation/phase9/release-summary.json"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "artifacts/validation/phase9/checkout/verification.json"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "artifacts/validation/phase9/public-submit/summary.json"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "artifacts/validation/phase9/public-submit-retry/summary.json"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "artifacts/validation/phase9/feature-runner-final/summary.json"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "artifacts/validation/phase9/cpu-regressions.json"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "artifacts/validation/phase9/new-feature-runner/summary.json"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "artifacts/validation/phase9/compositions-baseline/summary.json"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "artifacts/validation/phase9/compositions-final/summary.json"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "artifacts/validation/phase9/numerics/half-gelu-stage-final.json"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "artifacts/validation/phase9/numerics/half-gelu-stage-audit.json"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "artifacts/validation/phase9/initial-fixtures/README.md"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "artifacts/validation/phase9/tensor/transport-fix.json"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "artifacts/validation/phase9/compositions-final/integrity-audit.json"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "docs/PHASE8.md"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "artifacts/validation/phase9/tensor/compatibility.json"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "artifacts/validation/phase9/retained-ptx-identity.json"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "docs/TYPE_SUPPORT.md"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "examples/phase9/gelu"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "tests/test_gelu.py"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "ptx_tensor.py"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "ptx_tensor.py"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "examples/phase9/fragments"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "tests/test_fragment_rows.py"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "tests/expressions_phase9.py"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "artifacts/validation/phase9/composition-protocol.json"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "artifacts/validation/phase9/numerics/half-gelu-stage-review.md"
+    },
+    {
+      "page": "docs/PHASE9.md",
+      "target": "docs/FINAL_CHECK_2026_10_24.md"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "ptx_tensor.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "examples/tensor/packages"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_tensor_cores.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "examples/phase9/gelu"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_gelu.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "examples/phase9/fragments"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_fragment_rows.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "ptx_bulk.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "examples/bulk"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_bulk_copy.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "examples/combined"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_feature_interactions.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_transport_edges.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_interactions.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "docs/TYPE_SUPPORT.md"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_type_capabilities.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_cast_edges.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "docs/COMPILER.md"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_semantics.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_builtin_aux.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "docs/PHASE7.md"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_launch_bounds.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "docs/PHASE8.md"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_loop_bindings.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_loop_capture.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_floating_remainder.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_integer_oracle.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "docs/TYPE_SUPPORT.md"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_unstamped_integer.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "docs/PHASE9.md"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "docs/PHASE8.md"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_fragment_rows.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "docs/PHASE7.md"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "examples/ring"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_ring_pipeline.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "tests/test_async_target.py"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "SUBMISSION.md"
+    },
+    {
+      "page": "docs/FEATURES.md",
+      "target": "examples/README.md"
+    },
+    {
+      "page": "docs/TYPE_SUPPORT.md",
+      "target": "ptx_backend.py"
+    },
+    {
+      "page": "docs/TYPE_SUPPORT.md",
+      "target": "docs/FEATURES.md"
+    },
+    {
+      "page": "docs/TYPE_SUPPORT.md",
+      "target": "docs/PHASE7.md"
+    },
+    {
+      "page": "docs/TYPE_SUPPORT.md",
+      "target": "docs/PHASE8.md"
+    },
+    {
+      "page": "docs/TYPE_SUPPORT.md",
+      "target": "docs/PHASE9.md"
+    },
+    {
+      "page": "docs/TYPE_SUPPORT.md",
+      "target": "tests/test_floating_remainder.py"
+    },
+    {
+      "page": "docs/TYPE_SUPPORT.md",
+      "target": "docs/PHASE8.md"
+    },
+    {
+      "page": "docs/TYPE_SUPPORT.md",
+      "target": "tests/test_gelu.py"
+    },
+    {
+      "page": "docs/TYPE_SUPPORT.md",
+      "target": "docs/PHASE9.md"
+    },
+    {
+      "page": "docs/TYPE_SUPPORT.md",
+      "target": "tests/test_fragment_rows.py"
+    },
+    {
+      "page": "docs/TYPE_SUPPORT.md",
+      "target": "docs/PHASE9.md"
+    },
+    {
+      "page": "docs/TYPE_SUPPORT.md",
+      "target": "tests/test_integer_oracle.py"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "docs/PHASE9.md"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase9/release-summary.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase9/numerics/half-gelu-stage-final.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase9/compositions-final/integrity-audit.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "docs/PHASE8.md"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase8/release-summary.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "docs/PHASE8.md"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "tests/test_integer_oracle.py"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "docs/PHASE8.md"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "docs/PHASE7.md"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase7/release-summary.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "docs/PHASE6.md"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "docs/RESEARCH_REVIEW.md"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "docs/PHASE5.md"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "docs/FINAL_CHECK_2026_10_24.md"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/2026-10-24-final/summary.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/2026-10-24-public-submit-runner/summary.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/2026-10-24-extra/precision-attribution/summary.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/2026-10-24-root-audit/fp64-state-variants/manifest.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/release/phase4/submission-bcbc4a8381497f1d34be-3908fd80497591da4d12.manifest.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase4/release-remote/summary.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase4/semantic-final/summary.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase4/selector-correctness-retry01/summary.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase4/final-summary.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase4/release-remote/input-transport.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase4/selector-correctness-retry01/integrity-audit.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase4/selector-correctness/integrity-audit.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase4/selector-preparation/correctness-driver-final-tests.txt"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase4/cpu-regressions.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase4/cpu-regressions.log"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase4/clean-install/summary.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "build/open-ptx-phase4-cli/manifest.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase4/public-ptx-identity.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/release/phase4/submission-bcbc4a8381497f1d34be-b88459958203b4fdede2.manifest.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "docs/TYPE_SUPPORT.md"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "docs/TRANSFORMATION_CONTRACTS.md"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "docs/SELECTOR_STUDY.md"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase4/selector/feasibility.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "docs/SELECTOR_REVIEW.md"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase3/release-summary.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase3/release-remote/summary.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase3/unsigned-transport/adaptation-manifest.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase3/unsigned-transport/remote.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase3/word-transport-diagnostic/old-remote.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase3/word-transport-diagnostic/new-remote.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase3/unsigned-word-transport/adaptation-manifest.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase3/unsigned-word-transport/remote.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "docs/PERFORMANCE.md"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase3/release-local.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase3/release-local.log"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase3/local-coverage.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase3/local-shared-capability.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase3/release-remote/transport.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase3/local-capacity-candidate/promotion.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase3/clean-install/summary.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase3/memory-sanitizer/summary.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase2/release-original-gates.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase2/release-holdout-default/summary.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase2/release-local-reviewed.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "docs/PHASE9.md"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase9/checkout/verification.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/phase3/unsigned-word-transport/wrapper-cpu-proof.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/clean-install/installed-versions.txt"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/clean-install/summary.json"
+    },
+    {
+      "page": "docs/VALIDATION.md",
+      "target": "artifacts/validation/contract-edge-sanitizer/summary.json"
+    },
+    {
+      "page": "docs/CHECKOUT.md",
+      "target": "docs/PHASE9.md"
+    },
+    {
+      "page": "docs/CHECKOUT.md",
+      "target": "artifacts/validation/phase9/checkout/verification.json"
+    },
+    {
+      "page": "docs/CHECKOUT.md",
+      "target": "artifacts/validation/phase8/release-summary.json"
+    },
+    {
+      "page": "docs/CHECKOUT.md",
+      "target": "artifacts/validation/phase7/source-archive-inventory.json"
+    },
+    {
+      "page": "docs/CHECKOUT.md",
+      "target": "artifacts/validation/phase7/review-bundle-verification.json"
+    },
+    {
+      "page": "docs/PACKAGING.md",
+      "target": "docs/CHECKOUT.md"
+    },
+    {
+      "page": "docs/PACKAGING.md",
+      "target": "docs/PHASE9.md"
+    },
+    {
+      "page": "docs/PACKAGING.md",
+      "target": "artifacts/validation/phase9/checkout/verification.json"
+    },
+    {
+      "page": "docs/PACKAGING.md",
+      "target": "artifacts/validation/phase8/release-summary.json"
+    },
+    {
+      "page": "docs/PACKAGING.md",
+      "target": "artifacts/release/phase7/latest.json"
+    },
+    {
+      "page": "docs/PACKAGING.md",
+      "target": "artifacts/release/phase7/review/latest.json"
+    },
+    {
+      "page": "docs/PACKAGING.md",
+      "target": "artifacts/validation/phase7/source-archive-inventory.json"
+    },
+    {
+      "page": "docs/PACKAGING.md",
+      "target": "artifacts/release/phase4/latest.json"
+    },
+    {
+      "page": "docs/PACKAGING.md",
+      "target": "artifacts/release/phase4/submission-bcbc4a8381497f1d34be-3908fd80497591da4d12.manifest.json"
+    },
+    {
+      "page": "docs/PACKAGING.md",
+      "target": "docs/FINAL_CHECK_2026_10_24.md"
+    },
+    {
+      "page": "docs/PACKAGING.md",
+      "target": "artifacts/validation/2026-10-24-final/summary.json"
+    },
+    {
+      "page": "docs/PACKAGING.md",
+      "target": "artifacts/release/phase4/submission-bcbc4a8381497f1d34be-b88459958203b4fdede2.manifest.json"
+    },
+    {
+      "page": "docs/PACKAGING.md",
+      "target": "artifacts/validation/phase4/release-summary.json"
+    },
+    {
+      "page": "docs/PACKAGING.md",
+      "target": "docs/PHASE4.md"
+    },
+    {
+      "page": "docs/PACKAGING.md",
+      "target": "artifacts/release/phase4/post-package-verification-b9af6a761233e39b8faa.json"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "examples/tensor/packages"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "examples/bulk"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "examples/combined"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "examples/ring"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "examples/generated_tensor"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "problems"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "examples/phase7/integer"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "examples/phase7/builtins"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "examples/phase7/retained"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "examples/phase9/gelu"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "examples/phase9/fragments"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "examples/phase9/generated"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "examples/phase8"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "tests/test_tensor_cores.py"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "tests/test_bulk_copy.py"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "tests/test_feature_interactions.py"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "examples/research-feature-manifest.json"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "artifacts/validation/phase7/new-feature-manifest.json"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "artifacts/validation/phase7/changed-scalar-manifest.json"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "docs/PHASE7.md"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "artifacts/validation/phase8/feature-manifest-final.json"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "docs/PHASE8.md"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "docs/PHASE9.md"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "tests/test_gelu.py"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "tests/test_fragment_rows.py"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "tests/expressions_phase9.py"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "tests/test_unstamped_integer.py"
+    },
+    {
+      "page": "examples/README.md",
+      "target": "tests/test_builtin_aux.py"
+    }
+  ]
+}

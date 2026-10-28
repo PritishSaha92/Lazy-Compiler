@@ -1,0 +1,53 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_tensor_atomic_f32",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [
+      "out"
+    ],
+    "args": [
+      {
+        "name": "a",
+        "dtype": "f32",
+        "shape": [
+          16,
+          16
+        ],
+        "seed": 0
+      },
+      {
+        "name": "b",
+        "dtype": "f32",
+        "shape": [
+          16,
+          8
+        ],
+        "seed": 1
+      },
+      {
+        "name": "out",
+        "dtype": "f32",
+        "shape": [
+          16,
+          8
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "7010608f5af0aa2a725d4e96b8d457dada24d86476efb05090f119d3c1a93c58"
+  }
+}

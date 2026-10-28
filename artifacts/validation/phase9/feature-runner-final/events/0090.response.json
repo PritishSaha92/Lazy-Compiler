@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "cubin_id": "ef9a92d836bc07ad3da9d08eea66739942835660f6d71d4aac8dcf7ef3c75bcc",
+  "bytes": 6272,
+  "arch": "sm_120",
+  "flags": [],
+  "entry_points": [
+    "k_regression_shift_unsigned_left_wide_count"
+  ],
+  "registers": {
+    "k_regression_shift_unsigned_left_wide_count": 22
+  }
+}

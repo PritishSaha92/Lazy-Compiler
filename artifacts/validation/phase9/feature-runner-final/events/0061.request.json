@@ -1,0 +1,60 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_tensor_repack_f16",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "x",
+        "dtype": "f32",
+        "shape": [
+          16,
+          16
+        ],
+        "seed": 0
+      },
+      {
+        "name": "y",
+        "dtype": "f32",
+        "shape": [
+          16,
+          16
+        ],
+        "seed": 1
+      },
+      {
+        "name": "z",
+        "dtype": "f32",
+        "shape": [
+          16,
+          8
+        ],
+        "seed": 2
+      },
+      {
+        "name": "out",
+        "dtype": "f32",
+        "shape": [
+          16,
+          8
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "6f8df7dff34e1c3917b32d31b26dd10518eca38bb1841057441aa31a6f0f3ce3"
+  }
+}

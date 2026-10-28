@@ -1,0 +1,45 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_strided_i64_start_narrows",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "x",
+        "dtype": "i64",
+        "shape": [
+          3
+        ],
+        "data": [
+          4294967296,
+          4294967297,
+          -4294967295
+        ]
+      },
+      {
+        "name": "out",
+        "dtype": "i32",
+        "shape": [
+          3,
+          2
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "a73074124b4f3bc760f2ced03a70ee25d03e2bac3b85351311be64f42e043a58"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "cubin_id": "c5eba04ac8f89f635abd6e85af88ecc89d009d695c359806ebfc7175ca4d04f6",
+  "bytes": 309304,
+  "arch": "sm_120",
+  "flags": [],
+  "entry_points": [
+    "k_matmul_6269af"
+  ],
+  "registers": {
+    "k_matmul_6269af": 40
+  }
+}

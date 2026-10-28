@@ -1,0 +1,89 @@
+{
+  "started_utc": "2026-10-28T11:24:39.983899+00:00",
+  "expression_sha256": "aa5c34e96769df3a4c6d560ec3cf418cb25730ca09d9d64c01d675b088c42318",
+  "emmy_version": "0.3.11",
+  "torch_version": "2.9.1+cu126",
+  "local_gpu_used": false,
+  "input_cases": [
+    [
+      0,
+      "normal"
+    ],
+    [
+      17,
+      "normal"
+    ],
+    [
+      101,
+      "wide"
+    ]
+  ],
+  "scope": "Original development compositions; fixed before generated-PTX or GPU feedback",
+  "planned": [
+    {
+      "id": "phase9_gelu_erf_tail",
+      "category": "pointwise",
+      "family": "gelu_erf",
+      "code": "x=torch.randn(4099); torch.nn.functional.gelu(x)",
+      "rtol": 2e-05,
+      "atol": 2e-06
+    },
+    {
+      "id": "phase9_gelu_tanh_matrix",
+      "category": "pointwise",
+      "family": "gelu_tanh",
+      "code": "x=torch.randn(19,137); torch.nn.functional.gelu(x,approximate='tanh')",
+      "rtol": 2e-05,
+      "atol": 2e-06
+    },
+    {
+      "id": "phase9_gelu_erf_half",
+      "category": "pointwise",
+      "family": "gelu_half",
+      "code": "x=torch.randn(7,259,dtype=torch.float16); torch.nn.functional.gelu(x)",
+      "rtol": 0.002,
+      "atol": 0.0002
+    },
+    {
+      "id": "phase9_gelu_tanh_half",
+      "category": "pointwise",
+      "family": "gelu_half_tanh",
+      "code": "x=torch.randn(1031,dtype=torch.float16); torch.nn.functional.gelu(x,approximate='tanh')",
+      "rtol": 0.002,
+      "atol": 0.0002
+    },
+    {
+      "id": "phase9_bias_gelu_gemm",
+      "category": "matmul",
+      "family": "gelu_gemm_epilogue",
+      "code": "a=torch.randn(33,65); b=torch.randn(65,47); bias=torch.randn(47); torch.nn.functional.gelu(a@b+bias)",
+      "rtol": 0.001,
+      "atol": 0.0001
+    },
+    {
+      "id": "phase9_half_gelu_gemm",
+      "category": "matmul",
+      "family": "half_gelu_gemm_epilogue",
+      "code": "a=torch.randn(17,33,dtype=torch.float16); b=torch.randn(33,21,dtype=torch.float16); torch.nn.functional.gelu(a@b,approximate='tanh')",
+      "rtol": 0.003,
+      "atol": 0.003
+    },
+    {
+      "id": "phase9_gelu_row_dot",
+      "category": "fused",
+      "family": "gelu_before_reduction",
+      "code": "x=torch.randn(19,131); g=torch.randn(19,131); (torch.nn.functional.gelu(x)*g).sum(-1)",
+      "rtol": 0.001,
+      "atol": 0.0001,
+      "knobs": "WORK=t128,REDUCE=coop"
+    },
+    {
+      "id": "phase9_gelu_attention",
+      "category": "attention",
+      "family": "gelu_after_attention",
+      "code": "q=torch.randn(11,17); kt=torch.randn(17,37); v=torch.randn(37,13); torch.nn.functional.gelu(torch.softmax(q@kt*0.125,dim=-1)@v)",
+      "rtol": 0.001,
+      "atol": 0.0001
+    }
+  ]
+}

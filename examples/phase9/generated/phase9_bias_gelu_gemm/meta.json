@@ -1,0 +1,109 @@
+{
+ "id": "phase9_bias_gelu_gemm",
+ "code": "a=torch.randn(33,65); b=torch.randn(65,47); bias=torch.randn(47); torch.nn.functional.gelu(a@b+bias)",
+ "rtol": 0.001,
+ "atol": 0.0001,
+ "graph_inputs": [
+  "a",
+  "b",
+  "bias"
+ ],
+ "graph_outputs": [
+  "gelu"
+ ],
+ "kernels": [
+  {
+   "node": "gelu",
+   "entry": "k_matmul_9712dd",
+   "arg_order": [
+    "gelu_inv_sqrt2",
+    "gelu_half",
+    "gelu_one",
+    "bias",
+    "b",
+    "a",
+    "gelu"
+   ],
+   "grid": [
+    1551,
+    1,
+    1
+   ],
+   "block": [
+    256,
+    1,
+    1
+   ],
+   "smem_bytes": 0,
+   "zero_outputs": [],
+   "args": [
+    {
+     "name": "gelu_inv_sqrt2",
+     "dtype": "f32",
+     "shape": [
+      1
+     ],
+     "data": [
+      0.7071067811865475
+     ]
+    },
+    {
+     "name": "gelu_half",
+     "dtype": "f32",
+     "shape": [
+      1
+     ],
+     "data": [
+      0.5
+     ]
+    },
+    {
+     "name": "gelu_one",
+     "dtype": "f32",
+     "shape": [
+      1
+     ],
+     "data": [
+      1.0
+     ]
+    },
+    {
+     "name": "bias",
+     "dtype": "f32",
+     "shape": [
+      47
+     ],
+     "seed": 2
+    },
+    {
+     "name": "b",
+     "dtype": "f32",
+     "shape": [
+      65,
+      47
+     ],
+     "seed": 1
+    },
+    {
+     "name": "a",
+     "dtype": "f32",
+     "shape": [
+      33,
+      65
+     ],
+     "seed": 0
+    },
+    {
+     "name": "gelu",
+     "dtype": "f32",
+     "shape": [
+      33,
+      47
+     ],
+     "output": true
+    }
+   ],
+   "final": true
+  }
+ ]
+}

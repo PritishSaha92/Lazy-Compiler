@@ -1,0 +1,80 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_gelu_pointwise",
+    "grid": [
+      5,
+      1,
+      1
+    ],
+    "block": [
+      256,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "gelu_c1",
+        "dtype": "f16",
+        "shape": [
+          1
+        ],
+        "data": [
+          0.044715
+        ]
+      },
+      {
+        "name": "gelu_c0",
+        "dtype": "f16",
+        "shape": [
+          1
+        ],
+        "data": [
+          0.7978845608028654
+        ]
+      },
+      {
+        "name": "gelu_one",
+        "dtype": "f16",
+        "shape": [
+          1
+        ],
+        "data": [
+          1.0
+        ]
+      },
+      {
+        "name": "gelu_half",
+        "dtype": "f16",
+        "shape": [
+          1
+        ],
+        "data": [
+          0.5
+        ]
+      },
+      {
+        "name": "x",
+        "dtype": "f16",
+        "shape": [
+          1031
+        ],
+        "seed": 0
+      },
+      {
+        "name": "gelu",
+        "dtype": "f16",
+        "shape": [
+          1031
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "bb3146157ad4ee4ec78d0b4d326aa6eeaf3d889276c109acc4fbbd763a8f0881"
+  }
+}

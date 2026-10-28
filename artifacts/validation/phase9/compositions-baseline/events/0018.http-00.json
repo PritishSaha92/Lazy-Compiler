@@ -1,0 +1,19 @@
+{
+  "started": "2026-10-28T11:39:43.307342+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "cubin_id": "bb3146157ad4ee4ec78d0b4d326aa6eeaf3d889276c109acc4fbbd763a8f0881",
+    "bytes": 9056,
+    "arch": "sm_120",
+    "flags": [],
+    "entry_points": [
+      "k_gelu_pointwise"
+    ],
+    "registers": {
+      "k_gelu_pointwise": 19
+    }
+  },
+  "finished": "2026-10-28T11:39:44.096601+00:00",
+  "seconds": 0.7893041999777779
+}

@@ -1,0 +1,354 @@
+{
+  "pass_": true,
+  "sources_unchanged": true,
+  "source_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "f998d378fffff3f228fb9f90386542dd185dd1dfbe5a0a5b3dc559dc68bc46ca",
+    "ptx_tensor.py": "9046e52c80db822421398a5b8b8778e1c035194a8b35820d078013fde5b5b885",
+    "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "prior_report_sha256": "9bfcf8b01d68dd517189b9ca5bc9644cb73183923e0ad11cdeafdc1ab1128c9b",
+  "module_count": 56,
+  "exact_matches": 56,
+  "gpu_executed": false,
+  "network_used": false,
+  "rows": [
+    {
+      "path": "problems/a01_attention/k_matmul_softmax_reduce_b55365.ir.json",
+      "prior_ptx_sha256": "bee79620f4b2378fe276a9376de987454bac6c3a606044932fcf62fc6ba52a5e",
+      "current_ptx_sha256": "bee79620f4b2378fe276a9376de987454bac6c3a606044932fcf62fc6ba52a5e",
+      "identical": true
+    },
+    {
+      "path": "problems/a02_attention_128/k_matmul_softmax_reduce_6f0029.ir.json",
+      "prior_ptx_sha256": "1dfd1c66acf5894ee2315d9d9b43086d8434b2e19ccff7cb973d6a277ad06961",
+      "current_ptx_sha256": "1dfd1c66acf5894ee2315d9d9b43086d8434b2e19ccff7cb973d6a277ad06961",
+      "identical": true
+    },
+    {
+      "path": "problems/f01_rmsnorm/k_mean_cbd1de.ir.json",
+      "prior_ptx_sha256": "ddbbf004ba56c533a9691f25e8d27dcacc4698767ec6b459b3401af10d517dbe",
+      "current_ptx_sha256": "ddbbf004ba56c533a9691f25e8d27dcacc4698767ec6b459b3401af10d517dbe",
+      "identical": true
+    },
+    {
+      "path": "problems/f02_row_softmax/k_softmax_05263d.ir.json",
+      "prior_ptx_sha256": "986f6b35aa96ba44ace8591e90fb889a2819534afea6b1eb3f090c9f776d43a5",
+      "current_ptx_sha256": "986f6b35aa96ba44ace8591e90fb889a2819534afea6b1eb3f090c9f776d43a5",
+      "identical": true
+    },
+    {
+      "path": "problems/f03_l2norm/k_div_reduce.ir.json",
+      "prior_ptx_sha256": "8679fdd8d23e2219adc319ab810fc8e37f4abe20ee41859ee00595e5b4f0bde6",
+      "current_ptx_sha256": "8679fdd8d23e2219adc319ab810fc8e37f4abe20ee41859ee00595e5b4f0bde6",
+      "identical": true
+    },
+    {
+      "path": "problems/m01_matmul_512/k_matmul_2967be.ir.json",
+      "prior_ptx_sha256": "01d411fd2020dd5319ad8891e0747160974f992ae7ef86639ffec3cfc38608bb",
+      "current_ptx_sha256": "01d411fd2020dd5319ad8891e0747160974f992ae7ef86639ffec3cfc38608bb",
+      "identical": true
+    },
+    {
+      "path": "problems/m02_matmul_rect/k_matmul.ir.json",
+      "prior_ptx_sha256": "e47a7eb7d893cd9e34a3c6168a0b7d7ce1ef3638e1bf4eab03a8f8244e83b304",
+      "current_ptx_sha256": "e47a7eb7d893cd9e34a3c6168a0b7d7ce1ef3638e1bf4eab03a8f8244e83b304",
+      "identical": true
+    },
+    {
+      "path": "problems/p00_scalar_add/k_add_pointwise.ir.json",
+      "prior_ptx_sha256": "ea7d17ae9fa2ed842f842bfc34365b23b9fc6a9749c7fd677e0ed16d043c1abc",
+      "current_ptx_sha256": "ea7d17ae9fa2ed842f842bfc34365b23b9fc6a9749c7fd677e0ed16d043c1abc",
+      "identical": true
+    },
+    {
+      "path": "problems/p01_vector_add/k_add_pointwise.ir.json",
+      "prior_ptx_sha256": "9dbaf7bfb95fbde2b33ca2e8b55cea9835785ee3cb0f3a09c77f4f4630774b40",
+      "current_ptx_sha256": "9dbaf7bfb95fbde2b33ca2e8b55cea9835785ee3cb0f3a09c77f4f4630774b40",
+      "identical": true
+    },
+    {
+      "path": "problems/p02_scale_shift/k_add_pointwise.ir.json",
+      "prior_ptx_sha256": "8da9474cb1a5debaa223cdb058e73bf256848ffb535bc4617bd4079c090e311b",
+      "current_ptx_sha256": "8da9474cb1a5debaa223cdb058e73bf256848ffb535bc4617bd4079c090e311b",
+      "identical": true
+    },
+    {
+      "path": "problems/p03_relu_mul/k_mul_pointwise.ir.json",
+      "prior_ptx_sha256": "8b6177883bb4a0543109921caa2b64e4a5aa4832349f85d213fcd335b9d92290",
+      "current_ptx_sha256": "8b6177883bb4a0543109921caa2b64e4a5aa4832349f85d213fcd335b9d92290",
+      "identical": true
+    },
+    {
+      "path": "problems/r01_array_sum/k_sum_1_reduce.ir.json",
+      "prior_ptx_sha256": "455b361ff8c54d5ba47f7bf8de59dac21553486686503ba0f27b872d7cd93bcb",
+      "current_ptx_sha256": "455b361ff8c54d5ba47f7bf8de59dac21553486686503ba0f27b872d7cd93bcb",
+      "identical": true
+    },
+    {
+      "path": "problems/r02_big_sum/k_sum_1_reduce.ir.json",
+      "prior_ptx_sha256": "81485fc40371a202da0c64a3da18c3dab7a57c4932c1b542b66cc93533861c80",
+      "current_ptx_sha256": "81485fc40371a202da0c64a3da18c3dab7a57c4932c1b542b66cc93533861c80",
+      "identical": true
+    },
+    {
+      "path": "problems/r03_mean/k_mean_ffcca3.ir.json",
+      "prior_ptx_sha256": "a283baf80fad9e300026b28b52bb54c847072d647244c177447c51a86e671b5b",
+      "current_ptx_sha256": "a283baf80fad9e300026b28b52bb54c847072d647244c177447c51a86e671b5b",
+      "identical": true
+    },
+    {
+      "path": "problems/r04_row_sum/k_sum_1_reduce.ir.json",
+      "prior_ptx_sha256": "59a1a61c7c6dfda3e631989cc4c9ebf08aeb1bfb76f10014ef577f1294c8a2e1",
+      "current_ptx_sha256": "59a1a61c7c6dfda3e631989cc4c9ebf08aeb1bfb76f10014ef577f1294c8a2e1",
+      "identical": true
+    },
+    {
+      "path": "examples/bulk/bulk_linear_f64/k_regression_bulk_linear_f64.ir.json",
+      "prior_ptx_sha256": "f9095a5cf8605eaa5ef8b1ed2343e52dd874457cbba2b767e269b885fd26b255",
+      "current_ptx_sha256": "f9095a5cf8605eaa5ef8b1ed2343e52dd874457cbba2b767e269b885fd26b255",
+      "identical": true
+    },
+    {
+      "path": "examples/bulk/bulk_linear_multi_cta/k_regression_bulk_linear_multi_cta.ir.json",
+      "prior_ptx_sha256": "35b69bc615568f4b56773312fc5243cf5cbc148813f125e8541ed84436c22d1b",
+      "current_ptx_sha256": "35b69bc615568f4b56773312fc5243cf5cbc148813f125e8541ed84436c22d1b",
+      "identical": true
+    },
+    {
+      "path": "examples/bulk/bulk_phase_reuse/k_regression_bulk_phase_reuse.ir.json",
+      "prior_ptx_sha256": "d172179acc7700cd3ae26eb7935cf61f89e81226fefe0e23fcdbb1bc9105d311",
+      "current_ptx_sha256": "d172179acc7700cd3ae26eb7935cf61f89e81226fefe0e23fcdbb1bc9105d311",
+      "identical": true
+    },
+    {
+      "path": "examples/bulk/bulk_rank5_crop/k_regression_bulk_rank5_crop.ir.json",
+      "prior_ptx_sha256": "7375bdc4da96a95f561fb83437bcbc52509730cf4cccffdab6c251667f099c64",
+      "current_ptx_sha256": "7375bdc4da96a95f561fb83437bcbc52509730cf4cccffdab6c251667f099c64",
+      "identical": true
+    },
+    {
+      "path": "examples/bulk/bulk_rectangle/k_regression_bulk_rectangle.ir.json",
+      "prior_ptx_sha256": "30459009acd4d979325033051841c0042d7f880d68e9730870112f196e7543c6",
+      "current_ptx_sha256": "30459009acd4d979325033051841c0042d7f880d68e9730870112f196e7543c6",
+      "identical": true
+    },
+    {
+      "path": "examples/bulk/bulk_ring_slots/k_regression_bulk_ring_slots.ir.json",
+      "prior_ptx_sha256": "a16629f0bfbb6b46efdba1d36333a890c1b8d4edaee8edb9194d1c5565b7225d",
+      "current_ptx_sha256": "a16629f0bfbb6b46efdba1d36333a890c1b8d4edaee8edb9194d1c5565b7225d",
+      "identical": true
+    },
+    {
+      "path": "examples/combined/bulk_tensor_k48_bias_relu_transposed/k_regression_bulk_tensor_k48_bias_relu_transposed.ir.json",
+      "prior_ptx_sha256": "e8d3daa4e5036f6440714116daec903093ee408c3af08ac76ef4721e87b603a6",
+      "current_ptx_sha256": "e8d3daa4e5036f6440714116daec903093ee408c3af08ac76ef4721e87b603a6",
+      "identical": true
+    },
+    {
+      "path": "examples/combined/bulk_tensor_k48_f16/k_regression_bulk_tensor_k48_f16.ir.json",
+      "prior_ptx_sha256": "644028f8c2f1e3bb52a218d29e4fd61a235454c55caf387f3c292120cc0f2750",
+      "current_ptx_sha256": "644028f8c2f1e3bb52a218d29e4fd61a235454c55caf387f3c292120cc0f2750",
+      "identical": true
+    },
+    {
+      "path": "examples/generated_tensor/k_matmul_79479f.ir.json",
+      "prior_ptx_sha256": "4bc1078bd574080fa3b8671bee1909dac713dd27061ee11bd6751b0154126358",
+      "current_ptx_sha256": "4bc1078bd574080fa3b8671bee1909dac713dd27061ee11bd6751b0154126358",
+      "identical": true
+    },
+    {
+      "path": "examples/ring/ring_tensor_k112_bf16/k_regression_ring_tensor_k112_bf16.ir.json",
+      "prior_ptx_sha256": "352b24dc7f67312a69dc8dec262b708eca0750f077bc8a3492efc0e762fd38e7",
+      "current_ptx_sha256": "352b24dc7f67312a69dc8dec262b708eca0750f077bc8a3492efc0e762fd38e7",
+      "identical": true
+    },
+    {
+      "path": "examples/ring/ring_tensor_k112_f16_two_cta/k_regression_ring_tensor_k112_f16_two_cta.ir.json",
+      "prior_ptx_sha256": "7cb7948216cfa69176a4b052b3370c2836cdffc1cfc5f5bf11c5d4233f812f5d",
+      "current_ptx_sha256": "7cb7948216cfa69176a4b052b3370c2836cdffc1cfc5f5bf11c5d4233f812f5d",
+      "identical": true
+    },
+    {
+      "path": "examples/ring/ring_tensor_k80_f16/k_regression_ring_tensor_k80_f16.ir.json",
+      "prior_ptx_sha256": "9f56367a329ca6a54e61a43ef499508fdb3d01e52b55847c97f3c54aadd01448",
+      "current_ptx_sha256": "9f56367a329ca6a54e61a43ef499508fdb3d01e52b55847c97f3c54aadd01448",
+      "identical": true
+    },
+    {
+      "path": "examples/tensor/packages/tensor_atomic_f32/k_regression_tensor_atomic_f32.ir.json",
+      "prior_ptx_sha256": "3e3db7dc1b631274f5f00530fddfad8d4fd7cd7fb4871e1c03af7c52ed0f284f",
+      "current_ptx_sha256": "3e3db7dc1b631274f5f00530fddfad8d4fd7cd7fb4871e1c03af7c52ed0f284f",
+      "identical": true
+    },
+    {
+      "path": "examples/tensor/packages/tensor_cp_async_shared/k_regression_tensor_cp_async_shared.ir.json",
+      "prior_ptx_sha256": "a10d94454f4752b55235d5fc581c1c74affbcb82c6559d302f8f63f5a8b0ca3e",
+      "current_ptx_sha256": "a10d94454f4752b55235d5fc581c1c74affbcb82c6559d302f8f63f5a8b0ca3e",
+      "identical": true
+    },
+    {
+      "path": "examples/tensor/packages/tensor_family_live_index/k_regression_tensor_family_live_index.ir.json",
+      "prior_ptx_sha256": "57252a6f17bc8ba63c09ce507541f9112a4cc0f9f145b908fb2309c53dd614ae",
+      "current_ptx_sha256": "57252a6f17bc8ba63c09ce507541f9112a4cc0f9f145b908fb2309c53dd614ae",
+      "identical": true
+    },
+    {
+      "path": "examples/tensor/packages/tensor_fused_guarded_epilogue/k_regression_tensor_fused_guarded_epilogue.ir.json",
+      "prior_ptx_sha256": "f55e3714c0c0061476583f5ab36dfbc2b7c19dabf16d40f209b44502cd5581bb",
+      "current_ptx_sha256": "f55e3714c0c0061476583f5ab36dfbc2b7c19dabf16d40f209b44502cd5581bb",
+      "identical": true
+    },
+    {
+      "path": "examples/tensor/packages/tensor_global_bf16/k_regression_tensor_global_bf16.ir.json",
+      "prior_ptx_sha256": "772de9f1509aaa4e4228e8e532d768c82433ee137171ec73f1024f34fdcda328",
+      "current_ptx_sha256": "772de9f1509aaa4e4228e8e532d768c82433ee137171ec73f1024f34fdcda328",
+      "identical": true
+    },
+    {
+      "path": "examples/tensor/packages/tensor_global_bf16_trans_ragged/k_regression_tensor_global_bf16_trans_ragged.ir.json",
+      "prior_ptx_sha256": "20936793968fb2095b2f4bc0d62536cbb4e773dd35c912ca2addb65e4c95f81d",
+      "current_ptx_sha256": "20936793968fb2095b2f4bc0d62536cbb4e773dd35c912ca2addb65e4c95f81d",
+      "identical": true
+    },
+    {
+      "path": "examples/tensor/packages/tensor_global_f16/k_regression_tensor_global_f16.ir.json",
+      "prior_ptx_sha256": "4d8cfa72eb55c62d7f52d8f390b59943d00b781aae61bac67f54dfc1adffe8d6",
+      "current_ptx_sha256": "4d8cfa72eb55c62d7f52d8f390b59943d00b781aae61bac67f54dfc1adffe8d6",
+      "identical": true
+    },
+    {
+      "path": "examples/tensor/packages/tensor_global_f16_ragged/k_regression_tensor_global_f16_ragged.ir.json",
+      "prior_ptx_sha256": "415f18d65074b3c025063031266a00219fbe2b812a3beff5a6f7c46657435ad1",
+      "current_ptx_sha256": "415f18d65074b3c025063031266a00219fbe2b812a3beff5a6f7c46657435ad1",
+      "identical": true
+    },
+    {
+      "path": "examples/tensor/packages/tensor_repack_f16/k_regression_tensor_repack_f16.ir.json",
+      "prior_ptx_sha256": "e105639430ca7bb367f5230639e8f9aed875f4a8d9a46eea16b29953513d8e37",
+      "current_ptx_sha256": "e105639430ca7bb367f5230639e8f9aed875f4a8d9a46eea16b29953513d8e37",
+      "identical": true
+    },
+    {
+      "path": "examples/tensor/packages/tensor_shared_b128/k_regression_tensor_shared_b128.ir.json",
+      "prior_ptx_sha256": "1bf74d40c37b0a2d15fc1811bef525ef9a8aeda88d037f7df81f4d688890fabb",
+      "current_ptx_sha256": "1bf74d40c37b0a2d15fc1811bef525ef9a8aeda88d037f7df81f4d688890fabb",
+      "identical": true
+    },
+    {
+      "path": "examples/tensor/packages/tensor_shared_b32/k_regression_tensor_shared_b32.ir.json",
+      "prior_ptx_sha256": "7a2dd11659d0dde9e6c272a4426a1c3c8e6a96367efaabe2bfef790acef6c157",
+      "current_ptx_sha256": "7a2dd11659d0dde9e6c272a4426a1c3c8e6a96367efaabe2bfef790acef6c157",
+      "identical": true
+    },
+    {
+      "path": "examples/tensor/packages/tensor_shared_b64/k_regression_tensor_shared_b64.ir.json",
+      "prior_ptx_sha256": "f58b35433e1f528430ddad1f1fe67bc7f690ef324e300afcae496c17c35b8d99",
+      "current_ptx_sha256": "f58b35433e1f528430ddad1f1fe67bc7f690ef324e300afcae496c17c35b8d99",
+      "identical": true
+    },
+    {
+      "path": "examples/tensor/packages/tensor_shared_bf16_trans/k_regression_tensor_shared_bf16_trans.ir.json",
+      "prior_ptx_sha256": "ea0fab1d2ed921fec15e6578ead4ca69fe9d3f8445c3e7c46b40e08c45c45f00",
+      "current_ptx_sha256": "ea0fab1d2ed921fec15e6578ead4ca69fe9d3f8445c3e7c46b40e08c45c45f00",
+      "identical": true
+    },
+    {
+      "path": "examples/tensor/packages/tensor_shared_f16/k_regression_tensor_shared_f16.ir.json",
+      "prior_ptx_sha256": "951a808af5404a95d249a4ee8ddf025aa26798a92698e89a7c9fca81d405972e",
+      "current_ptx_sha256": "951a808af5404a95d249a4ee8ddf025aa26798a92698e89a7c9fca81d405972e",
+      "identical": true
+    },
+    {
+      "path": "examples/tensor/packages/tensor_shared_paired/k_regression_tensor_shared_paired.ir.json",
+      "prior_ptx_sha256": "dc9acbf8f266fbe2db36afead171c8c3d89236dbb4dcadc52f7c001c42b00c05",
+      "current_ptx_sha256": "dc9acbf8f266fbe2db36afead171c8c3d89236dbb4dcadc52f7c001c42b00c05",
+      "identical": true
+    },
+    {
+      "path": "examples/tensor/packages/tensor_shared_paired_trans/k_regression_tensor_shared_paired_trans.ir.json",
+      "prior_ptx_sha256": "77369c989b933308f96fa50d078e21b177716e45d4689e6b7b94be93790589f2",
+      "current_ptx_sha256": "77369c989b933308f96fa50d078e21b177716e45d4689e6b7b94be93790589f2",
+      "identical": true
+    },
+    {
+      "path": "examples/tensor/packages/tensor_transposed_output/k_regression_tensor_transposed_output.ir.json",
+      "prior_ptx_sha256": "90e54557a803d7b46ac43dbeea59ea9bc5bc2cb17af55a788172ba9800fcc815",
+      "current_ptx_sha256": "90e54557a803d7b46ac43dbeea59ea9bc5bc2cb17af55a788172ba9800fcc815",
+      "identical": true
+    },
+    {
+      "path": "examples/phase7/builtins/auxiliary_raw_thread_named_barrier/k_regression_auxiliary_raw_thread_named_barrier.ir.json",
+      "prior_ptx_sha256": "2c24aa214f1487725935b746d4182da7676d7fb9b56924eaafd3929ea699d628",
+      "current_ptx_sha256": "2c24aa214f1487725935b746d4182da7676d7fb9b56924eaafd3929ea699d628",
+      "identical": true
+    },
+    {
+      "path": "examples/phase7/builtins/builtin_unsigned_arithmetic/k_regression_builtin_unsigned_arithmetic.ir.json",
+      "prior_ptx_sha256": "dd42053b51fbb63da7b6bc5a01c426dae00cffbfd06ca05dafc32fbca888b573",
+      "current_ptx_sha256": "dd42053b51fbb63da7b6bc5a01c426dae00cffbfd06ca05dafc32fbca888b573",
+      "identical": true
+    },
+    {
+      "path": "examples/phase7/builtins/builtin_values_3d/k_regression_builtin_values_3d.ir.json",
+      "prior_ptx_sha256": "6196d31b42078497a86ac49ef84d95ae73c53f81cb064dbeec6d2ff28b599dbb",
+      "current_ptx_sha256": "6196d31b42078497a86ac49ef84d95ae73c53f81cb064dbeec6d2ff28b599dbb",
+      "identical": true
+    },
+    {
+      "path": "examples/phase7/builtins/bulk_builtin_block_coordinate/k_regression_bulk_builtin_block_coordinate.ir.json",
+      "prior_ptx_sha256": "794e3809e9319ddabe86fe7cdd8ac7fd99e24294020929842dfb8d36fc63bc71",
+      "current_ptx_sha256": "794e3809e9319ddabe86fe7cdd8ac7fd99e24294020929842dfb8d36fc63bc71",
+      "identical": true
+    },
+    {
+      "path": "examples/phase7/integer/shift_narrow_left_promotion/k_regression_shift_narrow_left_promotion.ir.json",
+      "prior_ptx_sha256": "ad28dec32de8fe7499b5414fbc7245e3c975c1991f395e455e5b9b47e2690ce5",
+      "current_ptx_sha256": "ad28dec32de8fe7499b5414fbc7245e3c975c1991f395e455e5b9b47e2690ce5",
+      "identical": true
+    },
+    {
+      "path": "examples/phase7/integer/shift_signed_right_unsigned_count/k_regression_shift_signed_right_unsigned_count.ir.json",
+      "prior_ptx_sha256": "7b591f691f40b701074ba44df7e81a1a52953fe4b3f8751b6c27111026b431dc",
+      "current_ptx_sha256": "7b591f691f40b701074ba44df7e81a1a52953fe4b3f8751b6c27111026b431dc",
+      "identical": true
+    },
+    {
+      "path": "examples/phase7/integer/shift_unsigned_left_wide_count/k_regression_shift_unsigned_left_wide_count.ir.json",
+      "prior_ptx_sha256": "629ff452f4828da1b7a236693ed465ffd7b3dd313061f314790d0c2f8f31102c",
+      "current_ptx_sha256": "629ff452f4828da1b7a236693ed465ffd7b3dd313061f314790d0c2f8f31102c",
+      "identical": true
+    },
+    {
+      "path": "examples/phase7/integer/stamped_integer_policy_controls/k_regression_stamped_integer_policy_controls.ir.json",
+      "prior_ptx_sha256": "1f0a1261f579312abcc6231aa88d8fcd8000a66089d6282371acc92f474eb13d",
+      "current_ptx_sha256": "1f0a1261f579312abcc6231aa88d8fcd8000a66089d6282371acc92f474eb13d",
+      "identical": true
+    },
+    {
+      "path": "examples/phase7/integer/unstamped_mixed_integer_add/k_regression_unstamped_mixed_integer_add.ir.json",
+      "prior_ptx_sha256": "a3317a69ade011553e477d2ac408660b3373c3a8d3ef2190e746dbec72f1ad73",
+      "current_ptx_sha256": "a3317a69ade011553e477d2ac408660b3373c3a8d3ef2190e746dbec72f1ad73",
+      "identical": true
+    },
+    {
+      "path": "examples/phase7/integer/unstamped_mixed_integer_and/k_regression_unstamped_mixed_integer_and.ir.json",
+      "prior_ptx_sha256": "1a0b43fcec5f64c56af5985df1e0e35722a83f3c0f2457b2d8cafa6145717f46",
+      "current_ptx_sha256": "1a0b43fcec5f64c56af5985df1e0e35722a83f3c0f2457b2d8cafa6145717f46",
+      "identical": true
+    },
+    {
+      "path": "examples/phase7/integer/unstamped_mixed_integer_xor/k_regression_unstamped_mixed_integer_xor.ir.json",
+      "prior_ptx_sha256": "e9b4d62016d61fcad1c97b1609ae7f14b9ec1b3f6ae0716038981a559393f810",
+      "current_ptx_sha256": "e9b4d62016d61fcad1c97b1609ae7f14b9ec1b3f6ae0716038981a559393f810",
+      "identical": true
+    },
+    {
+      "path": "examples/phase7/retained/comparison_integer_promotion/k_regression_comparison_integer_promotion.ir.json",
+      "prior_ptx_sha256": "1d9e5062b26c9f526b93e1a4829fabf0cfeae25e30f112e28a8562d670987268",
+      "current_ptx_sha256": "1d9e5062b26c9f526b93e1a4829fabf0cfeae25e30f112e28a8562d670987268",
+      "identical": true
+    }
+  ]
+}

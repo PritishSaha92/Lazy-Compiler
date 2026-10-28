@@ -1,0 +1,49 @@
+{
+  "inputs": [
+    "x"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            16,
+            16
+          ],
+          "dtype": "f32"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='lane', extent=Dim(32), window=None),), body=(RegFragment(name='cf', role='c', shape=(16, 8, 16), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), count=2, nregs=None), StridedLoop(axis=Axis(name='fi', extent=Dim(2), window=None), start=Literal(value=0, dtype='int'), step=Literal(value=1, dtype='int'), body=(FragmentApply(out='cf[fi]', op=ElementwiseImpl('add'), args=('cf[fi]', ('x', (Var(name='__frow'), Var(name='__fcol')))), kinds=('frag', 'gmem'), in_place=True, layout=FragLayout(n_elems=4, elem_row=(0, 0, 1, 1), reduce_xors=(2, 1), lane_decl='const int _g = (threadIdx.x & 31) >> 2, _t = (threadIdx.x & 31) & 3;', lane_names=('_g', '_t'), row_off=(Var(name='_g'), BinaryExpr(op='+', left=Var(name='_g'), right=Literal(value=8, dtype='int'))), col_off=(BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=0, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=1, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=0, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=1, dtype='int')))), post=(), row_base=Literal(value=0, dtype='int'), col_base=BinaryExpr(op='*', left=Var(name='fi'), right=Literal(value=8, dtype='int'))),), unroll=False, end=None, seed=True), FragmentRowReduce(top='top_max', bot='bot_max', frags=('cf[0]', 'cf[1]'), op=ElementwiseImpl('maximum'), layout=FragLayout(n_elems=4, elem_row=(0, 0, 1, 1), reduce_xors=(2, 1), lane_decl='const int _g = (threadIdx.x & 31) >> 2, _t = (threadIdx.x & 31) & 3;', lane_names=('_g', '_t'), row_off=(Var(name='_g'), BinaryExpr(op='+', left=Var(name='_g'), right=Literal(value=8, dtype='int'))), col_off=(BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=0, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=1, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=0, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=1, dtype='int')))), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), StridedLoop(axis=Axis(name='fi', extent=Dim(2), window=None), start=Literal(value=0, dtype='int'), step=Literal(value=1, dtype='int'), body=(FragmentApply(out='cf[fi]', op=ElementwiseImpl('subtract'), args=('cf[fi]', ('top_max', 'bot_max')), kinds=('frag', 'row'), in_place=True, layout=FragLayout(n_elems=4, elem_row=(0, 0, 1, 1), reduce_xors=(2, 1), lane_decl='const int _g = (threadIdx.x & 31) >> 2, _t = (threadIdx.x & 31) & 3;', lane_names=('_g', '_t'), row_off=(Var(name='_g'), BinaryExpr(op='+', left=Var(name='_g'), right=Literal(value=8, dtype='int'))), col_off=(BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=0, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=1, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=0, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=1, dtype='int')))), post=(ElementwiseImpl('exp'),), row_base=None, col_base=None),), unroll=False, end=None, seed=True), FragmentRowReduce(top='top_sum', bot='bot_sum', frags=('cf[0]', 'cf[1]'), op=ElementwiseImpl('add'), layout=FragLayout(n_elems=4, elem_row=(0, 0, 1, 1), reduce_xors=(2, 1), lane_decl='const int _g = (threadIdx.x & 31) >> 2, _t = (threadIdx.x & 31) & 3;', lane_names=('_g', '_t'), row_off=(Var(name='_g'), BinaryExpr(op='+', left=Var(name='_g'), right=Literal(value=8, dtype='int'))), col_off=(BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=0, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=1, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=0, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=1, dtype='int')))), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), StridedLoop(axis=Axis(name='fi', extent=Dim(2), window=None), start=Literal(value=0, dtype='int'), step=Literal(value=1, dtype='int'), body=(FragmentApply(out='cf[fi]', op=ElementwiseImpl('divide'), args=('cf[fi]', ('top_sum', 'bot_sum')), kinds=('frag', 'row'), in_place=True, layout=FragLayout(n_elems=4, elem_row=(0, 0, 1, 1), reduce_xors=(2, 1), lane_decl='const int _g = (threadIdx.x & 31) >> 2, _t = (threadIdx.x & 31) & 3;', lane_names=('_g', '_t'), row_off=(Var(name='_g'), BinaryExpr(op='+', left=Var(name='_g'), right=Literal(value=8, dtype='int'))), col_off=(BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=0, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=1, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=0, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=1, dtype='int')))), post=(), row_base=None, col_base=None), RegStore(dst_buffer='out', dst_index=(Literal(value=0, dtype='int'), BinaryExpr(op='*', left=Var(name='fi'), right=Literal(value=8, dtype='int'))), frag='cf[fi]', shape=(16, 8, 16), ldm=0, epilogue=None, extra_frags=(), m_guard=None, n_guard=None, atomic=False, fragment_layout='m16n8k16', volta_interleaved=False, fragment_index=(0, 0), swizzle='NONE', row_dim=None, col_dim=None)), unroll=False, end=None, seed=True)), block_threads=None, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_fragment_family_row_softmax",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            16,
+            16
+          ],
+          "dtype": "f32"
+        }
+      ]
+    }
+  }
+}

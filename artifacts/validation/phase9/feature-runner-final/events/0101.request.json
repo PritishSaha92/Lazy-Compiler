@@ -1,0 +1,33 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_comparison_integer_promotion",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "out",
+        "dtype": "i32",
+        "shape": [
+          9,
+          12
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "bcc6adf06a7f4d479e74ade15ae01f4f4c0ebddc87321b189a960b91c1f5f86d"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "started": "2026-10-28T11:57:17.273060+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "cubin_id": "5143a22dd4031bd662de657191a1db2cc18f3400d3cbc42f6c8bd37be76e43d5",
+    "bytes": 9680,
+    "arch": "sm_120",
+    "flags": [],
+    "entry_points": [
+      "k_regression_activation_gelu_tanh_f32"
+    ],
+    "registers": {
+      "k_regression_activation_gelu_tanh_f32": 21
+    }
+  },
+  "finished": "2026-10-28T11:57:17.784440+00:00",
+  "seconds": 0.5115405999822542
+}

@@ -3,15 +3,19 @@
 **Implementation:** [`compile.py`](compile.py) now provides a direct PTX backend.
 Start with the [submission overview](SUBMISSION.md),
 [feature/example/test index](docs/FEATURES.md), and [runnable examples](examples/README.md).
-The optional extensions include FP16/BF16 tensor cores and an SM90 bulk-copy
-path. Their exact supported forms and limits are explicit. The current
-[phase-8 revision](docs/PHASE8.md) adds prescribed launch bounds and fixes loop
-integer bindings and floating floor remainder. Fresh organizer-GPU validation
-passed **15/15 public problems and the final 51/51 additional packages**.
-CPU/assembler discovery passed **120 methods**, with 19 local-GPU methods skipped.
-The phase-8 report retains the initial transport failures, the corrected FP64
-word-transport fixtures and source-bound evidence.
-Earlier release reports remain historical records, with their original results.
+Optional extensions include FP16/BF16 tensor cores, FP32 fragment algebra and
+row reductions, and an SM90 bulk-copy path. The current
+[phase-9 revision](docs/PHASE9.md) also adds direct GELU and tanh-GELU operations.
+Supported forms, numerical boundaries and diagnostics are explicit.
+
+**Phase-9 validation passed all 15 public problems and 67 additional feature
+packages** on the organizers' GPU. CPU/assembler discovery passed 129 methods,
+with 19 explicit local-GPU skips. The public result includes one successful retry
+after a connection reset. Separately, the final generated-composition study
+passed **21/24 mathematical checks**: three [FP16 stage-rounding conflicts](docs/PHASE9.md#generated-compositions-and-retained-numerical-conflict)
+remain failures, with the same outcome on the baseline compiler. See the
+[source-bound release summary](artifacts/validation/phase9/release-summary.json)
+and [phase-9 report](docs/PHASE9.md) for scope and retained failed attempts.
 
 This Python backend translates Emmy's scheduled Kernel IR directly into PTX.
 Emmy 0.3.11 supplies parsing and typed IR structures; this compiler implements
@@ -38,12 +42,12 @@ whole module succeeds, with diagnostics on stderr.
 
 | Read in this order | Responsibility |
 |---|---|
-| [`compile_file`](ptx_backend.py#L1799), [`compile`](ptx_backend.py#L1736) | Read the ABI and numerical contract, declare parameters/registers/shared memory, assemble the module. |
-| [`statement`](ptx_backend.py#L1354), [`tile`](ptx_backend.py#L1552), [`loop`](ptx_backend.py#L1474) | Dispatch typed IR; preserve work ownership, bounds, lexical scope and accumulator lifetime. |
-| [`expr`](ptx_backend.py#L801), [`operation`](ptx_backend.py#L892), [`convert`](ptx_backend.py#L468) | Lower typed arithmetic with explicit conversion, rounding and unsupported-operation diagnostics. |
-| [`address`](ptx_backend.py#L1220), [`load`](ptx_backend.py#L1259), [`store`](ptx_backend.py#L1280) | Flatten indices and emit global/shared memory operations; vectorize only with sufficient alignment evidence. |
-| [`shuffle`](ptx_backend.py#L1646), [`tree`](ptx_backend.py#L1683), [`sync`](ptx_backend.py#L1622) | Preserve subgroup membership, ordered coupled-state merges, shared-memory barriers and result broadcast. |
-| [`TensorLowering`](ptx_tensor.py) | Lower explicit m16n8k16 fragments, operand transport, MMA, guarded stores and epilogues. |
+| [`compile_file`](ptx_backend.py#L1821), [`compile`](ptx_backend.py#L1758) | Read the ABI and numerical contract, declare parameters/registers/shared memory, assemble the module. |
+| [`statement`](ptx_backend.py#L1375), [`tile`](ptx_backend.py#L1574), [`loop`](ptx_backend.py#L1496) | Dispatch typed IR; preserve work ownership, bounds, lexical scope and accumulator lifetime. |
+| [`expr`](ptx_backend.py#L803), [`operation`](ptx_backend.py#L894), [`convert`](ptx_backend.py#L470) | Lower typed arithmetic with explicit conversion, rounding and unsupported-operation diagnostics. |
+| [`address`](ptx_backend.py#L1241), [`load`](ptx_backend.py#L1280), [`store`](ptx_backend.py#L1301) | Flatten indices and emit global/shared memory operations; vectorize only with sufficient alignment evidence. |
+| [`shuffle`](ptx_backend.py#L1668), [`tree`](ptx_backend.py#L1705), [`sync`](ptx_backend.py#L1644) | Preserve subgroup membership, ordered coupled-state merges, shared-memory barriers and result broadcast. |
+| [`TensorLowering`](ptx_tensor.py) | Lower explicit m16n8k16 fragments, MMA, guarded stores, elementwise fragment algebra and ordered row reductions. |
 | [`BulkLowering`](ptx_bulk.py) | Prove aligned box-copy bounds, emit native bulk transactions and preserve mbarrier phases. |
 
 GPU builtins retain their signed/unsigned types. Unstamped mixed-integer
@@ -56,7 +60,7 @@ uses power-of-two reduction instead of a rounded quotient. See the
 
 The prescribed launch and schedule are retained. `.maxntid` exposes the supplied
 block size to the assembler; the [paired experiment](docs/PHASE8.md#performance-experiment)
-compares it with our previous compiler. Other optimizations are bounded:
+is historical evidence against our previous compiler. No new phase-9 speedup is claimed. Other optimizations are bounded:
 schedule-hinted loop unrolling and, only under a nonzero tolerance, compensation
 for eligible independent FP32 dots. Exact or missing tolerances retain ordinary
 FP32 dot arithmetic. Operation/type support is explicit; see
@@ -152,20 +156,22 @@ show that you understand how your compiler works.
 
 ## How compilers are evaluated
 
-We run your `compile.py` on every kernel of the **hidden set** — the same five categories as the
-open problems, with different shapes and ops — then assemble the PTX with `ptxas`, run it on the
-runner's GPU under each problem's `meta.json` launch, and compare the outputs with the expected
-ones within the problem's tolerance. This is the pipeline `submit.py --compiler` runs, so passing
-the open set that way is the best preparation. Keep compiling to seconds per kernel: a time
-limit may apply.
+A later organizer clarification, supplied by the entrant, says there is no
+strict winning order: review considers **versatility, performance, design
+quality, novelty and clarity**. The public problem set is a baseline, and
+submissions are reviewed manually. The original starter's ordered
+correctness/review/speed tiebreak description is retained only as historical
+guidance, not presented as the current scoring formula.
 
-1. **Correctness on the hidden set, by category.** Passing categories 1 and 2 is the bar
-   ([MVP.md](MVP.md)); each further category is what sets submissions apart.
-2. **Code review** of your compiler is the first tiebreak. The IR → PTX lowering has to be your
-   own — see the rule in [TASK.md](TASK.md).
-3. **Speed** of the generated kernels is the last tiebreak.
+Hidden kernels use the same categories with different shapes and operations.
+The compiler must emit PTX for the supplied IR and launch metadata, and the
+runner assembles and checks outputs against the problem's tolerance. Passing
+the public examples does not establish hidden-set correctness or a ranking.
 
-The video decides prize eligibility, as described above.
+The IR-to-PTX translation must be the submission's own implementation; see
+[TASK.md](TASK.md). The project video should demonstrate the entrant's
+understanding of that implementation. Check the organizer's current submission
+instructions for eligibility and deadline details.
 
 ## Repo map
 

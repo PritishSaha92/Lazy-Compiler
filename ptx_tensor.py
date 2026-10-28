@@ -11,14 +11,16 @@ import math
 import re
 
 from emmy.compiler.ir.kernel.ir import (
-    ELEM_COL, ELEM_ROW, FragmentRepack, LdmatrixLoad, MmaSyncPtx,
-    RegFragment, RegStore, Tile,
+    COORD, FRAG, FRAG_COL, FRAG_ROW, GMEM, M16N8, ROW, UNIFORM,
+    ELEM_COL, ELEM_ROW, FragmentApply, FragmentRepack, FragmentRowReduce,
+    LdmatrixLoad, MmaSyncPtx, RegFragment, RegStore, Tile,
 )
 from emmy.compiler.ir.stmt.leaves import Assign, Load, Select
 from emmy.compiler.ir.stmt.blocks import Cond, Loop, StridedLoop
-from emmy.compiler.ir.expr import BinaryExpr, Literal, Var
+from emmy.compiler.ir.expr import BinaryExpr, Expr, Literal, Var
 
-NODE_TYPES = (RegFragment, LdmatrixLoad, MmaSyncPtx, RegStore, FragmentRepack)
+NODE_TYPES = (RegFragment, LdmatrixLoad, MmaSyncPtx, RegStore, FragmentRepack,
+              FragmentApply, FragmentRowReduce)
 SHAPE = (16, 8, 16)
 
 
@@ -63,7 +65,7 @@ class TensorLowering:
                         collect_writes(nested)
         collect_writes(body)
 
-        def visit(statements, tiles=(), facts=None):
+        def visit(statements, tiles=(), facts=None, uniform_control=True):
             facts = {} if facts is None else dict(facts)
             for s in statements:
                 active = tiles + (s,) if isinstance(s, Tile) else tiles
@@ -94,10 +96,18 @@ class TensorLowering:
                         if tile.aux_threads and (not tile.block_threads or
                                 tile.block_threads % 32 or tile.aux_threads % 32):
                             raise self.error("tensor auxiliary Tile partition must contain complete warps")
+                if isinstance(s, FragmentRowReduce) and not uniform_control:
+                    raise self.error("fragment row reduction requires unconditional, static loop control")
+                nested_uniform = uniform_control and not isinstance(s, Cond)
+                if isinstance(s, StridedLoop):
+                    nested_uniform &= all(isinstance(v, Literal) for v in
+                                          (s.start, s.step, s.end) if v is not None)
+                if isinstance(s, (Loop, StridedLoop)):
+                    nested_uniform &= s.axis.name not in leaf_writes
                 for attr in ("body", "else_body"):
                     nested = getattr(s, attr, ())
                     if nested:
-                        visit(nested, active, inner_facts)
+                        visit(nested, active, inner_facts, nested_uniform)
                 # A body-local rebinding of an axis invalidates its induction
                 # fact for later statements in this scope.
                 for name in s.defines():
@@ -131,7 +141,8 @@ class TensorLowering:
     def handles(self, s):
         methods = {RegFragment: self.declare, LdmatrixLoad: self.load,
                    MmaSyncPtx: self.mma, RegStore: self.store,
-                   FragmentRepack: self.repack}
+                   FragmentRepack: self.repack, FragmentApply: self.apply,
+                   FragmentRowReduce: self.row_reduce}
         method = methods.get(type(s))
         if method is None:
             return False
@@ -460,3 +471,148 @@ class TensorLowering:
                 values.append(self.pack(c.convert(scalars[pair], s.ab_dtype),
                                         c.convert(scalars[pair+1], s.ab_dtype)))
         self.write(s.frag, values, "a")
+
+    def fragment_layout(self, s):
+        """Only the modeled four-f32 m16n8 C layout is admitted here."""
+        if s.layout != M16N8:
+            raise self.error("fragment algebra requires the m16n8k16 FP32 C layout")
+
+    def apply(self, s):
+        """Translate FragmentApply's per-element algebra, including lazy where.
+
+        Emmy 0.3.11 kernel/ir.py:993-1171 defines five operand distributions,
+        absolute coordinate substitution, f32 arithmetic and a unary post chain.
+        Its where expression is a C ternary: an unselected GMEM operand must
+        not be loaded, since a coordinate mask can protect an out-of-bounds read.
+        """
+        c = self.c
+        self.fragment_layout(s)
+        if len(s.args) != len(s.kinds):
+            raise self.error("fragment operation argument/kind counts disagree")
+        if s.in_place:
+            if not any(k == FRAG and a == s.out for a,k in zip(s.args,s.kinds)):
+                raise self.error("in-place fragment output must be a fragment operand")
+            self.reference(s.out, "c")
+        elif not re.fullmatch(r"[A-Za-z_$][\w$]*", s.out, re.ASCII):
+            raise self.error("new fragment output must be an unsubscripted identifier")
+        for arg,kind in zip(s.args,s.kinds):
+            if kind == FRAG:
+                self.reference(arg, "c")
+            elif kind == ROW:
+                if not isinstance(arg,(tuple,list)) or len(arg) != 2 or not all(isinstance(a,str) for a in arg):
+                    raise self.error("fragment ROW operand requires two scalar names")
+                if any(isinstance(c.env.get(a),Fragment) for a in arg):
+                    raise self.error("fragment ROW operands must be scalars")
+            elif kind == UNIFORM:
+                if not isinstance(arg,(str,Expr)):
+                    raise self.error("fragment UNIFORM operand requires a scalar name or expression")
+                if isinstance(arg,str) and isinstance(c.env.get(arg),Fragment):
+                    raise self.error("fragment UNIFORM operand must be a scalar")
+            elif kind == COORD:
+                if not isinstance(arg,Expr):
+                    raise self.error("fragment COORD operand requires an expression")
+            elif kind == GMEM:
+                if not isinstance(arg,(tuple,list)) or len(arg) != 2 or arg[0] not in c.buffers:
+                    raise self.error("fragment GMEM operand requires a known buffer and index")
+                if c.buffers[arg[0]].space != "global":
+                    raise self.error("fragment GMEM operand must use global memory")
+                if not isinstance(arg[1],(tuple,list)) or not all(isinstance(v,Expr) for v in arg[1]):
+                    raise self.error("fragment GMEM index must contain expressions")
+            else:
+                raise self.error(f"unsupported fragment operand kind {kind!r}")
+
+        # Capture all fragment inputs before binding a fresh output. Dynamic
+        # family indices use the same register selects as ordinary MMA operands.
+        inputs = {i:self.read(a,"c")[1] for i,(a,k) in enumerate(zip(s.args,s.kinds)) if k == FRAG}
+        lane = self.lane()
+        group = c.binary("/", lane, c.literal(4))
+        pair = self.mul(c.binary("%", lane, c.literal(4)), 2)
+        results = []
+        saved = c.env.copy()
+        try:
+            for element in range(4):
+                c.env = saved.copy()
+                # Clear reserved names even if an enclosing lexical scope used
+                # them: missing origins must fail instead of capturing a value.
+                c.env.pop(FRAG_ROW, None)
+                c.env.pop(FRAG_COL, None)
+                if s.row_base is not None:
+                    c.env[FRAG_ROW] = self.add(c.expr(s.row_base),self.add(group,8 if element >= 2 else 0))
+                if s.col_base is not None:
+                    c.env[FRAG_COL] = self.add(c.expr(s.col_base),self.add(pair,element & 1))
+
+                def operand(i):
+                    arg,kind = s.args[i],s.kinds[i]
+                    if kind == FRAG:
+                        return inputs[i][element]
+                    if kind == ROW:
+                        value = c.lookup(arg[s.layout.elem_row[element]])
+                    elif kind in (COORD,UNIFORM):
+                        value = c.lookup(arg) if isinstance(arg,str) else c.expr(arg)
+                    else:
+                        value = c.load(arg[0],c.address(arg[0],arg[1]))[0]
+                    # The pinned renderer explicitly narrows named UNIFORM
+                    # and GMEM values, but passes ROW and Expr operands through.
+                    # A double there can promote the whole C expression before
+                    # its final f32 assignment. Do not silently round it early.
+                    if value.type == "f64" and (kind in (ROW,COORD) or
+                            (kind == UNIFORM and isinstance(arg,Expr))):
+                        raise self.error("fragment ROW/COORD/UNIFORM expressions with f64 results are unsupported")
+                    return c.convert(value,"f32") if kind != COORD else value
+
+                if s.op.name == "where":
+                    if len(s.args) != 3:
+                        raise self.error("fragment where requires three operands")
+                    condition = c.convert(operand(0),"pred")
+                    value = c.mutable_reg("f32")
+                    otherwise,end = c.label("fragment_else"),c.label("fragment_end")
+                    c.emit(f"@!{condition} bra {otherwise};")
+                    c.move(value,operand(1))
+                    c.emit(f"bra {end};")
+                    c.mark(otherwise)
+                    c.move(value,operand(2))
+                    c.mark(end)
+                else:
+                    value = c.operation(s.op.name,[operand(i) for i in range(len(s.args))],"f32")
+                for post in s.post:
+                    value = c.operation(post.name,[value],"f32")
+                results.append(value)
+        finally:
+            c.env = saved
+        if s.in_place:
+            self.write(s.out,results,"c")
+        else:
+            members = tuple(c.mutable_reg("f32") for _ in results)
+            for target,value in zip(members,results):
+                c.move(target,value)
+            c.env[s.out] = Fragment("c","f32",(members,))
+
+    def row_reduce(self, s):
+        """Keep Emmy's left fold over fragments, then XOR masks 2 and 1.
+
+        Pinned kernel/ir.py:1175-1226 gives this order; each four-lane group
+        owns the eight columns of two rows. The prepare pass admits complete
+        warps and rejects conditionals or non-static loop control around this
+        collective, so the full-warp membership mask names participating lanes.
+        """
+        c = self.c
+        self.fragment_layout(s)
+        if self.dtype(s.dtype) != "f32" or not s.frags:
+            raise self.error("fragment row reduction requires nonempty FP32 C fragments")
+        if s.op.name not in ("add","multiply","maximum","minimum"):
+            raise self.error("fragment row reduction supports add, multiply, maximum and minimum")
+        if s.top == s.bot:
+            raise self.error("fragment row reduction outputs must have distinct names")
+        fragments = [self.read(name,"c")[1] for name in s.frags]
+        reduced = []
+        for row in range(2):
+            parts = [values[i] for values in fragments for i,r in enumerate(s.layout.elem_row) if r == row]
+            result = parts[0]
+            for part in parts[1:]:
+                result = c.operation(s.op.name,[result,part],"f32")
+            reduced.append(result)
+        for delta in s.layout.reduce_xors:
+            for row,value in enumerate(reduced):
+                peer = c.instruction("shfl.sync.bfly.b32","f32",value,delta,31,"0xffffffff")
+                reduced[row] = c.operation(s.op.name,[value,peer],"f32")
+        c.env[s.top],c.env[s.bot] = reduced

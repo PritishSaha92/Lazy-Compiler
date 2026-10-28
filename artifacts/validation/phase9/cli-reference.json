@@ -1,0 +1,198 @@
+{
+  "schema": "emmy-phase9-cli-reference-v1",
+  "pass": true,
+  "scope": "16 new feature packages plus four retained path examples; real CLI stdout, no GPU execution",
+  "runtime_source_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "f998d378fffff3f228fb9f90386542dd185dd1dfbe5a0a5b3dc559dc68bc46ca",
+    "ptx_tensor.py": "9046e52c80db822421398a5b8b8778e1c035194a8b35820d078013fde5b5b885",
+    "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "inputs_sha256": {
+    "examples\\phase9\\fragments\\fragment_attention_tile_f16\\k_regression_fragment_attention_tile_f16.ir.json": "d15009f80583cf14c962014af27f8f95521cd506ec155ba3b31510f32aaeeaad",
+    "examples\\phase9\\fragments\\fragment_attention_tile_f16\\meta.json": "788d37272ecea93a4baca251004e080a3019a8950eb7fce74cb183f2cf21281b",
+    "examples\\phase9\\fragments\\fragment_family_row_softmax\\k_regression_fragment_family_row_softmax.ir.json": "d6898bcd50b56035b4e16703098fdab61f084defb99f1012ce082e50575570bc",
+    "examples\\phase9\\fragments\\fragment_family_row_softmax\\meta.json": "1b57bfee13588397bcfca1ac863759f6acba61a5db5e941e6c3a13abe47795b0",
+    "examples\\phase9\\fragments\\fragment_masked_gmem_post\\k_regression_fragment_masked_gmem_post.ir.json": "8ca9784441f5425ff28cb843ab3edc5d3ac83d48fc5c7b3a6e400ec2ce8aee42",
+    "examples\\phase9\\fragments\\fragment_masked_gmem_post\\meta.json": "3ea8422f341b79c7f09c294c89a7685d36ad6400ce5c293a38bc105d21047702",
+    "examples\\phase9\\fragments\\fragment_mma_row_normalization\\k_regression_fragment_mma_row_normalization.ir.json": "ff34605d480bff346f6006f9f2fe854c35f27286abc3c05f48313bb6f7c8ec56",
+    "examples\\phase9\\fragments\\fragment_mma_row_normalization\\meta.json": "1532f44eaf604c608427479606770671de0c84fd5ced54b534b6d567420fb1c8",
+    "examples\\phase9\\fragments\\fragment_row_add_ordered\\k_regression_fragment_row_add_ordered.ir.json": "6357446775ab4604ee4356dd1249bbb05bba9b0ddca29626bd4a9e5163c07685",
+    "examples\\phase9\\fragments\\fragment_row_add_ordered\\meta.json": "28f19fc5a0a6a0a189969c60690cc9f41e489124c597864ff0f619e7a24aed3f",
+    "examples\\phase9\\fragments\\fragment_row_maximum_ordered\\k_regression_fragment_row_maximum_ordered.ir.json": "981fd22f3e5afa625da6817180774e75a1c02e5f4345019269ffb1cfe07db07f",
+    "examples\\phase9\\fragments\\fragment_row_maximum_ordered\\meta.json": "8f14175964a2ca14f78886298fb901f259f9244f610eff6d88e75feccb92c1e9",
+    "examples\\phase9\\fragments\\fragment_row_minimum_ordered\\k_regression_fragment_row_minimum_ordered.ir.json": "0d0a5ed94fd51a05f17fc3d2931f5131a31afad30a0a40743c0a0ce36802551f",
+    "examples\\phase9\\fragments\\fragment_row_minimum_ordered\\meta.json": "66acc6bb75723721cbae45a8fea6582ebd35511ee4a1685c206e514c79f46572",
+    "examples\\phase9\\fragments\\fragment_row_multiply_ordered\\k_regression_fragment_row_multiply_ordered.ir.json": "50b9594f9003d0a44877ed9134db9a4200481a15112180497f001a116d77e65a",
+    "examples\\phase9\\fragments\\fragment_row_multiply_ordered\\meta.json": "b21cbf2a0e87ff3afdd00a984505a46ae8135f6da1ea9c1ff4075660f1d4c4d9",
+    "examples\\phase9\\gelu\\activation_gelu_bf16\\k_regression_activation_gelu_bf16.ir.json": "a88a6f2ec120ec540bcf60e5f2fd9dee0bfbc0db17e18cd2c8ebd669bff3424d",
+    "examples\\phase9\\gelu\\activation_gelu_bf16\\meta.json": "f712f1fd1152bcf3ff00dce608d748e7334e7736fae1d8c639a165bde3935676",
+    "examples\\phase9\\gelu\\activation_gelu_f16\\k_regression_activation_gelu_f16.ir.json": "cedb527a195070b6171dd6038375735f4d20e3d22245c6f46e1fff2377c68f64",
+    "examples\\phase9\\gelu\\activation_gelu_f16\\meta.json": "c5955eb20eeb9d422b1ac79b6dbcdd6a07cbcfc1196033f46c82baae021afc27",
+    "examples\\phase9\\gelu\\activation_gelu_f32\\k_regression_activation_gelu_f32.ir.json": "963fd0308d63c33db5b45192b2e0fb08b5c1570edd11fec9687d18bc6f4f6c93",
+    "examples\\phase9\\gelu\\activation_gelu_f32\\meta.json": "fa6a281df8bf63e95a85337749deb94d2212c3229efcba69aee1647b27dc8b0a",
+    "examples\\phase9\\gelu\\activation_gelu_special\\k_regression_activation_gelu_special.ir.json": "113afab9d31aa184acb7ddd224d6279c7b7d56c4b73f7e00443a78a293a9c4a8",
+    "examples\\phase9\\gelu\\activation_gelu_special\\meta.json": "6610bcb550636a0f730950ccc7c4faeca9a2848ecbe0164965dbe01ad2bd0ddc",
+    "examples\\phase9\\gelu\\activation_gelu_tanh_bf16\\k_regression_activation_gelu_tanh_bf16.ir.json": "2e5e2ec927b90a3c16552e57444c43e48398f1bd6958b93716431604e4e21982",
+    "examples\\phase9\\gelu\\activation_gelu_tanh_bf16\\meta.json": "2ca1452b4e4ae9136986c453d003e406b1a5ef58105176f4c6a64e2e8ca19fa2",
+    "examples\\phase9\\gelu\\activation_gelu_tanh_f16\\k_regression_activation_gelu_tanh_f16.ir.json": "3deded3ea631731ce2eaf7b12f6af82103c3c1e404d9c06754068f8eb3e4a9fe",
+    "examples\\phase9\\gelu\\activation_gelu_tanh_f16\\meta.json": "0ed4f546a424b13e416a0e053edb5b1f05e97e239dfc3347beaf939b5ef88456",
+    "examples\\phase9\\gelu\\activation_gelu_tanh_f32\\k_regression_activation_gelu_tanh_f32.ir.json": "f274974b1a3bc95152c0cc0cfa09fa80b261bffd653034b92fd6615a066c8b29",
+    "examples\\phase9\\gelu\\activation_gelu_tanh_f32\\meta.json": "393d5f5660d10c7af68d41421b96c6168b15a071afb3b8b816024aaceff7f824",
+    "examples\\phase9\\gelu\\activation_gelu_tanh_special\\k_regression_activation_gelu_tanh_special.ir.json": "39720b2bc86317f416127870dd99a4011f6ec486abe36d3a3750d298b5e40fda",
+    "examples\\phase9\\gelu\\activation_gelu_tanh_special\\meta.json": "bbf237bc6fe4526db57ca379279514cd6da8d418465896ec1f1c7e94a13afa9b",
+    "problems\\p00_scalar_add\\k_add_pointwise.ir.json": "9b0357857f0b6504ae700e117e3c59f7cb66d9357f394aa81490fc2aea811df8",
+    "problems\\p00_scalar_add\\meta.json": "e9ede16317b2f085eb6721d37ff9fefcb1ce86c2d8d837aff49a5f936b1affa1",
+    "examples\\bulk\\bulk_rectangle\\k_regression_bulk_rectangle.ir.json": "dee25f3327b4b442fcfa403a6f0be5e6094c1ec2561517c56c307f79fff83245",
+    "examples\\bulk\\bulk_rectangle\\meta.json": "e9f7a3fccf133e97381f95cbd493580282cc27adc1a91fcd62e116490c0fdc78",
+    "examples\\ring\\ring_tensor_k112_bf16\\k_regression_ring_tensor_k112_bf16.ir.json": "d9e63cff2853dda108e2f94c7d15b48430766ccbb4c5ee6873036f8e3cac8ab2",
+    "examples\\ring\\ring_tensor_k112_bf16\\meta.json": "f925aa6bccfecd3d8ee2b74b200944dd2a288732c020d53cc69f056640b65c62",
+    "examples\\generated_tensor\\k_matmul_79479f.ir.json": "d7ac2f46708459544ebe8cfbaccf6bc12cc5ad58e02dc95147423370f16a5661",
+    "examples\\generated_tensor\\meta.json": "022e198c3e7bad70749990dbe6ef65c3ac09dca9a1ce847509f0fad6696d93a5"
+  },
+  "cli_checks": [
+    {
+      "ir": "examples/phase9/fragments/fragment_attention_tile_f16/k_regression_fragment_attention_tile_f16.ir.json",
+      "pass": true,
+      "ptx_sha256": "0ed1f9efa657f706d10f26487e93ca457f42cb53652101765d7adf6792185edd",
+      "ptx_bytes": 12004,
+      "stderr": ""
+    },
+    {
+      "ir": "examples/phase9/fragments/fragment_family_row_softmax/k_regression_fragment_family_row_softmax.ir.json",
+      "pass": true,
+      "ptx_sha256": "aa82a5d197727c177f1c8e983fa2c718e2452ecbe63955e26eac43b485b76e9e",
+      "ptx_bytes": 8196,
+      "stderr": ""
+    },
+    {
+      "ir": "examples/phase9/fragments/fragment_masked_gmem_post/k_regression_fragment_masked_gmem_post.ir.json",
+      "pass": true,
+      "ptx_sha256": "555ab68283c0aafaaa33e34c1e6b29fb8539384f0416aea99dfa3aae8bfe0082",
+      "ptx_bytes": 4205,
+      "stderr": ""
+    },
+    {
+      "ir": "examples/phase9/fragments/fragment_mma_row_normalization/k_regression_fragment_mma_row_normalization.ir.json",
+      "pass": true,
+      "ptx_sha256": "c683b3243e517c44c1493aa51ed3538ebef1b25eecb9dda0539b4e2539242cf6",
+      "ptx_bytes": 10123,
+      "stderr": ""
+    },
+    {
+      "ir": "examples/phase9/fragments/fragment_row_add_ordered/k_regression_fragment_row_add_ordered.ir.json",
+      "pass": true,
+      "ptx_sha256": "a9f6265f8368b14f0026fd458ac768f4afb30f07a60f27390d4ddadda92c679a",
+      "ptx_bytes": 4413,
+      "stderr": ""
+    },
+    {
+      "ir": "examples/phase9/fragments/fragment_row_maximum_ordered/k_regression_fragment_row_maximum_ordered.ir.json",
+      "pass": true,
+      "ptx_sha256": "2d3cada54e5f63e9e51e57c92ddd37ba52df3db747f3d66f0c458f602bc02bb8",
+      "ptx_bytes": 4387,
+      "stderr": ""
+    },
+    {
+      "ir": "examples/phase9/fragments/fragment_row_minimum_ordered/k_regression_fragment_row_minimum_ordered.ir.json",
+      "pass": true,
+      "ptx_sha256": "5afe3d564e69d381ed29b67a1beffd1640540a4ef8ec28edc8e90fb07888bd9f",
+      "ptx_bytes": 4387,
+      "stderr": ""
+    },
+    {
+      "ir": "examples/phase9/fragments/fragment_row_multiply_ordered/k_regression_fragment_row_multiply_ordered.ir.json",
+      "pass": true,
+      "ptx_sha256": "e4a048cf13454bb1e3d79a0d2fb3f2f0885f32dbc989c187eefd7ac30b51543b",
+      "ptx_bytes": 4418,
+      "stderr": ""
+    },
+    {
+      "ir": "examples/phase9/gelu/activation_gelu_bf16/k_regression_activation_gelu_bf16.ir.json",
+      "pass": true,
+      "ptx_sha256": "9ebcc419b01f1bfbcc9a09c5a61083dc9532fa4af66f4e518eb68207cee876b6",
+      "ptx_bytes": 3032,
+      "stderr": ""
+    },
+    {
+      "ir": "examples/phase9/gelu/activation_gelu_f16/k_regression_activation_gelu_f16.ir.json",
+      "pass": true,
+      "ptx_sha256": "9d9c97e698f3d7becd718dd0be89939175cb483f38b00cfedf85f75276b9bf57",
+      "ptx_bytes": 3024,
+      "stderr": ""
+    },
+    {
+      "ir": "examples/phase9/gelu/activation_gelu_f32/k_regression_activation_gelu_f32.ir.json",
+      "pass": true,
+      "ptx_sha256": "e1185f6c11534b463f474dbe6d4d2a72f84641a5b6d365344cc11b1d1ad3cc2d",
+      "ptx_bytes": 2795,
+      "stderr": ""
+    },
+    {
+      "ir": "examples/phase9/gelu/activation_gelu_special/k_regression_activation_gelu_special.ir.json",
+      "pass": true,
+      "ptx_sha256": "694ee7a89a5b9010fd188e45cbaaf764e9631ca355bfa118cd955ff300161344",
+      "ptx_bytes": 8882,
+      "stderr": ""
+    },
+    {
+      "ir": "examples/phase9/gelu/activation_gelu_tanh_bf16/k_regression_activation_gelu_tanh_bf16.ir.json",
+      "pass": true,
+      "ptx_sha256": "190e93b1c45995e7d205bcb759443762449860c2592ae15c21b2f79dd1a55ae5",
+      "ptx_bytes": 3266,
+      "stderr": ""
+    },
+    {
+      "ir": "examples/phase9/gelu/activation_gelu_tanh_f16/k_regression_activation_gelu_tanh_f16.ir.json",
+      "pass": true,
+      "ptx_sha256": "0327f12822dccf1dc20caaab2b1c23f02a313df8f3cbe5a9fd4ce145c3e7235a",
+      "ptx_bytes": 3258,
+      "stderr": ""
+    },
+    {
+      "ir": "examples/phase9/gelu/activation_gelu_tanh_f32/k_regression_activation_gelu_tanh_f32.ir.json",
+      "pass": true,
+      "ptx_sha256": "30cf1bb0c6646d20a83a116670b82860e323c3d001796f903e8651ca5a1b09b6",
+      "ptx_bytes": 3026,
+      "stderr": ""
+    },
+    {
+      "ir": "examples/phase9/gelu/activation_gelu_tanh_special/k_regression_activation_gelu_tanh_special.ir.json",
+      "pass": true,
+      "ptx_sha256": "c1c67984fbaaee4d67ae0be062b303aec81ab8cfb97552a0235768194caac381",
+      "ptx_bytes": 9240,
+      "stderr": ""
+    },
+    {
+      "ir": "problems/p00_scalar_add/k_add_pointwise.ir.json",
+      "pass": true,
+      "ptx_sha256": "17d321b58a4f85d03e2721a64038370333a3d30fdd4b09e2b417ab0706a2fcc9",
+      "ptx_bytes": 1544,
+      "stderr": ""
+    },
+    {
+      "ir": "examples/bulk/bulk_rectangle/k_regression_bulk_rectangle.ir.json",
+      "pass": true,
+      "ptx_sha256": "2ae70e24cc2e57787ea2ec81bce0746b00fd4aa8e1d962503b4bc9fbdf862fd9",
+      "ptx_bytes": 2295,
+      "stderr": ""
+    },
+    {
+      "ir": "examples/ring/ring_tensor_k112_bf16/k_regression_ring_tensor_k112_bf16.ir.json",
+      "pass": true,
+      "ptx_sha256": "6fb2e533fa2ae0e00cfea38c4dc8d8b1dfd97b89a9d14045efc8c091d168e3dd",
+      "ptx_bytes": 24860,
+      "stderr": ""
+    },
+    {
+      "ir": "examples/generated_tensor/k_matmul_79479f.ir.json",
+      "pass": true,
+      "ptx_sha256": "1f1368263f827a651db49ed31f317e8a195bbce0356e394bb024310bdadd2be3",
+      "ptx_bytes": 38445,
+      "stderr": ""
+    }
+  ],
+  "sources_unchanged": true,
+  "finished_utc": "2026-10-28T12:07:27.263693+00:00"
+}

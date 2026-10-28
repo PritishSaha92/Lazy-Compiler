@@ -1,0 +1,121 @@
+{
+ "id": "phase9_gelu_attention",
+ "code": "q=torch.randn(11,17); kt=torch.randn(17,37); v=torch.randn(37,13); torch.nn.functional.gelu(torch.softmax(q@kt*0.125,dim=-1)@v)",
+ "rtol": 0.001,
+ "atol": 0.0001,
+ "graph_inputs": [
+  "q",
+  "kt",
+  "v"
+ ],
+ "graph_outputs": [
+  "gelu"
+ ],
+ "kernels": [
+  {
+   "node": "gelu",
+   "entry": "k_matmul_softmax_reduce_88d497",
+   "arg_order": [
+    "mul_c1",
+    "gelu_inv_sqrt2",
+    "gelu_half",
+    "gelu_one",
+    "q",
+    "kt",
+    "v",
+    "gelu"
+   ],
+   "grid": [
+    143,
+    1,
+    1
+   ],
+   "block": [
+    128,
+    1,
+    1
+   ],
+   "smem_bytes": 0,
+   "zero_outputs": [],
+   "args": [
+    {
+     "name": "mul_c1",
+     "dtype": "f32",
+     "shape": [
+      1
+     ],
+     "data": [
+      0.125
+     ]
+    },
+    {
+     "name": "gelu_inv_sqrt2",
+     "dtype": "f32",
+     "shape": [
+      1
+     ],
+     "data": [
+      0.7071067811865475
+     ]
+    },
+    {
+     "name": "gelu_half",
+     "dtype": "f32",
+     "shape": [
+      1
+     ],
+     "data": [
+      0.5
+     ]
+    },
+    {
+     "name": "gelu_one",
+     "dtype": "f32",
+     "shape": [
+      1
+     ],
+     "data": [
+      1.0
+     ]
+    },
+    {
+     "name": "q",
+     "dtype": "f32",
+     "shape": [
+      11,
+      17
+     ],
+     "seed": 0
+    },
+    {
+     "name": "kt",
+     "dtype": "f32",
+     "shape": [
+      17,
+      37
+     ],
+     "seed": 1
+    },
+    {
+     "name": "v",
+     "dtype": "f32",
+     "shape": [
+      37,
+      13
+     ],
+     "seed": 2
+    },
+    {
+     "name": "gelu",
+     "dtype": "f32",
+     "shape": [
+      11,
+      13
+     ],
+     "output": true
+    }
+   ],
+   "final": true
+  }
+ ]
+}

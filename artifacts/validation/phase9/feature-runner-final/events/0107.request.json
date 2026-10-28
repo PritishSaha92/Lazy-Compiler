@@ -1,0 +1,42 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_fragment_masked_gmem_post",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "x",
+        "dtype": "f32",
+        "shape": [
+          15,
+          10
+        ],
+        "seed": 0
+      },
+      {
+        "name": "out",
+        "dtype": "f32",
+        "shape": [
+          16,
+          8
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "a375380c67a07e86863e780090803629959eec512aaa6e03ae9134df9a3bc608"
+  }
+}

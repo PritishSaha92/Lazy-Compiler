@@ -36,26 +36,39 @@ stderr and a nonzero status. The submission consists of `compile.py`,
 
 ## Current manual-review release
 
-The current [phase-8 revision](docs/PHASE8.md) emits launch bounds from the
-prescribed block size and corrects integer loop bindings and floating floor
-remainder. The diagnostic harness now compares zero-tolerance integer outputs
-exactly, preserving large integer failure values. A fresh run through the
-unchanged organizer client passed **15/15 public problems**, and the final
-additional feature gate passed **51/51 packages**. CPU/assembler discovery
-passed **120 methods**, with 19 explicit local-GPU skips out of 139 methods. The
-[source-bound summary](artifacts/validation/phase8/release-summary.json) records
-the current feature, CPU/assembler and checkout evidence; these outcomes are
-distinct from the historical counts below.
+The current [phase-9 revision](docs/PHASE9.md) adds direct GELU/tanh-GELU and
+bounded M16N8 FP32 C-fragment operations and row reductions. It preserves the
+existing launch bounds, integer loop bindings, floating floor remainder and
+exact integer-output oracle. The fragment path includes guarded GMEM operands,
+ROW broadcast and one complete attention-tile example with explicit FP16 weight
+repacking. It does not claim general online FlashAttention support.
 
-The phase-8 feature gate covers 41 retained packages, six new loop-binding
-packages and four new remainder packages. Its initial **49/51 run remains a
-failed gate**: the two FP64 raw-I64 fixtures lost low bits in runner transport.
-The final roster substitutes two-I32-word fixtures with unchanged references
-and zero tolerance; the failed attempts are retained. The
-[phase-8 report](docs/PHASE8.md) records this distinction and the independent
-word-transport audit. All GPU validation for this revision uses the organizers'
-runner. The [phase-7 report](docs/PHASE7.md), including its 41 additional GPU
-passes and 110 CPU/assembler passes, remains evidence for the previous compiler.
+The final numerical gate passed **15/15 public and 67/67 additional packages**,
+82 distinct packages in total. CPU/assembler discovery passed **129 of 148
+methods**, with 19 explicit local-GPU skips and unchanged source fingerprints.
+The [release summary](artifacts/validation/phase9/release-summary.json) links the
+evidence. One public row-softmax request had a connection reset before output;
+its unchanged-source retry passed, and both reports remain preserved.
+
+The initial new-feature run's two nested-list requests were rejected before
+execution. Flattening only their transport lists retained values, IR, expected
+arrays and tolerances. Both then passed in the fresh 67-package gate. The
+original rejected requests remain recorded separately from successful execution.
+
+The baseline and final generated-composition experiments each passed **21/24
+mathematical checks** with unchanged sources. The same three FP16 erf-GELU
+failures remain recorded: all 5,439 affected final-run values match the explicitly
+rounded FP16 IR stages bit-for-bit in the
+[independent audit](artifacts/validation/phase9/numerics/half-gelu-stage-final.json).
+Mathematical references and tolerances are
+unchanged. Generated GELU is decomposed into simpler operations, so the eight
+direct-op tests remain separate evidence for the new operation names. The
+release's accepted feature gate is not a claim that all numerical references pass.
+
+The [phase-8 report](docs/PHASE8.md) belongs to its own source revision: 15/15
+public, 51/51 additional and 120 CPU/assembler passes, with 19 local-GPU skips.
+Its original 49/51 gate and repaired FP64 word transport remain documented.
+Earlier phase reports retain their original source identities and failures.
 
 The [submission overview](SUBMISSION.md) and [feature index](docs/FEATURES.md)
 cover the tensor-core and bulk-copy extensions, examples, tests and exact limits.
@@ -134,6 +147,10 @@ dispatch, reference-code reads, expected-output access, or precomputed answers.
 - Loop variables use signed 32-bit bindings. Explicit ends are captured once
   after initialization; live increments compute with promoted operands before
   assigning back to the induction variable.
+- Direct GELU and tanh-GELU retain separate formulas, FP32 computation and
+  operation-level FP16/BF16 narrowing; F64 remains diagnosed.
+- FP32 C-fragment operations preserve coordinate guards, lazy GMEM selection,
+  ordered row folds and explicit convergence restrictions.
 - Named FP32/FP64 floor remainder uses exact power-of-two scaling and subtraction
   instead of forming a rounded quotient. Integer-bit transport fixtures check
   low-bit results, subnormals, signed zero and canonicalized NaN outcomes.

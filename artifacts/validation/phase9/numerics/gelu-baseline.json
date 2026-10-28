@@ -1,0 +1,35 @@
+{
+  "backend_sha256": "efdff90d6e9eb6454c009076468d7541fe02716b59573e764b830478efe98c70",
+  "cases": [
+    {
+      "id": "activation_gelu_f32",
+      "result": "CompileError",
+      "message": "Tile: Assign: unsupported elementwise operation 'gelu'"
+    },
+    {
+      "id": "activation_gelu_f16",
+      "result": "CompileError",
+      "message": "Tile: Assign: unsupported elementwise operation 'gelu'"
+    },
+    {
+      "id": "activation_gelu_bf16",
+      "result": "CompileError",
+      "message": "Tile: Assign: unsupported elementwise operation 'gelu'"
+    },
+    {
+      "id": "activation_gelu_tanh_f32",
+      "result": "CompileError",
+      "message": "Tile: Assign: unsupported elementwise operation 'gelu_tanh'"
+    },
+    {
+      "id": "activation_gelu_tanh_f16",
+      "result": "CompileError",
+      "message": "Tile: Assign: unsupported elementwise operation 'gelu_tanh'"
+    },
+    {
+      "id": "activation_gelu_tanh_bf16",
+      "result": "CompileError",
+      "message": "Tile: Assign: unsupported elementwise operation 'gelu_tanh'"
+    }
+  ]
+}

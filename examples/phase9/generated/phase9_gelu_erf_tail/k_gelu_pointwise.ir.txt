@@ -1,0 +1,11 @@
+    Tile[a0] (N=4099)
+        in1 = load gelu_inv_sqrt2[0]
+        in3 = load x[a0]
+        f32 v0 = multiply(in1, in3)
+        f32 v1 = erf(v0)
+        in2 = load gelu_one[0]
+        f32 v2 = add(in2, v1)
+        in0 = load gelu_half[0]
+        f32 v3 = multiply(in0, in3)
+        f32 v4 = multiply(v2, v3)
+        gelu[a0] = v4

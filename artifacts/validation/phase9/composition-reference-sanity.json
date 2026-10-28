@@ -1,0 +1,369 @@
+{
+  "pass": true,
+  "checks": 24,
+  "passed_checks": 24,
+  "expression_sha256": "aa5c34e96769df3a4c6d560ec3cf418cb25730ca09d9d64c01d675b088c42318",
+  "local_gpu_used": false,
+  "rows": [
+    {
+      "id": "phase9_gelu_erf_tail",
+      "seed": 0,
+      "pattern": "normal",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 4099,
+          "mismatches": 0,
+          "max_abs_error": 2.430751919746399e-07
+        }
+      ]
+    },
+    {
+      "id": "phase9_gelu_erf_tail",
+      "seed": 17,
+      "pattern": "normal",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 4099,
+          "mismatches": 0,
+          "max_abs_error": 2.568121999502182e-07
+        }
+      ]
+    },
+    {
+      "id": "phase9_gelu_erf_tail",
+      "seed": 101,
+      "pattern": "wide",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 4099,
+          "mismatches": 0,
+          "max_abs_error": 4.76837158203125e-07
+        }
+      ]
+    },
+    {
+      "id": "phase9_gelu_tanh_matrix",
+      "seed": 0,
+      "pattern": "normal",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 2603,
+          "mismatches": 0,
+          "max_abs_error": 2.384185791015625e-07
+        }
+      ]
+    },
+    {
+      "id": "phase9_gelu_tanh_matrix",
+      "seed": 17,
+      "pattern": "normal",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 2603,
+          "mismatches": 0,
+          "max_abs_error": 2.384185791015625e-07
+        }
+      ]
+    },
+    {
+      "id": "phase9_gelu_tanh_matrix",
+      "seed": 101,
+      "pattern": "wide",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 2603,
+          "mismatches": 0,
+          "max_abs_error": 4.76837158203125e-07
+        }
+      ]
+    },
+    {
+      "id": "phase9_gelu_erf_half",
+      "seed": 0,
+      "pattern": "normal",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 1813,
+          "mismatches": 0,
+          "max_abs_error": 7.62939453125e-06
+        }
+      ]
+    },
+    {
+      "id": "phase9_gelu_erf_half",
+      "seed": 17,
+      "pattern": "normal",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 1813,
+          "mismatches": 0,
+          "max_abs_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "phase9_gelu_erf_half",
+      "seed": 101,
+      "pattern": "wide",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 1813,
+          "mismatches": 0,
+          "max_abs_error": 7.62939453125e-06
+        }
+      ]
+    },
+    {
+      "id": "phase9_gelu_tanh_half",
+      "seed": 0,
+      "pattern": "normal",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 1031,
+          "mismatches": 0,
+          "max_abs_error": 5.960464477539063e-08
+        }
+      ]
+    },
+    {
+      "id": "phase9_gelu_tanh_half",
+      "seed": 17,
+      "pattern": "normal",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 1031,
+          "mismatches": 0,
+          "max_abs_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "phase9_gelu_tanh_half",
+      "seed": 101,
+      "pattern": "wide",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 1031,
+          "mismatches": 0,
+          "max_abs_error": 9.5367431640625e-07
+        }
+      ]
+    },
+    {
+      "id": "phase9_bias_gelu_gemm",
+      "seed": 0,
+      "pattern": "normal",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 1551,
+          "mismatches": 0,
+          "max_abs_error": 5.7220458984375e-06
+        }
+      ]
+    },
+    {
+      "id": "phase9_bias_gelu_gemm",
+      "seed": 17,
+      "pattern": "normal",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 1551,
+          "mismatches": 0,
+          "max_abs_error": 5.7220458984375e-06
+        }
+      ]
+    },
+    {
+      "id": "phase9_bias_gelu_gemm",
+      "seed": 101,
+      "pattern": "wide",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 1551,
+          "mismatches": 0,
+          "max_abs_error": 0.0006103515625
+        }
+      ]
+    },
+    {
+      "id": "phase9_half_gelu_gemm",
+      "seed": 0,
+      "pattern": "normal",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 357,
+          "mismatches": 0,
+          "max_abs_error": 2.384185791015625e-07
+        }
+      ]
+    },
+    {
+      "id": "phase9_half_gelu_gemm",
+      "seed": 17,
+      "pattern": "normal",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 357,
+          "mismatches": 0,
+          "max_abs_error": 1.1920928955078125e-07
+        }
+      ]
+    },
+    {
+      "id": "phase9_half_gelu_gemm",
+      "seed": 101,
+      "pattern": "wide",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 357,
+          "mismatches": 0,
+          "max_abs_error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "phase9_gelu_row_dot",
+      "seed": 0,
+      "pattern": "normal",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 19,
+          "mismatches": 0,
+          "max_abs_error": 1.9073486328125e-06
+        }
+      ]
+    },
+    {
+      "id": "phase9_gelu_row_dot",
+      "seed": 17,
+      "pattern": "normal",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 19,
+          "mismatches": 0,
+          "max_abs_error": 1.9073486328125e-06
+        }
+      ]
+    },
+    {
+      "id": "phase9_gelu_row_dot",
+      "seed": 101,
+      "pattern": "wide",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 19,
+          "mismatches": 0,
+          "max_abs_error": 0.0001220703125
+        }
+      ]
+    },
+    {
+      "id": "phase9_gelu_attention",
+      "seed": 0,
+      "pattern": "normal",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 143,
+          "mismatches": 0,
+          "max_abs_error": 5.21540641784668e-08
+        }
+      ]
+    },
+    {
+      "id": "phase9_gelu_attention",
+      "seed": 17,
+      "pattern": "normal",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 143,
+          "mismatches": 0,
+          "max_abs_error": 5.960464477539063e-08
+        }
+      ]
+    },
+    {
+      "id": "phase9_gelu_attention",
+      "seed": 101,
+      "pattern": "wide",
+      "pass": true,
+      "checks": [
+        {
+          "name": "out",
+          "pass": true,
+          "elements": 143,
+          "mismatches": 0,
+          "max_abs_error": 2.765655517578125e-05
+        }
+      ]
+    }
+  ]
+}

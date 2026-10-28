@@ -1,0 +1,12 @@
+  OK    phase9_gelu_erf_tail 1 kernel(s): k_gelu_pointwise
+  OK    phase9_gelu_tanh_matrix 1 kernel(s): k_gelu_pointwise
+  OK    phase9_gelu_erf_half 1 kernel(s): k_gelu_pointwise
+  OK    phase9_gelu_tanh_half 1 kernel(s): k_gelu_pointwise
+  OK    phase9_bias_gelu_gemm 1 kernel(s): k_matmul_9712dd
+  OK    phase9_half_gelu_gemm 1 kernel(s): k_matmul_6269af
+  OK    phase9_gelu_row_dot  1 kernel(s): k_sum_1_reduce
+  OK    phase9_gelu_attention 1 kernel(s): k_matmul_softmax_reduce_88d497
+
+8 ok, 0 failed
+
+STDERR

@@ -1,0 +1,345 @@
+{
+  "pass": false,
+  "scope": "Unchanged submit.py, default compiler, all public packages",
+  "started_utc": "2026-10-28T11:58:59.668309+00:00",
+  "source_and_input_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "f998d378fffff3f228fb9f90386542dd185dd1dfbe5a0a5b3dc559dc68bc46ca",
+    "ptx_tensor.py": "9046e52c80db822421398a5b8b8778e1c035194a8b35820d078013fde5b5b885",
+    "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84",
+    "submit.py": "252490272608876894f699af31a6ab3e77c6d5ab41faf57d046547e1601244f6",
+    "artifacts/validation/phase9/run_public.py": "06248eae6ca14770c86c37f800320e8e2b9146f346171e069e65ac6ef3cd91bc",
+    "problems/a01_attention/expected.npz": "ccc0ad1a70f679781c8aff8064ae73368e04bc35018a537dc15ef8610262ed51",
+    "problems/a01_attention/k_matmul_softmax_reduce_b55365.ir.json": "e1474ca91ac87c976c38ff130a24499e16d4052e1fac60f5fab806303c4bcdd6",
+    "problems/a01_attention/meta.json": "b8b003ae791859795a8073598f466c1a3b10382fe13ac14ea280794dc94b8e2b",
+    "problems/a02_attention_128/expected.npz": "ebd7c000d75e52707f2e65304e05fbf963b4799919f814f685490c76c89e7080",
+    "problems/a02_attention_128/k_matmul_softmax_reduce_6f0029.ir.json": "906a5eb477fd04a4669e8e0a30d055b73625689d0f93557707ec55320196734e",
+    "problems/a02_attention_128/meta.json": "bd05d4c39c0d5a98ceb1517d5c34ec227571b1e898e1bf4a7c71ea98566a5873",
+    "problems/f01_rmsnorm/expected.npz": "197016500cfca3ee3a1952273d50655e5bbf60093c28ad801e28eb3ccb76a6fb",
+    "problems/f01_rmsnorm/k_mean_cbd1de.ir.json": "b7598c4d7d0b7f198d6dc3cae7f6670b5d00cb30139f3f9a3e2e6e963f581baa",
+    "problems/f01_rmsnorm/meta.json": "e2b9376ca6d12936cc52daebff4515f5cf997680d2f872a48e899655757edf64",
+    "problems/f02_row_softmax/expected.npz": "7e38d188cdc0bbb7afda1e6007318b0174bcdf82eb3855775967e49d4b8ee8ce",
+    "problems/f02_row_softmax/k_softmax_05263d.ir.json": "4827adaccb6dbb0e2aa7ad426f28c94e14b4c9444e7410f2fa33f3b4185d73da",
+    "problems/f02_row_softmax/meta.json": "ed99aaee9077078426ccf9396d149b3c704886f4005c651490648d51202ecdd2",
+    "problems/f03_l2norm/expected.npz": "fb2e242cbfe9834c6d45f27f29acc750a5b4ea8ad6ab509baa7a5b4c53586380",
+    "problems/f03_l2norm/k_div_reduce.ir.json": "77a81af8de7eb9bcec026d540e9dbfcfa70aa7e228721b3faf0c52b3043a594e",
+    "problems/f03_l2norm/meta.json": "064b4df0e8807e13fbff2c1c864d302d6aca0e328119ab52d1ddd510b85cdcb3",
+    "problems/m01_matmul_512/expected.npz": "6396bececa75b2adee8c83bb0c090f9a68e7297d7de492f5a2f0cd3e67f24c36",
+    "problems/m01_matmul_512/k_matmul_2967be.ir.json": "7c16561164b9a9e280a756950cac999b6b6cd707d7a6d679bcfb1e68833bd425",
+    "problems/m01_matmul_512/meta.json": "813dbcd2202cde96cde7621007459bae2ec181564b3ca7be47f5f6fe43b77b5e",
+    "problems/m02_matmul_rect/expected.npz": "b0a5f6719c01fdc55054d983e7d75f880577e4741c63ae39c9fa704507e58134",
+    "problems/m02_matmul_rect/k_matmul.ir.json": "4e22568c61715d9921f59e0dc4b122b36264d7c197266dd31c3ad8d2585675ed",
+    "problems/m02_matmul_rect/meta.json": "c57b163eb0ae40439cadf1b6d57110bb20f6c148558b0b0e9e31c498b1c9fa24",
+    "problems/p00_scalar_add/expected.npz": "69e4a749183c5402f03c28a957cb1f523186d16f9b9974c75cd0ebbbfd925478",
+    "problems/p00_scalar_add/k_add_pointwise.ir.json": "9b0357857f0b6504ae700e117e3c59f7cb66d9357f394aa81490fc2aea811df8",
+    "problems/p00_scalar_add/meta.json": "e9ede16317b2f085eb6721d37ff9fefcb1ce86c2d8d837aff49a5f936b1affa1",
+    "problems/p01_vector_add/expected.npz": "1a72f87aa3afd4e84746d2c0bfcfde9d024f573ce863322f72d2c6b3bb133086",
+    "problems/p01_vector_add/k_add_pointwise.ir.json": "0061553f361d6ba3ec24b2e03dec7f3508e168b1244563869ae528eb5a0d61bb",
+    "problems/p01_vector_add/meta.json": "7817b03dfdbe5782b400ab01a11309320e640f0905aac1f3207f482013774e0f",
+    "problems/p02_scale_shift/expected.npz": "515539ace84b0cb38ab3e5e6ed20894b774ab428a86be180529d54fd8ad63dd6",
+    "problems/p02_scale_shift/k_add_pointwise.ir.json": "a39aa5f9e6c1909a336376d4249ecf3a640212c7bb36fba17d54b58e45a9bf9f",
+    "problems/p02_scale_shift/meta.json": "e0e609e5b425a4743f3a55ed11f178e63124caa5787bf9a6491d200f745e68be",
+    "problems/p03_relu_mul/expected.npz": "a0fc97901b28331b29bb5f01cf104944c3376c633dd4cce65d551ad61035e52f",
+    "problems/p03_relu_mul/k_mul_pointwise.ir.json": "57fc50895f5e9232b03a016e770816d45f55aa465e9c48d8fa74ae2543b84109",
+    "problems/p03_relu_mul/meta.json": "725dffee431bc62f94749bd143d3e14891f4a802689ade7a640759bfbf7a082f",
+    "problems/r01_array_sum/expected.npz": "899c8058da70456bc3714d71ffc2814dd9777e37d39be7379b359e452924cb5c",
+    "problems/r01_array_sum/k_sum_1_reduce.ir.json": "7b9e35a3be06fbc37fec7f5390277517233db0e19c7e161232d94d6a0885c87a",
+    "problems/r01_array_sum/meta.json": "9cb0497e75f9a4d167e351a0aca2cfa8435c8236ef741960189ab6e95a3c6e65",
+    "problems/r02_big_sum/expected.npz": "0109852644d0785b770fa38d996b063b156f01e8bfccb303ea0581e42696eec1",
+    "problems/r02_big_sum/k_sum_1_reduce.ir.json": "a0dad205917e6feb4f3ea1d0e7ad24d79f0d476c1f9230a497f5a92b6d9703b3",
+    "problems/r02_big_sum/meta.json": "345b53d6f3fbadef15193f9dbfd3071a399eb5813c71591da8328ebd374df0f7",
+    "problems/r03_mean/expected.npz": "9c53fd65aebbc9b6ca477653643273195149be2d93ab472a135883a0a128c5f7",
+    "problems/r03_mean/k_mean_ffcca3.ir.json": "44f768792a8dfe1ef667b55786696fd45af76841da2fd128294c516335ca798c",
+    "problems/r03_mean/meta.json": "9dbbff91bb831ecd5f9fa2b352303d3060d08a189725704d44067eab87c2c73f",
+    "problems/r04_row_sum/expected.npz": "cb724cbe21276b1438add7263e418f52c0eb90c4501954a245678dcc793c895d",
+    "problems/r04_row_sum/k_sum_1_reduce.ir.json": "6c87582da81ed3c247be2741b2f7a195da7ff0173b9d3035f21f904fbb4ab963",
+    "problems/r04_row_sum/meta.json": "3dcd801b62acffc043e8bebae51a8b3a37d80c15a6be577d6ff7837e202ba101"
+  },
+  "planned_problems": [
+    "a01_attention",
+    "a02_attention_128",
+    "f01_rmsnorm",
+    "f02_row_softmax",
+    "f03_l2norm",
+    "m01_matmul_512",
+    "m02_matmul_rect",
+    "p00_scalar_add",
+    "p01_vector_add",
+    "p02_scale_shift",
+    "p03_relu_mul",
+    "r01_array_sum",
+    "r02_big_sum",
+    "r03_mean",
+    "r04_row_sum"
+  ],
+  "rows": [
+    {
+      "problem": "a01_attention",
+      "command": [
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "submit.py",
+        "a01_attention",
+        "--compiler",
+        "compile.py"
+      ],
+      "returncode": 0,
+      "pass": true,
+      "stdout_sha256": "e800c764e1c790acbcc7bc314ebe93b383b801bc01102c4ee5e401e7dd3f6301",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "problem": "a02_attention_128",
+      "command": [
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "submit.py",
+        "a02_attention_128",
+        "--compiler",
+        "compile.py"
+      ],
+      "returncode": 0,
+      "pass": true,
+      "stdout_sha256": "ff98fbc01492aa01b97244d32d2f64ae41c226afe4650ab84c5c7e1a7f3dc8f9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "problem": "f01_rmsnorm",
+      "command": [
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "submit.py",
+        "f01_rmsnorm",
+        "--compiler",
+        "compile.py"
+      ],
+      "returncode": 0,
+      "pass": true,
+      "stdout_sha256": "0c7480c00d406bcd3bc6bd6bcee4578e6bb891e9366079fa3c3a47f312cbdfde",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "problem": "f02_row_softmax",
+      "command": [
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "submit.py",
+        "f02_row_softmax",
+        "--compiler",
+        "compile.py"
+      ],
+      "returncode": 1,
+      "pass": false,
+      "stdout_sha256": "ea1979a0a6c958643b71b77b832764ea6978d0b8e66ed4ecddc68b47d2c7e6fd",
+      "stderr_sha256": "d52f656c467b3305ad32e38b8b9caa0e29576bb03e2659bd8db82fe19641ce2c"
+    },
+    {
+      "problem": "f03_l2norm",
+      "command": [
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "submit.py",
+        "f03_l2norm",
+        "--compiler",
+        "compile.py"
+      ],
+      "returncode": 0,
+      "pass": true,
+      "stdout_sha256": "1d1ea3650ef533becdb4750a9697bd972231fe407eff23b9755761a1c6d70636",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "problem": "m01_matmul_512",
+      "command": [
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "submit.py",
+        "m01_matmul_512",
+        "--compiler",
+        "compile.py"
+      ],
+      "returncode": 0,
+      "pass": true,
+      "stdout_sha256": "fc16d2587c109850b66237499a1c370c032a49a7192ec794edd5c409610f1782",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "problem": "m02_matmul_rect",
+      "command": [
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "submit.py",
+        "m02_matmul_rect",
+        "--compiler",
+        "compile.py"
+      ],
+      "returncode": 0,
+      "pass": true,
+      "stdout_sha256": "81046d5177693ed7b207b7308857c8c57094cbe9bb57921acc9a6b0663aeb900",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "problem": "p00_scalar_add",
+      "command": [
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "submit.py",
+        "p00_scalar_add",
+        "--compiler",
+        "compile.py"
+      ],
+      "returncode": 0,
+      "pass": true,
+      "stdout_sha256": "238af6de5d63ccedb3d0dd2afee783d3dff9365073e9419d2350b8cdf23cac37",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "problem": "p01_vector_add",
+      "command": [
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "submit.py",
+        "p01_vector_add",
+        "--compiler",
+        "compile.py"
+      ],
+      "returncode": 0,
+      "pass": true,
+      "stdout_sha256": "d490f22e7094ce042e705ebb09b86e5ecbaa075018ff65a68189f072a71bc846",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "problem": "p02_scale_shift",
+      "command": [
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "submit.py",
+        "p02_scale_shift",
+        "--compiler",
+        "compile.py"
+      ],
+      "returncode": 0,
+      "pass": true,
+      "stdout_sha256": "b66d0d9dcf5a7f39d9e6a97a2e9c89e562439dd328d5007aa809be50e29cf9ef",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "problem": "p03_relu_mul",
+      "command": [
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "submit.py",
+        "p03_relu_mul",
+        "--compiler",
+        "compile.py"
+      ],
+      "returncode": 0,
+      "pass": true,
+      "stdout_sha256": "2ee41a8aa5c45b70cb9fc661a2bf497cce947289ff0181879865eb718de8a2b0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "problem": "r01_array_sum",
+      "command": [
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "submit.py",
+        "r01_array_sum",
+        "--compiler",
+        "compile.py"
+      ],
+      "returncode": 0,
+      "pass": true,
+      "stdout_sha256": "70dff01af6d1cd55e27eb25622356f9755a0d66652259224f4111635fdebba30",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "problem": "r02_big_sum",
+      "command": [
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "submit.py",
+        "r02_big_sum",
+        "--compiler",
+        "compile.py"
+      ],
+      "returncode": 0,
+      "pass": true,
+      "stdout_sha256": "e137fea774c69de1e10dd1aa020cb53b95021677069a9803fa2aabeb8c61c462",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "problem": "r03_mean",
+      "command": [
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "submit.py",
+        "r03_mean",
+        "--compiler",
+        "compile.py"
+      ],
+      "returncode": 0,
+      "pass": true,
+      "stdout_sha256": "8ca81239e03066e852de1e78bd1a074d3a5ab58796e21f9832e755dbd08f212e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "problem": "r04_row_sum",
+      "command": [
+        "C:\\Users\\priti\\anaconda3\\python.exe",
+        "submit.py",
+        "r04_row_sum",
+        "--compiler",
+        "compile.py"
+      ],
+      "returncode": 0,
+      "pass": true,
+      "stdout_sha256": "3f872c80f9a3c2bbcff605c64392f82d0148b3c799f72607fb16a6248614d927",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "source_and_input_sha256_after": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "f998d378fffff3f228fb9f90386542dd185dd1dfbe5a0a5b3dc559dc68bc46ca",
+    "ptx_tensor.py": "9046e52c80db822421398a5b8b8778e1c035194a8b35820d078013fde5b5b885",
+    "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84",
+    "submit.py": "252490272608876894f699af31a6ab3e77c6d5ab41faf57d046547e1601244f6",
+    "artifacts/validation/phase9/run_public.py": "06248eae6ca14770c86c37f800320e8e2b9146f346171e069e65ac6ef3cd91bc",
+    "problems/a01_attention/expected.npz": "ccc0ad1a70f679781c8aff8064ae73368e04bc35018a537dc15ef8610262ed51",
+    "problems/a01_attention/k_matmul_softmax_reduce_b55365.ir.json": "e1474ca91ac87c976c38ff130a24499e16d4052e1fac60f5fab806303c4bcdd6",
+    "problems/a01_attention/meta.json": "b8b003ae791859795a8073598f466c1a3b10382fe13ac14ea280794dc94b8e2b",
+    "problems/a02_attention_128/expected.npz": "ebd7c000d75e52707f2e65304e05fbf963b4799919f814f685490c76c89e7080",
+    "problems/a02_attention_128/k_matmul_softmax_reduce_6f0029.ir.json": "906a5eb477fd04a4669e8e0a30d055b73625689d0f93557707ec55320196734e",
+    "problems/a02_attention_128/meta.json": "bd05d4c39c0d5a98ceb1517d5c34ec227571b1e898e1bf4a7c71ea98566a5873",
+    "problems/f01_rmsnorm/expected.npz": "197016500cfca3ee3a1952273d50655e5bbf60093c28ad801e28eb3ccb76a6fb",
+    "problems/f01_rmsnorm/k_mean_cbd1de.ir.json": "b7598c4d7d0b7f198d6dc3cae7f6670b5d00cb30139f3f9a3e2e6e963f581baa",
+    "problems/f01_rmsnorm/meta.json": "e2b9376ca6d12936cc52daebff4515f5cf997680d2f872a48e899655757edf64",
+    "problems/f02_row_softmax/expected.npz": "7e38d188cdc0bbb7afda1e6007318b0174bcdf82eb3855775967e49d4b8ee8ce",
+    "problems/f02_row_softmax/k_softmax_05263d.ir.json": "4827adaccb6dbb0e2aa7ad426f28c94e14b4c9444e7410f2fa33f3b4185d73da",
+    "problems/f02_row_softmax/meta.json": "ed99aaee9077078426ccf9396d149b3c704886f4005c651490648d51202ecdd2",
+    "problems/f03_l2norm/expected.npz": "fb2e242cbfe9834c6d45f27f29acc750a5b4ea8ad6ab509baa7a5b4c53586380",
+    "problems/f03_l2norm/k_div_reduce.ir.json": "77a81af8de7eb9bcec026d540e9dbfcfa70aa7e228721b3faf0c52b3043a594e",
+    "problems/f03_l2norm/meta.json": "064b4df0e8807e13fbff2c1c864d302d6aca0e328119ab52d1ddd510b85cdcb3",
+    "problems/m01_matmul_512/expected.npz": "6396bececa75b2adee8c83bb0c090f9a68e7297d7de492f5a2f0cd3e67f24c36",
+    "problems/m01_matmul_512/k_matmul_2967be.ir.json": "7c16561164b9a9e280a756950cac999b6b6cd707d7a6d679bcfb1e68833bd425",
+    "problems/m01_matmul_512/meta.json": "813dbcd2202cde96cde7621007459bae2ec181564b3ca7be47f5f6fe43b77b5e",
+    "problems/m02_matmul_rect/expected.npz": "b0a5f6719c01fdc55054d983e7d75f880577e4741c63ae39c9fa704507e58134",
+    "problems/m02_matmul_rect/k_matmul.ir.json": "4e22568c61715d9921f59e0dc4b122b36264d7c197266dd31c3ad8d2585675ed",
+    "problems/m02_matmul_rect/meta.json": "c57b163eb0ae40439cadf1b6d57110bb20f6c148558b0b0e9e31c498b1c9fa24",
+    "problems/p00_scalar_add/expected.npz": "69e4a749183c5402f03c28a957cb1f523186d16f9b9974c75cd0ebbbfd925478",
+    "problems/p00_scalar_add/k_add_pointwise.ir.json": "9b0357857f0b6504ae700e117e3c59f7cb66d9357f394aa81490fc2aea811df8",
+    "problems/p00_scalar_add/meta.json": "e9ede16317b2f085eb6721d37ff9fefcb1ce86c2d8d837aff49a5f936b1affa1",
+    "problems/p01_vector_add/expected.npz": "1a72f87aa3afd4e84746d2c0bfcfde9d024f573ce863322f72d2c6b3bb133086",
+    "problems/p01_vector_add/k_add_pointwise.ir.json": "0061553f361d6ba3ec24b2e03dec7f3508e168b1244563869ae528eb5a0d61bb",
+    "problems/p01_vector_add/meta.json": "7817b03dfdbe5782b400ab01a11309320e640f0905aac1f3207f482013774e0f",
+    "problems/p02_scale_shift/expected.npz": "515539ace84b0cb38ab3e5e6ed20894b774ab428a86be180529d54fd8ad63dd6",
+    "problems/p02_scale_shift/k_add_pointwise.ir.json": "a39aa5f9e6c1909a336376d4249ecf3a640212c7bb36fba17d54b58e45a9bf9f",
+    "problems/p02_scale_shift/meta.json": "e0e609e5b425a4743f3a55ed11f178e63124caa5787bf9a6491d200f745e68be",
+    "problems/p03_relu_mul/expected.npz": "a0fc97901b28331b29bb5f01cf104944c3376c633dd4cce65d551ad61035e52f",
+    "problems/p03_relu_mul/k_mul_pointwise.ir.json": "57fc50895f5e9232b03a016e770816d45f55aa465e9c48d8fa74ae2543b84109",
+    "problems/p03_relu_mul/meta.json": "725dffee431bc62f94749bd143d3e14891f4a802689ade7a640759bfbf7a082f",
+    "problems/r01_array_sum/expected.npz": "899c8058da70456bc3714d71ffc2814dd9777e37d39be7379b359e452924cb5c",
+    "problems/r01_array_sum/k_sum_1_reduce.ir.json": "7b9e35a3be06fbc37fec7f5390277517233db0e19c7e161232d94d6a0885c87a",
+    "problems/r01_array_sum/meta.json": "9cb0497e75f9a4d167e351a0aca2cfa8435c8236ef741960189ab6e95a3c6e65",
+    "problems/r02_big_sum/expected.npz": "0109852644d0785b770fa38d996b063b156f01e8bfccb303ea0581e42696eec1",
+    "problems/r02_big_sum/k_sum_1_reduce.ir.json": "a0dad205917e6feb4f3ea1d0e7ad24d79f0d476c1f9230a497f5a92b6d9703b3",
+    "problems/r02_big_sum/meta.json": "345b53d6f3fbadef15193f9dbfd3071a399eb5813c71591da8328ebd374df0f7",
+    "problems/r03_mean/expected.npz": "9c53fd65aebbc9b6ca477653643273195149be2d93ab472a135883a0a128c5f7",
+    "problems/r03_mean/k_mean_ffcca3.ir.json": "44f768792a8dfe1ef667b55786696fd45af76841da2fd128294c516335ca798c",
+    "problems/r03_mean/meta.json": "9dbbff91bb831ecd5f9fa2b352303d3060d08a189725704d44067eab87c2c73f",
+    "problems/r04_row_sum/expected.npz": "cb724cbe21276b1438add7263e418f52c0eb90c4501954a245678dcc793c895d",
+    "problems/r04_row_sum/k_sum_1_reduce.ir.json": "6c87582da81ed3c247be2741b2f7a195da7ff0173b9d3035f21f904fbb4ab963",
+    "problems/r04_row_sum/meta.json": "3dcd801b62acffc043e8bebae51a8b3a37d80c15a6be577d6ff7837e202ba101"
+  },
+  "tracked_unchanged": true,
+  "passed_problems": 14,
+  "finished_utc": "2026-10-28T12:01:06.499991+00:00"
+}

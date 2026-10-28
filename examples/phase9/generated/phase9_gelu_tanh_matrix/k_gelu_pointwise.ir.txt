@@ -1,0 +1,16 @@
+    Tile[a0] (N=2603)
+        in4 = load x[(a0 // 137), (a0 % 137)]
+        f32 v0 = multiply(in4, in4)
+        f32 v1 = multiply(in4, v0)
+        in1 = load gelu_c1[0]
+        f32 v2 = multiply(in1, v1)
+        f32 v3 = add(in4, v2)
+        in0 = load gelu_c0[0]
+        f32 v4 = multiply(in0, v3)
+        in2 = load gelu_half[0]
+        f32 v5 = multiply(in2, in4)
+        f32 v6 = tanh(v4)
+        in3 = load gelu_one[0]
+        f32 v7 = add(in3, v6)
+        f32 v8 = multiply(v5, v7)
+        gelu[(a0 // 137), (a0 % 137)] = v8

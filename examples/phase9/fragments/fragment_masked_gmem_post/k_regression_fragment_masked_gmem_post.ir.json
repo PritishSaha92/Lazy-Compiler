@@ -1,0 +1,49 @@
+{
+  "inputs": [
+    "x"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            15,
+            10
+          ],
+          "dtype": "f32"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='lane', extent=Dim(32), window=None),), body=(Let(name='row_origin', value=Literal(value=2, dtype='int'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='col_origin', value=Literal(value=3, dtype='int'), dtype=DataType(name='i32', np=dtype('int32'), nbytes=4)), Let(name='scale', value=Literal(value=0.5, dtype='float'), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), FragmentApply(out='gathered', op=ElementwiseImpl('where'), args=(BinaryExpr(op='&&', left=BinaryExpr(op='<', left=Var(name='__frow'), right=Literal(value=15, dtype='int')), right=BinaryExpr(op='<', left=Var(name='__fcol'), right=Literal(value=10, dtype='int'))), ('x', (Var(name='__frow'), Var(name='__fcol'))), Literal(value=-5.0, dtype='float')), kinds=('coord', 'gmem', 'uniform'), in_place=False, layout=FragLayout(n_elems=4, elem_row=(0, 0, 1, 1), reduce_xors=(2, 1), lane_decl='const int _g = (threadIdx.x & 31) >> 2, _t = (threadIdx.x & 31) & 3;', lane_names=('_g', '_t'), row_off=(Var(name='_g'), BinaryExpr(op='+', left=Var(name='_g'), right=Literal(value=8, dtype='int'))), col_off=(BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=0, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=1, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=0, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=1, dtype='int')))), post=(ElementwiseImpl('abs'),), row_base=Var(name='row_origin'), col_base=Var(name='col_origin')), FragmentApply(out='gathered', op=ElementwiseImpl('multiply'), args=('gathered', 'scale'), kinds=('frag', 'uniform'), in_place=True, layout=FragLayout(n_elems=4, elem_row=(0, 0, 1, 1), reduce_xors=(2, 1), lane_decl='const int _g = (threadIdx.x & 31) >> 2, _t = (threadIdx.x & 31) & 3;', lane_names=('_g', '_t'), row_off=(Var(name='_g'), BinaryExpr(op='+', left=Var(name='_g'), right=Literal(value=8, dtype='int'))), col_off=(BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=0, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=1, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=0, dtype='int')), BinaryExpr(op='+', left=BinaryExpr(op='*', left=Var(name='_t'), right=Literal(value=2, dtype='int')), right=Literal(value=1, dtype='int')))), post=(), row_base=None, col_base=None), RegStore(dst_buffer='out', dst_index=(Literal(value=0, dtype='int'), Literal(value=0, dtype='int')), frag='gathered', shape=(16, 8, 16), ldm=0, epilogue=None, extra_frags=(), m_guard=None, n_guard=None, atomic=False, fragment_layout='m16n8k16', volta_interleaved=False, fragment_index=(0, 0), swizzle='NONE', row_dim=None, col_dim=None)), block_threads=None, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_fragment_masked_gmem_post",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            16,
+            8
+          ],
+          "dtype": "f32"
+        }
+      ]
+    }
+  }
+}

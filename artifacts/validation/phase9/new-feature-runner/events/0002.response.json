@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "cubin_id": "c8b861b0cb5f58a4bac0a898c8c15d2c64cae0662f044ed6cb263f332b16e4f6",
+  "bytes": 13032,
+  "arch": "sm_120",
+  "flags": [],
+  "entry_points": [
+    "k_regression_fragment_family_row_softmax"
+  ],
+  "registers": {
+    "k_regression_fragment_family_row_softmax": 36
+  }
+}

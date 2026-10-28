@@ -1,0 +1,1 @@
+[k_softmax_05263d] 21 registers

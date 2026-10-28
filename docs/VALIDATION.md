@@ -5,7 +5,41 @@ interface. Assembly success, numerical correctness, and timing are separate
 results. Tests never replace the submitted translation with Emmy's renderer,
 nvcc, LLVM, Triton, or a reference CUDA file.
 
-## Current phase-8 revision
+## Current phase-9 revision
+
+See [PHASE9.md](PHASE9.md) and the [release summary](../artifacts/validation/phase9/release-summary.json).
+The current source passed **15/15 public and 67/67 typed feature packages**,
+82 distinct packages in total. CPU/assembler discovery passed **129 of 148
+methods**, with 19 explicit local-GPU skips and unchanged source fingerprints.
+The feature report's offline audit verified 67 actual CLI outputs and 134 HTTP
+exchanges. The public run initially completed 14 cases; a connection reset
+prevented output on row softmax, and its unchanged-source retry passed.
+
+The first new-feature run executed and passed eight GELU and six fragment
+packages. Two additional requests were rejected with HTTP 422 before execution
+due to nested input lists. Original data and requests remain preserved. Flattening
+transport lists did not alter values, IR, expected arrays or tolerances; the
+fresh 67-package gate then executed both successfully.
+
+The baseline and final eight-package generated-composition experiments each
+passed **21/24 mathematical checks**. The same three FP16 erf-GELU checks failed
+the original tolerance; all 5,439 affected final-run values match an independent
+[typed-stage half oracle](../artifacts/validation/phase9/numerics/half-gelu-stage-final.json)
+exactly. These are retained precision-contract conflicts, not passed
+mathematical comparisons. Final source fingerprints stayed unchanged. Direct-op
+tests and generated compositions are distinct: Emmy decomposes the latter into
+simpler arithmetic. The release summary explicitly records that not all numerical
+references pass.
+
+The [final composition integrity audit](../artifacts/validation/phase9/compositions-final/integrity-audit.json)
+replays the retained evidence; it does not turn the three mathematical failures
+into successes or add new GPU executions.
+
+No new timing advantage is claimed. The phase-8 launch-bound measurements and
+earlier validation results below remain historical evidence with their original
+source hashes.
+
+## Historical phase-8 revision
 
 The [phase-8 report](PHASE8.md) covers prescribed launch bounds, signed integer
 loop bindings, floating floor remainder and the exact integer output oracle.
@@ -13,7 +47,7 @@ A fresh run through the unchanged organizer `submit.py` passed **15/15 public
 problems**. The final additional runner gate passed **51/51 packages**:
 41 retained, six loop-binding and four remainder. CPU/assembler discovery passed
 **120 methods**, with 19 local-GPU skips out of 139 discovered methods and no
-failures or errors. The [current release summary](../artifacts/validation/phase8/release-summary.json)
+failures or errors. The [phase-8 release summary](../artifacts/validation/phase8/release-summary.json)
 records source hashes, these completed gates, raw-response replay and checkout
 verification. No local GPU was used for this revision.
 
@@ -414,16 +448,17 @@ current source's totals.
 
 ## Reproduce the checks
 
-Start with the current [phase-8 gate](PHASE8.md) and source-checkout verification:
+Start with the current [phase-9 status](PHASE9.md) and source-checkout verification:
 
 ```console
-python tools/check_checkout.py
-python tools/run_regressions.py --report artifacts/validation/checkout-current/cpu-regressions.json
+python tools/check_checkout.py --report artifacts/validation/phase9/checkout/my-verification.json
+python tools/run_regressions.py --report artifacts/validation/phase9/checkout/my-cpu-regressions.json
 ```
 
-The first command defaults to
-`artifacts/validation/checkout-current/verification.json`; use a fresh `--report`
-path for repeated checks. These commands do not contact the organizers' runner.
+The release's [checkout report](../artifacts/validation/phase9/checkout/verification.json)
+uses the name `verification.json`. The commands above use fresh reviewer names;
+use another `--report` path for repeated checks. These commands do not contact
+the organizers' runner.
 
 The broader historical corpus can be checked separately with the following
 commands. They use retained generated packages, require unused report

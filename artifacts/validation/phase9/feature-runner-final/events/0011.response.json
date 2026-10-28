@@ -1,0 +1,38 @@
+{
+  "ok": true,
+  "entry": "k_regression_strided_unsigned_start_negative_end",
+  "grid": [
+    1,
+    1,
+    1
+  ],
+  "block": [
+    32,
+    1,
+    1
+  ],
+  "smem_bytes": 0,
+  "median_us": 19.968,
+  "iters": 1,
+  "outputs": {
+    "out": {
+      "shape": [
+        4,
+        2
+      ],
+      "dtype": "i32",
+      "sum": 0.0,
+      "values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "truncated": false
+    }
+  }
+}

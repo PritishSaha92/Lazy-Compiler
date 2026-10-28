@@ -1,0 +1,51 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_tensor_shared_b128",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "a",
+        "dtype": "f32",
+        "shape": [
+          16,
+          16
+        ],
+        "seed": 0
+      },
+      {
+        "name": "b",
+        "dtype": "f32",
+        "shape": [
+          16,
+          8
+        ],
+        "seed": 1
+      },
+      {
+        "name": "out",
+        "dtype": "f32",
+        "shape": [
+          16,
+          8
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "92558e8662a78eff29cfcd287c6eea88b6383107819c134aa92207e861985072"
+  }
+}

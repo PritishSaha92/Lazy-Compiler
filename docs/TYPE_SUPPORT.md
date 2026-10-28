@@ -47,8 +47,9 @@ IR's C rendering; the backend retains its tested C/ PTX truncation rule. Named
 
 The historical [phase-7 release](PHASE7.md) added mixed-integer inference and shift
 counterexamples, including explicit-dtype controls and matching constant/runtime
-results. The current [phase-8 report](PHASE8.md) covers loop bindings, floating
-remainder and exact integer output checks. Results remain tied to their own
+results. The [phase-8 report](PHASE8.md) covers loop bindings, floating
+remainder and exact integer output checks. The current [phase-9 report](PHASE9.md)
+adds direct GELU and bounded fragment algebra. Results remain tied to their own
 source revisions.
 
 ## Operation families
@@ -64,7 +65,7 @@ Aliases (`sum`, `prod`, `sub`, `mul`, `neg`, `true_divide`, `amax`, `max`, `min`
 | `bitwise_and`, `bitwise_or`, `bitwise_not` | Integers and predicates; the historical FP32 logical-mask spelling remains supported |
 | `bitwise_xor`, `left_shift`, `right_shift`, `bitwise_count` | Integers; population count counts the absolute value for signed inputs |
 | `fma`, `sqrt`, `rsqrt`, `floor`, `ceil`, `trunc`, `rint` | Floating types |
-| `exp`, `exp2`, `log`, `log2`, `log10`, `sin`, `cos`, `tanh`, `erf`, `sigmoid`, `silu`, `power` | FP32 and narrow floating results through the existing FP32 composite implementation |
+| `exp`, `exp2`, `log`, `log2`, `log10`, `sin`, `cos`, `tanh`, `erf`, `sigmoid`, `silu`, `gelu`, `gelu_tanh`, `power` | FP32 and narrow floating results through the existing FP32 composite implementation |
 | `bitcast` | Equal-width non-predicate numeric or raw-bit types; 8/16-bit integer and floating register-width differences are handled explicitly |
 | Atomic add | FP32, FP64, signed/unsigned 32-bit and unsigned 64-bit; other types are rejected |
 
@@ -105,6 +106,27 @@ exp2; it has no universal correctly rounded or strict relative-error guarantee.
 Sigmoid and SiLU retain the pinned IR's `1/(1+exp(-x))` and `x/(1+exp(-x))`
 formulas, including possible intermediate overflow in negative tails. A stable
 mathematical rearrangement is not claimed to have identical FP32 evaluation.
+
+## GELU and fragment boundaries
+
+Direct `gelu` and `gelu_tanh` follow the separate definitions in pinned Emmy
+0.3.11 `elementwise.py:61-62`. They compute the full composite in FP32 and round
+once for an F16/BF16 result; F64 is rejected. Existing `erf`/`tanh` approximation
+limits still apply. [Direct-operation tests](../tests/test_gelu.py) separately
+check numeric results and exact exceptional classifications through I32 transport.
+
+A generated sequence of F16 `Assign` nodes has a different contract: every node
+rounds to F16. The retained generated erf-GELU case fails its original full-formula
+reference on three input sets even though all 5,439 GPU values exactly match the
+declared stages. [PHASE9.md](PHASE9.md) records this conflict without weakening
+the tolerance or eliminating intermediate rounding.
+
+Fragment algebra is restricted to the M16N8 FP32 C layout. It retains explicit
+FP32 conversions for named UNIFORM and GMEM operands. F64 results in ROW,
+UNIFORM expressions or numeric COORD operands are rejected because they could
+promote a whole expression before the final fragment assignment. A predicate
+already computed from wider operands remains a predicate. The
+[fragment tests](../tests/test_fragment_rows.py) exercise these diagnostics.
 
 ## BF16 conversion boundary
 
@@ -161,6 +183,6 @@ The historical type-admission comparison in `build/type-capabilities/` retains
 its pre-change sources and public PTX hashes. It does not assert that the current
 phase-8 PTX is identical: launch-bound directives now change module text.
 Assembly is evidence of instruction legality, not GPU numerical execution.
-Current organizer-run results belong to [PHASE8.md](PHASE8.md) and its source-bound
-release report. Exact integer output checks have a separate
+Current organizer-run status is recorded in [PHASE9.md](PHASE9.md); prior
+release reports remain tied to their own sources. Exact integer output checks have a separate
 [oracle regression suite](../tests/test_integer_oracle.py).

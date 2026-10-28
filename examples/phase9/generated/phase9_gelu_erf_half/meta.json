@@ -1,0 +1,88 @@
+{
+ "id": "phase9_gelu_erf_half",
+ "code": "x=torch.randn(7,259,dtype=torch.float16); torch.nn.functional.gelu(x)",
+ "rtol": 0.002,
+ "atol": 0.0002,
+ "graph_inputs": [
+  "x"
+ ],
+ "graph_outputs": [
+  "gelu"
+ ],
+ "kernels": [
+  {
+   "node": "gelu",
+   "entry": "k_gelu_pointwise",
+   "arg_order": [
+    "gelu_inv_sqrt2",
+    "gelu_one",
+    "gelu_half",
+    "x",
+    "gelu"
+   ],
+   "grid": [
+    8,
+    1,
+    1
+   ],
+   "block": [
+    256,
+    1,
+    1
+   ],
+   "smem_bytes": 0,
+   "zero_outputs": [],
+   "args": [
+    {
+     "name": "gelu_inv_sqrt2",
+     "dtype": "f16",
+     "shape": [
+      1
+     ],
+     "data": [
+      0.7071067811865475
+     ]
+    },
+    {
+     "name": "gelu_one",
+     "dtype": "f16",
+     "shape": [
+      1
+     ],
+     "data": [
+      1.0
+     ]
+    },
+    {
+     "name": "gelu_half",
+     "dtype": "f16",
+     "shape": [
+      1
+     ],
+     "data": [
+      0.5
+     ]
+    },
+    {
+     "name": "x",
+     "dtype": "f16",
+     "shape": [
+      7,
+      259
+     ],
+     "seed": 0
+    },
+    {
+     "name": "gelu",
+     "dtype": "f16",
+     "shape": [
+      7,
+      259
+     ],
+     "output": true
+    }
+   ],
+   "final": true
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "cubin_id": "a02ae488f8ba164d160f65b5a4d118e1851523779e85a56a37bf948d5f42b979",
+  "bytes": 7296,
+  "arch": "sm_120",
+  "flags": [],
+  "entry_points": [
+    "k_regression_fragment_row_maximum_ordered"
+  ],
+  "registers": {
+    "k_regression_fragment_row_maximum_ordered": 28
+  }
+}

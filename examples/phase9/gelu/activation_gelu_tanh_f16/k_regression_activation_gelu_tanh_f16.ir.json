@@ -1,0 +1,48 @@
+{
+  "inputs": [
+    "x"
+  ],
+  "outputs": [
+    "out"
+  ],
+  "nodes": {
+    "x": {
+      "op": "InputOp",
+      "op_fields": {},
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "x",
+          "shape": [
+            273
+          ],
+          "dtype": "f32"
+        }
+      ]
+    },
+    "out": {
+      "op": "KernelOp",
+      "op_fields": {
+        "body": [
+          "Tile(axes=(Axis(name='i', extent=Dim(273), window=None),), body=(Load(names=('input_value',), input='x', index=(Var(name='i'),), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Let(name='typed_value', value=Var(name='input_value'), dtype=DataType(name='f16', np=dtype('float16'), nbytes=2)), Assign(name='assigned', op=ElementwiseImpl('gelu_tanh'), args=('typed_value',), dtype=DataType(name='f16', np=dtype('float16'), nbytes=2)), Let(name='called', value=FuncCallExpr(name='gelu_tanh', args=(Var(name='typed_value'),)), dtype=DataType(name='f16', np=dtype('float16'), nbytes=2)), Let(name='assigned_f32', value=Var(name='assigned'), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Let(name='called_f32', value=Var(name='called'), dtype=DataType(name='f32', np=dtype('float32'), nbytes=4)), Write(output='out', index=(Var(name='i'), Literal(value=0, dtype='int')), values=('assigned_f32',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE'), Write(output='out', index=(Var(name='i'), Literal(value=1, dtype='int')), values=('called_f32',), value_dtype=DataType(name='f32', np=dtype('float32'), nbytes=4), atomic=False, swizzle='NONE')), block_threads=None, aux_threads=0, raster_axes=None, raster_group=None, raster_orient='m')"
+        ],
+        "name": "k_regression_activation_gelu_tanh_f16",
+        "zero_delegated": [],
+        "serial": []
+      },
+      "inputs": [
+        "x"
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "shape": [
+            273,
+            2
+          ],
+          "dtype": "f32"
+        }
+      ]
+    }
+  }
+}

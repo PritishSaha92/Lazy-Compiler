@@ -1,0 +1,64 @@
+{
+  "id": "fragment_mma_row_normalization",
+  "graph_inputs": [
+    "a",
+    "b"
+  ],
+  "graph_outputs": [
+    "out"
+  ],
+  "rtol": 5e-05,
+  "atol": 2e-06,
+  "kernels": [
+    {
+      "entry": "k_regression_fragment_mma_row_normalization",
+      "grid": [
+        1,
+        1,
+        1
+      ],
+      "block": [
+        32,
+        1,
+        1
+      ],
+      "smem_bytes": 0,
+      "zero_outputs": [],
+      "arg_order": [
+        "a",
+        "b",
+        "out"
+      ],
+      "args": [
+        {
+          "name": "a",
+          "dtype": "f32",
+          "shape": [
+            16,
+            16
+          ],
+          "seed": 0
+        },
+        {
+          "name": "b",
+          "dtype": "f32",
+          "shape": [
+            16,
+            8
+          ],
+          "seed": 1
+        },
+        {
+          "name": "out",
+          "dtype": "f32",
+          "shape": [
+            16,
+            8
+          ],
+          "output": true
+        }
+      ],
+      "final": true
+    }
+  ]
+}

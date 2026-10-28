@@ -1,0 +1,19 @@
+{
+  "started": "2026-10-28T12:05:39.241969+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "cubin_id": "452cc509380e4d712bb2bf50c90029e615f90741aaa99b940a9e38c164d4ef15",
+    "bytes": 19696,
+    "arch": "sm_120",
+    "flags": [],
+    "entry_points": [
+      "k_matmul_softmax_reduce_88d497"
+    ],
+    "registers": {
+      "k_matmul_softmax_reduce_88d497": 48
+    }
+  },
+  "finished": "2026-10-28T12:05:39.998226+00:00",
+  "seconds": 0.7562929000123404
+}

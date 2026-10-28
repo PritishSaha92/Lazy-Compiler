@@ -1,0 +1,42 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_bulk_phase_reuse",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      64,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "x",
+        "dtype": "f32",
+        "shape": [
+          4,
+          64
+        ],
+        "seed": 0
+      },
+      {
+        "name": "out",
+        "dtype": "f32",
+        "shape": [
+          4,
+          64
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "c1aaa07a8d948a9c0250aabb97dffecc55b7f8c5e63457afc75f26bfbb842011"
+  }
+}

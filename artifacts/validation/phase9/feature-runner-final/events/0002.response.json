@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "cubin_id": "af68b624cb498426caa79d96d75d37a19e93937b074294487133bb35607cf99d",
+  "bytes": 6480,
+  "arch": "sm_120",
+  "flags": [],
+  "entry_points": [
+    "k_regression_strided_f64_end_snapshot"
+  ],
+  "registers": {
+    "k_regression_strided_f64_end_snapshot": 16
+  }
+}

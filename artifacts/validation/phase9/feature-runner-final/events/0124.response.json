@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "cubin_id": "434cde491eb86065a4684bfd971ce3f125254069d4c80116b760be1f2cc79f6b",
+  "bytes": 13480,
+  "arch": "sm_120",
+  "flags": [],
+  "entry_points": [
+    "k_regression_activation_gelu_special"
+  ],
+  "registers": {
+    "k_regression_activation_gelu_special": 30
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_stamped_integer_policy_controls",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "out",
+        "dtype": "i64",
+        "shape": [
+          4
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "a41dc56360fcee0c3c6c669f6fd29cdbdec57d077c4d85e828946bfbb722701f"
+  }
+}

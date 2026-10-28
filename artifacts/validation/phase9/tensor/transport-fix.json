@@ -1,0 +1,30 @@
+{
+  "pass_": true,
+  "gpu_executed": false,
+  "rows": [
+    {
+      "case": "fragment_attention_tile_f16",
+      "only_metadata_flattened": true,
+      "input_scalars": 640,
+      "initial_meta_sha256": "9e78732ffc0924b2be0b257d4f212b0a5c482a8fa45a95c0c75744aa79e18abc",
+      "current_meta_sha256": "788d37272ecea93a4baca251004e080a3019a8950eb7fce74cb183f2cf21281b",
+      "unchanged_files_sha256": {
+        "expected.npz": "1a3159fb609556d94e0ff1c91d91c56fe5af43877b05fba29608950d31fd47bc",
+        "k_regression_fragment_attention_tile_f16.ir.json": "d15009f80583cf14c962014af27f8f95521cd506ec155ba3b31510f32aaeeaad"
+      }
+    },
+    {
+      "case": "fragment_row_add_ordered",
+      "only_metadata_flattened": true,
+      "input_scalars": 256,
+      "initial_meta_sha256": "29c8c931abdfffd71c8c1683801ec0fdefb9b50158127478f18b8ffc1c77a0c8",
+      "current_meta_sha256": "28f19fc5a0a6a0a189969c60690cc9f41e489124c597864ff0f619e7a24aed3f",
+      "unchanged_files_sha256": {
+        "expected.npz": "e1ff3df4e4e06dcac79dd2a4dc111a9bcf4810ebe3b1501d205905bf5743bb07",
+        "k_regression_fragment_row_add_ordered.ir.json": "6357446775ab4604ee4356dd1249bbb05bba9b0ddca29626bd4a9e5163c07685"
+      }
+    }
+  ],
+  "test_sha256": "b7a123491dc3d509de47aad4236d88a9ede12f5423537f6327f4c1f90260a6ed",
+  "tensor_runtime_sha256": "9046e52c80db822421398a5b8b8778e1c035194a8b35820d078013fde5b5b885"
+}

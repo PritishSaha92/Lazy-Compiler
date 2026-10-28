@@ -1,0 +1,1858 @@
+{
+  "schema": "emmy-phase9-composition-wire-audit-v1",
+  "scope": "Offline raw HTTP/ABI/typed-output replay and own CLI byte reproduction; no network, assembly or GPU",
+  "oracle_scope": "Replays frozen own expression references; this is an evidence audit, not an independent mathematical oracle",
+  "audited_utc": "2026-10-28T12:08:42.260371+00:00",
+  "integrity_pass": true,
+  "numerical_gate_pass": false,
+  "auditor_sha256": "4cbaa675945ba2704906a0cf418bb16b164e228ea81af3193503f0d06f5768d9",
+  "jobs": [
+    {
+      "id": "phase9_gelu_erf_tail",
+      "seed": 0,
+      "pattern": "normal",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": true,
+          "elements": 4099,
+          "mismatches": 0,
+          "max_abs_error": 2.430751919746399e-07
+        }
+      ],
+      "rtol": 2e-05,
+      "atol": 2e-06,
+      "inputs": [
+        {
+          "name": "gelu_inv_sqrt2",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "723c8fdc213c6caa05324e5d35fed7b7ba12565f07d26abf773735a424004953"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "d99e58435243d9fef9c88273b8d553b4fba4d0baf8009d29eae74fa99e0d9f57"
+        },
+        {
+          "name": "x",
+          "dtype": "float32",
+          "shape": [
+            4099
+          ],
+          "bytes_sha256": "370cba60a25f7472828b7d33db9d2941059f059de5ceeb3a1cc959b6f2b3adba"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float32",
+          "shape": [
+            4099
+          ],
+          "bytes_sha256": "15e55b495916cf797ab7f0a284986f45de95954387a223626d6cf7ffc6de9376"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "7d12f9dd74b7fd6ac2a2fc4136cb8d08b7a58d4a546d27994d0d3c90a74163d1"
+    },
+    {
+      "id": "phase9_gelu_erf_tail",
+      "seed": 17,
+      "pattern": "normal",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": true,
+          "elements": 4099,
+          "mismatches": 0,
+          "max_abs_error": 2.568121999502182e-07
+        }
+      ],
+      "rtol": 2e-05,
+      "atol": 2e-06,
+      "inputs": [
+        {
+          "name": "gelu_inv_sqrt2",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "723c8fdc213c6caa05324e5d35fed7b7ba12565f07d26abf773735a424004953"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "d99e58435243d9fef9c88273b8d553b4fba4d0baf8009d29eae74fa99e0d9f57"
+        },
+        {
+          "name": "x",
+          "dtype": "float32",
+          "shape": [
+            4099
+          ],
+          "bytes_sha256": "e75b1c9aaba70a3231fb4897dc7a02d247a832a70cceb2bac78348d6d864fd87"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float32",
+          "shape": [
+            4099
+          ],
+          "bytes_sha256": "0dbfe92e0e81905bf650bd2767c4756ff0975a826ccc4977a8581233439292df"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "7d12f9dd74b7fd6ac2a2fc4136cb8d08b7a58d4a546d27994d0d3c90a74163d1"
+    },
+    {
+      "id": "phase9_gelu_erf_tail",
+      "seed": 101,
+      "pattern": "wide",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": true,
+          "elements": 4099,
+          "mismatches": 0,
+          "max_abs_error": 4.76837158203125e-07
+        }
+      ],
+      "rtol": 2e-05,
+      "atol": 2e-06,
+      "inputs": [
+        {
+          "name": "gelu_inv_sqrt2",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "723c8fdc213c6caa05324e5d35fed7b7ba12565f07d26abf773735a424004953"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "d99e58435243d9fef9c88273b8d553b4fba4d0baf8009d29eae74fa99e0d9f57"
+        },
+        {
+          "name": "x",
+          "dtype": "float32",
+          "shape": [
+            4099
+          ],
+          "bytes_sha256": "4ec66a7036482eda7713faeb7ff15b8fea53a0901e231ed742950e75f3389bee"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float32",
+          "shape": [
+            4099
+          ],
+          "bytes_sha256": "1e2e340bc273c04942dc4f92654e88a34bea9fb5ee65b8add6dea70e1c63078e"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "7d12f9dd74b7fd6ac2a2fc4136cb8d08b7a58d4a546d27994d0d3c90a74163d1"
+    },
+    {
+      "id": "phase9_gelu_tanh_matrix",
+      "seed": 0,
+      "pattern": "normal",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": true,
+          "elements": 2603,
+          "mismatches": 0,
+          "max_abs_error": 2.384185791015625e-07
+        }
+      ],
+      "rtol": 2e-05,
+      "atol": 2e-06,
+      "inputs": [
+        {
+          "name": "gelu_c1",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "ac360a3243369e56d750bc267781e455e3f11dc14b900b0a6e639eda5ce1b4df"
+        },
+        {
+          "name": "gelu_c0",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "98af61c2c491a44f933b8033bcda447df60cb86c512ee182a77116f2e6eb13be"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "d99e58435243d9fef9c88273b8d553b4fba4d0baf8009d29eae74fa99e0d9f57"
+        },
+        {
+          "name": "x",
+          "dtype": "float32",
+          "shape": [
+            19,
+            137
+          ],
+          "bytes_sha256": "368cfca696e82fa2fae18560d0a808407810cd6a4f06fd27c8ee28f682c9f2b3"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float32",
+          "shape": [
+            19,
+            137
+          ],
+          "bytes_sha256": "eece04db6d944b0d18ca079948e65023654e2398e2951b9886a61ec5e5c1a5fe"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "3f10db0a60e899b47014583b4dec8f487637c66f1e326bd6db6d182454710d23"
+    },
+    {
+      "id": "phase9_gelu_tanh_matrix",
+      "seed": 17,
+      "pattern": "normal",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": true,
+          "elements": 2603,
+          "mismatches": 0,
+          "max_abs_error": 2.384185791015625e-07
+        }
+      ],
+      "rtol": 2e-05,
+      "atol": 2e-06,
+      "inputs": [
+        {
+          "name": "gelu_c1",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "ac360a3243369e56d750bc267781e455e3f11dc14b900b0a6e639eda5ce1b4df"
+        },
+        {
+          "name": "gelu_c0",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "98af61c2c491a44f933b8033bcda447df60cb86c512ee182a77116f2e6eb13be"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "d99e58435243d9fef9c88273b8d553b4fba4d0baf8009d29eae74fa99e0d9f57"
+        },
+        {
+          "name": "x",
+          "dtype": "float32",
+          "shape": [
+            19,
+            137
+          ],
+          "bytes_sha256": "5db1c1244f2c635ab821d77b87211b038ea4bcd9853ff6618fc3afe508cd2d6f"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float32",
+          "shape": [
+            19,
+            137
+          ],
+          "bytes_sha256": "a6d05ac21f987bd45afface0eae8b2c9591ffc3549634b42db09e0411c39f7e7"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "3f10db0a60e899b47014583b4dec8f487637c66f1e326bd6db6d182454710d23"
+    },
+    {
+      "id": "phase9_gelu_tanh_matrix",
+      "seed": 101,
+      "pattern": "wide",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": true,
+          "elements": 2603,
+          "mismatches": 0,
+          "max_abs_error": 4.76837158203125e-07
+        }
+      ],
+      "rtol": 2e-05,
+      "atol": 2e-06,
+      "inputs": [
+        {
+          "name": "gelu_c1",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "ac360a3243369e56d750bc267781e455e3f11dc14b900b0a6e639eda5ce1b4df"
+        },
+        {
+          "name": "gelu_c0",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "98af61c2c491a44f933b8033bcda447df60cb86c512ee182a77116f2e6eb13be"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "d99e58435243d9fef9c88273b8d553b4fba4d0baf8009d29eae74fa99e0d9f57"
+        },
+        {
+          "name": "x",
+          "dtype": "float32",
+          "shape": [
+            19,
+            137
+          ],
+          "bytes_sha256": "7776a000cf064d90a82c3a488f9158a1fd666714c84cdae939bba1ad8c0e2aa9"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float32",
+          "shape": [
+            19,
+            137
+          ],
+          "bytes_sha256": "a7866c23e1a68f607069012dfb11a0ecee20fa35c4266df49e84e44f5073a1a5"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "3f10db0a60e899b47014583b4dec8f487637c66f1e326bd6db6d182454710d23"
+    },
+    {
+      "id": "phase9_gelu_erf_half",
+      "seed": 0,
+      "pattern": "normal",
+      "numerical_pass": false,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": false,
+          "elements": 1813,
+          "mismatches": 9,
+          "max_abs_error": 0.001953125,
+          "first_failure": {
+            "index": [
+              0,
+              69
+            ],
+            "actual": -0.0306549072265625,
+            "expected": -0.0303802490234375
+          }
+        }
+      ],
+      "rtol": 0.002,
+      "atol": 0.0002,
+      "inputs": [
+        {
+          "name": "gelu_inv_sqrt2",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "7c312d4b0fb6fbb2206a70ddd71fdb7b1d62f5359c21cdf68179fc60e12ce497"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "505114fe537172ea35e17ca1a7516edac516a89b31f983f7c6387d5d2bb462aa"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "195f58bc6d6b7b36335c95e08343825a7ae6f30437b4a7e6fa7b89d76907570a"
+        },
+        {
+          "name": "x",
+          "dtype": "float16",
+          "shape": [
+            7,
+            259
+          ],
+          "bytes_sha256": "6afb35ddaa52d36be57dd85f88218e78e28ea2c8730e9b6c1589de5e4caf7075"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float16",
+          "shape": [
+            7,
+            259
+          ],
+          "bytes_sha256": "6fc995f04e54fde00d4b2f941ad78eb23e683025e40326acec157251aa112706"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "6ef970e6d81477cb7744dd4923c8dfda7ffa0a534940c7a15ae827f833200bbe"
+    },
+    {
+      "id": "phase9_gelu_erf_half",
+      "seed": 17,
+      "pattern": "normal",
+      "numerical_pass": false,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": false,
+          "elements": 1813,
+          "mismatches": 8,
+          "max_abs_error": 0.001953125,
+          "first_failure": {
+            "index": [
+              0,
+              41
+            ],
+            "actual": -0.0184326171875,
+            "expected": -0.0181121826171875
+          }
+        }
+      ],
+      "rtol": 0.002,
+      "atol": 0.0002,
+      "inputs": [
+        {
+          "name": "gelu_inv_sqrt2",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "7c312d4b0fb6fbb2206a70ddd71fdb7b1d62f5359c21cdf68179fc60e12ce497"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "505114fe537172ea35e17ca1a7516edac516a89b31f983f7c6387d5d2bb462aa"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "195f58bc6d6b7b36335c95e08343825a7ae6f30437b4a7e6fa7b89d76907570a"
+        },
+        {
+          "name": "x",
+          "dtype": "float16",
+          "shape": [
+            7,
+            259
+          ],
+          "bytes_sha256": "730fb0d049f1302e46afbaeb622c9d09fba5860de9f23eb718e5a57ada4514ea"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float16",
+          "shape": [
+            7,
+            259
+          ],
+          "bytes_sha256": "084c9f4e222ed7cb8ccdabcdc6e4e517a49f672bceb3161d0aa1dab8f06ed9fd"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "6ef970e6d81477cb7744dd4923c8dfda7ffa0a534940c7a15ae827f833200bbe"
+    },
+    {
+      "id": "phase9_gelu_erf_half",
+      "seed": 101,
+      "pattern": "wide",
+      "numerical_pass": false,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": false,
+          "elements": 1813,
+          "mismatches": 62,
+          "max_abs_error": 0.001953125,
+          "first_failure": {
+            "index": [
+              0,
+              18
+            ],
+            "actual": -0.008636474609375,
+            "expected": -0.0088653564453125
+          }
+        }
+      ],
+      "rtol": 0.002,
+      "atol": 0.0002,
+      "inputs": [
+        {
+          "name": "gelu_inv_sqrt2",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "7c312d4b0fb6fbb2206a70ddd71fdb7b1d62f5359c21cdf68179fc60e12ce497"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "505114fe537172ea35e17ca1a7516edac516a89b31f983f7c6387d5d2bb462aa"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "195f58bc6d6b7b36335c95e08343825a7ae6f30437b4a7e6fa7b89d76907570a"
+        },
+        {
+          "name": "x",
+          "dtype": "float16",
+          "shape": [
+            7,
+            259
+          ],
+          "bytes_sha256": "a2552f2ec5dd0e063a00cff707acd0bd79be384b26586be125df707228a5ed3d"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float16",
+          "shape": [
+            7,
+            259
+          ],
+          "bytes_sha256": "956caf940a21ee42761e5acd70445449552301f0cfe2c4e2b38356e3631e6237"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "6ef970e6d81477cb7744dd4923c8dfda7ffa0a534940c7a15ae827f833200bbe"
+    },
+    {
+      "id": "phase9_gelu_tanh_half",
+      "seed": 0,
+      "pattern": "normal",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": true,
+          "elements": 1031,
+          "mismatches": 0,
+          "max_abs_error": 0.0009765625
+        }
+      ],
+      "rtol": 0.002,
+      "atol": 0.0002,
+      "inputs": [
+        {
+          "name": "gelu_c1",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "c03b3c7083921c8e663e08a9410e18853c0c6f29f92037287bb9ebee82299fe6"
+        },
+        {
+          "name": "gelu_c0",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "1f867faa1c89eacfcd0605b86d93b8861cd7471c68ae6a706bd035c538183c7d"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "505114fe537172ea35e17ca1a7516edac516a89b31f983f7c6387d5d2bb462aa"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "195f58bc6d6b7b36335c95e08343825a7ae6f30437b4a7e6fa7b89d76907570a"
+        },
+        {
+          "name": "x",
+          "dtype": "float16",
+          "shape": [
+            1031
+          ],
+          "bytes_sha256": "dd92bb4c9c7890cceac4f240ffdb5347de592c487531c58d653f8b4a71b9805f"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float16",
+          "shape": [
+            1031
+          ],
+          "bytes_sha256": "aab68cb5634de3dabde2461f287114f123f73760340beb035ec58fdbca05e0eb"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "45145aa294ce992aae41b46e795bdaf099715fc6b12b085a403f8377107952b7"
+    },
+    {
+      "id": "phase9_gelu_tanh_half",
+      "seed": 17,
+      "pattern": "normal",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": true,
+          "elements": 1031,
+          "mismatches": 0,
+          "max_abs_error": 0.00048828125
+        }
+      ],
+      "rtol": 0.002,
+      "atol": 0.0002,
+      "inputs": [
+        {
+          "name": "gelu_c1",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "c03b3c7083921c8e663e08a9410e18853c0c6f29f92037287bb9ebee82299fe6"
+        },
+        {
+          "name": "gelu_c0",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "1f867faa1c89eacfcd0605b86d93b8861cd7471c68ae6a706bd035c538183c7d"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "505114fe537172ea35e17ca1a7516edac516a89b31f983f7c6387d5d2bb462aa"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "195f58bc6d6b7b36335c95e08343825a7ae6f30437b4a7e6fa7b89d76907570a"
+        },
+        {
+          "name": "x",
+          "dtype": "float16",
+          "shape": [
+            1031
+          ],
+          "bytes_sha256": "701344bbf5a41fdefa51bb868bd0b6a877938ec932cb703faba1815f5589d8a6"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float16",
+          "shape": [
+            1031
+          ],
+          "bytes_sha256": "e66a353dbb5b290e5557b5d0e5f8639a24b20837e98d7e5444ae4b3e81f503eb"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "45145aa294ce992aae41b46e795bdaf099715fc6b12b085a403f8377107952b7"
+    },
+    {
+      "id": "phase9_gelu_tanh_half",
+      "seed": 101,
+      "pattern": "wide",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": true,
+          "elements": 1031,
+          "mismatches": 0,
+          "max_abs_error": 0.001953125
+        }
+      ],
+      "rtol": 0.002,
+      "atol": 0.0002,
+      "inputs": [
+        {
+          "name": "gelu_c1",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "c03b3c7083921c8e663e08a9410e18853c0c6f29f92037287bb9ebee82299fe6"
+        },
+        {
+          "name": "gelu_c0",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "1f867faa1c89eacfcd0605b86d93b8861cd7471c68ae6a706bd035c538183c7d"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "505114fe537172ea35e17ca1a7516edac516a89b31f983f7c6387d5d2bb462aa"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "195f58bc6d6b7b36335c95e08343825a7ae6f30437b4a7e6fa7b89d76907570a"
+        },
+        {
+          "name": "x",
+          "dtype": "float16",
+          "shape": [
+            1031
+          ],
+          "bytes_sha256": "f308a87c31b60a4813f400f6df8b11767106b8b7b74db628569cd63e572509f7"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float16",
+          "shape": [
+            1031
+          ],
+          "bytes_sha256": "73037fad76e93e879c479e2732bceed1cb46164fcafff86964869618b535267e"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "45145aa294ce992aae41b46e795bdaf099715fc6b12b085a403f8377107952b7"
+    },
+    {
+      "id": "phase9_bias_gelu_gemm",
+      "seed": 0,
+      "pattern": "normal",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": true,
+          "elements": 1551,
+          "mismatches": 0,
+          "max_abs_error": 1.9073486328125e-06
+        }
+      ],
+      "rtol": 0.001,
+      "atol": 0.0001,
+      "inputs": [
+        {
+          "name": "gelu_inv_sqrt2",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "723c8fdc213c6caa05324e5d35fed7b7ba12565f07d26abf773735a424004953"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "d99e58435243d9fef9c88273b8d553b4fba4d0baf8009d29eae74fa99e0d9f57"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        {
+          "name": "bias",
+          "dtype": "float32",
+          "shape": [
+            47
+          ],
+          "bytes_sha256": "5224495d51ea05886d9a5939c9b740f480f278166ba4bd01b648fb7bf7da1ea8"
+        },
+        {
+          "name": "b",
+          "dtype": "float32",
+          "shape": [
+            65,
+            47
+          ],
+          "bytes_sha256": "c3301858c24549d13b892955478a27335ea6f70621a79336cc03f630bc5e74d2"
+        },
+        {
+          "name": "a",
+          "dtype": "float32",
+          "shape": [
+            33,
+            65
+          ],
+          "bytes_sha256": "ca3031449202de4bb0017a0bcd0789d14eb4a14698255b19fc619eb5a245af19"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float32",
+          "shape": [
+            33,
+            47
+          ],
+          "bytes_sha256": "b57ead152fc17cc7b54bb570cc3dd56ea3e48fa1e76980d31d5878ad82063c76"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "705607c273d71f84948d5023ba26ef98daa58d1cc275e59eb5609ad0c721ffb2"
+    },
+    {
+      "id": "phase9_bias_gelu_gemm",
+      "seed": 17,
+      "pattern": "normal",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": true,
+          "elements": 1551,
+          "mismatches": 0,
+          "max_abs_error": 1.9073486328125e-06
+        }
+      ],
+      "rtol": 0.001,
+      "atol": 0.0001,
+      "inputs": [
+        {
+          "name": "gelu_inv_sqrt2",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "723c8fdc213c6caa05324e5d35fed7b7ba12565f07d26abf773735a424004953"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "d99e58435243d9fef9c88273b8d553b4fba4d0baf8009d29eae74fa99e0d9f57"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        {
+          "name": "bias",
+          "dtype": "float32",
+          "shape": [
+            47
+          ],
+          "bytes_sha256": "8048bfd16adf06e7126cc89719358acbfb306edd4005b1988b3037a01cbc2781"
+        },
+        {
+          "name": "b",
+          "dtype": "float32",
+          "shape": [
+            65,
+            47
+          ],
+          "bytes_sha256": "6f1d5986dfe8473b0c1f3abdf91b7c6059aac802b05a5cadac94152ff9dfa3a2"
+        },
+        {
+          "name": "a",
+          "dtype": "float32",
+          "shape": [
+            33,
+            65
+          ],
+          "bytes_sha256": "1134356564bd3c09858b4a1ae4ff630c926f6f9b2d10027fcbf01d2a16515dee"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float32",
+          "shape": [
+            33,
+            47
+          ],
+          "bytes_sha256": "b5b5e674ba8a9b2acd35f981905c4351f6a0c3ea23f3e1f6105567553a20e1dc"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "705607c273d71f84948d5023ba26ef98daa58d1cc275e59eb5609ad0c721ffb2"
+    },
+    {
+      "id": "phase9_bias_gelu_gemm",
+      "seed": 101,
+      "pattern": "wide",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": true,
+          "elements": 1551,
+          "mismatches": 0,
+          "max_abs_error": 0.000244140625
+        }
+      ],
+      "rtol": 0.001,
+      "atol": 0.0001,
+      "inputs": [
+        {
+          "name": "gelu_inv_sqrt2",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "723c8fdc213c6caa05324e5d35fed7b7ba12565f07d26abf773735a424004953"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "d99e58435243d9fef9c88273b8d553b4fba4d0baf8009d29eae74fa99e0d9f57"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        {
+          "name": "bias",
+          "dtype": "float32",
+          "shape": [
+            47
+          ],
+          "bytes_sha256": "6a6ba93026b1240e1e4580d8f9d6e27fdde7ba32d2e886df681d2fa68ae46a6d"
+        },
+        {
+          "name": "b",
+          "dtype": "float32",
+          "shape": [
+            65,
+            47
+          ],
+          "bytes_sha256": "88159eb79a185ff5ef8deba5cf94f483f9399a651f57a942b415a756c3a407a4"
+        },
+        {
+          "name": "a",
+          "dtype": "float32",
+          "shape": [
+            33,
+            65
+          ],
+          "bytes_sha256": "26188732fc89cac7c505d5d329c236dc51dbbe6a5152353268d729556467c4f4"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float32",
+          "shape": [
+            33,
+            47
+          ],
+          "bytes_sha256": "d8f6100481c84b68fa8e2cee8b28954f1881cc1920bfb5bfd7ef23fd349ee624"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "705607c273d71f84948d5023ba26ef98daa58d1cc275e59eb5609ad0c721ffb2"
+    },
+    {
+      "id": "phase9_half_gelu_gemm",
+      "seed": 0,
+      "pattern": "normal",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": true,
+          "elements": 357,
+          "mismatches": 0,
+          "max_abs_error": 0.001953125
+        }
+      ],
+      "rtol": 0.003,
+      "atol": 0.003,
+      "inputs": [
+        {
+          "name": "gelu_c1",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "c03b3c7083921c8e663e08a9410e18853c0c6f29f92037287bb9ebee82299fe6"
+        },
+        {
+          "name": "gelu_c0",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "1f867faa1c89eacfcd0605b86d93b8861cd7471c68ae6a706bd035c538183c7d"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "505114fe537172ea35e17ca1a7516edac516a89b31f983f7c6387d5d2bb462aa"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "195f58bc6d6b7b36335c95e08343825a7ae6f30437b4a7e6fa7b89d76907570a"
+        },
+        {
+          "name": "b",
+          "dtype": "float16",
+          "shape": [
+            33,
+            21
+          ],
+          "bytes_sha256": "783d76d330d6d9684c26f0ec61948e994fb66787e6b3d929faf3d4071d09a4c0"
+        },
+        {
+          "name": "a",
+          "dtype": "float16",
+          "shape": [
+            17,
+            33
+          ],
+          "bytes_sha256": "ef24c18660e20086a365055e6ce503fbf2620cc2f2da4fda1d6fa90736b4ccd3"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float16",
+          "shape": [
+            17,
+            21
+          ],
+          "bytes_sha256": "fc26fa9fc0f04f238702ee37b97bdf8b091f95203fc4d6105b711f154d2299c7"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "df2939113b7e1ae9e597db2cedac5080b663f043fe5272d13b835161c2bde357"
+    },
+    {
+      "id": "phase9_half_gelu_gemm",
+      "seed": 17,
+      "pattern": "normal",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": true,
+          "elements": 357,
+          "mismatches": 0,
+          "max_abs_error": 0.0009765625
+        }
+      ],
+      "rtol": 0.003,
+      "atol": 0.003,
+      "inputs": [
+        {
+          "name": "gelu_c1",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "c03b3c7083921c8e663e08a9410e18853c0c6f29f92037287bb9ebee82299fe6"
+        },
+        {
+          "name": "gelu_c0",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "1f867faa1c89eacfcd0605b86d93b8861cd7471c68ae6a706bd035c538183c7d"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "505114fe537172ea35e17ca1a7516edac516a89b31f983f7c6387d5d2bb462aa"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "195f58bc6d6b7b36335c95e08343825a7ae6f30437b4a7e6fa7b89d76907570a"
+        },
+        {
+          "name": "b",
+          "dtype": "float16",
+          "shape": [
+            33,
+            21
+          ],
+          "bytes_sha256": "f628c43a2f0af499c5c84ce3270f888f6055d96f8a82aeb1968ca7e542332d68"
+        },
+        {
+          "name": "a",
+          "dtype": "float16",
+          "shape": [
+            17,
+            33
+          ],
+          "bytes_sha256": "b49bf2b7b5a63d616457cfaeb86ec1c8d18a77bcba4f2d758bb763148199a9e9"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float16",
+          "shape": [
+            17,
+            21
+          ],
+          "bytes_sha256": "6ab600c33c33d7d39994d3dc6c2bd2826ec83f747fea0e264e27c156e30fc948"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "df2939113b7e1ae9e597db2cedac5080b663f043fe5272d13b835161c2bde357"
+    },
+    {
+      "id": "phase9_half_gelu_gemm",
+      "seed": 101,
+      "pattern": "wide",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": true,
+          "elements": 357,
+          "mismatches": 0,
+          "max_abs_error": 0.0
+        }
+      ],
+      "rtol": 0.003,
+      "atol": 0.003,
+      "inputs": [
+        {
+          "name": "gelu_c1",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "c03b3c7083921c8e663e08a9410e18853c0c6f29f92037287bb9ebee82299fe6"
+        },
+        {
+          "name": "gelu_c0",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "1f867faa1c89eacfcd0605b86d93b8861cd7471c68ae6a706bd035c538183c7d"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "505114fe537172ea35e17ca1a7516edac516a89b31f983f7c6387d5d2bb462aa"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float16",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "195f58bc6d6b7b36335c95e08343825a7ae6f30437b4a7e6fa7b89d76907570a"
+        },
+        {
+          "name": "b",
+          "dtype": "float16",
+          "shape": [
+            33,
+            21
+          ],
+          "bytes_sha256": "22453da269b477c05f2a4da70050abde5530cdb77ef263bce8b9c348737f1622"
+        },
+        {
+          "name": "a",
+          "dtype": "float16",
+          "shape": [
+            17,
+            33
+          ],
+          "bytes_sha256": "9267f05f55b37295614b9ebaec3138da3b4f8ad739609fba06f9498a4bfa699f"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float16",
+          "shape": [
+            17,
+            21
+          ],
+          "bytes_sha256": "1277958b20ea058ac39d987bef20ca6ff6a9bba6e426e6a668a54c74d52f1615"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "df2939113b7e1ae9e597db2cedac5080b663f043fe5272d13b835161c2bde357"
+    },
+    {
+      "id": "phase9_gelu_row_dot",
+      "seed": 0,
+      "pattern": "normal",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "sum_1",
+          "pass": true,
+          "elements": 19,
+          "mismatches": 0,
+          "max_abs_error": 2.86102294921875e-06
+        }
+      ],
+      "rtol": 0.001,
+      "atol": 0.0001,
+      "inputs": [
+        {
+          "name": "gelu_inv_sqrt2",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "723c8fdc213c6caa05324e5d35fed7b7ba12565f07d26abf773735a424004953"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "d99e58435243d9fef9c88273b8d553b4fba4d0baf8009d29eae74fa99e0d9f57"
+        },
+        {
+          "name": "x",
+          "dtype": "float32",
+          "shape": [
+            19,
+            131
+          ],
+          "bytes_sha256": "213961b00ff29d02a3a9c61e610dd4996b0f8c57f6ccc25cc1289e1f07fddb99"
+        },
+        {
+          "name": "g",
+          "dtype": "float32",
+          "shape": [
+            19,
+            131
+          ],
+          "bytes_sha256": "b7f5c2ddd2f1b74bb3be97cb30108e5e32225ca907e71fb9e093c210b6b9d683"
+        }
+      ],
+      "references": [
+        {
+          "name": "sum_1",
+          "dtype": "float32",
+          "shape": [
+            19
+          ],
+          "bytes_sha256": "2e6e6b4167fb0c2d71ef0b2ae65e2597d148f138aaaeaf1f1a95197380b39410"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "9cb2abae2c1c4a0c3d386a9d5a5a6be8c891321531807d7ba0856ed59ab07d04"
+    },
+    {
+      "id": "phase9_gelu_row_dot",
+      "seed": 17,
+      "pattern": "normal",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "sum_1",
+          "pass": true,
+          "elements": 19,
+          "mismatches": 0,
+          "max_abs_error": 1.9073486328125e-06
+        }
+      ],
+      "rtol": 0.001,
+      "atol": 0.0001,
+      "inputs": [
+        {
+          "name": "gelu_inv_sqrt2",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "723c8fdc213c6caa05324e5d35fed7b7ba12565f07d26abf773735a424004953"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "d99e58435243d9fef9c88273b8d553b4fba4d0baf8009d29eae74fa99e0d9f57"
+        },
+        {
+          "name": "x",
+          "dtype": "float32",
+          "shape": [
+            19,
+            131
+          ],
+          "bytes_sha256": "ae5035789ad8b752aa7a54646e99190ba2ed6206502bd6742eb4db6ced9a60b0"
+        },
+        {
+          "name": "g",
+          "dtype": "float32",
+          "shape": [
+            19,
+            131
+          ],
+          "bytes_sha256": "88ca7901abbd36c0d8c7ee72d07cac60626dc052d07f96b5489fc94d58f5bb17"
+        }
+      ],
+      "references": [
+        {
+          "name": "sum_1",
+          "dtype": "float32",
+          "shape": [
+            19
+          ],
+          "bytes_sha256": "457064a2bb1ee5aa4c86893ec0162638715fce266c4aba64714e2f1a6ae98065"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "9cb2abae2c1c4a0c3d386a9d5a5a6be8c891321531807d7ba0856ed59ab07d04"
+    },
+    {
+      "id": "phase9_gelu_row_dot",
+      "seed": 101,
+      "pattern": "wide",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "sum_1",
+          "pass": true,
+          "elements": 19,
+          "mismatches": 0,
+          "max_abs_error": 9.1552734375e-05
+        }
+      ],
+      "rtol": 0.001,
+      "atol": 0.0001,
+      "inputs": [
+        {
+          "name": "gelu_inv_sqrt2",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "723c8fdc213c6caa05324e5d35fed7b7ba12565f07d26abf773735a424004953"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "d99e58435243d9fef9c88273b8d553b4fba4d0baf8009d29eae74fa99e0d9f57"
+        },
+        {
+          "name": "x",
+          "dtype": "float32",
+          "shape": [
+            19,
+            131
+          ],
+          "bytes_sha256": "6572fb225e1d64991eca38b07062a45cffc0f3d71e405c41deb1021a5d45c49a"
+        },
+        {
+          "name": "g",
+          "dtype": "float32",
+          "shape": [
+            19,
+            131
+          ],
+          "bytes_sha256": "264c98a7a56fb129d8eb7a874e8ce69ccbbee7929d26cc99ab6f2149715a9699"
+        }
+      ],
+      "references": [
+        {
+          "name": "sum_1",
+          "dtype": "float32",
+          "shape": [
+            19
+          ],
+          "bytes_sha256": "b39ff1ca69baf01d4f1fa2cddef728d2372afa290b2c1887a2263b364107ae51"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "9cb2abae2c1c4a0c3d386a9d5a5a6be8c891321531807d7ba0856ed59ab07d04"
+    },
+    {
+      "id": "phase9_gelu_attention",
+      "seed": 0,
+      "pattern": "normal",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": true,
+          "elements": 143,
+          "mismatches": 0,
+          "max_abs_error": 4.470348358154297e-08
+        }
+      ],
+      "rtol": 0.001,
+      "atol": 0.0001,
+      "inputs": [
+        {
+          "name": "mul_c1",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "31b67dba7cfd6e2d7540f9c96d90a45b8f2d44956620723024d4e1beeacd4602"
+        },
+        {
+          "name": "gelu_inv_sqrt2",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "723c8fdc213c6caa05324e5d35fed7b7ba12565f07d26abf773735a424004953"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "d99e58435243d9fef9c88273b8d553b4fba4d0baf8009d29eae74fa99e0d9f57"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        {
+          "name": "q",
+          "dtype": "float32",
+          "shape": [
+            11,
+            17
+          ],
+          "bytes_sha256": "1cd1abc77e84d5d722c801d6e7de1a3d9668990897ce8d85f1b00fac0cead857"
+        },
+        {
+          "name": "kt",
+          "dtype": "float32",
+          "shape": [
+            17,
+            37
+          ],
+          "bytes_sha256": "fcda0483e36ce9879773695f409462d13d4afa9995793b693125fc7dace79c55"
+        },
+        {
+          "name": "v",
+          "dtype": "float32",
+          "shape": [
+            37,
+            13
+          ],
+          "bytes_sha256": "166f7ef1e23404f172446bc0a367f2bc7ab69d7fc7cef9696e7c834bffae3989"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float32",
+          "shape": [
+            11,
+            13
+          ],
+          "bytes_sha256": "49cfe64eaf3ca1964da2ec009b921c92872a6d06519ba2e4359a000f5a463826"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "64e8810d866db1ba44fd6fed78853ce2f7beac9f27446cb54ae6b5dc972c55d2"
+    },
+    {
+      "id": "phase9_gelu_attention",
+      "seed": 17,
+      "pattern": "normal",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": true,
+          "elements": 143,
+          "mismatches": 0,
+          "max_abs_error": 5.960464477539063e-08
+        }
+      ],
+      "rtol": 0.001,
+      "atol": 0.0001,
+      "inputs": [
+        {
+          "name": "mul_c1",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "31b67dba7cfd6e2d7540f9c96d90a45b8f2d44956620723024d4e1beeacd4602"
+        },
+        {
+          "name": "gelu_inv_sqrt2",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "723c8fdc213c6caa05324e5d35fed7b7ba12565f07d26abf773735a424004953"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "d99e58435243d9fef9c88273b8d553b4fba4d0baf8009d29eae74fa99e0d9f57"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        {
+          "name": "q",
+          "dtype": "float32",
+          "shape": [
+            11,
+            17
+          ],
+          "bytes_sha256": "8ecf51b8a311a0cacce1eac1bc9f9981a80f4208b37a778c80f17bfcacf3e687"
+        },
+        {
+          "name": "kt",
+          "dtype": "float32",
+          "shape": [
+            17,
+            37
+          ],
+          "bytes_sha256": "2adac905a6f9ce0a34df97ee70056ea970b255d3f2be20e85faed316931a25ac"
+        },
+        {
+          "name": "v",
+          "dtype": "float32",
+          "shape": [
+            37,
+            13
+          ],
+          "bytes_sha256": "8985410c19741e652f2934238bc1d12abc29efd743a66f79f5de16c5cf84ac80"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float32",
+          "shape": [
+            11,
+            13
+          ],
+          "bytes_sha256": "a63acca99e8cafc846f2af81639be185a406e87cf39d1f17c2e8d87ba411bd7c"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "64e8810d866db1ba44fd6fed78853ce2f7beac9f27446cb54ae6b5dc972c55d2"
+    },
+    {
+      "id": "phase9_gelu_attention",
+      "seed": 101,
+      "pattern": "wide",
+      "numerical_pass": true,
+      "output_comparisons": [
+        {
+          "name": "gelu",
+          "pass": true,
+          "elements": 143,
+          "mismatches": 0,
+          "max_abs_error": 8.811242878437042e-06
+        }
+      ],
+      "rtol": 0.001,
+      "atol": 0.0001,
+      "inputs": [
+        {
+          "name": "mul_c1",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "31b67dba7cfd6e2d7540f9c96d90a45b8f2d44956620723024d4e1beeacd4602"
+        },
+        {
+          "name": "gelu_inv_sqrt2",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "723c8fdc213c6caa05324e5d35fed7b7ba12565f07d26abf773735a424004953"
+        },
+        {
+          "name": "gelu_half",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "d99e58435243d9fef9c88273b8d553b4fba4d0baf8009d29eae74fa99e0d9f57"
+        },
+        {
+          "name": "gelu_one",
+          "dtype": "float32",
+          "shape": [
+            1
+          ],
+          "bytes_sha256": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"
+        },
+        {
+          "name": "q",
+          "dtype": "float32",
+          "shape": [
+            11,
+            17
+          ],
+          "bytes_sha256": "6b67201ff45ac893bdfa4c3ae0ea0e348715d7b69ffc56d28b281755dd3380a8"
+        },
+        {
+          "name": "kt",
+          "dtype": "float32",
+          "shape": [
+            17,
+            37
+          ],
+          "bytes_sha256": "1f1b823d315858ceb2b32d1baae5aeadd2438db0601672a8805a139e9591e19a"
+        },
+        {
+          "name": "v",
+          "dtype": "float32",
+          "shape": [
+            37,
+            13
+          ],
+          "bytes_sha256": "ad29983bed322d91d56c7fe8ee72a1449b63dbb2dc8606b450eb7364a96e8dcc"
+        }
+      ],
+      "references": [
+        {
+          "name": "gelu",
+          "dtype": "float32",
+          "shape": [
+            11,
+            13
+          ],
+          "bytes_sha256": "b1de19c14bc8775366e247eb73d41ea8cb85cada58f355d6b1eb32021e770291"
+        }
+      ],
+      "cli_byte_identical": true,
+      "ptx_sha256": "64e8810d866db1ba44fd6fed78853ce2f7beac9f27446cb54ae6b5dc972c55d2"
+    }
+  ],
+  "events_verified": 48,
+  "http_attempts_verified": 48,
+  "cli_replays": 8,
+  "summary": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\artifacts\\validation\\phase9\\compositions-final\\summary.json",
+  "summary_sha256": "e2f755d1c65f209c1c074504959c1b16f7f716fffc35376a8f8a84b7d4e75819",
+  "original_report_pass": false,
+  "compiler": "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\compile.py",
+  "compiler_sha256": {
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\ptx_backend.py": "f998d378fffff3f228fb9f90386542dd185dd1dfbe5a0a5b3dc559dc68bc46ca",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\ptx_tensor.py": "9046e52c80db822421398a5b8b8778e1c035194a8b35820d078013fde5b5b885",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "D:\\Work_Space\\Competitions\\Emmy Hackathon 26\\emmy-hackathon-2026\\Final Emmy\\requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "planned_checks": 24,
+  "attempted_checks": 24,
+  "completed_checks": 24,
+  "passed_checks": 21,
+  "failed_checks": 3,
+  "files_verified": 197,
+  "exact_selected_roster": true,
+  "complete_replay": true,
+  "finished_utc": "2026-10-28T12:08:57.334998+00:00"
+}

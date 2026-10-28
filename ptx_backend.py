@@ -30,7 +30,9 @@ from emmy.compiler.ir.kernel.ir import (
     CpAsyncCommit,
     CpAsyncCopy,
     CpAsyncWait,
+    FragmentApply,
     FragmentRepack,
+    FragmentRowReduce,
     KernelOp,
     LdmatrixLoad,
     MbarrierArrive,
@@ -169,7 +171,7 @@ _ELEMENTWISE_CAPABILITIES = {
     **{name: (1, _FLOATS) for name in ("sqrt", "rsqrt", "floor", "ceil", "trunc", "rint")},
     **{name: (1, _FLOATS - {"f64"}) for name in (
         "exp", "exp2", "log", "log2", "log10", "sin", "cos", "tanh", "erf",
-        "sigmoid", "silu",
+        "sigmoid", "silu", "gelu", "gelu_tanh",
     )},
     "power": (2, _FLOATS - {"f64"}),
 }
@@ -1117,6 +1119,25 @@ class Compiler:
             )
         if name == "power":
             return self.power(x, args[1])
+        if name in ("gelu", "gelu_tanh"):
+            # Keep Emmy's two distinct formulas. Composite narrow operations
+            # expand above, then round once at the enclosing IR statement.
+            if name == "gelu":
+                scaled = self.binary("/", x, self.literal(math.sqrt(2.0), dt))
+                gate = self.operation("erf", [scaled], dt)
+            else:
+                cube = self.binary("*", self.binary("*", x, x), x)
+                inner = self.binary(
+                    "+", x, self.binary("*", self.literal(0.044715, dt), cube)
+                )
+                scaled = self.binary(
+                    "*", self.literal(math.sqrt(2.0 / math.pi), dt), inner
+                )
+                gate = self.operation("tanh", [scaled], dt)
+            return self.binary(
+                "*", self.binary("*", self.literal(0.5, dt), x),
+                self.binary("+", self.literal(1.0, dt), gate),
+            )
         if name == "erf":
             # Abramowitz-Stegun 7.1.26, absolute error below 1.5e-7 in
             # real arithmetic; each generated operation is separately rounded.
@@ -1352,7 +1373,8 @@ class Compiler:
             previous = stmt
 
     def statement(self, s):
-        if isinstance(s, (RegFragment, LdmatrixLoad, MmaSyncPtx, RegStore, FragmentRepack)):
+        if isinstance(s, (RegFragment, LdmatrixLoad, MmaSyncPtx, RegStore,
+                          FragmentRepack, FragmentApply, FragmentRowReduce)):
             if self.tensor_lowering is None:
                 from ptx_tensor import TensorLowering
 

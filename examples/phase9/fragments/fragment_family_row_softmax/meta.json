@@ -1,0 +1,53 @@
+{
+  "id": "fragment_family_row_softmax",
+  "graph_inputs": [
+    "x"
+  ],
+  "graph_outputs": [
+    "out"
+  ],
+  "rtol": 8e-06,
+  "atol": 1e-07,
+  "kernels": [
+    {
+      "entry": "k_regression_fragment_family_row_softmax",
+      "grid": [
+        1,
+        1,
+        1
+      ],
+      "block": [
+        32,
+        1,
+        1
+      ],
+      "smem_bytes": 0,
+      "zero_outputs": [],
+      "arg_order": [
+        "x",
+        "out"
+      ],
+      "args": [
+        {
+          "name": "x",
+          "dtype": "f32",
+          "shape": [
+            16,
+            16
+          ],
+          "seed": 0
+        },
+        {
+          "name": "out",
+          "dtype": "f32",
+          "shape": [
+            16,
+            16
+          ],
+          "output": true
+        }
+      ],
+      "final": true
+    }
+  ]
+}

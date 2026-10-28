@@ -1,0 +1,51 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_tensor_global_bf16_trans_ragged",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "a",
+        "dtype": "f32",
+        "shape": [
+          9,
+          17
+        ],
+        "seed": 0
+      },
+      {
+        "name": "b",
+        "dtype": "f32",
+        "shape": [
+          7,
+          17
+        ],
+        "seed": 1
+      },
+      {
+        "name": "out",
+        "dtype": "f32",
+        "shape": [
+          9,
+          7
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "227bbb4b6656789cb70b1e14721d11b1a56c38a961e2cd18fca2b167576520a5"
+  }
+}

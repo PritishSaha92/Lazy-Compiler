@@ -1,0 +1,270 @@
+{
+  "pass": true,
+  "scope": "Exact submitted PTX and input identity for 51 retained feature packages; no new GPU execution",
+  "modules": 51,
+  "current_source_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "f998d378fffff3f228fb9f90386542dd185dd1dfbe5a0a5b3dc559dc68bc46ca",
+    "ptx_tensor.py": "9046e52c80db822421398a5b8b8778e1c035194a8b35820d078013fde5b5b885",
+    "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "input_files_identical": true,
+  "rows": [
+    {
+      "package": "examples\\phase8\\loops\\strided_end_reads_initialized_axis",
+      "ptx_sha256": "6e5b5719179e7a2de216074850c4639c25853392f20d6cad7ff3601494117e98",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase8\\loops\\strided_f64_end_snapshot",
+      "ptx_sha256": "a63013fbbc5f6543c985aa3887c123d0de0e81132e15c3faf3ce75bb9287568d",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase8\\loops\\strided_f64_start_and_step",
+      "ptx_sha256": "ee1b2ce3513f35d2a67a0f3d845c3c1460d7d11a9faf121fbd90f2db2e90ee2b",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase8\\loops\\strided_i64_start_narrows",
+      "ptx_sha256": "4e8128a68846c95a35ee368d9d8fdc5f6478868e67a2b30dcbbdc5fd93892a02",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase8\\loops\\strided_live_fractional_step",
+      "ptx_sha256": "447c925a9fe7537c05a193fd7416d6277c8c41ef1745fd1ff7b619d8ffc67ef2",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase8\\loops\\strided_unsigned_start_negative_end",
+      "ptx_sha256": "7eead03e29daae4e7d3300d86cc96e9e268ac739e3267bf4220ee045adedc0c2",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase8\\remainder\\floating_f32_mod",
+      "ptx_sha256": "03a46a021a9c86b2789e398d4656958e64c172abe3670eedf0613dab7a3d0b6a",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase8\\remainder\\floating_f32_remainder",
+      "ptx_sha256": "bcc35ad9cad92b4087020ceaa4fc2f895f5eb12ca13d5a5ac06c198034487d0a",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase8\\remainder_words\\floating_f64_mod_words",
+      "ptx_sha256": "73716d187bed792649b9dd7257c79c544b83269027f1b84e11cc041b72952b5c",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase8\\remainder_words\\floating_f64_remainder_words",
+      "ptx_sha256": "2b49a8903b4c4d44d9ddc4386a997fdfc1dae7c593cb2ca792ad20756e2eea83",
+      "identical": true
+    },
+    {
+      "package": "examples\\bulk\\bulk_linear_f64",
+      "ptx_sha256": "d70a51e05493bced5dadd7b02c99ecc292b9c73a5ceafbb07035259fda932cff",
+      "identical": true
+    },
+    {
+      "package": "examples\\bulk\\bulk_linear_multi_cta",
+      "ptx_sha256": "9102aa266e33fc60442d51e91b83d0e70d8a42821fe0f401832b3157cce8ae4e",
+      "identical": true
+    },
+    {
+      "package": "examples\\bulk\\bulk_phase_reuse",
+      "ptx_sha256": "1dbe5dc0b13f935686fd0d7fe5e35abd4fd1dd91aa878f26b3dd33eff495a3c6",
+      "identical": true
+    },
+    {
+      "package": "examples\\bulk\\bulk_rank5_crop",
+      "ptx_sha256": "681910469c35bc6b64deda59301453a6aa16f41473a701a5592d07da2f460dd9",
+      "identical": true
+    },
+    {
+      "package": "examples\\bulk\\bulk_rectangle",
+      "ptx_sha256": "2ae70e24cc2e57787ea2ec81bce0746b00fd4aa8e1d962503b4bc9fbdf862fd9",
+      "identical": true
+    },
+    {
+      "package": "examples\\bulk\\bulk_ring_slots",
+      "ptx_sha256": "3ec617b347f812d15403817d2714a65e2370e63fdc696b50e77f8a57c3a66a40",
+      "identical": true
+    },
+    {
+      "package": "examples\\combined\\bulk_tensor_k48_bias_relu_transposed",
+      "ptx_sha256": "e6d6c1e4cecac0366ad53fb513a4be200b844e164114e85079de9c6962ef7c58",
+      "identical": true
+    },
+    {
+      "package": "examples\\combined\\bulk_tensor_k48_f16",
+      "ptx_sha256": "9d528c7edf55b85265fdbd4947558c3897d9669e6c13ae3e826ab19642386088",
+      "identical": true
+    },
+    {
+      "package": "examples\\generated_tensor",
+      "ptx_sha256": "1f1368263f827a651db49ed31f317e8a195bbce0356e394bb024310bdadd2be3",
+      "identical": true
+    },
+    {
+      "package": "examples\\ring\\ring_tensor_k112_bf16",
+      "ptx_sha256": "6fb2e533fa2ae0e00cfea38c4dc8d8b1dfd97b89a9d14045efc8c091d168e3dd",
+      "identical": true
+    },
+    {
+      "package": "examples\\ring\\ring_tensor_k112_f16_two_cta",
+      "ptx_sha256": "73365b7bf43af45ceed2a0df256996c444d70867e5346f131c3168c59ad4e425",
+      "identical": true
+    },
+    {
+      "package": "examples\\ring\\ring_tensor_k80_f16",
+      "ptx_sha256": "4e23eab94073b47cbd92a65860c91ae04bafdf9fbdea57c79dd520e1322492ce",
+      "identical": true
+    },
+    {
+      "package": "examples\\tensor\\packages\\tensor_atomic_f32",
+      "ptx_sha256": "15723e01ffe4ddbc090cd670af6c09cab2237fc137e3e0a39b8f1bb055b54095",
+      "identical": true
+    },
+    {
+      "package": "examples\\tensor\\packages\\tensor_cp_async_shared",
+      "ptx_sha256": "d135f19fa4b98f8518fd0d44a35827384465664b6baf38578b2a992e1070b8ee",
+      "identical": true
+    },
+    {
+      "package": "examples\\tensor\\packages\\tensor_family_live_index",
+      "ptx_sha256": "afe0da9f9a131dde0f245900a4c8ae6caa9e86c17331471e3681d8efed0219cb",
+      "identical": true
+    },
+    {
+      "package": "examples\\tensor\\packages\\tensor_fused_guarded_epilogue",
+      "ptx_sha256": "ca59e17a47676228412b2ff325e2897fc89115c073da5948a642b625c0fcd025",
+      "identical": true
+    },
+    {
+      "package": "examples\\tensor\\packages\\tensor_global_bf16",
+      "ptx_sha256": "59e4f545b56ff49ff76caa0e7c375f8772ddb50a98b3075a125a965d4a6db97e",
+      "identical": true
+    },
+    {
+      "package": "examples\\tensor\\packages\\tensor_global_bf16_trans_ragged",
+      "ptx_sha256": "34b406ca2c98048e3a7ac7444657bc346171689eadd8d8df394c31cce592e32a",
+      "identical": true
+    },
+    {
+      "package": "examples\\tensor\\packages\\tensor_global_f16",
+      "ptx_sha256": "0f2b77b8d5c9abf5b2a1527f3062af1a1e49d277f8f9d951db9d02cbddc75a9e",
+      "identical": true
+    },
+    {
+      "package": "examples\\tensor\\packages\\tensor_global_f16_ragged",
+      "ptx_sha256": "d224da5183b34fcbbbe3db1325d788e4c84efd407988baf90c06aef955231cf3",
+      "identical": true
+    },
+    {
+      "package": "examples\\tensor\\packages\\tensor_repack_f16",
+      "ptx_sha256": "0bebb37e1898299f218ff1d821ae67f224ef8cb115d82c8a83ac11119b25d5c2",
+      "identical": true
+    },
+    {
+      "package": "examples\\tensor\\packages\\tensor_shared_b128",
+      "ptx_sha256": "81515b65c63657803948b794497d7771f4c3c08208a1f413cd8b3ff7a37dd15b",
+      "identical": true
+    },
+    {
+      "package": "examples\\tensor\\packages\\tensor_shared_b32",
+      "ptx_sha256": "cf5285e946795d63865b15043e3192964739371d4f5d724eb9aa6f9206aefd63",
+      "identical": true
+    },
+    {
+      "package": "examples\\tensor\\packages\\tensor_shared_b64",
+      "ptx_sha256": "cc4ba172474048545628f969f1195eb4da1d1538e2da9b96882f0c36e314e025",
+      "identical": true
+    },
+    {
+      "package": "examples\\tensor\\packages\\tensor_shared_bf16_trans",
+      "ptx_sha256": "49b3d283d987e78e1d529a584d9e21e2a6407ce59dff6620aac755281f859b2b",
+      "identical": true
+    },
+    {
+      "package": "examples\\tensor\\packages\\tensor_shared_f16",
+      "ptx_sha256": "04d9ee2dab20a92583a8ab481cf9732e0861725589d3a23cd71e40bd32bef3a9",
+      "identical": true
+    },
+    {
+      "package": "examples\\tensor\\packages\\tensor_shared_paired",
+      "ptx_sha256": "f378420a2d31427df8e9837ce705d17c872839eb8de92f89e374f8a8652d1ad0",
+      "identical": true
+    },
+    {
+      "package": "examples\\tensor\\packages\\tensor_shared_paired_trans",
+      "ptx_sha256": "2273b1bcf3efc8cd008fa55378227e91040020f6c01bc2918e3f5bc925a632b8",
+      "identical": true
+    },
+    {
+      "package": "examples\\tensor\\packages\\tensor_transposed_output",
+      "ptx_sha256": "c3e70ed7c9b04bbdf838e2b4d3dd473b342726a1c534e2b47b0fcd4de00569f1",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase7\\builtins\\auxiliary_raw_thread_named_barrier",
+      "ptx_sha256": "f0791073392a626ab3df4ef75e601f04b374f2bc74ab1560a37df4ac0ebb76ab",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase7\\builtins\\builtin_unsigned_arithmetic",
+      "ptx_sha256": "dcbb0b04c652043796c8bb5e5d50f230a86887941b053fbba75a6ec683b248c6",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase7\\builtins\\builtin_values_3d",
+      "ptx_sha256": "5c6753be02be35bcc07b0a90532a2903812715ebb47dab71007550cccdac8639",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase7\\builtins\\bulk_builtin_block_coordinate",
+      "ptx_sha256": "75f87463ed8420bd8147fc4aab37a62f925627d4f732149091191c207be9aa42",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase7\\integer\\shift_narrow_left_promotion",
+      "ptx_sha256": "af3b46cba578fcb2e5248e11335905581997b7fde64e95194aad499728b422ec",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase7\\integer\\shift_signed_right_unsigned_count",
+      "ptx_sha256": "d91289c52302519be1b70f45aa97b7764b7d38a6a9b65b6ff55929d88ac2dd42",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase7\\integer\\shift_unsigned_left_wide_count",
+      "ptx_sha256": "525655e37b204f91d3691cec17b2208507bac0b4d99c0dacc62ea12812f8a308",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase7\\integer\\stamped_integer_policy_controls",
+      "ptx_sha256": "15fdcfa04fabd60144a96906e960a0c2ad468c274f46e2917432a43e14653e96",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase7\\integer\\unstamped_mixed_integer_add",
+      "ptx_sha256": "c0bd6f29f89b36750e916ed646015279efb14ff614153f66b40edd2015c1933a",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase7\\integer\\unstamped_mixed_integer_and",
+      "ptx_sha256": "c9453f5fbfd427b9b31f4acb9d0b5e56dbc1efd1d5bd81e0ed3f34ab946acb1d",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase7\\integer\\unstamped_mixed_integer_xor",
+      "ptx_sha256": "a4fd33336e53e77ef495d9e4891721a9590b73b40fad8eb179df059ea6cf542a",
+      "identical": true
+    },
+    {
+      "package": "examples\\phase7\\retained\\comparison_integer_promotion",
+      "ptx_sha256": "fd062976f47d32a8a5a70459229155f01e5a1388f2ea9a5711593eb4007ed693",
+      "identical": true
+    }
+  ]
+}

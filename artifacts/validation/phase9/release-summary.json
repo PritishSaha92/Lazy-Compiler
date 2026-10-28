@@ -1,0 +1,146 @@
+{
+  "schema": "emmy-phase9-regression-release-v1",
+  "pass": true,
+  "all_numerical_references_pass": false,
+  "scope": "Acceptance covers the public/explicit-feature regression gates, CPU suite and evidence integrity. It does NOT assert that all exploratory mathematical composition references pass.",
+  "created_utc": "2026-10-28T12:14:30.915595+00:00",
+  "source_sha256": {
+    "compile.py": "4ed3fb67833b7de20693c7cb3f163a4646cac8d3a71e63649c1af1bccd37ce56",
+    "ptx_backend.py": "f998d378fffff3f228fb9f90386542dd185dd1dfbe5a0a5b3dc559dc68bc46ca",
+    "ptx_tensor.py": "9046e52c80db822421398a5b8b8778e1c035194a8b35820d078013fde5b5b885",
+    "ptx_bulk.py": "a906271f8c04a21b75c8796a65225a832b601807156d5406320b9c1b629de588",
+    "requirements.txt": "5d054f8757b1212865653105a4e7c634e2952007da020d2f67ad456eb6bccc84"
+  },
+  "changes": [
+    "Direct FP32/FP16/BF16 GELU and tanh-GELU operations",
+    "Bounded m16n8 FP32 fragment elementwise operations and ordered row reductions",
+    "Lazy guarded fragment memory operands and explicit mixed-precision/collective admission",
+    "Single-tile tensor attention example with explicit FP16 weight repacking"
+  ],
+  "organizer_gpu": {
+    "public_checks": 15,
+    "public_passes": 15,
+    "public_attempts": 16,
+    "public_transport_retries": 1,
+    "additional_feature_checks": 67,
+    "additional_feature_passes": 67,
+    "regression_packages": 82,
+    "regression_package_passes": 82,
+    "local_gpu_used": false
+  },
+  "cpu": {
+    "methods": 148,
+    "passed": 129,
+    "explicit_local_gpu_skips": 19,
+    "sources_unchanged": true
+  },
+  "composition_study": {
+    "packages": 8,
+    "input_checks": 24,
+    "passed_checks": 21,
+    "failed_checks": 3,
+    "numerical_gate_pass": false,
+    "failed_package": "phase9_gelu_erf_half",
+    "baseline_passed_checks": 21,
+    "references_or_tolerances_changed": false,
+    "typed_stage_bit_matches": 5439,
+    "typed_stage_bit_mismatches": 0,
+    "interpretation": "Current output matches each F16 typed-Assign rounding boundary. The single-operation mathematical GELU reference differs. Failures remain failures."
+  },
+  "initial_feature_attempt": {
+    "planned_packages": 16,
+    "executed_packages": 14,
+    "numerical_passes": 14,
+    "requests_rejected_before_execution": 2,
+    "correction": "Flatten explicit metadata data lists only; IR, input values, expected arrays and tolerances unchanged."
+  },
+  "evidence_replay": {
+    "feature_http_events": 134,
+    "composition_http_events": 48,
+    "integrity_pass": true,
+    "is_new_gpu_execution": false
+  },
+  "retained_ptx_identity": {
+    "feature_packages": 51,
+    "public_packages": 15,
+    "new_performance_measurement": false
+  },
+  "historical_fp64_reference_failures": 9,
+  "limits": [
+    "Fragment algebra requires the modeled m16n8 FP32 C layout; row collectives need complete warps and unconditional static loop control.",
+    "This is a single attention tile, not a general online tensor-core attention implementation.",
+    "Mixed-precision fragment forms that would change rounding are rejected explicitly.",
+    "FP64 GELU remains unsupported. Earlier FP64-state and current staged-FP16 mathematical-reference conflicts are not relabelled.",
+    "No hidden-test result, universal speedup, competitor benchmark or winning rank is asserted."
+  ],
+  "evidence": {
+    "public_initial": {
+      "path": "artifacts/validation/phase9/public-submit/summary.json",
+      "sha256": "4e655cd707642356284845cac2bc234276a0c0665f9baa7461152df46e064a89"
+    },
+    "public_retry": {
+      "path": "artifacts/validation/phase9/public-submit-retry/summary.json",
+      "sha256": "04319e1951fea1e2efab75d464d8f096681b6f00ff6a76e3c87e202c174bcf79"
+    },
+    "features": {
+      "path": "artifacts/validation/phase9/feature-runner-final/summary.json",
+      "sha256": "d3184a34907750803945a95bcf3ea536fa6b95bb08ba1913291e680ea806546f"
+    },
+    "feature_manifest": {
+      "path": "artifacts/validation/phase9/feature-manifest-final.json",
+      "sha256": "0cce269d340832ced60e2b314a0e2f8da50ff924d48a1808082f606fe3c3f861"
+    },
+    "feature_audit": {
+      "path": "artifacts/validation/phase9/feature-runner-final/integrity-audit.json",
+      "sha256": "397d42f8159f15fa63875faa323f7d03ed975aaec80e6b191ed3f05089a7931e"
+    },
+    "initial_features": {
+      "path": "artifacts/validation/phase9/new-feature-runner/summary.json",
+      "sha256": "78c809514e334f0d5cb255f1cca505a3bbb527c5ae40b994177369e76eeb6127"
+    },
+    "transport_correction": {
+      "path": "artifacts/validation/phase9/tensor/transport-fix.json",
+      "sha256": "9f554a9bff865f6841518dd74c6e4452e076836a28f1f7d39dab48e68b74eebd"
+    },
+    "cpu": {
+      "path": "artifacts/validation/phase9/cpu-regressions.json",
+      "sha256": "6984b212c1fc279b51db8eef1b454d1bd435951192922c2f021f0723839c7aff"
+    },
+    "compositions_baseline": {
+      "path": "artifacts/validation/phase9/compositions-baseline/summary.json",
+      "sha256": "50e5e9965c395b90320cc2d22608b3962a6425f0ac90df48766203a89aedb0ea"
+    },
+    "compositions_final": {
+      "path": "artifacts/validation/phase9/compositions-final/summary.json",
+      "sha256": "e2f755d1c65f209c1c074504959c1b16f7f716fffc35376a8f8a84b7d4e75819"
+    },
+    "composition_audit": {
+      "path": "artifacts/validation/phase9/compositions-final/integrity-audit.json",
+      "sha256": "c6feddc7d77a93bd36a5b4973d5b59da4d30c540af3b6ef9b16ce85cc618ffd9"
+    },
+    "half_stage_audit": {
+      "path": "artifacts/validation/phase9/numerics/half-gelu-stage-final.json",
+      "sha256": "9e36c354bb61b81e947cd635c3e62b060f9fa1d9c63b411ea94176154d9de1c7"
+    },
+    "reference_sanity": {
+      "path": "artifacts/validation/phase9/composition-reference-sanity.json",
+      "sha256": "9682deda55d0acfd82306a4e0d78cc89985f649baf9875008d06f3ceab87b56a"
+    },
+    "generation": {
+      "path": "artifacts/validation/phase9/composition-generation.json",
+      "sha256": "cf2acd97c22087e5ed593e155128b150b083447a851547f809245addabf667cb"
+    },
+    "retained_feature_identity": {
+      "path": "artifacts/validation/phase9/retained-ptx-identity.json",
+      "sha256": "52c208bf836cd6aa33ac4bc8f03b9e83fcaf21d201f6c8e221914a9c1f30b92f"
+    },
+    "prior_module_identity": {
+      "path": "artifacts/validation/phase9/tensor/compatibility.json",
+      "sha256": "557791f158ec4a519b7586f6f5dda52071822f2146cfcac952dfb327efab80de"
+    },
+    "cli_reference": {
+      "path": "artifacts/validation/phase9/cli-reference.json",
+      "sha256": "d925be6d973a5800b2a075d8560b667cacf3141e13c2e80ed5a466b653d3b89c"
+    }
+  }
+}

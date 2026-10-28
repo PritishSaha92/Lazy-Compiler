@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "cubin_id": "386fa28b8facd5461410d5f172be4a5fa6f6eb0e3f9488156783f021b264a8bd",
+  "bytes": 9784,
+  "arch": "sm_120",
+  "flags": [],
+  "entry_points": [
+    "k_regression_tensor_shared_b64"
+  ],
+  "registers": {
+    "k_regression_tensor_shared_b64": 22
+  }
+}

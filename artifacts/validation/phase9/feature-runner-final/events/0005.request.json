@@ -1,0 +1,57 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_strided_f64_start_and_step",
+    "grid": [
+      1,
+      1,
+      1
+    ],
+    "block": [
+      32,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "x",
+        "dtype": "f64",
+        "shape": [
+          3
+        ],
+        "data": [
+          0.75,
+          1.75,
+          2.75
+        ]
+      },
+      {
+        "name": "y",
+        "dtype": "f64",
+        "shape": [
+          3
+        ],
+        "data": [
+          1.25,
+          1.75,
+          2.5
+        ]
+      },
+      {
+        "name": "out",
+        "dtype": "i32",
+        "shape": [
+          3,
+          2
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "33d847139fc465e629c3265c455c1eda114be266955578120946911190026647"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ok": true,
+  "entry": "k_regression_strided_f64_start_and_step",
+  "grid": [
+    1,
+    1,
+    1
+  ],
+  "block": [
+    32,
+    1,
+    1
+  ],
+  "smem_bytes": 0,
+  "median_us": 63.168,
+  "iters": 1,
+  "outputs": {
+    "out": {
+      "shape": [
+        3,
+        2
+      ],
+      "dtype": "i32",
+      "sum": 49.0,
+      "values": [
+        6.0,
+        15.0,
+        5.0,
+        15.0,
+        2.0,
+        6.0
+      ],
+      "truncated": false
+    }
+  }
+}

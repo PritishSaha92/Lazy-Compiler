@@ -31,12 +31,17 @@ Do not move an IR away from its companion `meta.json`.
 | [phase7/integer](phase7/integer) | Seven exact-reference packages: mixed-integer operations, constant/runtime shift promotion and explicit-dtype controls |
 | [phase7/builtins](phase7/builtins) | Four packages: 3-D raw builtin values, unsigned geometry semantics, explicit 64-compute/32-helper roles, and multi-CTA bulk coordinates |
 | [phase7/retained](phase7/retained) | One unchanged scalar package rechecked because its emitted shift-count type changed |
+| [phase9/gelu](phase9/gelu) | Eight direct GELU/tanh-GELU packages: F32/F16/BF16 and exact exceptional classifications |
+| [phase9/fragments](phase9/fragments) | Eight fragment-algebra packages: guarded GMEM, ROW broadcasts, ordered folds, MMA normalization and one complete attention tile |
+| [phase9/generated](phase9/generated) | Eight original Torch compositions; retained FP16 stage-rounding conflict is documented in the phase-9 report |
 | [phase8](phase8) | Six loop-binding packages and four current floating-remainder packages; original failed I64 transport fixtures are retained separately from the final roster |
 
 Run the focused CPU/assembler tests:
 
 ```console
 python -m unittest discover -s tests -p test_tensor_cores.py -v
+python -m unittest discover -s tests -p test_gelu.py -v
+python -m unittest discover -s tests -p test_fragment_rows.py -v
 python -m unittest discover -s tests -p test_bulk_copy.py -v
 python -m unittest discover -s tests -p test_feature_interactions.py -v
 python -m unittest discover -s tests -p test_ring_pipeline.py -v
@@ -77,8 +82,19 @@ problems passed organizer-GPU checks for phase 7; see
 [PHASE7.md](../docs/PHASE7.md). The current
 [phase-8 roster](../artifacts/validation/phase8/feature-manifest-final.json)
 adds ten packages. All 51 additional and 15 public packages passed with the
-current compiler; see [PHASE8.md](../docs/PHASE8.md). These are development
-correctness tests, not hidden-set results.
+phase-8 compiler; see [PHASE8.md](../docs/PHASE8.md). The phase-9 final roster
+contains those 51 plus 16 new typed packages; all **67/67** passed alongside
+**15/15 public** problems. [PHASE9.md](../docs/PHASE9.md) records the current
+results, preserved transport attempts and separate mathematical-reference
+failures in generated compositions. These are development correctness
+tests, not hidden-set results.
+
+Phase-9 definitions and independent references are in
+[test_gelu.py](../tests/test_gelu.py) and
+[test_fragment_rows.py](../tests/test_fragment_rows.py); each supports
+`--export NEW_DIRECTORY`. Generated integration expressions are in
+[expressions_phase9.py](../tests/expressions_phase9.py). They decompose GELU into
+primitive nodes, so they do not replace the direct-operation examples.
 
 Ring fixtures can be regenerated with
 `python tests/test_ring_pipeline.py --export NEW_DIRECTORY`. The new definitions

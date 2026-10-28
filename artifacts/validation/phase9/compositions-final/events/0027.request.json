@@ -1,0 +1,89 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_matmul_9712dd",
+    "grid": [
+      1551,
+      1,
+      1
+    ],
+    "block": [
+      256,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "gelu_inv_sqrt2",
+        "dtype": "f32",
+        "shape": [
+          1
+        ],
+        "data": [
+          0.7071067811865475
+        ]
+      },
+      {
+        "name": "gelu_half",
+        "dtype": "f32",
+        "shape": [
+          1
+        ],
+        "data": [
+          0.5
+        ]
+      },
+      {
+        "name": "gelu_one",
+        "dtype": "f32",
+        "shape": [
+          1
+        ],
+        "data": [
+          1.0
+        ]
+      },
+      {
+        "name": "bias",
+        "dtype": "f32",
+        "shape": [
+          47
+        ],
+        "seed": 19
+      },
+      {
+        "name": "b",
+        "dtype": "f32",
+        "shape": [
+          65,
+          47
+        ],
+        "seed": 18
+      },
+      {
+        "name": "a",
+        "dtype": "f32",
+        "shape": [
+          33,
+          65
+        ],
+        "seed": 17
+      },
+      {
+        "name": "gelu",
+        "dtype": "f32",
+        "shape": [
+          33,
+          47
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "c8fe1fa653cad6b09a8aa304995001f3620a2fad8fe4ae137cb20f6cdd6aa942"
+  }
+}

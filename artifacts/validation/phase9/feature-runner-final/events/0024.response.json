@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "cubin_id": "c1aaa07a8d948a9c0250aabb97dffecc55b7f8c5e63457afc75f26bfbb842011",
+  "bytes": 8944,
+  "arch": "sm_120",
+  "flags": [],
+  "entry_points": [
+    "k_regression_bulk_phase_reuse"
+  ],
+  "registers": {
+    "k_regression_bulk_phase_reuse": 24
+  }
+}

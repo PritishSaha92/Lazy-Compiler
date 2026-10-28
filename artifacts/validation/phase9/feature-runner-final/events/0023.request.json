@@ -1,0 +1,40 @@
+{
+  "endpoint": "/run",
+  "payload": {
+    "entry": "k_regression_bulk_linear_multi_cta",
+    "grid": [
+      3,
+      1,
+      1
+    ],
+    "block": [
+      64,
+      1,
+      1
+    ],
+    "smem_bytes": 0,
+    "zero_outputs": [],
+    "args": [
+      {
+        "name": "x",
+        "dtype": "f32",
+        "shape": [
+          192
+        ],
+        "seed": 0
+      },
+      {
+        "name": "out",
+        "dtype": "f32",
+        "shape": [
+          192
+        ],
+        "output": true
+      }
+    ],
+    "warmup": 0,
+    "iters": 1,
+    "max_return": 4096,
+    "cubin_id": "8790386f9da7778b69a4155e76284c65dc417b978cbc2660afd655c00fef6310"
+  }
+}

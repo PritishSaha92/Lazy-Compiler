@@ -1,0 +1,19 @@
+{
+  "started": "2026-10-28T11:52:13.458077+00:00",
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "cubin_id": "6c6c107477edfea9d973fcbddd9472e60e82923157078c53bb95e31157e52173",
+    "bytes": 32120,
+    "arch": "sm_120",
+    "flags": [],
+    "entry_points": [
+      "k_regression_bulk_tensor_k48_bias_relu_transposed"
+    ],
+    "registers": {
+      "k_regression_bulk_tensor_k48_bias_relu_transposed": 27
+    }
+  },
+  "finished": "2026-10-28T11:52:14.278487+00:00",
+  "seconds": 0.8202382000163198
+}
